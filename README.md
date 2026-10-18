@@ -1,2 +1,2 @@
 # SOQM
-Shout Out to Queting Mayhem
+Shout Out to Questing Mayhem
