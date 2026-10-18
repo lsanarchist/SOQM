@@ -1,0 +1,4416 @@
+{
+  "id": "513010FE75551C5A",
+  "group": "5141042000000003",
+  "order_index": 3,
+  "filename": "qm_v030_09_enderio",
+  "icon": {
+    "id": "enderio:alloy_smelter",
+    "count": 1
+  },
+  "default_quest_shape": "rsquare",
+  "default_hide_dependency_lines": false,
+  "consume_items": false,
+  "hide_quest_details_until_startable": false,
+  "hide_quest_until_deps_visible": false,
+  "hide_quest_until_deps_complete": false,
+  "default_repeatable_quest": false,
+  "quests": [
+    {
+      "id": "51301183B8CF29F5",
+      "x": -10.95,
+      "y": 6.8,
+      "icon": {
+        "id": "enderio:vibrant_alloy_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_vibrant_alloy_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vibrant_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301299E71F676C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013744D75CDE7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011B5F4763E7A",
+      "x": -10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:grains_of_infinity",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_grains_of_infinity",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:grains_of_infinity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301236CF32BA87"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013723E932795",
+          "type": "item",
+          "item": {
+            "id": "exdeorum:dust",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011AC2178359B",
+      "x": -4.95,
+      "y": 4.3,
+      "icon": {
+        "id": "enderio:energetic_alloy_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_energetic_alloy_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EDCD7BF304"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130137C23777D5F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011C98821DCE8",
+      "x": -10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "enderio:redstone_alloy_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_redstone_alloy_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130125004C136D9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136240FD7A6A",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011725F799C0A",
+      "x": -7.95,
+      "y": 4.3,
+      "icon": {
+        "id": "enderio:conductive_alloy_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_conductive_alloy_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301233A0BD0F53"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013DF78306E85",
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301102C5F5EF51",
+      "x": -1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "enderio:pulsating_alloy_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_pulsating_alloy_ingot",
+        "qm_v040",
+        "plain_instruction"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120E4BF4EEB6"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A7E8B87CCC",
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111DBA46A20B",
+      "x": -7.95,
+      "y": 6.8,
+      "icon": {
+        "id": "enderio:dark_steel_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_dark_steel_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_steel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301250DFCF497B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B5D5E764E4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011BBFAA4813B",
+      "x": -4.95,
+      "y": 6.8,
+      "icon": {
+        "id": "enderio:end_steel_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_end_steel_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:end_steel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EFFCD5589B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301383592041A0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011D9AD5BA43B",
+      "x": -7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:silicon",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_silicon",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:silicon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012ABA8596764"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130134A4CCA9CC1",
+          "type": "item",
+          "item": {
+            "id": "enderio:silicon",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011E8D057E271",
+      "x": 1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:basic_capacitor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_basic_capacitor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120E7CF8F086"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138E4A78F39A",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011841D3B76CA",
+      "x": 4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:double_layer_capacitor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_double_layer_capacitor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E8D057E271"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120DA8BECB26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A67C7A9F45",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 8,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130118049B3B5BA",
+      "x": -4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:void_chassis",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_1",
+        "item_enderio_void_chassis",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:void_chassis",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012350EF85752"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C333641A80",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130116AAAF4B959",
+      "x": -4.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:energy"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_energy",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_energy",
+          "criterion": "",
+          "id": "51301254BDC11A17"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013CB572C6915",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:energy"
+            }
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130114AE9005E27",
+      "x": -1.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:enhanced_energy"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_enhanced_energy",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_enhanced_energy",
+          "criterion": "",
+          "id": "513012E734260CFD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301383786E0139",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:enhanced_energy"
+            }
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130119426F8E5C3",
+      "x": 1.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:item"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_item",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_item",
+          "criterion": "",
+          "id": "51301262BC20AF57"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C867A67CEC",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:item"
+            }
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011B05E2E9113",
+      "x": 4.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:enhanced_item"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_enhanced_item",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_enhanced_item",
+          "criterion": "",
+          "id": "5130127AF40A2854"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D21947C43D",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:enhanced_item"
+            }
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011E370A685E5",
+      "x": 7.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:fluid"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_fluid",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_fluid",
+          "criterion": "",
+          "id": "5130125FFF5152C3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E6BBDB7B29",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:fluid"
+            }
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130110FC0DFEDC3",
+      "x": 10.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:pressurized_fluid"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_pressurized_fluid",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_pressurized_fluid",
+          "criterion": "",
+          "id": "513012B721DF45DF"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013ED29668858",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:pressurized_fluid"
+            }
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130115B49AE7E7C",
+      "x": 1.95,
+      "y": 13.7,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:redstone"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "enderio_conduit_redstone",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_redstone",
+          "criterion": "",
+          "id": "513012223212E124"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013AE70106538",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:redstone"
+            }
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301189AE52B1F5",
+      "x": -10.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:sag_mill",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_sag_mill",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6",
+        "5130118049B3B5BA"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:sag_mill",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301253901CEB47"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136F27025092",
+          "type": "item",
+          "item": {
+            "id": "kubejs:electromechanical_drive",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111869DF4496",
+      "x": -10.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit_binder_composite",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_conduit_binder_composite",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder_composite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012AD05666AC6"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013DDFC629D0D",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder_composite",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011FD63F841AE",
+      "x": -7.95,
+      "y": 11.2,
+      "icon": {
+        "id": "enderio:conduit_binder",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_conduit_binder",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130111869DF4496",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F112D11CE0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013DC350C6393",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130118E25820DD5",
+      "x": 7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:pulsating_crystal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_pulsating_crystal",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301209D9FCED57"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301361679E319F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011FF94962AA3",
+      "x": 10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:vibrant_crystal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_vibrant_crystal",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vibrant_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123DBBDC43D0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138FE76DF708",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301138C137BDAD",
+      "x": 1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "enderio:ender_crystal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_ender_crystal",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:ender_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128BC3A5C4DD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130134EEC4A8E81",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011C540A7B224",
+      "x": 4.95,
+      "y": 13.7,
+      "icon": {
+        "id": "enderio:basic_item_filter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_basic_item_filter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301176F3997CB9",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301206D5A9F5D4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139434BE101C",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_item_filter",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011FDA169E434",
+      "x": 7.95,
+      "y": 13.7,
+      "icon": {
+        "id": "enderio:advanced_item_filter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_advanced_item_filter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:advanced_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301279A17DCAE3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301365F7FA4598",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130112CBAC535EA",
+      "x": 10.95,
+      "y": 13.7,
+      "icon": {
+        "id": "enderio:limited_item_filter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_limited_item_filter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011FDA169E434"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:limited_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A1EF1F3FB7"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138BB58C060B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011F31A34A8F8",
+      "x": 1.95,
+      "y": 16.2,
+      "icon": {
+        "id": "enderio:conduit_probe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_conduit_probe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_probe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301235C4C13133"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301391E1A00167",
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011734EE3175F",
+      "x": 4.95,
+      "y": 16.2,
+      "icon": {
+        "id": "enderio:basic_fluid_filter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_basic_fluid_filter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011183B7E03D8",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_fluid_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130126B603A84FB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130132C0BEF3624",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_fluid_filter",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130118E40386623",
+      "x": 7.95,
+      "y": 16.2,
+      "icon": {
+        "id": "enderio:basic_chemical_filter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_enderio_basic_chemical_filter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_chemical_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128F5C1FD6A4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013DB8E20A5F4",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_chemical_filter",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301146B3D81FD6",
+      "x": -10.95,
+      "y": 13.7,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:ender_energy"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "enderio_conduit_ender_energy",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_ender_energy",
+          "criterion": "",
+          "id": "51301224B2E3A3B2"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301389AEFE038E",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:ender_energy"
+            }
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011107F0255F3",
+      "x": 10.95,
+      "y": 16.2,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:ender_item"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "enderio_conduit_ender_item",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_ender_item",
+          "criterion": "",
+          "id": "513012EE248E9E10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301316157FB7F2",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:ender_item"
+            }
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130111E28B22B76",
+      "x": 1.95,
+      "y": 18.7,
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1,
+        "components": {
+          "enderio:conduit": "enderio:ender_fluid"
+        }
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "enderio_conduit_ender_fluid",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/enderio_conduit_ender_fluid",
+          "criterion": "",
+          "id": "5130127DDDBE35C4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130443ADE4C4",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1,
+            "components": {
+              "enderio:conduit": "enderio:ender_fluid"
+            }
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130114938E63897",
+      "x": -1.95,
+      "y": 6.8,
+      "icon": {
+        "id": "enderio:soularium_ingot",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_soularium_ingot",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649",
+        "514011487657F862"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012DD1132FF0D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013CEFD29CFF9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301110F3A4858C",
+      "x": 1.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:soul_vial",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_soul_vial",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124C77FD9A1C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301308C6A28D54",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301148615D2591",
+      "x": 4.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:soul_binder",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_soul_binder",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301110F3A4858C",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_binder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012862146455C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013AF260BDB13",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301167AE8889AA",
+      "x": 7.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:powered_spawner",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_powered_spawner",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:powered_spawner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301203F6483C33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139A8997083F",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130114A639B43DA",
+      "x": -7.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:slice_and_splice",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_slice_and_splice",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:slice_and_splice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E46973509A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136167F29325",
+          "type": "item",
+          "item": {
+            "id": "kubejs:arcane_conduit",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301140FB4C14AE",
+      "x": -4.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:vacuum_chest",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_vacuum_chest",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vacuum_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301250B5E2214D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130133CAD087C32",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011AF7BCC8C7E",
+      "x": -1.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:impulse_hopper",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_impulse_hopper",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301176F3997CB9",
+        "5130118049B3B5BA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:impulse_hopper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130125FBEE3EC14"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013468D337C45",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119DF4466A66",
+      "x": -10.95,
+      "y": 25.6,
+      "icon": {
+        "id": "enderio:crafter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_crafter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301166893DC2DA",
+        "5130118049B3B5BA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130121CEBF45EAA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130131AF0838B5A",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130118BFEDE7D48",
+      "x": 10.95,
+      "y": 23.1,
+      "icon": {
+        "id": "enderio:aversion_obelisk",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_aversion_obelisk",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:aversion_obelisk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120E988B21B8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D74533F9C1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011F0F034B9F6",
+      "x": 1.95,
+      "y": 25.6,
+      "icon": {
+        "id": "enderio:inhibitor_obelisk",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_inhibitor_obelisk",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301138C137BDAD",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:inhibitor_obelisk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E15BA285CB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D96E30BC52",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130117801127762",
+      "x": -7.95,
+      "y": 25.6,
+      "icon": {
+        "id": "enderio:vat",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_vat",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130118049B3B5BA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vat",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301223114A3DB9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B9EADCAAAF",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111D0F34D9B7",
+      "x": -4.95,
+      "y": 25.6,
+      "icon": {
+        "id": "enderio:enchanter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_enchanter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:enchanter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EC921A4507"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A05C64E445",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011AA9C81A28D",
+      "x": -10.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:travel_anchor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_travel_anchor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011FD63F841AE",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:travel_anchor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012078E872C32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F3D7D7CBCD",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113D7D320C50",
+      "x": -7.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:staff_of_travelling",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_staff_of_travelling",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:staff_of_travelling",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012AEBD67AE09"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013FFFEDBC6FF",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130111D94D99E2B",
+      "x": 1.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:basic_capacitor_bank",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_basic_capacitor_bank",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E8D057E271",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor_bank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C7C20FBC8B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D8C495FD30",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011FDD244B182",
+      "x": 4.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:advanced_capacitor_bank",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_advanced_capacitor_bank",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011841D3B76CA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:advanced_capacitor_bank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012CA2994B6C3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301375E2F44141",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011BF7BA29A4B",
+      "x": 7.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:vibrant_capacitor_bank",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_vibrant_capacitor_bank",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vibrant_capacitor_bank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128D3BA4831D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A8FC09BA41",
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011D09E534066",
+      "x": 10.95,
+      "y": 30.0,
+      "icon": {
+        "id": "enderio:energetic_photovoltaic_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_energetic_photovoltaic_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011E8D057E271",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_photovoltaic_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B0304EB458"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F9FE3DCFB7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130118ED672EF1E",
+      "x": 1.95,
+      "y": 32.5,
+      "icon": {
+        "id": "enderio:pulsating_photovoltaic_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_pulsating_photovoltaic_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011841D3B76CA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_photovoltaic_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130122209233441"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013ECD306AFF2",
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011D5BDA26046",
+      "x": 4.95,
+      "y": 32.5,
+      "icon": {
+        "id": "enderio:vibrant_photovoltaic_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_vibrant_photovoltaic_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:vibrant_photovoltaic_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012648D32B0A1"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013BCA9C652FF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011403518CC36",
+      "x": 7.95,
+      "y": 32.5,
+      "icon": {
+        "id": "enderio:wireless_charger",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_enderio_wireless_charger",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130118049B3B5BA",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:wireless_charger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130125F8520265D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301386B03307C9",
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011487657F862",
+      "x": -1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "enderio:alloy_smelter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011A4BB290307",
+        "5130118049B3B5BA",
+        "513011E734464E5D"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "enderio:alloy_smelter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401233B6860633"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401385C2766AE6",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    }
+  ],
+  "images": [
+    {
+      "id": "514104100000023D",
+      "x": 0.0,
+      "y": -2.25,
+      "width": 24.9,
+      "height": 0.8,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "514104100000023E",
+      "x": 0.0,
+      "y": -1.37,
+      "width": 24.9,
+      "height": 0.43,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "514104100000023F",
+      "x": 0.0,
+      "y": -0.71,
+      "width": 24.9,
+      "height": 0.1,
+      "rotation": 0.0,
+      "image": "color:#FF425875",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000240",
+      "x": 0.0,
+      "y": 2.8,
+      "width": 1.0,
+      "height": 1.0,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -20
+    },
+    {
+      "id": "5141041000000241",
+      "x": -6.45,
+      "y": 4.34,
+      "width": 12.0,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000242",
+      "x": -12.395,
+      "y": 4.34,
+      "width": 0.11,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000243",
+      "x": -6.37,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000244",
+      "x": -10.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000245",
+      "x": -7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000246",
+      "x": -4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000247",
+      "x": -1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000248",
+      "x": -10.95,
+      "y": 5.42,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000249",
+      "x": -7.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024A",
+      "x": -4.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024B",
+      "x": -1.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024C",
+      "x": -10.95,
+      "y": 7.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024D",
+      "x": -7.95,
+      "y": 7.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024E",
+      "x": -4.95,
+      "y": 7.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000024F",
+      "x": -1.95,
+      "y": 7.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000250",
+      "x": 6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000251",
+      "x": 0.505,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000252",
+      "x": 6.53,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000253",
+      "x": 1.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000254",
+      "x": 4.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000255",
+      "x": 7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000256",
+      "x": 10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000257",
+      "x": 1.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000258",
+      "x": -6.45,
+      "y": 12.49,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000259",
+      "x": -12.395,
+      "y": 12.49,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E88ABC7B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000025A",
+      "x": -6.37,
+      "y": 9.84,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000025B",
+      "x": -10.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000025C",
+      "x": -7.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000025D",
+      "x": -4.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000025E",
+      "x": -1.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000025F",
+      "x": -10.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000260",
+      "x": 6.45,
+      "y": 14.99,
+      "width": 12.0,
+      "height": 11.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000261",
+      "x": 0.505,
+      "y": 14.99,
+      "width": 0.11,
+      "height": 11.18,
+      "rotation": 0.0,
+      "image": "color:#E8B899DE",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000262",
+      "x": 6.53,
+      "y": 9.84,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000263",
+      "x": 1.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000264",
+      "x": 4.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000265",
+      "x": 7.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000266",
+      "x": 10.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000267",
+      "x": 1.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000268",
+      "x": 4.95,
+      "y": 14.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000269",
+      "x": 7.95,
+      "y": 14.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026A",
+      "x": 10.95,
+      "y": 14.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026B",
+      "x": 1.95,
+      "y": 17.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026C",
+      "x": 4.95,
+      "y": 17.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026D",
+      "x": 7.95,
+      "y": 17.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026E",
+      "x": 10.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000026F",
+      "x": 1.95,
+      "y": 19.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000270",
+      "x": -6.45,
+      "y": 24.39,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000271",
+      "x": -12.395,
+      "y": 24.39,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8D88D77",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000272",
+      "x": -6.37,
+      "y": 21.74,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000273",
+      "x": -10.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000274",
+      "x": -7.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000275",
+      "x": -4.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000276",
+      "x": -1.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000277",
+      "x": -10.95,
+      "y": 26.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000278",
+      "x": -7.95,
+      "y": 26.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000279",
+      "x": -4.95,
+      "y": 26.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000027A",
+      "x": 6.45,
+      "y": 24.39,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000027B",
+      "x": 0.505,
+      "y": 24.39,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E873BDB7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000027C",
+      "x": 6.53,
+      "y": 21.74,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000027D",
+      "x": 1.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000027E",
+      "x": 4.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000027F",
+      "x": 7.95,
+      "y": 24.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000280",
+      "x": 10.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000281",
+      "x": 1.95,
+      "y": 26.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000282",
+      "x": -6.45,
+      "y": 30.04,
+      "width": 12.0,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000283",
+      "x": -12.395,
+      "y": 30.04,
+      "width": 0.11,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000284",
+      "x": -6.37,
+      "y": 28.64,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000285",
+      "x": -10.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000286",
+      "x": -7.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000287",
+      "x": 6.45,
+      "y": 31.29,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000288",
+      "x": 0.505,
+      "y": 31.29,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000289",
+      "x": 6.53,
+      "y": 28.64,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000028A",
+      "x": 1.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000028B",
+      "x": 4.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000028C",
+      "x": 7.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000028D",
+      "x": 10.95,
+      "y": 31.12,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000028E",
+      "x": 1.95,
+      "y": 33.62,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000028F",
+      "x": 4.95,
+      "y": 33.62,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000290",
+      "x": 7.95,
+      "y": 33.62,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    }
+  ],
+  "autofocus_id": "5141041000000240"
+}

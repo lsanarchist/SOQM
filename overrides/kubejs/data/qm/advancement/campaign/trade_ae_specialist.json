@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "trade": {
+      "trigger": "minecraft:villager_trade",
+      "conditions": {
+        "villager": {
+          "type": "minecraft:villager",
+          "nbt": "{VillagerData:{profession:\"ae_better_villagers:ae_specialist\"}}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "trade"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

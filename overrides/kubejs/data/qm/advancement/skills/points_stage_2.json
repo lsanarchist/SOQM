@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "stage_component": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kubejs:precision_mechanism"
+            ],
+            "count": {
+              "min": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "qm:skills/points_stage_2"
+  }
+}

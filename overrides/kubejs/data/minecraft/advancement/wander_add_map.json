@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "wandering": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:wandering_trader"
+        }
+      }
+    }
+  }
+}

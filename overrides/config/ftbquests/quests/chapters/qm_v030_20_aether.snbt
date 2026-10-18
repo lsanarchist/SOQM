@@ -1,0 +1,3928 @@
+{
+  "id": "5130103754E07063",
+  "group": "5141042000000006",
+  "order_index": 2,
+  "filename": "qm_v030_20_aether",
+  "icon": {
+    "id": "aether:zanite_gemstone",
+    "count": 1
+  },
+  "default_quest_shape": "rsquare",
+  "default_hide_dependency_lines": false,
+  "consume_items": false,
+  "hide_quest_details_until_startable": false,
+  "hide_quest_until_deps_visible": false,
+  "hide_quest_until_deps_complete": false,
+  "default_repeatable_quest": false,
+  "quests": [
+    {
+      "id": "5130116E4F360239",
+      "x": -10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_enter_aether",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:enter_aether",
+          "criterion": "",
+          "id": "513012E534367EAB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013CA4F17F3F5",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130111A101FFA81",
+      "x": 1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:gravitite_ore",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_gravitite_ore",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:gravitite_ore",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123641C6AC2E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130691A49BBD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011039AD8F208",
+      "x": 4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:enchanted_gravitite",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_enchanted_gravitite",
+        "qm_v040",
+        "plain_instruction"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "5130111A101FFA81"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:enchanted_gravitite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B85856A896"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C95263FD47",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301149805BC266",
+      "x": -4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_read_lore",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:read_lore",
+          "criterion": "",
+          "id": "51301274AAB77D33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A2B3D65BE0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130118F19BC727C",
+      "x": 1.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_bronze_dungeon",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:bronze_dungeon",
+          "criterion": "",
+          "id": "513012179EB943A8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301382F0A3B42E",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130115D5E2B60E3",
+      "x": 4.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_silver_dungeon",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130118F19BC727C"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:silver_dungeon",
+          "criterion": "",
+          "id": "513012B7C6700A24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130133E6786529D",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011A4DACB4F03",
+      "x": -10.95,
+      "y": 16.2,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_mount_phyg",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:mount_phyg",
+          "criterion": "",
+          "id": "5130126FF4C2A7C9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E98FDF9476",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011A74513CFCB",
+      "x": -7.95,
+      "y": 16.2,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "native_aether_incubate_moa",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:incubate_moa",
+          "criterion": "",
+          "id": "5130124E92100430"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013615E62BF31",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130113ABE2D5811",
+      "x": -7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:book_of_lore",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_book_of_lore",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:book_of_lore",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301289EE61BEB1"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013134B5F5C9A",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011C28458D458",
+      "x": -1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:skyroot_pickaxe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_skyroot_pickaxe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A77D97C965"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136C48B9943A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130114DDE257C60",
+      "x": -10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "aether:skyroot_axe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_skyroot_axe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012CCBF8A9EA7"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013BC8054FB7F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301111EAF306DB",
+      "x": -7.95,
+      "y": 4.3,
+      "icon": {
+        "id": "aether:skyroot_bucket",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_skyroot_bucket",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130122922D49367"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013302E57DE55",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bucket",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011398C8DE26E",
+      "x": -4.95,
+      "y": 4.3,
+      "icon": {
+        "id": "aether:skyroot_water_bucket",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_skyroot_water_bucket",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012104B929944"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F95A00CECF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bucket",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011290820DF0B",
+      "x": -1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "aether:holystone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_holystone",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:holystone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F9929419CA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139B126AE67D",
+          "type": "item",
+          "item": {
+            "id": "aether:holystone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301124F527E285",
+      "x": -10.95,
+      "y": 6.8,
+      "icon": {
+        "id": "aether:holystone_pickaxe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_holystone_pickaxe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011290820DF0B"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:holystone_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F3977544C0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C744CB2217",
+          "type": "item",
+          "item": {
+            "id": "aether:holystone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119F9D03462A",
+      "x": -7.95,
+      "y": 6.8,
+      "icon": {
+        "id": "aether:holystone_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_holystone_sword",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011290820DF0B"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:holystone_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B340627D00"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130463469422",
+          "type": "item",
+          "item": {
+            "id": "aether:holystone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011BE0B81B33E",
+      "x": -4.95,
+      "y": 6.8,
+      "icon": {
+        "id": "aether:ambrosium_shard",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_ambrosium_shard",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012AC74FE651E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301313D9B94354",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301113EB45CA6C",
+      "x": -1.95,
+      "y": 6.8,
+      "icon": {
+        "id": "aether:ambrosium_torch",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_ambrosium_torch",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_torch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A277293496"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C3F58D168F",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119E04316FD9",
+      "x": -10.95,
+      "y": 9.3,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_zanite_gemstone",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012D746F46A4B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138FC02D0CB8",
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011482492F3B8",
+      "x": -10.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:cold_aercloud",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_cold_aercloud",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:cold_aercloud",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301292789A327F"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136A51214D0E",
+          "type": "item",
+          "item": {
+            "id": "aether:cold_aercloud",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113516A2F6B6",
+      "x": -7.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:cold_parachute",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_cold_parachute",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011482492F3B8",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:cold_parachute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301252EEBA47BA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B9132B01A6",
+          "type": "item",
+          "item": {
+            "id": "aether:cold_aercloud",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011A1E01F01C2",
+      "x": -4.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:golden_aercloud",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_golden_aercloud",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011482492F3B8"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:golden_aercloud",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012D0EFE374A8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013658F66A589",
+          "type": "item",
+          "item": {
+            "id": "aether:cold_aercloud",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119FB3C70221",
+      "x": -1.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:golden_parachute",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_golden_parachute",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011A1E01F01C2",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:golden_parachute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C50C8C1DFD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130132B8FC1E177",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011E47BD9C066",
+      "x": 7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:gravitite_pickaxe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_gravitite_pickaxe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:gravitite_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301253D9C72858"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301389BCF934AD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130112CB0EEB83C",
+      "x": 10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "aether:gravitite_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_gravitite_sword",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:gravitite_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C9BE25E15C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E066D7CBE3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130114D66996FF4",
+      "x": 1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "aether:gravitite_axe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_gravitite_axe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:gravitite_axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F8A59C2545"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301384774710DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011971FF0B3C1",
+      "x": 10.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:bronze_dungeon_key",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_bronze_dungeon_key",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:bronze_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128A38A6E1CA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301320B3DAC543",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011E2BC282EC8",
+      "x": 1.95,
+      "y": 16.2,
+      "icon": {
+        "id": "aether:silver_dungeon_key",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_silver_dungeon_key",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:silver_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A98172B63D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C72CA1345B",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011B798EAE220",
+      "x": 7.95,
+      "y": 16.2,
+      "icon": {
+        "id": "aether:gold_dungeon_key",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_gold_dungeon_key",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:gold_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A6D4300BBE"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301357BFFE723A",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011332FFE578D",
+      "x": 4.95,
+      "y": 16.2,
+      "icon": {
+        "id": "aether:victory_medal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_victory_medal",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:victory_medal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124C35780C01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B3DF2117F0",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011F6BD8455A6",
+      "x": -10.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:flaming_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_flaming_sword",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:flaming_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123C5644B58A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301317D73788B2",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011A5FED0B898",
+      "x": -7.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:lightning_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_lightning_sword",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:lightning_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301259B449C846"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139862FF3C30",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130115C7A45DD78",
+      "x": -4.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:holy_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_holy_sword",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:holy_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120D7B8EBD95"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D1C9FD7E84",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113693977208",
+      "x": -1.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:vampire_blade",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_vampire_blade",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:vampire_blade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301299B48D634E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301363019C927A",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011F00E8C341C",
+      "x": -10.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:valkyrie_lance",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_valkyrie_lance",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:valkyrie_lance",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301289E058BB54"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E9401C1541",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301101A6CE6540",
+      "x": -7.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:hammer_of_kingbdogz",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_hammer_of_kingbdogz",
+        "qm_v040",
+        "plain_instruction"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:hammer_of_kingbdogz",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301288FD66BCE9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B5C87F06B8",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130115FB6837630",
+      "x": 1.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:iron_ring",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_iron_ring",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "514D010000000005",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:iron_ring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012272D61DE1E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013994C561D88",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011766F235B2D",
+      "x": 4.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:golden_ring",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_golden_ring",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:golden_ring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301281EA4CDB5C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C27780C884",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011E994EB6B01",
+      "x": 7.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:zanite_ring",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_zanite_ring",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_ring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301240F88D806C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139738258783",
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119DC8D77B70",
+      "x": 10.95,
+      "y": 20.6,
+      "icon": {
+        "id": "aether:ice_ring",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_ice_ring",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:ice_ring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012364AE78376"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B0116C1188",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011BA51321198",
+      "x": 1.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:iron_pendant",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_iron_pendant",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "514D010000000005",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:iron_pendant",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E1B7D9883C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301366F505D546",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011EEBB78BE72",
+      "x": 4.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:golden_pendant",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_golden_pendant",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:golden_pendant",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E570496D38"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C68F52F3BB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111F5B556282",
+      "x": 7.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:zanite_pendant",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_zanite_pendant",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_pendant",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120AB51F9FDD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F97CB0CCEE",
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 16,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011B85804D54E",
+      "x": 10.95,
+      "y": 23.1,
+      "icon": {
+        "id": "aether:ice_pendant",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_ice_pendant",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:ice_pendant",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012944C4E820D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130135451EAD692",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301123408869F1",
+      "x": -10.95,
+      "y": 27.5,
+      "icon": {
+        "id": "aether:golden_feather",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_golden_feather",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:golden_feather",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012A2296AF629"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130986AF6AAD",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111D8A348F48",
+      "x": -7.95,
+      "y": 27.5,
+      "icon": {
+        "id": "aether:regeneration_stone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_regeneration_stone",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:regeneration_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301223931AC544"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301316E2E132CD",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011F13D35331B",
+      "x": -4.95,
+      "y": 27.5,
+      "icon": {
+        "id": "aether:life_shard",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_life_shard",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:life_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128A57C8CACA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136B7AF074FC",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011A98B755FBB",
+      "x": -1.95,
+      "y": 27.5,
+      "icon": {
+        "id": "aether:invisibility_cloak",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_invisibility_cloak",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:invisibility_cloak",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EA545D7546"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013268351A8E0",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113B0A4BAC35",
+      "x": -10.95,
+      "y": 30.0,
+      "icon": {
+        "id": "aether:agility_cape",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_aether_agility_cape",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130116E4F360239",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "aether:agility_cape",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128BB487D461"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B211E98C55",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119EE81754B1",
+      "x": 7.95,
+      "y": 13.7,
+      "icon": {
+        "id": "aether:zanite_gemstone",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_4",
+        "native_aether_gold_dungeon",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115D5E2B60E3",
+        "5130117F2402AE8A"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aether:gold_dungeon",
+          "criterion": "",
+          "id": "513012BA2C327EAF"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D66F0ACD70",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    }
+  ],
+  "images": [
+    {
+      "id": "5141041000000627",
+      "x": 0.0,
+      "y": -2.25,
+      "width": 24.9,
+      "height": 0.8,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "5141041000000628",
+      "x": 0.0,
+      "y": -1.37,
+      "width": 24.9,
+      "height": 0.43,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "5141041000000629",
+      "x": 0.0,
+      "y": -0.71,
+      "width": 24.9,
+      "height": 0.1,
+      "rotation": 0.0,
+      "image": "color:#FF425875",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000062A",
+      "x": 0.0,
+      "y": 2.8,
+      "width": 1.0,
+      "height": 1.0,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -20
+    },
+    {
+      "id": "514104100000062B",
+      "x": -6.45,
+      "y": 5.59,
+      "width": 12.0,
+      "height": 11.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000062C",
+      "x": -12.395,
+      "y": 5.59,
+      "width": 0.11,
+      "height": 11.18,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000062D",
+      "x": -6.37,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000062E",
+      "x": -10.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000062F",
+      "x": -7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000630",
+      "x": -4.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000631",
+      "x": -1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000632",
+      "x": -10.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000633",
+      "x": -7.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000634",
+      "x": -4.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000635",
+      "x": -1.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000636",
+      "x": -10.95,
+      "y": 7.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000637",
+      "x": -7.95,
+      "y": 7.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000638",
+      "x": -4.95,
+      "y": 7.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000639",
+      "x": -1.95,
+      "y": 7.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000063A",
+      "x": -10.95,
+      "y": 10.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000063B",
+      "x": 6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000063C",
+      "x": 0.505,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000063D",
+      "x": 6.53,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000063E",
+      "x": 1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000063F",
+      "x": 4.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000640",
+      "x": 7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000641",
+      "x": 10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000642",
+      "x": 1.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000643",
+      "x": -6.45,
+      "y": 14.99,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000644",
+      "x": -12.395,
+      "y": 14.99,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E88ABC7B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000645",
+      "x": -6.37,
+      "y": 12.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000646",
+      "x": -10.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000647",
+      "x": -7.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000648",
+      "x": -4.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000649",
+      "x": -1.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000064A",
+      "x": -10.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000064B",
+      "x": -7.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000064C",
+      "x": 6.45,
+      "y": 14.99,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000064D",
+      "x": 0.505,
+      "y": 14.99,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8B899DE",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000064E",
+      "x": 6.53,
+      "y": 12.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000064F",
+      "x": 1.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000650",
+      "x": 4.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000651",
+      "x": 7.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000652",
+      "x": 10.95,
+      "y": 14.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000653",
+      "x": 1.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000654",
+      "x": 4.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000655",
+      "x": 7.95,
+      "y": 17.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000656",
+      "x": -6.45,
+      "y": 21.89,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000657",
+      "x": -12.395,
+      "y": 21.89,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8D88D77",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000658",
+      "x": -6.37,
+      "y": 19.24,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000659",
+      "x": -10.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065A",
+      "x": -7.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065B",
+      "x": -4.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065C",
+      "x": -1.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065D",
+      "x": -10.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065E",
+      "x": -7.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000065F",
+      "x": 6.45,
+      "y": 21.89,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000660",
+      "x": 0.505,
+      "y": 21.89,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E873BDB7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000661",
+      "x": 6.53,
+      "y": 19.24,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000662",
+      "x": 1.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000663",
+      "x": 4.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000664",
+      "x": 7.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000665",
+      "x": 10.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000666",
+      "x": 1.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000667",
+      "x": 4.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000668",
+      "x": 7.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000669",
+      "x": 10.95,
+      "y": 24.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000066A",
+      "x": -6.45,
+      "y": 28.79,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000066B",
+      "x": -12.395,
+      "y": 28.79,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000066C",
+      "x": -6.37,
+      "y": 26.14,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000066D",
+      "x": -10.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000066E",
+      "x": -7.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000066F",
+      "x": -4.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000670",
+      "x": -1.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000671",
+      "x": -10.95,
+      "y": 30.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    }
+  ],
+  "autofocus_id": "514104100000062A"
+}

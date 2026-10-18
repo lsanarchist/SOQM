@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "formed": {
+      "trigger": "immersiveengineering:multiblock_formed",
+      "conditions": {
+        "hammer": {
+          "items": "immersiveengineering:hammer"
+        },
+        "multiblock": "immersiveengineering:multiblocks/auto_workbench"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "formed"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

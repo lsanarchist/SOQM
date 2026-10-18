@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="qm_cannibal_compat"
+version="0.4.0"
+displayName="Mayhem Cannibal Compatibility"
+authors="Questing Mayhem Rebuild maintainers"
+description='''Keeps underwater loot containers and player inventories intact with Cannibal Villages 2.4.9 and Lootr. Crafted submerged repair chests retain their normal function.'''
+
+[[dependencies.qm_cannibal_compat]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qm_cannibal_compat]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qm_cannibal_compat]]
+modId="cannibalvillages"
+type="required"
+versionRange="[2.4.9]"
+ordering="AFTER"
+side="BOTH"
+
+[[mixins]]
+config="qm_cannibal_compat.mixins.json"

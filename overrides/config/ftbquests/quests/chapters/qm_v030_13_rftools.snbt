@@ -1,0 +1,4709 @@
+{
+  "id": "51301041730B8A2D",
+  "group": "5141042000000004",
+  "order_index": 2,
+  "filename": "qm_v030_13_rftools",
+  "icon": {
+    "id": "rftoolsbuilder:builder",
+    "count": 1
+  },
+  "default_quest_shape": "rsquare",
+  "default_hide_dependency_lines": false,
+  "consume_items": false,
+  "hide_quest_details_until_startable": false,
+  "hide_quest_until_deps_visible": false,
+  "hide_quest_until_deps_complete": false,
+  "default_repeatable_quest": false,
+  "quests": [
+    {
+      "id": "5130112CBCED844F",
+      "x": -10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsbase:manual",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_manual",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:manual",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120B16C53923"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E64374FB26",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011CB66DEB469",
+      "x": -7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsbase:smartwrench",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_smartwrench",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:smartwrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B02EA2EB0F"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130837F841C5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130115973A031FC",
+      "x": -4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsbase:machine_base",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_machine_base",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:machine_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301285A9BBB5B4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136137B1A870",
+          "type": "item",
+          "item": {
+            "id": "aether:holystone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130119AD1F9E96E",
+      "x": -1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsbase:machine_frame",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_machine_frame",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:machine_frame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124F3501F74E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301377CB7C36B2",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301102809E201A",
+      "x": -10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsbase:dimensionalshard",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_dimensionalshard",
+        "qm_v040",
+        "plain_instruction"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:dimensionalshard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301210D28BA6E5"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013CC9E009609",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011ADFFB9890C",
+      "x": -7.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsbase:infused_diamond",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_infused_diamond",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:infused_diamond",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301207A953A52E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130132157A6068E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130117132F1BA9B",
+      "x": -4.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsbase:infused_enderpearl",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsbase_infused_enderpearl",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbase:infused_enderpearl",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301218B76A6AA3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A674B1CDF1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011E14C79560E",
+      "x": 1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsstorage:modular_storage",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsstorage_modular_storage",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsstorage:modular_storage",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C24602451D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301373D8E1B5E0",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111A3EA75731",
+      "x": 4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsstorage:storage_module0",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsstorage_storage_module0",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsstorage:storage_module0",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C8B0910023"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301349108295EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011FD6E526739",
+      "x": 7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsstorage:storage_module1",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsstorage_storage_module1",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsstorage:storage_module1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301236FD71DE4A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130131798DF2EDF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130115CD2DAF36E",
+      "x": 10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "rftoolsstorage:storage_module2",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsstorage_storage_module2",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsstorage:storage_module2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301237710D061A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130134AA26134A2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130110C02719C96",
+      "x": 1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsstorage:storage_module3",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_2",
+        "item_rftoolsstorage_storage_module3",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsstorage:storage_module3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012073F22CA6E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301305642F3648",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301199219AE3FE",
+      "x": 4.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsutility:crafter1",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_crafter1",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301166893DC2DA",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:crafter1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301221C9F0F668"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013890312456E",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011B67C063C69",
+      "x": 7.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsutility:crafter2",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_crafter2",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:crafter2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301248A37BA6C6"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A0BFBEAD96",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011CC15383729",
+      "x": 10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "rftoolsutility:crafter3",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_crafter3",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:crafter3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128B8A738C0F"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013736D0653A4",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011FC1C704211",
+      "x": -10.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:matter_transmitter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_matter_transmitter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649",
+        "5130119AD1F9E96E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:matter_transmitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130122189FD2BB2"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C1D8483DA0",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301136600E9A01",
+      "x": -7.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:matter_receiver",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_matter_receiver",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649",
+        "5130119AD1F9E96E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:matter_receiver",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301236B875D8B6"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013756E83C87F",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130110ABDB307BD",
+      "x": -4.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:dialing_device",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_dialing_device",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:dialing_device",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128155D33FD4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130135D7A0695C2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011A9EF1774F5",
+      "x": -1.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:simple_dialer",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_simple_dialer",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115973A031FC",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:simple_dialer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012636419B2F8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F4EC6BDD8B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011556C0F5A97",
+      "x": -10.95,
+      "y": 11.2,
+      "icon": {
+        "id": "rftoolsutility:charged_porter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_charged_porter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:charged_porter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124C8D7CC49D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013EA02DB5497",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130117C3E433F2B",
+      "x": -7.95,
+      "y": 11.2,
+      "icon": {
+        "id": "rftoolsutility:advanced_charged_porter",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_advanced_charged_porter",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:advanced_charged_porter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120EEDAB5786"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301376188B75E1",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130119ECCA2B161",
+      "x": -4.95,
+      "y": 11.2,
+      "icon": {
+        "id": "rftoolsutility:destination_analyzer",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_destination_analyzer",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:destination_analyzer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123A37EC6404"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130135383D39F36",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011CFF060293F",
+      "x": 1.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:screen",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_screen",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115973A031FC",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:screen",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120C846F37AB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A705C5B14E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011D5061AFAB0",
+      "x": 4.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:screen_controller",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_screen_controller",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:screen_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301212E75B3D5E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130139EDF4DB8CC",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113102728BD5",
+      "x": 7.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:screen_link",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_screen_link",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:screen_link",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120EFEB601C5"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130130B199C5F25",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011C785AE43D5",
+      "x": 10.95,
+      "y": 8.7,
+      "icon": {
+        "id": "rftoolsutility:energy_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_energy_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:energy_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B155664A40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013317C221356",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011B88AB8D75B",
+      "x": 1.95,
+      "y": 11.2,
+      "icon": {
+        "id": "rftoolsutility:fluid_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_fluid_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011183B7E03D8",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:fluid_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130120B06156CCB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138E160C96E0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011EB4178D3E6",
+      "x": 4.95,
+      "y": 11.2,
+      "icon": {
+        "id": "rftoolsutility:inventory_module",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsutility_inventory_module",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:inventory_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012981A415E66"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013133FD36F93",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130119AFFF720CF",
+      "x": -10.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolsbuilder:builder",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_builder",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649",
+        "5130119AD1F9E96E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:builder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012AB76DC6F04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130134810DEBB10",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130111256FB2CA4",
+      "x": -7.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_def",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_def",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_def",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012D04764F389"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301324C423E399",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130112BB3F7C4EB",
+      "x": -4.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_quarry",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_quarry",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_quarry",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123A09E007FC"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013CE8AFD8422",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011A405EDE3AB",
+      "x": -1.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_quarry_fortune",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_quarry_fortune",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_quarry_fortune",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F43FAD01DA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130132F19B63C4E",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130115F443CD91D",
+      "x": -10.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_quarry_silk",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_quarry_silk",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_quarry_silk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E2A342C17B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130132233DEBD06",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130113C85CAFA28",
+      "x": -7.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_pump",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_pump",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_pump",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130126E81BD7452"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C49D3EE76C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301131F0B631B0",
+      "x": -4.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_pump_clear",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_pump_clear",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_pump_clear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012700A30E7F5"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013EBAA964227",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130114D8A7C963E",
+      "x": -1.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_liquid",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_liquid",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_liquid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130125FEBA7AB9E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013325EED59C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301193720D5D84",
+      "x": -10.95,
+      "y": 20.6,
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_void",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_shape_card_void",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_void",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128D9E7AC835"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013FE36F81BFC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:black_dye",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130112E5069EB86",
+      "x": -7.95,
+      "y": 20.6,
+      "icon": {
+        "id": "rftoolsbuilder:scanner",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolsbuilder_scanner",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011ADFFB9890C",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:scanner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301286A7485957"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013737777EB12",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011CC97DA4C9B",
+      "x": 1.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolspower:coalgenerator",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_coalgenerator",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:coalgenerator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301211742FB8BD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301318C0161229",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130117240292B8E",
+      "x": 4.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolspower:cell1",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_cell1",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:cell1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012665E5AB711"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E14CBC00DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011D1C9E27BE4",
+      "x": 7.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolspower:cell2",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_cell2",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:cell2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012828C420DBB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B443C4C406",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51301100A7D9F653",
+      "x": 10.95,
+      "y": 15.6,
+      "icon": {
+        "id": "rftoolspower:cell3",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_cell3",
+        "qm_v040",
+        "plain_instruction"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:cell3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301272D42A4E4D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013170845F86F",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011609660A466",
+      "x": 1.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolspower:dimensionalcell_simple",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_dimensionalcell_simple",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:dimensionalcell_simple",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301237D92DB7EB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013FD1DA35845",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130115EEDA64954",
+      "x": 4.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolspower:dimensionalcell",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_dimensionalcell",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:dimensionalcell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B8DED5DA6C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013400E9CB16D",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130119B9A6344A6",
+      "x": 7.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolspower:dimensionalcell_advanced",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_dimensionalcell_advanced",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115EEDA64954",
+        "513011ADFFB9890C"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:dimensionalcell_advanced",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012484D511600"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013EA18E2D583",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011ADDC64CE6D",
+      "x": 10.95,
+      "y": 18.1,
+      "icon": {
+        "id": "rftoolspower:powercell_card",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_powercell_card",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:powercell_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012745E211DE9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B68C6E18FB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130119D00218CE6",
+      "x": 1.95,
+      "y": 20.6,
+      "icon": {
+        "id": "rftoolspower:power_monitor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_3",
+        "item_rftoolspower_power_monitor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130115973A031FC",
+        "513011AA869D0649"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolspower:power_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B7C56C91DB"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013F79B0B13AB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011D1FF814E23",
+      "x": -10.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:dimlet_workbench",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_dimlet_workbench",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301166893DC2DA",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:dimlet_workbench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EDBD59D51A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130137439B5EF12",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130114A65EF4CF0",
+      "x": -7.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:enscriber",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_enscriber",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130117F2402AE8A",
+        "51301166893DC2DA",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:enscriber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012263490A743"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E0770CBDF1",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011675037BC60",
+      "x": -4.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:dimension_builder",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_dimension_builder",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AEA75E4401",
+        "5130119AD1F9E96E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:dimension_builder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EDF4AE60FD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013698733D4DC",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011FC6CD40005",
+      "x": -1.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:dimension_editor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_dimension_editor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:dimension_editor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C8946DE0AA"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B5A827AE3F",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011B07AF737A1",
+      "x": -10.95,
+      "y": 27.5,
+      "icon": {
+        "id": "rftoolsdim:empty_dimension_tab",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_empty_dimension_tab",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:empty_dimension_tab",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F9110FCC34"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C2E871C4D0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "513011D9A7B833F9",
+      "x": -7.95,
+      "y": 27.5,
+      "icon": {
+        "id": "rftoolsdim:realized_dimension_tab",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_realized_dimension_tab",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:realized_dimension_tab",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012212AB03E89"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013080833EF52",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5130112B2ECBCBD4",
+      "x": -4.95,
+      "y": 27.5,
+      "icon": {
+        "id": "rftoolsdim:dimension_monitor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_dimension_monitor",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:dimension_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124D89B7A8F0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D9F6638EFD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011AD1A5A5D57",
+      "x": -1.95,
+      "y": 27.5,
+      "icon": {
+        "id": "rftoolsdim:activity_probe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_activity_probe",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A",
+        "5130117132F1BA9B",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:activity_probe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128732F8A7A1"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013ECF9AE36D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130114D0F8A3E64",
+      "x": 1.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:researcher",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_researcher",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "5130110539E774E4",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:researcher",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012F7D092455C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130133045202ED3",
+          "type": "item",
+          "item": {
+            "id": "kubejs:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130116CDD372DD8",
+      "x": 4.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:knowledge_holder",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_knowledge_holder",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011F253F82E4C",
+        "51301102809E201A",
+        "5130119AD1F9E96E",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:knowledge_holder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012910E602EC7"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301329DBC8E654",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011555532A97D",
+      "x": 7.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:biome_absorber",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_biome_absorber",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:biome_absorber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012C2A630C3AE"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130134EED61669A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011ABB7B23B90",
+      "x": 10.95,
+      "y": 25.0,
+      "icon": {
+        "id": "rftoolsdim:block_absorber",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_block_absorber",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "51301102809E201A",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:block_absorber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012E0BE212C09"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013C478157594",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130114BB60D0ED7",
+      "x": 1.95,
+      "y": 27.5,
+      "icon": {
+        "id": "rftoolsdim:fluid_absorber",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_5",
+        "item_rftoolsdim_fluid_absorber",
+        "qm_v040",
+        "humor"
+      ],
+      "dependencies": [
+        "514D010000000002",
+        "513011A41D3B7A48",
+        "51301102809E201A",
+        "513011AEA75E4401"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "rftoolsdim:fluid_absorber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301274F5B920C5"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301388AB1041CC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    }
+  ],
+  "images": [
+    {
+      "id": "5141041000000390",
+      "x": 0.0,
+      "y": -2.25,
+      "width": 24.9,
+      "height": 0.8,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "5141041000000391",
+      "x": 0.0,
+      "y": -1.37,
+      "width": 24.9,
+      "height": 0.43,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "5141041000000392",
+      "x": 0.0,
+      "y": -0.71,
+      "width": 24.9,
+      "height": 0.1,
+      "rotation": 0.0,
+      "image": "color:#FF425875",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000393",
+      "x": 0.0,
+      "y": 2.8,
+      "width": 1.0,
+      "height": 1.0,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -20
+    },
+    {
+      "id": "5141041000000394",
+      "x": -6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000395",
+      "x": -12.395,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000396",
+      "x": -6.37,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000397",
+      "x": -10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000398",
+      "x": -7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000399",
+      "x": -4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000039A",
+      "x": -1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000039B",
+      "x": -10.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000039C",
+      "x": -7.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000039D",
+      "x": -4.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000039E",
+      "x": 6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000039F",
+      "x": 0.505,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003A0",
+      "x": 6.53,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003A1",
+      "x": 1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A2",
+      "x": 4.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A3",
+      "x": 7.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A4",
+      "x": 10.95,
+      "y": 2.92,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A5",
+      "x": 1.95,
+      "y": 5.42,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A6",
+      "x": 4.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A7",
+      "x": 7.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A8",
+      "x": 10.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003A9",
+      "x": -6.45,
+      "y": 9.99,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003AA",
+      "x": -12.395,
+      "y": 9.99,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E88ABC7B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003AB",
+      "x": -6.37,
+      "y": 7.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003AC",
+      "x": -10.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003AD",
+      "x": -7.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003AE",
+      "x": -4.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003AF",
+      "x": -1.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B0",
+      "x": -10.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B1",
+      "x": -7.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B2",
+      "x": -4.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B3",
+      "x": 6.45,
+      "y": 9.99,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003B4",
+      "x": 0.505,
+      "y": 9.99,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8B899DE",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003B5",
+      "x": 6.53,
+      "y": 7.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003B6",
+      "x": 1.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B7",
+      "x": 4.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B8",
+      "x": 7.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003B9",
+      "x": 10.95,
+      "y": 9.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003BA",
+      "x": 1.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003BB",
+      "x": 4.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003BC",
+      "x": -6.45,
+      "y": 18.14,
+      "width": 12.0,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003BD",
+      "x": -12.395,
+      "y": 18.14,
+      "width": 0.11,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#E8D88D77",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003BE",
+      "x": -6.37,
+      "y": 14.24,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003BF",
+      "x": -10.95,
+      "y": 16.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C0",
+      "x": -7.95,
+      "y": 16.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C1",
+      "x": -4.95,
+      "y": 16.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C2",
+      "x": -1.95,
+      "y": 16.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C3",
+      "x": -10.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C4",
+      "x": -7.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C5",
+      "x": -4.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C6",
+      "x": -1.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C7",
+      "x": -10.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C8",
+      "x": -7.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003C9",
+      "x": 6.45,
+      "y": 18.14,
+      "width": 12.0,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003CA",
+      "x": 0.505,
+      "y": 18.14,
+      "width": 0.11,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#E873BDB7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003CB",
+      "x": 6.53,
+      "y": 14.24,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003CC",
+      "x": 1.95,
+      "y": 16.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003CD",
+      "x": 4.95,
+      "y": 16.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003CE",
+      "x": 7.95,
+      "y": 16.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003CF",
+      "x": 10.95,
+      "y": 16.72,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D0",
+      "x": 1.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D1",
+      "x": 4.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D2",
+      "x": 7.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D3",
+      "x": 10.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D4",
+      "x": 1.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D5",
+      "x": -6.45,
+      "y": 26.29,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003D6",
+      "x": -12.395,
+      "y": 26.29,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003D7",
+      "x": -6.37,
+      "y": 23.64,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003D8",
+      "x": -10.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003D9",
+      "x": -7.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DA",
+      "x": -4.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DB",
+      "x": -1.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DC",
+      "x": -10.95,
+      "y": 28.62,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DD",
+      "x": -7.95,
+      "y": 28.62,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DE",
+      "x": -4.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003DF",
+      "x": -1.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003E0",
+      "x": 6.45,
+      "y": 26.29,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000003E1",
+      "x": 0.505,
+      "y": 26.29,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000003E2",
+      "x": 6.53,
+      "y": 23.64,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000003E3",
+      "x": 1.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003E4",
+      "x": 4.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003E5",
+      "x": 7.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003E6",
+      "x": 10.95,
+      "y": 25.94,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000003E7",
+      "x": 1.95,
+      "y": 28.44,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    }
+  ],
+  "autofocus_id": "5141041000000393"
+}

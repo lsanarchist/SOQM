@@ -1,0 +1,87 @@
+{
+  "has_precipitation": true,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "temperature_modifier": "none",
+  "effects": {
+    "sky_color": 1118481,
+    "fog_color": 1118481,
+    "water_color": 204330,
+    "water_fog_color": 135448,
+    "mood_sound": {
+      "sound": "minecraft:ambient.underwater.loop",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:drowned",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "cannibalvillages:agua_viva_abissal",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "water_ambient": [
+      {
+        "type": "cannibalvillages:lula_gigante",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "cannibalvillages:tubarao_branco",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "underground_water_creature": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "cannibalvillages:rocky_outcrop_mar_sereias",
+      "cannibalvillages:arco_submarino_mar_sereias",
+      "cannibalvillages:bone_pile_mar_sereias",
+      "minecraft:warm_ocean_vegetation",
+      "minecraft:seagrass_deep",
+      "minecraft:kelp_cold",
+      "minecraft:sea_pickle"
+    ],
+    []
+  ]
+}

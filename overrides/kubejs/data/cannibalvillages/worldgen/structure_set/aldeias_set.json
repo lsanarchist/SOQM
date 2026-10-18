@@ -1,0 +1,21 @@
+{
+  "structures": [
+    {
+      "structure": "cannibalvillages:aldeia_pequena",
+      "weight": 2
+    },
+    {
+      "structure": "cannibalvillages:aldeia_grande",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 10,
+    "separation": 4,
+    "salt": 12345678,
+    "spread_type": "linear",
+    "frequency": 0.2,
+    "frequency_reduction_method": "default"
+  }
+}

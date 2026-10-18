@@ -1,0 +1,236 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/temple/mars/temple"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:mars"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "aether:chests/dungeon/gold/gold_dungeon_treasure"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "aether:the_aether"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "divinerpg:chests/twilight/skythern/hut"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "divinerpg:skythern"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/end_city_treasure"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_castle/greater_loot"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_castle/treasure_lighthouse"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_castle/vault_brigattine"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_castle/vault_galleon"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_castle/vault_slope"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "nova_structures:chests/end_lighthouse/vault_lighthouse"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "structory_towers:end_tower"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilightforest:aurora_cache"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilightforest:darktower_boss"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilightforest:troll_vault"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilightforest:troll_vault_with_lamp"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "table": "qm:exploration/relic_vault"
+}

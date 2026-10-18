@@ -1,0 +1,3317 @@
+{
+  "id": "514010E6C36ACAC3",
+  "group": "5141042000000006",
+  "order_index": 5,
+  "filename": "qm_v040_32_cannibal",
+  "icon": {
+    "id": "cannibalvillages:snorkel",
+    "count": 1
+  },
+  "default_quest_shape": "rsquare",
+  "default_hide_dependency_lines": false,
+  "consume_items": false,
+  "hide_quest_details_until_startable": false,
+  "hide_quest_until_deps_visible": false,
+  "hide_quest_until_deps_complete": false,
+  "default_repeatable_quest": false,
+  "quests": [
+    {
+      "id": "5140119CBDA96728",
+      "x": -10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D111AFD4E2789",
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "cannibalvillages:aldeia_pequena",
+          "id": "514012C5CA3D6210"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013114464098B",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140112284624178",
+      "x": -7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D111AFD4E2789",
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "cannibalvillages:aldeia_grande",
+          "id": "514012DB208DBC02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140131B2AFA4DCA",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401100150191E2",
+      "x": -4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "plain_instruction"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D111AFD4E2789",
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "cannibalvillages:palafita_suspensa",
+          "id": "514012E699D21AD4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140132DABE3EFBC",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401119C6668C96",
+      "x": -1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D111AFD4E2789",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "cannibalvillages:templo_rutia",
+          "id": "514012087059988B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013A6312DCE9F",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401123263BE20C",
+      "x": -10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D111AFD4E2789",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign_v040/biomes/mermaid_sea",
+          "criterion": "",
+          "id": "514012D33D03E576"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140130BEACD2197",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401104491634EE",
+      "x": -10.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "plain_instruction"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "51401123263BE20C",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "cannibalvillages:tubarao_branco",
+          "value": 1,
+          "id": "514012372DE80012"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401313074FACE3",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011CE797E2CC9",
+      "x": -1.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "51401123263BE20C",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "cannibalvillages:lula_gigante",
+          "value": 1,
+          "id": "514012C376A6751B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401332192DCCE2",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011A71FC3AAC5",
+      "x": 1.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "5140112284624178",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "cannibalvillages:xama",
+          "value": 1,
+          "id": "514012ACBA8749B3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140138C8C0E491C",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140111CF230BACD",
+      "x": 7.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514011A71FC3AAC5",
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "cannibalvillages:ozgum",
+          "value": 1,
+          "id": "5140128974296A23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140131E2D76EAA4",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 3,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011F38EA006A4",
+      "x": 1.95,
+      "y": 20.6,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "51401119C6668C96",
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "cannibalvillages:rutia",
+          "value": 1,
+          "id": "5140128154482735"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140133A534E32AD",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 3,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51401117C37D0880",
+      "x": 1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:snorkel",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:snorkel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012E0F7E1A134"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013E567AE6378",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140115678797D16",
+      "x": 4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:tanque_oxigenio",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:tanque_oxigenio",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125C6CBED1B9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140135C01E58EDF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011AFA54E5162",
+      "x": 1.95,
+      "y": 4.3,
+      "icon": {
+        "id": "cannibalvillages:escafandro_chestplate_tanque1",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140113DC7D55324",
+        "5140115678797D16",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_chestplate_tanque1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012A01158C8D4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401313D9130F19",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011020A9F4A5F",
+      "x": 4.95,
+      "y": 4.3,
+      "icon": {
+        "id": "cannibalvillages:escafandro_chestplate_tanque2",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "plain_instruction"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011AFA54E5162",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_chestplate_tanque2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140121ED4BEEE28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013E8EFBEF288",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011F9BDE023CA",
+      "x": 7.95,
+      "y": 4.3,
+      "icon": {
+        "id": "cannibalvillages:escafandro_helmet_light",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140113DC7D55324",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_helmet_light",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012DB52A70E90"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401388B387D132",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140110FCC50F733",
+      "x": 7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:bomba_ar",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140115678797D16",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:bomba_ar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401216DFFEFF3C"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140132028CE76FD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011CDA9BD101E",
+      "x": 10.95,
+      "y": 4.3,
+      "icon": {
+        "id": "cannibalvillages:tampoes_ouvido",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:tampoes_ouvido",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140126CFFE89FCD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140135FA2CB1498",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140115BC6C21830",
+      "x": -7.95,
+      "y": 11.2,
+      "icon": {
+        "id": "cannibalvillages:espada_lula_gigante",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140114701916369",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:espada_lula_gigante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401278654C4804"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140134C0158D1AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011A699306C39",
+      "x": 1.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:coralina_icon",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_icon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125C88671D9B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013C611BB3B16",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011DBB71F6AC2",
+      "x": 4.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:coralina_pickaxe",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011A699306C39",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140127F123644C4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013FA31C32DF6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140115DED7553C7",
+      "x": 7.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:coralina_sword",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011A699306C39",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140120FFD0F174E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013198DBBE301",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011FB695F7CA3",
+      "x": -10.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:apito",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:apito",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125EDD236644"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013C728651563",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011B86174F3B0",
+      "x": -4.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:lanca_tubarao",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:lanca_tubarao",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140120FAF686F61"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013A86498A00F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140111D11C09A30",
+      "x": -7.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:zarabatana",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:zarabatana",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401229F6B0BFD0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013490F6C6414",
+          "type": "item",
+          "item": {
+            "id": "minecraft:feather",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011A22C845925",
+      "x": -4.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:zarabatana_ferro",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140111D11C09A30",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:zarabatana_ferro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012FA4AF7B4CD"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140135C43F7A5E8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011B958197A79",
+      "x": -10.95,
+      "y": 20.6,
+      "icon": {
+        "id": "cannibalvillages:totem_canibal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:totem_canibal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012DFF8A70963"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013066092A143",
+          "type": "item",
+          "item": {
+            "id": "minecraft:white_wool",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401189834860BA",
+      "x": -7.95,
+      "y": 20.6,
+      "icon": {
+        "id": "cannibalvillages:cesto_oferenda",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:cesto_oferenda",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125B0A1D50FE"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013011CC96F65",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stone",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140117074E3D0EB",
+      "x": -4.95,
+      "y": 20.6,
+      "icon": {
+        "id": "cannibalvillages:tambor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:tambor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012982FF418B0"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013C45092C8BE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 32,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011A4AD454B7B",
+      "x": -7.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:tubarao_branco_moldura",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "51401104491634EE",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:tubarao_branco_moldura",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140129B59334EF4"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140137EACC78FF1",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011306E133D35",
+      "x": 1.95,
+      "y": 11.2,
+      "icon": {
+        "id": "cannibalvillages:perola_abissal",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:perola_abissal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012BBF465483D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140139B8BFBFC12",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140113DC7D55324",
+      "x": 10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "cannibalvillages:escafandro_helmet",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011A699306C39",
+        "514011306E133D35",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140120A4CFDB3E5"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140128BD7A3BE7C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_leggings",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012D6DA83B79C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:escafandro_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140128B4063D3B3"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140133FE7C8BB81",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140114701916369",
+      "x": -10.95,
+      "y": 11.2,
+      "icon": {
+        "id": "cannibalvillages:clava_lula_gigante",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514011CE797E2CC9",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:clava_lula_gigante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140128C8479C80B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:pele_de_lula",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012207697C456"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013460505EC9F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140119DB711B88C",
+      "x": -4.95,
+      "y": 11.2,
+      "icon": {
+        "id": "cannibalvillages:capacete_pele_lula",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140114701916369",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:capacete_pele_lula",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012A33F31EDB4"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:peitoral_pele_lula",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125A8586B71C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:calca_pele_lula",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012963761F6C0"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:botas_pele_lula",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012249F915466"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401335F4329CFB",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51401109AC1E1D82",
+      "x": -1.95,
+      "y": 11.2,
+      "icon": {
+        "id": "cannibalvillages:capacete_pele_lula_diamante",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140114701916369",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:capacete_pele_lula_diamante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012A787342A3B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:peitoral_pele_lula_diamante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401248B596EC92"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:calca_pele_lula_diamante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012ACFD1B23E4"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:botas_pele_lula_diamante",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012EFAC2C5B8D"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013E853340AA3",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51401196A35E940E",
+      "x": -10.95,
+      "y": 13.7,
+      "icon": {
+        "id": "cannibalvillages:capacete_pele_lula_netherita",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140114701916369",
+        "513011AA869D0649"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:capacete_pele_lula_netherita",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012D504A2D792"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:peitoral_pele_lula_netherita",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012FFC1B5F0B4"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:calca_pele_lula_netherita",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012CB55C22CFA"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:botas_pele_lula_netherita",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140124E0A055319"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401317D6BAFDED",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140113854F34B41",
+      "x": 10.95,
+      "y": 8.7,
+      "icon": {
+        "id": "cannibalvillages:coralina_helmet",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_1",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011A699306C39",
+        "513011E734464E5D"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140129DC5EA6185"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140127FFA03CFB0"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_leggings",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140124B4ABFE27D"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:coralina_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125BE0647468"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140136F1491C1F9",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011AB09405BD2",
+      "x": -1.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:dardo_verde",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140111D11C09A30",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:dardo_verde",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140125D5922F37B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:dardo_rosa",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012AF9E800068"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:dardo_preto",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012D109AE3064"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013B5B83BD746",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5140114B9D9AB131",
+      "x": 4.95,
+      "y": 20.6,
+      "icon": {
+        "id": "cannibalvillages:mascara_de_rutia",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514011F38EA006A4",
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:mascara_de_rutia",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140124C52217E34"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140131A22466B51",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401140B9B7339C",
+      "x": 10.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:presas_ozgum",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "5140111CF230BACD",
+        "514D010000000002",
+        "513011AA869D0649"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:presas_ozgum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012162AA9DAE9"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013BB656B6741",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011CBC2B285DD",
+      "x": 4.95,
+      "y": 18.1,
+      "icon": {
+        "id": "cannibalvillages:pergaminho",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514011A71FC3AAC5",
+        "514D010000000002",
+        "5130115E1ED084F6"
+      ],
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "cannibalvillages:pergaminho",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012E4984410E8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013A4BF2F02E2",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    }
+  ],
+  "images": [
+    {
+      "id": "51410410000008FA",
+      "x": 0.0,
+      "y": -2.25,
+      "width": 24.9,
+      "height": 0.8,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "51410410000008FB",
+      "x": 0.0,
+      "y": -1.37,
+      "width": 24.9,
+      "height": 0.43,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "51410410000008FC",
+      "x": 0.0,
+      "y": -0.71,
+      "width": 24.9,
+      "height": 0.1,
+      "rotation": 0.0,
+      "image": "color:#FF425875",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000008FD",
+      "x": 0.0,
+      "y": 2.8,
+      "width": 1.0,
+      "height": 1.0,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -20
+    },
+    {
+      "id": "51410410000008FE",
+      "x": -6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000008FF",
+      "x": -12.395,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000900",
+      "x": -6.37,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000901",
+      "x": -10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000902",
+      "x": -7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000903",
+      "x": -4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000904",
+      "x": -1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000905",
+      "x": -10.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000906",
+      "x": 6.45,
+      "y": 3.09,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000907",
+      "x": 0.505,
+      "y": 3.09,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000908",
+      "x": 6.53,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000909",
+      "x": 1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090A",
+      "x": 4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090B",
+      "x": 7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090C",
+      "x": 10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090D",
+      "x": 1.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090E",
+      "x": 4.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000090F",
+      "x": 7.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000910",
+      "x": 10.95,
+      "y": 5.24,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000911",
+      "x": -6.45,
+      "y": 11.24,
+      "width": 12.0,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000912",
+      "x": -12.395,
+      "y": 11.24,
+      "width": 0.11,
+      "height": 8.68,
+      "rotation": 0.0,
+      "image": "color:#E88ABC7B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000913",
+      "x": -6.37,
+      "y": 7.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000914",
+      "x": -10.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000915",
+      "x": -7.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000916",
+      "x": -4.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000917",
+      "x": -1.95,
+      "y": 9.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000918",
+      "x": -10.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000919",
+      "x": -7.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000091A",
+      "x": -4.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000091B",
+      "x": -1.95,
+      "y": 12.32,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000091C",
+      "x": -10.95,
+      "y": 14.82,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000091D",
+      "x": 6.45,
+      "y": 9.99,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000091E",
+      "x": 0.505,
+      "y": 9.99,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8B899DE",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000091F",
+      "x": 6.53,
+      "y": 7.34,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000920",
+      "x": 1.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000921",
+      "x": 4.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000922",
+      "x": 7.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000923",
+      "x": 10.95,
+      "y": 9.64,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000924",
+      "x": 1.95,
+      "y": 12.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000925",
+      "x": -6.45,
+      "y": 19.39,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000926",
+      "x": -12.395,
+      "y": 19.39,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E8D88D77",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000927",
+      "x": -6.37,
+      "y": 16.74,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000928",
+      "x": -10.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000929",
+      "x": -7.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092A",
+      "x": -4.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092B",
+      "x": -1.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092C",
+      "x": -10.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092D",
+      "x": -7.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092E",
+      "x": -4.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092F",
+      "x": 6.45,
+      "y": 19.39,
+      "width": 12.0,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000930",
+      "x": 0.505,
+      "y": 19.39,
+      "width": 0.11,
+      "height": 6.18,
+      "rotation": 0.0,
+      "image": "color:#E873BDB7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000931",
+      "x": 6.53,
+      "y": 16.74,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000932",
+      "x": 1.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000933",
+      "x": 4.95,
+      "y": 19.22,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000934",
+      "x": 7.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000935",
+      "x": 10.95,
+      "y": 19.04,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000936",
+      "x": 1.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000937",
+      "x": 4.95,
+      "y": 21.54,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    }
+  ],
+  "autofocus_id": "51410410000008FD"
+}

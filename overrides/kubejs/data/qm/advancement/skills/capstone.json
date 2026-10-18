@@ -1,0 +1,44 @@
+{
+  "criteria": {
+    "guardian": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"qm_skill_guardian_6\"]}"
+        }
+      }
+    },
+    "warrior": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"qm_skill_warrior_6\"]}"
+        }
+      }
+    },
+    "explorer": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"qm_skill_explorer_6\"]}"
+        }
+      }
+    },
+    "engineer": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"qm_skill_engineer_6\"]}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "guardian",
+      "warrior",
+      "explorer",
+      "engineer"
+    ]
+  ]
+}

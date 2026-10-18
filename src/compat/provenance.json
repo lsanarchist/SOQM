@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "scope": "Recovered source and resources for pinned baseline compatibility JARs; independent recompilation has not been reproduced.",
+  "archive_chain_sha256": {
+    "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
+    "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
+    "0.4.2": "8b14b64d44e2c23393300611b936e8934b77e5600b8d1f3d7543affbc50bdcf1",
+    "0.4.1": "34eeabbf49dce216a69ff215a82f336b2fa2278f55a65bd63d541770e397b965"
+  },
+  "modules": [
+    {
+      "module": "cannibal",
+      "production_jar": "qm-cannibal-compat-0.4.0.jar",
+      "production_jar_sha256": "c55f83803ec0543a1263b30f4cc4b13d43708de8d0735e00330b1bd74b5ce576",
+      "source_origin": "authoring/cannibal_compat",
+      "baseline_archive": "0.4.1",
+      "files_sha256": {
+        "LICENSE": "ab3a374cb064a886399d992b5dd639736fbcd5b148b8b1b470d2ada5f37972eb",
+        "resources/META-INF/neoforge.mods.toml": "3f3a47f164289f0a4efeefb94fc62a273f1feaebcbc29d8edee9e61be9349150",
+        "resources/qm_cannibal_compat.mixins.json": "0d59f0a237f052ab8f582e289d955e6a48e835033c757eaccc81396b42523cfe",
+        "src/qm/compat/QmCannibalCompat.java": "92a1ecdb9f575b569a5f9d2de74ce9a5dc025ff165045c7c21b9da26c26443ae",
+        "src/qm/compat/mixin/AutomaticChestConversionMixin.java": "4bb1f4e1aa1bfb012140ee56d0855ee2b7560c0f84c5f52b7341ad6fba076fa0",
+        "src/qm/compat/mixin/DuplicateChestConversionMixin.java": "7bbc1b596b20eaf65839cb68d4741fedc96c0392ccfcc1abc40f170b370fe502"
+      }
+    },
+    {
+      "module": "chancecubes",
+      "production_jar": "qm-chancecubes-compat-0.4.1.jar",
+      "production_jar_sha256": "a57b8c44f6dc6aae169f2fa2ca60a66eac5a23bcb6d091295d24874c9ac53667",
+      "source_origin": "authoring/chancecubes_compat",
+      "baseline_archive": "0.4.1",
+      "files_sha256": {
+        "LICENSE": "6a9651e9e4486b1d3be21e28ab920556cfa552341a3535b4a6d5dccb17f6f3ed",
+        "resources/META-INF/neoforge.mods.toml": "2c427fb7ba7da8bee16dee59ccc46933327fe701fed9690c96e19ecebee59a0d",
+        "resources/qm_chancecubes_compat.mixins.json": "00b7db5f078ebe77c42c22161aafea42996dacd6f21db0d0f9a153e82fdcb5cd",
+        "src/qm/chancecompat/QmChanceCompat.java": "ac479e54f378eb4e62314afa0aca64990f24214e924c47c2edddff4789217849",
+        "src/qm/chancecompat/mixin/EntityWrapperMixin.java": "b4870ce3c9526df8bcba81a27d65dbb170bde51e63469898994510a941150547"
+      }
+    },
+    {
+      "module": "chance-lifecycle",
+      "production_jar": "qm-chancecubes-lifecycle-0.4.2.jar",
+      "production_jar_sha256": "18b25c7b580375b821706d46494916b4c9aba91a78b73e4aedd2d303cc221dfe",
+      "source_origin": "v042_work/chance_lifecycle/compat",
+      "baseline_archive": "0.4.2",
+      "files_sha256": {
+        "LICENSE": "24b3b9b1c0e535e66e920e1b9ea6ae17044895e8925b7d7ba68855002c3192b4",
+        "resources/META-INF/neoforge.mods.toml": "56261eaa6f0ca3b519519299b6ffb43aa5a3a0770e2059146b99c12aec983c04",
+        "resources/qm_chance_lifecycle.mixins.json": "6450460b8a1dc234d89393ea5ff726cdc285886aa3722869ab5adc37bdd42534",
+        "src/qm/chancelifecycle/BossAccess.java": "a697fd17a8c01a896c324d2b419865679d956f450158ce86da4f29d51490ea08",
+        "src/qm/chancelifecycle/QmChanceLifecycle.java": "a23c354fb6d8709828b4d93da995a78f33c62983fbf17c184f90cabf5aa80e25",
+        "src/qm/chancelifecycle/mixin/BossLifecycleMixin.java": "fb90b7cbb5a5b558a708528a0b96b5681113696132e8094b684de1c28e607775",
+        "src/qm/chancelifecycle/mixin/CacheLifecycleMixin.java": "899bfcba80f71d92af882aa8dfa2504456b2fa2f130a43812474c3ff9c5d9ef6",
+        "src/qm/chancelifecycle/mixin/SchedulerAccess.java": "fbd1fa6b8e7704c99aaeb19ee61e857c818f87a7a5e2a610176d193ab05b5851",
+        "src/qm/chancelifecycle/mixin/SchedulerLifecycleMixin.java": "f7de10a58f24dd2ba82cf7758dc08abe999d0f40e5bda98ebf68083e08c0350f"
+      }
+    },
+    {
+      "module": "lucky-support",
+      "production_jar": "qm-lucky-support-0.4.2.jar",
+      "production_jar_sha256": "d895fa797c7fec075a362de46c1cfee5ab5fe887c563d4cce2f035c4c2d41c9f",
+      "source_origin": "v042_work/lucky/compat",
+      "baseline_archive": "0.4.2",
+      "files_sha256": {
+        "LICENSE": "f5b4e8cc44aaeb6d3e1179deda6d7b40396dfb3831f8219d5012f92dfca1cb4d",
+        "resources/META-INF/neoforge.mods.toml": "8b36792ad98a5ff41a6d6363f58f2a70c1252f07f9a19d1bdd91106f63cc839c",
+        "src/qm/lucky/QmLuckySupport.java": "1574762e176a8e04c9e29926ada773fb8adb4d0d3ed9279f11e403d1a6ad9e78"
+      }
+    },
+    {
+      "module": "quest-automation",
+      "production_jar": "qm-quest-automation-0.4.2.jar",
+      "production_jar_sha256": "27641893be32b21eb0404c93beb36d4d09f256d256e9cea3641fe6304a18bde8",
+      "source_origin": "v042_work/quests/compat",
+      "baseline_archive": "0.4.2",
+      "files_sha256": {
+        "LICENSE": "eefae214804902bdb005c58cef7af1c7072efdf94914da8df4c740658fa108fe",
+        "resources/META-INF/neoforge.mods.toml": "1b69de44e2f52eb4f8c4424f7c42c006dcc852b18237ca5f5bdb6f963bfc7a41",
+        "resources/qm_quest_automation.mixins.json": "4af6b595cfc5e94a825e57bb763f682708c113e2fe1cdd27faf88c8922e425b3",
+        "src/qm/questauto/AutomationState.java": "dec897e88a22fd1e34e78e947d5a215502daf504697372e498901574e2318e45",
+        "src/qm/questauto/QmQuestAutomation.java": "1c274b1b097acd27195fe6f3a2ecb9dcb473a887f41e62457c7cd8a3901ddde6",
+        "src/qm/questauto/mixin/ElectricMachineMixin.java": "7086738c42bdd3f2d0e7f9f937fd99749659472fe4199285aac3a9a5c7d35cdc",
+        "src/qm/questauto/mixin/TradeMenuMixin.java": "2a4b6f794fde1b558b05a27087d8c751be367b9c0cfd2e04ec6f54187a4cf16c",
+        "src/qm/questauto/mixin/UltimineMixin.java": "8598f1686356f62013cc2ac9df44bd09cb078c90829a4e2144188e9897fb4b30"
+      }
+    },
+    {
+      "module": "quest-ui",
+      "production_jar": "qm-quest-ui-0.4.2.jar",
+      "production_jar_sha256": "73af10f7bba23a89de0b474b6b1c904322383db68df0163010a629cfe0953d95",
+      "source_origin": "v042_work/quest_ui/compat",
+      "baseline_archive": "0.4.2",
+      "files_sha256": {
+        "LICENSE": "fd94b94c25259d9374a35c6090fe7dbcc6c1f3d5dfe711cfeb645a174d8faefb",
+        "resources/META-INF/neoforge.mods.toml": "9e6a157aad250fd76b4572760f8d0aa2eaabc0539b2ab148d720a854b7392d39",
+        "resources/assets/qm_quest_ui/lang/en_us.json": "eb0fb443d2602d16858314e75b6fa2e367b7a784c9481120cf5d644a7467b612",
+        "resources/assets/qm_quest_ui/lang/uk_ua.json": "605c1be05bb98fbf1abe53490337c0f63d6041a5b7a148341c893e6559e24bf7",
+        "resources/qm_quest_ui.mixins.json": "9f7864f5df26c33a1867fdb7be66386d6ae9780364e6b027e2bf37cd9665627c",
+        "src/qm/questui/QmQuestUi.java": "50375e18adeba8cd26b5619e307b33c9b6e9a0214ee638d41bfe52ae35d2e406",
+        "src/qm/questui/client/QuestIngredientKeys.java": "171b40c7c7d76afd0e6e5666d5fdcf943f45aca47df4d34f66ed335b09a19b0b",
+        "src/qm/questui/client/QuestItemTooltip.java": "2575f8e0ed23971404e31bffe1fd4b3821c2a6a80a0ab2582da4b58a70da2874",
+        "src/qm/questui/mixin/BaseScreenAccess.java": "b5dda769bc9674d68ace84aa7c5db3fd6cde7dec0b7f8eae88eb62ae8a751e11",
+        "src/qm/questui/mixin/ItemTaskTooltipMixin.java": "a7305f5ac6e22bd8fa8097a5988ae647a7202b5e5ca6f66bfed16f0b5a25a39e",
+        "src/qm/questui/mixin/QuestScreenKeysMixin.java": "b0a0bf285054d54a01f6daef6d9a315212360bc75d870b3cfce3ad4921ed521b"
+      }
+    },
+    {
+      "module": "village-guard",
+      "production_jar": "qm-village-guard-0.4.2.jar",
+      "production_jar_sha256": "3d884bccd03112c4709a93449124f4b6361a2e564a1878d19b06416870d0982c",
+      "source_origin": "v042_work/village_protection/compat",
+      "baseline_archive": "0.4.2",
+      "files_sha256": {
+        "LICENSE": "1d8b92a82c1a2546c7596343d9912673f767f87c82a01d2f181864a5ef22e495",
+        "resources/META-INF/neoforge.mods.toml": "b3996bda96af97b59457afc2d3570da9bd4586ecdd0709d7ed268b9e5a151105",
+        "resources/qm_village_guard.mixins.json": "e1df168300619663eca2e0173f8505d36b175e967ddc5a7f08a4df7c2bfcbf62",
+        "src/qm/villageguard/QmVillageGuard.java": "8f9626c2f804f73ffceaa4b57950686a89cd6a2a0c537ba0df0a1195c1e8a738",
+        "src/qm/villageguard/mixin/VillagerCombatMixin.java": "ad0ae9b2af1531a12031ae96042dd22fdf6a5af783197dfce63791adc0a08abe"
+      }
+    },
+    {
+      "module": "zoom-defaults",
+      "production_jar": "qm-zoom-defaults-0.4.3.jar",
+      "production_jar_sha256": "0e9263cc14655d1fb8dfded3cfe27de13d9ae311046cde2d0a3b2794091b5f69",
+      "source_origin": "v043_work/mods/compat",
+      "baseline_archive": "0.4.3",
+      "files_sha256": {
+        "LICENSE": "c6d416aa06217542f1f5c77dcc4e6fe47adc75da49ad09be66c02d3e848de70d",
+        "resources/META-INF/neoforge.mods.toml": "800c1fc2623ef6e6fdb2e18d8e3c64b7fbda277971174650f8dbb46f0803fc1a",
+        "resources/qm_zoom_defaults.mixins.json": "08d1e09bc8ca70c68e134c4d3c3d6c563754108373ecbebeb6d05c93c21b3eac",
+        "src/qm/zoomdefaults/QmZoomDefaults.java": "0d06a6080cc009276669eaea7fedbc9b7d47de79a47b523f90ef67ea971fb03a",
+        "src/qm/zoomdefaults/mixin/ZumeDefaultKeyMixin.java": "1f06a711b51aa6e452d1599f4fffb690aba22216977078ebc878a558cfa1d63d"
+      }
+    }
+  ]
+}

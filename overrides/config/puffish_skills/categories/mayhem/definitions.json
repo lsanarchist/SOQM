@@ -1,0 +1,843 @@
+{
+  "root": {
+    "title": "Резюме: вижив учора",
+    "description": "Безкоштовний початок. Обери спеціалізацію, доки кріпер не обрав її за тебе. Початково є 2 очки; ще 12 дають 6 стадій прогресії. Моби та XP не дають очок.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_root"
+        }
+      }
+    ]
+  },
+  "guardian_1": {
+    "title": "Шкіра після першої печери",
+    "description": "+1 до максимального здоров’я. Тепер падати на один пункт солідніше.",
+    "extra_description": "Вартовий · 1/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.max_health",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_1"
+        }
+      }
+    ]
+  },
+  "guardian_2": {
+    "title": "Ребра за штатним розкладом",
+    "description": "+1 до броні. Скелет уже готує апеляцію.",
+    "extra_description": "Вартовий · 2/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.armor",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_2"
+        }
+      }
+    ]
+  },
+  "guardian_3": {
+    "title": "Друге дихання без бігової доріжки",
+    "description": "+1 до максимального здоров’я. Кардіо з кріпером таки працює.",
+    "extra_description": "Вартовий · 3/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.max_health",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_3"
+        }
+      }
+    ]
+  },
+  "guardian_4": {
+    "title": "Запас міцності для поганих ідей",
+    "description": "+1 до максимального здоров’я. Кількість поганих ідей не обмежено.",
+    "extra_description": "Вартовий · 4/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:shield"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.max_health",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_4"
+        }
+      }
+    ]
+  },
+  "guardian_5": {
+    "title": "Броня від власних рішень",
+    "description": "+1 до броні. Від відкриття куба в спальні не страхує.",
+    "extra_description": "Вартовий · 5/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.armor",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_5"
+        }
+      }
+    ]
+  },
+  "guardian_6": {
+    "title": "Живучий свідок",
+    "description": "+1 до максимального здоров’я. Уся гілка: +4 здоров’я та +2 броні. Тебе складніше вбити; легше пояснити, чому варто.",
+    "extra_description": "Вартовий · 6/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.max_health",
+          "value": 1,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_guardian_6"
+        }
+      }
+    ]
+  },
+  "warrior_1": {
+    "title": "Аргумент із гострим краєм",
+    "description": "+0,5 до шкоди ближнього бою. Дипломатія отримала заточку.",
+    "extra_description": "Боєць · 1/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:stone_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.5,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_1"
+        }
+      }
+    ]
+  },
+  "warrior_2": {
+    "title": "Замах без погодження",
+    "description": "+5% базової швидкості атаки. Твій промах тепер оперативніший.",
+    "extra_description": "Боєць · 2/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_2"
+        }
+      }
+    ]
+  },
+  "warrior_3": {
+    "title": "Неввічлива відповідь",
+    "description": "+0,5 до шкоди ближнього бою. Бос попросив зворотний зв’язок — тримай.",
+    "extra_description": "Боєць · 3/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_axe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.5,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_3"
+        }
+      }
+    ]
+  },
+  "warrior_4": {
+    "title": "Техніка переконливого стуку",
+    "description": "+0,5 до шкоди ближнього бою. Двері тут ні до чого.",
+    "extra_description": "Боєць · 4/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.5,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_4"
+        }
+      }
+    ]
+  },
+  "warrior_5": {
+    "title": "Черга на наступний удар",
+    "description": "+5% базової швидкості атаки. Тепер і друга помилка встигає в таймінг.",
+    "extra_description": "Боєць · 5/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_5"
+        }
+      }
+    ]
+  },
+  "warrior_6": {
+    "title": "Останнє слово — залізне",
+    "description": "+0,5 до шкоди ближнього бою. Уся гілка: +2 шкоди та +10% базової швидкості атаки. Пістолети й реактори цим не ремонтуються.",
+    "extra_description": "Боєць · 6/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.5,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_warrior_6"
+        }
+      }
+    ]
+  },
+  "explorer_1": {
+    "title": "Вийшов по камінь",
+    "description": "+2% базової швидкості руху. Додому ти, звісно, ще пам’ятаєш шлях.",
+    "extra_description": "Мандрівник · 1/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_1"
+        }
+      }
+    ]
+  },
+  "explorer_2": {
+    "title": "Пішов за красивим біомом",
+    "description": "+2% базової швидкості руху. Скрині вже чують твої кроки.",
+    "extra_description": "Мандрівник · 2/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_2"
+        }
+      }
+    ]
+  },
+  "explorer_3": {
+    "title": "Експрес до невідомої печери",
+    "description": "+2% базової швидкості руху. Квиток в один бік оформлено автоматично.",
+    "extra_description": "Мандрівник · 3/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:torch"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_3"
+        }
+      }
+    ]
+  },
+  "explorer_4": {
+    "title": "Координати — для слабких",
+    "description": "+2% базової швидкості руху. Xaero не ображається, лише мовчки дивиться.",
+    "extra_description": "Мандрівник · 4/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:map"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_4"
+        }
+      }
+    ]
+  },
+  "explorer_5": {
+    "title": "Графік втечі погоджено",
+    "description": "+2% базової швидкості руху. Це маневр, а не паніка. Майже.",
+    "extra_description": "Мандрівник · 5/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_5"
+        }
+      }
+    ]
+  },
+  "explorer_6": {
+    "title": "Додому через три виміри",
+    "description": "+2% базової швидкості руху. Уся гілка: +12%. Відповідальність за маршрут досі рухається повільніше.",
+    "extra_description": "Мандрівник · 6/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.02,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_explorer_6"
+        }
+      }
+    ]
+  },
+  "engineer_1": {
+    "title": "Практикант із киркою",
+    "description": "+5% базової швидкості копання. Це ще не фабрика; начальник — ти.",
+    "extra_description": "Інженер · 1/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:stone_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_break_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_1"
+        }
+      }
+    ]
+  },
+  "engineer_2": {
+    "title": "Руки дотягнулися до роботи",
+    "description": "+0,25 блока до взаємодії з блоками. До дедлайну все ще далеко.",
+    "extra_description": "Інженер · 2/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:lever"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_interaction_range",
+          "value": 0.25,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_2"
+        }
+      }
+    ]
+  },
+  "engineer_3": {
+    "title": "Норма виробітку зросла",
+    "description": "+5% базової швидкості копання. Зарплата лишилася в lucky cube.",
+    "extra_description": "Інженер · 3/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_break_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_3"
+        }
+      }
+    ]
+  },
+  "engineer_4": {
+    "title": "Кар’єрний ріст униз",
+    "description": "+5% базової швидкості копання. Кар’єра вже має від’ємну висоту.",
+    "extra_description": "Інженер · 4/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_break_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_4"
+        }
+      }
+    ]
+  },
+  "engineer_5": {
+    "title": "Дистанційний працівник",
+    "description": "+0,25 блока до взаємодії з блоками. Кліки дістають далі за плани.",
+    "extra_description": "Інженер · 5/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_interaction_range",
+          "value": 0.25,
+          "operation": "addition"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_5"
+        }
+      }
+    ]
+  },
+  "engineer_6": {
+    "title": "Промислова самодіяльність",
+    "description": "+5% базової швидкості копання. Уся гілка: +20% копання та +0,5 блока взаємодії. До крафтів усе одно доведеться думати.",
+    "extra_description": "Інженер · 6/6 · 1 очко. Перенавчання: одноразовий посібник після II стадії.",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_break_speed",
+          "value": 0.05,
+          "operation": "multiply_base"
+        }
+      },
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "qm_skill_engineer_6"
+        }
+      }
+    ]
+  }
+}

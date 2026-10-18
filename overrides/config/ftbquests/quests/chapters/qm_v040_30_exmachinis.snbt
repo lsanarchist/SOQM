@@ -1,0 +1,981 @@
+{
+  "id": "514010943B3A651C",
+  "group": "5141042000000002",
+  "order_index": 6,
+  "filename": "qm_v040_30_exmachinis",
+  "icon": {
+    "id": "exmachinis:flux_sieve",
+    "count": 1
+  },
+  "default_quest_shape": "rsquare",
+  "default_hide_dependency_lines": false,
+  "consume_items": false,
+  "hide_quest_details_until_startable": false,
+  "hide_quest_until_deps_visible": false,
+  "hide_quest_until_deps_complete": false,
+  "default_repeatable_quest": false,
+  "quests": [
+    {
+      "id": "514011B0DCF6C72E",
+      "x": -10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:flux_hammer",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011CA86FD67E8",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:flux_hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012617CEEF883"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140136100966EE1",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401188E2DC8B2A",
+      "x": -4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:flux_sieve",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "5140118233B3CC83",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:flux_sieve",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140124FF7B15816"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140137D6F4E5D99",
+          "type": "item",
+          "item": {
+            "id": "kubejs:control_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "51401111C237D431",
+      "x": -1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:flux_compactor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011692B337611",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:flux_compactor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012FF7404F400"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013DAE6490512",
+          "type": "item",
+          "item": {
+            "id": "kubejs:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140119A18901AB3",
+      "x": -7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:item_buffer",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011B0DCF6C72E",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:item_buffer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012D813E4A66A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51401319CC7C6E74",
+          "type": "item",
+          "item": {
+            "id": "exdeorum:dust",
+            "count": 1
+          },
+          "count": 64,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "514011FB04BE4F17",
+      "x": 1.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:gold_upgrade",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "51401188E2DC8B2A",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:gold_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012E23B4C4897"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013FA7C5687C0",
+          "type": "item",
+          "item": {
+            "id": "exmachinis:gold_upgrade",
+            "count": 1
+          },
+          "count": 4,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011D678215A73",
+      "x": 4.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:diamond_upgrade",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011FB04BE4F17",
+        "513011AA869D0649"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:diamond_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012C67E3AC01B"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140132F5CC67F85",
+          "type": "item",
+          "item": {
+            "id": "exmachinis:diamond_upgrade",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140114A64A45C5A",
+      "x": 7.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:netherite_upgrade",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_4",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011D678215A73",
+        "5130117F2402AE8A"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:netherite_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012E788A4EF43"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514013B4B7C9B23A",
+          "type": "item",
+          "item": {
+            "id": "exmachinis:netherite_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
+    },
+    {
+      "id": "5140113E0CEBF67F",
+      "x": 10.95,
+      "y": 1.8,
+      "icon": {
+        "id": "exmachinis:comparator_upgrade",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "51401111C237D431",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:comparator_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401240DF98A980"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140133593B2ECA3",
+          "type": "item",
+          "item": {
+            "id": "exmachinis:comparator_upgrade",
+            "count": 1
+          },
+          "count": 8,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011F45FF8C855",
+      "x": -10.95,
+      "y": 6.2,
+      "icon": {
+        "id": "exmachinis:flux_hammer",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_2",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "514D010000000002",
+        "514011B0DCF6C72E",
+        "5140119A18901AB3",
+        "5130115E1ED084F6"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:flux_hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140126102291146"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:item_buffer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012BD9BCFF890"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_logistical_transporter",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012E23BE6FA11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140139239EFC10B",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514011ADCD0AC819",
+      "x": -7.95,
+      "y": 6.2,
+      "icon": {
+        "id": "exmachinis:flux_sieve",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "qm_v040",
+        "stage_3",
+        "humor"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "dependencies": [
+        "51301130F8B93E94",
+        "514D010000000002",
+        "51401188E2DC8B2A",
+        "514011D678215A73",
+        "513011AA869D0649"
+      ],
+      "optional": false,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:flux_sieve",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51401249EEEBA40A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "exmachinis:diamond_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5140124F217871F2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514012AC68140893"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5140136A25562C5A",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 2,
+          "team_reward": true,
+          "auto": "disabled",
+          "random_bonus": 0
+        }
+      ],
+      "size": 1.0,
+      "shape": "rsquare",
+      "hide_dependency_lines": true
+    }
+  ],
+  "images": [
+    {
+      "id": "51410410000008B2",
+      "x": 0.0,
+      "y": -2.25,
+      "width": 24.9,
+      "height": 0.8,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "51410410000008B3",
+      "x": 0.0,
+      "y": -1.37,
+      "width": 24.9,
+      "height": 0.43,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 1,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 10
+    },
+    {
+      "id": "51410410000008B4",
+      "x": 0.0,
+      "y": -0.71,
+      "width": 24.9,
+      "height": 0.1,
+      "rotation": 0.0,
+      "image": "color:#FF425875",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000008B5",
+      "x": 0.0,
+      "y": 2.8,
+      "width": 1.0,
+      "height": 1.0,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -20
+    },
+    {
+      "id": "51410410000008B6",
+      "x": -6.45,
+      "y": 1.84,
+      "width": 12.0,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000008B7",
+      "x": -12.395,
+      "y": 1.84,
+      "width": 0.11,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000008B8",
+      "x": -6.37,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000008B9",
+      "x": -10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008BA",
+      "x": -7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008BB",
+      "x": -4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008BC",
+      "x": -1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008BD",
+      "x": 6.45,
+      "y": 1.84,
+      "width": 12.0,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000008BE",
+      "x": 0.505,
+      "y": 1.84,
+      "width": 0.11,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#E866B6DB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000008BF",
+      "x": 6.53,
+      "y": 0.44,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000008C0",
+      "x": 1.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008C1",
+      "x": 4.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008C2",
+      "x": 7.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008C3",
+      "x": 10.95,
+      "y": 2.74,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008C4",
+      "x": -6.45,
+      "y": 6.24,
+      "width": 12.0,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#F01D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000008C5",
+      "x": -12.395,
+      "y": 6.24,
+      "width": 0.11,
+      "height": 3.68,
+      "rotation": 0.0,
+      "image": "color:#E88ABC7B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "51410410000008C6",
+      "x": -6.37,
+      "y": 4.84,
+      "width": 11.62,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "51410410000008C7",
+      "x": -10.95,
+      "y": 7.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008C8",
+      "x": -7.95,
+      "y": 7.14,
+      "width": 2.72,
+      "height": 0.36,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    }
+  ],
+  "autofocus_id": "51410410000008B5"
+}

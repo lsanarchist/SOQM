@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.compat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "DuplicateChestConversionMixin",
+    "AutomaticChestConversionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

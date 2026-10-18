@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "nbt": "{Tags:[\"qm_skill_root\"]}"
+        }
+      }
+    }
+  }
+}

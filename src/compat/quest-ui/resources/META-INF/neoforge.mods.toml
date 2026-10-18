@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="qm_quest_ui"
+version="0.4.2"
+displayName="Questing Mayhem Quest Item Help"
+description='''Shows actual item and mod names in quest tasks and routes recipe/uses keys through JEI in the quest details panel.'''
+[[mixins]]
+config="qm_quest_ui.mixins.json"
+[[dependencies.qm_quest_ui]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+side="BOTH"
+[[dependencies.qm_quest_ui]]
+modId="ftbquests"
+type="required"
+versionRange="[2101.1.36]"
+side="CLIENT"
+[[dependencies.qm_quest_ui]]
+modId="ftblibrary"
+type="required"
+versionRange="[2101.1.37]"
+side="CLIENT"
+[[dependencies.qm_quest_ui]]
+modId="ftbxmodcompat"
+type="required"
+versionRange="[21.1.12]"
+side="CLIENT"
+[[dependencies.qm_quest_ui]]
+modId="jei"
+type="required"
+versionRange="[19.64.0.455]"
+side="CLIENT"

@@ -1,0 +1,10 @@
+// Expert subassemblies: normal crafting, curated 0.4.4 loot and completed-quest refunds; EMC remains disabled.
+StartupEvents.registry('item', function(event) {
+  event.create("electromechanical_drive").displayName("Електромеханічний привід").texture("kubejs:item/electromechanical_drive").maxStackSize(64).tooltip("Етап 1 · 4 шт. з залізних пластин, мідної проводки, сталевих стрижнів і поршня. Ручна майстерня IE; автоматична ферма не потрібна.");
+  event.create("control_assembly").displayName("Блок керування").texture("kubejs:item/control_assembly").maxStackSize(64).tooltip("Етап 2 · 4 шт. Сплав Ender IO + базові схеми Mekanism + логічні процесори AE2 + точний механізм. Машини нарешті отримали мозок.");
+  event.create("sealed_process_chamber").displayName("Герметична камера").texture("kubejs:item/sealed_process_chamber").maxStackSize(64).tooltip("Етап 2 · 2 шт. Скло, свинцеві пластини, точні механізми та базовий бак Mekanism. Сам бак доступний без цієї камери.");
+  event.create("arcane_conduit").displayName("Арканний провідник").texture("kubejs:item/arcane_conduit").maxStackSize(64).tooltip("Етап 2 · 4 шт. Манасталь Botania, темні самоцвіти EvilCraft, кварц і блок керування. Магія теж читає інструкцію, на відміну від тебе.");
+  event.create("quantum_processor").displayName("Квантовий процесор").texture("kubejs:item/quantum_processor").maxStackSize(64).tooltip("Етап 3 · 2 шт. Вібруючий сплав, елементій з Альвгейму, інженерні процесори AE2 та вимірна матриця.");
+  event.create("radiation_shield").displayName("Радіаційний захист").texture("kubejs:item/radiation_shield").maxStackSize(64).tooltip("Етап 4 · 4 шт. Захист зі свинцю та дешу, HDPE і квантовий процесор. Не потребує відходів реактора: перший реактор можна побудувати.");
+  event.create("reinforced_netherite_plate").displayName("Посилена незеритова пластина").texture("kubejs:item/reinforced_netherite_plate").maxStackSize(64).tooltip("Етап 4 · Незеритовий злиток + радіаційний захист + блок керування. Ковальський додаток для рюкзака; шаблон і вміст рюкзака зберігають рідну механіку мода.");
+});

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+python3 scripts/soqm.py check
+python3 scripts/localize_english.py --check
+python3 -m unittest discover -s tests -v
+node tests/accessory-policy.mjs
+python3 scripts/soqm.py build
+python3 scripts/soqm.py check-package

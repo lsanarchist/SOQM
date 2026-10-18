@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "find": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#qm:quest_accessories/first_accessory"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "find"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

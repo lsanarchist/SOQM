@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "find": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#qm:quest_accessories/collect_water"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "find"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

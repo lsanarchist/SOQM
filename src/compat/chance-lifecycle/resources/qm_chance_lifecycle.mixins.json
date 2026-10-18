@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.chancelifecycle.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SchedulerAccess",
+    "SchedulerLifecycleMixin",
+    "CacheLifecycleMixin",
+    "BossLifecycleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+

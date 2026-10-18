@@ -1,0 +1,81 @@
+// Questing Mayhem 0.4.1: restrained map, readable states and focused paths.
+// Destination: kubejs/assets/ftbquests/ftb_quests_theme.txt
+// This file extends the installed FTB theme; unspecified properties are inherited.
+[*]
+background: color:#ED17202B
+chapter_panel_background: color:#F5111822
+key_reference_background: color:#F5111822
+selected_chapter_highlight_1: #605BCCD3
+selected_chapter_highlight_2: #285BCCD3
+text_color: #E8EFF8
+hover_text_color: #FFE0A0
+disabled_text_color: #8B9BAF
+widget_border: #42536A
+widget_background: #B3213042
+symbol_in: #E9C979
+symbol_out: #967638
+button: hollow_rectangle:{{widget_border}}
+disabled_button: hollow_rectangle:#324157
+hover_button: {{button}} + color:#705BCCD3; padding=1
+context_menu: color:#FA1B2635; border=#51657C
+quest_view_background: color:#FA1B2635; border=#51657C
+quest_view_border: #51657C
+quest_view_title: #E8EFF8
+tasks_text_color: #7BD4E4
+rewards_text_color: #E9C979
+quest_completed_color: #DD64C98C
+quest_started_color: #EE5BCCD3
+quest_not_started_color: #DCC0CEDF
+quest_locked_color: #C8788799
+dependency_line_completed_color: #8064C98C
+dependency_line_uncompleted_color: #A08A9FB9
+dependency_line_unavailable_color: #486E8099
+dependency_line_requires_color: #FA63E5EF
+dependency_line_required_for_color: #FAF0CF7F
+dependency_line_thickness: 0.08
+dependency_line_selected_speed: 0.35
+dependency_line_unselected_speed: 0.0
+quest_spacing: 0.0
+
+// Store the tags without a leading # on quest objects.
+// Use on substantial milestones, entry gates and chapter goals only.
+
+[514D01000000000C]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[514D113A135370A8]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[514D118E5C7AB43A]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[513011E734464E5D]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[5130115E1ED084F6]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[513011AA869D0649]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[5130117F2402AE8A]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[513011AEA75E4401]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[5130113398623BDE]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1
+
+[514011503157F07A]
+quest_not_started_color: #F0E9C979
+quest_started_color: #FFF3D9A1

@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="qm_chancecubes_lifecycle"
+version="0.4.2"
+displayName="Questing Mayhem Chance Cubes Lifecycle"
+description="Scopes Chance Cubes delayed tasks and temporary boss arenas to their owning server."
+[[mixins]]
+config="qm_chance_lifecycle.mixins.json"
+[[dependencies.qm_chancecubes_lifecycle]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.qm_chancecubes_lifecycle]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.262,21.2)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.qm_chancecubes_lifecycle]]
+modId="chancecubes"
+type="required"
+versionRange="[1.21.1-5.0.2.517]"
+ordering="AFTER"
+side="BOTH"
+

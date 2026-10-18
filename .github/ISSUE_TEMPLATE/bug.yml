@@ -1,0 +1,29 @@
+name: Bug report / Помилка
+description: Reproducible game or installation issue
+body:
+  - type: input
+    id: version
+    attributes:
+      label: SOQM version
+      placeholder: 0.1.0-alpha.1
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / Середовище
+      description: OS, launcher, Java version, allocated RAM; singleplayer or server.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and expected result / Кроки й очікуваний результат
+      description: Include a quest ID, item ID or recipe when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Журнали
+      description: Attach the relevant log after removing tokens, private server addresses and personal data.

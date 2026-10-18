@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_conduit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "enderio:conduit",
+            "components": {
+              "enderio:conduit": "enderio:fluid"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_conduit"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

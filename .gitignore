@@ -1,0 +1,23 @@
+# Local inputs, downloaded dependencies and runtime state
+.work/
+.cache/
+dist/
+*.zip
+!downloads/*.zip
+*.mrpack
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.log
+# Never publish player state
+saves/
+logs/
+crash-reports/
+screenshots/
+options.txt
+servers.dat
+usercache.json
+usernamecache.json
+XaeroWaypoints/
+XaeroWorldMap/

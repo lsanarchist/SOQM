@@ -1,0 +1,31 @@
+# Questing Mayhem 0.3.0: one independent set of structure loot per player.
+# Keep the original loot tables and their modded additions. No automatic refill.
+[conversion]
+disable = false
+randomise_seed = true
+convert_mineshafts = true
+convert_elytras_to_chests = false
+convert_elytras_to_item_frames = true
+convert_item_frames = true
+
+[team]
+team_loot = false
+
+[breaking]
+disable_break = false
+enable_break = false
+enable_fake_player_break = false
+blast_resistant = true
+should_drop_player_loot = false
+
+[refresh]
+refresh_all = false
+refresh_loot_tables = []
+refresh_modids = []
+refresh_dimensions = []
+
+[decay]
+decay_all = false
+decay_loot_tables = []
+decay_modids = []
+decay_dimensions = []

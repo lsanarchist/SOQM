@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B#B",
+    "#X#",
+    "B#B"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:ingots/unobtainium"
+    },
+    "B": {
+      "tag": "c:storage_blocks/unobtainium"
+    },
+    "X": {
+      "tag": "c:ingots/vibranium"
+    }
+  },
+  "result": {
+    "id": "ironfurnaces:upgrade_unobtainium"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "allthemodium"
+    }
+  ]
+}

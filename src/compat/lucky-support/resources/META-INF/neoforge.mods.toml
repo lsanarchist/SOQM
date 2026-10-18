@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="qm_lucky_support"
+version="0.4.2"
+displayName="Questing Mayhem Lucky Support"
+description='''Exact FTB milestone checks and four-event personal Lucky history.'''
+[[dependencies.qm_lucky_support]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.262,21.2)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.qm_lucky_support]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.qm_lucky_support]]
+modId="ftbquests"
+type="required"
+versionRange="[2101.1.36,2102)"
+ordering="AFTER"
+side="BOTH"
