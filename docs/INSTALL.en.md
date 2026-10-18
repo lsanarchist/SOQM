@@ -1,24 +1,74 @@
-# Installing SOQM
+# Installing SOQM 0.4.6
 
-**Shout Out to Questing Mayhem** targets Minecraft **1.21.1**, **NeoForge 21.1.262** and **Java 21**. Keep the release's pinned mod versions: updating individual mods can change recipes, dependencies and quest behavior.
+Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
+21.1.262** and **Java 21**. Keep the exact versions and hashes in
+`metadata/mods.lock.json`; arbitrary individual updates can break progression.
 
-1. Download [SOQM-0.1.0-alpha.1-curseforge.zip](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SOQM-0.1.0-alpha.1-curseforge.zip) from the immutable published-alpha commit. Verify it against [SHA256SUMS](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SHA256SUMS). GitHub's automatic `Source code` archives and the original Questing Mayhem source archive are not installable profiles.
-2. In CurseForge App, open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**, then select the ZIP. Wait for every dependency to download. See the [official import instructions](https://support.curseforge.com/support/solutions/articles/9000197912). Importing a ZIP does not require a CurseForge catalog listing.
-3. Check Java 21 and the profile's memory allocation. **6 GiB** is a starting recommendation for testing, not a measured system requirement. Leave sufficient RAM for your OS and launcher.
-4. Launch, reach the main menu and create a separate test world. Check the quest book, recipes and saving using the [playtest checklist](PLAYTEST.en.md).
+## Current package: build locally
 
-If a dependency fails to download, inspect the import log and use that mod's official file page. Do not substitute an arbitrary version. Report the SOQM version, affected filename and exact error.
+From the repository root, with Python 3.11+ and Node.js 18+:
 
-## Updating
+```bash
+./scripts/check
+python3 scripts/soqm.py verify-downloads
+python3 scripts/soqm.py build
+```
 
-Close the game and back up the **entire profile**, including `saves/`, `config/`, `defaultconfigs/`, `local/`, `options.txt` and any map data. Keep the previous release ZIP. Store backups outside the profile directory.
+The current output is `dist/SOQM-0.4.6-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.6 asset is not claimed. The
+[original published alpha](../downloads/README.md) is the historical
+0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
+and the baseline Sources ZIP are not installable game profiles.
 
-Import the new release into a **new profile**. Test a copy of your world first: loading, quests, progress, inventory and key recipes. World migration is supported only where the release notes explicitly say so. Roll back using a backup, rather than opening an already updated world in an older version.
+## Fresh CurseForge App profile
 
-The existing `qm` namespace, `qm_*` filenames and stable quest IDs are retained from Questing Mayhem to preserve internal references and recorded progress. This does not guarantee compatibility with every historical world.
+1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
+   select the built 0.4.6 ZIP and wait for every download. See the
+   [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
+   Importing a ZIP does not require a CurseForge catalog listing.
+2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
+   recommendation, not a measured system requirement. Leave RAM for your OS.
+3. Reach the menu, create a separate test world and check quests, recipes and
+   reloading using the [playtest checklist](PLAYTEST.en.md).
 
-## Reporting a crash
+If a dependency fails to download, inspect the import log and its exact official
+file page from the lock file. Do not substitute an arbitrary version.
 
-Include the release version, OS, Java version, allocated RAM, reproduction steps, `logs/latest.log` and the relevant `crash-reports/` file if present. Remove personal information, private server addresses and tokens before publishing. Inspect world contents before sharing a save.
+## Existing MultiMC profile
+
+The CurseForge ZIP contains a manifest and `overrides/`; it is not a standalone
+MultiMC profile export. Direct import of this ZIP into MultiMC is not claimed
+as verified. Manual installation requires the exact game/loader/Java above.
+
+1. Close the game and back up the **entire instance** outside its directory,
+   including `saves/`, `options.txt`, `config/`, `defaultconfigs/`, `local/` and
+   any map data. Keep the original for rollback.
+2. Work on a copied profile. Extract the **built** ZIP temporarily and merge
+   the contents of `overrides/` into its `.minecraft/`, applying the pack files.
+   Do not copy the manifest itself or a GitHub source archive into that folder.
+3. Install the **122** exact third-party JARs referenced by the manifest/lock
+   from their official sources and verify versions and SHA-256. Together with
+   the package's **10** authored modules, these form the SOQM mod set. Remove
+   duplicates and superseded mod versions only in the test copy; do not mix releases.
+4. Preserve saves, personal key bindings and map data. Start with a fresh test
+   world, then check a copied save for progress, inventory and working recipes.
+
+Copying files does not prove a successful client launch. Roll back using the
+instance backup; do not open an already upgraded save in an older version.
+
+## World migration
+
+The 1625 quest, 1772 task and 1626 reward IDs are retained. Existing `qm`
+namespaces and `qm_*` filenames preserve internal references and recorded
+progress; they do not guarantee compatibility with every historical world.
+
+New loot balance applies when a targeted chest or new personal Lootr inventory
+first generates its contents. Existing generated contents are not cleared.
+Structure-template changes affect newly generated structures. Test new
+containers and territory rather than expecting already opened chests to change.
+
+Report problems with the SOQM version/commit, launcher, OS, Java, RAM allocation,
+reproduction steps, `logs/latest.log` and any crash report. Remove tokens,
+personal information and private server addresses before sharing.
 
 [Українська](INSTALL.uk.md)

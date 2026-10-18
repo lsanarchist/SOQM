@@ -1,61 +1,79 @@
 <p align="center"><img src="assets/banner.svg" alt="Shout Out to Questing Mayhem" width="100%"></p>
 
-<p align="center"><b>Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
+<p align="center"><b>SOQM 0.4.6 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
 **Shout Out to Questing Mayhem (SOQM)** — Expert-збірка про виробничі ланцюги,
-магію та дослідження. 1625 квестів у 37 главах ведуть від першої майстерні до
-великих автоматизованих систем. Основа — Questing Mayhem Expert 0.4.4;
-SOQM оформлює її як окремий відтворюваний проєкт із власними правилами та релізами.
+магію та дослідження. **1625 квестів у 37 главах** ведуть від першої майстерні
+до великих автоматизованих систем. Поточна основа — Questing Mayhem Expert
+**0.4.6**; SOQM зберігає власне оформлення, політики та відтворюваний процес збірки.
 
-**Версія 0.1.0-alpha.1.** Це перша публічна альфа. Повне проходження, клієнтська
-продуктивність і довгостроковий баланс ще потребують ігрового тестування.
-Свіжа серверна перевірка пройшла: старт, reload 20 074 → 20 074 рецепти,
-0 помилок KubeJS та штатне завершення. [Обсяг і результати перевірки](reports/README.md).
+У 0.4.6 зменшено випадкові запаси у скринях, прибрано пластик/HDPE з випадкового
+луту, оновлено 280 квестових іконок і поліпшено українські пояснення поступу.
+Рецепти цього оновлення та стабільні ID квестів, задач і нагород збережено.
+[Зміни](CHANGELOG.md) · [Стан перевірок](reports/README.md)
+
+**Статус — alpha.** Свіжа серверна перевірка 0.4.6 пройшла: старт,
+reload **20 077 → 20 077 рецептів**, нуль помилок KubeJS і штатне завершення.
+Повне проходження, графічний клієнт і довгостроковий баланс
+потребують окремої перевірки. Українська містить авторську кампанію; англійська —
+довідник цілей, а не завершений художній переклад.
 
 ## Грати
 
-Завантаж `SOQM-0.1.0-alpha.1-curseforge.zip` за
-[посиланням на опубліковану альфу](downloads/README.md) та імпортуй його як новий профіль у сумісний лаунчер.
-Архів **Source code** від GitHub для встановлення не підходить.
-Потрібні придбана Minecraft Java Edition та Java 21.
-
-[Встановлення українською](docs/INSTALL.uk.md) · [Install in English](docs/INSTALL.en.md)
-
-- **Прогресія:** 3905 зв’язків між квестами; складні рецепти пов’язують модові системи.
-- **Техніка:** Mekanism, Immersive Engineering, AE2, Ender IO, Industrial Foregoing.
-- **Магія та світи:** Botania Revived, EvilCraft, DivineRPG, Aether, Twilight Forest, Ad Astra.
-- **Mayhem:** тематичні куби, здобич, власні компоненти та квестові нагороди.
-- **Мови:** українська кампанія та англійський довідник цілей. Повний художній
-  переклад англійською ще в роботі; [точний обсяг локалізації](docs/LOCALIZATION.md).
-
-## Розробка
-
-Потрібні Python 3.11+ та Node.js 18+. Локальні перевірки й збірка:
+Поточний інсталяційний пакет створюється **локально**:
 
 ```sh
 ./scripts/check
 python3 scripts/soqm.py verify-downloads
+python3 scripts/soqm.py build
 ```
 
-Перший запуск працює без мережі й створює інсталяційний ZIP у `dist/`.
-Друга команда окремо перевіряє доступність і хеші 111 зафіксованих модів,
-зберігаючи їх лише в локальному кеші. Дивись [порядок релізу](docs/RELEASE.uk.md)
-та [план ігрового тестування](docs/PLAYTEST.uk.md).
+Результат: `dist/SOQM-0.4.6-curseforge.zip` та контрольна сума в `dist/`.
+Імпортуй цей ZIP як новий профіль у сумісний із CurseForge manifest лаунчер.
+Для MultiMC дивись окремі застереження щодо ручного встановлення в інструкції.
+Потрібні придбана Minecraft Java Edition та Java 21. GitHub `Source code`
+не є інсталяційним пакетом; ZIP 0.4.6 ще не опубліковано як окремий asset.
+
+[Встановлення українською](docs/INSTALL.uk.md) · [Install in English](docs/INSTALL.en.md) ·
+[Поточні та історичні завантаження](downloads/README.md)
+
+- **Expert:** складні рецепти пов’язують промисловість, магію та матеріали вимірів.
+- **Техніка:** Mekanism, Immersive Engineering, AE2, Ender IO, Industrial Foregoing.
+- **Світи:** DivineRPG, Aether, Twilight Forest, Ad Astra та додаткові експедиції.
+- **Mayhem:** тематичні куби, власні компоненти та одноразові квестові нагороди.
+- **Мови:** українська кампанія та англійський довідник; [межі локалізації](docs/LOCALIZATION.md).
+
+## Розробка
+
+Потрібні Python 3.11+ та Node.js 18+. `./scripts/check` виконує локальні перевірки
+й упаковку; `verify-downloads` окремо перевіряє доступність і хеші **122**
+закріплених сторонніх модів та зберігає їх у локальному кеші. Початкові 111
+залежностей залишено, додано 11. Пакет також використовує **10** авторських
+модулів сумісності: початкові вісім і модулі мобів та компактного луту скринь.
 
 `overrides/` містить ігрові налаштування, квести та скрипти; `src/compat/` —
-джерела восьми власних модулів. `manifest.json` і `metadata/` фіксують залежності
-та контрольні суми. Світи, акаунти, карти й сторонні модові JAR не зберігаються
-в репозиторії. [Підсумок перевірок альфи](reports/README.md) посилається на
-зафіксовані докази; нові JSON-звіти генеруються локально та ігноруються Git.
+джерела модулів. `manifest.json`, `soqm.json` і `metadata/` фіксують версії та
+походження. Генеровані архіви, сторонні JAR, кеші й JSON-звіти залишаються
+локальними. GitHub використовується для контролю версій; поточна підготовка
+не означає публікацію нового пакета.
+
+[Порядок релізу](docs/RELEASE.uk.md) · [План ігрових перевірок](docs/PLAYTEST.uk.md)
 
 ## English
 
-SOQM is an Expert Minecraft campaign built around interconnected production,
-magic and exploration: **1,625 quests across 37 chapters**, with 111 pinned
-third-party mods and eight small compatibility modules. Import the installation
-ZIP from the [published alpha download](downloads/README.md) into a new launcher profile. This is an **alpha**;
-full playthrough, client performance and long-term balance are not yet verified.
-The Ukrainian narrative is complete; English provides an objective guide.
+SOQM **0.4.6** is an Expert Minecraft campaign with **1,625 quests in 37 chapters**,
+**122 pinned third-party mods** and **10 authored compatibility modules**.
+This update brings leaner chest loot, removes random plastic/HDPE, replaces
+280 quest icons and improves Ukrainian progression guidance. Existing quest,
+task and reward IDs remain stable. English provides an alpha objective guide;
+an editorial translation of the narrative and humor remains pending.
+
+Build `dist/SOQM-0.4.6-curseforge.zip` locally using the commands above and follow
+the [installation guide](docs/INSTALL.en.md). The 0.4.6 artifact has not been
+published separately. Fresh 0.4.6 dedicated-server startup, reload
+(**20,077 → 20,077 recipes**, zero KubeJS errors) and clean shutdown passed.
+Full graphical playthrough, long-term balance and client performance remain
+unverified. The historical 0.1.0-alpha.1 download is a separate version.
 
 ## Авторство
 
@@ -63,6 +81,6 @@ The Ukrainian narrative is complete; English provides an objective guide.
 Questing Mayhem — натхнення для назви. Проєкт не пов’язаний із цими командами.
 
 [Моди й автори](MODLIST.md) · [Ліцензії та походження](THIRD_PARTY_NOTICES.md) ·
-[Зміни](CHANGELOG.md) · [Ліцензія проєкту](LICENSE)
+[Ліцензія проєкту](LICENSE)
 
 Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.

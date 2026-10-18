@@ -1,0 +1,49 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/butcherhouse_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/farmer_house_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/fishermanhouse_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/fletcherhouse_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/library_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/shepherd_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/stable_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/temple_loottable"
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "dimension": "minecraft:overworld"
+      }
+    }
+  ],
+  "table": "qm:world_additions/lily_settlement"
+}

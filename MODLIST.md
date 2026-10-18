@@ -4,6 +4,8 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
+| [Fabric/Forge/Neo] 1.21.1-4.3 | Skeleton Horse Spawn | 4.3 | both | [project 346219 / file 9223613](https://www.curseforge.com/minecraft/mc-mods/skeleton-horse-spawn/files/9223613) |
+| [Fabric/Forge/Neo] 1.21.1-5.5 | Giant Spawn | 5.5 | both | [project 347921 / file 9224661](https://www.curseforge.com/minecraft/mc-mods/giant-spawn/files/9224661) |
 | Abandoned Tunnels | 1.0.0 | both | [project 1733257 / file 9109672](https://www.curseforge.com/minecraft/mc-mods/abandoned-tunnels/files/9109672) |
 | Abridged | 2.0.2 | both (baseline) | [project 948999 / file 8327782](https://www.curseforge.com/minecraft/mc-mods/abridged/files/8327782) |
 | Ad Astra | 1.16.26 | both (baseline) | [project 635042 / file 8874894](https://www.curseforge.com/minecraft/mc-mods/ad-astra/files/8874894) |
@@ -26,6 +28,7 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | Classic Pipes | 1.0.7 | both (baseline) | [project 1351745 / file 7126867](https://www.curseforge.com/minecraft/mc-mods/classic-pipes/files/7126867) |
 | Cloth Config v15 API | 15.0.140 | both | [project 348521 / file 5729127](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files/5729127) |
 | CodeChicken Lib | 4.6.1.529 | both (baseline) | [project 242818 / file 8491811](https://www.curseforge.com/minecraft/mc-mods/codechicken-lib-1-8/files/8491811) |
+| collective | 8.58 | both | [project 342584 / file 9233764](https://www.curseforge.com/minecraft/mc-mods/collective/files/9233764) |
 | Common Storage Lib | 0.0.10 | both (baseline) | [project 1028211 / file 8421542](https://www.curseforge.com/minecraft/mc-mods/common-storage-lib/files/8421542) |
 | Controlling | 19.0.5 | client | [project 250398 / file 6368976](https://www.curseforge.com/minecraft/mc-mods/controlling/files/6368976) |
 | Curios API | 9.5.1+1.21.1 | both (baseline) | [project 309927 / file 6529130](https://www.curseforge.com/minecraft/mc-mods/curios/files/6529130) |
@@ -33,10 +36,12 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | DivineRPG | 1.10.10 | both (baseline) | [project 363543 / file 8871764](https://www.curseforge.com/minecraft/mc-mods/official-divinerpg/files/8871764) |
 | Dungeons and Taverns | 1-v4.4.4 | both (baseline) | [project 853794 / file 5768823](https://www.curseforge.com/minecraft/mc-mods/dungeon-and-taverns/files/5768823) |
 | Ecologics | 2.3.7 | both (baseline) | [project 570463 / file 8415537](https://www.curseforge.com/minecraft/mc-mods/ecologics/files/8415537) |
+| Elite Mobs 6.2.3 (NeoForge 1.21.1) | 6.2.3 | both | [project 1583529 / file 9191508](https://www.curseforge.com/minecraft/mc-mods/elite-mobs/files/9191508) |
 | Ender IO | 8.2.12-beta | both (baseline) | [project 64578 / file 8832691](https://www.curseforge.com/minecraft/mc-mods/ender-io/files/8832691) |
 | Ender Storage | 2.13.0.191 | both (baseline) | [project 245174 / file 6159037](https://www.curseforge.com/minecraft/mc-mods/ender-storage-1-8/files/6159037) |
 | Entity Culling Fabric/Forge | 1.11.3 | client | [project 448233 / file 9100286](https://www.curseforge.com/minecraft/mc-mods/entityculling/files/9100286) |
 | Equipment Compare | 1.3.13 | client | [project 502561 / file 6375501](https://www.curseforge.com/minecraft/mc-mods/equipment-compare/files/6375501) |
+| Ethereal Dreamscape | 1.0.0 | client | [project 1537148 / file 9237441](https://www.curseforge.com/minecraft/mc-mods/ethereal-dreamscape/files/9237441) |
 | EvilCraft | 1.2.99 | both (baseline) | [project 74610 / file 9203431](https://www.curseforge.com/minecraft/mc-mods/evilcraft/files/9203431) |
 | Ex Deorum | 3.12 | both | [project 901420 / file 8384464](https://www.curseforge.com/minecraft/mc-mods/ex-deorum/files/8384464) |
 | Ex Machinis: Divitiae Deorum | 4.0.3 | both | [project 980111 / file 8349644](https://www.curseforge.com/minecraft/mc-mods/ex-machinis-divitiae-deorum/files/8349644) |
@@ -47,6 +52,7 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | FTB Teams | 2101.1.9 | both (baseline) | [project 404468 / file 7369021](https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge/files/7369021) |
 | FTB Ultimine | 2101.1.15 | both (baseline) | [project 386134 / file 8231400](https://www.curseforge.com/minecraft/mc-mods/ftb-ultimine-forge/files/8231400) |
 | FTB XMod Compat | 21.1.12 | both (baseline) | [project 889915 / file 8909889](https://www.curseforge.com/minecraft/mc-mods/ftb-xmod-compat/files/8909889) |
+| Giant Plane Wreck | 1.0.0 | both | [project 1336925 / file 6939623](https://www.curseforge.com/minecraft/mc-mods/giant-plane-wreck/files/6939623) |
 | GuideME | 21.1.19 | both (baseline) | [project 1173950 / file 8897145](https://www.curseforge.com/minecraft/mc-mods/guideme/files/8897145) |
 | Hilt | 1.14 | both (baseline) | [project 1653251 / file 8731944](https://www.curseforge.com/minecraft/mc-mods/hilt/files/8731944) |
 | Iceberg | 1.3.2 | client | [project 520110 / file 6423863](https://www.curseforge.com/minecraft/mc-mods/iceberg/files/6423863) |
@@ -76,7 +82,10 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | Modern Foundry | 4.1.6 | both (baseline) | [project 1651634 / file 8675380](https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380) |
 | ModernFix | 5.27.26+mc1.21.1 | both | [project 790626 / file 9101836](https://www.curseforge.com/minecraft/mc-mods/modernfix/files/9101836) |
 | Mouse Tweaks | 2.26.1 | client | [project 60089 / file 5637846](https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks/files/5637846) |
+| Moyai Structures | 1.0.1 | both | [project 1083418 / file 5852869](https://www.curseforge.com/minecraft/mc-mods/moyai-structures/files/5852869) |
+| Natural Sizes 1.2 - 1.21.1 NeoForge | 1.2 | both | [project 1516625 / file 8596871](https://www.curseforge.com/minecraft/mc-mods/natural-sizes/files/8596871) |
 | Nether's Exoticism | 1.2.9 | both | [project 486029 / file 5826015](https://www.curseforge.com/minecraft/mc-mods/nethers-exoticism/files/5826015) |
+| Ocean Lily Pad Village | 1.0.1 | both | [project 1394882 / file 7278596](https://www.curseforge.com/minecraft/mc-mods/ocean-lily-pad-village/files/7278596) |
 | OctoLib | 0.6.2 | both (baseline) | [project 916747 / file 8040848](https://www.curseforge.com/minecraft/mc-mods/shatterbyte-lib/files/8040848) |
 | owo-lib | 0.12.15.6-beta.1+1.21 | both (baseline) | [project 532610 / file 9215303](https://www.curseforge.com/minecraft/mc-mods/owo-lib/files/9215303) |
 | Patchouli | 1.21.1-93-NEOFORGE | both (baseline) | [project 306770 / file 7730942](https://www.curseforge.com/minecraft/mc-mods/patchouli/files/7730942) |
@@ -98,10 +107,11 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | Rhino | 2101.2.7-build.85 | both (baseline) | [project 416294 / file 8218748](https://www.curseforge.com/minecraft/mc-mods/rhino/files/8218748) |
 | Searchables | 1.0.2 | client | [project 858542 / file 5831692](https://www.curseforge.com/minecraft/mc-mods/searchables/files/5831692) |
 | Sodium | 0.8.13+mc1.21.1 | client | [project 394468 / file 8756580](https://www.curseforge.com/minecraft/mc-mods/sodium/files/8756580) |
-| Sophisticated Backpacks | 3.26.12.2208 | both | [project 422301 / file 9154769](https://www.curseforge.com/projects/422301/files/9154769) |
-| Sophisticated Core | 1.5.14.2413 | both | [project 618298 / file 9229216](https://www.curseforge.com/projects/618298/files/9229216) |
-| Sophisticated Storage | 1.6.7.2184 | both | [project 619320 / file 9201424](https://www.curseforge.com/projects/619320/files/9201424) |
+| Sophisticated Backpacks | 3.26.12.2208 | both | [project 422301 / file 9154769](https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks/files/9154769) |
+| Sophisticated Core | 1.5.14.2413 | both | [project 618298 / file 9229216](https://www.curseforge.com/minecraft/mc-mods/sophisticated-core/files/9229216) |
+| Sophisticated Storage | 1.6.7.2184 | both | [project 619320 / file 9201424](https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage/files/9201424) |
 | spark | 1.10.124 | both | [project 361579 / file 6225208](https://www.curseforge.com/minecraft/mc-mods/spark/files/6225208) |
+| sqdclib | 2.2.0 | both | [project 1743037 / file 9236644](https://www.curseforge.com/minecraft/mc-mods/sqdclib/files/9236644) |
 | Storage Drawers | 13.11.4 | both (baseline) | [project 223852 / file 6995432](https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432) |
 | Structory: Towers | 1.0.16 | both (baseline) | [project 783522 / file 7842394](https://www.curseforge.com/minecraft/mc-mods/structory-towers/files/7842394) |
 | Terralith | 2.6.2 | both | [project 513688 / file 8222737](https://www.curseforge.com/minecraft/mc-mods/terralith/files/8222737) |
@@ -112,6 +122,7 @@ Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the lau
 | Waystones | 21.1.46 | both | [project 245755 / file 8969751](https://www.curseforge.com/minecraft/mc-mods/waystones/files/8969751) |
 | Xaero's Minimap | 26.6.0 | client | [project 263420 / file 9067173](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap/files/9067173) |
 | Xaero's World Map | 1.47.0 | client | [project 317780 / file 9067277](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files/9067277) |
+| ymondf-0.2.9-9.jar | 0.2.9-9 | both | [project 1744821 / file 9235220](https://www.curseforge.com/minecraft/mc-mods/ymondf/files/9235220) |
 | You're in Grave Danger | 2.0.13 | both | [project 544912 / file 6684166](https://www.curseforge.com/minecraft/mc-mods/youre-in-grave-danger/files/6684166) |
 | ZeroCore 2 | 2.4.21 | both (baseline) | [project 247921 / file 7344742](https://www.curseforge.com/minecraft/mc-mods/zerocore/files/7344742) |
 | Zume | 1.2.2 | client | [project 927564 / file 7983502](https://www.curseforge.com/minecraft/mc-mods/zume/files/7983502) |

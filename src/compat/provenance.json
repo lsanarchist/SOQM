@@ -5,7 +5,9 @@
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
     "0.4.2": "8b14b64d44e2c23393300611b936e8934b77e5600b8d1f3d7543affbc50bdcf1",
-    "0.4.1": "34eeabbf49dce216a69ff215a82f336b2fa2278f55a65bd63d541770e397b965"
+    "0.4.1": "34eeabbf49dce216a69ff215a82f336b2fa2278f55a65bd63d541770e397b965",
+    "0.4.6": "5c17c9030296cbbc4ce8a5c0e075c19f10366524a17f95f7fbcbe12c25604061",
+    "0.4.5": "389e03a1850f7db8de12cba12d943975fb290a0becdaa5bb207dc567e85a4fdf"
   },
   "modules": [
     {
@@ -130,6 +132,40 @@
         "resources/qm_zoom_defaults.mixins.json": "08d1e09bc8ca70c68e134c4d3c3d6c563754108373ecbebeb6d05c93c21b3eac",
         "src/qm/zoomdefaults/QmZoomDefaults.java": "0d06a6080cc009276669eaea7fedbc9b7d47de79a47b523f90ef67ea971fb03a",
         "src/qm/zoomdefaults/mixin/ZumeDefaultKeyMixin.java": "1f06a711b51aa6e452d1599f4fffb690aba22216977078ebc878a558cfa1d63d"
+      }
+    },
+    {
+      "module": "mob-compat",
+      "production_jar": "qm-mob-compat-0.4.5.jar",
+      "production_jar_sha256": "c99c3a9d50931d999c47f302fcae60781a14cf4797373911007e620748cafe66",
+      "source_origin": "authoring/v045_work/mob_mods/compat",
+      "baseline_archive": "0.4.5",
+      "license_evidence": "MIT declaration in neoforge.mods.toml; full upstream notice absent; LICENSE records this limitation.",
+      "files_sha256": {
+        "LICENSE": "2eac4484c17bf07cff61bfae8f69ce8315a1367805f94d862793d41d5c0609b4",
+        "resources/META-INF/neoforge.mods.toml": "97a6b8b4928dedfb0b9b72a9b9a7887d399aca69dbc13f176e6a3723ac266ae4",
+        "resources/qm_mob_compat.mixins.json": "cf76de75586e4bb2be5d63619be9f8562c8a53f079e8c793597cb1badda4936d",
+        "src/qm/mobcompat/MobCompat45.java": "8ab7a43801b4af3cb10d82e722c1473b86defb0d7b13c07c6275593fb0be9e2e",
+        "src/qm/mobcompat/mixin/EliteApotheosisMixin.java": "463ce0d11dae98d0d4f6a3b2e2eb93377e3c47b11104cef448203f4c3b4b6022",
+        "src/qm/mobcompat/mixin/EliteSpawnerMixin.java": "ad62192cc31949262d25bae29931914ed567eeec85377cf4f198db1cf3c2ff05",
+        "src/qm/mobcompat/mixin/MoonAvatarDataMixin.java": "a1de98cbba1fbccf3059ebdefcf5a696b51073252c8cc16bc8b90d9fb83197a7"
+      }
+    },
+    {
+      "module": "chest-balance",
+      "production_jar": "qm-chest-balance-0.4.6.jar",
+      "production_jar_sha256": "93ea3658d522a0d311369ac306e9c9d3147d15ff48cbf26a76ac46ac49414c7d",
+      "source_origin": "authoring/v046_work/chest_balance/compat",
+      "baseline_archive": "0.4.6",
+      "license_evidence": "MIT declaration in neoforge.mods.toml; full upstream notice absent; LICENSE records this limitation.",
+      "files_sha256": {
+        "LICENSE": "aa64856d52ee63e4bcdc8c517c289557ef924f166cb8c68ba7cbd4266ac93cc8",
+        "resources/META-INF/neoforge.mods.toml": "9f739a20e7e9c20adc337157fbb553ea0cb09948043c8da5882af536d8a62ba3",
+        "resources/qm_chest_balance.mixins.json": "4bfa4a15e1b3d31dd9690a963dae022cc0cebe54e1b129859e8e680a31d15618",
+        "resources/qm_chest_policy.json": "d22eeea5d201b03858c6150f1c8819b920abc7a10e68aeccd30960244ac0dcb6",
+        "src/qm/chests/QmChestBalance.java": "d39a11a2069d5cdebe5e5daa90b902b58dc5fdaf3c73b4c6a02d0712234d6b6b",
+        "src/qm/chests/SparseChestLoot.java": "8cc51e42f98dc6356ad723b965fc369131637e9c4b1365bd3f29ce3bc1dbc1e0",
+        "src/qm/chests/mixin/LootTableFillMixin.java": "0b26eab7fc2c27413b972ae329b0ef140da460939c4affdffc5d4772acc8eb41"
       }
     }
   ]

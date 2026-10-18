@@ -1,0 +1,27 @@
+{
+	"//": "These settings are easier to change in-game! Mod List -> Giant Spawn -> Config",
+	"Enable Giant Spawn": {
+		"//": "Whether Giant Spawn is enabled. When disabled, none of its features run and its other settings are hidden. Takes effect after a restart.",
+		"value": true
+	},
+	"chanceSurfaceZombieIsGiant": {
+		"//": "The chance a zombie that has spawned on the surface is a giant.",
+		"value": 0.001
+	},
+	"shouldBurnGiantsInDaylight": {
+		"//": "If enabled, burns giants when daylight shines upon them.",
+		"value": true
+	},
+	"onlySpawnGiantOnSurface": {
+		"//": "If enabled, a giant will only spawn on the surface.",
+		"value": true
+	},
+	"giantMovementSpeedModifier": {
+		"//": "The giant movement speed modifier relative to the base zombie movement speed.",
+		"value": 1.0
+	},
+	"giantAttackDamageModifier": {
+		"//": "The giant attack damage modifier relative to the base zombie attack damage.",
+		"value": 2.0
+	}
+}

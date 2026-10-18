@@ -6,7 +6,9 @@ Copyright (c) 2026 lsanarchist
 The release tooling in scripts/, tests/, and the original SOQM SVG artwork in
 assets/ are licensed under the MIT License below, except where a file contains
 its own notice. Compatibility modules in src/compat/ and their compiled JARs
-retain the original MIT licenses shipped with each module.
+retain their upstream license declarations and any supplied notices. The two
+modules first included in baseline 0.4.5/0.4.6 declare MIT but lack a complete
+upstream license notice; their individual LICENSE files record that limitation.
 
 The campaign, quest text, recipes, configuration and remaining game content in
 overrides/ are published for installing, playing and contributing to SOQM.

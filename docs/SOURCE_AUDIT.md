@@ -1,5 +1,43 @@
 # Source archive release audit
 
+## SOQM 0.4.6 integration — 2026-10-18
+
+Input: `Questing_Mayhem_1.21.1_Expert_0.4.6_Sources.zip`, SHA256
+`5c17c9030296cbbc4ce8a5c0e075c19f10366524a17f95f7fbcbe12c25604061`.
+The supplied 0.4.6 and nested 0.4.5/0.4.4 archives passed CRC, duplicate/case,
+relative-path and symlink checks. Reviewed reconstruction scripts ran only in
+ignored authoring staging. All 1,815 reconstructed upstream files matched the
+0.4.6 `BUILD_LOCK.json` hashes before SOQM integration.
+
+- The original 111 third-party file pins are unchanged; 11 exact official
+  CurseForge pins were added. Third-party JARs stay outside Git and the
+  installable archive. Their declared licenses remain scoped to those mods.
+- The original eight compatibility JARs are unchanged. Two supplied modules,
+  `qm-mob-compat-0.4.5.jar` and `qm-chest-balance-0.4.6.jar`, have recovered
+  source/resources and pinned binaries. Their metadata declares MIT, but their
+  supplied folders/JARs contain no full license or copyright notice. Each new
+  source `LICENSE` records this limitation; no copyright holder was invented.
+- The archive includes nine modified structure NBT templates from Giant Plane
+  Wreck, Moyai Structures and Ocean Lily Pad Village. They adjust inventories
+  in 22 containers. Their provenance is the supplied archive; independent
+  permission to redistribute these modified third-party templates has not
+  been established. The SOQM root license does not relicense these assets.
+- All 37 chapters, 1,625 quests, 1,772 tasks and 1,626 reward IDs and their
+  parent relationships remain. Comparing chapter objects without icons shows
+  unchanged quest behavior from 0.4.4; 280 quest icons changed. The new Ukrainian
+  guidance was retained and the SOQM English objective guide regenerated.
+- SOQM's two independent equipment/loot policies, ten Curios data files and
+  English locale remain. The two historical Craftoria-derived adapters below
+  were excluded again. `metadata/baseline-import.json` records the input delta;
+  `metadata/payload.sha256.json` pins the resulting SOQM payload.
+
+Archive evidence is distinct from this checkout's local validation. Current
+checks and their limits are documented in [reports/README.md](../reports/README.md).
+Graphical playthrough and a fix for the earlier travel/chunk stalls are not
+established by importing 0.4.6.
+
+## Historical 0.4.4 audit
+
 Release integration: the two identified historical adapters are excluded from
 SOQM. Their independent replacements pass the local policy regression and the
 fresh dedicated-server startup/reload recorded in the

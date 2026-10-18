@@ -5,14 +5,14 @@ body:
     id: version
     attributes:
       label: SOQM version
-      placeholder: 0.1.0-alpha.1
+      placeholder: 0.4.6 (include commit if built locally)
     validations:
       required: true
   - type: textarea
     id: environment
     attributes:
       label: Environment / Середовище
-      description: OS, launcher, Java version, allocated RAM; singleplayer or server.
+      description: OS, launcher, Java version, allocated RAM; singleplayer or server. For MultiMC, say whether this is a new profile or a migration.
     validations:
       required: true
   - type: textarea

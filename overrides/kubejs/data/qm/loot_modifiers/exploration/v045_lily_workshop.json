@@ -1,0 +1,29 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:blocks/mason_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/forge_loottable"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ocean_lily_pad_village:chests/toolsmith_loottable"
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "dimension": "minecraft:overworld"
+      }
+    }
+  ],
+  "table": "qm:world_additions/lily_workshop"
+}

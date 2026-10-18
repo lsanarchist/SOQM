@@ -11,7 +11,7 @@ The chosen direction is **Expert**: linked recipes and material milestones acros
 - **Measured technical quality.** Pin dependencies, reproduce imports from a built release and record launches. Performance claims require conditions and measurements.
 - **Clear provenance.** Preserve attribution, licenses and sources. Establish redistribution rights before publishing inherited or third-party material.
 
-SOQM begins from the supplied Questing Mayhem Expert 0.4.4 base. Existing `qm` namespaces, `qm_*` filenames and stable quest IDs remain because references, scripts and saved progress depend on them. Display branding can change without renaming internal identifiers.
+SOQM begins from the supplied Questing Mayhem Expert 0.4.6 base. Existing `qm` namespaces, `qm_*` filenames and stable quest IDs remain because references, scripts and saved progress depend on them. Display branding can change without renaming internal identifiers.
 
 Historical sources and reports inform the work; current integrations are accepted through their actual behavior and effect on progression. Adding a mod or chapter is not complete without checking that connection.
 

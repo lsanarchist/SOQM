@@ -1,0 +1,19 @@
+{
+	"//": "These settings are easier to change in-game! Mod List -> Skeleton Horse Spawn -> Config",
+	"Enable Skeleton Horse Spawn": {
+		"//": "Whether Skeleton Horse Spawn is enabled. When disabled, none of its features run and its other settings are hidden. Takes effect after a restart.",
+		"value": true
+	},
+	"chanceSurfaceSkeletonHasHorse": {
+		"//": "The chance a skeleton that has spawned on the surface is riding a horse.",
+		"value": 0.05
+	},
+	"shouldBurnSkeletonHorsesInDaylight": {
+		"//": "If enabled, burns skeleton horses when daylight shines upon them.",
+		"value": true
+	},
+	"onlySpawnSkeletonHorsesOnSurface": {
+		"//": "If enabled, a skeleton horse with rider will only spawn on the surface.",
+		"value": true
+	}
+}

@@ -1,6 +1,34 @@
 # Changelog
 
-## 0.1.0-alpha.1 — 2026-10-18
+## 0.4.6 — local alpha update
+
+SOQM now uses the supplied Questing Mayhem Expert **0.4.6** baseline, while
+retaining SOQM branding and independently maintained policies. The source
+archive SHA-256 is `5c17c9030296cbbc4ce8a5c0e075c19f10366524a17f95f7fbcbe12c25604061`.
+
+- 122 pinned third-party dependencies: the original 111 unchanged plus 11 additions.
+- 10 authored compatibility modules: the original eight plus
+  `qm-mob-compat-0.4.5` and `qm-chest-balance-0.4.6`.
+- Leaner new chest loot and compact first-fill handling for 380 exact tables;
+  protected story items, keys and boss rewards can exceed ordinary limits.
+- Nine structure templates adjust 22 prefilled inventories. Existing opened
+  chests and personal Lootr inventories are not regenerated or cleared.
+- Plastic/HDPE removed from random chest loot and 42 entries in 36 cube tables;
+  quest rewards and recipe progression are retained.
+- 280 quest icon replacements, including 140 distinct DivineRPG icons, plus two
+  model-reference fixes.
+- Improved Ukrainian guidance: routes for all 37 chapters, clearer material
+  milestones, 1506 revised descriptions and 3131 repeated service paragraphs removed.
+- The same 1625 quests, 1772 tasks and 1626 reward IDs; no new quests or recipe
+  changes in the 0.4.6 baseline. English remains an objective guide.
+
+These content counts describe the imported baseline; historical native results
+from its archive are not a fresh test of the changed SOQM package. See
+[verification status](reports/README.md). The local output is
+`dist/SOQM-0.4.6-curseforge.zip`; no new public asset is claimed. Graphical
+playthrough, multiplayer balance, economy and client performance remain alpha work.
+
+## 0.1.0-alpha.1 — 2026-10-18 (historical)
 
 First standalone SOQM source and installation release, based on the supplied
 Questing Mayhem Expert 0.4.4 campaign.
@@ -13,6 +41,5 @@ Questing Mayhem Expert 0.4.4 campaign.
 - Ukrainian campaign; English objective guide with explicit translation scope.
 - Local validation, reproducible installation ZIP, download integrity audit.
 
-This alpha does not establish a complete playthrough, long-term economy,
-multiplayer balance or measured client performance. See `reports/` for fresh
-checks and `docs/PLAYTEST.uk.md` for the remaining acceptance work.
+Historical server and archive evidence is linked in `reports/README.md`; it
+applies to that immutable alpha, not automatically to SOQM 0.4.6.

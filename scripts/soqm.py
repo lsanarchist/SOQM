@@ -112,7 +112,7 @@ def check():
     expected_jars = {'mods/' + row['filename']: row['sha256'] for row in authored}
     jars = {name: h for name, h in actual.items()
             if PurePosixPath(name).suffix.casefold() == '.jar'}
-    require(jars == expected_jars, 'Only eight hash-pinned authored JARs may be embedded')
+    require(jars == expected_jars, 'Only hash-pinned authored JARs may be embedded')
     forbidden_roots = {'saves', 'logs', 'crash-reports', 'screenshots', 'XaeroWaypoints', 'XaeroWorldMap'}
     for name in actual:
         require(name.split('/')[0] not in forbidden_roots, 'Player/runtime data in payload')
