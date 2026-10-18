@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Update `qm-cannibal-compat` to 0.4.1. Cannibal Villages discovery scans now
+  inspect only ready chunks instead of waiting for nearby generation on the
+  server thread. Existing discovery flags, titles, sounds, and chest protections
+  remain in place. This targets the repeated blocking path identified in two
+  player-provided spark profiles; it does not claim a measured speedup or fix
+  the separate Millénaire village-spawn waits.
+
 ## 0.4.6 — local alpha update
 
 SOQM now uses the supplied Questing Mayhem Expert **0.4.6** baseline, while

@@ -1,5 +1,15 @@
 # Source archive release audit
 
+## Cannibal discovery hotfix — unreleased
+
+`qm-cannibal-compat-0.4.1.jar` is a local revision of the recovered Cannibal
+compatibility module. It redirects the exact Cannibal Villages 2.4.9 discovery
+lookup to a ready-chunk query, avoiding synchronous waits during player ticks.
+The original source origin and 0.4.0 binary hash remain recorded in compatibility
+provenance. See the [module's build and scope notes](../src/compat/cannibal/README.md).
+This targeted change does not establish a general fix for all exploration
+performance problems or for the separate Millénaire spawning waits.
+
 ## SOQM 0.4.6 integration — 2026-10-18
 
 Input: `Questing_Mayhem_1.21.1_Expert_0.4.6_Sources.zip`, SHA256
