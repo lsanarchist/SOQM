@@ -1,15 +1,66 @@
-# Local inputs, downloaded dependencies and runtime state
+# Local inputs and downloaded dependencies (keep manifests/lock files in Git)
 .work/
 .cache/
 dist/
+node_modules/
+.gradle/
+build/
+out/
+
+# Downloaded mod binaries. Only these pinned, source-backed SOQM modules ship
+# with the source checkout; removing them would break the current offline build.
+*.[jJ][aA][rR]
+*.class
+!/overrides/mods/qm-cannibal-compat-0.4.0.jar
+!/overrides/mods/qm-chancecubes-compat-0.4.1.jar
+!/overrides/mods/qm-chancecubes-lifecycle-0.4.2.jar
+!/overrides/mods/qm-lucky-support-0.4.2.jar
+!/overrides/mods/qm-quest-automation-0.4.2.jar
+!/overrides/mods/qm-quest-ui-0.4.2.jar
+!/overrides/mods/qm-village-guard-0.4.2.jar
+!/overrides/mods/qm-zoom-defaults-0.4.3.jar
+**/mods/.index
+**/mods/.connector/
+
+# Generated archives; downloads/ contains the published installer intentionally
 *.zip
 !downloads/*.zip
 *.mrpack
+
+# Python, local credentials and editor/OS state
 __pycache__/
 *.py[cod]
 .env
 .env.*
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Minecraft runtime and generated mod data
 *.log
+*.hprof
+*.jfr
+*.disabled
+.curseclient
+accounts.json
+launcher_accounts.json
+launcher_profiles.json
+minecraftinstance.json
+server.properties
+**/kubejs/probe/
+**/kubejs/config/probejs.json
+**/kubejs/config/probe-settings.json
+**/kubejs/*/jsconfig.json
+.probe/
+**/config/ftbquests/quests/lang/recovery/
+*.snbt_merged
+
 # Never publish player state
 saves/
 logs/
