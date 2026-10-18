@@ -4,7 +4,7 @@
 
 ## Нова гра
 
-1. Завантаж [SOQM-0.1.0-alpha.1-curseforge.zip](../downloads/SOQM-0.1.0-alpha.1-curseforge.zip) з папки `downloads/` репозиторію GitHub (кнопка **Download raw file**). Звір SHA-256 із [SHA256SUMS](../downloads/SHA256SUMS). Архів вихідного коду GitHub (`Source code`) і початковий архів Questing Mayhem не є готовим профілем збірки.
+1. Завантаж [SOQM-0.1.0-alpha.1-curseforge.zip](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SOQM-0.1.0-alpha.1-curseforge.zip) з незмінного коміту опублікованої альфи. Звір SHA-256 із [SHA256SUMS](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SHA256SUMS). Архів вихідного коду GitHub (`Source code`) і початковий архів Questing Mayhem не є готовим профілем збірки.
 2. У CurseForge App вибери Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file** і вкажи ZIP. Дочекайся завершення завантаження всіх модів. [Офіційна інструкція імпорту](https://support.curseforge.com/support/solutions/articles/9000197912) пояснює також вимоги до структури ZIP. Публікація збірки в каталозі CurseForge для такого імпорту не потрібна.
 3. Перевір у налаштуваннях профілю Java 21 і виділену пам'ять. **6 GiB** — початкова рекомендація для перевірки, а не виміряна системна вимога. Не віддавай грі всю оперативну пам'ять: системі та лаунчеру також потрібен запас.
 4. Запусти профіль, дочекайся головного меню та створи окремий тестовий світ. Перевір книгу квестів, пошук рецептів і збереження світу за [чеклістом](PLAYTEST.uk.md).

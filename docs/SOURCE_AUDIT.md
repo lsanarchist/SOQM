@@ -2,7 +2,8 @@
 
 Release integration: the two identified historical adapters are excluded from
 SOQM. Their independent replacements pass the local policy regression and the
-fresh dedicated-server startup/reload recorded in `reports/smoke-server.json`.
+fresh dedicated-server startup/reload recorded in the
+[published alpha evidence](https://github.com/lsanarchist/SOQM/blob/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/reports/smoke-server.json).
 Rendered equipment slots and player loot outcomes still need graphical testing.
 
 Inspected 2026-10-18 without executing archive scripts. Input:

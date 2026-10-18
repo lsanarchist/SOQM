@@ -22,10 +22,11 @@ out/
 **/mods/.index
 **/mods/.connector/
 
-# Generated archives; downloads/ contains the published installer intentionally
+# Generated release artifacts and local verification output
 *.zip
-!downloads/*.zip
 *.mrpack
+/downloads/SHA256SUMS
+/reports/**/*.json
 
 # Python, local credentials and editor/OS state
 __pycache__/

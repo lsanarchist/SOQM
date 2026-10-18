@@ -2,7 +2,7 @@
 
 **Shout Out to Questing Mayhem** targets Minecraft **1.21.1**, **NeoForge 21.1.262** and **Java 21**. Keep the release's pinned mod versions: updating individual mods can change recipes, dependencies and quest behavior.
 
-1. Download [SOQM-0.1.0-alpha.1-curseforge.zip](../downloads/SOQM-0.1.0-alpha.1-curseforge.zip) from the GitHub repository’s `downloads/` directory using **Download raw file**. Verify it against [SHA256SUMS](../downloads/SHA256SUMS). GitHub's automatic `Source code` archives and the original Questing Mayhem source archive are not installable profiles.
+1. Download [SOQM-0.1.0-alpha.1-curseforge.zip](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SOQM-0.1.0-alpha.1-curseforge.zip) from the immutable published-alpha commit. Verify it against [SHA256SUMS](https://raw.githubusercontent.com/lsanarchist/SOQM/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833/downloads/SHA256SUMS). GitHub's automatic `Source code` archives and the original Questing Mayhem source archive are not installable profiles.
 2. In CurseForge App, open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**, then select the ZIP. Wait for every dependency to download. See the [official import instructions](https://support.curseforge.com/support/solutions/articles/9000197912). Importing a ZIP does not require a CurseForge catalog listing.
 3. Check Java 21 and the profile's memory allocation. **6 GiB** is a starting recommendation for testing, not a measured system requirement. Leave sufficient RAM for your OS and launcher.
 4. Launch, reach the main menu and create a separate test world. Check the quest book, recipes and saving using the [playtest checklist](PLAYTEST.en.md).

@@ -14,8 +14,8 @@ SOQM оформлює її як окремий відтворюваний про
 
 ## Грати
 
-Завантаж `SOQM-0.1.0-alpha.1-curseforge.zip` із папки
-[`downloads/`](downloads/) та імпортуй його як новий профіль у сумісний лаунчер.
+Завантаж `SOQM-0.1.0-alpha.1-curseforge.zip` за
+[посиланням на опубліковану альфу](downloads/README.md) та імпортуй його як новий профіль у сумісний лаунчер.
 Архів **Source code** від GitHub для встановлення не підходить.
 Потрібні придбана Minecraft Java Edition та Java 21.
 
@@ -45,14 +45,15 @@ python3 scripts/soqm.py verify-downloads
 `overrides/` містить ігрові налаштування, квести та скрипти; `src/compat/` —
 джерела восьми власних модулів. `manifest.json` і `metadata/` фіксують залежності
 та контрольні суми. Світи, акаунти, карти й сторонні модові JAR не зберігаються
-в репозиторії. Свіжі результати перевірок — у [`reports/`](reports/).
+в репозиторії. [Підсумок перевірок альфи](reports/README.md) посилається на
+зафіксовані докази; нові JSON-звіти генеруються локально та ігноруються Git.
 
 ## English
 
 SOQM is an Expert Minecraft campaign built around interconnected production,
 magic and exploration: **1,625 quests across 37 chapters**, with 111 pinned
 third-party mods and eight small compatibility modules. Import the installation
-ZIP from `downloads/` into a new launcher profile. This is an **alpha**;
+ZIP from the [published alpha download](downloads/README.md) into a new launcher profile. This is an **alpha**;
 full playthrough, client performance and long-term balance are not yet verified.
 The Ukrainian narrative is complete; English provides an objective guide.
 
