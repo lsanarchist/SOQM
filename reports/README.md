@@ -1,6 +1,5 @@
 # Verification status
 
-<<<<<<< HEAD
 ## Unreleased skill advancement optimization
 
 The [skill patch notes](../docs/SKILLS_OPTIMIZATION.md) describe the replacement
@@ -33,8 +32,6 @@ These offline checks and source inspections do not execute Minecraft login,
 reload or respec with a player. A fresh full-pack world/client test and a
 before/after TPS benchmark have not been performed for this configuration patch.
 
-## Unreleased Cannibal 0.4.1 hotfix
-=======
 ## SOQM 0.4.7 — current reviewed campaign
 
 Validation completed on **2026-10-19**. The exact final game payload passed
@@ -75,7 +72,6 @@ That earlier report is not presented as the exact final payload test; the final
 interaction run includes its own fresh-world startup, reload and saved shutdown.
 
 ## Historical Cannibal 0.4.1 hotfix validation (before 0.4.7)
->>>>>>> origin/main
 
 The Cannibal compatibility module is rebuilt as
 `qm-cannibal-compat-0.4.1.jar`, SHA-256
