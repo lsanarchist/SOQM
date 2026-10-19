@@ -2,12 +2,33 @@
 
 ## Unreleased
 
+### Skill advancement observation
+
 - Replace nine skill-milestone tick/NBT criteria with explicit advancement
   grants from Pufferfish Skills unlock rewards. Existing unlocked skills are
   reconciled on login or data reload; advancement IDs, saved completion,
   capstone's any-one-branch rule and historical completion after respec are
   retained. No new mod or polling script is required. See the
   [patch notes](docs/SKILLS_OPTIMIZATION.md) for scope and validation.
+
+### 0.4.7 — world generation and background work
+
+- Reuse duplicate Abandoned Tunnels height queries within one generation call;
+  preserve placement, random draws, terrain checks and tunnel layout.
+- Migrate Mayhem guardian tickets into a versioned persistent ledger with
+  bounded indexing and expiry. Missing, captured and expired entities no
+  longer leave a permanently growing periodic UUID lookup list.
+- Update Quest Automation to 0.4.3: skip capped team evidence before Curios and
+  Relics reads, and lazily inspect machine outputs only when nearby teams need
+  them. Preserve the updated campaign IDs and progress format.
+- Replace Dungeons & Taverns global periodic entity selectors with lifecycle
+  tracking; retain the five-tick conversion phase. Use advancement events for
+  root discovery criteria and direct tags for the phantom-boss condition.
+  Scope quest-trader advancement resets to the source player.
+- Add the original MIT Runtime Optimizations 0.4.7 module, reproducible native
+  builds and full-pack behavioral/work-count fixtures. See
+  [deployment notes](docs/PERFORMANCE_OPTIMIZATION.md) and
+  [verification evidence](reports/verification-performance.md).
 
 ### 0.4.7 — campaign clarity and thematic rewards
 

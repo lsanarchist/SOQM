@@ -54,7 +54,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
    Do not copy the manifest itself or a GitHub source archive into that folder.
 3. Install the **122** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **10** authored modules, these form the SOQM mod set. Remove
+   the package's **11** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.

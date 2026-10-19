@@ -1,6 +1,18 @@
 # Verification status
 
-## Unreleased skill advancement optimization
+## Current runtime optimization patch
+
+The worldgen, guardian lifecycle and background-observation changes are
+documented in [the patch notes](../docs/PERFORMANCE_OPTIMIZATION.md). The exact
+native run, behavior checks, work counts, build hashes and limits are recorded
+in [verification-performance.md](verification-performance.md).
+
+This patch is based on `72bd75d`, which already includes the updated campaign
+and merged skill-advancement optimization. Their historical evidence below
+applies to their recorded payloads; it is not substituted for the current
+native performance regression run.
+
+## Skill advancement optimization — original validation
 
 The [skill patch notes](../docs/SKILLS_OPTIMIZATION.md) describe the replacement
 of nine tick/NBT criteria with native Pufferfish Skills command rewards in
@@ -32,7 +44,7 @@ These offline checks and source inspections do not execute Minecraft login,
 reload or respec with a player. A fresh full-pack world/client test and a
 before/after TPS benchmark have not been performed for this configuration patch.
 
-## SOQM 0.4.7 — current reviewed campaign
+## SOQM 0.4.7 campaign — validation before the runtime patch
 
 Validation completed on **2026-10-19**. The exact final game payload passed
 **48 Python regressions**, the Node equipment/loot policy regression,
@@ -54,7 +66,7 @@ The final native run created a fresh localhost world, reloaded
   empty ME storage fail;
 - independent advancement and nonempty TeamData disk round trips plus reload.
 
-The final report matches the current payload lock and verifies that no
+The final campaign report matches its recorded payload lock and verifies that no
 production file changed during the run. The fixture uses synthetic players,
 creative power and direct block setup to isolate the tested conditions.
 Graphical rendering, survival pacing, long-term multiplayer economy and

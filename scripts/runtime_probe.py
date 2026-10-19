@@ -84,7 +84,8 @@ description="Test-only synthetic player/team fixtures; never ship in the pack."
     return jar
 
 
-def run(args, report, deadline):
+def run(args, report, deadline, *, compile_fn=compile_probe, probe_source=SOURCE,
+        workspace_kind="runtime-probe"):
     require(args.accept_eula, "Pass --accept-eula after accepting https://aka.ms/MinecraftEULA")
     java = shutil.which(args.java)
     require(java is not None, "Java executable not found")
@@ -122,19 +123,19 @@ def run(args, report, deadline):
         except OSError as error:
             raise SmokeFailure("Probe localhost port is already in use") from error
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-    workspace = ROOT / ".work/runtime-probe" / ("run-" + stamp)
+    workspace = ROOT / ".work" / workspace_kind / ("run-" + stamp)
     server = workspace / "server"
     server.mkdir(parents=True)
     report.update(workspace=workspace.relative_to(ROOT).as_posix(), java_version=match.group(1),
                   pack_version=pack["version"], reviewed_payload_match=reviewed,
                   development_payload_allowed=args.allow_unlocked_payload, production_payload_sha256=payload,
                   third_party_mods_verified=len(pins), native_server_sha256=NATIVE_SHA256,
-                  probe_source_sha256=sha(SOURCE), harness_sha256=sha(Path(__file__)))
+                  probe_source_sha256=sha(probe_source), harness_sha256=sha(Path(__file__)))
     baseline = workspace / "baseline-quests"
     report["baseline_commit"] = baseline_quests(args.baseline_ref, baseline, deadline)
     report["baseline_quests_sha256"] = hashes(baseline)
     print("Compiling the test-only mod against the pinned native runtime...", flush=True)
-    jar = compile_probe(java, runtime, workspace, deadline)
+    jar = compile_fn(java, runtime, workspace, deadline)
     # Runtime libraries are immutable reused dependencies; each tested payload,
     # configuration and world is an independent copy in a fresh directory.
     (server / "libraries").symlink_to(runtime / "libraries", target_is_directory=True)
@@ -194,7 +195,7 @@ def run(args, report, deadline):
                     reload_offset = len(text)
                     process.stdin.write("reload\n")
                     process.stdin.flush()
-                    print("Native interaction checks passed; reloading data and checking saved progress...", flush=True)
+                    print("Initial native fixture phase completed; reloading data and checking saved progress...", flush=True)
                 if reload_offset is not None and reload_at is None:
                     counts = re.findall(r"\bLoaded (\d+) recipes\b", text[reload_offset:])
                     if counts:

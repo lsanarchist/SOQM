@@ -143,7 +143,7 @@ class CompatibilityProvenanceTests(unittest.TestCase):
         provenance = read_json(directory / "provenance.json")
         authored = read_json(ROOT / "metadata/authored-mods.json")
         modules = provenance["modules"]
-        self.assertEqual(len(modules), 10)
+        self.assertEqual(len(modules), 11)
         self.assertEqual({row["production_jar"] for row in modules}, {row["filename"] for row in authored})
         for module in modules:
             with self.subTest(module=module["module"]):
