@@ -21,6 +21,12 @@
         "data": {
           "tag": "qm_skill_root"
         }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/root=true}] run advancement grant @s only qm:skills/root unlocked"
+        }
       }
     ]
   },
@@ -54,6 +60,12 @@
         "type": "puffish_skills:tag",
         "data": {
           "tag": "qm_skill_guardian_1"
+        }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/guardian=true}] run advancement grant @s only qm:skills/guardian unlocked"
         }
       }
     ]
@@ -225,6 +237,12 @@
         "data": {
           "tag": "qm_skill_guardian_6"
         }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/capstone=true}] run advancement grant @s only qm:skills/capstone guardian"
+        }
       }
     ]
   },
@@ -258,6 +276,12 @@
         "type": "puffish_skills:tag",
         "data": {
           "tag": "qm_skill_warrior_1"
+        }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/warrior=true}] run advancement grant @s only qm:skills/warrior unlocked"
         }
       }
     ]
@@ -429,6 +453,12 @@
         "data": {
           "tag": "qm_skill_warrior_6"
         }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/capstone=true}] run advancement grant @s only qm:skills/capstone warrior"
+        }
       }
     ]
   },
@@ -462,6 +492,12 @@
         "type": "puffish_skills:tag",
         "data": {
           "tag": "qm_skill_explorer_1"
+        }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/explorer=true}] run advancement grant @s only qm:skills/explorer unlocked"
         }
       }
     ]
@@ -633,6 +669,12 @@
         "data": {
           "tag": "qm_skill_explorer_6"
         }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/capstone=true}] run advancement grant @s only qm:skills/capstone explorer"
+        }
       }
     ]
   },
@@ -666,6 +708,12 @@
         "type": "puffish_skills:tag",
         "data": {
           "tag": "qm_skill_engineer_1"
+        }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/engineer=true}] run advancement grant @s only qm:skills/engineer unlocked"
         }
       }
     ]
@@ -836,6 +884,12 @@
         "type": "puffish_skills:tag",
         "data": {
           "tag": "qm_skill_engineer_6"
+        }
+      },
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "unlock_command": "execute unless entity @s[advancements={qm:skills/capstone=true}] run advancement grant @s only qm:skills/capstone engineer"
         }
       }
     ]

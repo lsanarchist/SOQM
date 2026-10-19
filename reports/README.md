@@ -1,5 +1,37 @@
 # Verification status
 
+## Unreleased skill advancement optimization
+
+The [skill patch notes](../docs/SKILLS_OPTIMIZATION.md) describe the replacement
+of nine tick/NBT criteria with native Pufferfish Skills command rewards in
+seven existing JSON files. The installed Pufferfish Skills 0.19.2 JAR was
+checked by SHA-256 and inspected to verify command parsing, player context,
+login/reload reward reconciliation and respec behavior.
+
+Validation completed on **2026-10-19**:
+
+- All 19 Python tests passed, including five skill-configuration regressions
+  for the nine mappings, saved criterion names, capstone's any-one-branch
+  requirement, the free root, existing tags and six independent point stages.
+- A semantic comparison against `e71db83` verified that removing the nine
+  appended rewards restores the original skill definitions exactly. The six
+  milestone JSONs differ only in their criteria. Seventeen related point,
+  layout, retraining and quest files are byte-identical to the base revision.
+- The JavaScript equipment/loot policy regression, Ukrainian locale coverage,
+  English-guide freshness, all 122 dependency pins, 10 authored module pins
+  and 1827 payload hashes passed the repository gate. Only seven payload hashes
+  changed; the set of payload files is unchanged.
+- The installation ZIP passed exact-content, CRC, hash and deterministic
+  rebuild checks: SHA-256
+  `feffded32a1eaff50c2f7fcaeacf437b84216619f24e5d59985b87bceabc5295`.
+- The exact NeoForge 21.1.262 `PlayerList` patch places global datapack sync
+  after advancement-progress reload, so the Pufferfish reconciliation hook
+  reads the newly loaded advancement definitions and progress.
+
+These offline checks and source inspections do not execute Minecraft login,
+reload or respec with a player. A fresh full-pack world/client test and a
+before/after TPS benchmark have not been performed for this configuration patch.
+
 ## Unreleased Cannibal 0.4.1 hotfix
 
 The Cannibal compatibility module is rebuilt as
