@@ -23,6 +23,7 @@ import dev.ftb.mods.ftbquests.quest.TeamData;
 import dev.ftb.mods.ftbquests.quest.reward.Reward;
 import dev.ftb.mods.ftbquests.quest.task.Task;
 import dev.ftb.mods.ftbquests.quest.task.AdvancementTask;
+import io.netty.channel.embedded.EmbeddedChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -43,8 +44,6 @@ import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ClientInformation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.network.CommonListenerCookie;
-import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -88,6 +87,8 @@ public final class SoqmRuntimeProbe {
                 testRecipeEvidence(server);
                 testProgressUpgrade(server);
                 prepareWorkshop(server);
+                CardboardTransportProbe.run(server, player, results);
+                FusionRuntimeProbe.run(server, results);
                 began = server.getTickCount(); stage = 1;
             } else if (stage == 1 && server.getTickCount() - began >= 80) {
                 check(!terminal.getMainNode().isActive(), "Unpowered ME fixture must be inactive");
@@ -294,8 +295,11 @@ public final class SoqmRuntimeProbe {
         GameProfile profile = new GameProfile(PLAYER, "SOQMProbe");
         player = new ServerPlayer(server, level, profile, ClientInformation.createDefault());
         Connection connection = new Connection(PacketFlow.SERVERBOUND);
-        player.connection = new ServerGamePacketListenerImpl(server, connection, player,
-                CommonListenerCookie.createInitial(profile, false));
+        // Cardboard capture posts native BreakEvent listeners, including accessory
+        // sync. Use the existing absent-client fixture transport: real channel
+        // attributes for capability queries and a sink for outgoing client packets.
+        new EmbeddedChannel(connection);
+        player.connection = ProductionEvidenceProbe.listener(server, connection, player, profile);
         meTaskTeam = new TeamData(UUID.fromString("a4bdb6a4-09f6-42d7-800b-9c118b9b8ab9"), ServerQuestFile.INSTANCE);
         var workshopQuest = ServerQuestFile.INSTANCE.getQuest(0x513011AAD4652E6FL);
         check(workshopQuest != null, "Persistent ME quest exists");

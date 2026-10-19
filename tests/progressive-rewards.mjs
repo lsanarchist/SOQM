@@ -298,7 +298,7 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1611, 'Every campaign custom reward is mapped');
+assert.equal(Object.keys(actual.reward_mappings).length, 1612, 'Every campaign custom reward is mapped');
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
 for (const pool of actual.pools) for (const prize of pool.entries) actualRegistry.add(prize.item);
@@ -331,4 +331,4 @@ for (const pool of actual.pools) {
   assert(player.deliveries.every(row => ungated.some(prize => prize.item === row.item)), `${pool.key} gives only initially eligible catalogue prizes`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1611-reward policy contract, production gates, normalized two-stage odds, 2/3/4 replacement draws, personal RNG, duplicate combining, exact outer IDs, fallback failures, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1612-reward policy contract, production gates, normalized two-stage odds, 2/3/4 replacement draws, personal RNG, duplicate combining, exact outer IDs, fallback failures, read-only bilingual commands, reload');

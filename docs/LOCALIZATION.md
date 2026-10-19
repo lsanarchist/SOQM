@@ -1,11 +1,11 @@
 # Локалізація / Localization
 
-Кампанія SOQM **0.4.9** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
+Кампанія SOQM **0.4.9** з доповненням Cardboard Box має український текст та англійський довідник цілей для alpha: **37 глав, 1626 квестів, 1773 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
 
 У 0.4.7 прибрано 1453 повторювані вступи, скорочено 1525 назв і вилучено 2287 застарілих абзаців із поверненнями нагород, списками підготовки та патчнотами рецептів. Корисні спеціальні пояснення, зокрема сплави Foundry, збережено. Єдина пам’ятка керування міститься на початку книги.
 
-У 0.4.9 **268 квестів виробничих гілок** мають авторські двомовні описи в
-`metadata/quest_branches/*.json`. Разом із попередніми уроками це **285
+У поточному доповненні **269 квестів виробничих гілок** мають авторські двомовні описи в
+`metadata/quest_branches/*.json`. Разом із попередніми уроками це **286
 різних квестів з авторськими уроками**: нові описи перекривають 50 із
 попередніх 67 уроків. Первинні джерела попереднього оформлення —
 `metadata/campaign_tutorials.json` і `metadata/campaign_route.json` —
@@ -75,8 +75,8 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 ## English scope
 
 English covers every chapter, quest, task, personal reward-pack title and
-canvas caption. All **251 section names** and **285 distinct authored
-tutorials** have editorial translations. The 268 production-branch lessons
+canvas caption. All **251 section names** and **286 distinct authored
+tutorials** have editorial translations. The 269 production-branch lessons
 override 50 of the previous 67 core lessons and teach actual machine setup,
 inputs, outputs and trial runs. Source fragments live in
 `metadata/quest_branches/*.json`; both languages share the same quest IDs.

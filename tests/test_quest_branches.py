@@ -2,7 +2,9 @@
 
 import hashlib
 import json
+import math
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -29,11 +31,36 @@ class ProductionQuestBranchTests(unittest.TestCase):
         cls.locales = {language: read(cls.directory / "lang" / (language + ".snbt")) for language in ("uk_ua", "en_us")}
 
     def test_existing_objectives_and_personal_rewards_are_unchanged(self):
-        contract = {q["id"]: {"tasks": q["tasks"], "rewards": q["rewards"], "can_repeat": q.get("can_repeat", False)} for q in self.quests.values()}
+        # One additive quest must not replace the original 0.4.9 save contract.
+        additions = read(ROOT / "metadata/campaign_identity.json")["previous_content"]["added_quests"]
+        self.assertEqual(additions, ["514A110000000001"])
+        contract = {q["id"]: {"tasks": q["tasks"], "rewards": q["rewards"], "can_repeat": q.get("can_repeat", False)}
+                    for q in self.quests.values() if q["id"] not in additions}
         expected = read(ROOT / "metadata/quest_branch_identity.json")
+        self.assertEqual(len(contract), expected["quests"])
         actual = hashlib.sha256(json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
         self.assertEqual(expected["base_commit"], "abd73f1c0736247fc5b13e0e255f8a4ef6d71b34")
         self.assertEqual(actual, expected["sha256"], "A branch edit must not change an objective or reissue a personal reward")
+
+    def test_cardboard_box_is_an_optional_sawmill_lesson_with_a_personal_reward(self):
+        box = self.quests["514A110000000001"]
+        self.assertIn(box, self.by_filename["qm_02_mek"]["quests"])
+        self.assertEqual(box["icon"]["id"], "mekanism:cardboard_box")
+        self.assertEqual(box["dependencies"], ["513011B3BB1DF1D9"])
+        self.assertTrue(box["optional"])
+        self.assertEqual(progression.quest_stage(box), 2)
+        self.assertEqual(len(box["tasks"]), 1)
+        task = box["tasks"][0]
+        self.assertEqual(task["type"], "item")
+        self.assertEqual(task["item"]["id"], "mekanism:cardboard_box")
+        self.assertEqual(task["count"], 1)
+        self.assertFalse(task["consume_items"])
+        self.assertEqual(len(box["rewards"]), 1)
+        self.assertFalse(box["rewards"][0]["team_reward"])
+        self.assertIn("soqm:reward_pool:engineering", box["rewards"][0]["tags"])
+        self.assertNotIn(box["id"], progression._ancestors(self.quests, layout.FINAL))
+        self.assertNotIn("513011B3BB1DF1D9", progression._ancestors(self.quests, "513011156F29CC4E"),
+                         "The PRC consumes Bio Fuel; its first chemistry route must not require sawdust production")
 
     def test_documented_routes_are_connected_in_the_actual_quest_graph(self):
         self.assertGreaterEqual(len(self.source["routes"]), 8)
@@ -118,6 +145,35 @@ class ProductionQuestBranchTests(unittest.TestCase):
                         self.assertEqual(locale[f"quest.{ident}.quest_desc"], patch["description"][language])
                     if "title" in patch:
                         self.assertEqual(locale[f"quest.{ident}.title"], patch["title"][language])
+
+    def test_reactor_lessons_expose_the_custom_detector_requirements(self):
+        """Operating a reactor must not depend on undisclosed observer setup."""
+        source = (ROOT / "src/compat/quest-automation/src/qm/questauto/QmQuestAutomation.java").read_text()
+        objectives = set(re.findall(r'new Objective\(0x([0-9A-F]+)L, 0x([0-9A-F]+)L, "([^"]+)"\)', source))
+        duration = int(re.search(r"tick - began >= (\d+)", source).group(1))
+        distance_squared = int(re.search(r"player\.distanceToSqr\(watch\.pos\.getCenter\(\)\) > (\d+)", source).group(1))
+        radius = math.isqrt(distance_squared)
+        self.assertEqual(radius * radius, distance_squared)
+        temperature = int(re.search(r"heatCapacitor\.getTemperature\(\) < (\d+)", source).group(1))
+        expected = {
+            "514D11FF5A4363E6": ("514D122A765B9623", "fission_commission"),
+            "514D113E1E8CF8B1": ("514D122185675E38", "fusion_runtime"),
+        }
+        for ident, (task_id, signal) in expected.items():
+            self.assertIn((ident, task_id, signal), objectives)
+            self.assertTrue(any(t["id"] == task_id and t["type"] == "custom" for t in self.quests[ident]["tasks"]))
+            for language, locale in self.locales.items():
+                with self.subTest(quest=ident, language=language):
+                    description = " ".join(locale[f"quest.{ident}.quest_desc"])
+                    self.assertIn(str(duration), description, "Explain the uninterrupted native tick interval")
+                    self.assertIn(str(radius), description, "Explain the observer's distance limit")
+                    self.assertIn("Shift", description)
+                    for phrase in (("ПКМ", "основною рукою", "вимір") if language == "uk_ua" else ("right-click", "main hand", "dimension")):
+                        self.assertIn(phrase, description)
+                    if signal == "fission_commission":
+                        self.assertIn(f"{temperature} K", description)
+                        for phrase in (("охолоджувач", "пошкодження", "вимкни") if language == "uk_ua" else ("coolant", "damage", "shut down")):
+                            self.assertIn(phrase, description)
 
 
 if __name__ == "__main__":

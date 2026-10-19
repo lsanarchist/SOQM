@@ -38,7 +38,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
         self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
         self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
-        self.assertEqual(len(self.runtime['reward_mappings']), 1611)
+        self.assertEqual(len(self.runtime['reward_mappings']), 1612)
         owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
         for ident, mapping in self.runtime['reward_mappings'].items():
             self.assertRegex(ident, rewards.ID_PATTERN)
@@ -49,7 +49,14 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_only_authorized_claim_scope_changes_without_changing_saved_ownership(self):
         identity = load(ROOT / 'metadata/campaign_identity.json')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), identity['sha256'])
-        legacy = deepcopy(self.chapters)
+        original = deepcopy(self.chapters)
+        # The newly added box quest did not exist in the shared-reward release.
+        # Retain that release's exact hash and test only its original objects.
+        additions = identity['previous_content']
+        for chapter in original:
+            chapter['quests'] = [q for q in chapter['quests'] if q['id'] not in additions['added_quests']]
+            chapter['images'] = [i for i in chapter['images'] if i['id'] not in additions['added_images']]
+        legacy = deepcopy(original)
         changes = 0
         for reward in outer_rewards(legacy):
             self.assertFalse(reward['team_reward'])
@@ -58,7 +65,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 changes += 1
         self.assertEqual(changes, 1625)
         self.assertEqual(refresh.persistent_identity(legacy, self.groups), identity['previous_claim_scope']['sha256'])
-        self.assertEqual(rewards.persistent_ids(legacy), rewards.persistent_ids(self.chapters))
+        self.assertEqual(rewards.persistent_ids(legacy), rewards.persistent_ids(original))
         for quest in quests(self.chapters):
             self.assertFalse(quest.get('can_repeat', False))
             self.assertFalse(quest.get('repeatable', False))
@@ -79,7 +86,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertNotIn('item', reward)
                 for locale in (uk, en):
                     self.assertTrue(locale[f"reward.{reward['id']}.title"])
-        self.assertEqual(count, 1611)
+        self.assertEqual(count, 1612)
 
     def test_fixed_milestones_and_original_personal_book_are_retained(self):
         cubes = books = 0
@@ -202,8 +209,8 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         locale = {'unrelated.key': 'untouched'}
         report = rewards.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
-        self.assertEqual(report['personal_rewards'], 1626)
-        self.assertEqual(report['progressive_rewards'], 1611)
+        self.assertEqual(report['personal_rewards'], 1627)
+        self.assertEqual(report['progressive_rewards'], 1612)
         self.assertEqual(locale['unrelated.key'], 'untouched')
         again = deepcopy(locale)
         self.assertEqual(rewards.apply(chapters, again), report)

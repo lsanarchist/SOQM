@@ -73,9 +73,13 @@ public final class ProgressiveRewardsProbe {
         check(policy.get("schema").getAsInt() == 2, "Actual runtime policy uses schema 2");
         check(policy.getAsJsonArray("pools").size() == 14, "Full authored catalogue has fourteen themes");
         check(policy.getAsJsonArray("levels").size() == 6, "Six production milestones are present");
-        check(policy.getAsJsonObject("reward_mappings").size() == 1611, "Every actual custom reward is mapped");
         ServerQuestFile file = ServerQuestFile.INSTANCE;
         List<CustomReward> custom = roundTripDefinitions(server, results);
+        Set<String> actualRewardIds = custom.stream().map(reward -> reward.getCodeString())
+                .collect(java.util.stream.Collectors.toSet());
+        check(policy.getAsJsonObject("reward_mappings").keySet().equals(actualRewardIds),
+                "Runtime mappings match every live custom reward ID, without missing or stale entries");
+        results.put("native_actual_custom_reward_mappings", actualRewardIds.size());
         testLegacyProgress(server, results);
 
         ProbePlayer first = player(server, FIRST, "SOQMRewardA");
@@ -219,7 +223,7 @@ public final class ProgressiveRewardsProbe {
                 } finally { buffer.release(); }
             }
         }));
-        check(total[0] == 1626 && custom.size() == 1611, "All actual outer rewards and custom callbacks are covered");
+        check(total[0] == 1627 && custom.size() == 1612, "All actual outer rewards and custom callbacks are covered");
         results.put("native_personal_outer_rewards", total[0]);
         results.put("native_custom_rewards_nbt_and_packet_roundtripped", custom.size());
         return custom;

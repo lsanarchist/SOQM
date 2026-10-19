@@ -32,9 +32,9 @@ class CampaignContentTests(unittest.TestCase):
     def test_campaign_not_truncated(self):
         """A release cannot silently lose chapters, quests, tasks or rewards."""
         self.assertEqual(len(self.chapters), 37)
-        self.assertEqual(len(self.quest_list), 1625)
-        self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), 1772)
-        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1626)
+        self.assertEqual(len(self.quest_list), 1626)
+        self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), 1773)
+        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1627)
 
     def test_all_persistent_ids_are_unique(self):
         objects = [("group", group["id"]) for group in self.groups]

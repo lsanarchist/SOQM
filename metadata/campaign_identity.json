@@ -1,15 +1,26 @@
 {
   "base_commit": "e71db8398ddc9f07e85981fac942f52dd23f447d",
   "serialization": "SHA-256 of sorted compact JSON; see campaign_refresh.persistent_identity",
-  "sha256": "31e699bc3f09cd80dddb6c918aadb77e061c33729eeebca8add52dbd75253c9e",
+  "sha256": "a5b2531829776eeb7cf1be81bed301d40948b9f800eb2a8ab880874ca3646148",
   "chapters": 37,
-  "quests": 1625,
-  "tasks": 1772,
-  "outer_rewards": 1626,
+  "quests": 1626,
+  "tasks": 1773,
+  "outer_rewards": 1627,
   "previous_claim_scope": {
     "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
     "base_commit": "72bd75d131a986afe9cf0d11580fdcaf009a208a",
     "migrated_rewards": 1625,
     "migration": "Shared NIL_UUID claims remain historical; each player receives one personal claim for previously shared rewards. Existing personal keys, quest/task IDs and ownership remain intact."
+  },
+  "previous_content": {
+    "base_commit": "6dbd50b03285dc844a5a3bc423ecbe17c31d0145",
+    "sha256": "31e699bc3f09cd80dddb6c918aadb77e061c33729eeebca8add52dbd75253c9e",
+    "added_quests": [
+      "514A110000000001"
+    ],
+    "added_images": [
+      "514A140000000001"
+    ],
+    "migration": "One additive optional Cardboard Box quest, task, personal reward and caption. Existing quest/task/reward ownership and claim scope are unchanged; all original hashes are checked on the original objects."
   }
 }

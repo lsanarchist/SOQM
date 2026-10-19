@@ -1,11 +1,15 @@
 # SOQM 0.4.9: виробничі гілки квестбука
 
-**Дев’ять глав, 417 наявних квестів і 63 секції** тепер читаються як маршрути
+**Дев’ять глав, 418 квестів і 63 секції** тепер читаються як маршрути
 виробництва: перший результат → робочий пристрій → подача й відведення →
-автоматизація → розширення. Книга використовує ті самі задачі й нагороди;
+автоматизація → розширення. Книга зберігає всі старі задачі й нагороди;
 змінюються їхній навчальний порядок, залежності, назви, пояснення та композиція.
 Окремий квест RFTools Crafter Tier 1 підтримує ранній маршрут AE2, але глава
 RFTools не входить до цих дев’яти карт.
+
+У поточній гілці до 417 квестів версії 0.4.9 додано одну необов’язкову
+картонну коробку Mekanism. [Аудит логіки](PACK_LOGIC_AUDIT.md) описує це
+доповнення, правильну сировину PRC і виправлені умови запуску реакторів.
 
 Цей документ пояснює, як проходити нові гілки та як редагувати їхні джерела.
 [Зміни версії й оновлення світу](CAMPAIGN_UPDATE.md) описують сумісність із
@@ -206,13 +210,13 @@ ME P2P вивчається як налаштована пара на окрем
 
 ## Шість інших виробничих глав
 
-Ці глави разом охоплюють **299 наявних квестів у 43 секціях**. Їхні
+Ці глави разом охоплюють **300 квестів у 43 секціях**. Їхні
 маршрути прив’язані до чинних рецептів і типів задач, а не до загальної
 ієрархії «дешевше → дорожче».
 
 | Глава | Квестів / секцій | Основний маршрут | Що уточнено | Карта |
 | --- | ---: | --- | --- | --- |
-| Mekanism | 88 / 10 | Осмій → FE → Infuser → два проходи вуглецю → сталь → збагачення й випал → газова та повна хімічна переробка | Предмети, рідини й хімікати мають окрему подачу; фабрики паралелять уже освоєну операцію. QIO є окремою гілкою місткості | [Mekanism](../assets/campaign-mekanism.svg) |
+| Mekanism | 89 / 10 | Осмій → FE → Infuser → два проходи вуглецю → сталь → збагачення й випал → газова та повна хімічна переробка | Лісопилка → тирса → необов’язкова Cardboard Box; Crusher → Bio Fuel → PRC. Предмети, рідини й хімікати мають окрему подачу; QIO є окремою гілкою місткості | [Mekanism](../assets/campaign-mekanism.svg) |
 | Атом, синтез і високі енергії | 60 / 9 | Майданчик і паливо → корпус → охолодження й зупинка → контрольований поділ → відходи й полоній → синтез → SPS → антиматерія | Турбіна та енергобуфер відгалужуються від робочого циклу. Induction Cell задає запас, Provider — пропускну здатність; їхні поліпшення розділено | [Ядерна гілка](../assets/campaign-nuclear.svg) |
 | Ender IO | 56 / 8 | Крихти → Void Chassis → Alloy Smelter → Conductive → Energetic → Vibrant Alloy; від плавильні також ідуть канали й Crafter | Crafter доступний на точному етапі. Soularium → Slice’n’Splice / Z-Logic → Soul Binder → Powered Spawner утворюють власну послідовність | [Ender IO](../assets/campaign-ender-io.svg) |
 | Industrial Foregoing | 40 / 7 | Pity Frame і пластик → Dissolution Chamber → Simple Frame → Pink Slime / Advanced Frame → Fluid Laser Base / Ether Gas → Supreme Frame | Камера потрібна до Simple Frame. Окремі лінії ведуть до каменю, лазерного видобутку, переробки руди та мобів | [Industrial Foregoing](../assets/campaign-industrial.svg) |
@@ -314,10 +318,10 @@ multiplayer-економіка потребують окремої ігрово�
 
 ## English
 
-SOQM **0.4.9** turns **417 existing quests in nine chapters and 63 sections**
+The current SOQM branch organizes **418 quests in nine chapters and 63 sections**
 into production routes. Dependencies and teaching text explain a first usable
-setup, its input and output, then expansions. All objectives and personal reward
-objects remain unchanged. A separate RFTools Crafter Tier 1 quest supports the
+setup, its input and output, then expansions. All 417 original objectives and personal reward
+objects remain unchanged; one optional Cardboard Box lesson is added. A separate RFTools Crafter Tier 1 quest supports the
 early Molecular Assembler; RFTools is not a tenth flow chapter.
 
 **Ex Deorum / Ex Machinis:** Stone Hammer and Oak Sieve → String Mesh → four

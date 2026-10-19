@@ -85,7 +85,7 @@ SPECIAL = {
     ),
     "514D122185675E38": (
         "Controlled Fusion",
-        "Form and fuel the Fusion Reactor and prepare laser ignition. Fill a Hohlraum and start it using Mekanism's procedure. Open the formed controller and remain within 16 blocks for at least 10 seconds of actual fusion burn, positive power generation and energy in its internal buffer. Leaving or losing the formed reactor resets unfinished observation.",
+        "Form and fuel the Fusion Reactor and prepare laser ignition. Fill a Hohlraum and start it using Mekanism's procedure. Open the formed controller and remain within 16 blocks for at least 10 seconds of actual fusion burn, positive power generation. Exporting all generated energy to consumers is allowed. Leaving or losing the formed reactor resets unfinished observation.",
     ),
     "514D12A7B657AB1D": (
         "Equip an Accessory",

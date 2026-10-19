@@ -3,7 +3,7 @@
 <p align="center"><b>SOQM 0.4.9 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
 **Shout Out to Questing Mayhem (SOQM)** — Expert-кампанія про виробничі ланцюги,
-магію та дослідження. **1625 квестів у 37 главах** ведуть від першої майстерні
+магію та дослідження. **1626 квестів у 37 главах** ведуть від першої майстерні
 до великих автоматизованих систем. Основа — Questing Mayhem Expert **0.4.6**;
 SOQM розвиває власні рецепти, квести, баланс та відтворюваний процес збірки.
 
@@ -27,6 +27,12 @@ FE-машини та ME-вихід; ME-скриня, перший крафт, м
 
 [Зміни кампанії](docs/CAMPAIGN_UPDATE.md) · [Пули нагород](docs/REWARDS.md) ·
 [Changelog](CHANGELOG.md) · [Стан перевірок](reports/README.md)
+
+Поточне доповнення додає необов’язковий квест **Cardboard Box** після лісопилки
+Mekanism, виправляє маршрут біопалива до PRC, зарахування термоядерної генерації
+під навантаженням і пояснення запуску реакторів. Блоки крафтового CPU AE2
+не пакуються в коробки через відтворюваний шлях дублювання інгредієнтів.
+[Результати перевірки логіки](docs/PACK_LOGIC_AUDIT.md).
 
 ## Грати
 
@@ -106,7 +112,7 @@ python3 scripts/soqm.py lock
 
 ## English
 
-SOQM **0.4.9** is an Expert Minecraft campaign with **1,625 quests in 37 chapters**,
+SOQM **0.4.9** is an Expert Minecraft campaign with **1,626 quests in 37 chapters**,
 **122 pinned third-party mods** and **12 authored compatibility modules**.
 Its **14 original themed reward pools** contain **326 entries covering 240
 distinct items, including 210 modded items**. Every member claims a personal
@@ -142,6 +148,13 @@ old personal claims remain claimed. Leaving or joining teams does not reset a us
 claim. Items made before the production journal existed need a new sample.
 Full graphical playthrough, long-term multiplayer balance
 and performance measurements remain alpha validation work.
+
+The current addition introduces an optional Cardboard Box lesson after the
+Precision Sawmill, corrects the PRC Bio Fuel route, and fixes fusion completion
+when consumers use all generated energy. AE2 crafting CPU blocks cannot be
+boxed because the pinned versions retain an ingredient duplication path.
+All original quest, task and reward identities remain intact; see the
+[logic audit](docs/PACK_LOGIC_AUDIT.md).
 
 ## Авторство
 
