@@ -4,12 +4,21 @@
 
 У 0.4.7 прибрано 1453 повторювані вступи, скорочено 1525 назв і вилучено 2287 застарілих абзаців із поверненнями нагород, списками підготовки та патчнотами рецептів. Корисні спеціальні пояснення, зокрема сплави Foundry, збережено. Єдина пам’ятка керування міститься на початку книги.
 
-У поточному доповненні **269 квестів виробничих гілок** мають авторські двомовні описи в
-`metadata/quest_branches/*.json`. Разом із попередніми уроками це **286
-різних квестів з авторськими уроками**: нові описи перекривають 50 із
-попередніх 67 уроків. Первинні джерела попереднього оформлення —
+Оновлення виробничих гілок дало **269 авторських двомовних описів** у
+`metadata/quest_branches/*.json`: разом із попередніми уроками — 286 різних
+квестів, оскільки 50 описів перекрили попередні 67 уроків. Поточне редагування
+додає ще **286 двомовних уроків**, зокрема повний англійський переклад 35
+наявних українських уроків Modern Foundry. Тепер **572 різні квести** мають
+авторські описи обома мовами. Первинні джерела попереднього оформлення —
 `metadata/campaign_tutorials.json` і `metadata/campaign_route.json` —
 залишаються для інших глав і матеріальних рубежів.
+
+Нові джерела в `metadata/tutorial_expansions/*.json` містять лише описи та
+посилання на перевірені рецепти/довідники. `scripts/campaign_lessons.py`
+накладає їх після базових генераторів, перевіряє двомовність, унікальність
+власника й наявність ID квесту. Цей формат не дозволяє змінювати задачі,
+залежності чи нагороди. Докладний обсяг і перевірки — в
+[оновленні уроків](QUEST_LESSONS_AND_OBSERVER.md).
 
 Гілки пояснюють ручне й автоматичне просіювання, виходи Flux-машин,
 ME Chest, 1k-автокрафт, зовнішню обробку, канали й віддалений доступ,
@@ -75,11 +84,15 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 ## English scope
 
 English covers every chapter, quest, task, personal reward-pack title and
-canvas caption. All **251 section names** and **286 distinct authored
+canvas caption. All **251 section names** and **572 distinct authored
 tutorials** have editorial translations. The 269 production-branch lessons
 override 50 of the previous 67 core lessons and teach actual machine setup,
 inputs, outputs and trial runs. Source fragments live in
-`metadata/quest_branches/*.json`; both languages share the same quest IDs.
+`metadata/quest_branches/*.json`. Another **286 bilingual lessons** live in
+`metadata/tutorial_expansions/*.json`, including full English translations of
+all 35 existing Ukrainian Modern Foundry lessons. These description-only
+overlays run last in both generators; both languages share the same quest IDs.
+Generic single-paragraph inventory descriptions decreased from 1,022 to 763.
 The 14 reward themes, six production milestones, all 326 prize entries and
 read-only commands are bilingual. Current per-draw odds and locked requirements
 are shown by the reward commands, while the native FTB tooltip names the pack.

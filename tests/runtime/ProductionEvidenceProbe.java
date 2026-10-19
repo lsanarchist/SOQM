@@ -155,6 +155,7 @@ public final class ProductionEvidenceProbe {
                     "Every production policy item exists: " + id);
         }
         results.put("production_registry_items_validated", ProductionEvidence.getTrackedItems().size());
+        verifyPolicyFilter(results, "production_identity_filter_registry_items");
         producer = createPlayer(server, UUID.fromString("c87e6889-3d5a-44d0-adb9-0bd04d9d4d01"), "SOQMProducer");
         member = createPlayer(server, UUID.fromString("c87e6889-3d5a-44d0-adb9-0bd04d9d4d02"), "SOQMProdMember");
         denied = createPlayer(server, UUID.fromString("c87e6889-3d5a-44d0-adb9-0bd04d9d4d03"), "SOQMProdDenied");
@@ -297,8 +298,26 @@ public final class ProductionEvidenceProbe {
         check(beforeReload != null && beforeReload.equals(ProductionEvidence.getProducedItems(producer)),
                 "Actual production evidence survives resource reload");
         check(trackedBeforeReload.equals(ProductionEvidence.getTrackedItems()), "Native policy reload retains its exact allowlist");
+        verifyPolicyFilter(results, "production_identity_filter_registry_items_after_reload");
         verifyNativeDisk(server, results);
         results.put("production_policy_and_evidence_reload_persistence", true);
+    }
+
+    private static void verifyPolicyFilter(Map<String, Object> results, String key) {
+        Set<String> tracked = ProductionEvidence.getTrackedItems();
+        int compared = 0;
+        for (var registered : BuiltInRegistries.ITEM) {
+            ItemStack stack = new ItemStack(registered);
+            String id = BuiltInRegistries.ITEM.getKey(registered).toString();
+            check(ProductionEvidence.isTrackedOutput(stack) == (!stack.isEmpty() && tracked.contains(id)),
+                    "Item identity filter equals the exact live policy for " + id);
+            compared++;
+        }
+        check(!ProductionEvidence.isTrackedOutput(ItemStack.EMPTY), "Empty outputs never enter the observer");
+        // The untracked path must finish before consulting any node/owner state.
+        check(!ProductionEvidence.isTrackedOutput(item("minecraft:dirt")), "Negative-control output is untracked");
+        ProductionEvidence.ae2Finished(null, null, item("minecraft:dirt"));
+        results.put(key, compared);
     }
 
     private static void testTeamMembership(MinecraftServer server, Map<String, Object> results) throws Exception {

@@ -88,6 +88,21 @@ checked on the apply thread. `/reload` does not erase earned facts; removed
 allowlist items become inaccessible while their historic NBT remains intact.
 No second datapack policy or per-tick cache is maintained.
 
+The installed policy also holds an immutable set of registered `Item` identities.
+Crafting and machine callbacks reject untracked outputs before scanning recipe
+ingredients, copying a pending output, or reading an AE2 node owner. The string
+allowlist and identity set are replaced together during startup/reload and cleared
+at server stop. This caches only the configured item catalogue, never a player's
+production facts, current team, actor eligibility, or a machine's captured owner.
+Tracked outputs still pass the same manufacture and accepted-output checks.
+
+`tests/test_production_observer.py` executes the unchanged callback/filter methods
+with counting inputs to check avoided work and retained manufacture rules. The
+native fixture compares the identity filter with the exact string allowlist for
+every registered item before and after reload, alongside the existing actual
+manufacture, denied-actor, blocked-output, ownership and team-transition cases.
+These checks establish less observer work; they do not measure TPS or FPS.
+
 ## Build
 
 Run from the checkout root with an installed pinned server runtime and Java 21:
@@ -104,7 +119,7 @@ SHA-256 and precedes the unpatched Minecraft JAR on the compilation classpath.
 Mixin targets use pinned production Mojmap names with `remap=false` and required
 injections. Compilation disables annotation processors. ZIP entry ordering,
 timestamps, permissions, and compression settings are fixed. The output is
-`overrides/mods/qm-progressive-rewards-0.4.8.jar`.
+`overrides/mods/qm-progressive-rewards-0.4.9.jar`.
 
 `tests/runtime/ProductionEvidenceProbe.java` supplies a staged test-only native
 fixture through the pack's runtime probe. It uses real recipe resolution and

@@ -1,6 +1,6 @@
 # Compatibility sources
 
-SOQM 0.4.8 uses **twelve** authored compatibility modules: ten recovered from
+SOQM 0.4.9 uses **twelve** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
 module and the production-evidence adapter. The original eight include full MIT
 notices, which must remain with their source and binaries. The two later recovered modules
@@ -14,13 +14,13 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chancecubes` | `qm-chancecubes-compat-0.4.1.jar` | 0.4.1 |
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
-| `quest-automation` | `qm-quest-automation-0.4.3.jar` | 0.4.2, then local observation optimization |
+| `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
 | `quest-ui` | `qm-quest-ui-0.4.2.jar` | 0.4.2 |
 | `village-guard` | `qm-village-guard-0.4.2.jar` | 0.4.2 |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
 | `chest-balance` | `qm-chest-balance-0.4.6.jar` | 0.4.6 |
-| `progressive-rewards` | `qm-progressive-rewards-0.4.8.jar` | New SOQM 0.4.8 source and native API build |
+| `progressive-rewards` | `qm-progressive-rewards-0.4.9.jar` | New SOQM source; 0.4.9 output-filter optimization and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Expand 286 quests with reviewed Ukrainian/English lessons covering industry,
+  magic, expeditions, starter equipment and endgame production; fully translate
+  all 35 Modern Foundry lessons. Correct Mythic Circuit reward eligibility,
+  outdated chapter navigation, machine inputs and inventory-check timing.
+  Preserve the complete quest graph and saved quest/task/reward definitions.
+- Skip untracked production outputs before AE2 input scans/stack copies and
+  Mekanism Infuser ingredient/owner reads. Rebuild a registered Item identity
+  filter atomically with the reward policy on reload; ship Progressive Rewards
+  0.4.9 with reviewed source and binary hashes. See
+  [lesson and observer validation](docs/QUEST_LESSONS_AND_OBSERVER.md).
+
 - Add an optional Mekanism Cardboard Box quest after Precision Sawmill, with
   Ukrainian/English use instructions, its own icon and a personal engineering
   reward. Retain every existing quest/task/reward object and add exactly one

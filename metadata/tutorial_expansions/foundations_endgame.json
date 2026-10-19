@@ -1,0 +1,926 @@
+{
+  "schema": 1,
+  "lessons": {
+    "51301166893DC2DA": {
+      "description": {
+        "uk_ua": [
+          "Постав верстак поруч із запасом деревини й каменю: його сітка 3×3 потрібна для інструментів, печі та перших компонентів майстерні. Залиш біля нього місце для скрині й подальшої подачі матеріалів.",
+          "Перший набір для виходу з бази: кирка, факели, їжа й запасний інструмент. Квест зарахує сам верстак в інвентарі; після цього встановлюй його та виготовляй набір."
+        ],
+        "en_us": [
+          "Place the crafting table beside your wood and stone supply. Its 3×3 grid makes tools, a furnace and the first workshop components. Leave room for a chest and later material delivery.",
+          "Prepare a pickaxe, torches, food and a spare tool before leaving the base. This quest detects the table in your inventory; place it and make the supplies after that check."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011EC69FFD72C": {
+      "description": {
+        "uk_ua": [
+          "Поклади сировину у верхній слот печі, паливо — у нижній, а готовий результат забери праворуч. Почни із заліза для відра, щита та наступної кирки.",
+          "Виділи окремий запас палива для металургії. Звичайна піч готує базові матеріали; сталь, інфузійні сплави й рідини далі потребують своїх машин із промислових глав."
+        ],
+        "en_us": [
+          "Put raw material in the upper furnace slot, fuel below it, and collect the result on the right. Start with iron for a bucket, shield and your next pickaxe.",
+          "Keep a separate fuel supply for metallurgy. The ordinary furnace prepares basic materials; steel, infused alloys and molten fluids later need the machines taught in the industry chapters."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011F253F82E4C": {
+      "description": {
+        "uk_ua": [
+          "Заведи зрозумілі місця для будівельних блоків, руд і злитків, їжі та трофеїв. Відкладай компоненти найближчого рубежу в окрему скриню, щоб випадково не витратити їх на побічні крафти.",
+          "Після першої експедиції розвантаж інвентар до наступної. Місце для здобичі й запасний набір на базі корисніші за ще одну переповнену скриню без сортування."
+        ],
+        "en_us": [
+          "Give building blocks, ores and ingots, food and trophies clear storage locations. Reserve components for the next milestone in a separate chest so side projects do not spend them by accident.",
+          "Unload after each expedition. Free inventory space and a spare kit at the base are more useful than another unsorted overflowing chest."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011E3C2DBDC24": {
+      "description": {
+        "uk_ua": [
+          "Освіти робочі місця, підходи до бази та маршрут у шахті. Візьми додаткове вугілля або деревне вугілля й палиці: запас факелів можна поповнити під час довгої вилазки.",
+          "Позначай розвилки послідовно, наприклад став факели з одного боку проходу. Світло допомагає орієнтуватися, але споруди, спавнери та особливі істоти модів потребують окремої обережності."
+        ],
+        "en_us": [
+          "Light the workshop, approaches to the base and your mining route. Carry extra coal or charcoal and sticks to replenish torches during a long trip.",
+          "Mark junctions consistently, for example by placing torches on one side of the passage. Light helps navigation, while structures, spawners and special modded creatures still need their own precautions."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011C110B2ACF5": {
+      "description": {
+        "uk_ua": [
+          "Кам’яна кирка відкриває ранній видобуток заліза. Поверни першу руду на базу, переплав її та підготуй залізний інструмент до пошуку дорожчих ресурсів.",
+          "Перед руйнуванням незнайомої руди перевір вимогу до інструмента в її підказці. Якщо рівень видобутку не підходить, спочатку поліпши кирку."
+        ],
+        "en_us": [
+          "A stone pickaxe lets you begin mining iron. Bring the first ore home, smelt it and prepare an iron tool before searching for more valuable resources.",
+          "Check the mining requirement in an unfamiliar ore’s tooltip before breaking it. Upgrade the pickaxe first if its mining tier is insufficient."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011209CCD8C68": {
+      "description": {
+        "uk_ua": [
+          "Залізна кирка потрібна для алмазів і багатьох наступних руд. Перші алмази розподіли між розвитком інструментів і рецептами кампанії; не витрачай увесь запас на запасне спорядження.",
+          "Якщо переходиш на Modern Foundry, підвищуй рівень зібраної кирки заміною головки або відповідним модифікатором. Її складання й ремонт пояснені в главі 02."
+        ],
+        "en_us": [
+          "An iron pickaxe is needed for diamonds and many later ores. Split the first diamonds between tool development and campaign recipes; avoid spending the entire supply on spare equipment.",
+          "When moving to Modern Foundry, improve an assembled pickaxe with a new head or the appropriate modifier. Chapter 02 explains assembly and repair."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "5130116F7BAEEFCD": {
+      "description": {
+        "uk_ua": [
+          "Поклади щит у другу руку й перевір блокування перед експедицією. Під час бою розвертайся до джерела удару; щит не прикриває всі напрямки одночасно.",
+          "Тримай поруч їжу й шлях для відступу. Для модових босів спочатку прочитай умови бою у відповідній главі: один щит не замінює потрібне спорядження та підготовку арени."
+        ],
+        "en_us": [
+          "Equip the shield in your offhand and practise blocking before an expedition. Face the incoming attack; the shield does not cover every direction at once.",
+          "Keep food and a retreat route available. Read the relevant chapter before fighting modded bosses: a shield alone does not replace the required equipment and arena preparation."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011183B7E03D8": {
+      "description": {
+        "uk_ua": [
+          "Відро переносить джерела рідин для перших установок. Зроби окремий запас для води й палива, щоб не розбирати вже підключену машину заради кожного нового рецепта.",
+          "У багатьох інтерфейсах слот відра працює як наповнення або спорожнення бака. Після операції перевір, де залишилася тара, і забери її для повторного використання."
+        ],
+        "en_us": [
+          "A bucket moves fluid sources for your first machines. Keep a separate supply for water and fuel so each new recipe does not require dismantling a working setup.",
+          "Many machine interfaces use a bucket slot to fill or drain a tank. Check where the empty container ends up and recover it for the next operation."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011A41D3B7A48": {
+      "description": {
+        "uk_ua": [
+          "Підготуй доступне джерело води біля майстерні й запасне відро для подорожей. Вода потрібна раннім рецептам, деяким машинам і підготовці території.",
+          "Вода у відрі ще не означає, що агрегат має постійне постачання. Для безперервного виробництва перевір підключення, напрямок передачі й рівень рідини в баку під час роботи."
+        ],
+        "en_us": [
+          "Prepare an accessible water source beside the workshop and a spare bucket for travel. Water supports early recipes, some machines and terrain preparation.",
+          "A water bucket does not establish a continuous machine supply. For uninterrupted production, check the connection, transfer direction and tank level while the machine runs."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011F155DE22C0": {
+      "description": {
+        "uk_ua": [
+          "Звичайний компас показує напрямок до точки появи світу у Верхньому світі. Познач базу окремо на карті, якщо вона розташована далеко від цієї точки.",
+          "Перед переходом у новий вимір запиши координати порталу та шлях назад. Компас у кишені не створює зворотного порталу й не веде автоматично до останнього ліжка."
+        ],
+        "en_us": [
+          "An ordinary compass points towards world spawn in the Overworld. Mark your base separately on the map if you build far from that location.",
+          "Record the portal coordinates and return route before entering another dimension. Carrying a compass neither creates a return portal nor automatically points to your last bed."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "51301192168BC828": {
+      "description": {
+        "uk_ua": [
+          "Активуй порожню карту в районі, який хочеш дослідити, і заповнюй її під час руху. Збережи координати бази та важливих входів до підземель окремими позначками на карті збірки.",
+          "Для нової експедиції підготуй місце в інвентарі й спосіб повернення. Відкрита територія на карті допомагає планувати маршрут, але не виконує задачі відвідування замість самого гравця."
+        ],
+        "en_us": [
+          "Activate an empty map in the area you want to explore and fill it as you travel. Also mark the base coordinates and important dungeon entrances on the pack’s map.",
+          "Prepare inventory space and a return method for each expedition. Revealed terrain helps plan a route, but a map does not complete visit objectives in place of the player."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011FCE4A56F3F": {
+      "description": {
+        "uk_ua": [
+          "Підзорна труба дає змогу оглянути віддалену споруду, слизовий острів або шлях спуску до підходу впритул. Перевір висоту, доступ і місце для безпечного повернення.",
+          "Огляд здалеку не зараховує квест на відвідування структури. Якщо завдання просить знайти місце, прочитай його умову й зайди у відповідну область особисто."
+        ],
+        "en_us": [
+          "Use a spyglass to inspect a distant structure, slime island or descent before approaching it. Check the height, access and a safe route back.",
+          "Looking from a distance does not complete a structure-visit quest. Read the objective and enter the required area yourself when a visit is requested."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "5130119EF6D73D82": {
+      "description": {
+        "uk_ua": [
+          "Ковадло поєднує сумісні предмети й зачаровані книги за досвід. Перед підтвердженням перевір результат, сумісність чарів і показану вартість.",
+          "Спершу виріши, які чари потрібні робочому інструменту. Для модульних інструментів Modern Foundry використовуй їхню станцію й систему модифікаторів; ремонт матеріалом головки пояснено в ливарній главі."
+        ],
+        "en_us": [
+          "An anvil combines compatible equipment and enchanted books for experience. Check the resulting item, enchantment compatibility and displayed cost before confirming.",
+          "Choose the enchantments your working tool needs first. Modern Foundry’s modular tools use their own station and modifiers; the foundry chapter explains repairs with the head material."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "5130119BCB4A0B6B": {
+      "description": {
+        "uk_ua": [
+          "Точило допомагає прибрати звичайні чари з непотрібного спорядження й повернути частину досвіду. Перед обробкою переконайся, що ці чари не потрібно зберегти для іншого предмета.",
+          "Якщо хочеш перенести чар на книгу, розвивай гілку витягування чарів. Точило не замінює Enchantment Extractor, а зняття чарів не є перекуванням афіксів Apotheosis."
+        ],
+        "en_us": [
+          "A grindstone removes ordinary enchantments from unwanted equipment and returns some experience. Make sure you do not want to preserve those enchantments for another item first.",
+          "Develop the enchantment-extraction branch when you want to move an enchantment onto a book. A grindstone does not replace the Enchantment Extractor, and disenchanting is separate from Apotheosis affix reforging."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "51301127D0A2834C": {
+      "description": {
+        "uk_ua": [
+          "Ковальський стіл виконує рецепти з ковальським шаблоном, основним предметом і додатковим матеріалом. Для ванільного незеритового поліпшення підготуй Netherite Upgrade Smithing Template, алмазне спорядження й незеритовий злиток.",
+          "Уважно звіряй вихід: оздоблення броні та підвищення її матеріалу — різні рецепти. Модифікацію Netherite для Modern Foundry додають за правилами тієї майстерні."
+        ],
+        "en_us": [
+          "A smithing table uses a smithing template, base item and added material. A vanilla netherite upgrade needs a Netherite Upgrade Smithing Template, diamond equipment and a netherite ingot.",
+          "Check the output carefully: armour trimming and upgrading its material are different recipes. Modern Foundry’s Netherite modifier follows that workshop’s own rules."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "5130110539E774E4": {
+      "description": {
+        "uk_ua": [
+          "Підготуй досвід, лазурит і предмет для зачарування. Розміщені поруч полиці змінюють можливості стола; їхні фактичні параметри видно в інтерфейсі Apothic Enchanting.",
+          "Почни з корисних чарів для кирки та захисту. Потім відкрий главу Apotheosis й навчись керувати Eterna, Quanta та Arcana, зберігати чари в бібліотеці й переносити їх на потрібне спорядження."
+        ],
+        "en_us": [
+          "Prepare experience, lapis lazuli and the item to enchant. Nearby shelves change the table’s capabilities; the Apothic Enchanting interface shows its actual parameters.",
+          "Start with useful mining and protection enchantments. Then use the Apotheosis chapter to learn Eterna, Quanta and Arcana, library storage and transferring enchantments to the right equipment."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "5130119BE787F5B6": {
+      "description": {
+        "uk_ua": [
+          "Книжкові полиці підтримують стіл зачарування. Розміщуй їх за правилами його області дії та перевіряй зміну показників у вікні стола після кожної перебудови.",
+          "Для розвиненого зачарування збірка має спеціальні полиці з різними властивостями. Кількість звичайних полиць сама по собі не описує можливості такої установки; подальшу схему шукай у главі Apotheosis."
+        ],
+        "en_us": [
+          "Bookshelves support the enchanting table. Place them within its valid area and check the interface after changing the arrangement.",
+          "The pack provides specialised shelves with different properties for advanced enchanting. Counting ordinary shelves alone does not describe the resulting setup; continue in the Apotheosis chapter."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "51301176F3997CB9": {
+      "description": {
+        "uk_ua": [
+          "Лійка забирає предмети з інвентаря над нею й передає їх у напрямку свого носика. Щоб поставити її в бік скрині чи машини, присідай під час встановлення на потрібну грань.",
+          "Почни з короткого тесту: подай одну річ і перевір вихід. Якщо потік стоїть, оглянь напрямок, сумісність боку машини, вільне місце та сигнал редстоуну, який може блокувати лійку."
+        ],
+        "en_us": [
+          "A hopper pulls items from the inventory above it and sends them towards its spout. Sneak while placing it against the target face of a chest or machine.",
+          "Start with a one-item test and inspect the output. If transfer stops, check orientation, the machine’s side rules, free space and any redstone signal locking the hopper."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011B28366CA37": {
+      "description": {
+        "uk_ua": [
+          "Викидач передає предмети в інвентар перед собою або викидає їх назовні за імпульсом редстоуну. Його зручно використати там, де потрібна керована порція подачі.",
+          "Для початку подай один імпульс і перевір, куди потрапив предмет. Якщо потрібна дія самого предмета — наприклад постріл стрілою — потрібен роздавач із наступного квесту."
+        ],
+        "en_us": [
+          "A dropper sends items into the inventory in front of it or ejects them into the world on a redstone pulse. Use it when you want a controlled delivery.",
+          "Test one pulse and check where the item goes. If the item itself must act, such as firing an arrow, use the dispenser from the next quest."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011EE880E028A": {
+      "description": {
+        "uk_ua": [
+          "Роздавач реагує на імпульс редстоуну й застосовує підтримувані предмети перед собою. Для першої перевірки використай одну стрілу й вільний простір перед блоком.",
+          "Дія залежить від вмісту, тому протестуй потрібний предмет до вбудовування в установку. Для звичайної передачі речей у скриню простіше налагодити викидач або лійку."
+        ],
+        "en_us": [
+          "A dispenser responds to a redstone pulse by using supported items in front of it. For an initial test, load one arrow and leave clear space ahead.",
+          "Its action depends on the contents, so test the intended item before integrating it into a machine. A dropper or hopper is simpler for ordinary chest delivery."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+      ]
+    },
+    "513011C4E475A5DA": {
+      "description": {
+        "uk_ua": [
+          "Philosopher’s Stone у цій кампанії з’являється після ядра EMC. Його змінений рецепт виконується на столі Avaritia рівня 4 у сітці 9×9 та поєднує Neutronium, Crystal Matrix, Quantum Processor, AE2 Singularity і Ultimate Energy Cube.",
+          "Спершу налагодь цю виробничу базу й відклади компоненти для Transmutation Table. Камінь підтримує алхімічні рецепти ProjectE, а вивчення предметів і витрати особистого EMC пояснює наступний урок.",
+          "Старий простий рецепт із редстоуну, світлокаменю й алмаза тут замінено. Основні компоненти кампанії з EMC 0 надалі виготовляються власними процесами."
+        ],
+        "en_us": [
+          "The Philosopher’s Stone comes after EMC Core in this campaign. Its modified recipe uses an Avaritia tier-4 table and a 9×9 grid, combining Neutronium, Crystal Matrix, Quantum Processor, AE2 Singularity and an Ultimate Energy Cube.",
+          "Establish those production lines first and reserve components for the Transmutation Table. The stone supports ProjectE’s alchemical recipes; the next lesson explains learning items and spending personal EMC.",
+          "The old simple redstone, glowstone and diamond recipe has been replaced. Campaign components assigned EMC 0 still require their own manufacturing processes."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011AFDB9BDA41": {
+      "description": {
+        "uk_ua": [
+          "Transmutation Table працює з особистим запасом EMC і вивченими предметами. Для першого тесту внеси зайвий звичайний матеріал із додатним EMC, перевір повідомлення про вивчення й спробуй отримати його назад із доступного запасу.",
+          "У цій збірці стіл виготовляється в Avaritia 9×9. Крім Philosopher’s Stone і ядра EMC, підготуй ME Controller, Singularity, Quantum Entangloporter, Crafter Tier 3 та Advanced Capacitor Bank.",
+          "Стіл відтворює тільки дозволені предмети з EMC. Відсутність ціни на спеціальному матеріалі кампанії означає, що потрібна його звичайна виробнича лінія; додатковий запас EMC цю умову не змінить."
+        ],
+        "en_us": [
+          "The Transmutation Table uses your personal EMC balance and learned items. For a first test, offer a spare ordinary material with positive EMC, check that it is learned, then obtain it again from the available balance.",
+          "This pack crafts the table on Avaritia’s 9×9 grid. Alongside the Philosopher’s Stone and EMC Core, prepare an ME Controller, Singularity, Quantum Entangloporter, Crafter Tier 3 and Advanced Capacitor Bank.",
+          "The table reproduces eligible items with EMC values. A protected campaign material without a price still needs its normal production line; adding more EMC does not change that condition."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011AD19E4FCFC": {
+      "description": {
+        "uk_ua": [
+          "Transmutation Tablet переносить доступ до трансмутації в інвентар. Перед виготовленням збережи запас ресурсів на відновлення стаціонарної точки, якщо вона потрібна на базі: Transmutation Table входить до рецепта планшета.",
+          "Змінений крафт також потребує Dark Matter Block, ME Controller, Quantum Processor та Ultimate Energy Cube. Після виготовлення відкрий планшет і перевір доступ до своїх уже вивчених матеріалів та EMC.",
+          "Портативність не знімає обмежень EMC 0. Для експедиції окремо візьми спорядження й захищені матеріали, які планшет не відтворює."
+        ],
+        "en_us": [
+          "The Transmutation Tablet brings transmutation access into your inventory. Reserve materials to restore a fixed station if the base still needs one: the tablet recipe consumes a Transmutation Table.",
+          "The modified craft also needs Dark Matter Block, an ME Controller, Quantum Processor and Ultimate Energy Cube. Open the finished tablet and check access to your learned materials and EMC.",
+          "Portability does not remove EMC 0 restrictions. Carry equipment and protected materials that the tablet cannot reproduce separately on expeditions."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011BEC205A346": {
+      "description": {
+        "uk_ua": [
+          "Energy Collector перетворює освітлення на EMC та може підвищувати рівень алхімічного палива. Постав перший колектор в освітленому місці й перевір показник світла та накопичення енергії у вікні.",
+          "Для крафта MK1 у SOQM потрібні ядро EMC, Advanced Capacitor Bank і Nether Star Generator разом зі світлокаменем та алмазним блоком. Це пізня частина виробництва.",
+          "Почни з одного колектора й одного споживача EMC. Збільшуй установку після перевірки передачі та виходу, щоб одразу бачити, яка ланка обмежує темп."
+        ],
+        "en_us": [
+          "An Energy Collector turns light into EMC and can upgrade alchemical fuel. Place the first collector in a lit location and check its light indicator and energy accumulation.",
+          "SOQM’s MK1 recipe needs EMC Core, an Advanced Capacitor Bank and a Nether Star Generator alongside glowstone and a diamond block. It is a late production component.",
+          "Start with one collector and one EMC consumer. Expand after verifying transfer and output so you can identify which part limits throughput."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "51301115D7895881": {
+      "description": {
+        "uk_ua": [
+          "Collector MK2 розвиває вже працюючий MK1. Змінений рецепт потребує попередній колектор, Dark Matter, світлокамінь та Elite Energy Cube.",
+          "Перед заміною забери вміст старого блока. Після встановлення перевір освітлення й надходження EMC до споживача: дорожчий колектор не виправить неправильне підключення або заповнений вихід."
+        ],
+        "en_us": [
+          "Collector MK2 upgrades a working MK1. The modified recipe uses the previous collector, Dark Matter, glowstone and an Elite Energy Cube.",
+          "Remove the old block’s contents before replacing it. Check lighting and EMC delivery after installation; a stronger collector cannot fix a bad connection or a full output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011C93F33AEB9": {
+      "description": {
+        "uk_ua": [
+          "Для Collector MK3 збережи MK2 та підготуй Red Matter, світлокамінь і Ultimate Energy Cube. Це верхній ступінь звичайної лінії колекторів ProjectE.",
+          "Порівняй приріст EMC із витратами споживача під реальним навантаженням. Якщо запас уже зростає, наступним поліпшенням може бути передача або відведення предметів, а не ще один колектор."
+        ],
+        "en_us": [
+          "Keep MK2 and prepare Red Matter, glowstone and an Ultimate Energy Cube for Collector MK3. This is the top stage of ProjectE’s ordinary collector line.",
+          "Compare EMC production with consumer demand under a real workload. If the balance is already rising, the next useful improvement may be transfer or item extraction rather than another collector."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011B6729DC139": {
+      "description": {
+        "uk_ua": [
+          "В Energy Condenser вибери предмет-зразок із додатним EMC. Подані матеріали перетворюються на EMC, з якого конденсор створює вибраний результат; залиш вільне місце й організуй його відведення.",
+          "Для першого запуску використай невеликий запас звичайного ресурсу. Перевір зразок перед підключенням складу: конденсор витрачає подані матеріали, тому подавати до нього весь склад без фільтра не варто.",
+          "Рецепт SOQM поєднує Alchemical Chest, ME Drive, Quantum Entangloporter і ядро EMC. Захищені матеріали з EMC 0 не стають доступними цілями трансмутації."
+        ],
+        "en_us": [
+          "Select a sample item with positive EMC in the Energy Condenser. Supplied materials become EMC, which the condenser spends on the selected output; leave room and arrange extraction.",
+          "Test with a small stock of an ordinary resource first. Verify the target before connecting storage: supplied materials are spent, so filter the input instead of feeding the whole warehouse.",
+          "SOQM’s recipe combines an Alchemical Chest, ME Drive, Quantum Entangloporter and EMC Core. Protected EMC 0 materials do not become available transmutation targets."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011C06B143334": {
+      "description": {
+        "uk_ua": [
+          "Condenser MK2 розділяє вхід і вихід, що полегшує постійну автоматичну подачу. Після встановлення вибери ціль, подай пробну партію та перевір, з якого боку твоя транспортна система забирає результат.",
+          "Змінений рецепт витрачає MK1, блоки Dark Matter і Red Matter, Molecular Assembler та Quantum Entangloporter. Підготуй тимчасове сховище перед заміною робочого конденсора.",
+          "Вища швидкість корисна за достатнього надходження EMC й вільного виходу. Продовжуй контролювати запас матеріалів, які дозволено спалювати."
+        ],
+        "en_us": [
+          "Condenser MK2 separates input and output, making continuous automation easier. Select a target after installation, supply a test batch and verify where your transport system extracts the result.",
+          "The modified recipe consumes MK1, Dark Matter and Red Matter blocks, a Molecular Assembler and a Quantum Entangloporter. Prepare temporary storage before replacing a working condenser.",
+          "Higher speed helps when EMC supply and output capacity are sufficient. Continue controlling which materials the input may consume."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "5130112B9C04745D": {
+      "description": {
+        "uk_ua": [
+          "Anti-Matter Relay працює з EMC: приймає його від суміжних пристроїв і передає далі; також може переробляти придатні предмети. Назва не означає виробництво Antimatter Pellet Mekanism.",
+          "Для MK1 потрібні обсидіан, алмазний блок, Advanced Capacitor Bank та ядро EMC. Постав реле в перевірену коротку зв’язку між джерелом і споживачем та простеж зміну запасу EMC у кожному блоці."
+        ],
+        "en_us": [
+          "An Anti-Matter Relay handles EMC, receiving it from adjacent devices and passing it on; it can also process eligible items. Its name does not mean it produces Mekanism Antimatter Pellets.",
+          "MK1 needs obsidian, a diamond block, an Advanced Capacitor Bank and EMC Core. Place it in a short tested connection between source and consumer, then watch the EMC balance in each block."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "51301135226154BC": {
+      "description": {
+        "uk_ua": [
+          "Relay MK2 виготовляється з MK1, Dark Matter та Advanced Capacitor Bank. Забери вміст реле перед заміною й віднови його зв’язок із джерелом та споживачем EMC.",
+          "Перевір установку під час витрат конденсора. Якщо EMC накопичується перед реле, але споживач голодує, перевір пропускну здатність і розташування ланки."
+        ],
+        "en_us": [
+          "Relay MK2 uses MK1, Dark Matter and an Advanced Capacitor Bank. Remove its contents before replacement and restore the connection between EMC source and consumer.",
+          "Test while the condenser is spending energy. If EMC accumulates upstream while the consumer starves, inspect transfer capacity and device placement."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011B3C61C143A": {
+      "description": {
+        "uk_ua": [
+          "Relay MK3 потребує MK2, Red Matter та Advanced Capacitor Bank. Підвищуй рівень після перевірки джерела: реле передає EMC, а постійне надходження забезпечує виробнича частина установки.",
+          "Після заміни перевір зв’язку колектор → реле → споживач на невеликій партії. Зберігай фільтри й обмеження подачі, щоб швидша система не витратила потрібні запаси."
+        ],
+        "en_us": [
+          "Relay MK3 needs MK2, Red Matter and an Advanced Capacitor Bank. Upgrade after checking the source: a relay moves EMC, while the production side must sustain the supply.",
+          "Test the collector → relay → consumer connection on a small batch after replacement. Preserve input filters and limits so faster processing does not spend reserved materials."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "5130111DBC28B806": {
+      "description": {
+        "uk_ua": [
+          "Low Covalence Dust — початковий реагент алхімічних рецептів. Змішай 1 деревне вугілля з 8 звичайними блоками кругляку: отримаєш 40 одиниць пилу.",
+          "Зверни увагу на вид палива: у цьому рецепті потрібне саме Charcoal. Пил нижнього, середнього й високого рівня має різні рецепти та використання; відклади невеликий запас кожного потрібного виду."
+        ],
+        "en_us": [
+          "Low Covalence Dust is an early alchemical reagent. Combine 1 charcoal with 8 ordinary cobblestone blocks to obtain 40 dust.",
+          "Check the fuel type: this recipe specifically uses Charcoal. Low, medium and high covalence dust have different recipes and uses; keep a small stock of the grades you need."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011D3B3CABBD0": {
+      "description": {
+        "uk_ua": [
+          "Для першої Dark Matter оточи алмазний блок вісьмома Aeternalis Fuel. Спочатку налагодь алхімічне паливо, а потім виготовляй матеріал для поліпшень ProjectE.",
+          "Чотири Dark Matter утворюють один Dark Matter Block. Порахуй витрати саме в блоках для Tablet та AppliedE: одна одиниця матерії не замінює цілий блок у рецепті."
+        ],
+        "en_us": [
+          "For the first Dark Matter, surround a diamond block with eight Aeternalis Fuel. Establish alchemical fuel production before making materials for ProjectE upgrades.",
+          "Four Dark Matter make one Dark Matter Block. Budget in blocks for the Tablet and AppliedE recipes; one piece of matter does not replace a whole block."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "51301197D92629DB": {
+      "description": {
+        "uk_ua": [
+          "Red Matter виготовляється з 3 Dark Matter та 6 Aeternalis Fuel. Це наступний матеріальний ступінь для колекторів, реле й спорядження.",
+          "На один Red Matter Block потрібно 4 Red Matter. Перед поліпшенням усієї енергетичної установки зарезервуй блоки для EMC Module та Transmutation Terminal: інтеграція зі складом має власний кошторис."
+        ],
+        "en_us": [
+          "Red Matter uses 3 Dark Matter and 6 Aeternalis Fuel. It is the next material tier for collectors, relays and equipment.",
+          "One Red Matter Block needs 4 Red Matter. Reserve blocks for the EMC Module and Transmutation Terminal before upgrading the entire energy installation; storage integration has its own material cost."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984"
+      ]
+    },
+    "513011A3AC6C6FB0": {
+      "description": {
+        "uk_ua": [
+          "ME Transmutation Module підключає до активної ME-мережі запас EMC та знання гравця, який установив блок. Вивчені предмети з EMC з’являються як доступні для виготовлення; для роботи потрібне живлення самої мережі.",
+          "Постав модуль особисто, перевір баланс EMC у терміналі та замов один відомий недорогий предмет. Декілька модулів одного гравця не множать його запас.",
+          "Якщо модулі встановили різні гравці, їхній EMC об’єднується для роботи мережі. Домовся з командою про витрати такого запасу. Предмети з EMC 0 продовжуй робити звичайними шаблонами й виробничими машинами."
+        ],
+        "en_us": [
+          "An ME Transmutation Module connects the placing player’s EMC and learned items to an active ME network. Learned items with EMC become available for crafting; the network itself still needs power.",
+          "Place the module yourself, check the EMC balance in a terminal and request one known inexpensive item. Multiple modules from the same player do not multiply that player’s balance.",
+          "Modules placed by different players pool their EMC for the network. Agree with the team on how that balance will be spent. Continue manufacturing EMC 0 items with ordinary patterns and production machines."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984",
+        "https://www.curseforge.com/minecraft/mc-mods/appliede/files/6500056"
+      ]
+    },
+    "51301193C7F044AB": {
+      "description": {
+        "uk_ua": [
+          "Transmutation Terminal дає доступ до перетворень EMC через ME-мережу з підключеним Transmutation Module. Перевір вивчений недорогий матеріал і отримай одну одиницю для першого тесту.",
+          "Кнопка зі стрілкою визначає, куди потрапить предмет при Shift-кліку: у звичайне сховище або в слот перетворення на EMC. Перевір напрямок перед швидким розвантаженням цінних речей.",
+          "Кнопка масового вивчення витрачає по одному зразку кожного нового придатного предмета зі сховища та перетворює його на EMC. Спочатку залиш резерв для рецептів і переконайся, що розумієш вибраний режим."
+        ],
+        "en_us": [
+          "The Transmutation Terminal accesses EMC operations through an ME network with a Transmutation Module. Test by obtaining one known inexpensive material.",
+          "The arrow button determines where Shift-clicked items go: ordinary storage or the EMC conversion slot. Check its direction before quickly unloading valuable items.",
+          "The bulk-learning button consumes one sample of each newly learnable item from storage and converts it into EMC. Reserve recipe materials first and check the selected mode before using it."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984",
+        "https://www.curseforge.com/minecraft/mc-mods/appliede/files/6500056"
+      ]
+    },
+    "51301116379D6B7E": {
+      "description": {
+        "uk_ua": [
+          "EMC Export Bus створює вибрані предмети з EMC та подає їх у сусідній інвентар. У мережі має бути Transmutation Module гравця, який знає цей предмет, і достатній запас EMC.",
+          "Задай фільтр на один матеріал та підключи невелику приймальну скриню. Перевір витрату EMC і спосіб зупинки подачі, перш ніж живити велику виробничу лінію.",
+          "Для спеціальних компонентів без EMC використовуй звичайний Export Bus і власне виробництво. EMC Export Bus не вигадує їм ціну."
+        ],
+        "en_us": [
+          "An EMC Export Bus creates filtered items from EMC and sends them to an adjacent inventory. The network needs a Transmutation Module belonging to a player who knows the item, plus enough EMC.",
+          "Filter one material and connect a small receiving chest. Check EMC consumption and how you will stop delivery before supplying a large production line.",
+          "Use an ordinary Export Bus and actual manufacturing for special components without EMC. The EMC Export Bus cannot assign them a price."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984",
+        "https://www.curseforge.com/minecraft/mc-mods/appliede/files/6500056"
+      ]
+    },
+    "5130111A96A5FE8C": {
+      "description": {
+        "uk_ua": [
+          "EMC Import Bus забирає придатні предмети із сусіднього інвентаря та перетворює їх на EMC. За звичайного налаштування мережа повинна вже знати цей предмет через одного з власників Transmutation Module.",
+          "Alchemical Mastery Card дозволяє автоматично вивчати вхідні предмети з EMC. Знання отримує власник пристрою; це не означає, що кожен учасник команди особисто вивчив той самий матеріал.",
+          "Підключай шину до окремої скрині надлишків із фільтром. Для речей, які потрібно зберегти як предмети, залиш звичайний Import Bus."
+        ],
+        "en_us": [
+          "An EMC Import Bus takes eligible items from the adjacent inventory and turns them into EMC. Normally, the network must already know the item through a Transmutation Module owner.",
+          "An Alchemical Mastery Card can automatically learn incoming items with EMC. The device owner receives that knowledge; it does not mean every teammate has personally learned the item.",
+          "Connect it to a dedicated filtered surplus chest. Keep an ordinary Import Bus for items that should remain physical items in storage."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_25_projecte.snbt",
+        "overrides/kubejs/server_scripts/qm_late_emc.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/projecte/files/6611984",
+        "https://www.curseforge.com/minecraft/mc-mods/appliede/files/6500056"
+      ]
+    },
+    "513011406C235CDC": {
+      "description": {
+        "uk_ua": [
+          "Стиснений верстак починає ланцюг столів Re-Avaritia. Заповни сітку 3×3 дев’ятьма звичайними верстаками, щоб отримати Compressed Crafting Table.",
+          "Наступна ланка — Double Compressed Crafting Table, потім спеціальні столи Sculk, Nether та End і нарешті Extreme. Орієнтуйся на категорію й рівень конкретного рецепта: назва «стиснений» сама по собі не відкриває сітку 9×9.",
+          "У SOQM ключові пізні рецепти Avaritia використовують ядро EMC. Готуй столи разом із матеріальним маршрутом кампанії, щоб мати і потрібну сітку, і компоненти для роботи."
+        ],
+        "en_us": [
+          "The compressed table begins Re-Avaritia’s table progression. Fill a 3×3 grid with nine ordinary crafting tables to make a Compressed Crafting Table.",
+          "Continue with the Double Compressed Crafting Table, then the specialised Sculk, Nether and End tables, and finally Extreme. Follow each recipe’s category and tier; the word “compressed” does not itself unlock a 9×9 grid.",
+          "SOQM’s key late Avaritia recipes use EMC Core. Prepare the tables alongside the campaign’s material progression so both the required grid and its ingredients are ready."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011322353703F": {
+      "description": {
+        "uk_ua": [
+          "Double Compressed Crafting Table складається з 9 Compressed Crafting Table, тобто з 81 звичайного верстака. Підготуй запас дощок і виготовляй ці проміжні блоки партіями.",
+          "Цей блок входить до рецептів кількох спеціальних столів. Для першого Sculk Crafting Table потрібні також Echo Shard та скалкові компоненти; подальші столи використовують ресурси Нижнього світу й Енду."
+        ],
+        "en_us": [
+          "A Double Compressed Crafting Table uses 9 Compressed Crafting Tables, equivalent to 81 ordinary crafting tables. Stock planks and make these intermediate blocks in batches.",
+          "This block appears in several specialised table recipes. The first Sculk Crafting Table also needs Echo Shards and sculk components; later tables use Nether and End resources."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "5130116C9E28AC95": {
+      "description": {
+        "uk_ua": [
+          "Diamond Lattice поєднує алмази з Netherite Scrap. У встановленій Re-Avaritia є рецепт рівня 1 на 4 алмази й 1 уламок, а також звичайний рецепт 3×3 на 8 алмазів і 1 уламок.",
+          "Порівняй доступні столи перед великою партією: підготовлена спеціальна майстерня зменшує витрату алмазів. Ґратки потрібні для Crystal Matrix Ingot та наступних рівнів обладнання."
+        ],
+        "en_us": [
+          "Diamond Lattice combines diamonds with Netherite Scrap. The installed Re-Avaritia provides a tier-1 recipe using 4 diamonds and 1 scrap, plus an ordinary 3×3 recipe using 8 diamonds and 1 scrap.",
+          "Compare the available tables before making a large batch: a prepared specialised workshop reduces diamond consumption. Lattices feed Crystal Matrix Ingots and later equipment tiers."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "51301121119D2BEF": {
+      "description": {
+        "uk_ua": [
+          "Crystal Matrix Ingot робиться з Diamond Lattice та Nether Star. Рецепт Avaritia рівня 1 потребує 4 ґратки й 2 зірки; звичайний рецепт 3×3 — 6 ґраток і 3 зірки на злиток.",
+          "Налагодь повторне отримання Nether Star до масштабування. Відкладай Crystal Matrix для столів, колекторів і компресора, а не витрачай першу партію на побічне спорядження."
+        ],
+        "en_us": [
+          "Crystal Matrix Ingots use Diamond Lattices and Nether Stars. Avaritia’s tier-1 recipe needs 4 lattices and 2 stars; the ordinary 3×3 recipe uses 6 lattices and 3 stars per ingot.",
+          "Establish a repeatable Nether Star supply before scaling up. Reserve Crystal Matrix for tables, collectors and the compressor before spending the first batch on side equipment."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011CB9674DBF8": {
+      "description": {
+        "uk_ua": [
+          "Extreme Crafting Table відкриває рецепти Avaritia рівня 4 у сітці 9×9. Сам стіл виготовляється рецептом рівня 3 у сітці 7×7: спочатку підготуй End Crafting Table.",
+          "Змінений рецепт SOQM також потребує ядро EMC, Crystal Matrix, Diamond Lattice, Double Compressed Crafting Table та рідкісні компоненти експедицій. Склади повний комплект за поточним рецептом до початку крафта.",
+          "На готовому столі працюють пізні рецепти Philosopher’s Stone, Transmutation Table, Neutronium Collector та Infinity Ingot. Постав поруч резерв компонентів і залиш місце для відведення результатів."
+        ],
+        "en_us": [
+          "The Extreme Crafting Table provides Avaritia’s tier-4 recipes on a 9×9 grid. The table itself uses a tier-3 recipe on a 7×7 grid, so prepare an End Crafting Table first.",
+          "SOQM’s modified recipe also needs EMC Core, Crystal Matrix, Diamond Lattice, a Double Compressed Crafting Table and rare expedition components. Assemble the complete current recipe’s ingredients before crafting.",
+          "The finished table handles late recipes for the Philosopher’s Stone, Transmutation Table, Neutronium Collector and Infinity Ingot. Place component reserves nearby and leave room to remove outputs."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "5130116C6474BE0E": {
+      "description": {
+        "uk_ua": [
+          "Neutronium Collector поступово створює Neutron Pile. Постав його в завантаженому районі, дочекайся першого завершеного циклу та налаштуй відведення продукту; заповнений робочий вихід зупиняє корисне виробництво.",
+          "Колектор SOQM виготовляється на столі 9×9 із Crystal Matrix, блоків заліза, кварцу, редстоуну та ядра EMC. Це пасивне виробництво нейтронного матеріалу, а не реактор Mekanism.",
+          "Перед масовим будівництвом перевір один колектор і свою потребу в злитках. Враховуй стискання матеріалу: 9 pile → 1 nugget, 9 nugget → 1 ingot."
+        ],
+        "en_us": [
+          "A Neutronium Collector gradually produces Neutron Piles. Place it in a loaded area, wait for the first completed cycle and arrange extraction; a full working output stops useful production.",
+          "SOQM crafts the collector on the 9×9 table using Crystal Matrix, iron, quartz and redstone blocks, plus EMC Core. This is passive neutron-material production, separate from Mekanism reactors.",
+          "Test one collector and your ingot demand before mass construction. Account for material compression: 9 piles → 1 nugget, 9 nuggets → 1 ingot."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "5130112A1F7D2FE4": {
+      "description": {
+        "uk_ua": [
+          "Neutron Pile — перший продукт базового колектора. Забери його з виходу, щоб зарахувати предметний квест, і почни складати запас для стискання.",
+          "Дев’ять pile утворюють один nugget. Для одного ingot потрібно 81 pile, тому плануй відведення й накопичення матеріалу до великого замовлення."
+        ],
+        "en_us": [
+          "A Neutron Pile is the basic collector’s first product. Take it from the output to complete the item objective and begin a compression stockpile.",
+          "Nine piles make one nugget. One ingot needs 81 piles, so establish extraction and storage before accepting a large production order."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "51301163B5422470": {
+      "description": {
+        "uk_ua": [
+          "Заповни сітку 3×3 дев’ятьма Neutron Pile, щоб отримати Neutron Nugget. Дев’ять самородків далі стискаються в один Neutron Ingot.",
+          "Відклади самородки окремо для Ultimate Stew та Cosmic Meatballs. Ці рецепти потребують саме nugget; не обов’язково стискати весь запас до злитків."
+        ],
+        "en_us": [
+          "Fill a 3×3 grid with nine Neutron Piles to make a Neutron Nugget. Nine nuggets then compress into one Neutron Ingot.",
+          "Reserve some nuggets for Ultimate Stew and Cosmic Meatballs. Those recipes use nuggets specifically, so the entire supply need not remain compressed into ingots."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "51301169390FCFD0": {
+      "description": {
+        "uk_ua": [
+          "Neutron Ingot складається з 9 Neutron Nugget, або 81 Neutron Pile. Перевір темп колекторів на цій повній вартості, щоб оцінити час накопичення партії.",
+          "Злитки потрібні для Neutronium Compressor, шестерень та Infinity Ingot. Тримай невеликий резерв для розвитку самої лінії: витрачений до останнього злитка запас відкладає її наступне поліпшення."
+        ],
+        "en_us": [
+          "A Neutron Ingot uses 9 Neutron Nuggets, or 81 Neutron Piles. Evaluate collector throughput at that full cost when estimating how long a batch will take.",
+          "Ingots feed the Neutronium Compressor, gears and Infinity Ingots. Keep a small reserve for the production line itself so spending the last ingot does not delay its next upgrade."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011D735C27FBE": {
+      "description": {
+        "uk_ua": [
+          "Neutronium Gear виготовляється з 4 Neutron Ingot навколо 1 Crystal Matrix Ingot у звичайній сітці 3×3. Підготуй обидві лінії матеріалів до серійного крафта.",
+          "Шестерні входять до розвинених колекторів і компресорів. Спочатку вибери потрібне поліпшення й порахуй кількість попередніх машин у його рецепті; одна нова шестерня ще не завершує всю модернізацію."
+        ],
+        "en_us": [
+          "A Neutronium Gear uses 4 Neutron Ingots around 1 Crystal Matrix Ingot in an ordinary 3×3 grid. Prepare both material lines before batch crafting.",
+          "Gears are used in advanced collectors and compressors. Choose an upgrade first and count the previous-tier machines in its recipe; one new gear does not complete the whole upgrade."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011C1CC3201F5": {
+      "description": {
+        "uk_ua": [
+          "Neutronium Compressor переробляє великі партії заданої сировини за рецептами компресора, зокрема для сингулярностей Avaritia. Для кожного продукту перевір його власний матеріал, потрібну кількість і час обробки.",
+          "Спочатку подай невелику кількість правильного інгредієнта, перевір вибраний рецепт і лише тоді підключай масову подачу. Перед зміною продукту з’ясуй стан уже вкладеного запасу та блокування рецепта.",
+          "AE2 Singularity й матеріальні сингулярності Avaritia — різні предмети. Для Infinity Catalyst потрібні саме компоненти з його актуального рецепта, а не довільний предмет зі словом Singularity."
+        ],
+        "en_us": [
+          "A Neutronium Compressor processes large batches of specified materials through compressor recipes, including Avaritia singularities. Check the required material, quantity and processing time for each output.",
+          "Feed a small quantity of the correct ingredient first, verify the selected recipe, then connect bulk delivery. Check the stored input and recipe lock before changing the product.",
+          "AE2 Singularities and Avaritia’s material singularities are different items. Infinity Catalyst needs the components in its current recipe, not any item named Singularity."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "5130114AEE1EEE9F": {
+      "description": {
+        "uk_ua": [
+          "Infinity Ingot поєднує Crystal Matrix Ingot, Neutron Ingot, Infinity Catalyst і ядро EMC на столі Avaritia 9×9. Найскладніша частина підготовки — повторюваний випуск каталізаторів разом із нейтронними матеріалами.",
+          "Відкрий рецепт Infinity Catalyst як окремий виробничий план: організуй потрібні сингулярності й інші компоненти, а тоді замовляй партію фінальних злитків.",
+          "Перший злиток залиш для фінального комплекту «Головного маршруту» до його перевірки. Задачі перевіряють речі без вилучення; після зарахування можна витратити матеріал на вибране спорядження."
+        ],
+        "en_us": [
+          "An Infinity Ingot combines Crystal Matrix Ingots, Neutron Ingots, Infinity Catalysts and EMC Core on Avaritia’s 9×9 table. Preparing repeatable catalyst production alongside neutron materials is the demanding part.",
+          "Treat the Infinity Catalyst recipe as a production plan of its own: establish its required singularities and other components before requesting final ingot batches.",
+          "Keep the first ingot for the Main Route’s finale until its inventory check completes. Item objectives do not consume it; afterwards, use the material for your chosen equipment."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011A57FF0D1B0": {
+      "description": {
+        "uk_ua": [
+          "У SOQM рецепт Ultimate Stew скорочено до виробничого комплекту: 4 Golden Carrot, 2 Mana Pearl, 1 Neutron Nugget і 1 Mythic Circuit. Змішай їх на столі Avaritia рівня 4; розташування інгредієнтів довільне.",
+          "Перед витратою забери готовий продукт у власний інвентар для перевірки квесту. Для цього рецепта потрібні вже розвинені Botania, нейтронна лінія й міфічні схеми; колекція десятків окремих рослин тут не потрібна."
+        ],
+        "en_us": [
+          "SOQM simplifies Ultimate Stew into a production bundle: 4 Golden Carrots, 2 Mana Pearls, 1 Neutron Nugget and 1 Mythic Circuit. Combine them on an Avaritia tier-4 table; ingredient placement is unrestricted.",
+          "Take the finished product into your inventory for the quest check before using it. This recipe relies on developed Botania, neutron production and Mythic Circuits without requiring a collection of dozens of separate crops."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    },
+    "513011072188768A": {
+      "description": {
+        "uk_ua": [
+          "Cosmic Meatballs у цій кампанії потребують 4 Cooked Beef, 2 Vibrant Alloy Ingot, 1 Neutron Nugget та 1 Mythic Circuit. Це безформний рецепт Avaritia рівня 4.",
+          "Підготуй варене м’ясо, вихід Ender IO та матеріали пізньої кампанії. Перевір готовий продукт у власному інвентарі до використання; старий рецепт із довгим переліком різного сирого м’яса замінено."
+        ],
+        "en_us": [
+          "Cosmic Meatballs in this campaign use 4 Cooked Beef, 2 Vibrant Alloy Ingots, 1 Neutron Nugget and 1 Mythic Circuit. This is an Avaritia tier-4 shapeless recipe.",
+          "Prepare cooked meat, Ender IO output and late campaign materials. Hold the finished product for the inventory check before using it; the old long list of different raw meats has been replaced."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_26_avaritia.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/config/ProjectE/custom_emc.json",
+        "https://www.curseforge.com/minecraft/mc-mods/re-avaritia/files/8838599"
+      ]
+    }
+  }
+}

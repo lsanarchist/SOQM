@@ -1,0 +1,884 @@
+{
+  "schema": 1,
+  "lessons": {
+    "5130110E810676F3": {
+      "description": {
+        "uk_ua": [
+          "Маршрут навчання: спочатку три деталі кирки та ремонт; потім плавлення й заміна головки на металеву. Великі інструменти, рідкісні сплави й повний набір модифікаторів залиш на пізніше.",
+          "Якщо ливарні квести ще сірі, перевір спільний рубіж «Промислове шасі» у «Головний маршрут». Рецепт доступного блока та відкриття його квесту — окремі умови.",
+          "Урок: Початок: шаблон, деталь, інструмент.",
+          "Це Modern Foundry — модульні інструменти цієї збірки. Почни з трьох кроків: Шаблон (Pattern) → Збирач деталей (Part Builder) → Modern Foundry станція (Modern Foundry Station). Плавильня для першої кирки ще не потрібна.",
+          "Візьми 2 дошки та 2 палиці. На верстаку розклади їх у квадраті 2×2 навхрест: дошка / палиця у верхньому рядку, палиця / дошка в нижньому. Отримаєш 6 шаблонів.",
+          "Pattern — витратний шаблон для Part Builder. Там ти вибираєш форму майбутньої деталі. Pick Head — уже готова головка кирки. Pick Head Gold Cast — окрема ливарна форма для металу. Це три різні речі; у перший верстат не потрібно заливати золото.",
+          "Спочатку зроби Part Builder та Modern Foundry Station за сусідніми квестами. Для навчальної кирки відклади 2 кремені й 2 дошки; як перетворити їх на три потрібні деталі, показано у квесті Part Builder.",
+          "Предмети цієї майстерні зручно шукати в JEI за @modernfoundry. Англійські назви в уроках відповідають установленій версії мода."
+        ],
+        "en_us": [
+          "Learning route: start with the three pickaxe parts and repairs, then learn melting and replace the head with a metal one. Leave large tools, rare alloys and a full set of modifiers for later.",
+          "If the casting quests are still greyed out, check the shared Industrial Chassis milestone in the Main Route chapter. Being able to craft a block and unlocking its quest are separate conditions.",
+          "Lesson: Getting started: pattern, part, tool.",
+          "Modern Foundry provides this pack's modular tools. Begin with three steps: Pattern → Part Builder → Modern Foundry Station. You do not need a smeltery for your first pickaxe.",
+          "Take 2 planks and 2 sticks. Arrange them diagonally in a 2×2 crafting square: plank / stick in the top row, stick / plank in the bottom row. This makes 6 Patterns.",
+          "A Pattern is a consumable template for the Part Builder, where you select the shape of the part you want to make. A Pick Head is a finished pickaxe head. A Pick Head Gold Cast is a separate mold for casting metal. These are three different items; you do not need to pour gold into your first workbench.",
+          "First make a Part Builder and a Modern Foundry Station using the neighbouring quests. Set aside 2 flint and 2 planks for your practice pickaxe; the Part Builder quest explains how to turn them into the three required parts.",
+          "Search JEI for @modernfoundry to find this workshop's items. The English names used in these lessons match the installed mod version."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011D97B83053D": {
+      "description": {
+        "uk_ua": [
+          "Урок: Яку книгу читати на кожному етапі.",
+          "З'єднай звичайну Книгу (Book) із Шаблоном (Pattern) у будь-яких клітинках крафта — отримаєш «Матеріали й Ви» (Materials and You). Візьми її в руку та натисни ПКМ у повітря.",
+          "Почни з розділів Part Builder і Modern Foundry Station, потім відкрий Pickaxe, Repairing та Part Swapping. Тут описано прості інструменти, ремонт і заміну деталей. Якщо назва в JEI перекладена дивно, англійську назву потрібної речі я залишив у дужках у кожному уроці.",
+          "Для малого плавильника є «Мізерне плавлення» (Puny Smelting): звичайна книга + 1 Цемент (Grout). Вона пояснює Melter, крани та форми. Не шукай усю металургію на початкових сторінках Materials and You.",
+          "Після малого плавильника зроби «Могутнє плавлення» (Mighty Smelting): поклади звичайну книгу на Casting Table і налий на неї 250 mB Seared Stone. Там є об'ємна схема Smeltery та великі інструменти. «Фантастична ливарня» (Fantastic Foundry) робиться зі звичайної книги й Nether Grout та пояснює іншу, випалену ливарню.",
+          "Для перегляду модифікаторів також є Енциклопедія (Encyclopedia of crafting): звичайна книга на Casting Table + 90 mB розплавленого золота."
+        ],
+        "en_us": [
+          "Lesson: Which book to read at each stage.",
+          "Combine an ordinary Book and a Pattern in any crafting slots to make Materials and You. Hold the book and right-click in the air to open it.",
+          "Start with the Part Builder and Modern Foundry Station sections, then read Pickaxe, Repairing and Part Swapping. They explain simple tools, repairs and replacement parts. If JEI displays an unusual translation, each lesson also includes the relevant English item name in parentheses.",
+          "For the small melter, make Puny Smelting from an ordinary Book and 1 Grout. It explains the Melter, faucets and casts. The opening pages of Materials and You do not cover all of metallurgy.",
+          "After the small melter, make Mighty Smelting: place an ordinary Book on a Casting Table and pour 250 mB of Seared Stone over it. This book includes a three-dimensional Smeltery diagram and large tools. Fantastic Foundry is made from an ordinary Book and Nether Grout; it explains the separate Scorched Foundry.",
+          "There is also the Encyclopedia of crafting for browsing modifiers: place an ordinary Book on a Casting Table and pour 90 mB of molten gold over it."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "51301197819E7391": {
+      "description": {
+        "uk_ua": [
+          "Урок: Зроби три деталі першої кирки.",
+          "Збирач деталей (Part Builder) робиться з 2 шаблонів над 2 дошками. Постав його та відкрий ПКМ. У слот шаблону поклади Pattern, у слот матеріалу — кремінь або дошки; потрібну деталь вибирай кнопкою всередині вікна.",
+          "Перший виріб: вибери Наконечник кайла (Pick Head), поклади 2 кремені та забери кременеву головку. Вартість головки — 2 одиниці матеріалу. Один кремінь дає одну одиницю.",
+          "Друга деталь: вибери Стержень інструмента (Tool Handle), поклади 1 дошку й забери дерев'яний стержень. Третя: вибери Кріплення (Tool Binding), поклади ще 1 дошку та забери дерев'яне кріплення. Для цих двох деталей потрібно по одній одиниці матеріалу.",
+          "Разом для навчальної кирки: 1 кременевий Pick Head + 1 дерев'яний Tool Handle + 1 дерев'яний Tool Binding. Підкладай шаблони, коли вони закінчуються. Матеріали визначають властивості готової речі: сама назва Pick Head ще не означає, що це залізна головка.",
+          "Залізо та інші ливарні метали цієї версії не формуються в Part Builder: металеві деталі відливають на Casting Table. Зараз перенеси три готові деталі в Modern Foundry Station — її квест показує складання та перший ремонт."
+        ],
+        "en_us": [
+          "Lesson: Make the three parts of your first pickaxe.",
+          "Craft a Part Builder with 2 Patterns above 2 planks. Place it and right-click to open it. Put a Pattern in the pattern slot and flint or planks in the material slot, then choose the part using the buttons inside the interface.",
+          "First part: select Pick Head, insert 2 flint and take the flint head. A head costs 2 material units; one flint supplies one unit.",
+          "Second part: select Tool Handle, insert 1 plank and take the wooden handle. Third part: select Tool Binding, insert 1 more plank and take the wooden binding. Each of these two parts costs one material unit.",
+          "Your practice pickaxe needs 1 flint Pick Head + 1 wooden Tool Handle + 1 wooden Tool Binding. Refill the Patterns when they run out. The material determines the finished part's properties: the name Pick Head alone does not mean that it is an iron head.",
+          "Iron and the other cast metals in this version cannot be shaped in the Part Builder; cast metal parts on a Casting Table. For now, take your three finished parts to the Modern Foundry Station. Its quest explains assembly and your first repair."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011D18DBB23A0": {
+      "description": {
+        "uk_ua": [
+          "Ти хотів одну деталь. Тепер у тебе технологічний процес, окрема будівля й переконання, що це економія часу.",
+          "Урок: Збери кирку, потім відремонтуй її.",
+          "Modern Foundry станція (Modern Foundry Station) робиться з 3 шаблонів у верхньому рядку та 4 дошок по боках двох нижніх рядків. Постав її й натисни ПКМ. Вибери значок Кайла (Pickaxe) у списку інструментів.",
+          "Поклади кременевий Pick Head, дерев'яний Tool Handle та дерев'яний Tool Binding у слоти з відповідними силуетами. Забери готову кирку з вихідного слота. Окремі головки й стержні не копають; працює зібраний інструмент.",
+          "Це дешева стартова кирка кам'яного рівня. Наступний крок — відлити залізний Pick Head і замінити лише головку: поклади готову кирку та нову головку в режим ремонту/модифікації цієї ж станції, перевір результат і забери оновлену річ.",
+          "Ремонт на базі: поклади пошкоджену кирку в станцію разом із матеріалом її головки. Кременевій головці потрібен кремінь, залізній — залізо. Дерев'яний стержень не робить залізну кирку ремонтопридатною дошками. Після заміни головки зміни й запас ремонтного матеріалу.",
+          "Для першого Меча (Sword) ця версія потребує 1 Малого леза (Small Blade) + 2 Стержнів інструмента (Tool Handle). Можна почати з кременевого леза й дерев'яних стержнів. Обери Sword у станції; не додавай кріплення від кирки в третій слот меча.",
+          "Базова станція має три вхідні слоти. Великі інструменти з чотирьох деталей збираються на Modern Foundry ковадлі (Modern Foundry's Anvil); рецепт та момент переходу пояснено в квесті Злитка рожевого золота."
+        ],
+        "en_us": [
+          "You wanted one component. Now you have a production process, a separate building and a firm belief that this saves time.",
+          "Lesson: Assemble a pickaxe, then repair it.",
+          "Craft a Modern Foundry Station with 3 Patterns across the top row and 4 planks at the sides of the two lower rows. Place it and right-click. Select the Pickaxe icon from the tool list.",
+          "Put the flint Pick Head, wooden Tool Handle and wooden Tool Binding into the slots with the matching silhouettes. Take the finished pickaxe from the output slot. Separate heads and handles cannot mine; you need an assembled tool.",
+          "This is an inexpensive starting pickaxe with a stone mining tier. Your next step is to cast an iron Pick Head and replace only the head: put the finished pickaxe and the new head into this station's repair/modification mode, check the result and take the upgraded tool.",
+          "To repair at your base, put the damaged pickaxe into the station with its head material. A flint head needs flint; an iron head needs iron. A wooden handle does not let you repair an iron pickaxe with planks. When you replace the head, update your supply of repair materials too.",
+          "For your first Sword, this version requires 1 Small Blade + 2 Tool Handles. You can start with a flint blade and wooden handles. Select Sword in the station; do not put a pickaxe binding into the sword's third slot.",
+          "The basic station has three input slots. Large tools made from four parts are assembled on a Modern Foundry's Anvil. The Rose Gold Ingot quest explains its recipe and when to make the upgrade."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130113698719B61": {
+      "description": {
+        "uk_ua": [
+          "Урок: Звичайний крафт і ремонт у дорозі.",
+          "Верстат Modern Foundry (Crafting Station) виконує звичайні рецепти у сітці 3×3. Простий рецепт: постав Pattern над колодою. Для складання кирки з деталей відкривай сусідню Modern Foundry Station, а цей блок використовуй для шаблонів, компонентів майстерні та звичайних крафтів.",
+          "Перед походом зроби Ремонтний набір (Repair Kit). Для кременевої кирки вибери Repair Kit у Part Builder та витрать 2 кремені: набір теж має свій матеріал. Металевий комплект відливається через відповідну форму, як інші деталі.",
+          "У дорозі відкрий інвентар клавішею E та поклади пошкоджений інструмент і відповідний Repair Kit разом у сітку 2×2. Забери відремонтовану річ. Такий самий ремонт працює в Crafting Station; повертатися до ливарні для кожної подряпини не потрібно.",
+          "Зіставляй матеріал ремонтного набору з матеріалом робочої частини інструмента. На простій кирці це головка. Якщо ти вже поставив залізний Pick Head, кременевий набір від стартової кирки більше не є правильним запасом.",
+          "Перевір матеріал саме свого Repair Kit у підказці: дві однакові іконки можуть приховувати різні матеріали."
+        ],
+        "en_us": [
+          "Lesson: Ordinary crafting and repairs on the road.",
+          "The Modern Foundry Crafting Station handles ordinary recipes in a 3×3 grid. Its simple recipe is a Pattern above a log. Use the neighbouring Modern Foundry Station to assemble a pickaxe from parts; use this block for Patterns, workshop components and regular crafting.",
+          "Make a Repair Kit before setting out. For a flint pickaxe, select Repair Kit in the Part Builder and spend 2 flint. A kit has its own material too. Metal kits are cast using the appropriate mold, like other parts.",
+          "While travelling, open your inventory with E and put the damaged tool and a matching Repair Kit together in the 2×2 crafting grid. Take the repaired tool. The same repair works in a Crafting Station, so you do not need to return to the foundry for every scratch.",
+          "Match the Repair Kit's material to the tool's working part. On a simple pickaxe, that is the head. Once you install an iron Pick Head, the flint kit from your starting pickaxe is no longer the right spare.",
+          "Check your particular Repair Kit's material in its tooltip: two identical icons can contain different materials."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130114557E8D53C": {
+      "description": {
+        "uk_ua": [
+          "Урок: Розклади деталі за формою й матеріалом.",
+          "Скриня для деталей (Part Chest) потрібна для запасних головок, стержнів, кріплень і ремонтних наборів. Рецепт: 1 дерев'яна скриня, 1 шаблон, 4 палиці та 1 дошка.",
+          "Склади окремими групами Pick Head, Tool Handle, Tool Binding та Repair Kit. Усередині кожної групи залишай матеріали поруч: кремінь для старту, залізо для першого литва, вибраний сплав для наступної заміни.",
+          "Перед складанням наведи курсор на кожну деталь. Головка визначає базовий рівень видобутку кирки; стержень змінює характеристики, а кріплення може дати властивість матеріалу. Копіювати найдорожчий метал в усі три слоти не обов'язково.",
+          "Зберігай одну дешеву головку-зразок для виготовлення форми та окремо матеріали ремонту робочої кирки. Золота форма при створенні з'їдає зразок; готовий інструмент для цього жертвувати не потрібно."
+        ],
+        "en_us": [
+          "Lesson: Sort parts by shape and material.",
+          "Use a Part Chest for spare heads, handles, bindings and repair kits. Its recipe uses 1 wooden chest, 1 Pattern, 4 sticks and 1 plank.",
+          "Keep Pick Heads, Tool Handles, Tool Bindings and Repair Kits in separate groups. Within each group, arrange materials together: flint for starting out, iron for your first cast parts and your chosen alloy for the next replacement.",
+          "Hover over every part before assembling a tool. The head sets a pickaxe's base mining tier, the handle changes its stats and the binding can supply a material trait. You do not have to put the most expensive metal into all three slots.",
+          "Keep one inexpensive sample head for making a cast, and store your working pickaxe's repair materials separately. Making a gold cast consumes the sample; you do not need to sacrifice a finished tool."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "51301183F0DE5463": {
+      "description": {
+        "uk_ua": [
+          "Урок: Відділи сировину від форм і готових речей.",
+          "Modern Foundry скриня (Modern Foundry's Chest) приймає звичайні предмети, тому поклади сюди шаблони, ливарні форми, злитки й книги. Скриню для деталей поруч використовуй для вже зроблених Pick Head, Handle, Binding та Repair Kit.",
+          "Для крафта потрібні 1 дерев'яна скриня, 1 шаблон, 4 лазурити та 1 дошка. Схему покаже R над значком цього завдання. Саму скриню відкривай ПКМ.",
+          "Практичний запас перед першим литвом: залізні злитки, 1 золотий злиток для багаторазової форми, дешева головка-зразок та паливо. Для піщаної форми натомість потрібні пісок і зразок; обидва варіанти пояснено в квесті Casting Table.",
+          "Спершу налагодь одну робочу лінію: плавильник → кран → стіл. Додаткові скрині полегшують зберігання, але метал від них сам не попливе. У цій главі немає потреби налаштовувати аграрну автоматизацію."
+        ],
+        "en_us": [
+          "Lesson: Separate raw materials, casts and finished items.",
+          "Modern Foundry's Chest accepts ordinary items, so use it for Patterns, casting molds, ingots and books. Use the Part Chest beside it for finished Pick Heads, Handles, Bindings and Repair Kits.",
+          "Craft it with 1 wooden chest, 1 Pattern, 4 lapis lazuli and 1 plank. Press R over this task's icon to see the layout. Right-click the chest itself to open it.",
+          "Useful supplies for your first cast: iron ingots, 1 gold ingot for a reusable cast, an inexpensive sample head and fuel. The sand-cast alternative needs sand and a sample instead; the Casting Table quest explains both options.",
+          "First get one line working: melter → faucet → table. Extra chests make storage easier, but they do not move molten metal by themselves. You do not need to set up farming automation for this chapter."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "51301102B4D1DEF4": {
+      "description": {
+        "uk_ua": [
+          "Урок: Збудуй Smeltery та відкрий контролер.",
+          "Smeltery — велика обпалена плавильня, яка плавить багато предметів, тримає кілька рідин та робить сплави. Почни з контролера: 360 mB міді поверх Seared Bricks у Casting Basin. Це 4 мідні злитки.",
+          "Зручний старт: суцільне дно 3×3 із Seared Bricks. Навколо цього внутрішнього квадрата зроби стінку заввишки хоча б один блок із придатних обпалених блоків. Внутрішній простір над дном залиш порожнім. Контролер, Seared Fuel Tank і Seared Drain постав у стінку, не в дно.",
+          "Залий лаву в паливний бак. Зовні прикріпи Faucet до Drain, а під носиком постав Casting Table або Basin. Правильну об'ємну схему можна обертати в книзі Mighty Smelting, розділ Smeltery → Structure; сама книга відкривається ПКМ у руці.",
+          "Натисни ПКМ без присідання по Smeltery Controller. Квест зараховує досягнення відкриття працюючої Smeltery. Якщо інтерфейс не відкрився, перевір суцільне дно, замкнені прямокутні стіни, вільну середину та правильні обпалені блоки.",
+          "Перший сплав — Rose Gold: разом розплав 1 мідний і 1 золотий злиток, отримаєш 2 злитки рожевого золота. Клік по рідині в інтерфейсі вибирає, що виллється наступним. Плануй склад бака: сумісні рідини тут можуть сплавлятися автоматично.",
+          "Розрізняй агрегати: Melter — стартове плавлення одного розплаву; Smeltery — велике плавлення зі сплавами; Foundry — випалена ливарня з побічними продуктами, яка сама сплавів не робить."
+        ],
+        "en_us": [
+          "Lesson: Build a Smeltery and open its controller.",
+          "The Smeltery is a large Seared structure that melts many items, holds several fluids and makes alloys. Start with its controller: pour 360 mB of copper over Seared Bricks in a Casting Basin. That is 4 copper ingots.",
+          "A convenient starting size is a solid 3×3 floor of Seared Bricks. Surround that inner square with walls at least one block high, using suitable Seared blocks. Leave the space above the floor empty. Put the controller, Seared Fuel Tank and Seared Drain in the walls, not the floor.",
+          "Fill the fuel tank with lava. Attach a Faucet to the outside of the Drain, then put a Casting Table or Basin beneath its spout. You can rotate the correct three-dimensional diagram in Mighty Smelting under Smeltery → Structure. Hold the book and right-click to open it.",
+          "Right-click the Smeltery Controller without sneaking. The quest detects the advancement for opening a working Smeltery. If its interface does not open, check the solid floor, complete rectangular walls, empty interior and correct Seared blocks.",
+          "Your first alloy is Rose Gold: melt 1 copper ingot and 1 gold ingot together to obtain 2 Rose Gold ingots. Clicking a fluid in the interface selects what pours out next. Plan what you keep in the tank: compatible fluids can alloy automatically here.",
+          "Keep the machines distinct: the Melter starts you with one molten fluid; the Smeltery handles larger batches and alloys; the Scorched Foundry supplies by-products but does not make alloys itself."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011B95D8BBC10": {
+      "description": {
+        "uk_ua": [
+          "Урок: Перші модифікатори без плутанини зі слотами.",
+          "Модифікатор додається до вже зібраного інструмента у Modern Foundry Station або Modern Foundry's Anvil. Вибери режим ремонту/модифікації, поклади інструмент і потрібні інгредієнти, перевір результат та забери його. Квест спрацює, коли інвентар побачить інструмент із доданим покращенням.",
+          "Простий початок: поклади кирку та 1 алмаз. Diamond займає 1 upgrade-слот, додає міцність і швидкість та встановлює алмазний рівень видобутку. Це спосіб перейти вище за залізну головку, коли алмаз уже є в запасі.",
+          "Для швидкості видобутку є Haste: 45 редстоуну або 5 редстоунових блоків дають один повний рівень. Кожен рівень займає 1 upgrade-слот; максимум — 5 рівнів. Подавай матеріал у вікно модифікації й забирай результат за потреби.",
+          "Звичайна кирка має спочатку 3 upgrade-слоти та 1 ability-слот. Це різні ресурси. Не заповнюй усі upgrades випадковими бонусами: спочатку виріши, чи тобі потрібні рівень видобутку, швидкість або майбутній Netherite.",
+          "Заміна головки змінює матеріал; додавання алмаза чи редстоуну змінює модифікатори. Інструмент + нова деталь і інструмент + модифікатор — різні рецепти в тій самій станції. Їхні рецепти містяться в категорії модифікаторів Modern Foundry."
+        ],
+        "en_us": [
+          "Lesson: Your first modifiers and their different slots.",
+          "Add a modifier to an already assembled tool in a Modern Foundry Station or Modern Foundry's Anvil. Select repair/modification mode, insert the tool and required ingredients, check the result and take it. The quest triggers when your inventory detects a tool with an added upgrade.",
+          "A simple starting point is a pickaxe plus 1 diamond. Diamond uses 1 upgrade slot, adds durability and speed, and sets the mining tier to diamond. This lets you progress beyond an iron head once you have a diamond to spare.",
+          "For mining speed, use Haste: 45 redstone or 5 redstone blocks provide one full level. Each level uses 1 upgrade slot, up to 5 levels. Supply the materials in the modification interface and take the result as needed.",
+          "An ordinary pickaxe starts with 3 upgrade slots and 1 ability slot. These are separate resources. Before filling the upgrade slots with assorted bonuses, decide whether you need a higher mining tier, more speed or room for Netherite later.",
+          "Replacing the head changes a material; adding a diamond or redstone changes modifiers. A tool plus a new part and a tool plus modifier ingredients are different recipes in the same station. Find their recipes in Modern Foundry's modifier category."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130114E49A3B3A2": {
+      "description": {
+        "uk_ua": [
+          "Урок: Небесний слиз для Slimesteel.",
+          "Знайди небесний слизовий острів Modern Foundry та зайди всередину його структури. Квест перевіряє Sky Slime Island, а не просто високий біом чи будь-яку зелену кульку в інвентарі.",
+          "Мета для майстерні — джерело Sky Slime, потрібного для Slimesteel. Зібраний небесний слиз перероби у відповідну рідину за рецептом JEI.",
+          "Нагадування про сплав: 90 mB заліза + 250 mB Sky Slime + 250 mB Seared Stone → 180 mB Slimesteel при 900°C. Для цього підійде Smeltery з лавою.",
+          "Це додаткова експедиція. Вирощувати ресурсні культури для неї не потрібно; для першої кирки й залізного литва острів також не потрібен. Перед підйомом візьми блоки, засіб безпечного спуску та ремонтний комплект."
+        ],
+        "en_us": [
+          "Lesson: Sky Slime for Slimesteel.",
+          "Find a Modern Foundry sky slime island and enter its structure. The quest checks for Sky Slime Island, not merely a high-altitude biome or any green slime ball in your inventory.",
+          "Your workshop needs a source of Sky Slime for Slimesteel. Process the Sky Slime you collect into the corresponding fluid using the JEI recipe.",
+          "Alloy reminder: 90 mB iron + 250 mB Sky Slime + 250 mB Seared Stone → 180 mB Slimesteel at 900°C. A lava-fuelled Smeltery can do this.",
+          "This is an optional expedition. You do not need to grow resource crops for it, and the island is not required for your first pickaxe or iron casting. Before climbing, bring building blocks, a way to descend safely and a Repair Kit."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130112A675315EA": {
+      "description": {
+        "uk_ua": [
+          "Урок: Початок литва: зроби Grout.",
+          "Цемент (Grout) — сировина для обпаленої цегли. З'єднай 1 грудку глини (Clay Ball), 1 пісок та 1 гравій: отримаєш 2 Grout. Для партії можна взяти 1 блок глини, 4 піски та 4 гравії й отримати 8.",
+          "Поклади Grout у звичайну піч із паливом. З кожного блоку отримаєш 1 Обпалену цеглину (Seared Brick). Після цього відкрий її сусідній квест: там розкладено комплект першого плавильника.",
+          "Залиш 1 Grout для Puny Smelting: поєднай його зі звичайною книгою, візьми результат у руку та відкрий ПКМ. Вона показує Melter і розміщення ливарних блоків.",
+          "Якщо металургійні завдання сірі, перевір квест «Промислове шасі» у главі «00 · Головний маршрут». Це спільна умова відкриття цієї частини квестбука. Самі рецепти Grout і деталей майстерні можна переглядати та готувати заздалегідь."
+        ],
+        "en_us": [
+          "Lesson: Begin casting by making Grout.",
+          "Grout is the raw material for Seared Brick. Combine 1 Clay Ball, 1 sand and 1 gravel to make 2 Grout. For a larger batch, use 1 clay block, 4 sand and 4 gravel to make 8.",
+          "Put Grout into an ordinary furnace with fuel. Each block produces 1 Seared Brick. Then open the neighbouring Seared Brick quest for the complete first-melter checklist.",
+          "Keep 1 Grout for Puny Smelting: combine it with an ordinary Book, hold the result and right-click to open it. It shows the Melter and the placement of casting blocks.",
+          "If the metallurgy tasks are greyed out, check the Industrial Chassis quest in the 00 · Main Route chapter. It is the shared requirement for unlocking this part of the questbook. You can view the recipes and prepare Grout and workshop components in advance."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011885727A0B6": {
+      "description": {
+        "uk_ua": [
+          "Урок: Комплект малого плавильника.",
+          "Обпалена цеглина (Seared Brick) виходить після випалу Grout. Це окрема цеглина-предмет; 4 такі цеглини у квадраті дають будівельний блок Seared Bricks. Для різних рецептів потрібні різні форми, тому дивись R над точним значком.",
+          "Для першої лінії підготуй Seared Heater, Seared Melter, Seared Faucet та Seared Casting Table. Heater стає знизу, Melter — просто на нього; кран кріпиться до боку Melter, а ливарний стіл стоїть безпосередньо під носиком крана.",
+          "У рецепті Melter потрібен ще скляний Seared Fuel Gauge або Seared Ingot Gauge. Кожен із цих двох вимірювачів робиться з 4 Seared Brick та 5 блоків скла; сам Melter додає до вимірювача ще 5 цеглин. Звичайне скло без виготовлення вимірювача не займає його місце.",
+          "Базові витрати: Heater — 8 цеглин, Casting Table — 7, а 3 цеглини дають одразу 3 Faucet. Обпалений ливарний резервуар (Casting Basin) знадобиться трохи далі для контролера великої плавильні.",
+          "Отримай потрібні предмети в інвентар, щоб квести їх побачили, потім установлюй. Завдання нічого не забирають; докладні дії з кожним блоком розписані у відповідних сусідніх квестах."
+        ],
+        "en_us": [
+          "Lesson: The small melter checklist.",
+          "Smelting Grout produces Seared Brick, an individual brick item. Arrange 4 of these in a square to make the Seared Bricks building block. Different recipes need different forms, so press R over the exact icon.",
+          "For your first line, prepare a Seared Heater, Seared Melter, Seared Faucet and Seared Casting Table. Put the Heater at the bottom and the Melter directly on top. Attach the Faucet to the side of the Melter and place the casting table directly beneath the faucet's spout.",
+          "The Melter recipe also needs a glass Seared Fuel Gauge or Seared Ingot Gauge. Each of these gauges uses 4 Seared Brick and 5 glass blocks; the Melter itself adds another 5 bricks to the gauge. Ordinary glass cannot take the gauge's place without first being crafted into it.",
+          "Basic costs: Heater — 8 bricks; Casting Table — 7 bricks; 3 bricks make 3 Faucets at once. You will need a Seared Casting Basin a little later for the large smeltery's controller.",
+          "Keep the required items in your inventory long enough for their quests to detect them, then place them. These tasks consume nothing. The neighbouring quests explain how to use each block."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130118347056838": {
+      "description": {
+        "uk_ua": [
+          "Урок: Melter: один метал, три вхідні слоти.",
+          "Обпалений плавильник (Seared Melter) — маленький стартовий агрегат. Постав його безпосередньо на Seared Heater із твердим паливом або на Seared Fuel Tank із рідким паливом. Відкривай верхній блок ПКМ.",
+          "Для першого залізного наконечника поклади 2 залізні злитки в три верхні вхідні слоти. Внизу має бути паливо; дочекайся, поки злитки перетворяться на розплав. Далі цей метал піде через Faucet у форму Pick Head на Casting Table.",
+          "Melter одночасно вміщує тільки ОДИН вид рідини. Перед зміною металу повністю злий попередній. Якщо спочатку плавив золото для форми, не підкладай залізо, поки залишок золота ще займає резервуар.",
+          "Тут немає сплавлення кількох металів. Для Rose Gold та інших сплавів потрібна Smeltery або окремий Alloyer. У Melter ти готуєш перші металеві деталі й мідь для контролера Smeltery.",
+          "Якщо плавлення стоїть: перевір паливо прямо під Melter, порожній залишок попереднього металу та температуру в рецепті JEI. Три слоти для предметів не означають три окремі баки."
+        ],
+        "en_us": [
+          "Lesson: Melter: one metal, three input slots.",
+          "The Seared Melter is a small starting machine. Place it directly on a solid-fuel Seared Heater or a liquid-fuel Seared Fuel Tank. Right-click the upper block to open it.",
+          "For your first iron head, put 2 iron ingots into the three upper input slots. Supply fuel below and wait for the ingots to melt. The metal will then flow through a Faucet into a Pick Head cast on a Casting Table.",
+          "The Melter can hold only ONE fluid type at a time. Drain the previous fluid completely before changing metals. If you melted gold for a cast first, do not add iron while gold still occupies the tank.",
+          "This machine cannot alloy different metals. Rose Gold and other alloys need a Smeltery or a separate Alloyer. Use the Melter for your first metal parts and the copper needed for a Smeltery Controller.",
+          "If melting stops, check the fuel directly below the Melter, drain any remaining previous metal and check the temperature required by the JEI recipe. Three item slots do not mean three separate fluid tanks."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "51301143EEA55D59": {
+      "description": {
+        "uk_ua": [
+          "Урок: Heater: перше паливо та межа температури.",
+          "Обпалений нагрівач (Seared Heater) робиться з 8 Seared Brick кільцем. Постав його нижнім блоком, а Seared Melter — точно зверху. В інтерфейсі плавильника поклади в паливний слот вугілля або інше придатне пічне паливо.",
+          "Тверде паливо цього нагрівача дає температуру 800°C. Цього достатньо для першого залізного литва, але не для всіх металів і сплавів.",
+          "Коли потрібна вища температура, заміни нижній Heater на Seared Fuel Tank і залий лаву: вона дає 1000°C. Верхній Melter та його кран зі столом можна залишити на місці.",
+          "Heater — нагрівач для малого агрегата. Велику Smeltery будуй із власним паливним баком у стінці: сам по собі цей блок під нею не замінює правильну конструкцію."
+        ],
+        "en_us": [
+          "Lesson: Heater: your first fuel and its temperature limit.",
+          "Craft a Seared Heater from a ring of 8 Seared Brick. Place it as the lower block with a Seared Melter directly above it. Use the melter interface to put coal or another valid furnace fuel into the fuel slot.",
+          "Solid fuel in this Heater supplies a temperature of 800°C. That is enough for your first iron casting, but not for every metal or alloy.",
+          "When you need more heat, replace the lower Heater with a Seared Fuel Tank and fill it with lava, which supplies 1000°C. You can leave the Melter, Faucet and table in place.",
+          "The Heater serves the small machine. Build the large Smeltery with its own fuel tank in a wall; placing this Heater underneath it does not replace the required structure."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011312C231A50": {
+      "description": {
+        "uk_ua": [
+          "Урок: Рідке паливо: лава та Blazing Blood.",
+          "Обпалений паливний резервуар (Seared Fuel Tank) робиться з 8 Seared Brick навколо 1 блоку скла. Наповни його відром лави. Для Melter він стоїть безпосередньо знизу; для Smeltery входить до її стінки, не до підлоги.",
+          "Паливний бак і резервуар розплавленого металу мають різні ролі. Лаву для нагрівання лий у паливний бак. Залізо для деталі клади у вхідні слоти Melter/Smeltery, а готовий розплав випускай через кран.",
+          "Температури у цій збірці: тверде паливо Heater — 800°C; лава — 1000°C; Палаюча кров (Blazing Blood) — 1500°C. Якщо рецепт потребує 1050–1400°C, додаткові відра лави не піднімуть температуру вище 1000°C.",
+          "Blazing Blood отримують плавленням іфритів (Blaze) у працюючій Smeltery/Foundry. Інший підтверджений шлях: відплавити Blaze Head при 1000°C — одна голова дає 100 mB. Голови можуть випадати завдяки Severing; це не гарантований дроп з кожного іфрита.",
+          "Готове гаряче паливо перенеси в паливний бак перед сплавленням Cinderslime, Queen's Slime або Hepatizon. Їхні квести вказують точні температури й склад."
+        ],
+        "en_us": [
+          "Lesson: Liquid fuel: lava and Blazing Blood.",
+          "Craft a Seared Fuel Tank from 8 Seared Brick around 1 glass block. Fill it with a lava bucket. Place it directly beneath a Melter; in a Smeltery, it belongs in a wall rather than the floor.",
+          "The fuel tank and the molten-metal reservoir serve different purposes. Put heating lava into the fuel tank. Put iron for a part into the Melter or Smeltery's item-input slots, then pour the molten metal out through a faucet.",
+          "Temperatures in this pack: Heater solid fuel — 800°C; lava — 1000°C; Blazing Blood — 1500°C. If a recipe needs 1050–1400°C, adding more buckets of lava will not raise its temperature above 1000°C.",
+          "Obtain Blazing Blood by melting Blazes inside a working Smeltery or Foundry. Another confirmed route is melting a Blaze Head at 1000°C; one head produces 100 mB. Severing can cause heads to drop, but a head is not guaranteed from every Blaze.",
+          "Transfer the finished hot fuel into the fuel tank before alloying Cinderslime, Queen's Slime or Hepatizon. Their quests give the exact temperatures and ingredients."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130118269A1E560": {
+      "description": {
+        "uk_ua": [
+          "Урок: Кран: куди має текти метал.",
+          "Обпалений кран (Seared Faucet) переносить рідину в блок прямо під своїм носиком. Прикріпи його до боку Melter. Постав Casting Table або Casting Basin на один блок нижче саме крана, а не під центром плавильника.",
+          "На великій Smeltery кран ставиться на Обпалений злив (Seared Drain) у стінці. Контролер відкриває інтерфейс, паливний бак гріє, Drain виводить метал — це три різні завдання блоків.",
+          "Поклади потрібну форму на Casting Table, перевір запас розплаву й натисни ПКМ по Faucet. Дочекайся завершення заливання та охолодження, потім забери відлиту деталь зі столу ПКМ.",
+          "Якщо у Smeltery кілька рідин, натисни на потрібну в її інтерфейсі, щоб вибрати її для виливання. Кран не вгадує метал за назвою квесту. У Melter спершу потрібно повністю звільнити єдиний резервуар від попереднього розплаву.",
+          "Коли нічого не ллється, перевір місце стола під носиком, правильну форму, достатній об'єм і вільний вихід. Для першої залізної головки треба 180 mB заліза; 90 mB вистачає лише на одну одиницю матеріалу."
+        ],
+        "en_us": [
+          "Lesson: Faucet: where the metal should flow.",
+          "A Seared Faucet transfers fluid into the block directly below its spout. Attach it to the side of the Melter. Put a Casting Table or Casting Basin one block below the faucet itself, not beneath the centre of the melter.",
+          "On a large Smeltery, attach the faucet to a Seared Drain in the wall. The controller opens the interface, the fuel tank supplies heat and the Drain outputs metal: these blocks have three different jobs.",
+          "Place the required cast on the Casting Table, check your molten-metal supply and right-click the Faucet. Wait for pouring and cooling to finish, then right-click the table to collect the cast part.",
+          "If the Smeltery contains several fluids, click the one you want in its interface to select it for pouring. The Faucet cannot infer the metal from a quest's name. In a Melter, you must first empty the single tank completely of the previous fluid.",
+          "If nothing pours, check that the table is under the spout, the cast is correct, enough fluid is available and the output is clear. Your first iron head needs 180 mB of iron; 90 mB supplies only one material unit."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011890D0653EB": {
+      "description": {
+        "uk_ua": [
+          "Урок: Відлий залізну головку: два способи.",
+          "Обпалений ливарний стіл (Seared Casting Table) робиться із 7 Seared Brick. Постав його під Faucet. Він відливає злитки та деталі; самі великі блоки відливають у Casting Basin.",
+          "Спосіб 1 — багаторазова золота форма. Зроби дешевий кременевий Pick Head у Part Builder і поклади його на стіл ПКМ. Розплав 1 золотий злиток та вилий 90 mB золота на зразок. Зразок витратиться; на столі залишиться Pick Head Gold Cast.",
+          "Повністю злий залишок золота з Melter, розплав 2 залізні злитки та вилий 180 mB заліза в цю форму. Після охолодження забери залізний Pick Head. Золота форма залишається для наступних деталей.",
+          "Спосіб 2 — одноразова піщана форма. Поклади Blank Sand Cast на стіл, натисни по ньому дешевим Pick Head для відбитка та ще раз забери зразок. Налий метал у відбиток. При отриманні металевої деталі піщана форма витратиться, зате золото не потрібне. Blank Sand Cast та піщані форми також робляться у Part Builder — відкрий їх через R.",
+          "Тепер поклади свою кирку та залізний Pick Head у Modern Foundry Station, перевір результат заміни й забери її. Дерев'яний стержень і кріплення можна залишити. Для ремонту цієї кирки відтепер бери залізо або залізний Repair Kit.",
+          "Для кожної іншої деталі потрібна відповідна форма: Small Blade Gold Cast не відливає Pick Head. Форму, кількість металу й допустимі матеріали перевіряй через R над потрібною деталлю; U над злитком покаже його використання."
+        ],
+        "en_us": [
+          "Lesson: Cast an iron head in either of two ways.",
+          "Craft a Seared Casting Table from 7 Seared Brick and place it under a Faucet. It casts ingots and parts; use a Casting Basin for full blocks.",
+          "Method 1: a reusable gold cast. Make an inexpensive flint Pick Head in the Part Builder and right-click to place it on the table. Melt 1 gold ingot and pour 90 mB of gold over the sample. The sample is consumed, leaving a Pick Head Gold Cast on the table.",
+          "Drain any remaining gold completely from the Melter, melt 2 iron ingots and pour 180 mB of iron into the cast. Once it cools, take the iron Pick Head. The gold cast stays available for further parts.",
+          "Method 2: a single-use sand cast. Put a Blank Sand Cast on the table, click it with an inexpensive Pick Head to make the impression, then click again to retrieve the sample. Pour metal into the impression. Collecting the metal part consumes the sand cast, but this method needs no gold. Blank Sand Casts and shaped sand casts can also be made in the Part Builder; press R to inspect them.",
+          "Now put your pickaxe and the iron Pick Head into a Modern Foundry Station, check the replacement result and collect it. You can keep the wooden handle and binding. From now on, repair this pickaxe with iron or an iron Repair Kit.",
+          "Each other part needs its matching cast: a Small Blade Gold Cast cannot produce a Pick Head. Press R over the desired part to check its cast, metal quantity and valid materials; press U over an ingot to see its uses."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011D2087879F0": {
+      "description": {
+        "uk_ua": [
+          "Урок: Basin: контролер великої плавильні.",
+          "Обпалений ливарний резервуар (Seared Casting Basin) робиться із 7 Seared Brick. Постав його під Faucet замість стола. Він потрібен для литва блоків і контролерів.",
+          "Перший важливий рецепт: поклади блок Seared Bricks у Basin, розплав 4 мідні злитки та вилий на нього 360 mB міді. Після охолодження забери Контролер плавильні (Smeltery Controller). Цегляний блок витрачається.",
+          "Для звичайних металевих блоків Basin приймає кількість, указану в JEI. Не витрачай весь залишок рідкісного металу на блок, коли тобі потрібна тільки невелика головка кирки на Casting Table.",
+          "Далі відкрий квест «Ливарня справді сформована»: контролер потрібно встановити у правильну Smeltery з дном, стінками, паливним баком та Drain. Сам контролер в інвентарі ще не виконує завдання відкриття ливарні."
+        ],
+        "en_us": [
+          "Lesson: Basin: the large smeltery's controller.",
+          "Craft a Seared Casting Basin from 7 Seared Brick. Put it beneath a Faucet in place of a table. It casts blocks and controllers.",
+          "Your first important recipe: put a Seared Bricks block into the Basin, melt 4 copper ingots and pour 360 mB of copper over it. After cooling, collect the Smeltery Controller. The brick block is consumed.",
+          "For ordinary metal blocks, the Basin requires the quantity shown in JEI. Avoid pouring your entire reserve of a rare metal into a block when you only need a small pickaxe head on a Casting Table.",
+          "Next, open the quest about forming a working Smeltery. Install the controller in a valid structure with a floor, walls, a fuel tank and a Drain. Simply holding the controller does not complete the task for opening the smeltery."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130119C5F8C1957": {
+      "description": {
+        "uk_ua": [
+          "Урок: Челендж: п'ять бонусів на ОДНОМУ інструменті.",
+          "Це довгий челендж на додаткові слоти. Для зарахування потрібні всі п'ять модифікаторів ОДНОЧАСНО на одному інструменті: Writable, Recapitated, Harmonious, Forecast та Gilded. Один додатковий слот або п'ять різних інструментів не виконують умову.",
+          "Writable: додай Книгу з пером (Book and Quill). Recapitated: додай придатну голову моба; голова дракона в цьому рецепті виключена. Harmonious: додай музичну платівку. Кожен із цих модифікаторів відкриває по 1 upgrade-слоту.",
+          "Forecast: додай цілий блок алмазної, смарагдової або кобальтової руди, який приймає рецепт JEI. Потрібна руда-блок, а не алмаз, смарагд або Raw Cobalt. Вона також відкриває 1 upgrade-слот.",
+          "Gilded: додай Позолочений чорнокамінь (Gilded Blackstone). Він витрачає 1 ability-слот і дає 2 upgrade-слоти. Залиш ability вільним на інструменті, яким проходиш цей челендж.",
+          "Додавай їх послідовно у Modern Foundry Station/Anvil, щоразу забираючи інструмент із результату. Підсумок саме цих п'яти бонусів — +6 upgrade-слотів і витрачений 1 ability-слот. Після останнього додавання потримай готову річ в інвентарі.",
+          "Не затримуй першу робочу кирку заради цього завдання: почати можна з Writable, а рудний блок і потрібний дроп знайти пізніше."
+        ],
+        "en_us": [
+          "Lesson: Challenge: five bonuses on ONE tool.",
+          "This is a longer challenge involving extra slots. All five modifiers must be present AT THE SAME TIME on one tool: Writable, Recapitated, Harmonious, Forecast and Gilded. One extra slot, or five separate tools, does not meet the condition.",
+          "Writable: add a Book and Quill. Recapitated: add an accepted mob head; the dragon head is excluded from this recipe. Harmonious: add a music disc. Each of these modifiers unlocks 1 upgrade slot.",
+          "Forecast: add a whole diamond, emerald or cobalt ore block accepted by the JEI recipe. You need an ore block, not a diamond, emerald or Raw Cobalt. This also unlocks 1 upgrade slot.",
+          "Gilded: add Gilded Blackstone. It consumes 1 ability slot and supplies 2 upgrade slots. Keep an ability slot free on the tool you use for this challenge.",
+          "Apply them one after another in a Modern Foundry Station or Anvil, taking the tool from the result slot each time. These five bonuses together supply +6 upgrade slots and consume 1 ability slot. After the final addition, keep the finished tool in your inventory.",
+          "Do not delay your first working pickaxe for this challenge. You can start with Writable and find the required ore block and drops later."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011188AFE6ECD": {
+      "description": {
+        "uk_ua": [
+          "Урок: Rose Gold: кріплення зі слотом і велике ковадло.",
+          "Рожеве золото (Rose Gold) у цій версії: 90 mB міді + 90 mB золота → 180 mB сплаву при 550°C. Тобто 1 мідний та 1 золотий злиток дають 2 злитки рожевого золота. Плав разом у Smeltery або змішуй рідини в Alloyer; малий Melter не сплавлює.",
+          "Корисний перший виріб — Tool Binding із рожевого золота. Відлий його й заміни дерев'яне кріплення в Modern Foundry Station. Властивість Enhanced цього матеріалу дає додатковий upgrade-слот, а головку кирки можна залишити залізною чи замінити іншим робочим металом.",
+          "Не став Rose Gold у головку лише через дорожчу назву: його базовий рівень видобутку — золотий. Це корисний матеріал для комбінування властивостей, а не автоматично краща головка за залізну.",
+          "Наступний великий крок — Modern Foundry ковадло (Modern Foundry's Anvil). Один чинний рецепт: 3 однакові блоки прийнятного сплаву у верхньому рядку та 4 блоки Seared Bricks нижче у формі підставки. Блоки Rose Gold входять до дозволеного набору. Саме БЛОКИ сплаву, а не три злитки.",
+          "Відкрий ковадло ПКМ. Воно має місце для великих інструментів із чотирьох деталей: Sledge Hammer, Excavator, Vein Hammer, Broad Axe та Cleaver. Їхні окремі квести містять точні комплекти; арбалет із трьох деталей можна зібрати ще на звичайній станції."
+        ],
+        "en_us": [
+          "Lesson: Rose Gold: a binding with an extra slot, and the large anvil.",
+          "Rose Gold in this version uses 90 mB copper + 90 mB gold → 180 mB alloy at 550°C. In other words, 1 copper ingot and 1 gold ingot make 2 Rose Gold ingots. Melt them together in a Smeltery or combine the fluids in an Alloyer; the small Melter cannot alloy.",
+          "A useful first part is a Rose Gold Tool Binding. Cast it and replace the wooden binding in a Modern Foundry Station. This material's Enhanced trait adds an upgrade slot, while the pickaxe head can remain iron or use another working metal.",
+          "Do not choose a Rose Gold head just because its name sounds more expensive: its base mining tier is gold. It is useful for combining material traits, but it is not automatically a better head than iron.",
+          "The next major step is Modern Foundry's Anvil. One valid recipe uses 3 matching blocks of an accepted alloy across the top row, with 4 Seared Bricks blocks below them in the shape of a stand. Rose Gold blocks are accepted. You need alloy BLOCKS, not three ingots.",
+          "Right-click the anvil to open it. It has room for large four-part tools: Sledge Hammer, Excavator, Vein Hammer, Broad Axe and Cleaver. Their individual quests give the exact part lists. A three-part crossbow can already be assembled at the ordinary station."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011509432E58F": {
+      "description": {
+        "uk_ua": [
+          "Урок: Аметистова бронза: алмазний рівень головки.",
+          "Аметистова бронза (Amethyst Bronze) — зручний наступний матеріал головки. Рецепт сплаву: 90 mB міді + 100 mB розплавленого аметисту → 90 mB бронзи при 820°C. Лава на 1000°C підходить; твердого палива Heater на 800°C вже недостатньо.",
+          "Для Pick Head підготуй 180 mB бронзи — дві порції цього рецепта. Вибери сплав у Smeltery, налий у форму Pick Head Gold Cast на Casting Table та забери охолоджену головку. Поміняй нею залізну головку у Modern Foundry Station.",
+          "Базові характеристики головки цього матеріалу: 720 міцності, швидкість видобутку 7 та алмазний рівень видобутку. Це числа самої головки до впливу інших деталей і модифікаторів, а не гарантовані фінальні числа будь-якої кирки.",
+          "Така головка підходить для переходу від заліза до обсидіану та наступного металургійного етапу. Властивість Crumbling додатково прискорює ламання блоків, які не вимагають інструмента. Для звичайної кирки можна залишити дерев'яний стержень і кріплення Rose Gold.",
+          "Зроби відповідний Repair Kit і тримай частину бронзи для ремонту. Після цього обирай напрям: Slimesteel для запасу міцності й Overslime або Cobalt/Hepatizon для швидкості. Тут немає потреби міняти всі деталі на один сплав."
+        ],
+        "en_us": [
+          "Lesson: Amethyst Bronze: a diamond-tier head.",
+          "Amethyst Bronze is a useful next head material. Its alloy recipe is 90 mB copper + 100 mB molten amethyst → 90 mB bronze at 820°C. Lava at 1000°C works; the Heater's 800°C solid fuel is no longer hot enough.",
+          "Prepare 180 mB of bronze for a Pick Head: two batches of this recipe. Select the alloy in the Smeltery, pour it into a Pick Head Gold Cast on a Casting Table and collect the cooled head. Use it to replace the iron head in a Modern Foundry Station.",
+          "This material's base head stats are 720 durability, mining speed 7 and a diamond mining tier. These are the head's values before other parts and modifiers are applied, not guaranteed final stats for every pickaxe.",
+          "This head supports the transition from iron to obsidian and the next stage of metallurgy. Its Crumbling trait also speeds up breaking blocks that do not require a tool. For an ordinary pickaxe, you can keep a wooden handle and a Rose Gold binding.",
+          "Make a matching Repair Kit and reserve some bronze for repairs. Then choose a direction: Slimesteel for durability and Overslime, or Cobalt/Hepatizon for speed. You do not need to replace every part with the same alloy."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130112F60A7AD22": {
+      "description": {
+        "uk_ua": [
+          "Урок: Slimesteel: міцність і запас Overslime.",
+          "Слизосталь (Slimesteel) змішується при 900°C: 90 mB заліза + 250 mB Sky Slime + 250 mB Seared Stone → 180 mB слизосталі. Використовуй Smeltery з лавою або Alloyer; перевір правильний вид слизу в рецепті.",
+          "Sky Slime — саме небесний слиз. Зелену ванільну кульку не підставляй навмання. Пошук острова пояснено у квесті «Плавучий острів слизу»; допустиму сировину для потрібної рідини покаже JEI.",
+          "Відлий Pick Head або робочу деталь великого інструмента. Головка Slimesteel має базово 1040 міцності, швидкість 6 та алмазний рівень видобутку. Це варіант для довших походів, а не обов'язкова заміна швидшої головки в кожній кирці.",
+          "Матеріал дає Overslime та Overcast. Overslime — окремий запас, який витрачається перед звичайною міцністю; його потрібно поповнювати придатним слизом через рецепти модифікації. Overcast збільшує місткість цього запасу.",
+          "Поклади готовий інструмент у станцію й переглянь його Overslime перед походом. Сам факт наявності слизосталевої деталі не означає нескінченний ремонт. Звичайний ремонт матеріалом робочої частини або Repair Kit теж залишається потрібним."
+        ],
+        "en_us": [
+          "Lesson: Slimesteel: durability and an Overslime reserve.",
+          "Alloy Slimesteel at 900°C: 90 mB iron + 250 mB Sky Slime + 250 mB Seared Stone → 180 mB Slimesteel. Use a lava-fuelled Smeltery or an Alloyer, and check that the recipe uses the correct slime type.",
+          "Sky Slime specifically means the sky variety. Do not substitute an ordinary green vanilla slime ball without checking. The floating slime island quest explains where to look; JEI shows valid raw materials for the required fluid.",
+          "Cast a Pick Head or the working part of a large tool. A Slimesteel head has base stats of 1040 durability, speed 6 and a diamond mining tier. It is an option for longer expeditions, not a required replacement for a faster head on every pickaxe.",
+          "The material supplies Overslime and Overcast. Overslime is a separate reserve consumed before ordinary durability; replenish it with suitable slime using modifier recipes. Overcast increases that reserve's capacity.",
+          "Put the assembled tool in the station and inspect its Overslime before travelling. Having a Slimesteel part does not mean infinite repairs. Ordinary repairs using the working part's material or a Repair Kit remain necessary too."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130112804C9926A": {
+      "description": {
+        "uk_ua": [
+          "Урок: Cobalt: Незер і швидші деталі.",
+          "Кобальт (Cobalt) — матеріал наступного походу в Незер. Для кобальтової руди підготуй інструмент алмазного рівня. Такий рівень можна отримати аметистово-бронзовою головкою або модифікатором Diamond на вже зібраній кирці.",
+          "Чинний простий шлях до злитка: Raw Cobalt або Nether Cobalt Ore → плавильна піч (Blast Furnace) → Cobalt Ingot. Для виготовлення деталей злиток потім розплавляється при 950°C; лава підходить.",
+          "Можна відлити кобальтову головку, стержень або кріплення й замінити відповідну деталь на станції. Властивість Lightweight прискорює роботу інструмента; базова головка має 800 міцності, швидкість 6,5 та алмазний рівень видобутку.",
+          "Вибирай, що покращуєш: Cobalt дає швидкість і лишається матеріалом алмазного рівня. Для нетеритового рівня дивись Hepatizon, Queen's Slime, Cinderslime або окремий модифікатор Netherite.",
+          "Залиш запас кобальту: він іде в Hepatizon, Queen's Slime та інші сплави. Спершу відлий одну потрібну деталь, перевір її результат на своєму інструменті, а потім масштабуй виробництво."
+        ],
+        "en_us": [
+          "Lesson: Cobalt: the Nether and faster parts.",
+          "Cobalt is a material for your next Nether expedition. Prepare a diamond-tier tool for cobalt ore. You can reach that tier with an Amethyst Bronze head or the Diamond modifier on an assembled pickaxe.",
+          "One current simple route to an ingot is Raw Cobalt or Nether Cobalt Ore → Blast Furnace → Cobalt Ingot. For making parts, subsequently melt the ingot at 950°C; lava is hot enough.",
+          "Cast a cobalt head, handle or binding and replace the corresponding part at the station. The Lightweight trait makes the tool work faster; the base head has 800 durability, speed 6.5 and a diamond mining tier.",
+          "Choose what you want to improve: Cobalt adds speed while remaining a diamond-tier material. For a netherite mining tier, see Hepatizon, Queen's Slime, Cinderslime or the separate Netherite modifier.",
+          "Keep a supply of cobalt for Hepatizon, Queen's Slime and other alloys. First cast one part you need and check its effect on your tool, then scale up production."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130118F7AC78589": {
+      "description": {
+        "uk_ua": [
+          "Урок: Hepatizon: гаряче паливо й швидка головка.",
+          "Гепатизон (Hepatizon) потребує 1400°C. Спочатку підготуй Blazing Blood у паливному баку: лава дає лише 1000°C й не запустить цей сплав навіть із повним баком.",
+          "Точний склад: 180 mB міді + 90 mB кобальту + 100 mB розплавленого кварцу → 180 mB гепатизону. Це рецепт встановленої версії; не підмінюй кварц обсидіаном за пам'яттю про інші збірки Tinkers.",
+          "Виходу однієї такої порції достатньо на Pick Head: налий 180 mB сплаву у відповідну форму на Casting Table, дочекайся охолодження й заміни головку в Modern Foundry Station.",
+          "Базова головка має 975 міцності, швидкість 8 та нетеритовий рівень видобутку. Властивість Momentum підсилює темп, коли продовжуєш добувати блоки або стріляти; остаточні характеристики залежать від усього інструмента.",
+          "Для шахтарської кирки це зрозумілий пізній напрям: сильніша головка + зручний стержень + кріплення з потрібною властивістю. Окремо зроби Repair Kit із матеріалу, яким тепер ремонтується інструмент."
+        ],
+        "en_us": [
+          "Lesson: Hepatizon: hot fuel and a fast head.",
+          "Hepatizon needs 1400°C. Prepare Blazing Blood in the fuel tank first: lava supplies only 1000°C and cannot start this alloy recipe even with a full tank.",
+          "The exact recipe is 180 mB copper + 90 mB cobalt + 100 mB molten quartz → 180 mB Hepatizon. This is the installed version's recipe; do not replace the quartz with obsidian based on another Tinkers pack.",
+          "One batch produces enough for a Pick Head. Pour 180 mB of alloy into the matching cast on a Casting Table, wait for it to cool and replace the head in a Modern Foundry Station.",
+          "The base head has 975 durability, speed 8 and a netherite mining tier. Momentum builds speed while you keep mining blocks or firing shots; the final stats depend on the entire tool.",
+          "For a mining pickaxe, this is a straightforward late-game direction: a stronger head, a useful handle and a binding with the trait you want. Also make a Repair Kit from the material now used to repair your tool."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011B07B76EA2C": {
+      "description": {
+        "uk_ua": [
+          "Урок: Cinderslime: перетворення палива на Overslime.",
+          "Cinderslime — гарячий слизовий сплав. Змішай 90 mB золота, 250 mB Ichor та 250 mB Scorched Stone: отримаєш 180 mB сплаву при 1050°C. Потрібне паливо гарячіше за лаву — наприклад, Blazing Blood.",
+          "Ichor, Sky Slime і звичайний зелений слиз — різні рідини. Так само Scorched Stone відрізняється від Seared Stone. Відкрий рецепт Cinderslime через R та готуй саме названі компоненти.",
+          "Відлий одну потрібну деталь і встанови її на інструмент. Базова головка має 1221 міцності, швидкість 6,5 та нетеритовий рівень видобутку, але головна особливість матеріалу — поєднання Overslime та Overburn.",
+          "Overburn дозволяє інструменту перетворювати рідке паливо на запас Overslime та додає паливний об'єм у самому інструменті. Це спеціалізований варіант: він має сенс, коли ти вже забезпечуєш себе потрібним рідким паливом.",
+          "Якщо хочеш просто зрозумілу робочу кирку без обслуговування паливного запасу, порівняй готовий результат з Hepatizon або іншою знайомою головкою. Цей квест знайомить із вибором механіки, а не змушує переробити всі інструменти на Cinderslime."
+        ],
+        "en_us": [
+          "Lesson: Cinderslime: turning fuel into Overslime.",
+          "Cinderslime is a hot slime alloy. Combine 90 mB gold, 250 mB Ichor and 250 mB Scorched Stone to obtain 180 mB of alloy at 1050°C. You need fuel hotter than lava, such as Blazing Blood.",
+          "Ichor, Sky Slime and ordinary green slime are different fluids. Scorched Stone is also different from Seared Stone. Press R to open the Cinderslime recipe and prepare the exact named ingredients.",
+          "Cast one part you need and install it on the tool. The base head has 1221 durability, speed 6.5 and a netherite mining tier, but this material's defining feature is the combination of Overslime and Overburn.",
+          "Overburn lets the tool convert liquid fuel into Overslime and adds fuel capacity inside the tool itself. This is a specialised option that makes sense once you already have a supply of the required liquid fuel.",
+          "If you want a straightforward working pickaxe without maintaining an internal fuel reserve, compare the finished result with Hepatizon or another familiar head. This quest introduces a choice of mechanics; it does not require converting every tool to Cinderslime."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011D8F5E8633F": {
+      "description": {
+        "uk_ua": [
+          "Урок: Queen's Slime: обмін міцності на Overslime.",
+          "Королевин слиз (Queen's Slime) змішується при 1150°C: 90 mB кобальту + 90 mB золота + 250 mB Magma → 180 mB сплаву. Для температури підготуй Blazing Blood; для Magma знайди правильне плавлення магмової сировини у JEI.",
+          "Відлий Pick Head або іншу потрібну деталь, потім заміни її в Modern Foundry Station/Anvil. Базові дані головки: 1650 міцності, швидкість 6 та нетеритовий рівень видобутку.",
+          "Матеріал дає Overslime та Overlord. Overlord перетворює частину звичайної міцності на місткість Overslime, тому число 1650 у довідці матеріалу не дорівнює кінцевій звичайній міцності будь-якої зібраної кирки.",
+          "Обирай цей напрям, якщо хочеш підтримувати великий слизовий запас. Для порівняння дивись уже готовий інструмент у станції: запас Overslime, швидкість, звичайну міцність і доступні слоти. Найбільше число одного параметра ще не описує всю річ.",
+          "Якщо квест на нетеритовий рівень ще не зараховано, спробуй поставити таку головку на звичайну модульну кирку та забери результат в інвентар. Точна умова й альтернативний шлях через Netherite розписані в окремому квесті рівня."
+        ],
+        "en_us": [
+          "Lesson: Queen's Slime: trading durability for Overslime.",
+          "Alloy Queen's Slime at 1150°C: 90 mB cobalt + 90 mB gold + 250 mB Magma → 180 mB alloy. Use Blazing Blood for the temperature, and find the appropriate magma-material melting recipe in JEI to make Magma.",
+          "Cast a Pick Head or another required part, then replace it in a Modern Foundry Station or Anvil. The base head stats are 1650 durability, speed 6 and a netherite mining tier.",
+          "The material supplies Overslime and Overlord. Overlord converts some ordinary durability into Overslime capacity, so the material reference's value of 1650 is not the final ordinary durability of every assembled pickaxe.",
+          "Choose this direction if you want to maintain a large slime reserve. Compare the finished tool in the station: Overslime capacity, speed, ordinary durability and available slots. The largest number in one stat does not describe the whole tool.",
+          "If the netherite-tier quest has not completed yet, try installing this head on an ordinary modular pickaxe and take the result into your inventory. The dedicated tier quest explains the exact condition and the alternative Netherite-modifier route."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130112B7E67B5BF": {
+      "description": {
+        "uk_ua": [
+          "Урок: Foundry: окрема випалена ливарня.",
+          "Foundry — окремий агрегат із випалених Scorched Blocks. Він зберігає кілька розплавів та отримує побічні продукти від придатної руди, але НЕ сплавляє рідини автоматично. Для змішування сплавів поруч потрібен Scorched Alloyer або вже побудована Smeltery.",
+          "Почни з Nether Grout → випал у печі → Scorched Brick → Scorched Bricks. Книгу Fantastic Foundry зроби зі звичайної книги та Nether Grout, відкрий ПКМ і знайди розділ Foundry → Structure.",
+          "Для Foundry Controller поклади Scorched Bricks у Casting Basin та налий 1000 mB Molten Obsidian. Зразок витратиться, а після охолодження отримаєш контролер. Розплавлений обсидіан можна приготувати через чинний рецепт сплавлення в Smeltery/Alloyer.",
+          "Побудуй суцільне прямокутне дно, стінки та порожню внутрішню камеру з придатних Scorched Blocks. На відміну від звичного мінімального каркаса Smeltery, Foundry потребує також кутів і ребер конструкції. Контролер, паливний бак і Scorched Drain установи у стінки за схемою книги.",
+          "Відкрий готовий Foundry Controller ПКМ без присідання: саме відкриття робочого інтерфейсу виконує цей квест. Не замінюй контролер Smeltery посеред обпаленої споруди на Foundry Controller — матеріали її конструкції теж інші.",
+          "Практичний поділ: Smeltery робить потрібні сплави; Foundry переробляє відповідну руду з побічними продуктами й тримає розплави окремо. Alloyer бере рідини із сусідніх баків, коли ти хочеш змішувати їх контрольовано."
+        ],
+        "en_us": [
+          "Lesson: Foundry: a separate Scorched structure.",
+          "The Foundry is a separate machine built from Scorched Blocks. It stores several molten fluids and obtains by-products from suitable ores, but DOES NOT alloy fluids automatically. To combine alloys, use a nearby Scorched Alloyer or an existing Smeltery.",
+          "Start with Nether Grout → furnace smelting → Scorched Brick → Scorched Bricks. Make Fantastic Foundry from an ordinary Book and Nether Grout, right-click to open it, then find Foundry → Structure.",
+          "For a Foundry Controller, place Scorched Bricks in a Casting Basin and pour 1000 mB of Molten Obsidian over them. The sample is consumed and the controller is ready after cooling. Prepare Molten Obsidian using the current alloying recipe in a Smeltery or Alloyer.",
+          "Build a solid rectangular floor, walls and an empty inner chamber using suitable Scorched Blocks. Unlike a familiar minimum Smeltery frame, the Foundry also requires the structure's corners and edges. Install its controller, fuel tank and Scorched Drain in the walls as shown in the book.",
+          "Right-click the completed Foundry Controller without sneaking: opening the working interface completes this quest. Do not simply replace a Smeltery Controller inside a Seared structure with a Foundry Controller; the required structural materials are different too.",
+          "A useful division of work: the Smeltery makes your alloys; the Foundry processes suitable ores for by-products and keeps molten fluids separate. An Alloyer draws fluids from adjacent tanks when you want controlled mixing."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011BD6664E0BF": {
+      "description": {
+        "uk_ua": [
+          "Урок: Нетеритовий рівень: головка або модифікатор.",
+          "Квест перевіряє фактичний рівень видобутку модульного інструмента: Netherite. Нетеритовий злиток в інвентарі або слово «дорогий» у назві деталі не виконують умову.",
+          "Шлях 1 — матеріал. Відлий Pick Head із Hepatizon, Queen's Slime або Cinderslime, заміни головку на звичайній модульній кирці та забери результат в інвентар. У даних цих головок указаний нетеритовий рівень.",
+          "Шлях 2 — модифікатор Netherite. Поклади готовий інструмент, 1 Netherite Upgrade Smithing Template та 1 Netherite Ingot у Modern Foundry Station/Anvil. Потрібен 1 вільний upgrade-слот. Це рецепт модифікації Modern Foundry.",
+          "Netherite підсилює характеристики й установлює потрібний рівень. Для розуміння поточної речі дивись її готові дані у станції; алмазний рівень Cobalt або Amethyst Bronze сам по собі ще не є нетеритовим.",
+          "Перевір ремонт перед довгим походом. Модифікатор Netherite не замінює матеріал головки: якщо головка лишилася залізною, для звичайного ремонту потрібен її матеріал. Якщо ти саме замінив головку сплавом, підготуй ремонтний запас цього сплаву."
+        ],
+        "en_us": [
+          "Lesson: Netherite mining tier: a head or a modifier.",
+          "The quest checks the modular tool's actual mining tier: Netherite. A netherite ingot in your inventory, or an expensive-sounding part name, does not meet the requirement.",
+          "Route 1 — material. Cast a Pick Head from Hepatizon, Queen's Slime or Cinderslime, replace the head on an ordinary modular pickaxe and take the result into your inventory. These heads specify a netherite mining tier in their material data.",
+          "Route 2 — the Netherite modifier. Put the assembled tool, 1 Netherite Upgrade Smithing Template and 1 Netherite Ingot into a Modern Foundry Station or Anvil. You need 1 free upgrade slot. This is a Modern Foundry modifier recipe.",
+          "Netherite improves the stats and sets the required tier. Inspect the finished tool's data in the station to understand its current properties; Cobalt or Amethyst Bronze's diamond tier alone is not netherite tier.",
+          "Check repairs before a long trip. The Netherite modifier does not replace the head material: if the head remains iron, ordinary repairs still need that material. If you instead replace the head with an alloy, prepare repair supplies made from that alloy."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011EA4F627DEC": {
+      "description": {
+        "uk_ua": [
+          "Урок: Ender Slime: пізня додаткова експедиція.",
+          "Знайди острів ендер-слизу Modern Foundry в Енді та зайди в його структуру. Потрібна саме End Slime Island: випадковий острів Енду або Ender Slime Ball в інвентарі не замінює відвідування.",
+          "Ендер-слиз використовується в пізніх матеріалах, зокрема Knightslime: 90 mB кобальту + 250 mB Ender Slime + 250 mB Molten Obsidian → 180 mB сплаву при 1125°C. Для такого нагрівання потрібне паливо гарячіше за лаву.",
+          "Розділяй види слизу за підказкою предмета. Ender Slime не підміняє Sky Slime у слизосталі чи Ichor у Cinderslime.",
+          "Це додаткова гілка після доступу до Енду. Базову майстерню, литво, велике ковадло та робочий комплект інструментів можна освоїти раніше. Візьми готові інструменти й Repair Kit, а не лише красиву папку планів."
+        ],
+        "en_us": [
+          "Lesson: Ender Slime: a later optional expedition.",
+          "Find a Modern Foundry Ender Slime island in the End and enter its structure. It must be an End Slime Island; an ordinary End island or an Ender Slime Ball in your inventory does not count as a visit.",
+          "Ender Slime is used in later materials, including Knightslime: 90 mB cobalt + 250 mB Ender Slime + 250 mB Molten Obsidian → 180 mB alloy at 1125°C. This temperature needs fuel hotter than lava.",
+          "Use item tooltips to distinguish slime types. Ender Slime cannot substitute for Sky Slime in Slimesteel or Ichor in Cinderslime.",
+          "This is an optional branch after reaching the End. You can learn the basic workshop, casting, large anvil and a working set of tools earlier. Bring finished tools and a Repair Kit, rather than only an impressive collection of plans."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130114A1BBCC155": {
+      "description": {
+        "uk_ua": [
+          "Урок: Excavator: земля, пісок і гравій 3×3.",
+          "Землечерпалка (Excavator) копає землю, пісок, гравій та подібні блоки лопатного типу ділянкою 3×3. Для кам'яного тунелю вибирай Sledge Hammer — це інший інструмент.",
+          "Візьми 1 Велику пластину (Large Plate), 2 Міцні стержні (Tough Handle) та 1 Tough Collar. Відкрий Modern Foundry's Anvil ПКМ, вибери Excavator, поклади чотири деталі у відповідні силуети й забери результат.",
+          "Робоча частина тут — Large Plate; підбирай її матеріал за міцністю та швидкістю. Стрижні можна зробити з іншого матеріалу, якщо він дає потрібні характеристики.",
+          "Звичайна Modern Foundry Station із трьома слотами цього комплекту не вміщує. Якщо пункт складання недоступний, перевір саме блок станції: потрібне велике ковадло, рецепт якого пояснено в квесті Rose Gold.",
+          "Перед кар'єром підготуй ремонт для матеріалу робочої пластини та місце для великої кількості блоків. Перевір інструмент на невеликій ділянці, щоб побачити орієнтацію зони копання."
+        ],
+        "en_us": [
+          "Lesson: Excavator: dirt, sand and gravel in a 3×3 area.",
+          "The Excavator digs dirt, sand, gravel and similar shovel-type blocks in a 3×3 area. For a stone tunnel, use the Sledge Hammer, which is a different tool.",
+          "Take 1 Large Plate, 2 Tough Handles and 1 Tough Collar. Right-click a Modern Foundry's Anvil, select Excavator, put the four parts into the matching silhouettes and collect the result.",
+          "The working part here is the Large Plate, so choose its material for durability and speed. The handles can use a different material if it supplies the stats you want.",
+          "The ordinary three-slot Modern Foundry Station cannot fit this set. If the assembly option is unavailable, check which station block you are using. You need the large anvil whose recipe is explained in the Rose Gold quest.",
+          "Before starting a quarry, prepare repair supplies for the working plate's material and storage space for many blocks. Test the tool on a small area to see the orientation of its digging pattern."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "51301173518ABE85": {
+      "description": {
+        "uk_ua": [
+          "Урок: Sledge Hammer: кам'яний тунель 3×3.",
+          "Молот-вершляг (Sledge Hammer) — великий шахтарський інструмент для каменю й руди ділянкою 3×3. Це зручний наступний крок після звичайної кирки, коли хочеш прорізати коридори або розчищати приміщення.",
+          "Комплект: 1 Наконечник молота (Hammer Head), 1 Міцний стержень (Tough Handle) та 2 Великі пластини (Large Plate). Відкрий Modern Foundry's Anvil, вибери Sledge Hammer та розстав усі чотири деталі за силуетами.",
+          "Матеріал Hammer Head задає основний напрям інструмента, а обидві пластини також впливають на характеристики. Для першого молота можна використати вже налагоджені ливарні матеріали; усі деталі не зобов'язані бути одного металу.",
+          "Не плутай цей молот із Vein Hammer: Sledge Hammer вирізає площину 3×3, а Vein Hammer шукає сусідні блоки того самого типу. Вибирай за задачею, а не за тим, який значок виглядає важчим.",
+          "Перевір рівень видобутку готового молота й підготуй Repair Kit, який він приймає. Перед довгим проходом подивись попередній результат на звичайному камені: великий інструмент витрачає запас під час роботи, а не лише займає місце в гарячій панелі."
+        ],
+        "en_us": [
+          "Lesson: Sledge Hammer: a 3×3 stone tunnel.",
+          "The Sledge Hammer is a large mining tool for stone and ore in a 3×3 area. It is a useful next step after an ordinary pickaxe when you want to cut corridors or clear rooms.",
+          "Required parts: 1 Hammer Head, 1 Tough Handle and 2 Large Plates. Open a Modern Foundry's Anvil, select Sledge Hammer and place all four parts into the matching silhouettes.",
+          "The Hammer Head's material sets the tool's main characteristics, and both plates also affect its stats. For your first hammer, use casting materials you already produce reliably; the parts do not all have to be the same metal.",
+          "Do not confuse it with the Vein Hammer. The Sledge Hammer cuts a 3×3 plane, while the Vein Hammer follows neighbouring blocks of the same type. Choose for the job, not whichever icon looks heavier.",
+          "Check the finished hammer's mining tier and prepare a Repair Kit it accepts. Before a long tunnel, try it on ordinary stone: a large tool uses up its reserves while working, rather than merely taking up a hotbar slot."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011F8FB529249": {
+      "description": {
+        "uk_ua": [
+          "Урок: Vein Hammer: вибирай жилу, а не площину.",
+          "Гірничий молот (Vein Hammer) видобуває сусідні блоки одного типу в жилі. Для рівного тунелю 3×3 служить Sledge Hammer; цей молот беруть, коли хочуть зібрати пов'язаний осередок руди.",
+          "Візьми 1 Hammer Head, 1 Tough Handle, 1 Tough Collar та 1 Large Plate. Відкрий Modern Foundry's Anvil ПКМ, вибери Vein Hammer і розмісти чотири деталі за підказками слотів.",
+          "Підбирай рівень робочої головки під руду, яку збираєшся добувати. Матеріали головки й пластини можуть відрізнятися; порівнюй готові характеристики у вихідному результаті ковадла.",
+          "Це власна механіка інструмента, тому для неї не потрібно вмикати FTB Ultimine. Спочатку випробуй молот на невеликій видимій жилі. Звичайний камінь теж є одним типом блоків — обирай точку першого удару уважно.",
+          "Завдання перевіряє готовий Vein Hammer в інвентарі з будь-якою коректною конфігурацією матеріалів. Купа його деталей окремо квест не виконує."
+        ],
+        "en_us": [
+          "Lesson: Vein Hammer: follow a vein, not a plane.",
+          "The Vein Hammer mines neighbouring blocks of the same type within a vein. The Sledge Hammer makes a straight 3×3 tunnel; choose this hammer when you want to collect a connected ore deposit.",
+          "Take 1 Hammer Head, 1 Tough Handle, 1 Tough Collar and 1 Large Plate. Right-click a Modern Foundry's Anvil, select Vein Hammer and place the four parts using the slot guides.",
+          "Choose a working-head tier that can mine your intended ore. The head and plate can use different materials; compare the finished stats in the anvil's output preview.",
+          "This is the tool's own mechanic, so you do not need to enable FTB Ultimine. First test the hammer on a small visible vein. Ordinary stone is also one block type, so choose your first strike carefully.",
+          "The task checks for an assembled Vein Hammer in your inventory with any valid material configuration. A collection of its separate parts does not complete the quest."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130117B8B2F0B26": {
+      "description": {
+        "uk_ua": [
+          "Ливарня слухняно відтворить будь-яку форму. Навіть ту, яку ти поклав випадково й тепер захищаєш як задум.",
+          "Урок: Broad Axe: інструмент для цілих дерев.",
+          "Сокира-колун (Broad Axe) — великий інструмент для рубання дерев. На дереві вона обробляє пов'язані колоди, тому підходить для заготівлі деревини; це не ще одна звичайна кирка.",
+          "Точний комплект цієї версії: 1 Broad Axe Head, 1 Tough Handle, 1 Pick Head та 1 Tough Collar. Так, серед деталей є головка кирки. Вибери Broad Axe у Modern Foundry's Anvil і клади предмети за силуетами, а не за назвою готової сокири.",
+          "Відлий робочу головку з доступного міцного матеріалу, а стержень і додаткові частини підбери за потрібними властивостями. Наявність рецепта матеріалу для Pick Head не означає, що всі інші типи деталей допускають абсолютно той самий набір — перевір R.",
+          "Спочатку випробуй сокиру на окремому дереві й підготуй місце для деревини. Великі споруди з колод теж не варто використовувати як навчальний полігон для першого удару.",
+          "Цей інструмент закриває заготівлю деревини; для землі тримай Excavator, а для каменю — кирку або Sledge Hammer. Один дорогий предмет не зобов'язаний виконувати всі роботи бази."
+        ],
+        "en_us": [
+          "The foundry will faithfully reproduce any shape. Even the one you placed by accident and now insist was intentional.",
+          "Lesson: Broad Axe: a tool for whole trees.",
+          "The Broad Axe is a large tree-felling tool. On a tree, it processes connected logs, making it useful for gathering wood; it is not another ordinary pickaxe.",
+          "This version's exact parts are 1 Broad Axe Head, 1 Tough Handle, 1 Pick Head and 1 Tough Collar. Yes, a pickaxe head is included. Select Broad Axe in a Modern Foundry's Anvil and follow the slot silhouettes rather than the finished axe's name.",
+          "Cast the working head from an available durable material, then choose the handle and additional parts for the traits you want. A material having a Pick Head recipe does not mean every other part type accepts exactly the same selection; check with R.",
+          "Test the axe on a separate tree first and prepare space for the wood. Large log-built structures are also unsuitable practice targets for your first strike.",
+          "This tool handles wood gathering. Keep an Excavator for dirt, and a pickaxe or Sledge Hammer for stone. One expensive item does not have to perform every job around your base."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "5130112084562752": {
+      "description": {
+        "uk_ua": [
+          "Урок: Cleaver: повільний сильний удар і Severing.",
+          "Сікач (Cleaver) — велика зброя з сильним, повільнішим ударом. Він починає із Severing II, що додає можливість спеціального дропу на придатних мобах. Це шанс за правилами конкретного дропу, а не гарантована голова з кожного ворога.",
+          "Комплект: 1 Широке лезо (Broad Blade), 2 Tough Handle та 1 Large Plate. Відкрий Modern Foundry's Anvil ПКМ, вибери Cleaver і розстав чотири деталі. Мале лезо звичайного меча сюди не підходить.",
+          "Для зброї порівнюй шкоду й швидкість атаки готового результату, а не лише шахтарський рівень матеріалу. Пізній Manyullyn має вищу базову атакувальну характеристику головки, ніж Hepatizon, але інші деталі та властивості теж змінюють результат.",
+          "Якщо обираєш Manyullyn, його сплав робиться при 1200°C з 270 mB кобальту та 90 mB Molten Debris, вихід — 360 mB. Для нагрівання підготуй Blazing Blood. Спершу перевір через R повну вартість широкого леза й пластини.",
+          "Для швидких звичних боїв можна залишити звичайний Sword, а Cleaver тримати під конкретний дроп. Зокрема Blaze Head можна потім переплавити в Blazing Blood для гарячих сплавів."
+        ],
+        "en_us": [
+          "Lesson: Cleaver: a slower heavy strike and Severing.",
+          "The Cleaver is a large weapon with a strong but slower attack. It starts with Severing II, which adds a chance of special drops from eligible mobs. That chance follows the particular drop's rules; it does not guarantee a head from every enemy.",
+          "Required parts: 1 Broad Blade, 2 Tough Handles and 1 Large Plate. Right-click a Modern Foundry's Anvil, select Cleaver and place all four parts. An ordinary sword's Small Blade does not fit this recipe.",
+          "For a weapon, compare the finished result's damage and attack speed, not only the material's mining tier. Late-game Manyullyn has a higher base head attack stat than Hepatizon, but the other parts and traits also change the result.",
+          "If you choose Manyullyn, its alloy recipe uses 270 mB cobalt and 90 mB Molten Debris at 1200°C to produce 360 mB. Prepare Blazing Blood for heating. First press R to check the complete cost of the Broad Blade and Large Plate.",
+          "You can keep an ordinary Sword for familiar, faster fights and reserve the Cleaver for a particular drop. A Blaze Head, for example, can later be melted into Blazing Blood for hot alloys."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    },
+    "513011EB9F7495C4": {
+      "description": {
+        "uk_ua": [
+          "Урок: Crossbow: три деталі й запас стріл.",
+          "Арбалет (Crossbow) Modern Foundry збирається із трьох деталей: Bow Limb, Bow Grip та Bowstring. Це компактний інструмент — його можна зробити на базовій Modern Foundry Station; велике ковадло для самого складання не обов'язкове.",
+          "Для простого початку в Part Builder зроби Bow Limb із 2 дощок, Bow Grip ще з 2 дощок та Bowstring із 4 ниток. Вибирай потрібну деталь у вікні верстата й підкладай шаблони за потреби. Матеріали для лука відрізняються від списку для головки кирки; допустимі варіанти перевір через R над деталлю.",
+          "Відкрий Modern Foundry Station ПКМ, вибери Crossbow та поклади три деталі за силуетами. Забери готовий арбалет і поклади стріли в інвентар. Утримуй використання предмета, щоб зарядити його; після заряджання наступне використання стріляє.",
+          "При заміні матеріалів дивись параметри Bow Limb і Bow Grip: швидкість натягу, швидкість снаряда, точність та міцність. Матеріал, чудовий для кирки, може мати невигідну швидкість натягу.",
+          "Для апгрейдів застосовуй рецепти модифікаторів Modern Foundry та перевіряй вільні slots у станції. Квест зараховується за готовий арбалет у твоєму інвентарі; від тебе не вимагається конкретна дорога конфігурація."
+        ],
+        "en_us": [
+          "Lesson: Crossbow: three parts and a supply of arrows.",
+          "The Modern Foundry Crossbow uses three parts: Bow Limb, Bow Grip and Bowstring. It is a compact tool that you can build at the basic Modern Foundry Station; a large anvil is not required for assembly itself.",
+          "For a simple start, use the Part Builder to make a Bow Limb from 2 planks, a Bow Grip from another 2 planks and a Bowstring from 4 string. Select each part in the workbench interface and refill Patterns as needed. Bow materials differ from the list for pickaxe heads; press R over the part to check valid options.",
+          "Right-click the Modern Foundry Station, select Crossbow and put the three parts into the matching silhouettes. Take the finished crossbow and keep arrows in your inventory. Hold the use-item control to load it; using it again after loading fires the shot.",
+          "When changing materials, inspect the Bow Limb and Bow Grip stats: draw speed, projectile velocity, accuracy and durability. A material that excels in a pickaxe may have an unfavourable draw speed.",
+          "Apply Modern Foundry modifier recipes for upgrades and check the station for free slots. The quest completes when the finished crossbow is in your inventory; it does not require one particular expensive configuration."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_02_foundry.snbt",
+        "overrides/config/ftbquests/quests/lang/uk_ua.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380"
+      ]
+    }
+  }
+}

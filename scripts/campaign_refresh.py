@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 
 import campaign_layout
+import campaign_lessons
 import campaign_progression
 import campaign_rewards
 
@@ -119,6 +120,7 @@ def refresh(chapters: list[dict], locale: dict, groups: list[dict]) -> dict:
     for ident, translations in load_json(ROOT / "metadata/campaign_route.json")["quests"].items():
         locale[f"quest.{ident}.title"] = translations["uk_ua"]["title"]
         locale[f"quest.{ident}.quest_desc"] = list(translations["uk_ua"]["description"])
+    report["expanded_lessons"] = campaign_lessons.apply_locale(locale, "uk_ua")
     report["layout"] = campaign_layout.apply(chapters, locale)
     report["rewards"] = campaign_rewards.apply(chapters, locale)
     if persistent_identity(chapters, groups) != expected:
