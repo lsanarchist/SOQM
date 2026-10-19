@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "514D118227E562E7",
-      "x": -10.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "mekanism:ingot_osmium",
@@ -70,8 +70,8 @@
     },
     {
       "id": "514D11B512FA3533",
-      "x": -7.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 5.35,
       "icon": {
         "id": "mekanismgenerators:heat_generator",
         "count": 1
@@ -135,8 +135,8 @@
     },
     {
       "id": "514D11B65A3EE8C0",
-      "x": -4.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 8.85,
       "icon": {
         "id": "mekanism:metallurgic_infuser",
         "count": 1
@@ -188,8 +188,8 @@
     },
     {
       "id": "514D110FDA1C7CF6",
-      "x": -1.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 19.35,
       "icon": {
         "id": "mekanism:ingot_steel",
         "count": 1
@@ -202,7 +202,7 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D11B65A3EE8C0"
+        "513011A22D5322FD"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -252,8 +252,8 @@
     },
     {
       "id": "514D11EFB7B6F506",
-      "x": -10.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 22.85,
       "icon": {
         "id": "mekanism:basic_control_circuit",
         "count": 1
@@ -266,8 +266,8 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D110FDA1C7CF6",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "514D110FDA1C7CF6"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -317,8 +317,8 @@
     },
     {
       "id": "514D1147E2CB985B",
-      "x": 1.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 27.67,
       "icon": {
         "id": "mekanism:configurator",
         "count": 1
@@ -369,8 +369,8 @@
     },
     {
       "id": "514D1154FFE3DABB",
-      "x": 1.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 31.17,
       "icon": {
         "id": "mekanism:enrichment_chamber",
         "count": 1
@@ -433,8 +433,8 @@
     },
     {
       "id": "514D1178A4D44AFB",
-      "x": -10.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 27.67,
       "icon": {
         "id": "mekanism:basic_energy_cube",
         "count": 1
@@ -447,6 +447,7 @@
         "soqm_role_route"
       ],
       "dependencies": [
+        "5130111B9CDAD323",
         "514D11EFB7B6F506"
       ],
       "can_repeat": false,
@@ -485,8 +486,8 @@
     },
     {
       "id": "514D118EBA5C411D",
-      "x": 4.95,
-      "y": 22.69,
+      "x": 4.6,
+      "y": 34.67,
       "icon": {
         "id": "mekanism:basic_logistical_transporter",
         "count": 1
@@ -562,8 +563,8 @@
     },
     {
       "id": "514D116574C816F4",
-      "x": 1.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 34.67,
       "icon": {
         "id": "mekanism:enriched_redstone",
         "count": 1
@@ -622,12 +623,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130111B9CDAD323",
-      "x": -10.95,
-      "y": 7.45,
+      "x": 0.0,
+      "y": 22.85,
       "icon": {
         "id": "mekanism:energy_tablet",
         "count": 1
@@ -637,11 +638,11 @@
         "stage_1",
         "item_mekanism_energy_tablet",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "514D110FDA1C7CF6"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -673,14 +674,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C1D784F1C8",
-      "x": -7.95,
-      "y": 7.45,
+      "x": -4.6,
+      "y": 12.35,
       "icon": {
         "id": "mekanism:enriched_iron",
         "count": 1
@@ -690,11 +691,11 @@
         "stage_1",
         "item_mekanism_enriched_iron",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "514D11B65A3EE8C0"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -726,14 +727,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A22D5322FD",
-      "x": -4.95,
-      "y": 7.45,
+      "x": -4.6,
+      "y": 15.85,
       "icon": {
         "id": "mekanism:dust_steel",
         "count": 1
@@ -743,10 +744,9 @@
         "stage_1",
         "item_mekanism_dust_steel",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011C1D784F1C8"
       ],
       "can_repeat": false,
@@ -779,32 +779,32 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F2453E9C69",
-      "x": -1.95,
-      "y": 7.45,
+      "x": -9.2,
+      "y": 70.13,
       "icon": {
         "id": "mekanism:ingot_refined_glowstone",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_mekanism_ingot_refined_glowstone",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_2",
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "5130112244309BDE"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -832,14 +832,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514D114A28816D5D",
-      "x": 1.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 39.49,
       "icon": {
         "id": "mekanism:basic_smelting_factory",
         "count": 1
@@ -852,9 +852,9 @@
         "soqm_role_route"
       ],
       "dependencies": [
+        "5130115E1ED084F6",
         "514D118EBA5C411D",
-        "514D1178A4D44AFB",
-        "5130115E1ED084F6"
+        "514D1178A4D44AFB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -886,8 +886,8 @@
     },
     {
       "id": "514D1121D23494BB",
-      "x": -7.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 39.49,
       "icon": {
         "id": "mekanismgenerators:wind_generator",
         "count": 1
@@ -900,8 +900,8 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D1178A4D44AFB",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D1178A4D44AFB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -939,8 +939,8 @@
     },
     {
       "id": "514D118CA784C98D",
-      "x": -10.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 51.31,
       "icon": {
         "id": "mekanism:electrolytic_separator",
         "count": 1
@@ -1004,8 +1004,8 @@
     },
     {
       "id": "514D1118901F8AB4",
-      "x": 4.95,
-      "y": 1.85,
+      "x": 4.6,
+      "y": 54.81,
       "icon": {
         "id": "mekanism:purification_chamber",
         "count": 1
@@ -1069,8 +1069,8 @@
     },
     {
       "id": "514D11F90042E7F4",
-      "x": -7.95,
-      "y": 22.69,
+      "x": 9.2,
+      "y": 58.31,
       "icon": {
         "id": "mekanism:thermal_evaporation_controller",
         "count": 1
@@ -1145,8 +1145,8 @@
     },
     {
       "id": "513011936DDEBB0E",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 39.49,
       "icon": {
         "id": "mekanism:advanced_control_circuit",
         "count": 1
@@ -1159,9 +1159,7 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130115E1ED084F6",
-        "514D110FDA1C7CF6",
         "514D11EFB7B6F506"
       ],
       "can_repeat": false,
@@ -1200,8 +1198,8 @@
     },
     {
       "id": "513011D8991C51E1",
-      "x": 7.95,
-      "y": 22.69,
+      "x": 4.6,
+      "y": 119.59,
       "icon": {
         "id": "mekanism:alloy_infused",
         "count": 1
@@ -1211,15 +1209,16 @@
         "stage_2",
         "native_mekanism_alloy_upgrading",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D1147E2CB985B",
+        "51301174E90C0139"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -1241,14 +1240,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": false
     },
     {
       "id": "513011E0DB7DE79B",
-      "x": 10.95,
-      "y": 22.69,
+      "x": 9.2,
+      "y": 54.81,
       "icon": {
         "id": "mekanism:gauge_dropper",
         "count": 1
@@ -1258,15 +1257,15 @@
         "stage_2",
         "native_mekanism_cleaning_gauges",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "513011FD1111D1BA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -1288,14 +1287,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": false
     },
     {
       "id": "513011D0BECE02CE",
-      "x": 1.95,
-      "y": 25.49,
+      "x": 9.2,
+      "y": 119.59,
       "icon": {
         "id": "mekanism:configuration_card",
         "count": 1
@@ -1305,15 +1304,16 @@
         "stage_2",
         "native_mekanism_configuration_copying",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D1147E2CB985B",
+        "514D1154FFE3DABB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -1335,14 +1335,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": false
     },
     {
       "id": "5130112244309BDE",
-      "x": -4.95,
-      "y": 22.69,
+      "x": 9.2,
+      "y": 66.63,
       "icon": {
         "id": "mekanism:osmium_compressor",
         "count": 1
@@ -1355,10 +1355,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
-        "514D11EFB7B6F506",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D11EFB7B6F506"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1392,12 +1391,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011B3BB1DF1D9",
-      "x": -7.95,
-      "y": 35.91,
+      "x": -9.2,
+      "y": 66.63,
       "icon": {
         "id": "mekanism:precision_sawmill",
         "count": 1
@@ -1410,9 +1409,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11EFB7B6F506",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D11EFB7B6F506"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1446,12 +1444,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FD1111D1BA",
-      "x": -1.95,
-      "y": 22.69,
+      "x": 0.0,
+      "y": 51.31,
       "icon": {
         "id": "mekanism:basic_chemical_tank",
         "count": 1
@@ -1464,8 +1462,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1499,12 +1497,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C1717043EB",
-      "x": -10.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 54.81,
       "icon": {
         "id": "mekanism:chemical_oxidizer",
         "count": 1
@@ -1517,9 +1515,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011FD1111D1BA",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "513011FD1111D1BA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1553,12 +1550,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011933F7B17EE",
-      "x": 1.95,
-      "y": 35.91,
+      "x": 9.2,
+      "y": 51.31,
       "icon": {
         "id": "mekanism:basic_fluid_tank",
         "count": 1
@@ -1571,8 +1568,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1606,12 +1603,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130113C675F054B",
-      "x": -7.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 66.63,
       "icon": {
         "id": "mekanism:rotary_condensentrator",
         "count": 1
@@ -1624,11 +1621,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
+        "5130115E1ED084F6",
         "513011FD1111D1BA",
         "513011933F7B17EE",
-        "5130111B9CDAD323",
-        "5130115E1ED084F6"
+        "5130111B9CDAD323"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1662,12 +1658,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011156F29CC4E",
-      "x": -4.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 70.13,
       "icon": {
         "id": "mekanism:pressurized_reaction_chamber",
         "count": 1
@@ -1680,10 +1676,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130115E1ED084F6",
-        "513011FD1111D1BA",
-        "514D1154FFE3DABB"
+        "514D118CA784C98D",
+        "513011B3BB1DF1D9",
+        "513011FD1111D1BA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1717,12 +1713,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011740CB95726",
-      "x": -4.95,
-      "y": 35.91,
+      "x": -4.6,
+      "y": 119.59,
       "icon": {
         "id": "mekanism:formulaic_assemblicator",
         "count": 1
@@ -1735,9 +1731,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11EFB7B6F506",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "513011447E582F7D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1771,12 +1766,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011447E582F7D",
-      "x": 10.95,
-      "y": 25.49,
+      "x": -9.2,
+      "y": 119.59,
       "icon": {
         "id": "mekanism:logistical_sorter",
         "count": 1
@@ -1789,8 +1784,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1824,12 +1819,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C68B70B3F3",
-      "x": 4.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 42.99,
       "icon": {
         "id": "mekanism:basic_smelting_factory",
         "count": 1
@@ -1839,16 +1834,15 @@
         "stage_2",
         "item_mekanism_basic_smelting_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D1154FFE3DABB",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D114A28816D5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1876,14 +1870,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301147649F4943",
-      "x": 10.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 42.99,
       "icon": {
         "id": "mekanism:basic_enriching_factory",
         "count": 1
@@ -1893,16 +1887,15 @@
         "stage_2",
         "item_mekanism_basic_enriching_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D1154FFE3DABB",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D114A28816D5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1930,14 +1923,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5130117ADB85508F",
-      "x": 1.95,
-      "y": 15.07,
+      "x": -9.2,
+      "y": 61.81,
       "icon": {
         "id": "mekanism:basic_crushing_factory",
         "count": 1
@@ -1947,15 +1940,14 @@
         "stage_2",
         "item_mekanism_basic_crushing_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "514D1118901F8AB4"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1983,14 +1975,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011ADC7A6AF6B",
-      "x": 4.95,
-      "y": 15.07,
+      "x": -9.2,
+      "y": 73.63,
       "icon": {
         "id": "mekanism:basic_compressing_factory",
         "count": 1
@@ -2000,15 +1992,14 @@
         "stage_2",
         "item_mekanism_basic_compressing_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130112244309BDE"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2036,14 +2027,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301189138B989B",
-      "x": 7.95,
-      "y": 15.07,
+      "x": 4.6,
+      "y": 61.81,
       "icon": {
         "id": "mekanism:basic_purifying_factory",
         "count": 1
@@ -2053,15 +2044,14 @@
         "stage_2",
         "item_mekanism_basic_purifying_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "514D1118901F8AB4"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2089,14 +2079,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011472102F0D8",
-      "x": 10.95,
-      "y": 15.07,
+      "x": 4.6,
+      "y": 42.99,
       "icon": {
         "id": "mekanism:basic_infusing_factory",
         "count": 1
@@ -2106,16 +2096,15 @@
         "stage_2",
         "item_mekanism_basic_infusing_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11B65A3EE8C0",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D114A28816D5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2143,14 +2132,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FCD72A741B",
-      "x": 1.95,
-      "y": 17.87,
+      "x": 9.2,
+      "y": 70.13,
       "icon": {
         "id": "mekanism:basic_sawing_factory",
         "count": 1
@@ -2160,15 +2149,14 @@
         "stage_2",
         "item_mekanism_basic_sawing_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011B3BB1DF1D9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2196,14 +2184,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301190143553CA",
-      "x": 7.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 46.49,
       "icon": {
         "id": "mekanism:advanced_smelting_factory",
         "count": 1
@@ -2213,15 +2201,14 @@
         "stage_2",
         "item_mekanism_advanced_smelting_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011C68B70B3F3"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2249,14 +2236,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301174E90C0139",
-      "x": 1.95,
-      "y": 28.29,
+      "x": -9.2,
+      "y": 97.27,
       "icon": {
         "id": "mekanism:advanced_universal_cable",
         "count": 1
@@ -2269,8 +2256,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11B512FA3533",
         "5130115E1ED084F6"
       ],
       "can_repeat": false,
@@ -2305,12 +2290,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011854F694FFF",
-      "x": 4.95,
-      "y": 28.29,
+      "x": -9.2,
+      "y": 100.77,
       "icon": {
         "id": "mekanism:elite_universal_cable",
         "count": 1
@@ -2323,7 +2308,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301174E90C0139"
       ],
       "can_repeat": false,
@@ -2358,12 +2342,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116E42F14F4E",
-      "x": 4.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 97.27,
       "icon": {
         "id": "mekanism:advanced_logistical_transporter",
         "count": 1
@@ -2376,9 +2360,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D118EBA5C411D",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2412,12 +2395,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C357A6C847",
-      "x": 7.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 100.77,
       "icon": {
         "id": "mekanism:elite_logistical_transporter",
         "count": 1
@@ -2430,7 +2413,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130116E42F14F4E"
       ],
       "can_repeat": false,
@@ -2465,12 +2447,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A804CB36C0",
-      "x": 7.95,
-      "y": 28.29,
+      "x": 0.0,
+      "y": 97.27,
       "icon": {
         "id": "mekanism:advanced_mechanical_pipe",
         "count": 1
@@ -2483,9 +2465,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D118EBA5C411D",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2519,12 +2500,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301135FC827F35",
-      "x": 10.95,
-      "y": 28.29,
+      "x": 0.0,
+      "y": 100.77,
       "icon": {
         "id": "mekanism:elite_mechanical_pipe",
         "count": 1
@@ -2537,7 +2518,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A804CB36C0"
       ],
       "can_repeat": false,
@@ -2572,12 +2552,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011E55E071B35",
-      "x": -4.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 97.27,
       "icon": {
         "id": "mekanism:advanced_energy_cube",
         "count": 1
@@ -2590,10 +2570,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130111B9CDAD323",
-        "514D1178A4D44AFB",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D1178A4D44AFB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2627,12 +2605,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C3316F044B",
-      "x": -10.95,
-      "y": 15.07,
+      "x": 4.6,
+      "y": 100.77,
       "icon": {
         "id": "mekanism:elite_energy_cube",
         "count": 1
@@ -2645,10 +2623,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AA869D0649",
         "513011E55E071B35",
-        "5130111B9CDAD323",
-        "513011AA869D0649"
+        "5130113316FAEC33"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2682,12 +2659,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301189BA703BE4",
-      "x": 10.95,
-      "y": 35.91,
+      "x": 9.2,
+      "y": 97.27,
       "icon": {
         "id": "mekanism:basic_bin",
         "count": 1
@@ -2700,8 +2677,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D118EBA5C411D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2735,12 +2712,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011491E852F23",
-      "x": 1.95,
-      "y": 38.71,
+      "x": 9.2,
+      "y": 100.77,
       "icon": {
         "id": "mekanism:advanced_bin",
         "count": 1
@@ -2753,7 +2730,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301189BA703BE4"
       ],
       "can_repeat": false,
@@ -2788,12 +2764,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301108B9C415A1",
-      "x": 4.95,
-      "y": 35.91,
+      "x": -4.6,
+      "y": 107.77,
       "icon": {
         "id": "mekanism:advanced_fluid_tank",
         "count": 1
@@ -2806,7 +2782,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011933F7B17EE"
       ],
       "can_repeat": false,
@@ -2841,12 +2816,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011EFCFF5F40C",
-      "x": 7.95,
-      "y": 35.91,
+      "x": 4.6,
+      "y": 111.27,
       "icon": {
         "id": "mekanism:elite_fluid_tank",
         "count": 1
@@ -2859,7 +2834,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301108B9C415A1"
       ],
       "can_repeat": false,
@@ -2894,12 +2868,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301167B744DDDA",
-      "x": -1.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 46.49,
       "icon": {
         "id": "mekanismgenerators:solar_generator",
         "count": 1
@@ -2909,16 +2883,15 @@
         "stage_2",
         "item_mekanismgenerators_solar_generator",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130115E1ED084F6",
-        "5130111B9CDAD323"
+        "514D1178A4D44AFB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -2946,14 +2919,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514D110A613D8197",
-      "x": 7.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 81.95,
       "icon": {
         "id": "mekanism:chemical_infuser",
         "count": 1
@@ -2966,9 +2939,10 @@
         "soqm_role_route"
       ],
       "dependencies": [
+        "513011AA869D0649",
         "514D1118901F8AB4",
         "514D11F90042E7F4",
-        "513011AA869D0649"
+        "5130113316FAEC33"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3018,8 +2992,8 @@
     },
     {
       "id": "5130113316FAEC33",
-      "x": -4.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 78.45,
       "icon": {
         "id": "mekanism:elite_control_circuit",
         "count": 1
@@ -3032,7 +3006,6 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
         "513011936DDEBB0E"
       ],
@@ -3072,8 +3045,8 @@
     },
     {
       "id": "514D11AB5959BBF5",
-      "x": -10.95,
-      "y": 38.71,
+      "x": 0.0,
+      "y": 123.09,
       "icon": {
         "id": "mekanism:digital_miner",
         "count": 1
@@ -3086,9 +3059,10 @@
         "soqm_role_optional"
       ],
       "dependencies": [
+        "513011AA869D0649",
         "514D114A28816D5D",
         "514D1121D23494BB",
-        "513011AA869D0649"
+        "513011447E582F7D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3122,12 +3096,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130114EF06D538C",
-      "x": -7.95,
-      "y": 38.71,
+      "x": 4.6,
+      "y": 126.59,
       "icon": {
         "id": "mekanism:robit",
         "count": 1
@@ -3140,8 +3114,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "514D114A28816D5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3169,12 +3143,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C9A6E69BED",
-      "x": -4.95,
-      "y": 38.71,
+      "x": 9.2,
+      "y": 123.09,
       "icon": {
         "id": "mekanism:seismic_vibrator",
         "count": 1
@@ -3187,8 +3161,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "514D11AB5959BBF5"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3216,12 +3190,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C1277D6FAE",
-      "x": -10.95,
-      "y": 35.91,
+      "x": 0.0,
+      "y": 130.09,
       "icon": {
         "id": "mekanism:teleporter",
         "count": 1
@@ -3231,15 +3205,16 @@
         "stage_3",
         "native_mekanism_teleporter",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "514D1178A4D44AFB",
+        "514D1147E2CB985B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -3261,14 +3236,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": false
     },
     {
       "id": "513011A31908F578",
-      "x": -1.95,
-      "y": 35.91,
+      "x": -4.6,
+      "y": 123.09,
       "icon": {
         "id": "mekanism:combiner",
         "count": 1
@@ -3278,16 +3253,15 @@
         "stage_3",
         "item_mekanism_combiner",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11EFB7B6F506",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "514D1118901F8AB4"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -3315,14 +3289,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301187E5D1F22E",
-      "x": 4.95,
-      "y": 17.87,
+      "x": 9.2,
+      "y": 126.59,
       "icon": {
         "id": "mekanism:basic_combining_factory",
         "count": 1
@@ -3332,15 +3306,14 @@
         "stage_3",
         "item_mekanism_basic_combining_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A31908F578"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -3368,14 +3341,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011E2F7F7383A",
-      "x": 7.95,
-      "y": 17.87,
+      "x": -9.2,
+      "y": 85.45,
       "icon": {
         "id": "mekanism:basic_injecting_factory",
         "count": 1
@@ -3388,7 +3361,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "514D110A613D8197"
       ],
       "can_repeat": false,
@@ -3423,12 +3395,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FC2150E9F6",
-      "x": 4.95,
-      "y": 31.09,
+      "x": -9.2,
+      "y": 107.77,
       "icon": {
         "id": "mekanism:ultimate_universal_cable",
         "count": 1
@@ -3441,9 +3413,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011854F694FFF",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011854F694FFF"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3477,12 +3448,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110429A8D512",
-      "x": 1.95,
-      "y": 31.09,
+      "x": 0.0,
+      "y": 107.77,
       "icon": {
         "id": "mekanism:ultimate_logistical_transporter",
         "count": 1
@@ -3496,9 +3467,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011C357A6C847",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011C357A6C847"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3532,12 +3502,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D2DC7B4947",
-      "x": -4.95,
-      "y": 15.07,
+      "x": 9.2,
+      "y": 107.77,
       "icon": {
         "id": "mekanism:ultimate_energy_cube",
         "count": 1
@@ -3550,11 +3520,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011C3316F044B",
-        "5130111B9CDAD323",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "513011C3316F044B",
+        "513011F824400CB9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3588,12 +3557,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011CEBED48ECD",
-      "x": 7.95,
-      "y": 38.71,
+      "x": 4.6,
+      "y": 104.27,
       "icon": {
         "id": "mekanism:elite_bin",
         "count": 1
@@ -3606,9 +3575,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011491E852F23",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011491E852F23"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3642,12 +3610,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130115863865D83",
-      "x": 4.95,
-      "y": 38.71,
+      "x": -4.6,
+      "y": 114.77,
       "icon": {
         "id": "mekanism:ultimate_fluid_tank",
         "count": 1
@@ -3660,9 +3628,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011EFCFF5F40C",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011EFCFF5F40C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3696,12 +3663,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011AB8B3C455F",
-      "x": -10.95,
-      "y": 43.53,
+      "x": 4.6,
+      "y": 134.91,
       "icon": {
         "id": "mekanism:atomic_disassembler",
         "count": 1
@@ -3714,9 +3681,9 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130111B9CDAD323"
+        "5130111B9CDAD323",
+        "5130113316FAEC33"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3750,12 +3717,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110E6A8F75F8",
-      "x": -7.95,
-      "y": 43.53,
+      "x": -4.6,
+      "y": 134.91,
       "icon": {
         "id": "mekanism:jetpack",
         "count": 1
@@ -3768,9 +3735,9 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AA869D0649",
         "513011FD1111D1BA",
-        "513011AA869D0649"
+        "514D118CA784C98D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3804,12 +3771,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301145216814C2",
-      "x": -10.95,
-      "y": 49.13,
+      "x": 0.0,
+      "y": 138.41,
       "icon": {
         "id": "mekanism:jetpack_armored",
         "count": 1
@@ -3822,9 +3789,9 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "5130110E6A8F75F8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3858,12 +3825,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A01B082BDB",
-      "x": -4.95,
-      "y": 43.53,
+      "x": 0.0,
+      "y": 134.91,
       "icon": {
         "id": "mekanism:scuba_mask",
         "count": 1
@@ -3876,8 +3843,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "514D118CA784C98D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3911,12 +3878,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301180C64BE565",
-      "x": -1.95,
-      "y": 43.53,
+      "x": 4.6,
+      "y": 138.41,
       "icon": {
         "id": "mekanism:scuba_tank",
         "count": 1
@@ -3929,9 +3896,9 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AA869D0649",
         "513011FD1111D1BA",
-        "513011AA869D0649"
+        "513011A01B082BDB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3965,12 +3932,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011083EFED984",
-      "x": -10.95,
-      "y": 46.33,
+      "x": -9.2,
+      "y": 134.91,
       "icon": {
         "id": "mekanism:free_runners",
         "count": 1
@@ -3983,9 +3950,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130111B9CDAD323",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130111B9CDAD323"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4019,12 +3985,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011076C9C7A8F",
-      "x": -7.95,
-      "y": 46.33,
+      "x": 9.2,
+      "y": 138.41,
       "icon": {
         "id": "mekanism:free_runners_armored",
         "count": 1
@@ -4037,8 +4003,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011083EFED984"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4072,12 +4038,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A34E3014FA",
-      "x": -4.95,
-      "y": 46.33,
+      "x": 9.2,
+      "y": 134.91,
       "icon": {
         "id": "mekanism:electric_bow",
         "count": 1
@@ -4090,9 +4056,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130111B9CDAD323",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130111B9CDAD323"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4126,12 +4091,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301124380E82AF",
-      "x": -1.95,
-      "y": 46.33,
+      "x": -4.6,
+      "y": 138.41,
       "icon": {
         "id": "mekanism:flamethrower",
         "count": 1
@@ -4144,9 +4109,9 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AA869D0649",
         "513011FD1111D1BA",
-        "513011AA869D0649"
+        "514D118CA784C98D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4180,12 +4145,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301151F34C43A4",
-      "x": -7.95,
-      "y": 15.07,
+      "x": 9.2,
+      "y": 73.63,
       "icon": {
         "id": "mekanismgenerators:gas_burning_generator",
         "count": 1
@@ -4198,9 +4163,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "514D11EFB7B6F506"
+        "513011156F29CC4E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4234,12 +4198,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514D117ECEE7DB61",
-      "x": 4.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 85.45,
       "icon": {
         "id": "mekanism:chemical_dissolution_chamber",
         "count": 1
@@ -4252,9 +4216,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D110A613D8197",
         "5130115E1ED084F6",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "514D110A613D8197"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4288,12 +4252,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514D115314DFB698",
-      "x": 7.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 88.95,
       "icon": {
         "id": "mekanism:chemical_washer",
         "count": 1
@@ -4306,8 +4270,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D117ECEE7DB61",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D117ECEE7DB61"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4353,12 +4317,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514D113A135370A8",
-      "x": 10.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 92.45,
       "icon": {
         "id": "minecraft:iron_ingot",
         "count": 1
@@ -4414,8 +4378,8 @@
     },
     {
       "id": "513011F824400CB9",
-      "x": -1.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 104.27,
       "icon": {
         "id": "mekanism:ultimate_control_circuit",
         "count": 1
@@ -4428,9 +4392,7 @@
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A",
-        "5130113316FAEC33"
+        "5130117F2402AE8A"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4468,8 +4430,8 @@
     },
     {
       "id": "513011FD8F59F801",
-      "x": 10.95,
-      "y": 38.71,
+      "x": 4.6,
+      "y": 107.77,
       "icon": {
         "id": "mekanism:ultimate_bin",
         "count": 1
@@ -4482,9 +4444,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
+        "5130117F2402AE8A",
         "513011CEBED48ECD",
-        "5130117F2402AE8A"
+        "513011F824400CB9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4518,12 +4480,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301114CBAD1F77",
-      "x": -1.95,
-      "y": 38.71,
+      "x": -9.2,
+      "y": 126.59,
       "icon": {
         "id": "mekanism:quantum_entangloporter",
         "count": 1
@@ -4536,9 +4498,10 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "513011447E582F7D",
+        "513011F824400CB9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4572,12 +4535,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116A8EF3B812",
-      "x": 1.95,
-      "y": 43.53,
+      "x": 0.0,
+      "y": 143.23,
       "icon": {
         "id": "mekanism:qio_drive_array",
         "count": 1
@@ -4590,7 +4553,6 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AEA75E4401"
       ],
       "can_repeat": false,
@@ -4625,12 +4587,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011835D892AF4",
-      "x": 4.95,
-      "y": 43.53,
+      "x": 0.0,
+      "y": 146.73,
       "icon": {
         "id": "mekanism:qio_drive_base",
         "count": 1
@@ -4643,9 +4605,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011F824400CB9",
-        "513011AEA75E4401"
+        "513011AEA75E4401",
+        "5130116A8EF3B812"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4679,12 +4640,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130112203442BAE",
-      "x": 7.95,
-      "y": 43.53,
+      "x": 0.0,
+      "y": 150.23,
       "icon": {
         "id": "mekanism:qio_drive_hyper_dense",
         "count": 1
@@ -4697,8 +4658,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AEA75E4401"
+        "513011AEA75E4401",
+        "513011835D892AF4"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4732,12 +4693,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C1C75B6080",
-      "x": 10.95,
-      "y": 43.53,
+      "x": 0.0,
+      "y": 153.73,
       "icon": {
         "id": "mekanism:qio_drive_time_dilating",
         "count": 1
@@ -4750,8 +4711,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AEA75E4401"
+        "513011AEA75E4401",
+        "5130112203442BAE"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4785,12 +4746,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130119895187FB1",
-      "x": 1.95,
-      "y": 46.33,
+      "x": 0.0,
+      "y": 157.23,
       "icon": {
         "id": "mekanism:qio_drive_supermassive",
         "count": 1
@@ -4803,8 +4764,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "514D11E562C03F82"
+        "514D11E562C03F82",
+        "513011C1C75B6080"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -4838,7 +4799,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -4908,12 +4869,12 @@
     },
     {
       "id": "5141041000000158",
-      "x": -6.45,
-      "y": 4.85,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 12.55,
+      "width": 24.9,
+      "height": 25.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4925,9 +4886,9 @@
     {
       "id": "5141041000000159",
       "x": -12.395,
-      "y": 4.85,
+      "y": 12.55,
       "width": 0.11,
-      "height": 9.7,
+      "height": 25.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4940,9 +4901,9 @@
     },
     {
       "id": "514104100000015A",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4956,12 +4917,12 @@
     },
     {
       "id": "514104100000015B",
-      "x": -10.95,
+      "x": 0.0,
       "y": 2.93,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4972,12 +4933,12 @@
     },
     {
       "id": "514104100000015C",
-      "x": -7.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 6.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4988,12 +4949,12 @@
     },
     {
       "id": "514104100000015D",
-      "x": -4.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 9.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5004,12 +4965,12 @@
     },
     {
       "id": "514104100000015E",
-      "x": -1.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 20.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5020,12 +4981,12 @@
     },
     {
       "id": "514104100000015F",
-      "x": -10.95,
-      "y": 5.73,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 23.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5036,12 +4997,12 @@
     },
     {
       "id": "5141041000000160",
-      "x": -7.95,
-      "y": 5.73,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 40.57,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5052,12 +5013,12 @@
     },
     {
       "id": "5141041000000161",
-      "x": -4.95,
-      "y": 5.73,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 79.53,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5068,12 +5029,12 @@
     },
     {
       "id": "5141041000000162",
-      "x": -1.95,
-      "y": 5.73,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 105.35,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5084,12 +5045,12 @@
     },
     {
       "id": "5141041000000163",
-      "x": -10.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 23.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5100,12 +5061,12 @@
     },
     {
       "id": "5141041000000164",
-      "x": -7.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 13.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5116,12 +5077,12 @@
     },
     {
       "id": "5141041000000165",
-      "x": -4.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 16.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5132,12 +5093,12 @@
     },
     {
       "id": "5141041000000166",
-      "x": -1.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 71.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5148,12 +5109,12 @@
     },
     {
       "id": "5141041000000167",
-      "x": 6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 31.37,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5164,10 +5125,10 @@
     },
     {
       "id": "5141041000000168",
-      "x": 0.505,
-      "y": 3.45,
+      "x": -12.395,
+      "y": 31.37,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -5180,9 +5141,9 @@
     },
     {
       "id": "5141041000000169",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 26.28,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -5196,12 +5157,12 @@
     },
     {
       "id": "514104100000016A",
-      "x": 1.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 32.25,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5212,12 +5173,12 @@
     },
     {
       "id": "514104100000016B",
-      "x": 1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 35.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5228,12 +5189,12 @@
     },
     {
       "id": "514104100000016C",
-      "x": 4.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 55.89,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5244,12 +5205,12 @@
     },
     {
       "id": "514104100000016D",
-      "x": 7.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 83.03,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5260,12 +5221,12 @@
     },
     {
       "id": "514104100000016E",
-      "x": 4.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 86.37,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5276,12 +5237,12 @@
     },
     {
       "id": "514104100000016F",
-      "x": 7.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 89.87,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5292,12 +5253,12 @@
     },
     {
       "id": "5141041000000170",
-      "x": 10.95,
-      "y": 2.85,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 93.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5308,12 +5269,12 @@
     },
     {
       "id": "5141041000000171",
-      "x": -6.45,
-      "y": 13.87,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 43.19,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5325,9 +5286,9 @@
     {
       "id": "5141041000000172",
       "x": -12.395,
-      "y": 13.87,
+      "y": 43.19,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -5340,9 +5301,9 @@
     },
     {
       "id": "5141041000000173",
-      "x": -6.37,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 38.1,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -5356,12 +5317,12 @@
     },
     {
       "id": "5141041000000174",
-      "x": -10.95,
-      "y": 13.35,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 28.75,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5372,12 +5333,12 @@
     },
     {
       "id": "5141041000000175",
-      "x": -7.95,
-      "y": 13.35,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 40.57,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5388,12 +5349,12 @@
     },
     {
       "id": "5141041000000176",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 98.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5404,12 +5365,12 @@
     },
     {
       "id": "5141041000000177",
-      "x": -10.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 101.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5420,12 +5381,12 @@
     },
     {
       "id": "5141041000000178",
-      "x": -4.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 108.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5436,12 +5397,12 @@
     },
     {
       "id": "5141041000000179",
-      "x": -1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 47.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5452,12 +5413,12 @@
     },
     {
       "id": "514104100000017A",
-      "x": -7.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 74.55,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5468,12 +5429,12 @@
     },
     {
       "id": "514104100000017B",
-      "x": 6.45,
-      "y": 15.27,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 56.76,
+      "width": 24.9,
+      "height": 14.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5484,10 +5445,10 @@
     },
     {
       "id": "514104100000017C",
-      "x": 0.505,
-      "y": 15.27,
+      "x": -12.395,
+      "y": 56.76,
       "width": 0.11,
-      "height": 9.7,
+      "height": 14.6,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -5500,9 +5461,9 @@
     },
     {
       "id": "514104100000017D",
-      "x": 6.53,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 49.92,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -5516,12 +5477,12 @@
     },
     {
       "id": "514104100000017E",
-      "x": 1.95,
-      "y": 13.35,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 40.57,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5532,12 +5493,12 @@
     },
     {
       "id": "514104100000017F",
-      "x": 4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 43.86,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5548,12 +5509,12 @@
     },
     {
       "id": "5141041000000180",
-      "x": 7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 47.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5564,12 +5525,12 @@
     },
     {
       "id": "5141041000000181",
-      "x": 10.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 43.86,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5580,12 +5541,12 @@
     },
     {
       "id": "5141041000000182",
-      "x": 1.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 62.68,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5596,12 +5557,12 @@
     },
     {
       "id": "5141041000000183",
-      "x": 4.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 74.5,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5612,12 +5573,12 @@
     },
     {
       "id": "5141041000000184",
-      "x": 7.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 62.68,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5628,12 +5589,12 @@
     },
     {
       "id": "5141041000000185",
-      "x": 10.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 43.86,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5644,12 +5605,12 @@
     },
     {
       "id": "5141041000000186",
-      "x": 1.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 71.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5660,12 +5621,12 @@
     },
     {
       "id": "5141041000000187",
-      "x": 4.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 127.46,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5676,12 +5637,12 @@
     },
     {
       "id": "5141041000000188",
-      "x": 7.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 86.37,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5692,12 +5653,12 @@
     },
     {
       "id": "5141041000000189",
-      "x": -6.45,
-      "y": 24.29,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 70.33,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5709,9 +5670,9 @@
     {
       "id": "514104100000018A",
       "x": -12.395,
-      "y": 24.29,
+      "y": 70.33,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -5724,9 +5685,9 @@
     },
     {
       "id": "514104100000018B",
-      "x": -6.37,
-      "y": 21.3,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 65.24,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -5740,12 +5701,12 @@
     },
     {
       "id": "514104100000018C",
-      "x": -10.95,
-      "y": 23.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 52.39,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5756,12 +5717,12 @@
     },
     {
       "id": "514104100000018D",
-      "x": -7.95,
-      "y": 23.77,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 59.39,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5772,12 +5733,12 @@
     },
     {
       "id": "514104100000018E",
-      "x": -4.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 67.55,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5788,12 +5749,12 @@
     },
     {
       "id": "514104100000018F",
-      "x": -1.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 52.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5804,12 +5765,12 @@
     },
     {
       "id": "5141041000000190",
-      "x": -10.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 55.73,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5820,12 +5781,12 @@
     },
     {
       "id": "5141041000000191",
-      "x": -7.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 67.55,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5836,12 +5797,12 @@
     },
     {
       "id": "5141041000000192",
-      "x": -4.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 71.05,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5852,12 +5813,12 @@
     },
     {
       "id": "5141041000000193",
-      "x": 6.45,
-      "y": 27.09,
-      "width": 12.0,
-      "height": 12.5,
+      "x": 0.0,
+      "y": 85.65,
+      "width": 24.9,
+      "height": 18.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5868,10 +5829,10 @@
     },
     {
       "id": "5141041000000194",
-      "x": 0.505,
-      "y": 27.09,
+      "x": -12.395,
+      "y": 85.65,
       "width": 0.11,
-      "height": 12.5,
+      "height": 18.1,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -5884,9 +5845,9 @@
     },
     {
       "id": "5141041000000195",
-      "x": 6.53,
-      "y": 21.3,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 77.06,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -5900,12 +5861,12 @@
     },
     {
       "id": "5141041000000196",
-      "x": 1.95,
-      "y": 23.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 28.75,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5916,12 +5877,12 @@
     },
     {
       "id": "5141041000000197",
-      "x": 4.95,
-      "y": 23.77,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 35.75,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5932,12 +5893,12 @@
     },
     {
       "id": "5141041000000198",
-      "x": 4.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 98.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5948,12 +5909,12 @@
     },
     {
       "id": "5141041000000199",
-      "x": 7.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 101.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5964,12 +5925,12 @@
     },
     {
       "id": "514104100000019A",
-      "x": 1.95,
-      "y": 32.01,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 108.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5980,12 +5941,12 @@
     },
     {
       "id": "514104100000019B",
-      "x": 7.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 120.46,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -5996,12 +5957,12 @@
     },
     {
       "id": "514104100000019C",
-      "x": 10.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 55.68,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6012,12 +5973,12 @@
     },
     {
       "id": "514104100000019D",
-      "x": 1.95,
-      "y": 26.49,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 120.46,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6028,12 +5989,12 @@
     },
     {
       "id": "514104100000019E",
-      "x": 10.95,
-      "y": 26.41,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 120.51,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6044,12 +6005,12 @@
     },
     {
       "id": "514104100000019F",
-      "x": 1.95,
-      "y": 29.21,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 98.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6060,12 +6021,12 @@
     },
     {
       "id": "51410410000001A0",
-      "x": 4.95,
-      "y": 29.21,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 101.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6076,12 +6037,12 @@
     },
     {
       "id": "51410410000001A1",
-      "x": 4.95,
-      "y": 32.01,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 108.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6092,12 +6053,12 @@
     },
     {
       "id": "51410410000001A2",
-      "x": 7.95,
-      "y": 29.21,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 98.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6108,12 +6069,12 @@
     },
     {
       "id": "51410410000001A3",
-      "x": 10.95,
-      "y": 29.21,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 101.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6124,12 +6085,12 @@
     },
     {
       "id": "51410410000001A4",
-      "x": -6.45,
-      "y": 37.51,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 106.22,
+      "width": 24.9,
+      "height": 21.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6141,9 +6102,9 @@
     {
       "id": "51410410000001A5",
       "x": -12.395,
-      "y": 37.51,
+      "y": 106.22,
       "width": 0.11,
-      "height": 6.9,
+      "height": 21.6,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -6156,9 +6117,9 @@
     },
     {
       "id": "51410410000001A6",
-      "x": -6.37,
-      "y": 34.52,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 95.88,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -6172,12 +6133,12 @@
     },
     {
       "id": "51410410000001A7",
-      "x": -7.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 67.55,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6188,12 +6149,12 @@
     },
     {
       "id": "51410410000001A8",
-      "x": -4.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 120.51,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6204,12 +6165,12 @@
     },
     {
       "id": "51410410000001A9",
-      "x": -10.95,
-      "y": 39.58,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 123.96,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6220,12 +6181,12 @@
     },
     {
       "id": "51410410000001AA",
-      "x": -7.95,
-      "y": 39.58,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 127.46,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6236,12 +6197,12 @@
     },
     {
       "id": "51410410000001AB",
-      "x": -4.95,
-      "y": 39.58,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 123.96,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6252,12 +6213,12 @@
     },
     {
       "id": "51410410000001AC",
-      "x": -10.95,
-      "y": 36.91,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 130.96,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6268,12 +6229,12 @@
     },
     {
       "id": "51410410000001AD",
-      "x": -1.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 123.96,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6284,12 +6245,12 @@
     },
     {
       "id": "51410410000001AE",
-      "x": -1.95,
-      "y": 39.58,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 127.46,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6300,12 +6261,12 @@
     },
     {
       "id": "51410410000001AF",
-      "x": 6.45,
-      "y": 37.51,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 125.04,
+      "width": 24.9,
+      "height": 14.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6316,10 +6277,10 @@
     },
     {
       "id": "51410410000001B0",
-      "x": 0.505,
-      "y": 37.51,
+      "x": -12.395,
+      "y": 125.04,
       "width": 0.11,
-      "height": 6.9,
+      "height": 14.6,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -6332,9 +6293,9 @@
     },
     {
       "id": "51410410000001B1",
-      "x": 6.53,
-      "y": 34.52,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 118.2,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -6348,12 +6309,12 @@
     },
     {
       "id": "51410410000001B2",
-      "x": 1.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 52.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6364,12 +6325,12 @@
     },
     {
       "id": "51410410000001B3",
-      "x": 4.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 108.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6380,12 +6341,12 @@
     },
     {
       "id": "51410410000001B4",
-      "x": 7.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 112.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6396,12 +6357,12 @@
     },
     {
       "id": "51410410000001B5",
-      "x": 4.95,
-      "y": 39.63,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 115.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6412,12 +6373,12 @@
     },
     {
       "id": "51410410000001B6",
-      "x": 10.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 98.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6428,12 +6389,12 @@
     },
     {
       "id": "51410410000001B7",
-      "x": 1.95,
-      "y": 39.63,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 101.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6444,12 +6405,12 @@
     },
     {
       "id": "51410410000001B8",
-      "x": 7.95,
-      "y": 39.63,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 105.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6460,12 +6421,12 @@
     },
     {
       "id": "51410410000001B9",
-      "x": 10.95,
-      "y": 39.63,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 108.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6476,12 +6437,12 @@
     },
     {
       "id": "51410410000001BA",
-      "x": -6.45,
-      "y": 46.53,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 136.86,
+      "width": 24.9,
+      "height": 7.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6493,9 +6454,9 @@
     {
       "id": "51410410000001BB",
       "x": -12.395,
-      "y": 46.53,
+      "y": 136.86,
       "width": 0.11,
-      "height": 9.7,
+      "height": 7.6,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -6508,9 +6469,9 @@
     },
     {
       "id": "51410410000001BC",
-      "x": -6.37,
-      "y": 42.14,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 133.52,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -6524,12 +6485,12 @@
     },
     {
       "id": "51410410000001BD",
-      "x": -10.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 135.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6540,12 +6501,12 @@
     },
     {
       "id": "51410410000001BE",
-      "x": -7.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 135.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6556,12 +6517,12 @@
     },
     {
       "id": "51410410000001BF",
-      "x": -10.95,
-      "y": 50.0,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 139.28,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6572,12 +6533,12 @@
     },
     {
       "id": "51410410000001C0",
-      "x": -4.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 135.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6588,12 +6549,12 @@
     },
     {
       "id": "51410410000001C1",
-      "x": -1.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 139.28,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6604,12 +6565,12 @@
     },
     {
       "id": "51410410000001C2",
-      "x": -10.95,
-      "y": 47.2,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 135.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6620,12 +6581,12 @@
     },
     {
       "id": "51410410000001C3",
-      "x": -7.95,
-      "y": 47.2,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 139.28,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6636,12 +6597,12 @@
     },
     {
       "id": "51410410000001C4",
-      "x": -4.95,
-      "y": 47.2,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 135.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6652,12 +6613,12 @@
     },
     {
       "id": "51410410000001C5",
-      "x": -1.95,
-      "y": 47.2,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 139.28,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6668,12 +6629,12 @@
     },
     {
       "id": "51410410000001C6",
-      "x": 6.45,
-      "y": 45.13,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 150.43,
+      "width": 24.9,
+      "height": 18.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6684,10 +6645,10 @@
     },
     {
       "id": "51410410000001C7",
-      "x": 0.505,
-      "y": 45.13,
+      "x": -12.395,
+      "y": 150.43,
       "width": 0.11,
-      "height": 6.9,
+      "height": 18.1,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -6700,9 +6661,9 @@
     },
     {
       "id": "51410410000001C8",
-      "x": 6.53,
-      "y": 42.14,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 141.84,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -6716,12 +6677,12 @@
     },
     {
       "id": "51410410000001C9",
-      "x": 1.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 144.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6732,12 +6693,12 @@
     },
     {
       "id": "51410410000001CA",
-      "x": 4.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 147.6,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6748,12 +6709,12 @@
     },
     {
       "id": "51410410000001CB",
-      "x": 7.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 151.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6764,12 +6725,12 @@
     },
     {
       "id": "51410410000001CC",
-      "x": 10.95,
-      "y": 44.4,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 154.6,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -6780,12 +6741,12 @@
     },
     {
       "id": "51410410000001CD",
-      "x": 1.95,
-      "y": 47.2,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 158.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",

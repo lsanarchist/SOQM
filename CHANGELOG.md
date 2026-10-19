@@ -7,6 +7,28 @@
   insertions before dispatch, including legacy loads with misleading added flags.
   Add native regressions for both cases and rebuild the pinned runtime module.
 
+### 0.4.9 — production quest branches from starter to scaled systems
+
+- Rebuild Ex Deorum, Ex Machinis and AE2 around usable starter installations,
+  feed/output paths and successive upgrades. Remove Diamond Mesh/Hammer
+  prerequisites from first mechanical machines; correctly attach Comparator
+  Upgrade to Item Buffer and import Flux output from its external receiver.
+- Start AE2 with a one-cell ME Chest, actual terminal crafting and a minimal
+  1k autocrafting setup. Align the real RFTools Crafter T1 and Ender IO Crafter
+  ingredients with Precision stage 2. Keep Drive, Controller, larger CPUs,
+  P2P, subnets and remote/spatial systems in their subsequent branches.
+- Reorganize Mekanism, its nuclear chapter, Ender IO, Industrial Foregoing,
+  Extreme Reactors and Mob Grinding Utils into component, assembly and
+  operating sequences. Keep alternative routes and optional samples separate.
+- Add bilingual operation guides and vertical branch maps with visible local
+  dependencies. Reuse existing quests, panels and captions; generate ten
+  coordinate previews for review.
+- Preserve all 1,625 quests, 1,772 task definitions and 1,626 personal reward
+  definitions. Existing 0.4.8 claims and production discoveries stay used
+  and unlocked. Add route/save-contract regressions and native ME Chest plus
+  completed-quest/personal-claim upgrade checks. See
+  [quest branches](docs/QUEST_BRANCHES.md) and [verification](reports/README.md).
+
 ### 0.4.8 — personal rewards that improve with production
 
 - Expand the 14 themed pools to 326 entries: 240 distinct items, including 210

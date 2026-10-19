@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "514011B0DCF6C72E",
-      "x": -10.95,
+      "x": -9.2,
       "y": 1.85,
       "icon": {
         "id": "exmachinis:flux_hammer",
@@ -32,7 +32,6 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011CA86FD67E8",
         "5130115E1ED084F6"
       ],
@@ -66,11 +65,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401188E2DC8B2A",
-      "x": -4.95,
+      "x": 9.2,
       "y": 1.85,
       "icon": {
         "id": "exmachinis:flux_sieve",
@@ -85,7 +84,6 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "5140118233B3CC83",
         "5130115E1ED084F6"
       ],
@@ -119,12 +117,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401111C237D431",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 10.17,
       "icon": {
         "id": "exmachinis:flux_compactor",
         "count": 1
@@ -133,16 +131,16 @@
         "qm_rebuild",
         "qm_v040",
         "stage_2",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "514011692B337611",
+        "514011F45FF8C855",
+        "514011D7E21C7052",
         "5130115E1ED084F6"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -170,13 +168,13 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140119A18901AB3",
-      "x": -7.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "exmachinis:item_buffer",
@@ -185,15 +183,14 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_2",
+        "stage_0",
         "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "514011B0DCF6C72E",
-        "5130115E1ED084F6"
+        "514011D7E21C7052",
+        "51301176F3997CB9"
       ],
       "optional": false,
       "tasks": [
@@ -225,12 +222,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011FB04BE4F17",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 10.17,
       "icon": {
         "id": "exmachinis:gold_upgrade",
         "count": 1
@@ -244,9 +241,7 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "51401188E2DC8B2A",
-        "5130115E1ED084F6"
+        "514011F45FF8C855"
       ],
       "optional": false,
       "tasks": [
@@ -278,12 +273,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011D678215A73",
-      "x": 7.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 13.67,
       "icon": {
         "id": "exmachinis:diamond_upgrade",
         "count": 1
@@ -297,7 +292,6 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011FB04BE4F17",
         "513011AA869D0649"
       ],
@@ -331,12 +325,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140114A64A45C5A",
-      "x": 10.95,
-      "y": 1.85,
+      "x": 9.2,
+      "y": 17.17,
       "icon": {
         "id": "exmachinis:netherite_upgrade",
         "count": 1
@@ -345,16 +339,15 @@
         "qm_rebuild",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011D678215A73",
         "5130117F2402AE8A"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -382,14 +375,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140113E0CEBF67F",
-      "x": 4.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 5.35,
       "icon": {
         "id": "exmachinis:comparator_upgrade",
         "count": 1
@@ -397,17 +390,15 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_2",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "51401111C237D431",
-        "5130115E1ED084F6"
+        "5140119A18901AB3"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -435,14 +426,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011F45FF8C855",
-      "x": -10.95,
-      "y": 6.67,
+      "x": 0.0,
+      "y": 5.35,
       "icon": {
         "id": "exmachinis:flux_hammer",
         "count": 1
@@ -456,10 +447,9 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011B0DCF6C72E",
-        "5140119A18901AB3",
-        "5130115E1ED084F6"
+        "51401188E2DC8B2A",
+        "5140119A18901AB3"
       ],
       "optional": false,
       "tasks": [
@@ -515,12 +505,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011ADCD0AC819",
-      "x": -7.95,
-      "y": 6.67,
+      "x": 0.0,
+      "y": 21.99,
       "icon": {
         "id": "exmachinis:flux_sieve",
         "count": 1
@@ -534,11 +524,8 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "51301130F8B93E94",
-        "514D010000000002",
-        "51401188E2DC8B2A",
         "514011D678215A73",
-        "513011AA869D0649"
+        "513011AAD4652E6F"
       ],
       "optional": false,
       "tasks": [
@@ -594,7 +581,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -664,12 +651,12 @@
     },
     {
       "id": "51410410000008B6",
-      "x": -6.45,
-      "y": 2.05,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 3.8,
+      "width": 24.9,
+      "height": 7.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -681,9 +668,9 @@
     {
       "id": "51410410000008B7",
       "x": -12.395,
-      "y": 2.05,
+      "y": 3.8,
       "width": 0.11,
-      "height": 4.1,
+      "height": 7.6,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -696,9 +683,9 @@
     },
     {
       "id": "51410410000008B8",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -712,12 +699,12 @@
     },
     {
       "id": "51410410000008B9",
-      "x": -10.95,
+      "x": -9.2,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -728,12 +715,12 @@
     },
     {
       "id": "51410410000008BA",
-      "x": -7.95,
+      "x": 0.0,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -744,12 +731,12 @@
     },
     {
       "id": "51410410000008BB",
-      "x": -4.95,
+      "x": 9.2,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -760,12 +747,12 @@
     },
     {
       "id": "51410410000008BC",
-      "x": -1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 11.04,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -776,12 +763,12 @@
     },
     {
       "id": "51410410000008BD",
-      "x": 6.45,
-      "y": 2.05,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 13.87,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -792,10 +779,10 @@
     },
     {
       "id": "51410410000008BE",
-      "x": 0.505,
-      "y": 2.05,
+      "x": -12.395,
+      "y": 13.87,
       "width": 0.11,
-      "height": 4.1,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -808,9 +795,9 @@
     },
     {
       "id": "51410410000008BF",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 8.78,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -824,12 +811,12 @@
     },
     {
       "id": "51410410000008C0",
-      "x": 1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 11.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -840,12 +827,12 @@
     },
     {
       "id": "51410410000008C1",
-      "x": 7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 14.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -856,12 +843,12 @@
     },
     {
       "id": "51410410000008C2",
-      "x": 10.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 18.04,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -872,12 +859,12 @@
     },
     {
       "id": "51410410000008C3",
-      "x": 4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 6.22,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -888,12 +875,12 @@
     },
     {
       "id": "51410410000008C4",
-      "x": -6.45,
-      "y": 6.87,
-      "width": 12.0,
+      "x": 0.0,
+      "y": 22.19,
+      "width": 24.9,
       "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -905,7 +892,7 @@
     {
       "id": "51410410000008C5",
       "x": -12.395,
-      "y": 6.87,
+      "y": 22.19,
       "width": 0.11,
       "height": 4.1,
       "rotation": 0.0,
@@ -920,9 +907,9 @@
     },
     {
       "id": "51410410000008C6",
-      "x": -6.37,
-      "y": 5.28,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 20.6,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -936,12 +923,12 @@
     },
     {
       "id": "51410410000008C7",
-      "x": -10.95,
-      "y": 7.59,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 6.27,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -952,12 +939,12 @@
     },
     {
       "id": "51410410000008C8",
-      "x": -7.95,
-      "y": 7.59,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 22.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",

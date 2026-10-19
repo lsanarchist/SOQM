@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "514011FBFE3B594B",
-      "x": -10.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "exdeorum:oak_sieve",
@@ -64,12 +64,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011597C161302",
-      "x": -7.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 5.35,
       "icon": {
         "id": "exdeorum:string_mesh",
         "count": 1
@@ -83,8 +83,8 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "514011FBFE3B594B"
+        "514011FBFE3B594B",
+        "514011B17B9019ED"
       ],
       "optional": false,
       "tasks": [
@@ -116,12 +116,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011324616A9B3",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 13.67,
       "icon": {
         "id": "exdeorum:flint_mesh",
         "count": 1
@@ -130,15 +130,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011597C161302"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -166,14 +165,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140116F44752FA8",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 13.67,
       "icon": {
         "id": "exdeorum:iron_mesh",
         "count": 1
@@ -182,15 +181,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "514011324616A9B3"
+        "514011597C161302"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -218,14 +216,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140112A4F316BD0",
-      "x": -10.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 13.67,
       "icon": {
         "id": "exdeorum:golden_mesh",
         "count": 1
@@ -234,16 +232,15 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140116F44752FA8",
+        "514011597C161302",
         "513011E734464E5D"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -271,14 +268,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140116A490EBB49",
-      "x": -7.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 17.17,
       "icon": {
         "id": "exdeorum:diamond_mesh",
         "count": 1
@@ -287,16 +284,15 @@
         "qm_rebuild",
         "qm_v040",
         "stage_2",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140112A4F316BD0",
+        "514011597C161302",
         "5130115E1ED084F6"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -324,14 +320,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140118A7959CF14",
-      "x": -4.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 20.67,
       "icon": {
         "id": "exdeorum:netherite_mesh",
         "count": 1
@@ -340,16 +336,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_2",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140116A490EBB49",
-        "5130115E1ED084F6"
+        "5140116A490EBB49"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -377,13 +371,13 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011B17B9019ED",
-      "x": 1.95,
+      "x": 4.6,
       "y": 1.85,
       "icon": {
         "id": "exdeorum:stone_hammer",
@@ -430,12 +424,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401119D2BD7331",
-      "x": 4.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 33.81,
       "icon": {
         "id": "exdeorum:iron_hammer",
         "count": 1
@@ -444,15 +438,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011B17B9019ED"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -480,14 +473,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140117CFCDA03E8",
-      "x": 4.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 33.81,
       "icon": {
         "id": "exdeorum:diamond_hammer",
         "count": 1
@@ -495,17 +488,15 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_1",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "51401119D2BD7331",
-        "513011E734464E5D"
+        "514011B17B9019ED"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -533,14 +524,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51401177F073D0BA",
-      "x": -10.95,
-      "y": 9.47,
+      "x": -4.6,
+      "y": 38.63,
       "icon": {
         "id": "exdeorum:oak_barrel",
         "count": 1
@@ -549,14 +540,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002"
+        "5140111F9A9D12AA"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -584,14 +575,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011A427A0E346",
-      "x": -7.95,
-      "y": 9.47,
+      "x": 9.2,
+      "y": 45.63,
       "icon": {
         "id": "exdeorum:stone_barrel",
         "count": 1
@@ -600,15 +591,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "51401177F073D0BA"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -636,14 +626,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011876B475765",
-      "x": -4.95,
-      "y": 9.47,
+      "x": -9.2,
+      "y": 38.63,
       "icon": {
         "id": "exdeorum:oak_crucible",
         "count": 1
@@ -652,14 +642,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
         "514D010000000002"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -687,14 +677,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140117D1731679A",
-      "x": -1.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 42.13,
       "icon": {
         "id": "exdeorum:porcelain_clay_ball",
         "count": 1
@@ -703,14 +693,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002"
+        "51401177F073D0BA"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -738,14 +728,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51401172E09FFCF3",
-      "x": -10.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 45.63,
       "icon": {
         "id": "exdeorum:unfired_porcelain_crucible",
         "count": 1
@@ -754,15 +744,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "5140117D1731679A"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -790,14 +779,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51401104D4E2DD1D",
-      "x": -7.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 49.13,
       "icon": {
         "id": "exdeorum:porcelain_crucible",
         "count": 1
@@ -805,17 +794,16 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_0",
         "plain_instruction",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "51401172E09FFCF3"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -843,14 +831,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011B76E41FE36",
-      "x": -4.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 45.63,
       "icon": {
         "id": "exdeorum:porcelain_bucket",
         "count": 1
@@ -859,15 +847,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "5140117D1731679A"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -895,14 +882,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5140111F9A9D12AA",
-      "x": 7.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 5.35,
       "icon": {
         "id": "exdeorum:dust",
         "count": 1
@@ -916,7 +903,6 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011B17B9019ED"
       ],
       "optional": false,
@@ -949,12 +935,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140118C20D4ED91",
-      "x": 10.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 5.35,
       "icon": {
         "id": "exdeorum:crushed_deepslate",
         "count": 1
@@ -963,15 +949,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "51401119D2BD7331"
+        "514011B17B9019ED"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -999,14 +984,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011BEF463278A",
-      "x": 7.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 33.81,
       "icon": {
         "id": "exdeorum:crushed_netherrack",
         "count": 1
@@ -1015,16 +1000,15 @@
         "qm_rebuild",
         "qm_v040",
         "stage_2",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "51401119D2BD7331",
-        "5130115E1ED084F6"
+        "514011B17B9019ED",
+        "514D11B7AEB78396"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1052,14 +1036,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51401135F07C9A85",
-      "x": 10.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 33.81,
       "icon": {
         "id": "exdeorum:crushed_end_stone",
         "count": 1
@@ -1068,16 +1052,15 @@
         "qm_rebuild",
         "qm_v040",
         "stage_3",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140117CFCDA03E8",
-        "513011AA869D0649"
+        "514011B17B9019ED",
+        "514D11824471BA9B"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1105,14 +1088,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011DC6D0EDF31",
-      "x": 1.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 33.81,
       "icon": {
         "id": "exdeorum:wood_chippings",
         "count": 1
@@ -1121,15 +1104,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011B17B9019ED"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1157,14 +1139,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011692B337611",
-      "x": 1.95,
-      "y": 9.47,
+      "x": 9.2,
+      "y": 25.49,
       "icon": {
         "id": "exdeorum:compressed_cobblestone",
         "count": 1
@@ -1173,14 +1155,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002"
+        "514011B17B9019ED"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1208,14 +1190,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011297F1E5A33",
-      "x": 4.95,
-      "y": 9.47,
+      "x": 9.2,
+      "y": 28.99,
       "icon": {
         "id": "exdeorum:compressed_gravel",
         "count": 1
@@ -1224,15 +1206,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
         "514011692B337611"
       ],
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1260,14 +1241,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011CA86FD67E8",
-      "x": 7.95,
-      "y": 9.47,
+      "x": -4.6,
+      "y": 25.49,
       "icon": {
         "id": "exdeorum:mechanical_hammer",
         "count": 1
@@ -1281,10 +1262,10 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140117CFCDA03E8",
+        "5140111F9A9D12AA",
         "5130111DBA46A20B",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "514D11B512FA3533"
       ],
       "optional": false,
       "tasks": [
@@ -1316,12 +1297,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140118233B3CC83",
-      "x": 10.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 25.49,
       "icon": {
         "id": "exdeorum:mechanical_sieve",
         "count": 1
@@ -1335,9 +1316,9 @@
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140116A490EBB49",
-        "5130115E1ED084F6"
+        "514011D7E21C7052",
+        "5130115E1ED084F6",
+        "514D11B512FA3533"
       ],
       "optional": false,
       "tasks": [
@@ -1369,12 +1350,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011D7E21C7052",
-      "x": -10.95,
-      "y": 17.09,
+      "x": 0.0,
+      "y": 8.85,
       "icon": {
         "id": "exdeorum:iron_ore_chunk",
         "count": 1
@@ -1383,15 +1364,14 @@
         "qm_rebuild",
         "qm_v040",
         "stage_0",
-        "soqm_role_optional"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140116F44752FA8"
+        "514011597C161302"
       ],
-      "optional": true,
+      "optional": false,
       "tasks": [
         {
           "type": "item",
@@ -1419,14 +1399,14 @@
           ]
         }
       ],
-      "size": 0.8,
-      "shape": "circle",
-      "hide_dependency_lines": true
+      "size": 0.9,
+      "shape": "rsquare",
+      "hide_dependency_lines": false
     },
     {
       "id": "514011C77F670381",
-      "x": -7.95,
-      "y": 17.09,
+      "x": 9.2,
+      "y": 8.85,
       "icon": {
         "id": "exdeorum:osmium_ore_chunk",
         "count": 1
@@ -1434,15 +1414,13 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_1",
+        "stage_0",
         "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
-        "514D010000000002",
-        "5140116F44752FA8",
-        "513011E734464E5D"
+        "514011597C161302"
       ],
       "optional": true,
       "tasks": [
@@ -1474,7 +1452,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -1544,12 +1522,12 @@
     },
     {
       "id": "5141041000000887",
-      "x": -6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 5.55,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1561,9 +1539,9 @@
     {
       "id": "5141041000000888",
       "x": -12.395,
-      "y": 3.45,
+      "y": 5.55,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -1576,9 +1554,9 @@
     },
     {
       "id": "5141041000000889",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1592,12 +1570,12 @@
     },
     {
       "id": "514104100000088A",
-      "x": -10.95,
+      "x": 0.0,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1608,12 +1586,12 @@
     },
     {
       "id": "514104100000088B",
-      "x": -7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 6.27,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1624,12 +1602,12 @@
     },
     {
       "id": "514104100000088C",
-      "x": -4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 14.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1640,12 +1618,12 @@
     },
     {
       "id": "514104100000088D",
-      "x": -1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 14.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1656,12 +1634,12 @@
     },
     {
       "id": "514104100000088E",
-      "x": -10.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 14.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1672,12 +1650,12 @@
     },
     {
       "id": "514104100000088F",
-      "x": -7.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 18.04,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1688,12 +1666,12 @@
     },
     {
       "id": "5141041000000890",
-      "x": -4.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 21.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1704,12 +1682,12 @@
     },
     {
       "id": "5141041000000891",
-      "x": 6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 34.01,
+      "width": 24.9,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1720,344 +1698,8 @@
     },
     {
       "id": "5141041000000892",
-      "x": 0.505,
-      "y": 3.45,
-      "width": 0.11,
-      "height": 6.9,
-      "rotation": 0.0,
-      "image": "color:#E873C5B6",
-      "text_on_image": false,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": -9
-    },
-    {
-      "id": "5141041000000893",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
-      "height": 0.66,
-      "rotation": 0.0,
-      "image": "color:#FF293B51",
-      "text_on_image": true,
-      "text_h_align": "start",
-      "text_v_align": "middle",
-      "text_inset": 3,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 0
-    },
-    {
-      "id": "5141041000000894",
-      "x": 1.95,
-      "y": 2.77,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000895",
-      "x": 4.95,
-      "y": 2.77,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000896",
-      "x": 4.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000897",
-      "x": 10.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000898",
-      "x": 7.95,
-      "y": 2.77,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000899",
-      "x": 10.95,
-      "y": 2.77,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000089A",
-      "x": 7.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000089B",
-      "x": 1.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000089C",
-      "x": -6.45,
-      "y": 11.07,
-      "width": 12.0,
-      "height": 6.9,
-      "rotation": 0.0,
-      "image": "color:#F01D2A3A",
-      "text_on_image": false,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": -10
-    },
-    {
-      "id": "514104100000089D",
       "x": -12.395,
-      "y": 11.07,
-      "width": 0.11,
-      "height": 6.9,
-      "rotation": 0.0,
-      "image": "color:#E890A8E8",
-      "text_on_image": false,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": -9
-    },
-    {
-      "id": "514104100000089E",
-      "x": -6.37,
-      "y": 8.08,
-      "width": 11.62,
-      "height": 0.66,
-      "rotation": 0.0,
-      "image": "color:#FF293B51",
-      "text_on_image": true,
-      "text_h_align": "start",
-      "text_v_align": "middle",
-      "text_inset": 3,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 0
-    },
-    {
-      "id": "514104100000089F",
-      "x": -10.95,
-      "y": 10.39,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A0",
-      "x": -7.95,
-      "y": 10.39,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A1",
-      "x": -4.95,
-      "y": 10.39,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A2",
-      "x": -1.95,
-      "y": 10.39,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A3",
-      "x": -10.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A4",
-      "x": -7.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A5",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000008A6",
-      "x": 6.45,
-      "y": 9.67,
-      "width": 12.0,
-      "height": 4.1,
-      "rotation": 0.0,
-      "image": "color:#F01D2A3A",
-      "text_on_image": false,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": -10
-    },
-    {
-      "id": "51410410000008A7",
-      "x": 0.505,
-      "y": 9.67,
+      "y": 34.01,
       "width": 0.11,
       "height": 4.1,
       "rotation": 0.0,
@@ -2071,10 +1713,346 @@
       "order": -9
     },
     {
+      "id": "5141041000000893",
+      "x": 0.08,
+      "y": 32.42,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000894",
+      "x": 4.6,
+      "y": 2.77,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000895",
+      "x": -4.6,
+      "y": 34.68,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000896",
+      "x": 0.0,
+      "y": 34.68,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000897",
+      "x": 9.2,
+      "y": 34.68,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000898",
+      "x": -9.2,
+      "y": 6.27,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000899",
+      "x": -4.6,
+      "y": 6.22,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000089A",
+      "x": 4.6,
+      "y": 34.68,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000089B",
+      "x": -9.2,
+      "y": 34.68,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000089C",
+      "x": 0.0,
+      "y": 44.08,
+      "width": 24.9,
+      "height": 14.6,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514104100000089D",
+      "x": -12.395,
+      "y": 44.08,
+      "width": 0.11,
+      "height": 14.6,
+      "rotation": 0.0,
+      "image": "color:#E8E393A7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514104100000089E",
+      "x": 0.08,
+      "y": 37.24,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514104100000089F",
+      "x": -4.6,
+      "y": 39.5,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A0",
+      "x": 9.2,
+      "y": 46.5,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A1",
+      "x": -9.2,
+      "y": 39.5,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A2",
+      "x": 0.0,
+      "y": 43.0,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A3",
+      "x": 0.0,
+      "y": 46.5,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A4",
+      "x": 0.0,
+      "y": 50.0,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A5",
+      "x": 4.6,
+      "y": 46.5,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000008A6",
+      "x": 0.0,
+      "y": 27.44,
+      "width": 24.9,
+      "height": 7.6,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "51410410000008A7",
+      "x": -12.395,
+      "y": 27.44,
+      "width": 0.11,
+      "height": 7.6,
+      "rotation": 0.0,
+      "image": "color:#E890A8E8",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
       "id": "51410410000008A8",
-      "x": 6.53,
-      "y": 8.08,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 24.1,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2088,12 +2066,12 @@
     },
     {
       "id": "51410410000008A9",
-      "x": 1.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 26.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2104,12 +2082,12 @@
     },
     {
       "id": "51410410000008AA",
-      "x": 4.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 29.86,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2120,12 +2098,12 @@
     },
     {
       "id": "51410410000008AB",
-      "x": 7.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 26.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2136,12 +2114,12 @@
     },
     {
       "id": "51410410000008AC",
-      "x": 10.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 26.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2152,12 +2130,12 @@
     },
     {
       "id": "51410410000008AD",
-      "x": -6.45,
-      "y": 17.29,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 17.37,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2169,11 +2147,11 @@
     {
       "id": "51410410000008AE",
       "x": -12.395,
-      "y": 17.29,
+      "y": 17.37,
       "width": 0.11,
-      "height": 4.1,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#E8E393A7",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2184,9 +2162,9 @@
     },
     {
       "id": "51410410000008AF",
-      "x": -6.37,
-      "y": 15.7,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 12.28,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2200,12 +2178,12 @@
     },
     {
       "id": "51410410000008B0",
-      "x": -10.95,
-      "y": 17.96,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 9.77,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2216,12 +2194,12 @@
     },
     {
       "id": "51410410000008B1",
-      "x": -7.95,
-      "y": 17.96,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 9.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
