@@ -8,6 +8,9 @@
   remain in place. This targets the repeated blocking path identified in two
   player-provided spark profiles; it does not claim a measured speedup or fix
   the separate Millénaire village-spawn waits.
+- Work around empty Ukrainian Apotheosis World Tier tooltips with the default
+  font by shortening the two activation captions to fit their button. The
+  resource and font bounds are verified; graphical client verification is pending.
 
 ## 0.4.6 — local alpha update
 
