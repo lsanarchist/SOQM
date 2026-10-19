@@ -35,6 +35,16 @@ class CampaignPresentationTests(unittest.TestCase):
         expected = load(ROOT / "metadata/campaign_identity.json")
         self.assertEqual(expected['base_commit'], 'e71db8398ddc9f07e85981fac942f52dd23f447d')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), expected['sha256'])
+        # Check the historical hash as well: accepting a new full-campaign hash
+        # alone could hide an accidental ID, owner or claim-scope change.
+        previous = expected['previous_content']
+        self.assertEqual(previous['added_quests'], ['514A110000000001'])
+        self.assertEqual(previous['added_images'], ['514A140000000001'])
+        old = copy.deepcopy(self.chapters)
+        for chapter in old:
+            chapter['quests'] = [q for q in chapter['quests'] if q['id'] not in previous['added_quests']]
+            chapter['images'] = [i for i in chapter['images'] if i['id'] not in previous['added_images']]
+        self.assertEqual(refresh.persistent_identity(old, self.groups), previous['sha256'])
         # A move to another quest would keep the set of IDs but lose progress.
         moved = copy.deepcopy(self.chapters)
         first, second = moved[0]['quests'][:2]

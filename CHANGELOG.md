@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+- Add an optional Mekanism Cardboard Box quest after Precision Sawmill, with
+  Ukrainian/English use instructions, its own icon and a personal engineering
+  reward. Retain every existing quest/task/reward object and add exactly one
+  quest, task, reward and caption; historical identity hashes remain verified.
+- Prevent the pinned Mekanism/AE2 active-autocrafting ingredient duplication
+  path with an additive cardboard blacklist for all eight native CPU blocks.
+  Ordinary chests, AE2 storage, controllers and budding quartz are unaffected.
+- Correct the sawmill/PRC lessons: sawdust makes paper and boxes; the starter
+  substrate/ethylene recipe requires Bio Fuel. Remove the unrelated sawmill
+  prerequisite from the PRC quest.
+- Credit fueled fusion with positive generation even when its buffer is
+  emptied by consumers in the same tick. Restore explicit fission/fusion
+  observation setup, proximity, duration and shutdown instructions.
+
 - Preserve Dungeons & Taverns pending entities through native visibility loss
   and resume their effects when visible again. Discard canceled and duplicate-UUID
   insertions before dispatch, including legacy loads with misleading added flags.

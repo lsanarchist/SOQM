@@ -785,7 +785,7 @@
     },
     {
       "id": "513011F2453E9C69",
-      "x": -9.2,
+      "x": 0.0,
       "y": 70.13,
       "icon": {
         "id": "mekanism:ingot_refined_glowstone",
@@ -1447,6 +1447,57 @@
       "hide_dependency_lines": false
     },
     {
+      "id": "514A110000000001",
+      "x": -9.2,
+      "y": 70.13,
+      "icon": {
+        "id": "mekanism:cardboard_box",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_cardboard_box",
+        "stage_2",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011B3BB1DF1D9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:cardboard_box",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514A120000000001"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514A130000000001",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
+    },
+    {
       "id": "513011FD1111D1BA",
       "x": 0.0,
       "y": 51.31,
@@ -1678,7 +1729,6 @@
       "dependencies": [
         "5130115E1ED084F6",
         "514D118CA784C98D",
-        "513011B3BB1DF1D9",
         "513011FD1111D1BA"
       ],
       "can_repeat": false,
@@ -5093,7 +5143,7 @@
     },
     {
       "id": "5141041000000166",
-      "x": -9.2,
+      "x": 0.0,
       "y": 71.0,
       "width": 3.7,
       "height": 0.72,
@@ -6743,6 +6793,22 @@
       "id": "51410410000001CD",
       "x": 0.0,
       "y": 158.1,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514A140000000001",
+      "x": -9.2,
+      "y": 71.0,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

@@ -64,7 +64,10 @@ instance backup; do not open an already upgraded save in an older version.
 
 ## World migration
 
-The 1625 quest, 1772 task and 1626 reward IDs are retained. Existing `qm`
+The 1625 quest, 1772 task and 1626 reward IDs are retained. The current
+addition introduces one optional Mekanism Cardboard Box quest with a new task
+and personal reward: the totals are now 1626 quests, 1773 tasks and 1627 rewards.
+Previously claimed rewards are not issued again. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
 progress; they do not guarantee compatibility with every historical world.
 

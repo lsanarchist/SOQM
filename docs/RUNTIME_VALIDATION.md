@@ -2,7 +2,8 @@
 
 `scripts/runtime_probe.py` extends the dedicated-server smoke test with real
 FTB Quests, team transitions, AE2/Mekanism production and Sophisticated Storage
-operations. The harness compiles the three helpers in `tests/runtime/` against
+operations, cardboard transport and fusion observation. The harness compiles
+the fixture sources in `tests/runtime/` against
 the pinned Minecraft 1.21.1, NeoForge 21.1.262, AE2 19.2.18, FTB Quests
 2101.1.36 and other locked mod APIs, including the authored production adapter.
 Its test-only mod
@@ -23,22 +24,21 @@ python3 scripts/smoke_server.py --accept-eula --java /absolute/path/to/jdk-21/bi
 
 The smoke report records its `workspace`. Pass the `server` directory in that
 workspace to the interaction probe and select the previous campaign commit.
-For the 0.4.9 branch update, use the merged 0.4.8 personal-reward and
-performance base:
+For the Cardboard Box and logic update, use the merged 0.4.9 base:
 
 ```sh
 python3 scripts/runtime_probe.py \
   --accept-eula \
   --java /absolute/path/to/jdk-21/bin/java \
   --runtime .work/smoke/run-TIMESTAMP/server \
-  --baseline-ref abd73f1c0736247fc5b13e0e255f8a4ef6d71b34
+  --baseline-ref 6dbd50b03285dc844a5a3bc423ecbe17c31d0145
 ```
 
 The fixture also supports the historical shared-reward baseline
 `72bd75d131a986afe9cf0d11580fdcaf009a208a`. That older path intentionally
 creates the one personal entitlement introduced in 0.4.8. The current
-0.4.8-to-0.4.9 path must preserve all existing personal claims without
-creating another entitlement.
+personal-reward baseline must preserve all existing personal claims without
+reissuing them. The new box quest has its own independent reward ID.
 
 The default gate requires the production payload to match its reviewed lock,
 verifies every third-party dependency and authored JAR, and checks that the
@@ -61,7 +61,7 @@ claim and persistence operations still execute in the real server runtime.
 
 ## What the native fixture checks
 
-- All 1,626 outer rewards are personal and manual. The 1,611 native
+- All 1,627 outer rewards are personal and manual. The 1,612 native
   `CustomReward` definitions pass actual NBT and registry-aware packet round
   trips with their existing 64-bit IDs, tags and parent quest IDs intact.
 - The actual schema-2 JSON must load all 14 themes and 326 entries, with
@@ -86,9 +86,9 @@ claim and persistence operations still execute in the real server runtime.
 - Quest data from the specified base creates a nonempty native `TeamData`
   fixture with partial/complete tasks and all old rewards claimed. A real
   baseline save exists on disk before loading the changed quest definitions.
-  With the current 0.4.8 base, all 1,626 personal claims remain used for their
+  With the current 0.4.9 base, all 1,626 personal claims remain used for their
   recipient and independent for the other player. Duplicate attempts fail;
-  no new entitlement is introduced. Three completed Ex/AE2 branch quests
+  no new entitlement is introduced for an existing reward. Three completed Ex/AE2 branch quests
   retain their completion flags after changed prerequisites and reload.
   With the historical shared base, all 1,625 shared `NIL_UUID` keys remain
   stored and intentionally yield the personal entitlement added in 0.4.8;
@@ -104,6 +104,15 @@ claim and persistence operations still execute in the real server runtime.
   network containing items can earn it after an actual terminal craft.
   The existing ME quest's native advancement task must reject the unearned
   criterion and accept the earned one through the mod's task submission API.
+- The real Mekanism capture interaction rejects all eight native AE2 CPU
+  block types without consuming the box or replacing their block entities.
+  The loaded tag also retains upstream exclusions. Positive controls capture
+  and sneak-unpack an ordinary chest with its inventory and flawless budding
+  quartz with its original block state intact.
+- Real native fusion data with positive generation and an empty buffer must
+  pass the production detector and complete its 200-tick continuity clock.
+  Stopped, unformed and zero-generation states must fail. This fixture sets
+  the native heat/burning state directly; it is not a fully fueled multiblock.
 - A server data reload must preserve the recipe count. The completed ME
   advancement, production journal, personal claims and nonempty quest progress
   are checked again after native reload and independent disk reads. The server must then save

@@ -145,7 +145,7 @@ def archive_entries():
                  'assets/banner.svg', *campaign_maps,
                  'downloads/README.md', 'reports/README.md', 'reports/verification-0.4.7.md',
                  'reports/verification-0.4.8.md', 'reports/verification-0.4.9.md', 'reports/verification-performance.md',
-                 'reports/verification-pr5.md', *docs]:
+                 'reports/verification-pr5.md', 'reports/verification-box-and-logic.md', *docs]:
         if (ROOT / name).is_file():
             require(not (ROOT / name).is_symlink(), 'Package documentation symlink rejected')
             entries[name] = (ROOT / name).read_bytes()

@@ -1,5 +1,9 @@
 # SOQM 0.4.9: послідовні виробничі гілки
 
+Цей документ описує початкове оновлення гілок 0.4.9. Наступне доповнення
+додає один квест Cardboard Box і виправлення логіки; його зміни та поточні
+кількості наведено в [окремому аудиті](PACK_LOGIC_AUDIT.md).
+
 Версія **0.4.9** перебудовує порядок, зв’язки та пояснення наявних квестів.
 Дев’ять глав — **417 квестів у 63 секціях** — отримують послідовні карти:
 від першого робочого пристрою до автоматизації, а потім до розширень за потребою.
@@ -165,6 +169,10 @@ TPS або генерації світу; їхній зміст і виміря�
 економіка multiplayer потребують ігрових сесій.
 
 ## English
+
+This document records the original 0.4.9 branch update. The subsequent
+Cardboard Box quest and logic fixes are documented in the
+[audit](PACK_LOGIC_AUDIT.md) and [verification record](../reports/verification-box-and-logic.md).
 
 SOQM **0.4.9** reorganizes **417 existing quests across nine chapters and
 63 sections** into production routes. Ex Deorum moves from a String Mesh and

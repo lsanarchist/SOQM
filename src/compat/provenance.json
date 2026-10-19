@@ -85,32 +85,35 @@
     },
     {
       "module": "quest-automation",
-      "production_jar": "qm-quest-automation-0.4.3.jar",
-      "production_jar_sha256": "657799264f2cc53f08a417d0c201ca4e19d36c286385c4de8222807544df1672",
+      "production_jar": "qm-quest-automation-0.4.4.jar",
+      "production_jar_sha256": "9ca72c24c139680337d8be45f91e946aa5ba4c8956b005646d31bbd90ffb9fad",
       "source_origin": "v042_work/quests/compat",
       "baseline_archive": "0.4.2",
       "files_sha256": {
         "LICENSE": "eefae214804902bdb005c58cef7af1c7072efdf94914da8df4c740658fa108fe",
-        "resources/META-INF/neoforge.mods.toml": "bfe63886cce5c4cb04fb3d80c9beaaad833b88ebba3bfdb4396dae085317c0f9",
+        "resources/META-INF/neoforge.mods.toml": "231181549ad43a3f6febf99b76df93fe88e893441cbf6f1c3022fe48269503a6",
         "resources/qm_quest_automation.mixins.json": "4af6b595cfc5e94a825e57bb763f682708c113e2fe1cdd27faf88c8922e425b3",
         "src/qm/questauto/AutomationState.java": "dec897e88a22fd1e34e78e947d5a215502daf504697372e498901574e2318e45",
-        "src/qm/questauto/QmQuestAutomation.java": "b11cc0488257794aba3091a7d29ade44c18c1a211bdf7133ee6f3d4405e9d6a3",
+        "src/qm/questauto/QmQuestAutomation.java": "5aeb9c976093dc0265cd61639cc0ea99d9d350ad070a365549f2f03e569680c4",
         "src/qm/questauto/mixin/ElectricMachineMixin.java": "7086738c42bdd3f2d0e7f9f937fd99749659472fe4199285aac3a9a5c7d35cdc",
         "src/qm/questauto/mixin/TradeMenuMixin.java": "2a4b6f794fde1b558b05a27087d8c751be367b9c0cfd2e04ec6f54187a4cf16c",
         "src/qm/questauto/mixin/UltimineMixin.java": "8598f1686356f62013cc2ac9df44bd09cb078c90829a4e2144188e9897fb4b30"
       },
       "local_revision": {
-        "version": "0.4.3",
-        "change": "Skip capped team evidence before Curios/Relics traversal and inspect machine output only when nearby teams need it; preserve native task IDs and progress storage.",
-        "baseline_production_jar": "qm-quest-automation-0.4.2.jar",
-        "baseline_production_jar_sha256": "27641893be32b21eb0404c93beb36d4d09f256d256e9cea3641fe6304a18bde8",
-        "compiler": "Eclipse Temurin javac 21.0.12.1 (JDK 21.0.12.1+1)",
-        "compiler_archive_sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+        "version": "0.4.4",
+        "change": "Count formed, burning fusion with positive current generation even when consumers empty its energy buffer in the same tick; retain observer IDs, sampling continuity and progress ownership.",
+        "baseline_production_jar": "qm-quest-automation-0.4.3.jar",
+        "baseline_production_jar_sha256": "657799264f2cc53f08a417d0c201ca4e19d36c286385c4de8222807544df1672",
+        "compiler": "OpenJDK javac 21.0.2",
+        "compiler_archive_url": "https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz",
+        "compiler_archive_sha256": "a2def047a73941e01a73739f92755f86b895811afb1f91243db214cff5bdac3f",
         "minecraft": "1.21.1",
         "neoforge": "21.1.262",
         "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
         "build_script": "src/compat/build_optimizations.py",
-        "build_script_sha256": "e1c2f40bc16db0fd0c9822a10038d5e166649b849c65c3d404ed098ec5faad25"
+        "build_script_sha256": "e1c2f40bc16db0fd0c9822a10038d5e166649b849c65c3d404ed098ec5faad25",
+        "baseline_rebuilt_byte_identically": true,
+        "fixed_rebuilt_byte_identically_twice": true
       }
     },
     {

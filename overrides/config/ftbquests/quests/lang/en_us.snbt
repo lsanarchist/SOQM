@@ -10,7 +10,7 @@
   "chapter.514D10BB504C8924.title": "06 · The Mekanism Factory",
   "chapter.514D10BB504C8924.chapter_subtitle": [
     "Start with power and metal infusion, then branch into ore chemistry, logistics, mining and QIO. Factories add parallel slots to operations you already understand.",
-    "88 quests · 10 sequential production sections.",
+    "89 quests · 10 sequential production sections.",
     "Top to bottom: working stages · side branches: upgrades and options",
     "Open a quest to inspect all prerequisites, including links to other chapters. Item tasks check inventory; the description explains assembly and a test run."
   ],
@@ -173,7 +173,16 @@
   "quest.513011B3BB1DF1D9.title": "Wood and sawdust",
   "quest.513011B3BB1DF1D9.quest_subtitle": "Stage 2 · Mod development",
   "quest.513011B3BB1DF1D9.quest_desc": [
-    "The Precision Sawmill processes wood and leaves sawdust. Keep that by-product as a feedstock for substrate and ethylene production in the Pressurized Reaction Chamber."
+    "The Precision Sawmill processes wood. A log gives planks and has a 25% chance of extra sawdust; a wooden stick always becomes one sawdust. Use sawdust for paper and the Cardboard Box. Substrate and ethylene in the PRC instead require Bio Fuel made by crushing plant material in a Crusher."
+  ],
+  "task.514A120000000001.title": "Obtain 1 × Cardboard Box",
+  "quest.514A110000000001.title": "Cardboard Box: move a block with its contents",
+  "quest.514A110000000001.quest_subtitle": "Stage 2 · Optional branch",
+  "quest.514A110000000001.quest_desc": [
+    "After the Precision Sawmill, turn its sawdust into a useful tool: four wood dust items in a 2×2 grid make one Cardboard Box. Sawing one wooden stick guarantees one sawdust; a log only has a chance to produce sawdust as a secondary output. Compatible Immersive Engineering wood dust also works in the box recipe.",
+    "Right-click a supported block with an empty box to pack its saved data and inventory. Break and collect the boxed block, place it at the destination, then sneak-right-click to restore the block and recover the empty box. For your first trial, move an ordinary chest containing a few items.",
+    "A box moves one permitted block, not a whole multiblock structure. SOQM prevents packing AE2 crafting CPU blocks to stop active autocrafting ingredients from being duplicated; finish or cancel their jobs and dismantle them normally. Other Mekanism restrictions still apply.",
+    "The objective checks one box in inventory without consuming it; moving the chest is a learning exercise, not an additional automatic condition. This optional branch does not block chemistry, reactors or the main route. Every member claims a personal engineering pack once for this quest."
   ],
   "task.5130128A5F213974.title": "Obtain 1 × Basic Chemical Tank",
   "quest.513011FD1111D1BA.title": "A tank for chemicals",
@@ -203,7 +212,7 @@
   "quest.513011156F29CC4E.title": "PRC: item + fluid + chemical",
   "quest.513011156F29CC4E.quest_subtitle": "Stage 2 · Mod development",
   "quest.513011156F29CC4E.quest_desc": [
-    "The Pressurized Reaction Chamber has three distinct inputs. For an initial ethylene line, supply the organic feed, water and hydrogen shown in JEI, and remove both the chemical and solid outputs. Other PRC recipes also lead to substrate and HDPE."
+    "The Pressurized Reaction Chamber has three distinct inputs. Its starter recipe uses 2 Bio Fuel, 10 mB water and 100 mB hydrogen to produce 1 Substrate and 100 mB ethylene. Make Bio Fuel by crushing plant material in a Crusher; sawmill sawdust does not work here. Remove both the chemical and solid outputs or the machine will stop. Later PRC recipes lead to HDPE."
   ],
   "task.5130124ACE1024C5.title": "Obtain 1 × Formulaic Assemblicator",
   "quest.513011740CB95726.title": "Local crafting from a formula",
@@ -656,6 +665,7 @@
   "image.51410410000001CB.title": "Hyper-Dense QIO\nDrive",
   "image.51410410000001CC.title": "Time-Dilating QIO\nDrive",
   "image.51410410000001CD.title": "Supermassive QIO\nDrive",
+  "image.514A140000000001.title": "Cardboard Box",
   "chapter.514D10901AD244ED.title": "08 · Fission, Fusion and High Energy",
   "chapter.514D10901AD244ED.chapter_subtitle": [
     "Prepare the site, waste handling and fuel line before the first cycle. Separate branches lead to the turbine, energy matrix, fusion and SPS; liquid chemical samples remain optional.",
@@ -707,7 +717,10 @@
   "quest.514D11FF5A4363E6.title": "A controlled first fission cycle",
   "quest.514D11FF5A4363E6.quest_subtitle": "Stage 4 · Main route",
   "quest.514D11FF5A4363E6.quest_desc": [
-    "Start only after checking cooling and outputs. This existing custom objective checks a controlled operating cycle in the world rather than a kit of parts. Follow its current requirements and monitor the reactor's state in its interface."
+    "Prepare coolant, steam and waste outputs, and a reliable way to shut down the Fission Reactor. To start the automatic observation, right-click a Fission Reactor Casing on the formed reactor with your main hand without holding Shift.",
+    "Remain in the same dimension within 16 blocks of the block you clicked. Maintain at least 10 seconds of operation (200 server ticks): the reactor is active and burns fuel, its temperature stays below 1200 K, damage remains zero, and its fluid or chemical coolant tank is not empty.",
+    "Then shut down the reactor and wait for fuel burning to stop while retaining coolant, a temperature below 1200 K and zero damage. The quest completes after this normal shutdown; at normal server speed, observation runs once per second.",
+    "Moving beyond 16 blocks, changing dimension, leaving the world or dismantling the reactor interrupts observation. After returning, right-click the formed casing again and perform the complete cycle."
   ],
   "task.514D12AF3D607032.title": "Obtain 32 × Turbine Casing",
   "task.514D12E69CE54212.title": "Obtain 4 × Turbine Valve",
@@ -869,7 +882,9 @@
   "quest.514D113E1E8CF8B1.title": "Fusion: fuel, laser, operating cycle",
   "quest.514D113E1E8CF8B1.quest_subtitle": "Stage 5 · Main route",
   "quest.514D113E1E8CF8B1.quest_desc": [
-    "Assemble the Fusion Reactor and connect the prepared fuel and laser ignition system to its Laser Focus Matrix. The existing custom objective checks actual operation, so a collection of casing items does not complete this stage."
+    "Assemble the Fusion Reactor and connect the prepared fuel and laser ignition system to its Laser Focus Matrix. To start the automatic observation, right-click the Fusion Reactor Controller on the formed reactor with your main hand without holding Shift.",
+    "Remain in the same dimension within 16 blocks of the controller you clicked. Maintain at least 10 seconds of operation (200 server ticks): the fueled reaction continues and current energy generation is positive. Energy may be sent directly to consumers.",
+    "The quest completes while the reactor is running after the full observation interval. Moving beyond 16 blocks, changing dimension, leaving the world or dismantling the reactor interrupts observation; after returning, right-click the controller again. The component kit is checked by the separate item objectives."
   ],
   "task.514D126EA5AE4763.title": "Obtain 4 × SPS Casing",
   "task.514D123CCCB66CA5.title": "Obtain 2 × SPS Port",
@@ -12396,6 +12411,7 @@
   "reward.51301376DCE44907.title": "Factory Supplies",
   "reward.513013826F732B90.title": "Factory Supplies",
   "reward.513013B01D1F06BB.title": "Factory Supplies",
+  "reward.514A130000000001.title": "Factory Supplies",
   "reward.5130132D68C8B4C8.title": "Factory Supplies",
   "reward.5130135BE1707487.title": "Factory Supplies",
   "reward.513013ED3250EC2B.title": "Factory Supplies",

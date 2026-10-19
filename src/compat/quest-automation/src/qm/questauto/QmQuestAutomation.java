@@ -320,6 +320,12 @@ public final class QmQuestAutomation {
         return data.isFormed() && !data.isForceDisabled() && Double.isFinite(data.heatCapacitor.getTemperature()) && data.heatCapacitor.getTemperature() < 1200 && data.reactorDamage == 0 && (!data.coolantTank.getFluidTank().isEmpty() || !data.coolantTank.getChemicalTank().isEmpty());
     }
 
+    public static boolean fusionGenerating(FusionReactorMultiblockData data) {
+        // Mekanism exports energy during its own tick, before ServerTick.Post.
+        // A fully used output can leave zero stored energy while still running.
+        return data.isFormed() && data.isBurning() && data.getPassiveGeneration(false, true) > 0;
+    }
+
     private static void observeReactor(ServerPlayer player, long tick) {
         ReactorWatch watch = REACTORS.get(player.getUUID());
         if (watch == null) return;
@@ -333,7 +339,7 @@ public final class QmQuestAutomation {
                 record(player, "fission_commission", 1); REACTORS.remove(player.getUUID());
             }
         } else if (watch.data instanceof FusionReactorMultiblockData data) {
-            boolean generating = data.isFormed() && data.isBurning() && data.getPassiveGeneration(false, true) > 0 && data.energyContainer != null && data.energyContainer.getEnergy() > 0;
+            boolean generating = fusionGenerating(data);
             if (watch.clock.sample(tick, generating, false, true)) { record(player, "fusion_runtime", 1); REACTORS.remove(player.getUUID()); }
         }
     }

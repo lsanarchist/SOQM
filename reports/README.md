@@ -1,5 +1,36 @@
 # Verification status
 
+## Cardboard Box quest and pack logic fixes — after SOQM 0.4.9
+
+Validation on **2026-10-19** passed against merged main
+`6dbd50b03285dc844a5a3bc423ecbe17c31d0145`. One optional Cardboard Box quest
+is added without replacing any of the existing **1,625 quests, 1,772 tasks
+or 1,626 reward objects**. The current totals are **1,626 / 1,773 / 1,627**.
+The audit fixes the AE2 CPU capture duplication path, fusion completion under
+full energy export, the sawdust/PRC route and missing reactor instructions.
+
+The final payload passed **68 Python tests**, both Node policy suites, all ten
+coordinate previews, generator/localization freshness and deterministic
+installation packaging. The authored quest-automation 0.4.4 JAR rebuilt
+byte-identically twice; the original sources also reproduced the old 0.4.3 JAR.
+
+A fresh full-pack native run passed in **115.60 seconds**. Mekanism's actual
+capture refused all eight CPU blocks and preserved upstream exclusions, while
+ordinary chest inventory and flawless budding quartz survived capture/unpack.
+Native fusion data passed the production detector with positive generation
+and an empty buffer, retaining the 200-tick interval and stopped-state guards.
+All **1,626 old personal claims**, **43 task values including 15 partials** and
+three completed branch quests survived. All **1,612 custom rewards** passed
+native serialization and exact mapping checks. ME crafting, manufacture,
+personal reward/team migration, disk persistence and reload gates passed.
+Recipes remained **20,077 → 20,077**, with zero KubeJS/fatal gate errors and
+normal server exit. All 122 third-party pins remain unchanged.
+
+See [the verification record](verification-box-and-logic.md) for fingerprints,
+reproduction and exact fixture limits, and [the Ukrainian audit](../docs/PACK_LOGIC_AUDIT.md)
+for player impact and source evidence. This is a dedicated-server validation
+with synthetic players, not a graphical-client or complete survival run.
+
 ## SOQM 0.4.9 — logical production questlines
 
 Validation on **2026-10-19** passed against the merged 0.4.8 baseline

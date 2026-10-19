@@ -10,8 +10,9 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
-| Наявні зовнішні ID нагород, збережені / Preserved outer reward IDs | 1626 |
-| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1611 |
+| Зовнішні ID нагород загалом / Total outer reward IDs | 1627 |
+| Зовнішні ID нагород, збережені з 0.4.9 / Outer reward IDs preserved from 0.4.9 | 1626 |
+| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1612 |
 | Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 14 |
 | Особиста вступна книга / Personal introductory book | 1 |
 | Тематичні пули / Themes | 14 |

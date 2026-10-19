@@ -177,9 +177,9 @@
               "5130112244309BDE"
             ],
             [
-              "513011F2453E9C69",
+              "514A110000000001",
               "513011156F29CC4E",
-              null,
+              "513011F2453E9C69",
               null,
               "513011FCD72A741B"
             ],
@@ -712,10 +712,10 @@
           },
           "description": {
             "uk_ua": [
-              "Precision Sawmill обробляє деревину й залишає тирсу. Збережи побічний продукт: він може стати сировиною для виробництва субстрату та етилену в Pressurized Reaction Chamber."
+              "Precision Sawmill розпилює деревину. Колода дає дошки та має 25% шанс додаткової тирси; дерев’яна палиця гарантовано перетворюється на одну тирсу. Тирса потрібна для паперу та картонної коробки. Для субстрату й етилену в PRC використовуй Bio Fuel з рослинної сировини, подрібненої в Crusher."
             ],
             "en_us": [
-              "The Precision Sawmill processes wood and leaves sawdust. Keep that by-product as a feedstock for substrate and ethylene production in the Pressurized Reaction Chamber."
+              "The Precision Sawmill processes wood. A log gives planks and has a 25% chance of extra sawdust; a wooden stick always becomes one sawdust. Use sawdust for paper and the Cardboard Box. Substrate and ethylene in the PRC instead require Bio Fuel made by crushing plant material in a Crusher."
             ]
           }
         },
@@ -797,7 +797,6 @@
           "dependencies": [
             "5130115E1ED084F6",
             "514D118CA784C98D",
-            "513011B3BB1DF1D9",
             "513011FD1111D1BA"
           ],
           "title": {
@@ -806,10 +805,10 @@
           },
           "description": {
             "uk_ua": [
-              "Pressurized Reaction Chamber має три різні входи. Для початкової лінії етилену підготуй відповідний органічний матеріал, воду й водень за рецептом JEI; виводь і газ, і твердий результат. Подальші рецепти PRC ведуть також до субстрату та HDPE."
+              "Pressurized Reaction Chamber має три різні входи. Для початкового рецепта підготуй 2 Bio Fuel, 10 mB води та 100 mB водню: отримаєш 1 Substrate і 100 mB етилену. Bio Fuel виготовляється з рослинної сировини в Crusher; тирса з лісопилки сюди не підходить. Налаштуй відведення і хімічного, і твердого результату, інакше машина зупиниться. Наступні рецепти PRC ведуть до HDPE."
             ],
             "en_us": [
-              "The Pressurized Reaction Chamber has three distinct inputs. For an initial ethylene line, supply the organic feed, water and hydrogen shown in JEI, and remove both the chemical and solid outputs. Other PRC recipes also lead to substrate and HDPE."
+              "The Pressurized Reaction Chamber has three distinct inputs. Its starter recipe uses 2 Bio Fuel, 10 mB water and 100 mB hydrogen to produce 1 Substrate and 100 mB ethylene. Make Bio Fuel by crushing plant material in a Crusher; sawmill sawdust does not work here. Remove both the chemical and solid outputs or the machine will stop. Later PRC recipes lead to HDPE."
             ]
           }
         },
@@ -1381,6 +1380,31 @@
               "The Metallurgic Infuser separates the item input from its infusion material. Iron with carbon starts the steel route; iron with redstone produces Infused Alloy. Separate machines for different infusions avoid discarding the remaining material when switching."
             ]
           }
+        },
+        "514A110000000001": {
+          "dependencies": [
+            "513011B3BB1DF1D9"
+          ],
+          "stage": 2,
+          "optional": true,
+          "title": {
+            "uk_ua": "Картонна коробка: перенесення блоків",
+            "en_us": "Cardboard Box: move a block with its contents"
+          },
+          "description": {
+            "uk_ua": [
+              "Після Precision Sawmill використай тирсу для корисного інструмента: чотири одиниці деревної тирси у сітці 2×2 дають одну Cardboard Box. У лісопилці одна дерев’яна палиця гарантовано дає одну тирсу; тирса з колоди є лише побічним результатом із шансом. Рецепт коробки також приймає сумісну деревну тирсу Immersive Engineering.",
+              "ПКМ порожньою коробкою по сумісному блоку пакує його разом із збереженими даними та вмістом. Зламай запакований блок, підбери коробку, постав її на новому місці та натисни Shift+ПКМ: блок відновиться, а порожня коробка випаде для повторного використання. Для першої спроби перенеси звичайну скриню з кількома предметами.",
+              "Коробка переносить один дозволений блок, а не цілу багатоблокову установку. У SOQM блоки крафтового CPU AE2 не пакуються, щоб запобігти дублюванню інгредієнтів активного автокрафту; для них заверши або скасуй завдання й використовуй штатне розбирання. Інші обмеження Mekanism також залишаються чинними.",
+              "Завдання перевіряє одну коробку в інвентарі без вилучення; перенесення скрині є навчальною вправою, а не окремою автоматичною умовою. Це додаткова гілка: вона не блокує хімію, реактори чи головний маршрут. Кожен учасник отримує власний інженерний пакунок раз за квест."
+            ],
+            "en_us": [
+              "After the Precision Sawmill, turn its sawdust into a useful tool: four wood dust items in a 2×2 grid make one Cardboard Box. Sawing one wooden stick guarantees one sawdust; a log only has a chance to produce sawdust as a secondary output. Compatible Immersive Engineering wood dust also works in the box recipe.",
+              "Right-click a supported block with an empty box to pack its saved data and inventory. Break and collect the boxed block, place it at the destination, then sneak-right-click to restore the block and recover the empty box. For your first trial, move an ordinary chest containing a few items.",
+              "A box moves one permitted block, not a whole multiblock structure. SOQM prevents packing AE2 crafting CPU blocks to stop active autocrafting ingredients from being duplicated; finish or cancel their jobs and dismantle them normally. Other Mekanism restrictions still apply.",
+              "The objective checks one box in inventory without consuming it; moving the chest is a learning exercise, not an additional automatic condition. This optional branch does not block chemistry, reactors or the main route. Every member claims a personal engineering pack once for this quest."
+            ]
+          }
         }
       }
     },
@@ -1934,10 +1958,14 @@
           },
           "description": {
             "uk_ua": [
-              "Збери Fusion Reactor, підведи підготовлене паливо й систему лазерного запалювання до Laser Focus Matrix. Збережене спеціальне завдання перевіряє фактичну роботу, тому набір корпусів у інвентарі не завершує цей етап."
+              "Збери Fusion Reactor, підведи підготовлене паливо та систему лазерного запалювання до Laser Focus Matrix. Для запуску автоматичної перевірки натисни ПКМ основною рукою без Shift по Fusion Reactor Controller сформованого реактора.",
+              "Залишайся в тому самому вимірі не далі 16 блоків від контролера, по якому натиснув. Підтримуй щонайменше 10 секунд роботи (200 серверних тиків): паливна реакція триває, а поточна генерація енергії більша за нуль. Енергію можна одразу віддавати споживачам.",
+              "Квест зараховується під час роботи після повного інтервалу спостереження. Відхід за межі 16 блоків, зміна виміру, вихід зі світу або розбирання реактора переривають спостереження; після повернення знову натисни ПКМ по контролеру. Комплект деталей перевіряється окремими предметними завданнями."
             ],
             "en_us": [
-              "Assemble the Fusion Reactor and connect the prepared fuel and laser ignition system to its Laser Focus Matrix. The existing custom objective checks actual operation, so a collection of casing items does not complete this stage."
+              "Assemble the Fusion Reactor and connect the prepared fuel and laser ignition system to its Laser Focus Matrix. To start the automatic observation, right-click the Fusion Reactor Controller on the formed reactor with your main hand without holding Shift.",
+              "Remain in the same dimension within 16 blocks of the controller you clicked. Maintain at least 10 seconds of operation (200 server ticks): the fueled reaction continues and current energy generation is positive. Energy may be sent directly to consumers.",
+              "The quest completes while the reactor is running after the full observation interval. Moving beyond 16 blocks, changing dimension, leaving the world or dismantling the reactor interrupts observation; after returning, right-click the controller again. The component kit is checked by the separate item objectives."
             ]
           }
         },
@@ -2266,10 +2294,16 @@
           },
           "description": {
             "uk_ua": [
-              "Запускай лише після перевірки охолодження та виходів. Це збережене спеціальне завдання перевіряє контрольований робочий цикл у світі, а не комплект деталей в інвентарі. Дотримуйся його поточних вимог і контролюй стан реактора через інтерфейс."
+              "Підготуй охолодження, відведення пари й відходів та надійне вимкнення Fission Reactor. Для запуску автоматичної перевірки натисни ПКМ основною рукою без Shift по Fission Reactor Casing сформованого реактора.",
+              "Залишайся в тому самому вимірі не далі 16 блоків від блока, по якому натиснув. Підтримуй щонайменше 10 секунд роботи (200 серверних тиків): реактор активний і спалює паливо, температура нижча за 1200 K, пошкодження нульові, а бак рідкого або хімічного охолоджувача не порожній.",
+              "Після цього вимкни реактор і дочекайся припинення спалювання палива, зберігаючи охолодження, температуру нижче 1200 K та нульові пошкодження. Квест зараховується після цієї штатної зупинки; при звичайній швидкості сервера перевірка відбувається раз на секунду.",
+              "Відхід за межі 16 блоків, зміна виміру, вихід зі світу або розбирання реактора переривають спостереження. Після повернення знову натисни ПКМ по сформованому корпусу та виконай повний цикл."
             ],
             "en_us": [
-              "Start only after checking cooling and outputs. This existing custom objective checks a controlled operating cycle in the world rather than a kit of parts. Follow its current requirements and monitor the reactor's state in its interface."
+              "Prepare coolant, steam and waste outputs, and a reliable way to shut down the Fission Reactor. To start the automatic observation, right-click a Fission Reactor Casing on the formed reactor with your main hand without holding Shift.",
+              "Remain in the same dimension within 16 blocks of the block you clicked. Maintain at least 10 seconds of operation (200 server ticks): the reactor is active and burns fuel, its temperature stays below 1200 K, damage remains zero, and its fluid or chemical coolant tank is not empty.",
+              "Then shut down the reactor and wait for fuel burning to stop while retaining coolant, a temperature below 1200 K and zero damage. The quest completes after this normal shutdown; at normal server speed, observation runs once per second.",
+              "Moving beyond 16 blocks, changing dimension, leaving the world or dismantling the reactor interrupts observation. After returning, right-click the formed casing again and perform the complete cycle."
             ]
           }
         },
@@ -5289,6 +5323,10 @@
     {
       "source": "mob_grinding_utils-1.1.10+mc1.21.1.jar!/data/mob_grinding_utils/recipe/{recipe_saw,gm_chicken_feed}.json; overrides/kubejs/server_scripts/qm_expert_v040.js",
       "notes": "Native Masher consumes Iron Spikes; genetic feed uses a used swab and experience. Authored XP Solidifier consumes Entity Conveyor and Singularity Tank; Entity Spawner consumes Solid XP Blocks. Preserve existing creature restrictions and all item-task detection scopes."
+    },
+    {
+      "source": "Mekanism-1.21.1-10.7.19.85.jar!/data/mekanism/recipe/{cardboard_box,sawing/stick,sawing/log/oak,reaction/substrate/water_hydrogen}.json; data/c/tags/item/{dusts/wood,fuels/bio}.json",
+      "notes": "Pinned SHA-256: 004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43. The box uses four #c:dusts/wood; sawing a stick guarantees one sawdust. The PRC needs two #c:fuels/bio, 10 mB water and 100 mB hydrogen, not sawdust. Keep the box as an optional sawmill child and remove the unrelated sawmill prerequisite from the PRC."
     }
   ],
   "routes": [
