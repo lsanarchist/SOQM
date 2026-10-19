@@ -25,6 +25,8 @@ overrides. Its entity-tag loot condition is a registered type.
 - Track relevant loaded wither skeletons and lightning bolts through lifecycle
   events. A tiny native dispatcher retains the original five-tick function
   phase, dimension scope and conversion functions without global selectors.
+  Hidden but registered entities wait for visibility to return. Removed,
+  canceled and duplicate-UUID insertions cannot remain pending or run effects.
 - Replace the exact phantom-boss single-tag NBT predicate with direct entity
   tag containment, preserving its type and invisibility conditions. Other
   enchantment conditions and third-party JARs remain untouched.
@@ -80,4 +82,6 @@ then a real `/reload` and clean shutdown. These are behavioral and work-count
 regressions, not an exploration-speed or FPS benchmark.
 
 See [deployment and behavior notes](../../../docs/PERFORMANCE_OPTIMIZATION.md)
-and [verification evidence](../../../reports/verification-performance.md).
+and [combined 0.4.8 verification](../../../reports/verification-pr5.md).
+The [original 0.4.7 measurements](https://github.com/lsanarchist/SOQM/blob/307cf612ae9b7873df7646ab4769de8d2146e526/reports/verification-performance.md)
+remain available with their historical source and payload hashes.

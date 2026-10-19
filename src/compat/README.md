@@ -42,7 +42,7 @@ The [runtime optimization module](runtime-optimizations/README.md) reuses
 tunnel-height queries within one placement search, bounds Mayhem guardian
 record processing and reduces Dungeons & Taverns polling. Its native API build
 also reproduces Quest Automation 0.4.3. Both preserve their original MIT notices.
-See the [runtime verification](../../reports/verification-performance.md).
+See the [runtime verification](../../reports/verification-pr5.md).
 
 **Independent recompilation of all ten recovered production JARs has not been
 reproduced.** The Cannibal, Quest Automation, runtime optimization and new

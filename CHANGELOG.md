@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Preserve Dungeons & Taverns pending entities through native visibility loss
+  and resume their effects when visible again. Discard canceled and duplicate-UUID
+  insertions before dispatch, including legacy loads with misleading added flags.
+  Add native regressions for both cases and rebuild the pinned runtime module.
+
 ### 0.4.8 — personal rewards that improve with production
 
 - Expand the 14 themed pools to 326 entries: 240 distinct items, including 210

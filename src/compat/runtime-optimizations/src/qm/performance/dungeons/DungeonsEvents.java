@@ -16,6 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.monster.WitherSkeleton;
+import net.minecraft.world.level.entity.EntityInLevelCallback;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -24,6 +25,7 @@ import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.server.ServerStoppedEvent;
+import qm.performance.mixin.dungeons.EntityMembershipAccessor;
 
 /** Event-driven discoveries and tracked entities instead of global selector polling. */
 public final class DungeonsEvents {
@@ -108,6 +110,10 @@ public final class DungeonsEvents {
         if (!(event.getLevel() instanceof ServerLevel level)) return;
         Pending pending = SERVERS.get(level.getServer());
         if (pending == null) return;
+        // NeoForge posts this from onTrackingEnd, including a live entity's
+        // section becoming hidden. Visibility returning does not post another
+        // join event, so keep the candidate until actual removal or processing.
+        if (event.getEntity().getRemovalReason() == null) return;
         pending.withers.remove(event.getEntity());
         pending.lightning.remove(event.getEntity());
     }
@@ -128,16 +134,35 @@ public final class DungeonsEvents {
         // Keep its phase so a short-lived bolt isn't missed by a later Post callback.
         // Allays entering a still-live bolt's six-block radius are checked again.
         for (WitherSkeleton wither : Set.copyOf(pending.withers)) {
+            if (!registered(wither, server)) {
+                pending.withers.remove(wither);
+                continue;
+            }
+            if (!visible(wither)) continue;
             pending.withers.remove(wither);
-            if (!wither.isRemoved() && !wither.getTags().contains("withering")) {
+            if (!wither.getTags().contains("withering")) {
                 function(wither, "nova_structures:add_withering");
             }
         }
         for (LightningBolt lightning : Set.copyOf(pending.lightning)) {
-            if (lightning.isRemoved()) pending.lightning.remove(lightning);
-            else function(lightning, "nova_structures:find_allays");
+            if (!registered(lightning, server)) pending.lightning.remove(lightning);
+            else if (visible(lightning)) function(lightning, "nova_structures:find_allays");
         }
         if (pending.withers.isEmpty() && pending.lightning.isEmpty()) SERVERS.remove(server);
+    }
+
+    private static boolean registered(Entity entity, MinecraftServer server) {
+        // Join fires before cancellation and duplicate-UUID checks finish.
+        // Only an accepted insertion installs the section-manager callback.
+        // isAddedToLevel is unsuitable: tracking loss clears it, and native
+        // legacy/worldgen loaders also set it after some rejected insertions.
+        return !entity.isRemoved() && entity.level() == server.overworld()
+            && ((EntityMembershipAccessor) entity).qm$getLevelCallback() != EntityInLevelCallback.NULL;
+    }
+
+    private static boolean visible(Entity entity) {
+        // Match @e's accessible-entity scope without loading a chunk or scanning.
+        return ((ServerLevel) entity.level()).getEntity(entity.getId()) == entity;
     }
 
     private static void function(Entity entity, String function) {

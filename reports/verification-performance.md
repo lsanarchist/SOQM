@@ -1,4 +1,10 @@
-# Runtime optimization verification — SOQM 0.4.8
+# Historical runtime integration verification — SOQM 0.4.8
+
+This record applies to integration commit
+[`5b59c3a`](https://github.com/lsanarchist/SOQM/commit/5b59c3ac44dbffb2bbc1d079f67d635d3e420d02),
+before the Dungeons entity-membership fix. Its artifact and input hashes are
+historical. See [the follow-up verification](verification-pr5.md) for the repaired
+native module and current combined runs.
 
 Validation completed on **2026-10-19** against the combined, locked production
 payload after merging the updated questbook and personal rewards from

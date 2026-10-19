@@ -31,7 +31,7 @@ KubeJS **2101.7.2-build.377**. Its mixins target the reviewed implementations;
 updating an upstream mod requires a new compatibility review and build.
 
 Install the package built from this PR's commit on the client and dedicated
-server. For a manual update of an already matching SOQM instance, stop the
+server. For a manual update of an already matching **0.4.8** SOQM instance, stop the
 instance first and apply all of the following together:
 
 | Repository payload | Destination inside the instance |
@@ -49,6 +49,11 @@ KubeJS payload. The guardian script calls the new native class, and the D&T
 function calls a command registered by that module, so a partial installation
 is not supported. Adding or replacing a JAR requires a full restart; `/reload`
 alone does not install native code.
+
+This table covers the performance patch only. An older 0.4.7 profile also needs
+the complete 0.4.8 campaign, reward policy, scripts and
+`qm-progressive-rewards-0.4.8.jar`; copying only these five files does not perform
+that campaign upgrade. Follow the [reward migration notes](CAMPAIGN_UPDATE.md#оновлення-наявного-світу).
 
 The [installation guide](INSTALL.en.md) covers a complete profile update and
 backup. Use the current payload from this commit to retain the updated
@@ -213,6 +218,9 @@ upstream data files.
   `find_allays` functions rather than repeating global selectors. It preserves
   the original Overworld scope and schedule phase. A still-active lightning
   bolt continues to check for allays entering its original six-block area.
+  A live entity becoming hidden remains tracked without running its function;
+  processing resumes when the same entity becomes visible. Canceled spawns,
+  rejected duplicate UUIDs and removed entities are discarded from the queue.
   Data reload performs a one-time reconciliation of existing Overworld
   entities; that is not a periodic world scan.
 - **Quest trader reset:** the reward function resets
@@ -237,7 +245,9 @@ python3 src/compat/build_optimizations.py \
 It verifies dependency hashes and the reviewed Abandoned Tunnels target class,
 then builds both authored JARs with fixed ZIP metadata. If source changes alter
 the binaries, update their entries in `metadata/authored-mods.json` from the
-builder output, refresh the payload lock, and run the normal repository gate:
+builder output and the reviewed source/binary hashes in
+`src/compat/provenance.json`, refresh the payload lock, and run the normal
+repository gate:
 
 ```sh
 python3 scripts/soqm.py lock

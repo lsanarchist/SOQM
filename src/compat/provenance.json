@@ -232,7 +232,7 @@
       "license_evidence": "Original MIT module; complete notice retained in source and production JAR.",
       "local_revision": {
         "version": "0.4.7",
-        "change": "Scoped tunnel height reuse, bounded persistent guardian lifecycle, event-based D&T observation and direct phantom tag predicates.",
+        "change": "Reuse tunnel height queries, bound guardian lifecycle work, and replace Dungeons & Taverns polling while preserving native mechanics. Retain hidden registered entities until visible and discard canceled or duplicate-UUID insertions before dispatch.",
         "compiler": "Eclipse Temurin javac 21.0.12.1 (JDK 21.0.12.1+1)",
         "compiler_archive_sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
         "minecraft": "1.21.1",
@@ -255,23 +255,24 @@
       ],
       "files_sha256": {
         "LICENSE": "8948b10fa5deb002755f15beef12e01d757a2ebbc83dac19dea73f44ec8482ec",
-        "README.md": "e7b3d55ed86c0d7bdc8b086197015d3caa2482d91024a38ca3c316f92397c3f5",
+        "README.md": "9f2ff3c77488f613011edc956dabffe8109b8188bec11bb45fcf6a9ddce0f8d4",
         "resources/META-INF/neoforge.mods.toml": "15d13ea46d0770c33a66ca62b11389d2cb467137d801310afb84f5241a6da5e6",
-        "resources/qm_runtime_optimizations.mixins.json": "7135deb03e11f3c67080245ebd114622817a30213791157b638f75e3b927af62",
+        "resources/qm_runtime_optimizations.mixins.json": "5ffe9eb35154f850123f3f9891004285fbc39233b6c6fe634da7d6576f63bb8b",
         "src/qm/performance/QmRuntimeOptimizations.java": "e49d5ccd20b61c709a072f60ccb1f194fb447d46a6f319fb596f61087986f782",
         "src/qm/performance/dungeons/DungeonsDataOptimizations.java": "5285869e2d1083163e61bce30252df8c1b3cd99058e0739179245f013e93bc4e",
-        "src/qm/performance/dungeons/DungeonsEvents.java": "f3810f83b12e2aee385fdc0ad7e5464ff3708aa8b499927eb45d0734d1064113",
+        "src/qm/performance/dungeons/DungeonsEvents.java": "f3726301866df796b405c13b1facf0dadfa42be3d0221906f1cea15f86763cca",
         "src/qm/performance/dungeons/EntityTagCondition.java": "f3ed2525ec76f19f94aa7b54ab69279c6557ff86c0d03754203b3300387b8539",
         "src/qm/performance/guardian/DeadlineIndex.java": "7012d74099b50406cb7f86fe8f16a659133392b403a7840ff22dfb50c6fc3de3",
         "src/qm/performance/guardian/GuardianLedger.java": "2645c9bd6e93f68c6ea9823ae5ff8067290aecd09325c3b9b88ea6245387256a",
         "src/qm/performance/guardian/GuardianLifecycle.java": "9da1af7f23de2047e4d4b5148b0c3d75cec47cc742dfab4a9fe819d2772aaf02",
         "src/qm/performance/mixin/dungeons/AdvancementDataMixin.java": "3d018993b59b6b645c02d1dd8f6f414a9bb2c78030cd727487ba2974dcac96fb",
         "src/qm/performance/mixin/dungeons/EnchantmentDataMixin.java": "dab4f1a21bd263f2460da57707cd865ea7c9909556529cf46aa2f91dc26ca0ff",
+        "src/qm/performance/mixin/dungeons/EntityMembershipAccessor.java": "923c1ff7c083c1370c716b2766c7202a90771868cf72d0cec8bf02e3dc832107",
         "src/qm/performance/mixin/guardian/GuardianDespawnMixin.java": "576ae68d3b5b24fb7837c0d5bd1dc42079d3347ee020b6b69431bed8fdad83d0",
         "src/qm/performance/mixin/worldgen/TunnelStructureMixin.java": "cfd0397a5d228a19fcf079c271d2b0dda5ad6a017496f831ca4b221eb59ec8ae",
         "src/qm/performance/worldgen/TunnelHeightCache.java": "510d8b5209c03ef25093432e8846212f14eaf4aa5741581646eb943511d87065"
       },
-      "production_jar_sha256": "07a75c97becb0f365391ad157eecc809a6de40fe92bfb12765add26a5ac12b11"
+      "production_jar_sha256": "538ec28ceef21f45452d4653f06a5a20b8ac68ab86f1e20609cc596d874bbb5b"
     }
   ]
 }

@@ -19,10 +19,16 @@ deterministic generators and installation-package checks. Coordinate previews
 also passed. The merge's missing module/payload registration and broken native
 harness dispatch are repaired with focused regression coverage.
 
-See [the current combined verification](verification-performance.md) for
+The follow-up native fix also passed real visibility loss/return without a new
+join event, canceled fresh/legacy joins and duplicate-UUID insertion. Hidden
+entities resume their dungeon behavior when visible; rejected candidates execute
+no effects and leave no retained dispatcher entry.
+
+See [the current combined verification](verification-pr5.md) for
 exact hashes, native results, limitations and reproduction commands. These
 work-count checks do not establish a total chunk-generation, TPS or client-FPS
-speedup.
+speedup. The [earlier integration record](verification-performance.md) retains
+the native results and hashes before the entity-membership fix.
 
 ## Historical SOQM 0.4.8 reward gate before the optimization merge
 

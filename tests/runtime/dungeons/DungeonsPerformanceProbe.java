@@ -2,6 +2,7 @@ package soqm.validation.dungeons;
 
 import com.mojang.authlib.GameProfile;
 import io.netty.channel.embedded.EmbeddedChannel;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
@@ -11,7 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -45,8 +48,12 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.entity.PersistentEntitySectionManager;
+import net.minecraft.world.level.entity.Visibility;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -72,6 +79,7 @@ public final class DungeonsPerformanceProbe {
         testAdvancementEvents(server);
         testBossPredicate(server);
         testTradeScope(server);
+        testEntityMembership(server);
         active = new Scenario(server);
         REPORT.put("phase", "awaiting_entity_ticks");
         return REPORT;
@@ -354,6 +362,158 @@ public final class DungeonsPerformanceProbe {
     }
 
     private static boolean converted(Allay allay) { return allay.getTags().contains("converted"); }
+
+    /** Real native registration and visibility transitions, without a world unload. */
+    @SuppressWarnings("unchecked")
+    private static void testEntityMembership(MinecraftServer server) throws Exception {
+        ServerLevel level = server.overworld();
+        BlockPos origin = level.getSharedSpawnPos().offset(32, 64, 32);
+        ChunkPos chunk = new ChunkPos(origin);
+        level.getChunk(chunk.x, chunk.z);
+        PersistentEntitySectionManager<Entity> manager = (PersistentEntitySectionManager<Entity>)
+                field(ServerLevel.class, "entityManager").get(level);
+        Long2ObjectMap<Visibility> visibility = (Long2ObjectMap<Visibility>)
+                field(PersistentEntitySectionManager.class, "chunkVisibility").get(manager);
+        Visibility previous = visibility.get(chunk.toLong());
+        List<Entity> entities = new ArrayList<>();
+        AABB area = new AABB(origin).inflate(16, 8, 16);
+        Set<UUID> priorVexes = level.getEntitiesOfClass(Vex.class, area).stream()
+                .map(Entity::getUUID).collect(Collectors.toSet());
+        try {
+            manager.updateChunkStatus(chunk, Visibility.TRACKED);
+            WitherSkeleton wither = membershipWither(level, origin);
+            LongLivedLightning lightning = membershipLightning(level, origin);
+            Allay allay = membershipAllay(level, origin);
+            entities.addAll(List.of(wither, lightning, allay));
+            check(level.addFreshEntity(wither) && level.addFreshEntity(lightning) && level.addFreshEntity(allay),
+                    "Visibility fixture entities are accepted by the real entity manager");
+            int[] rejoins = {0};
+            Consumer<EntityJoinLevelEvent> countJoins = event -> {
+                if (event.getEntity() == wither || event.getEntity() == lightning) rejoins[0]++;
+            };
+            NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, EntityJoinLevelEvent.class, countJoins);
+            try {
+                manager.updateChunkStatus(chunk, Visibility.HIDDEN);
+                check(!wither.isRemoved() && !lightning.isRemoved()
+                                && level.getEntity(wither.getId()) == null && level.getEntity(lightning.getId()) == null,
+                        "Native visibility loss hides registered entities without removing them");
+                dispatchDungeons(server);
+                check(!wither.getTags().contains("withering") && !converted(allay),
+                        "Hidden entities perform no Dungeons functions outside the original selector scope");
+                manager.updateChunkStatus(chunk, Visibility.TRACKED);
+                check(rejoins[0] == 0 && level.getEntity(wither.getId()) == wither
+                                && level.getEntity(lightning.getId()) == lightning,
+                        "Native visibility restoration reuses the same entities without another join event");
+                dispatchDungeons(server);
+                check(wither.getTags().contains("withering") && coating(server, wither) == 1 && converted(allay),
+                        "Visibility restoration resumes pending wither equipment and lightning conversion");
+                REPORT.put("native_visibility_hide_show_without_rejoin", true);
+                REPORT.put("hidden_entities_match_selector_scope", true);
+            } finally {
+                NeoForge.EVENT_BUS.unregister(countJoins);
+                manager.updateChunkStatus(chunk, Visibility.TRACKED);
+            }
+            lightning.discard();
+            dispatchDungeons(server);
+            check(!trackedDungeons(server, lightning), "Actual removal immediately retires tracked lightning");
+
+            // A valid distant bolt reserves the UUID while leaving this victim
+            // outside its radius. Only a rejected nearby bolt could convert it.
+            LongLivedLightning anchor = membershipLightning(level, origin.above(32));
+            Allay victim = membershipAllay(level, origin);
+            entities.addAll(List.of(anchor, victim));
+            check(level.addFreshEntity(anchor) && level.addFreshEntity(victim),
+                    "Rejected-join fixture anchor and victim enter the real level");
+            WitherSkeleton canceledWither = membershipWither(level, origin);
+            LongLivedLightning canceledBolt = membershipLightning(level, origin);
+            LongLivedLightning canceledLegacy = membershipLightning(level, origin);
+            LongLivedLightning duplicate = membershipLightning(level, origin);
+            duplicate.setUUID(anchor.getUUID());
+            entities.addAll(List.of(canceledWither, canceledBolt, canceledLegacy, duplicate));
+            Consumer<EntityJoinLevelEvent> reject = event -> {
+                if (event.getEntity() == canceledWither || event.getEntity() == canceledBolt
+                        || event.getEntity() == canceledLegacy) event.setCanceled(true);
+            };
+            NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, EntityJoinLevelEvent.class, reject);
+            try {
+                check(!level.addFreshEntity(canceledWither) && !level.addFreshEntity(canceledBolt),
+                        "A later-priority native join listener rejects fresh candidates after observation");
+                manager.addLegacyChunkEntities(Stream.of(canceledLegacy));
+            } finally {
+                NeoForge.EVENT_BUS.unregister(reject);
+            }
+            manager.addLegacyChunkEntities(Stream.of(duplicate));
+            check(canceledLegacy.isAddedToLevel() && duplicate.isAddedToLevel()
+                            && level.getEntity(canceledLegacy.getId()) == null && level.getEntity(duplicate.getId()) == null,
+                    "Native legacy loading sets its added flag even for canceled and duplicate-UUID insertions");
+            dispatchDungeons(server);
+            check(!canceledWither.getTags().contains("withering") && !converted(victim),
+                    "Rejected withers and lightning never execute equipment or allay-conversion functions");
+            for (Entity rejected : List.of(canceledWither, canceledBolt, canceledLegacy, duplicate)) {
+                check(!trackedDungeons(server, rejected), "Never-admitted candidates leave no repeating dispatcher entry");
+            }
+            check(level.getEntity(anchor.getUUID()) == anchor && trackedDungeons(server, anchor),
+                    "Rejecting a duplicate preserves the accepted entity with that UUID");
+            REPORT.put("canceled_fresh_and_legacy_joins_pruned", true);
+            REPORT.put("duplicate_uuid_legacy_join_pruned", true);
+            REPORT.put("rejected_entities_have_no_effects_or_retained_entries", true);
+        } finally {
+            for (Entity entity : entities) if (!entity.isRemoved()) entity.discard();
+            manager.updateChunkStatus(chunk, Visibility.TRACKED);
+            for (Vex vex : level.getEntitiesOfClass(Vex.class, area)) {
+                if (!priorVexes.contains(vex.getUUID())) vex.discard();
+            }
+            dispatchDungeons(server);
+            manager.updateChunkStatus(chunk, previous);
+        }
+    }
+
+    private static WitherSkeleton membershipWither(ServerLevel level, BlockPos origin) {
+        WitherSkeleton wither = new WitherSkeleton(EntityType.WITHER_SKELETON, level);
+        wither.setNoAi(true);
+        wither.setNoGravity(true);
+        wither.setInvulnerable(true);
+        wither.setPersistenceRequired();
+        wither.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+        wither.moveTo(origin.getX() + 0.5, origin.getY(), origin.getZ() + 0.5);
+        return wither;
+    }
+
+    private static LongLivedLightning membershipLightning(ServerLevel level, BlockPos origin) {
+        LongLivedLightning lightning = new LongLivedLightning(level);
+        lightning.moveTo(origin.getX() + 0.5, origin.getY(), origin.getZ() + 0.5);
+        return lightning;
+    }
+
+    private static Allay membershipAllay(ServerLevel level, BlockPos origin) {
+        Allay allay = new Allay(EntityType.ALLAY, level);
+        allay.setNoAi(true);
+        allay.setNoGravity(true);
+        allay.setInvulnerable(true);
+        allay.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.ECHO_SHARD));
+        allay.moveTo(origin.getX() + 0.5, origin.getY() + 1, origin.getZ() + 0.5);
+        return allay;
+    }
+
+    private static void dispatchDungeons(MinecraftServer server) {
+        server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withPermission(2)
+                .withSuppressedOutput(), "qm_runtime_optimizations dungeons_tick");
+    }
+
+    private static boolean trackedDungeons(MinecraftServer server, Entity entity) throws Exception {
+        Class<?> events = Class.forName("qm.performance.dungeons.DungeonsEvents");
+        Map<?, ?> servers = (Map<?, ?>) field(events, "SERVERS").get(null);
+        Object pending = servers.get(server);
+        if (pending == null) return false;
+        return ((Set<?>) field(pending.getClass(), "withers").get(pending)).contains(entity)
+            || ((Set<?>) field(pending.getClass(), "lightning").get(pending)).contains(entity);
+    }
+
+    private static Field field(Class<?> owner, String name) throws Exception {
+        Field field = owner.getDeclaredField(name);
+        field.setAccessible(true);
+        return field;
+    }
 
     private static final class TrackingPhantom extends Phantom {
         int saves;
