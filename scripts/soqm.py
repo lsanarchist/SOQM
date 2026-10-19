@@ -143,7 +143,8 @@ def archive_entries():
     for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md', 'MODLIST.md', 'CHANGELOG.md',
                  'assets/banner.svg', 'assets/campaign-route.svg', 'assets/campaign-ae2.svg',
                  'downloads/README.md', 'reports/README.md', 'reports/verification-0.4.7.md',
-                 'reports/verification-0.4.8.md', *docs]:
+                 'reports/verification-0.4.8.md', 'reports/verification-performance.md',
+                 'reports/verification-pr5.md', *docs]:
         if (ROOT / name).is_file():
             require(not (ROOT / name).is_symlink(), 'Package documentation symlink rejected')
             entries[name] = (ROOT / name).read_bytes()

@@ -5,15 +5,11 @@ var QM_LUCK_POOLS = [[{"id":"qm:t0_materials","family":"materials","kind":"loot"
 var QM_LUCK_REWARDS = Java.loadClass('chanceCubes.registry.global.GlobalCCRewardRegistry');
 var QM_LUCK_STATS = Java.loadClass('chanceCubes.util.StatsRegistry');
 var QM_LUCK_FAKE_PLAYER = Java.loadClass('net.neoforged.neoforge.common.util.FakePlayer');
-var QM_LUCK_NBT = Java.loadClass('net.minecraft.nbt.CompoundTag');
-var QM_LUCK_RL = Java.loadClass('net.minecraft.resources.ResourceLocation');
-var QM_LUCK_RKEY = Java.loadClass('net.minecraft.resources.ResourceKey');
-var QM_LUCK_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Registries');
+var QM_LUCK_GUARDIANS = Java.loadClass('qm.performance.guardian.GuardianLifecycle');
 var QM_LUCK_ATTRIBUTES = Java.loadClass('net.minecraft.world.entity.ai.attributes.Attributes');
 var QM_LUCK_SLOT = Java.loadClass('net.minecraft.world.entity.EquipmentSlot');
 var QM_LUCK_COMPONENT = Java.loadClass('net.minecraft.network.chat.Component');
 var QM_LUCK_INTEGER = Java.loadClass('com.mojang.brigadier.arguments.IntegerArgumentType');
-var QM_LUCK_UUID = Java.loadClass('java.util.UUID');
 
 function qmLuckChoose(tier, roll) {
   if (tier < 0 || tier > 6 || roll < 0 || roll > 999) return null;
@@ -25,28 +21,9 @@ function qmLuckChoose(tier, roll) {
   return null;
 }
 
-function qmLuckGuardianLedger(server) {
-  var data = server.getPersistentData();
-  if (!data.contains('qm_mayhem_guardians', 10)) data.put('qm_mayhem_guardians', new QM_LUCK_NBT());
-  return data.getCompound('qm_mayhem_guardians');
-}
-
-// Taking a ticket first makes each original guardian's reward at-most-once.
-// Copies made by imprisonment/duplication machines have another UUID and no
-// corresponding server ticket, regardless of copied entity NBT or equipment.
-function qmLuckTakeGuardian(server, uuid) {
-  var ledger = qmLuckGuardianLedger(server);
-  var id = String(uuid);
-  if (!ledger.contains(id, 10)) return -1;
-  var tier = ledger.getCompound(id).getInt('tier');
-  ledger.remove(id);
-  return tier >= 0 && tier <= 6 ? tier : -1;
-}
-
 function qmLuckSpawnGuardian(source, tier) {
   if (tier < 0 || tier > 6) return 0;
   var level = source.getLevel();
-  var server = source.getServer();
   var kinds = ['spider', 'pillager', 'vindicator', 'wither_skeleton', 'piglin_brute', 'ravager', 'evoker'];
   var health = [32, 48, 70, 110, 160, 240, 360][tier];
   var damage = [3, 4, 5, 6, 8, 10, 12][tier];
@@ -74,11 +51,9 @@ function qmLuckSpawnGuardian(source, tier) {
     }
   }
   if (!level.addFreshEntity(mob)) return 0;
-  var rec = new QM_LUCK_NBT();
-  rec.putInt('tier', tier);
-  rec.putString('dimension', String(level.getDimension()));
-  rec.putLong('expires', Number(server.overworld().getTime()) + 12000);
-  qmLuckGuardianLedger(server).put(String(mob.getUuid()), rec);
+  // Native authority keeps the original UUID and deadline across capture,
+  // dimension travel and chunk unload, without scanning all saved guardians.
+  QM_LUCK_GUARDIANS.registerGuardian(mob, tier);
   var opener = source.getEntity();
   // Normal mob AI can acquire a target too; setting it keeps the arena immediate.
   if (opener != null && opener.isAlive()) mob.setTarget(opener);
@@ -164,15 +139,14 @@ EntityEvents.death(event => {
   var entity = event.entity;
   var server = entity.getServer();
   if (server == null) return;
-  var uuid = String(entity.getUuid());
-  if (!qmLuckGuardianLedger(server).contains(uuid, 10)) return;
+  if (!QM_LUCK_GUARDIANS.hasTicket(entity)) return;
   var level = entity.getLevel();
   var pos = entity.position();
   // KubeJS death fires before death. Re-check one tick later so canceled death
   // or a resurrection cannot pay out while retaining the living guardian.
   server.scheduleInTicks(1, () => {
     if (!entity.isDeadOrDying()) return;
-    var tier = qmLuckTakeGuardian(server, uuid);
+    var tier = QM_LUCK_GUARDIANS.claimReward(entity);
     if (tier < 0) return;
     var source = server.createCommandSourceStack().withLevel(level).withPosition(pos).withPermission(2).withSuppressedOutput();
     server.getCommands().performPrefixedCommand(source, 'loot spawn ~ ~ ~ loot qm:mayhem/t' + tier + '/arena');
@@ -180,28 +154,10 @@ EntityEvents.death(event => {
   });
 });
 
-// A guardian is a short event rather than permanent extra world population.
-// The timer is stored in server data and survives save/reload. Loaded guardians
-// expire after ten minutes of server game time; no chunks are force-loaded.
-ServerEvents.tick(event => {
-  var server = event.server;
-  var now = Number(server.overworld().getTime());
-  if (now % 200 !== 0) return;
-  var ledger = qmLuckGuardianLedger(server);
-  var expired = [];
-  ledger.getAllKeys().forEach(id => {
-    var record = ledger.getCompound(id);
-    if (Number(record.getLong('expires')) > now) return;
-    var key = QM_LUCK_RKEY.create(QM_LUCK_REGISTRIES.DIMENSION, QM_LUCK_RL.parse(record.getString('dimension')));
-    var level = server['getLevel(net.minecraft.resources.ResourceKey)'](key);
-    if (level == null) { expired.push(String(id)); return; }
-    var mob = level.getEntityByUUID(QM_LUCK_UUID.fromString(String(id)));
-    // Retain a small pending ticket for unloaded entities; it is checked again
-    // when their chunk naturally loads, without ever loading it for this task.
-    if (mob != null) { mob.discard(); expired.push(String(id)); }
-  });
-  expired.forEach(id => ledger.remove(id));
-});
+// Native join/removal events and due-only deadline indices expire guardians.
+// The same KubeJS persistent-data file remains the reward authority. Legacy
+// records migrate in bounded batches, and returning unloaded mobs keep their
+// original deadline. The script has no periodic all-guardian ledger sweep.
 
 // Diagnostic appendices can call these file-local helpers in the isolated test
 // server. Production exports nothing and does not assign to KubeJS global.

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Preserve Dungeons & Taverns pending entities through native visibility loss
+  and resume their effects when visible again. Discard canceled and duplicate-UUID
+  insertions before dispatch, including legacy loads with misleading added flags.
+  Add native regressions for both cases and rebuild the pinned runtime module.
+
 ### 0.4.8 — personal rewards that improve with production
 
 - Expand the 14 themed pools to 326 entries: 240 distinct items, including 210
@@ -26,6 +31,15 @@
 - Include the authored production adapter source, deterministic build, binary
   pin, recipe evidence and native manufacture/claim/persistence regression gates.
   Details and the complete catalogue are in [REWARDS](docs/REWARDS.md).
+
+- Reuse repeated Abandoned Tunnels height queries within one placement search,
+  keeping the original terrain samples, random sequence and generated pieces.
+- Replace repeated Mayhem guardian UUID sweeps with bounded persistent deadline
+  processing and native lifecycle events, including existing-world migration.
+- Skip capped Quest Automation evidence before accessory/output reads; replace
+  avoidable Dungeons & Taverns polling with native events, direct tag checks
+  and tracked scheduled entities. Keep the updated 0.4.8 questbook and personal
+  rewards. See [runtime optimization details](docs/PERFORMANCE_OPTIMIZATION.md).
 
 - Replace nine skill-milestone tick/NBT criteria with explicit advancement
   grants from Pufferfish Skills unlock rewards. Existing unlocked skills are

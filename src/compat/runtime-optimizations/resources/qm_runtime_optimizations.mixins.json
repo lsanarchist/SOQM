@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.performance.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "worldgen.TunnelStructureMixin",
+    "guardian.GuardianDespawnMixin",
+    "dungeons.AdvancementDataMixin",
+    "dungeons.EntityMembershipAccessor",
+    "dungeons.EnchantmentDataMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

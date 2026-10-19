@@ -34,6 +34,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.common.NeoForge;
@@ -124,9 +125,9 @@ public final class QmQuestAutomation {
         AutomationState state = AutomationState.get(server);
         for (ServerPlayer player : server.getPlayerList().getPlayers()) {
             if (!realPlayer(player)) continue;
-            observeEquipment(player);
-            observeReactor(player, server.getTickCount());
             TeamData data = team(player);
+            if (data != null) observeEquipment(player, data.getTeamId(), state);
+            observeReactor(player, server.getTickCount());
             if (data == null || !seen.add(data.getTeamId())) continue;
             for (Objective objective : OBJECTIVES) {
                 Task task = ServerQuestFile.INSTANCE.getTask(objective.task());
@@ -174,16 +175,23 @@ public final class QmQuestAutomation {
     public static void electricFinished(TileEntityElectricMachine machine, ItemStackToItemStackRecipe recipe) {
         observedElectricRecipes++;
         if (!(machine.getLevel() instanceof ServerLevel level)) return;
-        boolean smelter = BuiltInRegistries.BLOCK.getKey(machine.getBlockState().getBlock()).toString().equals("mekanism:energized_smelter");
-        int iron = smelter ? ironOutput(recipe) : 0;
+        if (level.players().isEmpty() || ServerQuestFile.INSTANCE == null) return;
+        Vec3 center = machine.getBlockPos().getCenter();
+        AutomationState state = AutomationState.get(level.getServer());
+        int iron = -1; // Resolve output once, only if a nearby team still needs it.
         Set<UUID> seen = new HashSet<>();
         for (ServerPlayer player : level.players()) {
-            if (!realPlayer(player) || player.distanceToSqr(machine.getBlockPos().getCenter()) > 256) continue;
+            if (!realPlayer(player) || player.distanceToSqr(center) > 256) continue;
             TeamData team = team(player);
             if (team == null || !seen.add(team.getTeamId())) continue;
-            AutomationState state = AutomationState.get(level.getServer());
-            state.record(team.getTeamId(), "mek_operation", 1);
-            if (iron > 0) state.record(team.getTeamId(), "mek_iron_32", iron);
+            UUID teamId = team.getTeamId();
+            if (state.get(teamId, "mek_operation") < AutomationState.cap("mek_operation")) state.record(teamId, "mek_operation", 1);
+            if (state.get(teamId, "mek_iron_32") >= AutomationState.cap("mek_iron_32")) continue;
+            if (iron < 0) {
+                boolean smelter = BuiltInRegistries.BLOCK.getKey(machine.getBlockState().getBlock()).toString().equals("mekanism:energized_smelter");
+                iron = smelter ? ironOutput(recipe) : 0;
+            }
+            if (iron > 0) state.record(teamId, "mek_iron_32", iron);
         }
     }
 
@@ -244,20 +252,42 @@ public final class QmQuestAutomation {
         });
     }
 
-    private static void observeEquipment(ServerPlayer player) {
-        CuriosApi.getCuriosInventory(player).ifPresent(inventory -> inventory.getCurios().forEach((id, handler) -> {
+    private static void observeEquipment(ServerPlayer player, UUID teamId, AutomationState state) {
+        // Evidence is retained even before its quest opens. Resolve the current
+        // team on each pass; neither task completion nor a player/team cache is
+        // a safe reason to stop observing another team's missing evidence.
+        boolean needEquipped = state.get(teamId, "curios_equipped") < AutomationState.cap("curios_equipped");
+        boolean needExperience = state.get(teamId, "relic_experience") < AutomationState.cap("relic_experience");
+        boolean needUpgrade = state.get(teamId, "relic_upgrade") < AutomationState.cap("relic_upgrade");
+        if (!needEquipped && !needExperience && !needUpgrade) return;
+        var inventory = CuriosApi.getCuriosInventory(player).orElse(null);
+        if (inventory == null) return;
+        for (var entry : inventory.getCurios().entrySet()) {
+            String id = entry.getKey();
+            var handler = entry.getValue();
             var stacks = handler.getStacks(); // explicitly excludes cosmetic stacks
             for (int slot = 0; slot < stacks.getSlots(); slot++) {
                 if (!inventory.isSlotActive(id, slot)) continue;
                 ItemStack stack = stacks.getStackInSlot(slot);
                 if (!gear(stack)) continue;
-                record(player, "curios_equipped", 1);
+                if (needEquipped) {
+                    state.record(teamId, "curios_equipped", 1);
+                    needEquipped = false;
+                    if (!needExperience && !needUpgrade) return;
+                }
                 if (!(stack.getItem() instanceof IRelicItem item)) continue;
                 RelicData relic = item.getRelicData(player, stack);
-                if (relicUsed(relic)) record(player, "relic_experience", 1);
-                if (relicUpgraded(relic)) record(player, "relic_upgrade", 1);
+                if (needExperience && relicUsed(relic)) {
+                    state.record(teamId, "relic_experience", 1);
+                    needExperience = false;
+                }
+                if (needUpgrade && relicUpgraded(relic)) {
+                    state.record(teamId, "relic_upgrade", 1);
+                    needUpgrade = false;
+                }
+                if (!needEquipped && !needExperience && !needUpgrade) return;
             }
-        }));
+        }
     }
 
     /** Runtime continuity state is deliberately not persisted across logouts. */
