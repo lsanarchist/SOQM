@@ -1,5 +1,34 @@
 # Verification status
 
+## SOQM 0.4.9 — logical production questlines
+
+Validation on **2026-10-19** passed against the merged 0.4.8 baseline
+`abd73f1c0736247fc5b13e0e255f8a4ef6d71b34`. This update reorganizes **417 existing
+quests into 63 sections across nine chapters**, plus one supporting RFTools
+quest: **418 patches, 29 declared routes and 268 bilingual descriptions**.
+
+The **1,625 quest / 1,772 task / 1,626 reward** saved-object contract remains
+unchanged. The same **122 third-party pins, 12 authored JARs and 1,835 payload
+paths** are retained; only eleven chapter files and two locales change.
+Manufacture-gated personal rewards and the earlier runtime optimizations
+remain intact.
+
+The restored final payload passed **63 Python tests**, both Node policy suites,
+generator/localization freshness, all **10** coordinate-preview checks and
+deterministic installation packaging. A new full-pack native run then passed
+in **113.26 seconds**: real ME Chest/1k-cell terminal crafting, manufacture
+evidence, personal rewards, late joining and team migration, disk persistence,
+resource reload and clean shutdown. All **1,626 existing personal claims**,
+**43 task values including 15 partial tasks**, and three completed branch
+quests survived; no replacement personal entitlements were issued.
+Recipes remained **20,077 → 20,077**, with zero KubeJS/fatal gate errors.
+
+See [verification-0.4.9.md](verification-0.4.9.md) for the final executed input
+fingerprints, native results, map geometry, reproduction and scope limits.
+The PR workflow builds and checks the final installation candidate including
+this record. Native validation is a separate local gate, not a CI or graphical
+survival-playthrough claim.
+
 ## SOQM 0.4.8 — combined runtime optimizations and personal rewards
 
 After integrating main `fc5328d`, validation on **2026-10-19** passed against

@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.8
+# Installing SOQM 0.4.9
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.8-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.9-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.8-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.8 asset is not claimed. The
+The current output is `dist/SOQM-0.4.9-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.9 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -29,7 +29,7 @@ and the baseline Sources ZIP are not installable game profiles.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.8 ZIP and wait for every download. See the
+   select the built 0.4.9 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -68,13 +68,18 @@ The 1625 quest, 1772 task and 1626 reward IDs are retained. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
 progress; they do not guarantee compatibility with every historical world.
 
-In 0.4.8, previously shared rewards intentionally give every member one new
+Upgrading from 0.4.8 to 0.4.9 preserves personal claims, production discoveries
+and task objectives. New ordering and prerequisites guide further progression;
+already claimed personal packs cannot be claimed again.
+
+Since 0.4.8, upgrading from the older shared rewards gives every member one new
 personal entitlement on already completed quests. Existing personal claims,
 including the introductory book, remain claimed. Leaving or joining teams does
 not restore a used personal claim. Historical shared claim keys remain stored.
 
-Manufacture one new sample of an expensive item after the update to unlock it;
-existing inventories do not prove production. `/soqm rewards` shows the level,
+For items made before the 0.4.8 journal existed, manufacture one new sample;
+existing inventories do not prove production. Recorded 0.4.8 discoveries stay
+unlocked. `/soqm rewards` shows the level,
 and `/soqm rewards pool logistics` shows available prizes and current odds.
 Replace the complete pack payload: the old generated
 `config/ftbquests/quests/reward_tables/000000006A51*.snbt` files are retired;

@@ -243,6 +243,9 @@ public final class ProgressiveRewardsProbe {
             });
         });
         SNBTCompoundTag original = before.serializeNBT();
+        before.saveIfChanged();
+        check(readTeam(server, MIGRATION).serializeNBT().equals(original),
+                "The existing baseline progress and claims are present in an independent native disk read");
         TeamData after = new TeamData(MIGRATION, ServerQuestFile.INSTANCE);
         after.deserializeNBT(original);
         int partial = 0;
@@ -274,7 +277,9 @@ public final class ProgressiveRewardsProbe {
                         "An earlier personal reward stays claimed for its recipient");
             }
         }
-        check(legacyShared.size() == 1625 && oldPersonal.equals(List.of(BOOK_ID)), "Shared migration and personal book exception are both exercised");
+        check((legacyShared.size() == 1625 && oldPersonal.equals(List.of(BOOK_ID)))
+                        || (legacyShared.isEmpty() && oldPersonal.size() == 1626 && oldPersonal.contains(BOOK_ID)),
+                "Both a legacy shared baseline and an already personal baseline retain every reward");
         after.saveIfChanged();
         migratedSnapshot = readTeam(server, MIGRATION).serializeNBT();
         check(migratedSnapshot.equals(after.serializeNBT()), "Native saveIfChanged persists the full migration fixture");
@@ -284,6 +289,7 @@ public final class ProgressiveRewardsProbe {
         }
         results.put("legacy_shared_rewards_with_one_new_personal_claim_each", legacyShared.size());
         results.put("legacy_personal_book_claim_preserved", true);
+        results.put("existing_personal_claims_preserved", oldPersonal.size());
         results.put("legacy_task_progress_preserved", tasks.size());
         results.put("legacy_partial_tasks_preserved", partial);
         results.put("legacy_claim_keys_retained_as_history", original.getCompound("claimed_rewards").size());
@@ -339,6 +345,13 @@ public final class ProgressiveRewardsProbe {
                     "Each new personal claim remains consumed after reload");
             check(restoredSnapshot.getCompound("claimed_rewards").getLong(QuestKey.create(Util.NIL_UUID, id).toString()) == OLD_TIME,
                     "Reload preserves historical shared keys");
+        }
+        for (long id : oldPersonal) {
+            Reward reward = ServerQuestFile.INSTANCE.getReward(id);
+            check(reward != null && restored.isRewardClaimed(FIRST, reward)
+                            && !restored.isRewardClaimed(SECOND, reward)
+                            && !restored.markRewardAsClaimed(FIRST, reward, NEW_TIME + 100),
+                    "Earlier personal claims remain consumed for their recipient after reload");
         }
         check(restored.isRewardClaimed(FIRST, ServerQuestFile.INSTANCE.getReward(BOOK_ID)), "Personal book remains claimed after reload");
         TeamData switched = readTeam(server, destinationTeam);

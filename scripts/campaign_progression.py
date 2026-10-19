@@ -12,6 +12,8 @@ import json
 from pathlib import Path
 import re
 
+import campaign_branches
+
 ROOT = Path(__file__).resolve().parents[1]
 TUTORIALS = ROOT / "metadata/campaign_tutorials.json"
 INTRO = "514D010000000001"
@@ -258,6 +260,12 @@ def apply(chapters: list[dict], locale: dict) -> dict:
     dependencies("5130111C890D830A", [BASE, "51301144D2BF0879", "513011AA7F850AD0"])
     stage("5130111C890D830A", 5)
 
+    # Authored production lines supersede older catalogue-style prerequisites.
+    # Apply them before recipe gates and stage propagation so an editorial
+    # branch cannot accidentally bypass a real material requirement.
+    report["branches"] = campaign_branches.apply_structure(chapters)
+    assert_valid_graph(quests)
+
     # Bring too-early item milestones in line with the campaign materials in
     # their real recipes (for example Gold/Diamond furnaces and reactor control).
     recipe_gates = mandatory_recipe_gates(recipe_rows())
@@ -311,4 +319,5 @@ def apply(chapters: list[dict], locale: dict) -> dict:
                 raise ValueError(f"Tutorial task does not belong to quest: {ident}/{task}")
             locale[f"task.{task}.title"] = title
         report["tutorial_updates"] += 1
+    report["branch_tutorial_updates"] = campaign_branches.apply_locale(locale, "uk_ua")
     return report

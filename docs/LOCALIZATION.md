@@ -1,10 +1,22 @@
 # Локалізація / Localization
 
-Кампанія SOQM **0.4.8** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
+Кампанія SOQM **0.4.9** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
 
 У 0.4.7 прибрано 1453 повторювані вступи, скорочено 1525 назв і вилучено 2287 застарілих абзаців із поверненнями нагород, списками підготовки та патчнотами рецептів. Корисні спеціальні пояснення, зокрема сплави Foundry, збережено. Єдина пам’ятка керування міститься на початку книги.
 
-**67 ключових квестів** мають окремо написані українські й англійські уроки: 61 у `metadata/campaign_tutorials.json` і шість матеріальних рубежів у `metadata/campaign_route.json`. У них описано ранню AE2-мережу, робочий 1k CPU, процесори, канали, P2P, живлення, космічну підготовку, печі та реактори. Умови 16 спеціальних автоматичних і трьох ручних інженерних задач також перекладено вручну. Нове досягнення ME перевіряє фактичний крафт через активний термінал із непорожнім сховищем.
+У 0.4.9 **268 квестів виробничих гілок** мають авторські двомовні описи в
+`metadata/quest_branches/*.json`. Разом із попередніми уроками це **285
+різних квестів з авторськими уроками**: нові описи перекривають 50 із
+попередніх 67 уроків. Первинні джерела попереднього оформлення —
+`metadata/campaign_tutorials.json` і `metadata/campaign_route.json` —
+залишаються для інших глав і матеріальних рубежів.
+
+Гілки пояснюють ручне й автоматичне просіювання, виходи Flux-машин,
+ME Chest, 1k-автокрафт, зовнішню обробку, канали й віддалений доступ,
+машинні рами, паливні цикли та ферми. Умови 16 спеціальних автоматичних
+і трьох ручних інженерних задач також перекладено вручну. Наявне
+досягнення ME перевіряє фактичний крафт через активний термінал із
+непорожнім сховищем; предметні уроки прямо описують межі інвентарної перевірки.
 
 Решта англійських цілей виводиться з фактичних задач. Назви предметів і досягнень надходять із закріплених ресурсів модів, наявних авторських ресурсів або читабельного registry ID. Словник `metadata/quest_english_names.json` містить лише використані назви та SHA-256 джерел. Повний художній переклад залишено поза заявленим обсягом англійського довідника.
 
@@ -13,6 +25,7 @@
 ```bash
 python3 scripts/campaign_refresh.py
 python3 scripts/localize_english.py
+python3 scripts/render_campaign.py
 python3 scripts/soqm.py lock
 ./scripts/check
 ```
@@ -61,7 +74,18 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 
 ## English scope
 
-English covers every chapter, quest, task, personal reward-pack title and canvas caption. All **251 section names** and **67 core tutorials** have editorial translations. The 14 reward themes, six production milestones, all 326 prize entries and read-only commands are bilingual. Current per-draw odds and locked requirements are shown by the reward commands, while the native FTB tooltip names the pack. The 16 custom automatic checks, three manual engineering checks and native ME-craft advancement have explicit English conditions. Other objectives derive their quantities and conditions from actual tasks.
+English covers every chapter, quest, task, personal reward-pack title and
+canvas caption. All **251 section names** and **285 distinct authored
+tutorials** have editorial translations. The 268 production-branch lessons
+override 50 of the previous 67 core lessons and teach actual machine setup,
+inputs, outputs and trial runs. Source fragments live in
+`metadata/quest_branches/*.json`; both languages share the same quest IDs.
+The 14 reward themes, six production milestones, all 326 prize entries and
+read-only commands are bilingual. Current per-draw odds and locked requirements
+are shown by the reward commands, while the native FTB tooltip names the pack.
+The 16 custom automatic checks, three manual engineering checks and native
+ME-craft advancement retain explicit English conditions. Other objectives
+derive their quantities and conditions from actual tasks.
 
 The single introductory controls guide explains inventory detection and JEI. Repeated patch notes and per-quest R/U reminders have been removed. Registry names are retained in the offline name lexicon; unknown display names fall back to readable identifiers. This is an alpha objective guide with authored core lessons; a full literary translation and graphical client review remain separate work.
 

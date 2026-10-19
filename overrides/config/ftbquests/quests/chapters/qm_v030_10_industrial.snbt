@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "5130111BE9BBE0D5",
-      "x": -10.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "industrialforegoing:machine_frame_pity",
@@ -67,12 +67,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011EEAB3DF77B",
-      "x": -7.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 5.35,
       "icon": {
         "id": "industrialforegoing:fluid_extractor",
         "count": 1
@@ -85,8 +85,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "5130111BE9BBE0D5"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -120,12 +120,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130111B4AB75BE7",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 8.85,
       "icon": {
         "id": "industrialforegoing:latex_processing_unit",
         "count": 1
@@ -138,10 +138,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
         "513011EC69FFD72C",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "513011EEAB3DF77B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -175,12 +175,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301137DA4E3B80",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 12.35,
       "icon": {
         "id": "industrialforegoing:dryrubber",
         "count": 1
@@ -193,8 +193,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "5130111B4AB75BE7"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -228,12 +228,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011DB5BB9FB5B",
-      "x": -10.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 12.35,
       "icon": {
         "id": "industrialforegoing:plastic",
         "count": 1
@@ -246,8 +246,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "5130111BE9BBE0D5"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -281,12 +281,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011905E9962AB",
-      "x": -7.95,
-      "y": 4.65,
+      "x": 9.2,
+      "y": 20.67,
       "icon": {
         "id": "industrialforegoing:machine_frame_simple",
         "count": 1
@@ -299,8 +299,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "51301150CDD6664E",
+        "513011EEAB3DF77B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -334,12 +335,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301150CDD6664E",
-      "x": -4.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 17.17,
       "icon": {
         "id": "industrialforegoing:dissolution_chamber",
         "count": 1
@@ -352,9 +353,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
-        "5130115E1ED084F6"
+        "5130115E1ED084F6",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -388,12 +389,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301171CA29CEF3",
-      "x": -1.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 24.17,
       "icon": {
         "id": "industrialforegoing:machine_frame_advanced",
         "count": 1
@@ -406,8 +407,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011905E9962AB",
+        "513011652C2C4B48"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -441,12 +443,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F5C6B3A1A7",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 4.6,
+      "y": 28.99,
       "icon": {
         "id": "industrialforegoing:resourceful_furnace",
         "count": 1
@@ -459,10 +461,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
         "513011EC69FFD72C",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -496,12 +498,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110526994D7D",
-      "x": 4.95,
-      "y": 1.85,
+      "x": 4.6,
+      "y": 35.99,
       "icon": {
         "id": "industrialforegoing:material_stonework_factory",
         "count": 1
@@ -515,10 +517,12 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301166893DC2DA",
         "513011EC69FFD72C",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3",
+        "513011F5C6B3A1A7",
+        "513011C5391BB59D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -552,12 +556,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C5391BB59D",
-      "x": -10.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 28.99,
       "icon": {
         "id": "industrialforegoing:block_breaker",
         "count": 1
@@ -570,9 +574,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011209CCD8C68",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -606,12 +610,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011EBEFDD9D81",
-      "x": -7.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 28.99,
       "icon": {
         "id": "industrialforegoing:block_placer",
         "count": 1
@@ -621,16 +625,16 @@
         "stage_3",
         "item_industrialforegoing_block_placer",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011B28366CA37",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -658,14 +662,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C62D389346",
-      "x": -4.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 32.49,
       "icon": {
         "id": "industrialforegoing:fluid_placer",
         "count": 1
@@ -675,16 +679,16 @@
         "stage_3",
         "item_industrialforegoing_fluid_placer",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A41D3B7A48",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -712,14 +716,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011ECEDA27FBB",
-      "x": -1.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 32.49,
       "icon": {
         "id": "industrialforegoing:fluid_collector",
         "count": 1
@@ -729,16 +733,16 @@
         "stage_3",
         "item_industrialforegoing_fluid_collector",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -766,14 +770,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D00529ECCA",
-      "x": -10.95,
-      "y": 15.07,
+      "x": -4.6,
+      "y": 32.49,
       "icon": {
         "id": "industrialforegoing:water_condensator",
         "count": 1
@@ -783,16 +787,16 @@
         "stage_3",
         "item_industrialforegoing_water_condensator",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A41D3B7A48",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -820,14 +824,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D4E145FBE3",
-      "x": 1.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 44.31,
       "icon": {
         "id": "industrialforegoing:ore_laser_base",
         "count": 1
@@ -840,8 +844,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3",
+        "51301145D74317DD"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -875,12 +880,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110CBA356673",
-      "x": 4.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 44.31,
       "icon": {
         "id": "industrialforegoing:fluid_laser_base",
         "count": 1
@@ -893,9 +898,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011183B7E03D8",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3",
+        "51301145D74317DD"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -929,12 +935,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301145D74317DD",
-      "x": 7.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 40.81,
       "icon": {
         "id": "industrialforegoing:laser_drill",
         "count": 1
@@ -947,8 +953,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011905E9962AB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -982,12 +988,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D0D111A20A",
-      "x": 7.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 49.13,
       "icon": {
         "id": "industrialforegoing:washing_factory",
         "count": 1
@@ -997,16 +1003,16 @@
         "stage_3",
         "item_industrialforegoing_washing_factory",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011EC69FFD72C",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1034,14 +1040,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011151DE90C52",
-      "x": 10.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 52.63,
       "icon": {
         "id": "industrialforegoing:fermentation_station",
         "count": 1
@@ -1051,15 +1057,15 @@
         "stage_3",
         "item_industrialforegoing_fermentation_station",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011D0D111A20A"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1087,14 +1093,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C168D23426",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 56.13,
       "icon": {
         "id": "industrialforegoing:fluid_sieving_machine",
         "count": 1
@@ -1104,15 +1110,15 @@
         "stage_3",
         "item_industrialforegoing_fluid_sieving_machine",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011151DE90C52"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1140,14 +1146,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301154F33E4BE9",
-      "x": -10.95,
-      "y": 19.89,
+      "x": -9.2,
+      "y": 60.95,
       "icon": {
         "id": "industrialforegoing:mob_imprisonment_tool",
         "count": 1
@@ -1160,8 +1166,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1195,12 +1201,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011652C2C4B48",
-      "x": -7.95,
-      "y": 19.89,
+      "x": -9.2,
+      "y": 20.67,
       "icon": {
         "id": "industrialforegoing:mob_slaughter_factory",
         "count": 1
@@ -1213,10 +1219,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011350308FBB4",
         "51301129D6E9E5E6",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011DB5BB9FB5B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1250,12 +1256,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116264236136",
-      "x": -4.95,
-      "y": 19.89,
+      "x": -4.6,
+      "y": 60.95,
       "icon": {
         "id": "industrialforegoing:mob_crusher",
         "count": 1
@@ -1268,9 +1274,11 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301129D6E9E5E6",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3",
+        "5140110BC63EC2F8",
+        "51401108F86D0EE4"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1304,12 +1312,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301110A6A327AA",
-      "x": -1.95,
-      "y": 19.89,
+      "x": -4.6,
+      "y": 64.45,
       "icon": {
         "id": "industrialforegoing:mob_duplicator",
         "count": 1
@@ -1322,8 +1330,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301154F33E4BE9",
+        "5130116264236136",
+        "51301167AE8889AA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1357,12 +1367,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130118E4A798482",
-      "x": -10.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 64.45,
       "icon": {
         "id": "industrialforegoing:mob_detector",
         "count": 1
@@ -1372,15 +1382,15 @@
         "stage_3",
         "item_industrialforegoing_mob_detector",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301154F33E4BE9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1408,14 +1418,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5130117AB9046CD2",
-      "x": -7.95,
-      "y": 22.69,
+      "x": 4.6,
+      "y": 60.95,
       "icon": {
         "id": "industrialforegoing:enchantment_extractor",
         "count": 1
@@ -1425,15 +1435,15 @@
         "stage_3",
         "item_industrialforegoing_enchantment_extractor",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301171CA29CEF3"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1461,14 +1471,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011ED4F8D85C3",
-      "x": -4.95,
-      "y": 22.69,
+      "x": 4.6,
+      "y": 64.45,
       "icon": {
         "id": "industrialforegoing:enchantment_applicator",
         "count": 1
@@ -1478,16 +1488,17 @@
         "stage_3",
         "item_industrialforegoing_enchantment_applicator",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130119EF6D73D82",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130117AB9046CD2",
+        "5130116264236136"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1515,14 +1526,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301127D84254AF",
-      "x": -10.95,
-      "y": 7.45,
+      "x": 4.6,
+      "y": 69.27,
       "icon": {
         "id": "industrialforegoing:machine_frame_supreme",
         "count": 1
@@ -1535,8 +1546,8 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "5130110CBA356673"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1570,12 +1581,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A2D8626B22",
-      "x": 1.95,
-      "y": 19.89,
+      "x": -9.2,
+      "y": 69.27,
       "icon": {
         "id": "industrialforegoing:speed_addon_tier_1",
         "count": 1
@@ -1588,8 +1599,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "51301150CDD6664E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1623,12 +1634,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011268D442A18",
-      "x": 4.95,
-      "y": 19.89,
+      "x": -9.2,
+      "y": 72.77,
       "icon": {
         "id": "industrialforegoing:speed_addon_tier_2",
         "count": 1
@@ -1641,8 +1652,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "513011A2D8626B22"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1676,12 +1687,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A48F738CFF",
-      "x": 7.95,
-      "y": 19.89,
+      "x": -4.6,
+      "y": 69.27,
       "icon": {
         "id": "industrialforegoing:efficiency_addon_tier_1",
         "count": 1
@@ -1694,8 +1705,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "51301150CDD6664E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1729,12 +1740,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116DDA11F4EE",
-      "x": 10.95,
-      "y": 19.89,
+      "x": -4.6,
+      "y": 72.77,
       "icon": {
         "id": "industrialforegoing:efficiency_addon_tier_2",
         "count": 1
@@ -1747,8 +1758,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "513011A48F738CFF"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1782,12 +1793,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130111A5BD14B53",
-      "x": 1.95,
-      "y": 22.69,
+      "x": 9.2,
+      "y": 69.27,
       "icon": {
         "id": "industrialforegoing:processing_addon_tier_1",
         "count": 1
@@ -1800,10 +1811,10 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301166893DC2DA",
         "513011EC69FFD72C",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "51301150CDD6664E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1837,12 +1848,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301109BDC10F3A",
-      "x": 4.95,
-      "y": 22.69,
+      "x": 9.2,
+      "y": 72.77,
       "icon": {
         "id": "industrialforegoing:processing_addon_tier_2",
         "count": 1
@@ -1855,10 +1866,10 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301166893DC2DA",
         "513011EC69FFD72C",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "5130111A5BD14B53"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1892,12 +1903,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130118C29E5449C",
-      "x": -10.95,
-      "y": 27.51,
+      "x": 0.0,
+      "y": 69.27,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_2",
         "count": 1
@@ -1910,8 +1921,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "51301150CDD6664E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1945,12 +1956,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130111D6C11FBB1",
-      "x": -7.95,
-      "y": 27.51,
+      "x": 4.6,
+      "y": 72.77,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_5",
         "count": 1
@@ -1963,8 +1974,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "5130118C29E5449C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1998,12 +2009,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A514A41277",
-      "x": -4.95,
-      "y": 27.51,
+      "x": 4.6,
+      "y": 76.27,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_8",
         "count": 1
@@ -2016,8 +2027,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "5130111D6C11FBB1"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2051,12 +2062,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011B20346E7E1",
-      "x": -1.95,
-      "y": 27.51,
+      "x": 4.6,
+      "y": 79.77,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_11",
         "count": 1
@@ -2069,8 +2080,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "513011A514A41277"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2104,12 +2115,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011162F45B0CF",
-      "x": -10.95,
-      "y": 30.31,
+      "x": 0.0,
+      "y": 72.77,
       "icon": {
         "id": "industrialforegoing:infinity_drill",
         "count": 1
@@ -2122,8 +2133,8 @@
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117F2402AE8A"
+        "5130117F2402AE8A",
+        "51301127D84254AF"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2157,7 +2168,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -2227,12 +2238,12 @@
     },
     {
       "id": "5141041000000295",
-      "x": -6.45,
-      "y": 4.85,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 7.3,
+      "width": 24.9,
+      "height": 14.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2244,9 +2255,9 @@
     {
       "id": "5141041000000296",
       "x": -12.395,
-      "y": 4.85,
+      "y": 7.3,
       "width": 0.11,
-      "height": 9.7,
+      "height": 14.6,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -2259,9 +2270,9 @@
     },
     {
       "id": "5141041000000297",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2275,12 +2286,12 @@
     },
     {
       "id": "5141041000000298",
-      "x": -10.95,
+      "x": 0.0,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2291,12 +2302,12 @@
     },
     {
       "id": "5141041000000299",
-      "x": -7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 6.27,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2307,12 +2318,12 @@
     },
     {
       "id": "514104100000029A",
-      "x": -4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 9.77,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2323,12 +2334,12 @@
     },
     {
       "id": "514104100000029B",
-      "x": -1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 13.27,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2339,12 +2350,12 @@
     },
     {
       "id": "514104100000029C",
-      "x": -10.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 13.27,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2355,12 +2366,12 @@
     },
     {
       "id": "514104100000029D",
-      "x": -7.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 21.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2371,12 +2382,12 @@
     },
     {
       "id": "514104100000029E",
-      "x": -4.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 18.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2387,12 +2398,12 @@
     },
     {
       "id": "514104100000029F",
-      "x": -1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 25.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2403,12 +2414,12 @@
     },
     {
       "id": "51410410000002A0",
-      "x": -10.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 70.19,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2419,12 +2430,12 @@
     },
     {
       "id": "51410410000002A1",
-      "x": 6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 20.87,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2435,10 +2446,10 @@
     },
     {
       "id": "51410410000002A2",
-      "x": 0.505,
-      "y": 3.45,
+      "x": -12.395,
+      "y": 20.87,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -2451,9 +2462,9 @@
     },
     {
       "id": "51410410000002A3",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 15.78,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2467,12 +2478,12 @@
     },
     {
       "id": "51410410000002A4",
-      "x": 1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 29.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2483,12 +2494,12 @@
     },
     {
       "id": "51410410000002A5",
-      "x": 4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 36.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2499,12 +2510,12 @@
     },
     {
       "id": "51410410000002A6",
-      "x": 7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 50.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2515,12 +2526,12 @@
     },
     {
       "id": "51410410000002A7",
-      "x": 10.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 53.5,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2531,12 +2542,12 @@
     },
     {
       "id": "51410410000002A8",
-      "x": 1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 57.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2547,12 +2558,12 @@
     },
     {
       "id": "51410410000002A9",
-      "x": -6.45,
-      "y": 13.87,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 32.69,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2564,9 +2575,9 @@
     {
       "id": "51410410000002AA",
       "x": -12.395,
-      "y": 13.87,
+      "y": 32.69,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -2579,9 +2590,9 @@
     },
     {
       "id": "51410410000002AB",
-      "x": -6.37,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 27.6,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2595,12 +2606,12 @@
     },
     {
       "id": "51410410000002AC",
-      "x": -10.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 29.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2611,12 +2622,12 @@
     },
     {
       "id": "51410410000002AD",
-      "x": -7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 29.86,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2627,12 +2638,12 @@
     },
     {
       "id": "51410410000002AE",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 33.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2643,12 +2654,12 @@
     },
     {
       "id": "51410410000002AF",
-      "x": -1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 33.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2659,12 +2670,12 @@
     },
     {
       "id": "51410410000002B0",
-      "x": -10.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 33.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2675,12 +2686,12 @@
     },
     {
       "id": "51410410000002B1",
-      "x": 6.45,
-      "y": 12.47,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 42.76,
+      "width": 24.9,
+      "height": 7.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2691,10 +2702,10 @@
     },
     {
       "id": "51410410000002B2",
-      "x": 0.505,
-      "y": 12.47,
+      "x": -12.395,
+      "y": 42.76,
       "width": 0.11,
-      "height": 4.1,
+      "height": 7.6,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -2707,9 +2718,9 @@
     },
     {
       "id": "51410410000002B3",
-      "x": 6.53,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 39.42,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2723,12 +2734,12 @@
     },
     {
       "id": "51410410000002B4",
-      "x": 1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 45.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2739,12 +2750,12 @@
     },
     {
       "id": "51410410000002B5",
-      "x": 4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 45.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2755,12 +2766,12 @@
     },
     {
       "id": "51410410000002B6",
-      "x": 7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 41.73,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2771,12 +2782,12 @@
     },
     {
       "id": "51410410000002B7",
-      "x": -6.45,
-      "y": 21.49,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 52.83,
+      "width": 24.9,
+      "height": 11.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2788,9 +2799,9 @@
     {
       "id": "51410410000002B8",
       "x": -12.395,
-      "y": 21.49,
+      "y": 52.83,
       "width": 0.11,
-      "height": 6.9,
+      "height": 11.1,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -2803,9 +2814,9 @@
     },
     {
       "id": "51410410000002B9",
-      "x": -6.37,
-      "y": 18.5,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 47.74,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2819,12 +2830,12 @@
     },
     {
       "id": "51410410000002BA",
-      "x": -10.95,
-      "y": 20.81,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 61.87,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2835,12 +2846,12 @@
     },
     {
       "id": "51410410000002BB",
-      "x": -7.95,
-      "y": 20.81,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 21.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2851,12 +2862,12 @@
     },
     {
       "id": "51410410000002BC",
-      "x": -4.95,
-      "y": 20.81,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 61.87,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2867,12 +2878,12 @@
     },
     {
       "id": "51410410000002BD",
-      "x": -1.95,
-      "y": 20.81,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 65.37,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2883,12 +2894,12 @@
     },
     {
       "id": "51410410000002BE",
-      "x": -10.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 65.32,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2899,12 +2910,12 @@
     },
     {
       "id": "51410410000002BF",
-      "x": -7.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 61.82,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2915,12 +2926,12 @@
     },
     {
       "id": "51410410000002C0",
-      "x": -4.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 65.32,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2931,12 +2942,12 @@
     },
     {
       "id": "51410410000002C1",
-      "x": 6.45,
-      "y": 21.49,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 62.9,
+      "width": 24.9,
+      "height": 7.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2947,10 +2958,10 @@
     },
     {
       "id": "51410410000002C2",
-      "x": 0.505,
-      "y": 21.49,
+      "x": -12.395,
+      "y": 62.9,
       "width": 0.11,
-      "height": 6.9,
+      "height": 7.6,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -2963,9 +2974,9 @@
     },
     {
       "id": "51410410000002C3",
-      "x": 6.53,
-      "y": 18.5,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 59.56,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -2979,12 +2990,12 @@
     },
     {
       "id": "51410410000002C4",
-      "x": 1.95,
-      "y": 20.76,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 70.14,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -2995,12 +3006,12 @@
     },
     {
       "id": "51410410000002C5",
-      "x": 4.95,
-      "y": 20.76,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 73.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3011,12 +3022,12 @@
     },
     {
       "id": "51410410000002C6",
-      "x": 7.95,
-      "y": 20.76,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 70.14,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3027,12 +3038,12 @@
     },
     {
       "id": "51410410000002C7",
-      "x": 10.95,
-      "y": 20.76,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 73.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3043,12 +3054,12 @@
     },
     {
       "id": "51410410000002C8",
-      "x": 1.95,
-      "y": 23.56,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 70.14,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3059,12 +3070,12 @@
     },
     {
       "id": "51410410000002C9",
-      "x": 4.95,
-      "y": 23.56,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 73.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3075,12 +3086,12 @@
     },
     {
       "id": "51410410000002CA",
-      "x": -6.45,
-      "y": 29.11,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 74.72,
+      "width": 24.9,
+      "height": 14.6,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3092,9 +3103,9 @@
     {
       "id": "51410410000002CB",
       "x": -12.395,
-      "y": 29.11,
+      "y": 74.72,
       "width": 0.11,
-      "height": 6.9,
+      "height": 14.6,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3107,9 +3118,9 @@
     },
     {
       "id": "51410410000002CC",
-      "x": -6.37,
-      "y": 26.12,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 67.88,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -3123,12 +3134,12 @@
     },
     {
       "id": "51410410000002CD",
-      "x": -10.95,
-      "y": 28.38,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 70.14,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3139,12 +3150,12 @@
     },
     {
       "id": "51410410000002CE",
-      "x": -7.95,
-      "y": 28.38,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 73.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3155,12 +3166,12 @@
     },
     {
       "id": "51410410000002CF",
-      "x": -4.95,
-      "y": 28.38,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 77.14,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3171,12 +3182,12 @@
     },
     {
       "id": "51410410000002D0",
-      "x": -1.95,
-      "y": 28.38,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 80.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3187,12 +3198,12 @@
     },
     {
       "id": "51410410000002D1",
-      "x": -10.95,
-      "y": 31.18,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 73.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",

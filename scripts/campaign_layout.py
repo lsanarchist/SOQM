@@ -16,6 +16,8 @@ from pathlib import Path
 import re
 import textwrap
 
+import campaign_branches
+
 ROOT = Path(__file__).resolve().parents[1]
 BLUEPRINT = ROOT / "metadata/campaign_layout.json"
 ROUTE_CHAPTER = "qm_v030_27_convergence"
@@ -38,11 +40,16 @@ LEGEND = {
     "uk_ua": "Шестикутник: маршрут · квадрат: розвиток · коло: додаткове",
     "en_us": "Hexagon: route · square: development · circle: optional",
 }
+FLOW_LEGEND = {
+    "uk_ua": "Зверху вниз: робочі етапи · бічні гілки: розвиток і варіанти",
+    "en_us": "Top to bottom: working stages · side branches: upgrades and options",
+}
+FLOW_COLUMNS = (-9.2, -4.6, 0.0, 4.6, 9.2)
 STAGE_COLORS = ["#E8E5B85C", "#E873C5B6", "#E890A8E8", "#E8B58CDB", "#E8E393A7", "#E8F1C96B"]
 
 
 def blueprint() -> dict:
-    return json.loads(BLUEPRINT.read_text(encoding="utf-8"))["chapters"]
+    return campaign_branches.layout_blueprints(json.loads(BLUEPRINT.read_text(encoding="utf-8"))["chapters"])
 
 
 def stage(quest: dict) -> int:
@@ -70,6 +77,8 @@ def role(quest: dict) -> str:
 
 def sections_for(chapter: dict, spec: dict) -> list[dict]:
     sections = copy.deepcopy(spec["sections"])
+    if spec.get("logical_flow"):
+        return sections
     quests = {q["id"]: q for q in chapter["quests"]}
     if chapter["filename"] == ROUTE_CHAPTER:
         # The small ME workshop is now a stage-2 convenience. Cards follow the
@@ -93,6 +102,10 @@ def sections_for(chapter: dict, spec: dict) -> list[dict]:
 def caption(title: str, *, width: int = 13, limit: int = 29) -> str:
     title = re.sub(r"§[0-9a-fk-or]", "", title, flags=re.I).replace("\n", " ")
     title = re.sub(r"^(?:Obtain|Craft) (?:1 × )?", "", title)
+    if len(title) > 32 and ": " in title:
+        prefix = title.split(": ", 1)[0]
+        if 4 <= len(prefix) <= 24:
+            title = prefix
     title = textwrap.shorten(title, width=limit, placeholder="…")
     lines = textwrap.wrap(title, width=width, break_long_words=False, break_on_hyphens=False)
     if len(lines) > 2:
@@ -100,20 +113,27 @@ def caption(title: str, *, width: int = 13, limit: int = 29) -> str:
     return "\n".join(lines) or title
 
 
-def canvas_locale(chapter: dict, language: str, quest_titles: dict, chapter_title: str) -> dict:
-    spec = blueprint()[chapter["filename"]]
+def canvas_locale(chapter: dict, language: str, quest_titles: dict, chapter_title: str, spec: dict | None = None) -> dict:
+    spec = blueprint()[chapter["filename"]] if spec is None else spec
     result = {
         f"image.{spec['header']}.title": chapter_title,
-        f"image.{spec['subtitle']}.title": LEGEND[language],
+        f"image.{spec['subtitle']}.title": (FLOW_LEGEND if spec.get("logical_flow") else LEGEND)[language],
     }
     for index, section in enumerate(sections_for(chapter, spec), 1):
+        section_title = section["title"][language]
+        if spec.get("logical_flow"):
+            section_title = re.sub(r"^\d+\s*[·•.)-]\s*", "", section_title)
         result[f"image.{section['heading']}.title"] = (
-            section["title"][language] if chapter["filename"] == ROUTE_CHAPTER
-            else f"{index:02d}  {section['title'][language]}"
+            section_title if chapter["filename"] == ROUTE_CHAPTER
+            else f"{index:02d}  {section_title}"
         )
     for ident, image_id in spec["captions"].items():
         title = spec.get("caption_titles", {}).get(ident, {}).get(language, quest_titles[ident])
-        result[f"image.{image_id}.title"] = caption(title, width=16, limit=36) if chapter["filename"] == ROUTE_CHAPTER else caption(title)
+        result[f"image.{image_id}.title"] = (
+            caption(title, width=18, limit=42) if spec.get("logical_flow")
+            else caption(title, width=16, limit=36) if chapter["filename"] == ROUTE_CHAPTER
+            else caption(title)
+        )
     return result
 
 
@@ -123,6 +143,7 @@ def apply(chapters: list[dict], locale: dict) -> dict:
         raise ValueError("Review the layout blueprint when chapters change")
     quests = {q["id"]: q for c in chapters for q in c["quests"]}
     critical = ancestors(quests, FINAL) | {FINAL} | set(GATES)
+    flow_ids = {q["id"] for c in chapters if specs[c["filename"]].get("logical_flow") for q in c["quests"]}
     roles = Counter()
     for quest in quests.values():
         current = ("route" if quest["id"] in critical else "optional" if quest.get("optional")
@@ -131,7 +152,7 @@ def apply(chapters: list[dict], locale: dict) -> dict:
         quest["shape"], quest["size"] = ROLE_STYLE[current]
         if quest["id"] in GATES or quest["id"] == FINAL:
             quest["size"] = 1.48
-        quest["hide_dependency_lines"] = current in {"optional", "reference"}
+        quest["hide_dependency_lines"] = current in {"optional", "reference"} and quest["id"] not in flow_ids
         locale[f"quest.{quest['id']}.quest_subtitle"] = f"Етап {stage(quest)} · {ROLE_NAMES['uk_ua'][current]}"
         roles[current] += 1
 
@@ -161,6 +182,35 @@ def apply(chapters: list[dict], locale: dict) -> dict:
             images[spec[name]].update(x=0.0, y=y, width=24.9, height=height)
 
         sections = sections_for(chapter, spec)
+        if spec.get("logical_flow"):
+            top = 0.0
+            for index, section in enumerate(sections):
+                rows = section["rows"]
+                height = round(4.1 + (len(rows) - 1) * 3.5, 3)
+                panel, accent, heading = (images[section[key]] for key in ("panel", "accent", "heading"))
+                panel.update(x=0.0, y=round(top + height / 2, 3), width=24.9, height=height,
+                             image="color:#FF1D2A3A")
+                accent.update(x=-12.395, y=panel["y"], height=height, image="color:" + STAGE_COLORS[index % len(STAGE_COLORS)])
+                heading.update(x=.08, y=round(top + .46, 3), width=24.52, height=.66)
+                for row_index, row in enumerate(rows):
+                    for column, ident in enumerate(row):
+                        if ident is None:
+                            continue
+                        quest = qmap[ident]
+                        quest.update(x=FLOW_COLUMNS[column], y=round(top + 1.85 + row_index * 3.5, 3))
+                        images[spec["captions"][ident]].update(
+                            x=quest["x"], y=round(quest["y"] + quest["size"] / 2 + .47, 3), width=3.7, height=.72,
+                            image=panel["image"])
+                top = round(top + height + .72, 3)
+            title = locale[f"chapter.{chapter['id']}.title"]
+            locale.update(canvas_locale(chapter, "uk_ua", {q['id']: locale[f"quest.{q['id']}.title"] for q in chapter['quests']}, title, spec))
+            locale[f"chapter.{chapter['id']}.chapter_subtitle"] = [
+                spec["branch_summary"]["uk_ua"],
+                f"{len(chapter['quests'])} квестів · {len(sections)} послідовних виробничих секцій.",
+                FLOW_LEGEND["uk_ua"],
+                "Відкрий квест, щоб перевірити всі передумови, зокрема переходи до інших глав. Предметна задача перевіряє речі в інвентарі; опис пояснює складання й пробний запуск.",
+            ]
+            continue
         top = 0.0
         for pair_start in range(0, len(sections), 1 if filename == ROUTE_CHAPTER else 2):
             group = sections[pair_start:pair_start + (1 if filename == ROUTE_CHAPTER else 2)]
@@ -213,6 +263,9 @@ def apply(chapters: list[dict], locale: dict) -> dict:
             f"{len(chapter['quests'])} квестів · {len(sections)} тематичних секцій.", LEGEND["uk_ua"],
             "Відкрий квест, щоб перевірити всі передумови. Роль на карті не змінює його умови.",
         ]
+        if spec.get("branch_summary"):
+            locale[f"chapter.{chapter['id']}.chapter_subtitle"].insert(0, spec["branch_summary"]["uk_ua"])
     locale["chapter_group.5141042000000007.title"] = "Трансмутація й фінал"
     return {"roles": dict(roles), "sections": sum(len(s['sections']) for s in specs.values()),
-            "main_route": "00 · Головний маршрут", "persistent_objects_added": 0}
+            "main_route": "00 · Головний маршрут", "logical_flow_chapters": sum(bool(s.get("logical_flow")) for s in specs.values()),
+            "persistent_objects_added": 0}

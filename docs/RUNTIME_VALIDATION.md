@@ -22,16 +22,23 @@ python3 scripts/smoke_server.py --accept-eula --java /absolute/path/to/jdk-21/bi
 ```
 
 The smoke report records its `workspace`. Pass the `server` directory in that
-workspace to the interaction probe and select the previous shared-reward commit.
-For the 0.4.8 migration, use the merged 0.4.7 plus skills-fix base:
+workspace to the interaction probe and select the previous campaign commit.
+For the 0.4.9 branch update, use the merged 0.4.8 personal-reward and
+performance base:
 
 ```sh
 python3 scripts/runtime_probe.py \
   --accept-eula \
   --java /absolute/path/to/jdk-21/bin/java \
   --runtime .work/smoke/run-TIMESTAMP/server \
-  --baseline-ref 72bd75d131a986afe9cf0d11580fdcaf009a208a
+  --baseline-ref abd73f1c0736247fc5b13e0e255f8a4ef6d71b34
 ```
+
+The fixture also supports the historical shared-reward baseline
+`72bd75d131a986afe9cf0d11580fdcaf009a208a`. That older path intentionally
+creates the one personal entitlement introduced in 0.4.8. The current
+0.4.8-to-0.4.9 path must preserve all existing personal claims without
+creating another entitlement.
 
 The default gate requires the production payload to match its reviewed lock,
 verifies every third-party dependency and authored JAR, and checks that the
@@ -77,14 +84,20 @@ claim and persistence operations still execute in the real server runtime.
   FTB extra data into new discoveries. A machine captured for a former team
   cannot grant production to its owner's new party.
 - Quest data from the specified base creates a nonempty native `TeamData`
-  fixture with partial/complete tasks and all old rewards claimed. The 1,625
-  historical shared `NIL_UUID` keys remain stored and intentionally yield one
-  new personal entitlement for each member. Existing personal book claims
-  remain claimed. Both members' second personal claims stay blocked.
+  fixture with partial/complete tasks and all old rewards claimed. A real
+  baseline save exists on disk before loading the changed quest definitions.
+  With the current 0.4.8 base, all 1,626 personal claims remain used for their
+  recipient and independent for the other player. Duplicate attempts fail;
+  no new entitlement is introduced. Three completed Ex/AE2 branch quests
+  retain their completion flags after changed prerequisites and reload.
+  With the historical shared base, all 1,625 shared `NIL_UUID` keys remain
+  stored and intentionally yield the personal entitlement added in 0.4.8;
+  the existing personal book remains claimed.
 - Personal claims are saved, then the member leaves and joins another team.
   An independent native reader checks persisted team data, so a cached live
   claim cannot hide a missing `markDirty()` after native FTB claim merging.
-- The ME fixture places real AE2 cable, terminal, drive and storage cell blocks.
+- The ME fixture places real AE2 cable, terminal, ME Chest and one 1k item
+  storage cell, without a Drive or Controller.
   It takes the recipe result through `CraftingTermSlot.doClick`, which invokes
   AE2's normal crafted-item event. An ordinary crafting menu, an unpowered
   network and an empty ME store cannot earn the milestone. An active powered

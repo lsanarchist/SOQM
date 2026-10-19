@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "chapters": {
+    "qm_v030_13_rftools": {
+      "summary": {
+        "uk_ua": "Каркас і Crafter Tier 1 підтримують перший автокрафт на етапі точного механізму. Будівельник, розширені мережі та виміри мають власні пізніші гілки.",
+        "en_us": "The frame and Crafter Tier 1 support the first autocrafting setup at the Precision Mechanism stage. The Builder, expanded networks and dimensions have their own later branches."
+      },
+      "quests": {
+        "51301199219AE3FE": {
+          "dependencies": [
+            "514D010000000002",
+            "5130115E1ED084F6",
+            "5130119AD1F9E96E",
+            "51301166893DC2DA"
+          ],
+          "stage": 2,
+          "title": {
+            "uk_ua": "Crafter T1: місток до автокрафту",
+            "en_us": "Crafter T1: Autocrafting Bridge"
+          },
+          "description": {
+            "uk_ua": [
+              "Після точного механізму виготов каркас RFTools і Crafter Tier 1. Вимірна матриця для цього рецепта не потрібна: цей крафтер є компонентом першого Molecular Assembler у гілці AE2.",
+              "Рецепт збірки поєднує каркас, керувальний вузол, точний механізм, Auto Workbench із BuildCraft і базовий конденсатор Ender IO. Спочатку зібрай ці вузли в їхніх главах, потім звір розкладку Crafter T1 у JEI.",
+              "Потримай готовий крафтер в інвентарі, щоб зарахувати предметну задачу. Для власної лінії RFTools подай FE, задай рецепт, залиш місце для результату й перевір один цикл. Для першого автокрафту AE2 використай його у рецепті Molecular Assembler; крафтери T2/T3 і розширення мережі можна освоювати пізніше."
+            ],
+            "en_us": [
+              "After Precision Mechanism, craft the RFTools frame and Crafter Tier 1. Dimensional Matrix is not required by this recipe: this crafter is an ingredient of the first Molecular Assembler in the AE2 branch.",
+              "The pack recipe combines the frame, Control Assembly, Precision Mechanism, a BuildCraft Auto Workbench and an Ender IO Basic Capacitor. Prepare those components in their chapters, then check the Crafter T1 layout in JEI.",
+              "Hold the completed crafter to satisfy the inventory task. For an RFTools production line, supply FE, configure a recipe, leave output space and verify one cycle. For the first AE2 autocrafting setup, use it in the Molecular Assembler recipe; T2/T3 crafters and larger networks can follow later."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "evidence": [
+    {
+      "source": "overrides/kubejs/server_scripts/qm_expert_v042.js :: kubejs:expert_v042/rftoolsutility/crafter1",
+      "notes": "The actual shaped recipe consumes Precision Mechanism and Control Assembly, Machine Frame, BuildCraft Auto Workbench and Basic Capacitor. It does not consume Dimensional Matrix."
+    },
+    {
+      "source": "overrides/kubejs/server_scripts/qm_expert_progression.js :: kubejs:expert/rftoolsbase/machine_frame",
+      "notes": "The existing Machine Frame recipe uses Precision Mechanism; its quest already belongs to stage 2. No recipe or task objective is changed."
+    }
+  ],
+  "routes": [
+    {
+      "key": "rftools_early_crafter",
+      "title": {
+        "uk_ua": "Каркас і перший крафтер RFTools",
+        "en_us": "RFTools Frame and First Crafter"
+      },
+      "quests": [
+        "5130119AD1F9E96E",
+        "51301199219AE3FE"
+      ]
+    }
+  ]
+}

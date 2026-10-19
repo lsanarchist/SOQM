@@ -140,10 +140,11 @@ def archive_entries():
         if path.is_file():
             entries['overrides/' + path.relative_to(PAYLOAD).as_posix()] = path.read_bytes()
     docs = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'docs').glob('*.md'))]
+    campaign_maps = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'assets').glob('campaign-*.svg'))]
     for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md', 'MODLIST.md', 'CHANGELOG.md',
-                 'assets/banner.svg', 'assets/campaign-route.svg', 'assets/campaign-ae2.svg',
+                 'assets/banner.svg', *campaign_maps,
                  'downloads/README.md', 'reports/README.md', 'reports/verification-0.4.7.md',
-                 'reports/verification-0.4.8.md', 'reports/verification-performance.md',
+                 'reports/verification-0.4.8.md', 'reports/verification-0.4.9.md', 'reports/verification-performance.md',
                  'reports/verification-pr5.md', *docs]:
         if (ROOT / name).is_file():
             require(not (ROOT / name).is_symlink(), 'Package documentation symlink rejected')

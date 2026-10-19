@@ -1,15 +1,15 @@
 # SOQM installation packages
 
-## Current: 0.4.8 — CI candidate and local build
+## Current: 0.4.9 — CI candidate and local build
 
 Each successful **Validate and package** Actions run uploads an installation
 candidate named `SOQM-candidate-<commit>`, containing the ZIP and `SHA256SUMS`.
 Choose the intended PR/commit, extract GitHub's outer artifact archive, then
-import the inner `SOQM-0.4.8-curseforge.zip`. Retention is 14 days. A candidate
+import the inner `SOQM-0.4.9-curseforge.zip`. Retention is 14 days. A candidate
 is tied to its tested source revision; release publication remains separate.
 
 The current installation ZIP is generated locally as
-`dist/SOQM-0.4.8-curseforge.zip`. From the repository root:
+`dist/SOQM-0.4.9-curseforge.zip`. From the repository root:
 
 ```sh
 ./scripts/check
@@ -18,7 +18,7 @@ python3 scripts/soqm.py build
 ```
 
 The build writes the archive and checksum under `dist/`. These outputs are not
-committed. **No separately published 0.4.8 download asset is claimed.**
+committed. **No separately published 0.4.9 download asset is claimed.**
 Import the generated ZIP in a CurseForge-manifest-compatible launcher, or follow
 the manual MultiMC guidance. Minecraft Java Edition and Java 21 are required.
 GitHub's automatic source-code ZIP is not an installation package.
@@ -33,5 +33,5 @@ GitHub's automatic source-code ZIP is not an installation package.
 
 These immutable links point to commit
 [`6c4c7c4`](https://github.com/lsanarchist/SOQM/commit/6c4c7c43543a43ca772c5cd2af3e6f2ba10de833).
-That archive uses the earlier 0.4.4 baseline and is **not SOQM 0.4.8**.
+That archive uses the earlier 0.4.4 baseline and is **not SOQM 0.4.9**.
 Its checks and published bytes remain historical evidence.

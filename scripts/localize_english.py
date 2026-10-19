@@ -15,6 +15,7 @@ import re
 import zipfile
 from pathlib import Path
 
+import campaign_branches
 import campaign_layout
 import campaign_rewards
 
@@ -386,6 +387,7 @@ def generate() -> tuple[str, dict]:
     if set(route) & set(tutorials):
         raise ValueError("Main route and mod tutorials must have distinct owners")
     tutorials.update(route)
+    branch_patches = campaign_branches.quest_patches()
     layout = campaign_layout.blueprint()
     gate_titles = dict(zip(campaign_layout.GATES, (
         "Industrial Chassis", "Precision Mechanism", "Dimensional Matrix",
@@ -404,6 +406,15 @@ def generate() -> tuple[str, dict]:
             campaign_layout.LEGEND["en_us"],
             "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions.",
         ]
+        if layout[path.stem].get("branch_summary"):
+            result[prefix + ".chapter_subtitle"].insert(0, layout[path.stem]["branch_summary"]["en_us"])
+        if layout[path.stem].get("logical_flow"):
+            result[prefix + ".chapter_subtitle"] = [
+                layout[path.stem]["branch_summary"]["en_us"],
+                f"{len(chapter['quests'])} quests · {len(layout[path.stem]['sections'])} sequential production sections.",
+                campaign_layout.FLOW_LEGEND["en_us"],
+                "Open a quest to inspect all prerequisites, including links to other chapters. Item tasks check inventory; the description explains assembly and a test run.",
+            ]
         counts["chapters"] += 1
         quest_titles = {}
         for quest in chapter["quests"]:
@@ -427,6 +438,13 @@ def generate() -> tuple[str, dict]:
                         raise ValueError(f"Tutorial task belongs to another quest: {qid}/{task_id}")
                     result[f"task.{task_id}.title"] = task_title
                 counts["authored_tutorials"] += 1
+            patch = branch_patches.get(qid, {})
+            if "title" in patch:
+                title = patch["title"]["en_us"]
+            if "description" in patch:
+                descriptions = list(patch["description"]["en_us"])
+                if qid not in tutorials:
+                    counts["authored_tutorials"] += 1
             title = gate_titles.get(qid, title)
             if qid == "514D010000000001":
                 title = "Start the Campaign"
@@ -445,13 +463,13 @@ def generate() -> tuple[str, dict]:
                     "Book controls: right-click the Quest Book, or bind Open Quests under Controls → FTB Quests. Hover an item and press R for recipes or U for uses. JEI in the installed pack contains the current recipes.",
                     "Every member claims each quest reward personally once. An ordinary pack draws 2–4 prizes; the draw count and rare-prize weights improve as your team manufactures the six material milestones. Expensive items enter their pools only after actual production of that same item. Picking up a gift or a reward is not manufacturing evidence.",
                     "Use /soqm rewards to see your reward level, and /soqm rewards pool <theme> for eligible prizes, current per-draw chances and the conditions on locked items. Selected milestones give each member one Mayhem Cube; open it in a separate test area away from the base.",
-                    "When upgrading from shared rewards, every member receives one new personal claim for previously completed quests. Existing personal claims and the introductory book stay claimed. Production evidence starts with this update; in an existing world, manufacture one new sample of the item you want to unlock. After changing teams, pick up and place your production machines again so their next completed recipes count for the new team.",
+                    "Personal rewards and production evidence have applied since 0.4.8. The quest-branch update in 0.4.9 preserves existing claims and unlocked production rewards. Only an upgrade from the old shared rewards gives every member one new personal claim; existing personal claims and the introductory book stay claimed. For items manufactured before the production ledger existed, make one new sample. After changing teams, pick up and place your production machines again so their next completed recipes count for the new team.",
                 ]
             result[f"quest.{qid}.quest_desc"] = descriptions
             counts["quests"] += 1
         # Stable caption IDs bind to specific quests; moving a card cannot
         # accidentally borrow the neighbouring quest's English title.
-        result.update(campaign_layout.canvas_locale(chapter, "en_us", quest_titles, chapter_title))
+        result.update(campaign_layout.canvas_locale(chapter, "en_us", quest_titles, chapter_title, layout[path.stem]))
         counts["named_sections"] += len(layout[path.stem]["sections"])
     result.update(campaign_rewards.locale_entries("en_us"))
     expected = set(uk)

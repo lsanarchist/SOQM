@@ -6,7 +6,7 @@ import appeng.api.stacks.AEItemKey;
 import appeng.api.storage.MEStorage;
 import appeng.api.util.AEColor;
 import appeng.blockentity.networking.CableBusBlockEntity;
-import appeng.blockentity.storage.DriveBlockEntity;
+import appeng.blockentity.storage.MEChestBlockEntity;
 import appeng.core.definitions.AEParts;
 import appeng.helpers.InventoryAction;
 import appeng.menu.me.items.CraftingTermMenu;
@@ -73,6 +73,8 @@ public final class SoqmRuntimeProbe {
     private SNBTCompoundTag upgradeState;
     private final List<Long> claimedRewardIds = new ArrayList<>();
     private final List<Long> legacySharedRewardIds = new ArrayList<>();
+    private final List<Long> completedBranchQuestIds = List.of(
+            0x5140118233B3CC83L, 0x51301145AC657CE8L, 0x513011AAD4652E6FL);
     private TeamData meTaskTeam;
 
     public SoqmRuntimeProbe() { NeoForge.EVENT_BUS.addListener(this::tick); }
@@ -169,12 +171,17 @@ public final class SoqmRuntimeProbe {
         List<Task> progress = new ArrayList<>();
         List<Reward> claimed = new ArrayList<>();
         oldFile.forAllQuests(quest -> {
-            if (progress.size() < 40 || quest.id == 0x513011AAD4652E6FL) {
+            if (progress.size() < 40 || completedBranchQuestIds.contains(quest.id)) {
                 for (Task task : quest.getTasksAsList()) {
-                    long value = task.getMaxProgress() > 1 ? task.getMaxProgress() - 1 : 1;
+                    long value = completedBranchQuestIds.contains(quest.id) ? task.getMaxProgress()
+                            : task.getMaxProgress() > 1 ? task.getMaxProgress() - 1 : 1;
                     before.setProgress(task, value);
                     progress.add(task);
                 }
+            }
+            if (completedBranchQuestIds.contains(quest.id)) {
+                before.setStarted(quest.id, new Date(900_000L));
+                before.setCompleted(quest.id, new Date(900_001L));
             }
             for (Reward reward : quest.getRewards()) {
                 check(before.markRewardAsClaimed(PLAYER, reward, 1_000_000L), "First fixture claim");
@@ -193,6 +200,10 @@ public final class SoqmRuntimeProbe {
             if (before.getProgress(oldTask) < oldTask.getMaxProgress()) partial++;
         }
         check(saved.equals(after.serializeNBT()), "Loading personal reward definitions preserves all legacy claim keys");
+        for (long id : completedBranchQuestIds) {
+            check(current.getQuest(id) != null && after.isCompleted(current.getQuest(id)),
+                    "Completed production branch quests survive changed dependencies by persistent ID");
+        }
         int sharedMigrations = 0;
         int personalClaims = 0;
         for (Reward oldReward : claimed) {
@@ -214,12 +225,14 @@ public final class SoqmRuntimeProbe {
             } else {
                 check(after.isRewardClaimed(PLAYER, reward)
                         && !after.markRewardAsClaimed(PLAYER, reward, 2_000_000L),
-                        "An existing personal book claim is retained without a new entitlement");
-                check(!after.isRewardClaimed(TEAMMATE, reward), "The other member keeps an independent personal book entitlement");
+                        "An existing personal claim is retained without a new entitlement");
+                check(!after.isRewardClaimed(TEAMMATE, reward), "The other member keeps an independent personal entitlement");
                 personalClaims++;
             }
         }
-        check(sharedMigrations == 1625 && personalClaims == 1, "Exactly the authorized shared-to-personal migration was exercised");
+        check((sharedMigrations == 1625 && personalClaims == 1)
+                        || (sharedMigrations == 0 && personalClaims == 1626),
+                "The baseline exercises either the shared upgrade or already personal campaign claims");
         check(partial > 0, "Nonempty partial task progress was exercised");
         upgradeState = after.serializeNBT();
         SNBT.tryWrite(Path.of("soqm_probe_before.snbt").toAbsolutePath(), upgradeState);
@@ -228,7 +241,8 @@ public final class SoqmRuntimeProbe {
         results.put("migrated_personal_duplicate_claims_rejected_for_two_members", sharedMigrations * 2);
         results.put("task_progress_preserved", progress.size());
         results.put("partial_tasks_preserved", partial);
-        results.put("existing_personal_book_claims_preserved", personalClaims);
+        results.put("existing_personal_claims_preserved", personalClaims);
+        results.put("completed_branch_quests_preserved", completedBranchQuestIds.size());
     }
 
     private void testReloadPersistence(MinecraftServer server) throws Exception {
@@ -255,6 +269,10 @@ public final class SoqmRuntimeProbe {
         TeamData restoredTeam = new TeamData(TEAM, ServerQuestFile.INSTANCE);
         restoredTeam.deserializeNBT(saved);
         check(upgradeState.equals(restoredTeam.serializeNBT()), "Nonempty progress survives disk and data reload");
+        for (long id : completedBranchQuestIds) {
+            check(restoredTeam.isCompleted(ServerQuestFile.INSTANCE.getQuest(id)),
+                    "Completed production branch quests remain complete after disk and data reload");
+        }
         for (long id : claimedRewardIds) {
             Reward reward = ServerQuestFile.INSTANCE.getReward(id);
             check(reward != null && restoredTeam.isRewardClaimed(PLAYER, reward)
@@ -268,6 +286,7 @@ public final class SoqmRuntimeProbe {
         }
         results.put("me_advancement_reload_and_disk_persistence", true);
         results.put("nonempty_team_state_reload_and_disk_persistence", true);
+        results.put("completed_branch_quests_reload_and_disk_persistence", true);
     }
 
     private void prepareWorkshop(MinecraftServer server) {
@@ -299,10 +318,9 @@ public final class SoqmRuntimeProbe {
         results.put("me_other_menu_rejected", true);
 
         place(level, origin, "ae2:cable_bus");
-        place(level, origin.east(), "ae2:drive");
-        DriveBlockEntity drive = (DriveBlockEntity) level.getBlockEntity(origin.east());
-        drive.getInternalInventory().setItemDirect(0,
-                new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("ae2:item_storage_cell_1k"))));
+        place(level, origin.east(), "ae2:chest");
+        MEChestBlockEntity chest = (MEChestBlockEntity) level.getBlockEntity(origin.east());
+        chest.setCell(new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("ae2:item_storage_cell_1k"))));
         CableBusBlockEntity cable = (CableBusBlockEntity) level.getBlockEntity(origin);
         cable.addPart(AEParts.GLASS_CABLE.item(AEColor.TRANSPARENT), null, player);
         terminal = cable.addPart(AEParts.CRAFTING_TERMINAL.get(), Direction.NORTH, player);

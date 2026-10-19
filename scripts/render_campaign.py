@@ -21,12 +21,22 @@ import math
 from pathlib import Path
 import re
 
+import campaign_layout
+
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
 BLUEPRINT = ROOT / "metadata/campaign_layout.json"
 OUTPUTS = (
     ("qm_v030_27_convergence", None, "campaign-route.svg"),
-    ("qm_v030_12_ae2", 6, "campaign-ae2.svg"),
+    ("qm_v030_12_ae2", None, "campaign-ae2.svg"),
+    ("qm_v040_29_exdeorum", None, "campaign-ex-deorum.svg"),
+    ("qm_v040_30_exmachinis", None, "campaign-ex-machinis.svg"),
+    ("qm_02_mek", None, "campaign-mekanism.svg"),
+    ("qm_03_nuclear", None, "campaign-nuclear.svg"),
+    ("qm_v030_09_enderio", None, "campaign-ender-io.svg"),
+    ("qm_v030_10_industrial", None, "campaign-industrial.svg"),
+    ("qm_v030_14_reactors", None, "campaign-reactors.svg"),
+    ("qm_v040_31_mobgrinding", None, "campaign-mob-grinding.svg"),
 )
 SCALE = 44.0
 MARGIN = 34.0
@@ -274,7 +284,7 @@ def expected_files() -> dict[str, str]:
     by_filename = {chapter["filename"]: chapter for chapter in chapters}
     all_quests = {quest["id"]: quest for chapter in chapters for quest in chapter["quests"]}
     locale = read(QUESTS / "lang/uk_ua.snbt")
-    specs = read(BLUEPRINT)["chapters"]
+    specs = campaign_layout.blueprint()
     return {filename: build_svg(by_filename[chapter], locale, specs[chapter], all_quests, limit)
             for chapter, limit, filename in OUTPUTS}
 

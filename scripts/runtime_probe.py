@@ -5,7 +5,7 @@ This optional integration gate needs the Java 21 JDK, the verified dependency
 cache and a NeoForge installation produced by smoke_server.py. It compiles a
 test-only mod and runs it in a fresh localhost world; the test JAR never enters
 the pack. --baseline-ref identifies the version whose nonempty quest progress
-and claim history must survive the authorized shared-to-personal upgrade.
+and claim history must survive the upgrade, including already personal claims.
 No real player data is read.
 """
 from __future__ import annotations

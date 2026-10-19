@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "513011F0C626AD17",
-      "x": -10.95,
+      "x": -9.2,
       "y": 1.85,
       "icon": {
         "id": "bigreactors:wrench",
@@ -28,7 +28,7 @@
         "stage_2",
         "item_bigreactors_wrench",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -36,7 +36,7 @@
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -64,13 +64,13 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011BFCD6008D7",
-      "x": -7.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "bigreactors:graphite_ingot",
@@ -119,11 +119,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110704EB117A",
-      "x": -4.95,
+      "x": 9.2,
       "y": 1.85,
       "icon": {
         "id": "bigreactors:yellorium_ingot",
@@ -134,7 +134,7 @@
         "stage_2",
         "item_bigreactors_yellorium_ingot",
         "qm_v040",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -142,7 +142,7 @@
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -170,14 +170,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5130114528E50D7E",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 6.67,
       "icon": {
         "id": "bigreactors:basic_reactorcasing",
         "count": 1
@@ -190,10 +190,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130115E1ED084F6",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "513011BFCD6008D7"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -227,12 +227,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011862E2A45CA",
-      "x": 7.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 10.17,
       "icon": {
         "id": "bigreactors:basic_reactorfuelrod",
         "count": 1
@@ -245,10 +245,10 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130115E1ED084F6",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "5130114528E50D7E"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -282,12 +282,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130118ED1242B42",
-      "x": 4.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 13.67,
       "icon": {
         "id": "bigreactors:basic_reactorcontrolrod",
         "count": 1
@@ -300,8 +300,7 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130114528E50D7E"
+        "513011862E2A45CA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -335,12 +334,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301145D1657839",
-      "x": 10.95,
-      "y": 1.85,
+      "x": 4.6,
+      "y": 10.17,
       "icon": {
         "id": "bigreactors:basic_reactorsolidaccessport",
         "count": 1
@@ -353,7 +352,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301176F3997CB9",
         "5130114528E50D7E"
       ],
@@ -389,12 +387,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130114F4058570C",
-      "x": 1.95,
-      "y": 4.65,
+      "x": -4.6,
+      "y": 20.67,
       "icon": {
         "id": "bigreactors:basic_reactorpowertapfe_active",
         "count": 1
@@ -404,15 +402,14 @@
         "item_bigreactors_basic_reactorpowertapfe_active",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130114528E50D7E"
+        "513011AB19DDDE4C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -440,14 +437,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301145F95C79CF",
-      "x": 4.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 20.67,
       "icon": {
         "id": "bigreactors:basic_reactorpowertapfe_passive",
         "count": 1
@@ -457,15 +454,14 @@
         "item_bigreactors_basic_reactorpowertapfe_passive",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130114528E50D7E"
+        "513011AB19DDDE4C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -493,14 +489,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011AB19DDDE4C",
-      "x": 7.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 17.17,
       "icon": {
         "id": "bigreactors:basic_reactorcontroller",
         "count": 1
@@ -513,9 +509,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130114528E50D7E"
+        "5130118ED1242B42",
+        "51301145D1657839"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -549,12 +545,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116F060F9DEC",
-      "x": -10.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 25.49,
       "icon": {
         "id": "bigreactors:reinforced_reactorcasing",
         "count": 1
@@ -567,9 +563,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "513011AB19DDDE4C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -603,12 +599,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301107E386EFB8",
-      "x": -4.95,
-      "y": 9.47,
+      "x": -4.6,
+      "y": 28.99,
       "icon": {
         "id": "bigreactors:reinforced_reactorfuelrod",
         "count": 1
@@ -621,9 +617,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011AA869D0649",
-        "5130113E390D02AA"
+        "5130113E390D02AA",
+        "5130116F060F9DEC"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -657,12 +653,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FE729B76A7",
-      "x": -7.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 32.49,
       "icon": {
         "id": "bigreactors:reinforced_reactorcontrolrod",
         "count": 1
@@ -675,8 +671,7 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130116F060F9DEC"
+        "51301107E386EFB8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -710,12 +705,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130119494D319D8",
-      "x": -1.95,
-      "y": 9.47,
+      "x": -9.2,
+      "y": 39.49,
       "icon": {
         "id": "bigreactors:reinforced_reactorfluidport_forge_active",
         "count": 1
@@ -725,16 +720,15 @@
         "item_bigreactors_reinforced_reactorfluidport_forge_active",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A41D3B7A48",
-        "5130116F060F9DEC"
+        "513011FE8D522CBB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -762,14 +756,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011E66B511C8A",
-      "x": -10.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 39.49,
       "icon": {
         "id": "bigreactors:reinforced_reactorfluidport_forge_passive",
         "count": 1
@@ -779,16 +773,15 @@
         "item_bigreactors_reinforced_reactorfluidport_forge_passive",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A41D3B7A48",
-        "5130116F060F9DEC"
+        "513011FE8D522CBB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -816,14 +809,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301107B8137F21",
-      "x": -7.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 28.99,
       "icon": {
         "id": "bigreactors:reinforced_reactorsolidaccessport",
         "count": 1
@@ -836,7 +829,6 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301176F3997CB9",
         "5130116F060F9DEC"
       ],
@@ -872,12 +864,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110C4EA8DEFA",
-      "x": -4.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 39.49,
       "icon": {
         "id": "bigreactors:reinforced_reactorpowertapfe_active",
         "count": 1
@@ -887,15 +879,14 @@
         "item_bigreactors_reinforced_reactorpowertapfe_active",
         "qm_v040",
         "stage_4",
-        "soqm_role_reference"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130116F060F9DEC"
+        "513011FE8D522CBB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -923,28 +914,28 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301193487DECA3",
-      "x": 1.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 44.31,
       "icon": {
         "id": "bigreactors:reinforced_turbinecasing",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinecasing",
         "qm_v040",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011AB19DDDE4C"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -978,27 +969,27 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301182A048FC8B",
-      "x": 4.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 54.81,
       "icon": {
         "id": "bigreactors:reinforced_turbinecontroller",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinecontroller",
         "qm_v040",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "51301193487DECA3",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130112AA6480CE8",
+        "513011EA1BEE4329"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1032,26 +1023,26 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130117DD8F75308",
-      "x": 7.95,
-      "y": 9.47,
+      "x": 0.0,
+      "y": 47.81,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorshaft",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinerotorshaft",
         "qm_v040",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301193487DECA3"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1085,26 +1076,26 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130112AA6480CE8",
-      "x": 10.95,
-      "y": 9.47,
+      "x": -4.6,
+      "y": 51.31,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorblade",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinerotorblade",
         "qm_v040",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130117DD8F75308"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1138,26 +1129,26 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011EA1BEE4329",
-      "x": 1.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 51.31,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorbearing",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinerotorbearing",
         "qm_v040",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130117DD8F75308"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1191,31 +1182,30 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116A01924E20",
-      "x": 4.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 58.31,
       "icon": {
         "id": "bigreactors:reinforced_turbinefluidport_forge_active",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinefluidport_forge_active",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_4",
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011A41D3B7A48",
-        "51301193487DECA3"
+        "51301182A048FC8B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1243,32 +1233,31 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "5130110D2A82691E",
-      "x": 7.95,
-      "y": 12.27,
+      "x": 4.6,
+      "y": 58.31,
       "icon": {
         "id": "bigreactors:reinforced_turbinepowertapfe_active",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_bigreactors_reinforced_turbinepowertapfe_active",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_4",
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "51301193487DECA3"
+        "51301182A048FC8B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
@@ -1296,14 +1285,14 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FE8D522CBB",
-      "x": -1.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 35.99,
       "icon": {
         "id": "bigreactors:reinforced_reactorcontroller",
         "count": 1
@@ -1316,9 +1305,9 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130117F2402AE8A",
-        "5130116F060F9DEC"
+        "513011FE729B76A7",
+        "51301107B8137F21"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1352,7 +1341,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -1422,12 +1411,12 @@
     },
     {
       "id": "51410410000003EC",
-      "x": -6.45,
+      "x": 0.0,
       "y": 2.05,
-      "width": 12.0,
+      "width": 24.9,
       "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1454,9 +1443,9 @@
     },
     {
       "id": "51410410000003EE",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1470,12 +1459,12 @@
     },
     {
       "id": "51410410000003EF",
-      "x": -10.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1486,12 +1475,12 @@
     },
     {
       "id": "51410410000003F0",
-      "x": -7.95,
+      "x": 0.0,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1502,12 +1491,12 @@
     },
     {
       "id": "51410410000003F1",
-      "x": -4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1518,12 +1507,12 @@
     },
     {
       "id": "51410410000003F2",
-      "x": 6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 13.87,
+      "width": 24.9,
+      "height": 18.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1534,10 +1523,10 @@
     },
     {
       "id": "51410410000003F3",
-      "x": 0.505,
-      "y": 3.45,
+      "x": -12.395,
+      "y": 13.87,
       "width": 0.11,
-      "height": 6.9,
+      "height": 18.1,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -1550,9 +1539,9 @@
     },
     {
       "id": "51410410000003F4",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 5.28,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1566,12 +1555,12 @@
     },
     {
       "id": "51410410000003F5",
-      "x": 1.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 7.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1582,12 +1571,12 @@
     },
     {
       "id": "51410410000003F6",
-      "x": 4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 14.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1598,12 +1587,12 @@
     },
     {
       "id": "51410410000003F7",
-      "x": 7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 11.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1614,12 +1603,12 @@
     },
     {
       "id": "51410410000003F8",
-      "x": 10.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 11.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1630,12 +1619,12 @@
     },
     {
       "id": "51410410000003F9",
-      "x": 1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 21.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1646,12 +1635,12 @@
     },
     {
       "id": "51410410000003FA",
-      "x": 4.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 21.54,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1662,12 +1651,12 @@
     },
     {
       "id": "51410410000003FB",
-      "x": 7.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 18.09,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1678,12 +1667,12 @@
     },
     {
       "id": "51410410000003FC",
-      "x": -6.45,
-      "y": 11.07,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 32.69,
+      "width": 24.9,
+      "height": 18.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1695,9 +1684,9 @@
     {
       "id": "51410410000003FD",
       "x": -12.395,
-      "y": 11.07,
+      "y": 32.69,
       "width": 0.11,
-      "height": 6.9,
+      "height": 18.1,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -1710,9 +1699,9 @@
     },
     {
       "id": "51410410000003FE",
-      "x": -6.37,
-      "y": 8.08,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 24.1,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1726,12 +1715,12 @@
     },
     {
       "id": "51410410000003FF",
-      "x": -10.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 26.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1742,12 +1731,12 @@
     },
     {
       "id": "5141041000000400",
-      "x": -7.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 33.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1758,12 +1747,12 @@
     },
     {
       "id": "5141041000000401",
-      "x": -4.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 29.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1774,12 +1763,12 @@
     },
     {
       "id": "5141041000000402",
-      "x": -1.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 40.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1790,12 +1779,12 @@
     },
     {
       "id": "5141041000000403",
-      "x": -10.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 40.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1806,12 +1795,12 @@
     },
     {
       "id": "5141041000000404",
-      "x": -7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 29.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1822,12 +1811,12 @@
     },
     {
       "id": "5141041000000405",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 40.36,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1838,12 +1827,12 @@
     },
     {
       "id": "5141041000000406",
-      "x": -1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 36.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1854,12 +1843,12 @@
     },
     {
       "id": "5141041000000407",
-      "x": 6.45,
-      "y": 11.07,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 51.51,
+      "width": 24.9,
+      "height": 18.1,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1870,10 +1859,10 @@
     },
     {
       "id": "5141041000000408",
-      "x": 0.505,
-      "y": 11.07,
+      "x": -12.395,
+      "y": 51.51,
       "width": 0.11,
-      "height": 6.9,
+      "height": 18.1,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -1886,9 +1875,9 @@
     },
     {
       "id": "5141041000000409",
-      "x": 6.53,
-      "y": 8.08,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 42.92,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1902,12 +1891,12 @@
     },
     {
       "id": "514104100000040A",
-      "x": 1.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 45.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1918,12 +1907,12 @@
     },
     {
       "id": "514104100000040B",
-      "x": 4.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 55.73,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1934,12 +1923,12 @@
     },
     {
       "id": "514104100000040C",
-      "x": 7.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 48.73,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1950,12 +1939,12 @@
     },
     {
       "id": "514104100000040D",
-      "x": 10.95,
-      "y": 10.39,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 52.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1966,12 +1955,12 @@
     },
     {
       "id": "514104100000040E",
-      "x": 1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 52.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1982,12 +1971,12 @@
     },
     {
       "id": "514104100000040F",
-      "x": 4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 59.18,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1998,12 +1987,12 @@
     },
     {
       "id": "5141041000000410",
-      "x": 7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 59.18,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
