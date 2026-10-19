@@ -9,7 +9,7 @@ and missing notice; they do not invent an upstream copyright holder.
 
 | Module | Pinned production JAR | Original source baseline |
 | --- | --- | --- |
-| `cannibal` | `qm-cannibal-compat-0.4.0.jar` | 0.4.1 |
+| `cannibal` | `qm-cannibal-compat-0.4.1.jar` | 0.4.1, then local discovery fix |
 | `chancecubes` | `qm-chancecubes-compat-0.4.1.jar` | 0.4.1 |
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
@@ -22,13 +22,16 @@ and missing notice; they do not invent an upstream copyright holder.
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
-archive hashes and production-JAR hashes. The original eight binary pins remain
-unchanged. The chest module limits first-fill loot in exact target tables;
+archive hashes and production-JAR hashes. The Cannibal module has a local
+nonblocking discovery fix; the other recovered binary pins remain unchanged.
+See [Cannibal build and validation notes](cannibal/README.md). The chest module
+limits first-fill loot in exact target tables;
 existing player inventories and already generated loot are outside that policy.
 
 **Independent recompilation of all ten production JARs has not been
-reproduced.** Matching recovered source and binary provenance does not show that
-compiling this tree produces identical bytes. Historical build scripts can
+reproduced.** The Cannibal rebuild is documented separately. Matching recovered
+source and binary provenance for the other modules does not show that compiling
+this tree produces identical bytes. Historical build scripts can
 require workspace-specific compiler/API paths and server installations; client
 modules additionally need the correctly mapped Minecraft 1.21.1 client API.
 

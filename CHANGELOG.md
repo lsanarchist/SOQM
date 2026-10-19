@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Update `qm-cannibal-compat` to 0.4.1. Cannibal Villages discovery scans now
+  inspect only ready chunks instead of waiting for nearby generation on the
+  server thread. Existing discovery flags, titles, sounds, and chest protections
+  remain in place. This targets the repeated blocking path identified in two
+  player-provided spark profiles; it does not claim a measured speedup or fix
+  the separate Millénaire village-spawn waits.
 - Work around empty Ukrainian Apotheosis World Tier tooltips with the default
   font by shortening the two activation captions to fit their button. The
   resource and font bounds are verified; graphical client verification is pending.

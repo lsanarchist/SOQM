@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered source and resources for pinned baseline compatibility JARs; independent recompilation has not been reproduced.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions; the Cannibal 0.4.1 module has a documented native API rebuild, while recompilation of all other production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -12,17 +12,31 @@
   "modules": [
     {
       "module": "cannibal",
-      "production_jar": "qm-cannibal-compat-0.4.0.jar",
-      "production_jar_sha256": "c55f83803ec0543a1263b30f4cc4b13d43708de8d0735e00330b1bd74b5ce576",
+      "production_jar": "qm-cannibal-compat-0.4.1.jar",
+      "production_jar_sha256": "b9e26d11bcb42a7b99889a4c5bc11c60398e2989d2849def0e88f428099517e8",
       "source_origin": "authoring/cannibal_compat",
       "baseline_archive": "0.4.1",
       "files_sha256": {
         "LICENSE": "ab3a374cb064a886399d992b5dd639736fbcd5b148b8b1b470d2ada5f37972eb",
-        "resources/META-INF/neoforge.mods.toml": "3f3a47f164289f0a4efeefb94fc62a273f1feaebcbc29d8edee9e61be9349150",
-        "resources/qm_cannibal_compat.mixins.json": "0d59f0a237f052ab8f582e289d955e6a48e835033c757eaccc81396b42523cfe",
+        "README.md": "32b641c7d888b90e3f6ff08dd0035114f69757574c61681b3f17a531ab932899",
+        "build.py": "baa02348e6233fbb282d9cb3bd0889c278c26a7eaca8206b6cb34be30869677f",
+        "resources/META-INF/neoforge.mods.toml": "ca9f98eea1dd40b17ea000859fca6ed694e0560e97bb5148a2fad2c82716f29b",
+        "resources/qm_cannibal_compat.mixins.json": "2e16d69fc9e71f1a694b88759086ea06a0f8c556a35631973f41bc8cc0f922a9",
         "src/qm/compat/QmCannibalCompat.java": "92a1ecdb9f575b569a5f9d2de74ce9a5dc025ff165045c7c21b9da26c26443ae",
         "src/qm/compat/mixin/AutomaticChestConversionMixin.java": "4bb1f4e1aa1bfb012140ee56d0855ee2b7560c0f84c5f52b7341ad6fba076fa0",
-        "src/qm/compat/mixin/DuplicateChestConversionMixin.java": "7bbc1b596b20eaf65839cb68d4741fedc96c0392ccfcc1abc40f170b370fe502"
+        "src/qm/compat/mixin/DuplicateChestConversionMixin.java": "7bbc1b596b20eaf65839cb68d4741fedc96c0392ccfcc1abc40f170b370fe502",
+        "src/qm/compat/mixin/StructureDiscoveryMixin.java": "64ffc0686086fa6e1ad8720c80b76b683dfb72ea7891967e030cd00d48c3468d"
+      },
+      "local_revision": {
+        "version": "0.4.1",
+        "change": "Use ready chunks for structure-discovery notifications without blocking player ticks.",
+        "baseline_production_jar": "qm-cannibal-compat-0.4.0.jar",
+        "baseline_production_jar_sha256": "c55f83803ec0543a1263b30f4cc4b13d43708de8d0735e00330b1bd74b5ce576",
+        "compiler": "Eclipse Temurin javac 21.0.12.1 (JDK 21.0.12.1+1)",
+        "compiler_archive_sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0"
       }
     },
     {
