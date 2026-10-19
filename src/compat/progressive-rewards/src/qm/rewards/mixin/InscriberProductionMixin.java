@@ -31,8 +31,9 @@ public abstract class InscriberProductionMixin {
         InscriberRecipe recipe = machine.getTask();
         if (recipe == null) return;
         ItemStack output = recipe.getResultItem();
+        if (!ProductionEvidence.isTrackedOutput(output)) return;
         ItemStack middle = sideItemHandler.getStackInSlot(0);
-        if (output.isEmpty() || middle.isEmpty() || middle.is(output.getItem())
+        if (middle.isEmpty() || middle.is(output.getItem())
                 || topItemHandler.getStackInSlot(0).is(output.getItem())
                 || bottomItemHandler.getStackInSlot(0).is(output.getItem())) return;
         qm$pendingProduction = output.copy();

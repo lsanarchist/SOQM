@@ -5,13 +5,16 @@ import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.Set;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.item.Item;
 import net.neoforged.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,11 +22,14 @@ import org.slf4j.LoggerFactory;
 /** The native observer and KubeJS reward handler use the same authored file. */
 final class ProductionPolicy extends SimplePreparableReloadListener<Set<String>> {
     private static final Logger LOGGER = LoggerFactory.getLogger("qm_progressive_rewards");
-    private static volatile Set<String> allowedItems = Set.of();
+    private record Policy(Set<String> ids, Set<Item> items) {}
+    private static final Policy EMPTY = new Policy(Set.of(), Set.of());
+    private static volatile Policy policy = EMPTY;
 
-    static boolean allows(String itemId) { return allowedItems.contains(itemId); }
-    static Set<String> allowedItems() { return allowedItems; }
-    static void clear() { allowedItems = Set.of(); }
+    static boolean allows(String itemId) { return policy.ids().contains(itemId); }
+    static boolean allows(Item item) { return policy.items().contains(item); }
+    static Set<String> allowedItems() { return policy.ids(); }
+    static void clear() { policy = EMPTY; }
 
     static Set<String> read() {
         Path path = FMLPaths.GAMEDIR.get().resolve("kubejs/config/soqm_rewards.json");
@@ -66,14 +72,20 @@ final class ProductionPolicy extends SimplePreparableReloadListener<Set<String>>
         // Installation runs on the resource-apply/server thread after item
         // registration, including KubeJS startup items. Never read registries on
         // the background preparation thread.
+        Set<Item> items = Collections.newSetFromMap(new IdentityHashMap<>());
         for (String id : next) {
-            if (!BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(id))) {
+            ResourceLocation location = ResourceLocation.parse(id);
+            if (!BuiltInRegistries.ITEM.containsKey(location)) {
                 LOGGER.error("Production evidence is disabled: policy item does not exist: {}", id);
                 next = Set.of();
+                items.clear();
                 break;
             }
+            items.add(BuiltInRegistries.ITEM.get(location));
         }
-        allowedItems = next;
+        // Publish both views together. Filtering a finish needs no registry lookup
+        // or item-ID string allocation, and reload/stop cannot retain old entries.
+        policy = new Policy(Set.copyOf(next), Collections.unmodifiableSet(items));
         LOGGER.info("Production policy loaded: {} allowed item IDs", next.size());
     }
 

@@ -71,6 +71,11 @@ public final class ProductionEvidence {
     /** Read-only diagnostic used to validate the runtime policy against the registry. */
     public static Set<String> getTrackedItems() { return ProductionPolicy.allowedItems(); }
 
+    /** Cheap output filter; policy reload replaces its registered-item identity set. */
+    public static boolean isTrackedOutput(ItemStack output) {
+        return !output.isEmpty() && ProductionPolicy.allows(output.getItem());
+    }
+
     static TeamManager manager() {
         return FTBTeamsAPI.api().isManagerLoaded() ? FTBTeamsAPI.api().getManager() : null;
     }
@@ -152,9 +157,8 @@ public final class ProductionEvidence {
     }
 
     private static void record(MinecraftServer server, UUID playerId, UUID capturedTeam, ItemStack output) {
-        if (output.isEmpty()) return;
+        if (!isTrackedOutput(output)) return;
         String itemId = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
-        if (!ProductionPolicy.allows(itemId)) return;
         TeamManager manager = manager();
         if (manager == null || manager.getServer() != server) return;
         Team personal = manager.getPlayerTeamForPlayerID(playerId).orElse(null);
@@ -191,7 +195,7 @@ public final class ProductionEvidence {
     }
 
     static void playerCrafted(Player player, ItemStack output, Container input) {
-        if (!realSurvivalPlayer(player) || !isManufacture(output, input)) return;
+        if (!realSurvivalPlayer(player) || !isTrackedOutput(output) || !isManufacture(output, input)) return;
         ServerPlayer serverPlayer = (ServerPlayer) player;
         rememberActor(serverPlayer, true);
         TeamManager manager = manager();
@@ -230,8 +234,7 @@ public final class ProductionEvidence {
     }
 
     private static void machineFinished(BlockEntity machine, UUID nativeOwner, ItemStack output) {
-        if (!(machine.getLevel() instanceof ServerLevel level) || output.isEmpty()
-                || !ProductionPolicy.allows(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())) return;
+        if (!(machine.getLevel() instanceof ServerLevel level) || !isTrackedOutput(output)) return;
         CompoundTag persistent = machine.getPersistentData();
         CompoundTag binding = persistent.getCompound(PRODUCER);
         if (!persistent.contains(PRODUCER, Tag.TAG_COMPOUND)) {
@@ -258,6 +261,7 @@ public final class ProductionEvidence {
 
     /** Called only after accepted output AND native input consumption. */
     public static void ae2Finished(BlockEntity machine, IManagedGridNode node, ItemStack output) {
+        if (!isTrackedOutput(output)) return;
         UUID owner = node.getNode() == null ? null : node.getNode().getOwningPlayerProfileId();
         machineFinished(machine, owner, output);
     }
@@ -269,6 +273,7 @@ public final class ProductionEvidence {
         List<ItemStack> outputs = recipe.getOutputDefinition();
         if (outputs.size() != 1 || outputs.getFirst().isEmpty()) return;
         ItemStack output = outputs.getFirst();
+        if (!isTrackedOutput(output)) return;
         // Only unambiguous fixed outputs are supported. Reject any same-item
         // ingredient alternative, even if a dynamic recipe used another input.
         for (ItemStack input : recipe.getItemInput().getRepresentations()) {
@@ -281,7 +286,7 @@ public final class ProductionEvidence {
     public static void storageUpgraded(Player player, Level level, BlockPos pos, BlockState before) {
         if (!realSurvivalPlayer(player) || !(level instanceof ServerLevel serverLevel)) return;
         ItemStack output = new ItemStack(level.getBlockState(pos).getBlock().asItem());
-        if (output.isEmpty() || output.is(before.getBlock().asItem())) return;
+        if (!isTrackedOutput(output) || output.is(before.getBlock().asItem())) return;
         TeamManager manager = manager();
         if (manager == null) return;
         ServerPlayer serverPlayer = (ServerPlayer) player;

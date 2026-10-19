@@ -17,6 +17,7 @@ from pathlib import Path
 
 import campaign_branches
 import campaign_layout
+import campaign_lessons
 import campaign_rewards
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -471,6 +472,10 @@ def generate() -> tuple[str, dict]:
         # accidentally borrow the neighbouring quest's English title.
         result.update(campaign_layout.canvas_locale(chapter, "en_us", quest_titles, chapter_title, layout[path.stem]))
         counts["named_sections"] += len(layout[path.stem]["sections"])
+    lessons = campaign_lessons.load_lessons()
+    counts["expanded_lessons"] = campaign_lessons.apply_locale(result, "en_us", lessons)
+    already_authored = set(tutorials) | {ident for ident, patch in branch_patches.items() if "description" in patch}
+    counts["authored_tutorials"] += len(set(lessons) - already_authored)
     result.update(campaign_rewards.locale_entries("en_us"))
     expected = set(uk)
     missing = expected - set(result)

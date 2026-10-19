@@ -28,7 +28,9 @@ public abstract class AssemblerProductionMixin {
             target = "Lappeng/blockentity/crafting/IMolecularAssemblerSupportedPattern;assemble(Lnet/minecraft/world/item/crafting/CraftingInput;Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/item/ItemStack;"))
     private ItemStack qm$capture(IMolecularAssemblerSupportedPattern pattern, CraftingInput input, Level level) {
         ItemStack result = pattern.assemble(input, level);
-        if (ProductionEvidence.isManufacture(result, input)) qm$pendingProduction = result.copy();
+        if (ProductionEvidence.isTrackedOutput(result) && ProductionEvidence.isManufacture(result, input)) {
+            qm$pendingProduction = result.copy();
+        }
         return result;
     }
 

@@ -1,0 +1,1676 @@
+{
+  "schema": 1,
+  "lessons": {
+    "51301167DCA596B9": {
+      "description": {
+        "uk_ua": [
+          "Сталеві пластини потрібні для Industrial Chassis і будівельних деталей цеху. Виготовляй їх із готової сталі; звичайний залізний лист не замінює сталевий у цьому маршруті.",
+          "Для перших пластин підійде ручний рецепт із молотом. Коли попит стане постійним, перенеси цю операцію на Metal Press зі штампом для листів: так одна лінія постачатиме матеріал для наступних машин."
+        ],
+        "en_us": [
+          "Steel plates feed the Industrial Chassis recipe and workshop construction. Make them from finished steel; an iron plate does not replace a steel plate in this route.",
+          "Use the hammer recipe for the first batch. Once demand becomes steady, move the operation to a Metal Press with a plate mold so one line supplies subsequent machines."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "5130117FBB68BE2D": {
+      "description": {
+        "uk_ua": [
+          "Оброблене дерево — звичайні дошки, просочені крезотом із Coke Oven. Воно входить до Industrial Chassis та інженерних конструкцій, тому зберігай рідинний побічний продукт коксової печі.",
+          "Спершу забери крезот у придатну тару й виготов невелику партію дощок. Для постійного випуску підготуй відведення крезоту в резервуар: сама піч не виштовхує його в звичайну трубу."
+        ],
+        "en_us": [
+          "Treated wood is ordinary planks impregnated with creosote from the Coke Oven. It is used in the Industrial Chassis and engineering structures, so keep the oven’s liquid by-product.",
+          "First collect creosote in a suitable container and make a small batch of planks. For continuous production, arrange extraction into a tank: the oven does not automatically push creosote into an ordinary pipe."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011D0113472B0": {
+      "description": {
+        "uk_ua": [
+          "Залізний механічний компонент — деталь рецептів, а не окрема працююча машина. Він входить до Industrial Chassis та ранніх пристроїв Immersive Engineering.",
+          "Зроби запас під найближчий рецепт шасі й лише потім витрачай компоненти на додаткове обладнання. Сталевий компонент має інші застосування: дорожча назва не означає взаємозамінність у крафті."
+        ],
+        "en_us": [
+          "The Iron Mechanical Component is a crafting part, not a working machine. It is used in the Industrial Chassis and early Immersive Engineering devices.",
+          "Reserve the components needed for your next chassis before spending the rest on optional equipment. The steel component has different uses; a higher material tier does not make it interchangeable in recipes."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "51301157FF888779": {
+      "description": {
+        "uk_ua": [
+          "Coke Oven дає кокс для сталевого маршруту та крезот для обробленого дерева. Склади суцільний куб 3×3×3 із 27 Cokebrick і натисни молотом інженера на центральний блок бічної грані. Саме формування зараховує це завдання.",
+          "Для першого запуску поклади вугілля, а потім забери обидва продукти. Піч працює повільно й підтримує партії; перед масштабуванням організуй відведення крезоту, який вона не виштовхує самостійно."
+        ],
+        "en_us": [
+          "The Coke Oven supplies coke for steelmaking and creosote for treated wood. Build a solid 3×3×3 cube of 27 Cokebricks, then use the Engineer’s Hammer on the centre block of a side. Forming the multiblock completes this task.",
+          "For the first run, insert coal and collect both products. The oven is slow and supports batches; arrange creosote extraction before scaling up, because it does not push that fluid out by itself."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011AE9CF26AB0": {
+      "description": {
+        "uk_ua": [
+          "Початкова Blast Furnace перетворює залізо на сталь. Склади суцільний куб 3×3×3 із 27 Blast Brick і сформуй його молотом через центральний блок бічної грані; завдання перевіряє формування.",
+          "Для роботи потрібні залізо та сумісне високовуглецеве паливо, наприклад Coal Coke. Забирай і сталь, і шлак: заповнений вихід побічного продукту зупинить процес. Ця початкова піч обслуговується вручну; для автоматизації переходь до Improved Blast Furnace."
+        ],
+        "en_us": [
+          "The Crude Blast Furnace turns iron into steel. Build a solid 3×3×3 cube of 27 Blast Bricks and form it with the hammer on the centre block of a side; the task detects formation.",
+          "Operation needs iron and a supported high-carbon fuel such as Coal Coke. Remove both steel and slag: a full by-product slot stops the process. This early furnace is operated manually; use the Improved Blast Furnace for automated input and output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011518B793203": {
+      "description": {
+        "uk_ua": [
+          "Постав два з’єднувачі одного рівня й послідовно натисни на них відповідною котушкою дроту. Зарахування дає справжнє з’єднання, а не наявність котушки в інвентарі.",
+          "Для перевірки живлення постав Connector на виході джерела та на вході споживача. Relay лише з’єднує дроти між собою й не передає енергію в блок під ним. Залиш вільний шлях для проводу; перешкода розриває з’єднання."
+        ],
+        "en_us": [
+          "Place two connectors of the same voltage tier and use the matching wire coil on them in sequence. An actual connection earns the advancement; carrying the coil does not.",
+          "To test power, attach a Connector to the source output and another to the consumer input. A Relay only joins wires and does not transfer energy into its supporting block. Keep the wire path clear because an obstruction breaks the connection."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011FFA590DC5D": {
+      "description": {
+        "uk_ua": [
+          "Alloy Kiln відкриває раннє змішування металів, зокрема електруму й константану. Склади куб 2×2×2 із восьми Kiln Brick та сформуй його молотом інженера.",
+          "Завдання фіксує формування печі. Окремо перевір роботу: поклади обидва метали одного підтримуваного рецепта та паливо, дочекайся сплаву. Піч для сплавів не є доменною піччю й не замінює сталевий процес."
+        ],
+        "en_us": [
+          "The Alloy Kiln opens early metal mixing, including electrum and constantan. Build a 2×2×2 cube of eight Kiln Bricks and form it with the Engineer’s Hammer.",
+          "The task detects formation. Test operation separately by inserting both metals from one supported recipe and fuel, then collecting the alloy. This kiln is not a blast furnace and does not replace the steelmaking process."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011A899EC23A8": {
+      "description": {
+        "uk_ua": [
+          "Щипці інженера потрібні для дротяних деталей у рецептах та демонтажу прокладеної проводки. Вони дозволяють перебудувати мережу без руйнування машини під з’єднувачем.",
+          "ПКМ щипцями по з’єднувачу прибирає підключені до нього дроти. Перед цим простеж, які гілки через нього живляться: один вузол може обслуговувати кілька споживачів."
+        ],
+        "en_us": [
+          "Engineer’s Wire Cutters are used in wire-part recipes and to remove installed wiring. They let you rebuild the network without breaking the machine beneath a connector.",
+          "Right-clicking a connector with the cutters removes its connected wires. Check which branches depend on that connection first, because one junction can supply several consumers."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130112227C31308": {
+      "description": {
+        "uk_ua": [
+          "Kinetic Dynamo перетворює обертання Water Wheel або Windmill на електроенергію. Спочатку постав динамо, потім приєднай до його вала колесо чи вітряк.",
+          "Виведи енергію через сумісний Connector до акумулятора або машини й перевір приріст заряду. Саме динамо без джерела обертання нічого не генерує; довільний вал іншого мода також не є сумісним приводом."
+        ],
+        "en_us": [
+          "The Kinetic Dynamo converts a Water Wheel or Windmill’s rotation into electricity. Place the dynamo first, then attach the wheel or windmill to its shaft.",
+          "Connect its energy output to a capacitor or machine and check that charge increases. A dynamo without rotation generates nothing, and an arbitrary shaft from another mod is not a supported drive."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130114CEA71331A": {
+      "description": {
+        "uk_ua": [
+          "Water Wheel дає постійне обертання для Kinetic Dynamo. Встанови колесо на вал уже поставленого динамо й спрямовуй потік води навколо колеса в узгодженому напрямку.",
+          "Перевір вихід за зарядом акумулятора, а не тільки анімацією. На одному валу можна з’єднати до трьох коліс; друге колесо без належного потоку не замінює правильно облаштовану водяну трасу."
+        ],
+        "en_us": [
+          "A Water Wheel supplies steady rotation to a Kinetic Dynamo. Mount it on the shaft of an already placed dynamo and arrange flowing water around the wheel in a consistent direction.",
+          "Check output through capacitor charge rather than animation alone. Up to three wheels can share one shaft; an extra wheel without suitable water flow does not replace a properly arranged water route."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011647FD31AF9": {
+      "description": {
+        "uk_ua": [
+          "Windmill — джерело обертання для Kinetic Dynamo без витрат палива. Приєднай його до динамо й залиш вільний простір перед лопатями: закрита стіною установка втрачає продуктивність.",
+          "Вітрові вітрила встановлюються ПКМ по вітряку й поліпшують його роботу. Для цеху з нерівним споживанням додай акумулятор: генерація залежить від умов і не гарантує постійного живлення великої машини."
+        ],
+        "en_us": [
+          "A Windmill drives the Kinetic Dynamo without consuming fuel. Attach it to the dynamo and keep the space in front of its blades clear; a wall obstructing the airflow reduces output.",
+          "Apply Windmill Sails by right-clicking the windmill to improve it. Add a capacitor for an uneven workshop load: generation depends on conditions and does not guarantee continuous power for a large machine."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130116C6548DD6D": {
+      "description": {
+        "uk_ua": [
+          "LV Connector є входом або виходом низьковольтної дротової мережі. Постав його на енергетичну грань джерела чи машини та з’єднай мідною LV-котушкою з другим з’єднувачем.",
+          "Якщо машина не заряджається, перевір саме грань блока й відповідність рівня дроту. Relay зовні схожий, але не вводить енергію в машину; MV-дріт до LV Connector не під’єднається."
+        ],
+        "en_us": [
+          "An LV Connector is an input or output for a low-voltage wire network. Attach it to an energy-capable face of a source or machine and connect it to another connector using a copper LV coil.",
+          "If the machine does not charge, check the block face and wire tier. A similar-looking Relay cannot feed the machine, and MV wire cannot connect to an LV Connector."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011F3D9FACD30": {
+      "description": {
+        "uk_ua": [
+          "LV Relay потрібне для розгалужень і поворотів дроту між віддаленими машинами. Постав його на опорі та приєднай кілька сумісних LV-дротів.",
+          "На кінцях маршруту залиш Connector біля джерела й споживача: Relay тільки з’єднує проводи. Об’єднання багатьох споживачів не збільшує допустиме навантаження одного дроту; перевантажена лінія може перегоріти."
+        ],
+        "en_us": [
+          "An LV Relay creates branches and turns along wiring between distant machines. Mount it on a support and attach matching LV wires.",
+          "Keep Connectors at the source and consumer: a Relay only joins wires. Combining many consumers does not increase the current a single wire can carry; an overloaded line can burn out."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130113060E2375A": {
+      "description": {
+        "uk_ua": [
+          "LV Capacitor накопичує надлишок генерації та віддає його цеху під час пікового споживання. Молотом налаштуй грані: синя — вхід, помаранчева — вихід, без позначки — з’єднання вимкнене.",
+          "Подай енергію на синю грань, а машину підключи до помаранчевої. Спершу переконайся, що заряд росте без споживача, потім увімкни навантаження; акумулятор лише зберігає енергію, а не створює її."
+        ],
+        "en_us": [
+          "The LV Capacitor stores surplus generation and supplies it during workshop demand peaks. Configure faces with the hammer: blue is input, orange is output, and an unmarked face is disabled.",
+          "Feed the blue face and connect the machine to the orange face. First verify charging without the consumer, then enable the load; the capacitor stores energy but does not generate it."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "51301173D68FCBFF": {
+      "description": {
+        "uk_ua": [
+          "Metal Press автоматизує виготовлення листів, стрижнів та інших металевих деталей. Збери конструкцію за інженерною книгою й натисни молотом на поршень; це формування зараховує квест.",
+          "Для роботи встанови потрібний штамп ПКМ, подай енергію на верхній роз’єм і матеріал на вхідний конвеєр. Без штампа готовий мультиблок не оброблятиме злитки. Вихідний конвеєр має вести до місця з вільним простором."
+        ],
+        "en_us": [
+          "The Metal Press automates plates, rods and other metal parts. Build the structure shown in the Engineer’s Manual and use the hammer on its piston; formation completes the quest.",
+          "To operate it, right-click with the required mold, feed power through the top connector and send material onto the input conveyor. A formed press without a mold cannot process ingots. Give the output conveyor somewhere with free storage space to deliver them."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011EE444C38AF": {
+      "description": {
+        "uk_ua": [
+          "Crusher переводить придатну тверду сировину в подрібнені продукти. Сформуй мультиблок за інженерною книгою, підведи енергію й заздалегідь постав приймач біля виходу.",
+          "Квест перевіряє складання. Робочий тест — подати одну невелику партію через вхід і забрати основний та можливий побічний продукт. Не стрибай усередину приймального отвору й не подавай туди цінні речі без відповідного рецепта."
+        ],
+        "en_us": [
+          "The Crusher converts suitable solid ingredients into crushed products. Form the multiblock from the Engineer’s Manual, connect power and place an output receiver before feeding it.",
+          "The quest checks construction. Test operation by feeding one small batch through the input and collecting the main product and any by-product. Keep clear of the intake and do not send valuable items into it without a matching recipe."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011965BAF66F4": {
+      "description": {
+        "uk_ua": [
+          "Improved Blast Furnace переводить сталевий маршрут на автоматичну подачу й відведення. Збери варіант із Reinforced Blast Brick та верхньою лійкою за схемою книги; сформуй його молотом.",
+          "Залізо й кокс подавай згори. Сталь виходить спереду, шлак — ззаду: підготуй обидва приймачі. До бічних портів можна приєднати до двох Preheater, але кожному потрібне окреме електроживлення."
+        ],
+        "en_us": [
+          "The Improved Blast Furnace adds automated input and output to steelmaking. Build the reinforced-brick structure with its top hopper from the manual and form it with the hammer.",
+          "Feed iron and coke from above. Steel exits at the front and slag at the back, so provide both receivers. Up to two Preheaters attach to its side ports, but each needs an electrical supply."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011E25267FD65": {
+      "description": {
+        "uk_ua": [
+          "Штамп для листів задає Metal Press операцію пресування пластин. Це оснащення поршня, а не сировина, яку потрібно кидати на конвеєр.",
+          "Виготов штамп через відповідне інженерне креслення, потім установи ПКМ на сформований прес. Подай придатні злитки й живлення. Якщо потрібні стрижні або шестерні, заміни оснащення відповідним штампом."
+        ],
+        "en_us": [
+          "The plate mold selects the Metal Press’s plate-forming operation. It is piston tooling, not an ingredient to drop onto the conveyor.",
+          "Make it using the appropriate engineering blueprint, then right-click the formed press to install it. Supply matching ingots and power. Switch to the corresponding mold when you need rods or gears instead."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011060A137580": {
+      "description": {
+        "uk_ua": [
+          "Blast Furnace Preheater прискорює саме Improved Blast Furnace подачею нагрітого повітря. Розмісти його біля призначеного бічного порту; одна піч підтримує до двох підігрівачів.",
+          "Підведи енергію до кожного Preheater й порівняй роботу печі під навантаженням. Сам підігрівач сталь не виплавляє, кокс не замінює й до початкової Crude Blast Furnace не додає автоматизацію."
+        ],
+        "en_us": [
+          "A Blast Furnace Preheater accelerates the Improved Blast Furnace by supplying hot air. Place it at a designated side port; one furnace supports up to two preheaters.",
+          "Supply power to each Preheater and compare the furnace under load. The preheater does not smelt steel by itself, replace coke, or add automation to the Crude Blast Furnace."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130113462B5267C": {
+      "description": {
+        "uk_ua": [
+          "Конвеєр переносить предмети у світі без електроживлення. Молотом поверни його в потрібному напрямку та закінчи лінію біля інвентарю, який може прийняти вантаж.",
+          "Звичайна стрічка сама не витягує вміст скрині: подавай предмети лійкою, машиною або Extracting Conveyor. Якщо приймач заповнений, речі накопичуються зовні; перед довгою роботою перевір запас місця."
+        ],
+        "en_us": [
+          "A Conveyor Belt moves item entities without electrical power. Rotate it with the hammer and end the line at an inventory that can accept its cargo.",
+          "An ordinary belt does not extract items from a chest by itself: feed it with a hopper, machine or Extracting Conveyor. A full destination leaves items backed up outside, so check storage capacity before a long run."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "51301133BE177146": {
+      "description": {
+        "uk_ua": [
+          "Extracting Conveyor забирає предмети із сусіднього інвентарю та відправляє їх на стрічку. Постав його біля вихідної скрині; Shift+ПКМ молотом змінює сторону витягування.",
+          "Швидкість витягування налаштовується викруткою. Спершу відправ кілька предметів у порожній приймач, а потім запускай більший потік: швидше витягування не допоможе переповненому виходу."
+        ],
+        "en_us": [
+          "An Extracting Conveyor takes items from an adjacent inventory and sends them onto the belt. Place it beside the source chest; sneak-right-click with the hammer to change its input side.",
+          "Adjust extraction speed with the screwdriver. Send a few items into an empty receiver before increasing the flow: faster extraction cannot solve a full output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130110CAA0B1890": {
+      "description": {
+        "uk_ua": [
+          "Splitting Conveyor почергово спрямовує вантаж ліворуч і праворуч. Він підходить для розведення потоку на дві приймальні лінії без електроживлення.",
+          "Розділювач перекидає цілі предметні сутності, а не ділить кожен стек навпіл. Тому один стек із 64 предметів піде на одну сторону; для перевірки чергування подай кілька окремих порцій."
+        ],
+        "en_us": [
+          "A Splitting Conveyor alternates cargo between its left and right sides. It can distribute a stream across two receiving lines without electrical power.",
+          "It redirects whole item entities rather than splitting each stack in half. A single stack of 64 therefore goes to one side; feed several separate portions when testing the alternation."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "5130117F8A73721B": {
+      "description": {
+        "uk_ua": [
+          "Vertical Conveyor підіймає предмети прямо вгору, коли похила стрічка займає забагато місця. Підведи вхід до нижньої частини й підготуй інвентар або наступну стрічку нагорі.",
+          "Його «ковші» призначені для предметів, а не рідин. Перевір перехід на верхньому кінці невеликою партією, щоб вантаж потрапляв у приймач, а не накопичувався над шахтою підйомника."
+        ],
+        "en_us": [
+          "A Vertical Conveyor lifts items straight up where an inclined belt would take too much space. Feed its lower end and provide an inventory or onward belt at the top.",
+          "Its buckets carry items, not fluids. Test the top transition with a small batch so cargo reaches the receiver instead of collecting above the lift shaft."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011A784AC24C0": {
+      "description": {
+        "uk_ua": [
+          "Redstone Controlled Conveyor дозволяє зупинити подачу на ділянці стрічки. У цій версії без сигналу він рухається, а сигнал редстоуну його вимикає.",
+          "Постав керовану секцію перед вузлом, куди потрібно дозувати вантаж, і перевір обидва стани важелем. Ця стрічка не змінює полярність викруткою: не плутай її налаштування з редстоун-портами мультиблоків."
+        ],
+        "en_us": [
+          "A Redstone Controlled Conveyor lets you stop material on part of a belt. In this version it moves without a signal and stops when powered by redstone.",
+          "Place it before the station whose input you want to control and test both states with a lever. Its signal polarity cannot be inverted with the screwdriver; it differs from multiblock redstone ports."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011E6BD90E95B": {
+      "description": {
+        "uk_ua": [
+          "Fluid Pump активно витягує рідину з резервуара або придатного джерела у світі. Молотом на нижній частині познач вхід, вихід і закриті грані, потім з’єднай вихід із резервуаром.",
+          "За типовою логікою для роботи потрібний сигнал редстоуну; викрутка перемикає цю умову. Електроживлення вмикає швидше перекачування. Якщо крезот стоїть у коксовій печі, перевір активне витягування, а не лише наявність труб."
+        ],
+        "en_us": [
+          "The Fluid Pump actively extracts fluid from a tank or suitable world source. Configure input, output and blocked faces on its lower half with the hammer, then connect the output to a tank.",
+          "Its normal control requires a redstone signal; the screwdriver inverts that condition. Electrical power enables faster pumping. If creosote stays in a Coke Oven, check active extraction rather than just the presence of pipes."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130111A675CD3CC": {
+      "description": {
+        "uk_ua": [
+          "Assembler виконує до трьох заданих крафтів послідовно й може використати результат попереднього як вхід наступного. Сформуй конструкцію за книгою; це є умовою квесту.",
+          "Для першої перевірки задай один рецепт, поклади матеріали в нижні вхідні слоти й подай живлення згори. Клітинки схем зберігають рецепт, а не забезпечують інгредієнти. Рідинні рецепти потребують заповнених внутрішніх резервуарів."
+        ],
+        "en_us": [
+          "The Assembler performs up to three stored recipes in sequence and can use an earlier result in the next recipe. Form the structure from the manual to satisfy the quest.",
+          "For the first test, configure one recipe, put materials in the lower input slots and supply power from above. The recipe grids describe the craft rather than supply its ingredients. Fluid recipes also need filled internal tanks."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011D0F247BDDA": {
+      "description": {
+        "uk_ua": [
+          "Automated Workbench автоматизує вироби з інженерних креслень. Після формування постав потрібний Blueprint на стіл і вибери конкретний результат; звичайна довільна сітка 3×3 тут не замінює креслення.",
+          "Матеріали подаються через люки із синіми позначками, живлення — над ними, вироби виходять у кінці конвеєра. Завдання зараховує формування; після нього перевір хоча б один реальний випуск і приймач для готових деталей."
+        ],
+        "en_us": [
+          "The Automated Workbench automates products from engineering blueprints. After formation, place the required Blueprint on its table and select a result; an arbitrary 3×3 crafting grid does not replace the blueprint.",
+          "Feed materials through the blue-marked hatches and power above them; finished parts leave the conveyor end. The quest detects formation, so follow it with a real production cycle and an output receiver."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+      ]
+    },
+    "513011A503096C2F": {
+      "description": {
+        "uk_ua": [
+          "Light Engineering Block — будівельна деталь мультиблоків, а не готовий верстат. У SOQM для нього потрібні Industrial Chassis та Electromechanical Drive разом із механічними компонентами.",
+          "Спочатку вибери наступну конструкцію в інженерній книзі й порахуй її матеріали. Квест просить сам блок у інвентарі; ставити один Light Engineering Block і чекати виробництва не потрібно."
+        ],
+        "en_us": [
+          "A Light Engineering Block is a multiblock construction part, not a finished workstation. Its SOQM recipe uses an Industrial Chassis and Electromechanical Drive alongside mechanical components.",
+          "Choose your next structure in the Engineer’s Manual and count its materials first. This quest asks for the block in your inventory; placing a lone Light Engineering Block does not start production."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011C37B3FFEB2": {
+      "description": {
+        "uk_ua": [
+          "Heavy Engineering Block використовується у важчих інженерних конструкціях і спорядженні. Його рецепт спирається на сталевий механічний компонент, Industrial Chassis та Electromechanical Drive.",
+          "Збережи партію під обраний мультиблок, перш ніж витрачати блоки на бур чи інше спорядження. Умова цього квесту — отримати будівельний блок; повний верстат збирається й формується за окремою схемою."
+        ],
+        "en_us": [
+          "Heavy Engineering Blocks are used in larger engineering structures and equipment. Their recipe depends on the Steel Mechanical Component, Industrial Chassis and Electromechanical Drive.",
+          "Reserve the batch needed for your chosen multiblock before spending blocks on a drill or other equipment. This quest checks the construction block; a complete machine must be assembled and formed from its own diagram."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130114AA5F094DC": {
+      "description": {
+        "uk_ua": [
+          "Дерев’яна шестерня — початок драбини деталей BuildCraft. Наступні шестерні використовують попередній рівень, тому плануй матеріали для всього ланцюжка потрібної машини.",
+          "Зроби кілька базових шестерень, але не перетворюй їх усі на найдорожчі: прості механізми все ще потребують нижчих рівнів. Наявність шестерні завершує цей предметний квест; встановлювати її як блок не потрібно."
+        ],
+        "en_us": [
+          "The Wooden Gear begins BuildCraft’s component ladder. Higher gears consume the previous tier, so plan materials for the entire chain required by your next machine.",
+          "Make a few basic gears, but do not upgrade every one to the highest tier: simple devices still need lower tiers. Obtaining the gear completes this item quest; it is not a block to install."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "5130115FD8A3F016": {
+      "description": {
+        "uk_ua": [
+          "BuildCraft Wrench повертає підтримувані машини та налаштовує спрямовані труби. На двигуні ним вибирають, до якого споживача звернений рухомий вихід.",
+          "Після перестановки двигуна чи Iron Transport Pipe перевір їхній напрям повторно. Зовнішнє сусідство блоків ще не означає, що вихід енергії або предметів дивиться в потрібну сторону."
+        ],
+        "en_us": [
+          "The BuildCraft Wrench rotates supported machines and configures directional pipes. On an engine, it selects which consumer the moving output end faces.",
+          "Recheck direction after moving an engine or Iron Transport Pipe. Adjacent blocks are not necessarily connected through the intended energy or item output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "513011C8C810039F": {
+      "description": {
+        "uk_ua": [
+          "Redstone Engine підходить для малих споживачів, зокрема витягування через Wooden Pipe. Постав його рухомим кінцем до пристрою, за потреби поверни ключем і подай сигнал редстоуну.",
+          "Паливо йому не потрібне, але потужність дуже мала. Він не живить мережу Kinesis/Power Pipe як звичайний генератор, тому для кар’єру чи лазерів обирай сильніше джерело MJ."
+        ],
+        "en_us": [
+          "The Redstone Engine suits small consumers such as extraction through a Wooden Pipe. Place its moving end against the device, rotate it with the wrench if needed, and apply a redstone signal.",
+          "It needs no fuel but provides very little power. It cannot feed a Kinesis/Power Pipe network as a normal generator, so use a stronger MJ source for a quarry or lasers."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "513011999970C751": {
+      "description": {
+        "uk_ua": [
+          "Wooden Transport Pipe активно витягує предмети зі скрині або машини. Суцільною стороною приєднай її до джерела, а прозорими сторонами — до транспортної лінії; для витягування подай імпульси MJ, наприклад від Redstone Engine.",
+          "Спочатку перевір шлях до приймача кількома недорогими предметами. Якщо витягнутому вантажу нікуди йти, він може випасти на землю; постійне живлення екстрактора не замінює вільного виходу."
+        ],
+        "en_us": [
+          "A Wooden Transport Pipe actively extracts items from a chest or machine. Connect its solid side to the source and clear sides to the transport line; supply MJ pulses, for example from a Redstone Engine, to extract.",
+          "Test the route to a receiver with a few inexpensive items first. Extracted cargo can drop onto the ground when it has nowhere to go; continuous extractor power does not replace a free output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "513011DCEB266BE1": {
+      "description": {
+        "uk_ua": [
+          "Stone Transport Pipe переносить уже подані предмети. Для скрині-джерела потрібен окремий екстрактор, а машини з власним автовиходом можуть подавати вантаж безпосередньо в трубу.",
+          "Stone та Cobblestone Transport Pipe не з’єднуються одна з одною — це зручно для сусідніх незалежних ліній. На звичайному розгалуженні маршрут випадковий; для визначеного сортування додай Diamond Pipe."
+        ],
+        "en_us": [
+          "A Stone Transport Pipe carries items already inserted into it. A source chest needs an extractor, while machines with automatic output can insert directly.",
+          "Stone and Cobblestone Transport Pipes do not connect to one another, which helps keep adjacent lines separate. Ordinary junctions route items randomly; add a Diamond Pipe when you need defined sorting."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "513011B9C9D49A87": {
+      "description": {
+        "uk_ua": [
+          "Iron Transport Pipe спрямовує вантаж в один обраний вихід. Предмети входять із суцільних сторін і виходять через прозору; ключем натисни сторону, яку хочеш зробити виходом.",
+          "Це керування напрямком, а не фільтр предметів. Звичайний сигнал редстоуну трубу не повертає. Після зміни орієнтації перевір пробну партію, щоб не створити тупик у магістралі."
+        ],
+        "en_us": [
+          "An Iron Transport Pipe directs cargo toward one chosen output. Items enter through solid sides and leave through the clear side; use the wrench on the side you want as the output.",
+          "This controls direction rather than item type. An ordinary redstone signal does not rotate the pipe. Test a small batch after reconfiguration to avoid creating a dead end in the line."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "5130118B3D1599E2": {
+      "description": {
+        "uk_ua": [
+          "Diamond Transport Pipe сортує предмети за кольоровими сторонами. Відкрий інтерфейс і додай зразок у ряд того кольору, який веде до потрібного приймача.",
+          "Відфільтрований напрям має пріоритет, а порожній фільтр може працювати як загальний вихід для решти. Залишай такий вихід свідомо й перевір заповнення приймачів: труба не гарантує збереження вантажу, коли всі маршрути заблоковані."
+        ],
+        "en_us": [
+          "A Diamond Transport Pipe sorts items through its coloured sides. Open its interface and add a sample to the row matching the desired receiver’s side.",
+          "Filtered routes take priority, while an unfiltered side can accept other items. Leave that general outlet intentionally and check receiver capacity: the pipe does not guarantee cargo retention when every route is blocked."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "513011F8B585B2C8": {
+      "description": {
+        "uk_ua": [
+          "Clay Transport Pipe спочатку пробує вставити вантаж у сусідній інвентар і лише потім відправляє його далі трубами. Це зручно для точки поповнення перед продовженням магістралі.",
+          "Приєднай потрібну скриню збоку й залиш продуманий подальший маршрут. Пріоритет інвентарю не є фільтром: для вибору конкретних предметів налаштовуй сортування перед Clay Pipe."
+        ],
+        "en_us": [
+          "A Clay Transport Pipe first tries to insert cargo into adjacent inventories before sending it onward through pipes. It works well as a restocking point along a longer line.",
+          "Attach the intended chest and provide a deliberate onward route. Inventory priority is not an item filter; arrange sorting before the Clay Pipe when only particular items should arrive."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "5130116E0F6E97FC": {
+      "description": {
+        "uk_ua": [
+          "Wooden Fluid Pipe витягує рідину з резервуара при подачі MJ. Приєднай її суцільну сторону до джерела, потім підключи рідинні труби та порожній резервуар-приймач.",
+          "Це рідинна труба: предметні контейнери з водою не рухаються нею як стеки. Не об’єднуй незалежні лінії різних рідин в одну випадкову розвилку; почни перевірку з одного джерела й одного приймача."
+        ],
+        "en_us": [
+          "A Wooden Fluid Pipe extracts fluid from a tank when supplied with MJ. Attach its solid side to the source, then connect fluid pipes and an empty receiving tank.",
+          "This is fluid transport: water containers do not travel through it as item stacks. Keep different fluid lines separate instead of joining them at an accidental junction; start with one source and one receiver."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+      ]
+    },
+    "51301168BF025126": {
+      "description": {
+        "uk_ua": [
+          "BuildCraft Pump збирає рідину під собою та передає її сусіднім резервуарам або трубам. Постав насос над водоймою, підведи MJ й перевір, що приймач має місце.",
+          "У SOQM його рецепт уже потребує Precision Mechanism. Сигнал редстоуну ставить насос на паузу. Не роби висновок про поломку тільки з того, що вода не зникає: поведінка відновлюваних водних джерел залежить від налаштування насоса."
+        ],
+        "en_us": [
+          "The BuildCraft Pump collects fluid below itself and offers it to adjacent tanks or pipes. Place it above the fluid body, supply MJ and provide free receiver capacity.",
+          "Its SOQM recipe already requires a Precision Mechanism. A redstone signal pauses the pump. Water remaining in place does not by itself indicate a fault: renewable-source behaviour depends on the pump configuration."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011732D8F780E": {
+      "description": {
+        "uk_ua": [
+          "Quarry розмічає каркас і добуває блоки у вибраній площі. Перед запуском з’єднай Land Marks для потрібної ділянки, постав кар’єр поруч і перевір, де проходитиме його рамка; без коректної розмітки він вибере типову область.",
+          "Забери цінні блоки з майбутньої рамки: її розчищення може знищити перешкоди без дропу. Підведи MJ та великий буфер із відведенням ресурсів. Переповнений вихід не зупиняє видобуток — неприйняті предмети випадають біля кар’єру."
+        ],
+        "en_us": [
+          "The Quarry builds a frame and mines the selected area. Connect Land Marks for the intended plot, place the quarry beside them and check the future frame position before starting; invalid markers lead to a default area.",
+          "Remove valuables from the frame line because clearing it can destroy obstructions without drops. Supply MJ and a large buffer with item extraction. A full output does not stop mining: refused items drop beside the quarry."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "5130111A90908B6C": {
+      "description": {
+        "uk_ua": [
+          "Laser перетворює MJ на енергію для сумісних столів BuildCraft. Постав його не далі шести блоків від Assembly Table чи іншого підтримуваного стола та підведи MJ до самого лазера.",
+          "Промінь з’являється, коли стіл запитує енергію для вибраного рецепта. Якщо лазер не працює, спочатку перевір рецепт, матеріали й живлення; додаткові лазери корисні тільки тоді, коли стіл справді потребує більшого потоку."
+        ],
+        "en_us": [
+          "A Laser converts MJ into power for compatible BuildCraft tables. Place it within six blocks of an Assembly Table or another supported table and supply MJ to the laser itself.",
+          "Its beam appears when a table requests energy for a selected recipe. If it stays idle, check the recipe, ingredients and power first; more lasers help only when the table actually needs additional throughput."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011A7C9201F3C": {
+      "description": {
+        "uk_ua": [
+          "Assembly Table виготовляє чипсети та інші компоненти BuildCraft за допомогою лазерної енергії. Поклади матеріали в стіл, вибери потрібний доступний рецепт і живи сусідній Laser.",
+          "Для першого випуску активуй тільки один рецепт. Кілька дозволених рецептів можуть почергово споживати спільні матеріали; подбай також про місце для результату в столі або сусідньому приймачі."
+        ],
+        "en_us": [
+          "The Assembly Table makes chipsets and other BuildCraft components using laser power. Insert the ingredients, select the required available recipe, and power a nearby Laser.",
+          "Enable only one recipe for the first run. Several selected recipes can alternate and consume shared ingredients, so also provide room for the output in the table or an adjacent receiver."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011B509AE9A20": {
+      "description": {
+        "uk_ua": [
+          "Auto Workbench запам’ятовує крафт і повторює його з матеріалів у власному інвентарі. Задай зразок у сітці рецепта, потім подай справжні інгредієнти й організуй виведення результату.",
+          "У цій версії він може працювати повільно самостійно; зовнішнє MJ прискорює роботу. Спочатку забезпеч стабільні входи: додане живлення не усуне нестачу одного компонента або забитий вихід."
+        ],
+        "en_us": [
+          "The Auto Workbench remembers a craft and repeats it using materials in its own inventory. Configure the phantom recipe, then supply real ingredients and arrange result extraction.",
+          "This version can work slowly on its own; external MJ speeds it up. Establish reliable inputs first: extra power cannot fix one missing component or a blocked output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130114354CF7719": {
+      "description": {
+        "uk_ua": [
+          "Steel Crowbar — основний інструмент для колій і вагонеток Railcraft. ПКМ по підтримуваній рейці змінює її напрям або відкриває налаштування; на локомотиві інструмент може змінити напрям руху.",
+          "Для зчеплення вагонеток використовується Shift+ПКМ по кожній із пари. Перевір дію на короткій тестовій колії: звичайний ПКМ та натискання з присіданням виконують різні операції."
+        ],
+        "en_us": [
+          "The Steel Crowbar is Railcraft’s main tool for tracks and carts. Right-clicking a supported track changes its direction or opens settings; on a locomotive it can reverse the facing.",
+          "Use sneak-right-click on each of two carts to link them. Practise on a short test track: normal right-click and sneaking perform different actions."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "513011E68E6D4690": {
+      "description": {
+        "uk_ua": [
+          "Manual Rolling Machine виготовляє рейкові та інші металеві заготовки за власними рецептами. Розклади потрібні матеріали в її сітці й перевір, який виріб показано на виході.",
+          "Якщо матеріалів залишилося лише на один цикл, натисни на зображення результату, щоб примусово виконати крафт. Для постійного потоку заготовок наступний крок — Powered Rolling Machine з автоматичною подачею."
+        ],
+        "en_us": [
+          "The Manual Rolling Machine makes rails and other metal parts through its own recipes. Arrange the required materials in its grid and check the displayed result.",
+          "If only enough material for one cycle remains, click the output display to force the craft. For continuous part production, progress to the Powered Rolling Machine with automated input."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "5130118DB31A46A1": {
+      "description": {
+        "uk_ua": [
+          "Коксова піч Railcraft — куб 3×3×3 із порожнім центром, тобто 26 Coke Oven Bricks. Використовуй саме блоки Railcraft і залиш проміжок між сусідніми печами; завдання реагує на нативне формування цієї конструкції.",
+          "Після складання завантаж вугілля та забирай кокс і крезот. Не перенось сюди суцільну 27-блокову схему печі Immersive Engineering: у цих модів різні мультиблоки."
+        ],
+        "en_us": [
+          "Railcraft’s Coke Oven is a 3×3×3 cube with a hollow centre, requiring 26 Coke Oven Bricks. Use Railcraft’s own bricks and leave a gap between ovens; the task detects native formation of this structure.",
+          "After construction, load coal and collect coke and creosote. Do not copy Immersive Engineering’s solid 27-block layout here: the two mods use different multiblocks."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "5130110CBEF3D218": {
+      "description": {
+        "uk_ua": [
+          "Blast Furnace Railcraft — конструкція 3×3×4 із порожниною всередині, для якої потрібно 34 Blast Furnace Bricks. Звір шари зі схемою Railcraft і не з’єднуй її впритул з іншою такою піччю.",
+          "Квест зараховує формування доменної печі. Далі перевір сталевий рецепт із залізом і придатним паливом у її інтерфейсі; сама наявність цегли чи піч іншого мода не задовольняє цей нативний тригер."
+        ],
+        "en_us": [
+          "Railcraft’s Blast Furnace is a 3×3×4 structure with an internal hollow, using 34 Blast Furnace Bricks. Follow the layers in Railcraft’s diagram and do not build another furnace directly against it.",
+          "The quest detects formation. Then test a steel recipe with iron and a supported fuel in its interface; merely carrying bricks or building another mod’s furnace does not satisfy this native trigger."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "5130116FB1CF442C": {
+      "description": {
+        "uk_ua": [
+          "Powered Rolling Machine розвиває ручну прокатку до машинного виготовлення металевих деталей. У SOQM рецепт уже потребує Precision Mechanism; після встановлення забезпеч її живлення та матеріали.",
+          "Спершу виконай один потрібний рецепт, потім підключай труби для входів і виходу. Машина підтримує автоматизацію, але неправильний залишок у сітці або відсутній інгредієнт зупинить її незалежно від запасу енергії."
+        ],
+        "en_us": [
+          "The Powered Rolling Machine upgrades manual metal forming into machine production. Its SOQM recipe requires a Precision Mechanism; after placement, supply power and ingredients.",
+          "Complete one required recipe before connecting input and output pipes. It supports automation, but an incorrect grid remainder or missing ingredient stops production regardless of stored energy."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011F655EF052F": {
+      "description": {
+        "uk_ua": [
+          "Щоб утворити поїзд, постав дві сумісні вагонетки поряд на колії та натисни Shift+ПКМ Steel Crowbar спочатку по одній, потім по іншій. Квест перевіряє справжнє зчеплення.",
+          "Перевір пару на короткій прямій ділянці, перш ніж додавати вагони. Зчеплення не є двигуном: для руху складу ще потрібні тяга й правильно налаштована колія."
+        ],
+        "en_us": [
+          "To form a train, place two compatible carts close together on a track and sneak-right-click first one, then the other with a Steel Crowbar. The quest checks actual cart linking.",
+          "Test the pair on a short straight section before adding more carts. A coupling is not an engine: the train still needs propulsion and a correctly configured track."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "513011CFD1B179B3": {
+      "description": {
+        "uk_ua": [
+          "Locking Track утримує вагонетку на зупинці без сигналу редстоуну. Сигнал звільняє її, а вибраний режим визначає, чи буде додатковий поштовх і в якому напрямку.",
+          "Crowbar перемикає режими зупинки, посадки та роботи з поїздом. Перевір стрілку й режим одним вагоном: звільнення колії та запуск вагона — різні дії."
+        ],
+        "en_us": [
+          "A Locking Track holds a cart at a stop while unpowered. A redstone signal releases it; the selected mode decides whether it also receives a boost and in which direction.",
+          "Use the Crowbar to cycle holding, boarding and train modes. Test the arrow and mode with one cart: releasing a cart and launching it are different behaviours."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "513011863D5B3F64": {
+      "description": {
+        "uk_ua": [
+          "Coupler Track автоматизує зчеплення або розчеплення вагонеток. Для дії колії потрібний сигнал редстоуну; інструментом перемкни потрібний режим перед подачею вагонів.",
+          "Спочатку перевір дві порожні вагонетки й оглянь результат зчеплення. Не пропускай повний вантажний склад, поки не переконався, що колія з’єднує, а не роз’єднує його."
+        ],
+        "en_us": [
+          "A Coupler Track automates joining or separating carts. It needs a redstone signal to act; select the intended mode with the tool before sending carts over it.",
+          "Test two empty carts and inspect their coupling first. Do not send a loaded train through until you have confirmed that the track couples rather than separates it."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "5130118593FC506A": {
+      "description": {
+        "uk_ua": [
+          "One-Way Track обмежує напрям руху, коли отримує сигнал редстоуну. Під живленням вона відштовхує вагонетку, яка рухається проти стрілки; без сигналу поводиться як звичайна колія.",
+          "Налаштуй стрілку Crowbar і перевір обидва напрямки. Стрілка сама собою не є постійною забороною руху: якщо живлення зникне, напрям більше не контролюється."
+        ],
+        "en_us": [
+          "A One-Way Track enforces direction while powered by redstone. It reverses a cart travelling against its arrow; without a signal it behaves like ordinary track.",
+          "Set the arrow with the Crowbar and test both directions. The arrow alone is not a permanent barrier: losing power disables direction enforcement."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "513011C793F4D2F0": {
+      "description": {
+        "uk_ua": [
+          "Low Pressure Boiler Tank утворює паровий котел над Firebox. Розмір і висота мають відповідати дозволеній схемі Railcraft; окремий блок резервуара ще не є готовим котлом.",
+          "До запуску забезпеч постійну подачу води й палива саме до Firebox та відведення пари. Не доливай воду в гарячий котел, який уже працював насухо: ця механіка може спричинити вибух. Спершу доведи надійність водної лінії, потім залишай котел працювати."
+        ],
+        "en_us": [
+          "Low Pressure Boiler Tanks form a steam boiler above a Firebox. Its footprint and height must match an allowed Railcraft layout; a single tank block is not a complete boiler.",
+          "Before firing it, establish continuous water and fuel input to the Firebox and a steam outlet. Do not add water to a hot boiler that has already run dry: this can cause an in-game explosion. Prove the water supply reliable before leaving the boiler operating."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_05_railcraft.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+      ]
+    },
+    "5130119AD1F9E96E": {
+      "description": {
+        "uk_ua": [
+          "Machine Frame — базова деталь багатьох машин RFTools. У SOQM вона вже потребує Precision Mechanism, тому шлях до неї проходить через основну промислову прогресію.",
+          "Вибери наступний пристрій і підготуй матеріали для всього його рецепта. Сам каркас не має виробничого інтерфейсу, а запас рамок не замінює Storage Module, Shape Card чи інше оснащення конкретної машини."
+        ],
+        "en_us": [
+          "The Machine Frame is a base component for many RFTools machines. In SOQM it already requires a Precision Mechanism, tying it to the main industrial progression.",
+          "Choose the next device and prepare its complete recipe. The frame itself is not an operating machine, and a stock of frames cannot replace a Storage Module, Shape Card or other device-specific equipment."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-base/files/8256204",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011E14C79560E": {
+      "description": {
+        "uk_ua": [
+          "Modular Storage — сховище з пошуком, місткість якого задає встановлений Storage Module. Постав блок, відкрий інтерфейс і встав модуль у призначений слот, перш ніж переносити ресурси.",
+          "Предмети зберігаються в самому модулі, тому не загуби його під час перестановки сховища. Зміна кількості видимих рядків у GUI не додає місткості; для цього потрібен вищий рівень модуля."
+        ],
+        "en_us": [
+          "Modular Storage is searchable storage whose capacity is defined by an installed Storage Module. Place the block, open its interface and insert the module into its slot before transferring resources.",
+          "Items are stored in the module itself, so keep track of it when moving the storage. Changing the visible inventory size in the GUI does not add capacity; a higher-tier module does."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-storage/files/8256218",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130111A3EA75731": {
+      "description": {
+        "uk_ua": [
+          "Перший Storage Module є носієм предметів для Modular Storage. Встав його у слот модуля, поклади кілька зразків і перевір пошук та видачу через інтерфейс блока.",
+          "Коли модуль заповнюється, вищі рівні збільшують кількість доступних стеків. Перенось або модернізуй саме потрібний модуль зі збереженими даними; порожній новий модуль не відкриє вміст старого."
+        ],
+        "en_us": [
+          "The first Storage Module is the item-bearing component of Modular Storage. Insert it into the module slot, add a few samples and test search and withdrawal through the block interface.",
+          "Higher tiers increase the number of available stacks once this module fills. Move or upgrade the actual module holding your data; a new empty module cannot access the old one’s contents."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-storage/files/8256218"
+      ]
+    },
+    "513011CC15383729": {
+      "description": {
+        "uk_ua": [
+          "Crafter Tier 3 підтримує до восьми збережених рецептів. Спочатку налаштуй і перевір один крафт із реальних матеріалів, потім додавай наступні операції до тієї самої машини.",
+          "Закріпи призначення вхідних слотів кнопкою запам’ятовування в GUI, щоб один масовий ресурс не зайняв місце решти інгредієнтів. Відводь готові вироби й забезпеч FE: додаткові рецепти не створюють матеріали та не прибирають переповнений вихід."
+        ],
+        "en_us": [
+          "Crafter Tier 3 supports up to eight stored recipes. Configure and test one craft with real materials before adding further operations to the same machine.",
+          "Use the GUI’s remember function to reserve input slots so one bulk material cannot occupy space needed by other ingredients. Extract finished products and supply FE; more recipes do not create ingredients or clear a full output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212"
+      ]
+    },
+    "513011FC1C704211": {
+      "description": {
+        "uk_ua": [
+          "Matter Transmitter — точка відправлення гравця, а Matter Receiver — місце прибуття. Постав і живи обидва пристрої, а біля передавача встанови Dialing Device для вибору напрямку.",
+          "У Dialing Device з’єднай свій Transmitter із потрібним Receiver і лише тоді перевір телепортацію. Для зворотної дороги потрібне власне підготовлене рішення; один маршрут до приймача не створює автоматичної пари в обидві сторони."
+        ],
+        "en_us": [
+          "The Matter Transmitter sends a player, while a Matter Receiver is the destination. Place and power both devices, then install a Dialing Device near the transmitter to select the route.",
+          "Connect your transmitter to the intended receiver in the Dialing Device before testing teleportation. Prepare a return route separately; a connection to one receiver does not automatically create a two-way pair."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "51301136600E9A01": {
+      "description": {
+        "uk_ua": [
+          "Matter Receiver визначає точку прибуття для передавачів і Charged Porter. Постав його в доступному місці та забезпеч власне живлення ще до першого переходу.",
+          "Перевір назву й координати приймача в мережі, а також запас FE на віддаленій стороні. Енергія лише біля Transmitter не гарантує нормальної роботи Receiver; розряджений приймач може зробити перехід небезпечним для персонажа."
+        ],
+        "en_us": [
+          "The Matter Receiver defines the destination for transmitters and a Charged Porter. Place it in an accessible location and establish its own power supply before travelling.",
+          "Check the receiver’s name and coordinates in the network and its remote FE reserve. Power at the transmitter alone does not guarantee a working receiver; an underpowered destination can make the trip harmful to your character."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "5130110ABDB307BD": {
+      "description": {
+        "uk_ua": [
+          "Dialing Device прив’язує близький Matter Transmitter до вибраного Matter Receiver, у тому числі в іншому вимірі. Вибери передавач у верхній частині інтерфейсу, приймач — у списку призначень.",
+          "Dial залишає маршрут активним, а Dial Once розриває його після одного переходу. Для першого тесту звір призначення за назвою й координатами, щоб не відправити гравця до іншої бази з подібною назвою."
+        ],
+        "en_us": [
+          "The Dialing Device connects a nearby Matter Transmitter to a selected Matter Receiver, including one in another dimension. Select the transmitter in the upper part of the interface and the receiver in the destination list.",
+          "Dial keeps the route active; Dial Once disconnects it after one trip. Check the destination name and coordinates before the first test to avoid selecting another base with a similar name."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212"
+      ]
+    },
+    "513011556C0F5A97": {
+      "description": {
+        "uk_ua": [
+          "Charged Porter — переносний спосіб повернутися до Matter Receiver. Заряди його FE й натисни ним ПКМ по приймачу, щоб запам’ятати цю точку; базовий Porter має одне призначення.",
+          "Зроби короткий пробний перехід до від’їзду. Прив’язка не створює приймач і не підтримує його існування: якщо ціль прибрати або зробити недоступною, заряджений предмет сам по собі не забезпечить повернення."
+        ],
+        "en_us": [
+          "A Charged Porter is a portable way back to a Matter Receiver. Charge it with FE and right-click the receiver to store that location; the basic porter holds one destination.",
+          "Make a short test trip before leaving. Binding does not create or maintain the receiver: removing the target or making it unusable prevents the charged item from guaranteeing a return."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011CFF060293F": {
+      "description": {
+        "uk_ua": [
+          "Screen показує виробничі показники через встановлені модулі. Постав екран, додай, наприклад, Energy Module із заданою ціллю й забезпеч живлення від близького Screen Controller.",
+          "Сам порожній екран не знаходить усі машини бази. Спочатку прив’яжи модуль до конкретного блока, потім встанови його в екран та перевір показник на працюючому обладнанні."
+        ],
+        "en_us": [
+          "A Screen displays workshop readings through installed modules. Place it, add a targeted module such as an Energy Module, and provide power through a nearby Screen Controller.",
+          "An empty screen does not discover every machine in the base. Bind the module to a specific block first, install it in the screen, and compare its reading with the working device."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212"
+      ]
+    },
+    "513011D5061AFAB0": {
+      "description": {
+        "uk_ua": [
+          "Screen Controller живить близькі екрани. Підведи FE до контролера й натисни Scan у його GUI, щоб зареєструвати встановлені Screen у зоні пошуку.",
+          "Після додавання чи перенесення екрана виконай Scan знову. Живлення контролера й дані модуля — окремі умови: навіть підключений екран потребує правильно прив’язаного вимірювального модуля."
+        ],
+        "en_us": [
+          "The Screen Controller powers nearby screens. Supply FE to the controller and press Scan in its GUI to register installed Screens within range.",
+          "Scan again after adding or moving a screen. Controller power and module data are separate requirements: a connected screen still needs a correctly targeted monitoring module."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011C785AE43D5": {
+      "description": {
+        "uk_ua": [
+          "Energy Module показує стан енергетичного сховища на Screen. Натисни Shift+ПКМ модулем по машині, яку хочеш контролювати, а потім установи його в екран.",
+          "Відкрий налаштування цього модуля через GUI екрана й вибери зручне відображення. Порівняй дані з інтерфейсом цільової машини: модуль вимірює вибраний блок, а не сумарну генерацію всіх пристроїв навколо."
+        ],
+        "en_us": [
+          "An Energy Module displays an energy store on a Screen. Sneak-right-click the module on the machine to monitor, then install it in the screen.",
+          "Open that module’s settings through the Screen GUI and choose a useful display. Compare the reading with the target machine’s interface: it monitors the selected block, not the combined generation of every nearby device."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-utility/files/8256212"
+      ]
+    },
+    "5130119AFFF720CF": {
+      "description": {
+        "uk_ua": [
+          "Builder виконує операцію, задану Shape Card: будівництво, кар’єр, перекачування та інші режими. У SOQM він потребує Dimensional Matrix і компонентів попередньої автоматизації, тому не є ранньою заміною ручному видобутку.",
+          "До подачі живлення налаштуй картку, розмір і зміщення області. Перевір невелику ділянку без цінних блоків і підготуй матеріали або приймач відповідно до режиму; одна форма області ще не визначає, чи машина будуватиме, чи руйнуватиме."
+        ],
+        "en_us": [
+          "The Builder performs the operation selected by a Shape Card: construction, quarrying, pumping and other modes. In SOQM it requires a Dimensional Matrix and earlier automation components, so it is not an early substitute for manual mining.",
+          "Before powering it, configure the card, dimensions and offset. Test a small area without valuables and provide materials or a receiver for the chosen mode; an area’s shape alone does not decide whether the machine builds or removes blocks."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-builder/files/9044325",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "5130112BB3F7C4EB": {
+      "description": {
+        "uk_ua": [
+          "Quarry Card перемикає Builder на видобуток у заданій області. Налаштуй розмір і положення картки, встав її в Builder та підготуй енергію й місце для добутих предметів.",
+          "Звичайний варіант замінює добуті блоки налаштованим заповнювачем; Clear-варіанти залишають повітря. Fortune та Silk Touch мають окремі картки. Перед запуском звір саме тип картки, щоб отримати потрібний результат у світі."
+        ],
+        "en_us": [
+          "A Quarry Card makes the Builder mine the configured area. Set the card’s dimensions and position, insert it into the Builder, and provide power and storage for the mined items.",
+          "The normal variant replaces mined blocks with the configured filler; Clear variants leave air. Fortune and Silk Touch use separate cards. Check the actual card type before starting so the world is changed in the intended way."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-builder/files/9044325"
+      ]
+    },
+    "51301193720D5D84": {
+      "description": {
+        "uk_ua": [
+          "Void Card наказує Builder прибирати блоки без дропу. Вона підходить для розчищення непотрібної породи, але не для добування ресурсів.",
+          "Вистав малу тестову область і перевір зміщення перед живленням машини. Якщо очікуєш руду чи будівельні матеріали на виході, потрібна Quarry Card: порожній приймач у void-режимі не означає, що видобуток зламався."
+        ],
+        "en_us": [
+          "A Void Card tells the Builder to remove blocks without drops. It suits clearing unwanted material, not resource mining.",
+          "Set a small test area and verify its offset before supplying power. Use a Quarry Card when you expect ore or construction materials as output: an empty receiver in void mode does not mean mining is broken."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-builder/files/9044325"
+      ]
+    },
+    "5130113C85CAFA28": {
+      "description": {
+        "uk_ua": [
+          "Pump Card дає Builder операцію збирання рідин із заданої області. Крім енергії, підготуй приєднаний рідинний резервуар і перевір, що він приймає саме цю рідину.",
+          "Звичайна Pump Card заповнює звільнене місце налаштованим блоком; Clear-варіант залишає порожнину. Не підключай лише предметну скриню й не чекай у ній відра: результат цього режиму — рідина."
+        ],
+        "en_us": [
+          "A Pump Card lets the Builder collect fluids from a selected area. Alongside power, provide a connected fluid tank and check that it accepts the target fluid.",
+          "The normal Pump Card fills cleared positions with the configured block; the Clear variant leaves empty space. An item chest alone is not an outlet for this operation, whose result is fluid rather than bucket items."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-builder/files/9044325"
+      ]
+    },
+    "5130115EEDA64954": {
+      "description": {
+        "uk_ua": [
+          "Dimensional Cell зберігає FE та може ділитися ним із віддаленими комірками через Powercell Card. Створи або скопіюй зв’язок карткою й налаштуй джерельну сторону на In, споживчу — на Out.",
+          "Перевір накопичення й віддачу через показники GUI. Це спільне сховище, а не генератор; віддалене отримання енергії також має втрати, тому запас генерації повинен покривати і навантаження, і передачу."
+        ],
+        "en_us": [
+          "A Dimensional Cell stores FE and can share it with remote cells through a Powercell Card. Create or copy the link with the card, then configure the source side as In and the consumer side as Out.",
+          "Check charging and discharge in the GUI. This is shared storage, not a generator; drawing remote energy also incurs losses, so generation must cover both the load and transfer."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-power/files/8256213",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011ADDC64CE6D": {
+      "description": {
+        "uk_ua": [
+          "Powercell Card зберігає зв’язок між Dimensional Cells. Нова картка не прив’язана: встав її в комірку, щоб створити зв’язок, або скористайся слотом копіювання вже наявного каналу.",
+          "Для другої комірки використай саме скопійований зв’язок. Дві незалежно створені картки не з’єднають сховища автоматично; після налаштування перевір спільний рівень енергії."
+        ],
+        "en_us": [
+          "A Powercell Card carries the link between Dimensional Cells. A new card is unlinked: insert it into a cell to create a link, or use the copy slot for an existing one.",
+          "Use the copied link for the second cell. Two independently created cards do not automatically connect their stores; verify the shared energy level after configuration."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-power/files/8256213"
+      ]
+    },
+    "5130114A65EF4CF0": {
+      "description": {
+        "uk_ua": [
+          "Enscriber записує опис майбутнього виміру в Realized Dimension Tab. Встав Empty Dimension Tab та розклади dimlet-и, що задають місцевість, біом або інші властивості.",
+          "Перевір сформований опис і вартість, потім передай вкладку в Dimension Builder. Enscriber готує специфікацію світу, але не створює його сам і не забезпечує подальше енергопостачання."
+        ],
+        "en_us": [
+          "The Enscriber writes a future dimension’s description into a Realized Dimension Tab. Insert an Empty Dimension Tab and arrange dimlets specifying terrain, biome or other properties.",
+          "Review the resulting description and costs, then move the tab to a Dimension Builder. The Enscriber prepares the specification; it does not create the world or supply its ongoing power."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-dimensions/files/8256210",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011675037BC60": {
+      "description": {
+        "uk_ua": [
+          "Dimension Builder створює вимір із Realized Dimension Tab і надалі підтримує його енергією. Встав готову вкладку, забезпеч FE та дочекайся завершення створення.",
+          "До першого переходу підготуй достатню постійну генерацію, запас енергії та повернення. Вимкнення Builder після створення не робить вимір безкоштовним: при нестачі живлення він стає небезпечним або недоступним. Збережи вкладку з даними саме цього світу."
+        ],
+        "en_us": [
+          "The Dimension Builder creates a dimension from a Realized Dimension Tab and continues to power it afterward. Insert the completed tab, supply FE and wait for creation to finish.",
+          "Prepare sustained generation, an energy reserve and a return route before entering. Turning off the Builder does not make the dimension free to maintain: inadequate power makes it unsafe or unusable. Keep the tab holding that dimension’s data."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-dimensions/files/8256210",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "513011D1FF814E23": {
+      "description": {
+        "uk_ua": [
+          "Dimlet Workbench виготовляє конкретні dimlet-и з відомих схем і компонентів. Постав поряд щонайменше один Knowledge Holder, відкрий відому схему та підготуй зазначені частини.",
+          "Порожній dimlet сам не визначає потрібний біом чи матеріал. Для відповідних рецептів можуть знадобитися накопичені знання, есенції та заповнені Absorber-и; перевір перелік відсутніх інгредієнтів у вікні обраного dimlet-а."
+        ],
+        "en_us": [
+          "The Dimlet Workbench makes specific dimlets from known patterns and components. Place at least one Knowledge Holder next to it, select a known pattern and provide the listed parts.",
+          "An empty dimlet does not define a desired biome or material by itself. Recipes can require discovered knowledge, essences and completed Absorbers; inspect the missing-ingredient list for the selected dimlet."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_13_rftools.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/rftools-dimensions/files/8256210",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130115694DC485A": {
+      "description": {
+        "uk_ua": [
+          "Односекційна шухляда зберігає великий запас одного типу предмета. Вибери масовий ресурс, поклади зразок і надалі подавай сюди саме його; для різноманітних інструментів зручніша звичайна скриня.",
+          "Коли призначення визначене, зафіксуй шухляду Drawer Key. Так після спорожнення вона збереже свій тип і не прийме випадковий інший ресурс із загального потоку."
+        ],
+        "en_us": [
+          "A single-compartment drawer holds a large supply of one item type. Choose a bulk resource, insert a sample and route that resource here; an ordinary chest suits assorted tools better.",
+          "Once its purpose is set, lock it with a Drawer Key. An emptied locked drawer retains its assigned type instead of taking an unrelated item from a mixed stream."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432"
+      ]
+    },
+    "513011DE65E3F4EE": {
+      "description": {
+        "uk_ua": [
+          "Compacting Drawer зберігає сумісні форми одного ресурсу як спільний запас, наприклад самородки, злитки та блоки. Встав відповідний матеріал і перевір, які форми розпізнала шухляда.",
+          "Перед автоматизацією поклади невелику партію й спробуй забрати її в іншій підтримуваній формі. Це не універсальний автокрафтер: довільний рецепт машини або багатокомпонентний виріб не стає доступним лише через наявність шухляди."
+        ],
+        "en_us": [
+          "A Compacting Drawer represents compatible forms of one resource as a shared supply, such as nuggets, ingots and blocks. Insert the intended material and inspect which forms it recognises.",
+          "Before automation, insert a small batch and withdraw another supported form. This is not a universal autocrafter: arbitrary machine recipes and multi-ingredient products are not unlocked by the drawer."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "513011E12927F035": {
+      "description": {
+        "uk_ua": [
+          "Drawer Controller дає спільну точку доступу до пов’язаної групи шухляд. Спочатку розстав шухляди для потрібних ресурсів і перевір їхнє з’єднання з контролером, потім підключай загальну подачу.",
+          "Закріплені зразки в шухлядах допомагають спрямовувати масові предмети у правильні місця. Контролер не додає власний безмежний склад: коли відповідні шухляди заповнені, для зайвого потоку потрібне окреме рішення."
+        ],
+        "en_us": [
+          "The Drawer Controller provides a common access point for a connected group of drawers. Assign drawers to the intended resources and check their connection to the controller before adding a shared input.",
+          "Locked samples help route bulk items into the right places. The controller does not provide unlimited storage of its own; a full destination drawer still requires a separate overflow plan."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "51301103E224F47D": {
+      "description": {
+        "uk_ua": [
+          "Drawer Key фіксує призначення шухляди. Спершу поклади потрібний предмет, потім застосуй ключ: навіть порожня зафіксована шухляда пам’ятатиме свій тип.",
+          "Це зручно перед автоматичною подачею змішаних ресурсів. Ключ керує типом вмісту, а не дозволами інших гравців: зафіксована шухляда не стає приватним сейфом."
+        ],
+        "en_us": [
+          "A Drawer Key locks a drawer’s assignment. Insert the intended item, then apply the key; the locked drawer remembers its type even when empty.",
+          "This is useful before feeding a mixed resource stream automatically. The key controls item assignment rather than other players’ permissions: a locked drawer is not a private safe."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432"
+      ]
+    },
+    "5130117CBCB942CE": {
+      "description": {
+        "uk_ua": [
+          "Storage Downgrade зменшує базову місткість шухляди до одного стека. Це навмисне обмеження для невеликого буфера чи запасу з чіткою верхньою межею.",
+          "Не встановлюй його як чергове поліпшення великого складу. Спочатку звільни зайвий вміст і перевір місткість після зміни; назва upgrade-слота не означає, що кожний предмет у ньому збільшує сховище."
+        ],
+        "en_us": [
+          "The Storage Downgrade reduces a drawer’s base capacity to one stack. It is an intentional limit for a small buffer or a stock with a defined upper bound.",
+          "Do not install it as another expansion for bulk storage. Remove excess contents first and check the resulting capacity; being placed in an upgrade slot does not mean an item increases storage."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/storage-drawers/files/6995432"
+      ]
+    },
+    "51301104CFA9A015": {
+      "description": {
+        "uk_ua": [
+          "EnderStorage Ender Chest дає предметний канал між віддаленими точками. На обох скринях задай однакову комбінацію трьох кольорів і перевір спільний вміст одним недорогим предметом.",
+          "Для безперервного потоку додай витягування на стороні приймання. Спільний канал має скінченний інвентар: без вивантаження з другої скрині він заповниться. Перед передаванням цінних речей також перевір, хто ще користується цим каналом."
+        ],
+        "en_us": [
+          "An EnderStorage Ender Chest provides an item channel between distant locations. Set the same three-colour combination on both chests and confirm shared contents with one inexpensive item.",
+          "Add extraction at the receiving end for a continuous stream. The shared channel has finite inventory and fills if the second chest is not unloaded. Before sending valuables, also check who else uses that channel."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/ender-storage-1-8/files/6159037",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "5130114BF0614A92": {
+      "description": {
+        "uk_ua": [
+          "Ender Tank переносить рідину між резервуарами з однаковим кольоровим каналом. Налаштуй пару, подай малу порцію потрібної рідини й перевір її появу на іншій стороні.",
+          "Під’єднуй саме рідинні труби й забезпеч відведення з приймача. Один зайнятий канал не є змішувачем для незалежних рідин: розділяй воду, паливо та інші лінії різними каналами."
+        ],
+        "en_us": [
+          "An Ender Tank transfers fluid between tanks sharing a colour channel. Configure the pair, insert a small amount of the intended fluid and check it at the other end.",
+          "Use fluid pipes and provide extraction at the destination. An occupied channel is not a mixer for independent fluids; give water, fuel and other lines separate channels."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/ender-storage-1-8/files/6159037",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "51301111F4AEB3F2": {
+      "description": {
+        "uk_ua": [
+          "Trash Can призначений для остаточного видалення непотрібних предметів. Використовуй його наприкінці окремої гілки відходів, після відбору ресурсів, які потрібно зберегти.",
+          "Спочатку перевір фільтрацію недорогим зразком і залиш корисним предметам власний шлях на склад. Trash Can не є переповненим буфером, із якого потім можна забрати вміст."
+        ],
+        "en_us": [
+          "The Trash Can permanently removes unwanted items. Put it at the end of a dedicated waste branch after separating resources you want to keep.",
+          "Test the filtering with an inexpensive sample and retain a storage route for useful items. A Trash Can is not an overflow buffer whose contents can be retrieved later."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v030_11_storage.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/extra-utilities-reborn/files/8825711"
+      ]
+    },
+    "5142421100000001": {
+      "description": {
+        "uk_ua": [
+          "Рюкзак Sophisticated Backpacks — переносний інвентар для експедицій. Відкрий його ПКМ у повітря з предметом у руці, поклади кілька речей і перевір, що вони зберігаються після закриття. Стаціонарні скрині й бочки належать до Sophisticated Storage; Sophisticated Core забезпечує спільні функції.",
+          "У бічні слоти ставляться функціональні upgrades: підбір, магніт, крафт чи плавлення. Вищий рівень самого рюкзака збільшує його можливості зберігання, а Stack Upgrade змінює кількість предметів у слоті — це різні поліпшення.",
+          "Почни з потрібної функції та налаштуй її вкладку, перш ніж додавати решту. Рюкзак і склад можна розвивати незалежно; мідний рюкзак є бічним варіантом і не потрібний для залізної гілки."
+        ],
+        "en_us": [
+          "A Sophisticated Backpack is portable inventory for expeditions. Right-click in the air while holding it, put a few items inside and check they persist after closing. Stationary chests and barrels belong to Sophisticated Storage; Sophisticated Core provides shared functionality.",
+          "Side slots accept functional upgrades such as pickup, magnet, crafting or smelting. Raising the backpack’s own tier expands its storage capabilities, while a Stack Upgrade changes items per slot; these are different improvements.",
+          "Start with a useful function and configure its tab before adding others. The backpack and stationary storage branches can develop independently; the copper backpack is optional and is not required for the iron route."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_42_sophisticated.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks/files/9154769"
+      ]
+    },
+    "5142421100000003": {
+      "description": {
+        "uk_ua": [
+          "Бочка Sophisticated Storage — стаціонарний контейнер зі слотами для функціональних upgrades. Постав її, відкрий звичайним ПКМ і відведи під конкретний потік ресурсів на базі.",
+          "Перевір просте зберігання до додавання автоматичного підбору чи Hopper Upgrade. Сам контейнер не витягує предмети з сусідньої машини: для обміну потрібні відповідне поліпшення, труба або власний вихід машини."
+        ],
+        "en_us": [
+          "A Sophisticated Storage Barrel is a stationary container with slots for functional upgrades. Place it, open it with a normal right-click and assign it to a particular resource stream at the base.",
+          "Test ordinary storage before adding pickup or a Hopper Upgrade. The container does not extract from a neighbouring machine by itself; use a suitable upgrade, pipe or the machine’s own output."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_42_sophisticated.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage/files/9201424"
+      ]
+    },
+    "514242110000000B": {
+      "description": {
+        "uk_ua": [
+          "Gold to Diamond Tier Upgrade переводить уже золоте сховище на алмазний рівень. У SOQM ця місткість пов’язана з Quantum Processor та контрольними компонентами, тому проста наявність алмазів ще не відкриває рецепт.",
+          "Спочатку отримай комплект для зарахування, потім застосуй його ПКМ до сумісного золотого контейнера. Це поліпшення рівня сховища, а не предмет для функціонального upgrade-слота; після застосування перевір збережений вміст."
+        ],
+        "en_us": [
+          "The Gold to Diamond Tier Upgrade raises an existing gold storage block to diamond tier. In SOQM this capacity is tied to the Quantum Processor and control components, so diamonds alone do not unlock the recipe.",
+          "Obtain the kit for quest credit, then right-click a compatible gold container with it. This upgrades the storage tier rather than occupying a functional upgrade slot; check the retained contents afterward."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_42_sophisticated.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage/files/9201424",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "514242110000000F": {
+      "description": {
+        "uk_ua": [
+          "Magnet Upgrade притягує доступні предмети до рюкзака. Установи його в бічний слот, налаштуй відбір і перевір кілька окремо кинутих предметів перед експедицією.",
+          "Магніт не додає місця в інвентарі й може підхоплювати дроп біля чужої або власної виробничої лінії. Вимикай його там, де предмети навмисно лежать у світі, та залиш у рюкзаку запас вільної місткості."
+        ],
+        "en_us": [
+          "A Magnet Upgrade attracts available item drops to the backpack. Install it in a side slot, configure its filtering and test a few dropped items before an expedition.",
+          "The magnet adds no inventory capacity and can collect drops near your own or another player’s production line. Disable it where items are deliberately left in the world and keep spare backpack capacity."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_42_sophisticated.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks/files/9154769"
+      ]
+    },
+    "5142421100000011": {
+      "description": {
+        "uk_ua": [
+          "Stack Upgrade Tier 1 збільшує кількість предметів, що вміщуються в одному слоті рюкзака. Установи його в слот поліпшень і перевір новий ліміт на масовому ресурсі, наприклад кругляку.",
+          "Воно корисне для великої кількості однакових предметів, але не створює нових окремих слотів для десятків різних речей. Перед зняттям такого upgrade звільни надлишок: менший ліміт має знову вміщувати збережені стеки."
+        ],
+        "en_us": [
+          "Stack Upgrade Tier 1 increases the number of items that fit in one backpack slot. Install it in an upgrade slot and test the new limit with a bulk resource such as cobblestone.",
+          "It helps with many copies of the same item but does not create extra separate slots for assorted items. Remove excess contents before taking it out, so the stored stacks fit the lower limit again."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_42_sophisticated.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks/files/9154769",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "51401172C148C31C": {
+      "description": {
+        "uk_ua": [
+          "Speed Augment скорочує час переплавлення, але витрачає більше палива. Підготуй потрібний Precision Mechanism і встанови augment у піч через її інтерфейс поліпшень.",
+          "Порівняй однакову партію до й після встановлення та перевір подачу палива. Якщо піч уже простоює через порожній вхід або забитий вихід, прискорення самої операції не збільшить випуск лінії."
+        ],
+        "en_us": [
+          "The Speed Augment shortens smelting time but consumes more fuel. Prepare its required Precision Mechanism and install the augment through the furnace’s upgrade interface.",
+          "Compare the same batch before and after installation and check fuel supply. If the furnace already waits for ingredients or a blocked output, speeding up the operation alone will not increase line production."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "514011C0231A0A1C": {
+      "description": {
+        "uk_ua": [
+          "Fuel Efficiency Augment дозволяє отримати більше роботи з палива ціною повільнішого переплавлення. Це варіант для сталого виробництва, де час менш критичний за витрату пального.",
+          "Встанови його й перевір витрату на однаковій партії. Не чекай від нього прискорення: якщо вузьке місце — саме тривалість плавлення, вибір економного режиму може збільшити чергу."
+        ],
+        "en_us": [
+          "The Fuel Efficiency Augment gets more work from fuel at the cost of slower smelting. It suits steady production where fuel use matters more than completion time.",
+          "Install it and compare fuel consumption on an identical batch. It is not a speed upgrade: if smelting time is already the bottleneck, the economical mode can lengthen the queue."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js"
+      ]
+    },
+    "514011BAFD0BA1DB": {
+      "description": {
+        "uk_ua": [
+          "Blasting Augment спеціалізує піч на рецептах доменного випалу. Після встановлення перевір матеріал, який має саме blasting-рецепт, і організуй для нього окрему подачу.",
+          "Піч у цьому режимі не приймає всі звичайні рецепти плавлення. Якщо знайомий предмет перестав оброблятися, перевір тип рецепта та встановлений augment, перш ніж міняти живлення."
+        ],
+        "en_us": [
+          "The Blasting Augment specialises a furnace for blasting recipes. After installation, test an ingredient with a blasting recipe and provide a dedicated input stream for it.",
+          "This mode does not accept every ordinary smelting recipe. If a familiar item stops processing, check its recipe type and installed augment before changing the power or fuel supply."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259"
+      ]
+    },
+    "514011153A0580F2": {
+      "description": {
+        "uk_ua": [
+          "Smoking Augment переводить піч на рецепти копчення їжі. Встанови його в окрему харчову піч і перевір одну порцію придатного сирого продукту.",
+          "Руда чи камінь не оброблятимуться лише тому, що раніше плавилися в цій самій печі. Для змішаного цеху залиш іншу піч без спеціалізації або розділи предмети перед входом."
+        ],
+        "en_us": [
+          "The Smoking Augment switches the furnace to food-smoking recipes. Install it in a dedicated food furnace and test one portion of a suitable raw ingredient.",
+          "Ore or stone will not process merely because the same furnace previously smelted them. Keep another furnace unspecialised or sort inputs before feeding a mixed workshop."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259"
+      ]
+    },
+    "5140112AC3C39CA4": {
+      "description": {
+        "uk_ua": [
+          "Generator Augment перетворює тепло печі на енергію для мережі. Встанови augment, забезпеч паливо й підготуй приймач енергії на виході.",
+          "У генераторному режимі піч більше не переплавляє предмети. Якщо мета — електричне плавлення, потрібен Factory Augment; Generator та Factory змінюють напрям енергетичного процесу по-різному."
+        ],
+        "en_us": [
+          "The Generator Augment converts furnace heat into network energy. Install it, supply fuel and connect an energy receiver.",
+          "The furnace can no longer smelt items in generator mode. Use a Factory Augment when the goal is electric smelting; Generator and Factory serve different energy directions."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259",
+        "overrides/kubejs/server_scripts/qm_expert_v040.js"
+      ]
+    },
+    "5140117351ED54D2": {
+      "description": {
+        "uk_ua": [
+          "Factory Augment переводить піч на використання енергії замість звичайного палива. Його рецепт у SOQM потребує Precision Mechanism; до встановлення підготуй FE-лінію під робоче споживання.",
+          "Після зміни режиму подай енергію та перевір один рецепт із вільним виходом. Покладене в паливний слот вугілля не замінює FE, а сам augment не є генератором."
+        ],
+        "en_us": [
+          "The Factory Augment makes the furnace use energy instead of ordinary fuel. Its SOQM recipe requires a Precision Mechanism; prepare an FE line for the operating load before installation.",
+          "After switching modes, supply energy and test one recipe with an empty output. Coal in the fuel slot does not replace FE, and the augment is not a generator."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259",
+        "overrides/kubejs/server_scripts/qm_expert_v040.js"
+      ]
+    },
+    "514011420ECB3AB6": {
+      "description": {
+        "uk_ua": [
+          "Для бездротового тепла потрібні обидві частини: Wireless Heat Transmitter та Wireless Heat Receiver. Встав Receiver у Transmitter, щоб прив’язати його, і подай FE до передавача.",
+          "Після прив’язки перенеси Receiver у паливний слот печі Iron tier або вище. Перевір позначку цілі в підказці й реальне плавлення. Квест перевіряє обидва предмети в інвентарі; отримай зарахування до встановлення пари."
+        ],
+        "en_us": [
+          "Wireless heat needs both a Wireless Heat Transmitter and a Wireless Heat Receiver. Insert the receiver into the transmitter to bind it and supply FE to the transmitter.",
+          "Move the bound receiver into the fuel slot of an Iron-tier furnace or higher. Check its target tooltip and a real smelting cycle. The quest checks both items in your inventory, so obtain credit before installing the pair."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259"
+      ]
+    },
+    "514011BB117FEF8D": {
+      "description": {
+        "uk_ua": [
+          "Furnace Settings Linker переносить конфігурацію між печами. Спочатку повністю налаштуй одну робочу піч і перевір її входи, виходи та керування, а вже потім використовуй її як зразок.",
+          "Звичайний ПКМ інструментом по печі копіює налаштування, а Shift+ПКМ по іншій печі застосовує їх. Потім перевір сторони на місці: піч, повернута в інший бік, може дивитися виходом у порожній простір."
+        ],
+        "en_us": [
+          "The Furnace Settings Linker transfers configuration between furnaces. Fully configure one working furnace and test its inputs, outputs and control before using it as a template.",
+          "Right-click a furnace with the tool to copy settings, then sneak-right-click another furnace to apply them. Recheck the faces afterward: a differently oriented furnace can point its output into empty space."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_v040_28_ironfurnaces.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259"
+      ]
+    },
+    "513011AB8B3C455F": {
+      "description": {
+        "uk_ua": [
+          "Atomic Disassembler — електричний багатофункціональний інструмент. Заряди його в сумісному енергетичному слоті та почни зі звичайного режиму; швидші режими витрачають більше енергії.",
+          "Перед ремонтом бази перевір поточний режим у підказці. Якщо доступне Vein Mining, воно працює з групами придатної руди й деревини, а не є універсальним руйнуванням будь-якої конструкції; для точних робіт вибирай поодинокі блоки."
+        ],
+        "en_us": [
+          "The Atomic Disassembler is an electric multipurpose tool. Charge it in a compatible energy slot and start in its normal mode; faster modes use more energy.",
+          "Check the current mode in the tooltip before working on your base. If enabled, Vein Mining targets connected eligible ore and logs rather than every possible structure; select single-block operation for precise work."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+      ]
+    },
+    "5130110E6A8F75F8": {
+      "description": {
+        "uk_ua": [
+          "Jetpack працює на водні, а не від електричного кабелю. Підготуй Hydrogen із хімічної лінії, заповни ним ранець через сумісний слот заправки та надягни його замість нагрудника.",
+          "Перевір кількість палива й режим польоту низько над землею. Порожній ранець не утримує персонажа в повітрі, тому перед дальнім польотом залиш запас водню на повернення й посадку."
+        ],
+        "en_us": [
+          "The Jetpack uses hydrogen rather than an electrical cable. Produce Hydrogen in the chemical line, fill the pack through a compatible item-filling slot and equip it in the chest slot.",
+          "Check fuel and flight mode close to the ground. An empty pack cannot keep your character airborne, so reserve hydrogen for the return trip and landing."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js"
+      ]
+    },
+    "51301145216814C2": {
+      "description": {
+        "uk_ua": [
+          "Armored Jetpack поєднує водневий ранець із бронюванням. Після модернізації перевір його заправку й надягни в нагрудний слот; матеріали броні не замінюють Hydrogen.",
+          "Зроби короткий тест керування біля бази та звір режим у підказці. Бронювання не робить політ безкоштовним і не прибирає потребу контролювати паливо перед перельотом над проваллям."
+        ],
+        "en_us": [
+          "The Armored Jetpack combines a hydrogen jetpack with armour. Check its fuel after upgrading and equip it in the chest slot; armour materials do not replace Hydrogen.",
+          "Make a short control test near the base and check its mode in the tooltip. Armour does not make flight free or remove the need to watch fuel before crossing a drop."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+        "overrides/kubejs/server_scripts/qm_expert_v043.js"
+      ]
+    },
+    "513011A01B082BDB": {
+      "description": {
+        "uk_ua": [
+          "Scuba Mask — головна частина водолазного комплекту. Для дихання під водою вона працює разом із заправленим киснем Scuba Tank; одна маска не створює запас повітря.",
+          "Надягни маску на голову, балон — у нагрудний слот, увімкни подачу балона й перевір комплект на мілководді. Перед зануренням звір Oxygen у балоні, а не заряд енергетичного куба."
+        ],
+        "en_us": [
+          "The Scuba Mask is the head piece of the diving set. Underwater breathing requires it together with an oxygen-filled Scuba Tank; the mask alone does not provide an air reserve.",
+          "Wear the mask on your head, the tank in the chest slot, enable the tank and test in shallow water. Check the tank’s Oxygen before diving rather than the charge in an energy cube."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+      ]
+    },
+    "51301180C64BE565": {
+      "description": {
+        "uk_ua": [
+          "Scuba Tank зберігає Oxygen для роботи з Scuba Mask. Заправ його киснем із хімічної лінії; водень, який підходить Jetpack, сюди не замінює потрібну речовину.",
+          "Надягни обидві частини, увімкни балон і перевір дихання на невеликій глибині. Сам балон без маски не є повним комплектом; запас кисню має покривати повернення до поверхні."
+        ],
+        "en_us": [
+          "The Scuba Tank holds Oxygen for use with a Scuba Mask. Fill it from the oxygen chemical line; the hydrogen used by a Jetpack is not a substitute.",
+          "Equip both pieces, enable the tank and test breathing in shallow water. The tank without the mask is not a complete set; keep enough oxygen to return to the surface."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+      ]
+    },
+    "513011083EFED984": {
+      "description": {
+        "uk_ua": [
+          "Free Runners — електричне спорядження для пересування й зменшення шкоди від падіння. Заряди їх, надягни у слот чобіт і перевір активний режим на низькій сходинці.",
+          "Захист залежить від запасу енергії та режиму. Не сприймай виконаний предметний квест як постійну невразливість до падінь: перед спуском із висоти перевір саме надягнену пару."
+        ],
+        "en_us": [
+          "Free Runners are powered movement gear that can reduce fall damage. Charge them, equip them in the boots slot and test the active mode on a low step.",
+          "Protection depends on stored energy and mode. Completing the item quest does not grant permanent immunity to falls; check the pair you are actually wearing before descending from a height."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+      ]
+    },
+    "513011076C9C7A8F": {
+      "description": {
+        "uk_ua": [
+          "Armored Free Runners додають бронювання до функцій Free Runners. Після модернізації перевір заряд, надягни їх замість чобіт і переконайся, що ввімкнений потрібний режим.",
+          "Броня та енергозалежні можливості пересування — різні властивості. Якщо запас енергії вичерпався, дорожчий матеріал не гарантує колишній захист від падіння; спочатку поповни заряд."
+        ],
+        "en_us": [
+          "Armored Free Runners add armour to the Free Runners’ functionality. After upgrading, check charge, equip them as boots and confirm the intended mode is enabled.",
+          "Armour and energy-dependent movement features are separate properties. Running out of energy means the more expensive material does not guarantee the same fall protection; recharge first."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+      ]
+    },
+    "51301124380E82AF": {
+      "description": {
+        "uk_ua": [
+          "Flamethrower використовує Hydrogen як паливо. Заправ його через сумісний хімічний слот і перевір режим, перш ніж застосовувати на цілі; FE-кабель сам по собі його не заправить.",
+          "Пробний постріл зроби подалі від складу, конвеєрів і розсипаного дропу. Режим полум’я впливає на взаємодію з цілями, а предмети в зоні дії можуть бути втрачені; для інженерних перевірок краще окремий майданчик."
+        ],
+        "en_us": [
+          "The Flamethrower uses Hydrogen as fuel. Fill it through a compatible chemical slot and check the mode before firing; an FE cable alone cannot refuel it.",
+          "Test it away from storage, conveyors and dropped items. Flame mode changes its interaction with targets, and nearby items can be lost; use a separate test area for workshop experiments."
+        ]
+      },
+      "sources": [
+        "overrides/config/ftbquests/quests/chapters/qm_02_mek.snbt",
+        "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+      ]
+    }
+  }
+}
