@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""Compile original SOQM supply pools into native FTB Quests random rewards.
+"""Compile personal, production-gated reward packs from the reviewed catalogue.
 
-``apply(chapters, locale)`` changes only existing reward objects in memory. The
-campaign editor owns chapter and locale writes. ``--write`` writes reward tables
-only; no quest progress, player inventory, chapters or translations are touched.
+FTB Quests owns the existing claim IDs. The generated policy describes themed
+prizes; native production evidence determines eligibility at personal claim.
 """
-
 from __future__ import annotations
-
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 from fractions import Fraction
 import hashlib
 import json
@@ -17,310 +14,276 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-QUESTS = ROOT / "overrides/config/ftbquests/quests"
-POLICY_PATH = ROOT / "metadata/reward_pools.json"
-TABLES_PATH = QUESTS / "reward_tables"
-BOOK_QUEST = "514D010000000001"
-ID_PATTERN = re.compile(r"[0-9A-F]{16}\Z")
-
-# These are ordinary resources, never machines, manufactured mod components,
-# progression trophies, permanent equipment or nested loot rolls. Small XP and
-# food prizes join Nether supplies after stage 2; emeralds are finale-only.
-SAFE_ITEMS = {
-    "minecraft:bread": 0, "minecraft:torch": 0, "minecraft:oak_planks": 0,
-    "minecraft:leather": 0, "minecraft:paper": 0, "minecraft:iron_nugget": 0,
-    "minecraft:coal": 0, "minecraft:copper_ingot": 0, "minecraft:iron_ingot": 0,
-    "minecraft:gold_nugget": 0, "minecraft:redstone": 0, "minecraft:glass": 0,
-    "minecraft:string": 0, "minecraft:lapis_lazuli": 0,
-    "minecraft:amethyst_shard": 0, "minecraft:sugar": 0,
-    "minecraft:arrow": 0, "minecraft:white_wool": 0, "minecraft:brick": 0,
-    "minecraft:gold_ingot": 0, "minecraft:sand": 0, "minecraft:gravel": 0,
-    "minecraft:cobblestone": 0, "minecraft:clay_ball": 0,
-    "minecraft:bone": 0, "minecraft:cooked_beef": 0,
-    "minecraft:quartz": 2, "minecraft:glowstone_dust": 2,
-    "minecraft:experience_bottle": 2, "minecraft:golden_carrot": 2,
-    "minecraft:name_tag": 3,
-    "minecraft:emerald": 5,
+QUESTS = ROOT / 'overrides/config/ftbquests/quests'
+POLICY_PATH = ROOT / 'metadata/reward_pools.json'
+RUNTIME_PATH = ROOT / 'overrides/kubejs/config/soqm_rewards.json'
+TABLES_PATH = QUESTS / 'reward_tables'
+BOOK_QUEST = '514D010000000001'
+ID_PATTERN = re.compile(r'[0-9A-F]{16}\Z')
+ITEM_PATTERN = re.compile(r'[a-z0-9_.-]+:[a-z0-9_./-]+\Z')
+RARITIES = ('common', 'uncommon', 'rare', 'epic')
+GATES = ('kubejs:industrial_chassis', 'kubejs:precision_mechanism',
+         'kubejs:dimensional_matrix', 'kubejs:stellar_alloy',
+         'kubejs:mythic_circuit', 'kubejs:emc_core')
+PROGRESSIVE_TAG = 'soqm:progressive_reward'
+DEFAULT_ICONS = {
+    'survival': 'minecraft:bundle', 'workshop': 'minecraft:anvil',
+    'engineering': 'mekanism:basic_control_circuit', 'logistics': 'minecraft:barrel',
+    'processing': 'minecraft:furnace', 'scholar': 'minecraft:book',
+    'arcane': 'botania:mana_tablet', 'equipment': 'minecraft:iron_chestplate',
+    'expedition': 'minecraft:compass', 'hunting': 'minecraft:bow',
+    'settlement': 'minecraft:bell', 'power': 'minecraft:redstone',
+    'space': 'ad_astra:space_helmet', 'masterwork': 'kubejs:mythic_circuit',
 }
 
 
+def serialize(value) -> str:
+    return json.dumps(value, ensure_ascii=False, indent=2) + '\n'
+
+
+def chapters_from_disk() -> list[dict]:
+    return [json.loads(p.read_text(encoding='utf-8'))
+            for p in sorted((QUESTS / 'chapters').glob('*.snbt'))]
+
+
 def load_policy() -> dict:
-    policy = json.loads(POLICY_PATH.read_text(encoding="utf-8"))
+    policy = json.loads(POLICY_PATH.read_text(encoding='utf-8'))
     validate_policy(policy)
     return policy
 
 
+def eligible_entries(pool: dict, level: int, produced: set[str]) -> list[dict]:
+    return [e for e in pool['entries'] if e.get('min_level', 0) <= level
+            and set(e.get('requires_craft', [])) <= produced]
+
+
 def validate_policy(policy: dict) -> None:
-    if policy.get("schema") != 1 or policy.get("max_items_per_roll") != 4:
-        raise ValueError("Unknown reward policy or unreviewed quantity limit")
-    pools = policy["pools"]
-    if len(pools) != len({pool["key"] for pool in pools}):
-        raise ValueError("Duplicate pool key")
-    pool_keys = {pool["key"] for pool in pools}
-    ids = []
+    if policy.get('schema') != 2:
+        raise ValueError('Unknown progressive reward policy schema')
+    if [r['level'] for r in policy['levels']] != list(range(1, 7)) or [r['item'] for r in policy['levels']] != list(GATES):
+        raise ValueError('Production levels must be the six ordered campaign milestones')
+    if policy['draws_by_level'] != [2, 2, 3, 3, 3, 4, 4]:
+        raise ValueError('Review changed personal reward quantities')
+    weights = policy['rarity_weights_by_level']
+    if len(weights) != 7:
+        raise ValueError('Every production level needs rarity weights')
+    for row in weights:
+        if set(row) != set(RARITIES) or any(type(v) is not int or v <= 0 for v in row.values()):
+            raise ValueError('Rarity weights must be strictly positive integers')
+        if sum(row.values()) != 100:
+            raise ValueError('Rarity weights must sum to 100')
+    if any(weights[i]['rare'] + weights[i]['epic'] > weights[i + 1]['rare'] + weights[i + 1]['epic'] for i in range(6)):
+        raise ValueError('Higher production levels must improve rare-prize weights')
+    pools = policy['pools']
+    keys = {p['key'] for p in pools}
+    if len(pools) != len(keys) or len(keys) < 14 or 'survival' not in keys:
+        raise ValueError('The campaign needs distinct, complete themed pools')
     for pool in pools:
-        if not ID_PATTERN.fullmatch(pool["id"]):
-            raise ValueError("Invalid reward table ID")
-        # Bare JSON numbers are parsed as IntTag by the pinned SNBT reader.
-        # Large unsuffixed long IDs would fail Integer.parseInt at game load.
-        if not 0x6A510001 <= int(pool["id"], 16) <= 0x6A51FFFF:
-            raise ValueError("Table ID outside the reserved JSON-safe range")
-        ids.append(pool["id"])
-        if pool.get("fallback") not in pool_keys:
-            raise ValueError("Unknown fallback pool")
-        if type(pool["min_stage"]) is not int or not 0 <= pool["min_stage"] <= 6:
-            raise ValueError("Invalid pool stage")
-        if not 4 <= len(pool["entries"]) <= 8:
-            raise ValueError("Pools need a compact, visible set of distinct prizes")
-        if len({entry["item"] for entry in pool["entries"]}) != len(pool["entries"]):
-            raise ValueError("Duplicate prize disguises its effective probability")
-        for entry in pool["entries"]:
-            item = entry["item"]
-            if item not in SAFE_ITEMS or SAFE_ITEMS[item] > pool["min_stage"]:
-                raise ValueError(f"Unsafe item or premature reward: {item}")
-            if type(entry["count"]) is not int or not 1 <= entry["count"] <= 4:
-                raise ValueError("A reward must be one small stack of 1–4 items")
-            if type(entry["weight"]) is not int or entry["weight"] <= 0:
-                raise ValueError("Zero weight auto-grants in FTB; all weights must be positive")
-            if set(entry.get("name", {})) != {"uk_ua", "en_us"}:
-                raise ValueError("Every prize needs reviewed names for the budget document")
-            ids.append(entry_id(pool["key"], item))
-        if sum(e["weight"] for e in pool["entries"]) != 100:
-            raise ValueError("Weights must total 100 for transparent percentages")
-        if expected_iron(pool) > Fraction(2, 5):
-            raise ValueError("Pool exceeds 0.4 expected iron ingots per claim")
-        for language in ("uk_ua", "en_us"):
-            if not pool["title"].get(language):
-                raise ValueError("Missing reward pool title")
-    if len(ids) != len(set(ids)):
-        raise ValueError("Reward table or inner reward ID collision")
-    if not set(policy["chapter_pools"].values()) <= pool_keys:
-        raise ValueError("Unknown chapter pool")
-    by_key = {pool["key"]: pool for pool in pools}
-    for pool in pools:
-        seen = set()
-        current = pool
-        while current["min_stage"] > 0:
-            if current["key"] in seen:
-                raise ValueError("Reward fallback cycle")
-            seen.add(current["key"])
-            current = by_key[current["fallback"]]
-    for qid, milestone in policy["milestones"].items():
-        if not ID_PATTERN.fullmatch(qid) or not 0 <= milestone["tier"] <= 6:
-            raise ValueError("Invalid milestone reward")
+        if not re.fullmatch(r'[a-z_]+', pool['key']) or pool.get('fallback', 'survival') not in keys:
+            raise ValueError('Unsafe pool key or unknown fallback')
+        if set(pool['title']) != {'uk_ua', 'en_us'} or not all(pool['title'].values()):
+            raise ValueError('Pool titles must be bilingual')
+        if not 16 <= len(pool['entries']) <= 40:
+            raise ValueError('Each theme needs 16–40 distinct prizes')
+        if len({e['item'] for e in pool['entries']}) != len(pool['entries']):
+            raise ValueError('Duplicate item hides its combined probability')
+        for entry in pool['entries']:
+            item = entry['item']
+            if not ITEM_PATTERN.fullmatch(item):
+                raise ValueError('Invalid reward item ID')
+            if any(word in item for word in ('plastic', 'hdpe', 'mayhem_cube')):
+                raise ValueError(f'Plastic and nested cubes remain excluded: {item}')
+            if type(entry['count']) is not int or not 1 <= entry['count'] <= 4:
+                raise ValueError('Each draw awards one small stack of 1–4 items')
+            if type(entry['weight']) is not int or entry['weight'] <= 0:
+                raise ValueError('Entry weights must be positive integers')
+            if entry['rarity'] not in RARITIES:
+                raise ValueError('Unknown prize rarity')
+            minimum = entry.get('min_level', 0)
+            if type(minimum) is not int or not 0 <= minimum <= 6:
+                raise ValueError('Invalid production level')
+            required = entry.get('requires_craft', [])
+            if not isinstance(required, list) or len(set(required)) != len(required) or not all(isinstance(x, str) and ITEM_PATTERN.fullmatch(x) for x in required):
+                raise ValueError('Production conditions must be distinct exact item IDs')
+            evidence = entry.get('evidence')
+            if not isinstance(evidence, dict) or evidence.get('method') not in {'starter_supply', 'crafting', 'ae2_inscriber', 'mekanism_infusing'}:
+                raise ValueError(f'Record a supported production method: {item}')
+            if evidence['method'] != 'starter_supply' and not evidence.get('recipe_ids'):
+                raise ValueError(f'Manufactured prizes need exact recipe evidence: {item}')
+            manufactured = (evidence['method'] != 'starter_supply'
+                            or item.startswith(('kubejs:', 'sophisticatedstorage:', 'sophisticatedbackpacks:'))
+                            or item in {'ae2:logic_processor', 'ae2:calculation_processor', 'ae2:engineering_processor'}
+                            or (not item.startswith('minecraft:') and entry['rarity'] in {'rare', 'epic'}))
+            if manufactured and item not in required:
+                raise ValueError(f'Manufactured prizes require proof of that same item: {item}')
+            if (item.startswith('kubejs:') or entry['rarity'] in {'rare', 'epic'}) and entry['count'] != 1:
+                raise ValueError('Rare prizes and custom progression components are single-item prizes')
+            if set(entry.get('name', {})) != {'uk_ua', 'en_us'} or not all(entry['name'].values()):
+                raise ValueError('Every prize needs bilingual names')
+        if len(eligible_entries(pool, 0, set())) < 5:
+            raise ValueError('Every theme needs at least five guaranteed starter options')
+    if set(policy['chapter_pools'].values()) != keys:
+        raise ValueError('Every theme must be assigned and every chapter theme must exist')
+    for qid, milestone in policy['milestones'].items():
+        if not ID_PATTERN.fullmatch(qid) or not 0 <= milestone['tier'] <= 6:
+            raise ValueError('Invalid fixed milestone reward')
 
 
 def entry_id(pool_key: str, item_id: str) -> str:
-    """Separate stable namespace; does not consume or alter campaign IDs."""
-    digest = hashlib.sha256(f"soqm:reward:{pool_key}:{item_id}".encode()).hexdigest()
-    return "5A52" + digest[:12].upper()
+    """Stable catalogue identity, never a persistent reward claim."""
+    return '5A52' + hashlib.sha256(f'soqm:reward:{pool_key}:{item_id}'.encode()).hexdigest()[:12].upper()
 
 
 def quest_stage(quest: dict) -> int:
-    stages = [int(tag[6:]) for tag in quest.get("tags", [])
-              if re.fullmatch(r"stage_[0-6]", tag)]
-    return max(stages, default=0)
+    return max((int(t[6:]) for t in quest.get('tags', []) if re.fullmatch(r'stage_[0-6]', t)), default=0)
 
 
 def choose_pool(chapter: dict, quest: dict, policy: dict) -> dict:
-    pools = {pool["key"]: pool for pool in policy["pools"]}
-    filename = chapter.get("filename", "")
-    if filename not in policy["chapter_pools"]:
-        raise ValueError(f"Review reward theme for new chapter {filename!r}")
-    pool = pools[policy["chapter_pools"][filename]]
-    stage = quest_stage(quest)
-    while stage < pool["min_stage"]:
-        pool = pools[pool["fallback"]]
-    return pool
+    """Theme belongs to the chapter; quality is evaluated at personal claim."""
+    key = policy['chapter_pools'][chapter['filename']]
+    return next(p for p in policy['pools'] if p['key'] == key)
 
 
-def build_tables(policy: dict | None = None) -> list[dict]:
-    policy = load_policy() if policy is None else policy
-    validate_policy(policy)
-    tables = []
-    for index, pool in enumerate(policy["pools"]):
-        tables.append({
-            "id": pool["id"], "order_index": index, "loot_size": 1,
-            "empty_weight": 0, "hide_tooltip": False, "use_title": True,
-            "rewards": [{
-                "id": entry_id(pool["key"], entry["item"]),
-                "type": "item", "item": {"id": entry["item"], "count": 1},
-                "count": entry["count"], "weight": entry["weight"],
-                "random_bonus": 0, "team_reward": True, "auto": "disabled",
-            } for entry in pool["entries"]],
-        })
-    return tables
+def production_level(produced: set[str], policy: dict) -> int:
+    return max((r['level'] for r in policy['levels'] if r['item'] in produced), default=0)
 
 
-def locale_entries(language: str = "uk_ua", policy: dict | None = None) -> dict:
-    if language not in {"uk_ua", "en_us"}:
-        raise ValueError(f"Unreviewed reward locale: {language}")
-    policy = load_policy() if policy is None else policy
-    return {f"reward_table.{pool['id']}.title": pool["title"][language]
-            for pool in policy["pools"]}
+def probabilities(pool: dict, level: int, produced: set[str], policy: dict) -> dict[str, Fraction]:
+    """Exact probability per independent draw, normalized over available groups."""
+    groups = defaultdict(list)
+    for entry in eligible_entries(pool, level, produced):
+        groups[entry['rarity']].append(entry)
+    if not groups:
+        return {}
+    weights = policy['rarity_weights_by_level'][level]
+    total = sum(weights[g] for g in groups)
+    return {entry['item']: Fraction(weights[group], total) * Fraction(entry['weight'], sum(e['weight'] for e in entries))
+            for group, entries in groups.items() for entry in entries}
 
 
 def persistent_ids(chapters: list[dict]) -> list[str]:
     ids = []
     for chapter in chapters:
-        ids.append(chapter["id"])
-        ids.extend(image["id"] for image in chapter.get("images", []) if "id" in image)
-        for quest in chapter["quests"]:
-            ids.append(quest["id"])
-            ids.extend(t["id"] for t in quest["tasks"])
-            ids.extend(r["id"] for r in quest["rewards"])
+        ids.append(chapter['id'])
+        ids.extend(i['id'] for i in chapter.get('images', []) if 'id' in i)
+        for quest in chapter['quests']:
+            ids.append(quest['id'])
+            ids.extend(t['id'] for t in quest['tasks'])
+            ids.extend(r['id'] for r in quest['rewards'])
     return ids
 
 
-def apply(chapters: list[dict], locale: dict) -> dict:
-    """Replace excessive rewards; preserve every existing persistent identity.
-
-    Call after stage corrections so a stage-dependent theme chooses its fallback
-    from the updated quest. Repeat calls are idempotent. The personal introductory
-    book is preserved exactly; selected milestones retain one gated Mayhem cube.
-    """
-    policy = load_policy()
-    before_ids = persistent_ids(chapters)
-    tables = build_tables(policy)
-    table_ids = [table["id"] for table in tables]
-    table_ids += [reward["id"] for table in tables for reward in table["rewards"]]
-    if set(table_ids) & set(before_ids):
-        raise ValueError("New table IDs collide with saved campaign objects")
-    usage = Counter()
-    books = cubes = total = 0
+def locale_entries(language: str = 'uk_ua', policy: dict | None = None, chapters: list[dict] | None = None) -> dict:
+    if language not in {'uk_ua', 'en_us'}:
+        raise ValueError('Unreviewed language')
+    policy = load_policy() if policy is None else policy
+    chapters = chapters_from_disk() if chapters is None else chapters
+    result = {}
     for chapter in chapters:
-        for quest in chapter["quests"]:
+        for quest in chapter['quests']:
+            if quest['id'] in policy['milestones']:
+                continue
+            for reward in quest['rewards']:
+                if reward.get('item', {}).get('id') == 'ftbquests:book':
+                    continue
+                result[f"reward.{reward['id']}.title"] = choose_pool(chapter, quest, policy)['title'][language]
+    return result
+
+
+def runtime_policy(chapters: list[dict], policy: dict | None = None) -> dict:
+    policy = load_policy() if policy is None else policy
+    mappings = {}
+    for chapter in chapters:
+        for quest in chapter['quests']:
+            for reward in quest['rewards']:
+                if reward.get('type') == 'custom' and PROGRESSIVE_TAG in reward.get('tags', []):
+                    mappings[reward['id']] = {'pool': choose_pool(chapter, quest, policy)['key'], 'quest_id': quest['id']}
+    produced = set(GATES)
+    for pool in policy['pools']:
+        for entry in pool['entries']:
+            produced.update(entry.get('requires_craft', []))
+    pools = [{'key': p['key'], 'title': p['title'], 'fallback': p.get('fallback', 'survival'),
+              'entries': [{k: v for k, v in e.items() if k != 'evidence'} for e in p['entries']]} for p in policy['pools']]
+    return {'schema': 2, 'version': policy.get('version', '2.0'), 'levels': policy['levels'],
+            'draws_by_level': policy['draws_by_level'], 'rarity_weights_by_level': policy['rarity_weights_by_level'],
+            'pools': pools, 'production_items': sorted(produced), 'reward_mappings': dict(sorted(mappings.items()))}
+
+
+def apply(chapters: list[dict], locale: dict) -> dict:
+    policy = load_policy()
+    before = persistent_ids(chapters)
+    usage = Counter()
+    books = cubes = 0
+    for chapter in chapters:
+        for quest in chapter['quests']:
             pool = choose_pool(chapter, quest, policy)
-            for reward in quest["rewards"]:
-                total += 1
-                is_book = (quest["id"] == BOOK_QUEST and reward.get("type") == "item"
-                           and reward.get("item", {}).get("id") == "ftbquests:book")
-                if is_book:
-                    if reward.get("team_reward", True):
-                        raise ValueError("Introductory quest book must remain personal")
+            for reward in quest['rewards']:
+                if quest['id'] == BOOK_QUEST and reward.get('item', {}).get('id') == 'ftbquests:book':
+                    if reward.get('team_reward', True):
+                        raise ValueError('The original introductory book must remain personal')
                     books += 1
                     continue
-                # Preserve the fields involved in one-time claim identity/behavior.
-                kept = {key: reward[key] for key in (
-                    "id", "team_reward", "auto", "exclude_from_claim_all",
-                    "ignore_reward_blocking", "hide_tooltip"
-                ) if key in reward}
-                if kept.get("auto", "disabled") != "disabled":
-                    raise ValueError("Review non-manual reward before migration")
+                if reward.get('auto', 'disabled') != 'disabled':
+                    raise ValueError('Review non-manual reward before migration')
+                kept = {k: reward[k] for k in ('id', 'exclude_from_claim_all', 'ignore_reward_blocking', 'hide_tooltip') if k in reward}
+                tags = [t for t in reward.get('tags', []) if t != PROGRESSIVE_TAG and not t.startswith('soqm:reward_pool:')]
                 reward.clear()
                 reward.update(kept)
-                reward.setdefault("team_reward", True)
-                reward.setdefault("auto", "disabled")
-                milestone = policy["milestones"].get(quest["id"])
+                reward.update({'team_reward': False, 'auto': 'disabled'})
+                milestone = policy['milestones'].get(quest['id'])
                 if milestone:
-                    reward.update({
-                        "type": "item", "item": {
-                            "id": f"kubejs:mayhem_cube_t{milestone['tier']}", "count": 1,
-                        }, "count": 1, "random_bonus": 0,
-                    })
+                    reward.update({'type': 'item', 'item': {'id': f"kubejs:mayhem_cube_t{milestone['tier']}", 'count': 1}, 'count': 1, 'random_bonus': 0})
+                    if tags:
+                        reward['tags'] = tags
                     cubes += 1
                 else:
-                    reward.update({"type": "random", "table_id": int(pool["id"], 16)})
-                    usage[pool["key"]] += 1
-    if persistent_ids(chapters) != before_ids:
-        raise AssertionError("Reward migration changed persistent campaign IDs")
-    locale.update(locale_entries("uk_ua", policy))
-    by_key = {pool["key"]: pool for pool in policy["pools"]}
-    iron = sum((expected_iron(by_key[key]) * count for key, count in usage.items()), Fraction())
-    units = sum((expected_units(by_key[key]) * count for key, count in usage.items()), Fraction())
-    return {
-        "reward_objects": total, "random_rewards": sum(usage.values()),
-        "milestone_cubes": cubes, "personal_books": books,
-        "tables": len(policy["pools"]), "pool_usage": dict(sorted(usage.items())),
-        "expected_supply_items": round(float(units), 3),
-        "expected_supply_iron_ingots": round(float(iron), 3),
-        "stage_budgets": stage_budgets(chapters, policy),
-        "expectation_scope": "Ordinary supply pools only; fixed books and Mayhem event loot excluded.",
-    }
+                    reward.update({'type': 'custom', 'icon': pool.get('icon', DEFAULT_ICONS[pool['key']]),
+                                   'tags': tags + [PROGRESSIVE_TAG, 'soqm:reward_pool:' + pool['key']]})
+                    usage[pool['key']] += 1
+    if persistent_ids(chapters) != before:
+        raise AssertionError('Reward refresh changed a saved campaign object ID')
+    for key in list(locale):
+        if key.startswith('reward_table.000000006A51'):
+            del locale[key]
+    locale.update(locale_entries('uk_ua', policy, chapters))
+    entries = [e for p in policy['pools'] for e in p['entries']]
+    return {'personal_rewards': sum(len(q['rewards']) for c in chapters for q in c['quests']),
+            'progressive_rewards': sum(usage.values()), 'milestone_cubes': cubes, 'personal_books': books,
+            'pools': len(policy['pools']), 'catalogue_entries': len(entries), 'distinct_items': len({e['item'] for e in entries}),
+            'modded_items': len({e['item'] for e in entries if not e['item'].startswith('minecraft:')}),
+            'production_gated_entries': sum(bool(e.get('requires_craft')) for e in entries),
+            'pool_usage': dict(sorted(usage.items())), 'draws_by_level': policy['draws_by_level']}
 
 
-def expected_units(pool: dict) -> Fraction:
-    return sum((Fraction(entry["weight"], 100) * entry["count"]
-                for entry in pool["entries"]), Fraction())
+def obsolete_tables() -> list[Path]:
+    return sorted(TABLES_PATH.glob('000000006A51*.snbt'))
 
 
-def expected_iron(pool: dict) -> Fraction:
-    value = {"minecraft:iron_ingot": Fraction(1), "minecraft:iron_nugget": Fraction(1, 9)}
-    return sum((Fraction(entry["weight"], 100) * entry["count"] * value.get(entry["item"], 0)
-                for entry in pool["entries"]), Fraction())
-
-
-def stage_budgets(chapters: list[dict], policy: dict | None = None) -> dict:
-    """Exact weighted totals, grouped by the corrected quest stage, not hours.
-
-    Quantities measure direct supplies only. An iron-equivalent count includes
-    nuggets at 1/9; it is not a universal item price or an estimate of Mayhem loot.
-    """
-    policy = load_policy() if policy is None else policy
-    pools = {int(pool["id"], 16): pool for pool in policy["pools"]}
-    totals = {band: Counter() for band in ("early_0_1", "mid_2_3", "late_4_6")}
-    special = {
-        "minecraft:golden_carrot": "expected_golden_carrots",
-        "minecraft:experience_bottle": "expected_xp_bottles",
-        "minecraft:name_tag": "expected_name_tags",
-        "minecraft:emerald": "expected_emeralds",
-    }
-    for chapter in chapters:
-        for quest in chapter["quests"]:
-            stage = quest_stage(quest)
-            band = "early_0_1" if stage <= 1 else "mid_2_3" if stage <= 3 else "late_4_6"
-            values = totals[band]
-            for reward in quest["rewards"]:
-                if reward["type"] != "random":
-                    continue
-                pool = pools[reward["table_id"]]
-                values["claims"] += 1
-                values["expected_supply_items"] += expected_units(pool)
-                values["expected_iron_ingots"] += expected_iron(pool)
-                for entry in pool["entries"]:
-                    if entry["item"] in special:
-                        values[special[entry["item"]]] += Fraction(entry["weight"] * entry["count"], 100)
-    keys = ["claims", "expected_supply_items", "expected_iron_ingots", *special.values()]
-    return {band: {key: values[key] if key == "claims" else round(float(values[key]), 3)
-                   for key in keys} for band, values in totals.items()}
-
-
-def expected_files(policy: dict | None = None) -> dict[str, str]:
-    return {table["id"] + ".snbt": json.dumps(table, ensure_ascii=False, indent=2) + "\n"
-            for table in build_tables(policy)}
-
-
-def write_tables(directory: Path = TABLES_PATH) -> int:
-    directory.mkdir(parents=True, exist_ok=True)
-    files = expected_files()
-    stale = {path.name for path in directory.glob("000000006A51*.snbt")} - set(files)
-    if stale:
-        raise ValueError(f"Review stale table IDs before deleting: {sorted(stale)}")
-    for name, content in files.items():
-        (directory / name).write_text(content, encoding="utf-8")
-    return len(files)
+def expected_outputs(chapters: list[dict]) -> dict[Path, str]:
+    return {RUNTIME_PATH: serialize(runtime_policy(chapters))}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write", action="store_true", help="write native reward tables only")
-    parser.add_argument("--check", action="store_true", help="verify committed native reward tables")
+    parser.add_argument('--write', action='store_true', help='write the runtime policy')
+    parser.add_argument('--check', action='store_true', help='check the generated runtime policy')
     args = parser.parse_args()
     if args.write and args.check:
-        parser.error("Choose --write or --check")
-    files = expected_files()
+        parser.error('Choose --write or --check')
+    outputs = expected_outputs(chapters_from_disk())
+    stale = [str(p.relative_to(ROOT)) for p, content in outputs.items() if not p.exists() or p.read_text(encoding='utf-8') != content]
+    stale.extend(str(p.relative_to(ROOT)) for p in obsolete_tables())
+    if args.check and stale:
+        parser.exit(1, 'Reward policy is stale; run campaign_refresh.py\n' + '\n'.join(stale) + '\n')
     if args.write:
-        write_tables()
-    elif args.check:
-        stale = [name for name, content in files.items()
-                 if not (TABLES_PATH / name).exists()
-                 or (TABLES_PATH / name).read_text(encoding="utf-8") != content]
-        stale.extend(sorted({path.name for path in TABLES_PATH.glob("000000006A51*.snbt")} - set(files)))
-        if stale:
-            parser.exit(1, f"Reward tables stale: {stale}\n")
-    print(json.dumps({"tables": len(files), "mode": "write" if args.write else "check" if args.check else "inspect"}))
+        for path, content in outputs.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding='utf-8')
+        for path in obsolete_tables():
+            path.unlink()
+    print(json.dumps({'mode': 'write' if args.write else 'check' if args.check else 'inspect', 'changed_files': len(stale)}))
     return 0
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     raise SystemExit(main())

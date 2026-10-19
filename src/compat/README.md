@@ -1,7 +1,8 @@
 # Compatibility sources
 
-SOQM 0.4.6 uses **ten** authored compatibility modules recovered from the supplied
-Questing Mayhem Expert source chain. The original eight include full MIT
+SOQM 0.4.8 uses **eleven** authored compatibility modules: ten recovered from
+the supplied Questing Mayhem Expert source chain and a new production-evidence
+adapter. The original eight include full MIT
 notices, which must remain with their source and binaries. The two new modules
 declare MIT in `neoforge.mods.toml`, but neither their source nor JAR supplied a
 full license/copyright notice. Their local `LICENSE` files record that declaration
@@ -19,6 +20,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
 | `chest-balance` | `qm-chest-balance-0.4.6.jar` | 0.4.6 |
+| `progressive-rewards` | `qm-progressive-rewards-0.4.8.jar` | New SOQM 0.4.8 source and native API build |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -28,8 +30,15 @@ See [Cannibal build and validation notes](cannibal/README.md). The chest module
 limits first-fill loot in exact target tables;
 existing player inventories and already generated loot are outside that policy.
 
-**Independent recompilation of all ten production JARs has not been
-reproduced.** The Cannibal rebuild is documented separately. Matching recovered
+The new [production adapter](progressive-rewards/README.md) records successful
+manufacture for the personal reward catalogue and persists native FTB claim
+merges after team transitions. It has its own Java 21 native-API build script,
+MIT notice, pinned binary and source hashes. Its production facts are written
+from actual craft/finish events; it does not scan player inventories on ticks.
+
+**Independent recompilation of all ten recovered production JARs has not been
+reproduced.** The Cannibal and new production-adapter builds are documented
+separately. Matching recovered
 source and binary provenance for the other modules does not show that compiling
 this tree produces identical bytes. Historical build scripts can
 require workspace-specific compiler/API paths and server installations; client

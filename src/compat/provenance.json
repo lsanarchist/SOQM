@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions; the Cannibal 0.4.1 module has a documented native API rebuild, while recompilation of all other production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions. Cannibal 0.4.1 and the new SOQM production adapter have documented native API builds; recompilation of all other recovered production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -180,6 +180,36 @@
         "src/qm/chests/QmChestBalance.java": "d39a11a2069d5cdebe5e5daa90b902b58dc5fdaf3c73b4c6a02d0712234d6b6b",
         "src/qm/chests/SparseChestLoot.java": "8cc51e42f98dc6356ad723b965fc369131637e9c4b1365bd3f29ce3bc1dbc1e0",
         "src/qm/chests/mixin/LootTableFillMixin.java": "0b26eab7fc2c27413b972ae329b0ef140da460939c4affdffc5d4772acc8eb41"
+      }
+    },
+    {
+      "module": "progressive-rewards",
+      "production_jar": "qm-progressive-rewards-0.4.8.jar",
+      "production_jar_sha256": "fe1f74c356edeee94a362a1f1a25c478dab7c488b56ee706d18221a15c1de17b",
+      "source_origin": "New SOQM 0.4.8 source in this repository",
+      "files_sha256": {
+        "LICENSE": "4658d0329316145efa6274d0fce7b6541f308e1e01e68bcf6126d54fd4cd406a",
+        "README.md": "221d549e0d72d9d78d44f216ac01ba9dee541b89a02f807d9948c65db8964393",
+        "build.py": "207e54b6e94107c2f048c520203ede8a7851c06b3ac90038188fe6fa857eacd2",
+        "resources/META-INF/neoforge.mods.toml": "b77e054277a1ecd2ae44b9cf7b4d37b4acb93fdd8cabada7d29944d571a4152b",
+        "resources/qm_progressive_rewards.mixins.json": "3ac4ab8d7bffb527b1bae85102ee2b8402033e90f31ca8921dbc58d1af6c50b2",
+        "src/qm/rewards/ProductionEvidence.java": "fb8f8b33f75fc4d56cf4603b12691c8311e0c8c9e8569f49f705374034737c01",
+        "src/qm/rewards/ProductionPolicy.java": "b2b3ff2205d056000f5ac62869d38f365ed756491c790f922f9a2c6eda2103ae",
+        "src/qm/rewards/QmProgressiveRewards.java": "a0e7c727f79c82de757442906c9102e240f912a604469cb7b8b41d601a86592e",
+        "src/qm/rewards/mixin/AssemblerProductionMixin.java": "bca9ac962fcf012c1d90b5bc77f130d5d843175bc20d3c916f6d0c25902ac035",
+        "src/qm/rewards/mixin/InfuserProductionMixin.java": "326b0a46662c44f2cd3f38f358e6829115e392448110530aee686b72748af953",
+        "src/qm/rewards/mixin/InfusingFactoryProductionMixin.java": "3f18a657fc1bea6b907ac44ad2116131a62e0ce81b00c273c8526614be6ed965",
+        "src/qm/rewards/mixin/InscriberProductionMixin.java": "bbc712a554c8b4bb20d61fade9ffc3c38b79c73b2e3495b27a162e1f055d4471",
+        "src/qm/rewards/mixin/StorageUpgradeProductionMixin.java": "f53788aeb5794dd2bc63225e426ae7d953392737578bf1d05b6a8d7967f47fcf"
+      },
+      "local_revision": {
+        "version": "0.4.8",
+        "change": "Record actual manufacture for personal reward eligibility, preserve personal/team evidence boundaries and persist native claim merges after team transitions.",
+        "compiler": "Eclipse Temurin javac 21.0.12.1 (JDK 21.0.12.1+1)",
+        "compiler_archive_sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0"
       }
     }
   ]
