@@ -24,12 +24,20 @@ with Mojang or Microsoft.
   notices in their source or JARs; their local `LICENSE` files document this
   limitation rather than inventing a notice. Source provenance is not proof of
   an independently reproduced binary build.
-- **New production adapter:** SOQM 0.4.8 adds an eleventh authored module,
+- **New production adapter:** SOQM 0.4.8 adds an authored module,
   `qm-progressive-rewards-0.4.8`, under the project MIT license. Its source,
   native API build script and build requirements are in
   [src/compat/progressive-rewards/](src/compat/progressive-rewards/README.md).
   This adapter and the independently authored catalogue use the installed
   mods' APIs; no Craftoria implementation or reward table is included.
+- **Runtime optimizations:** `qm-runtime-optimizations-0.4.7` is an original
+  SOQM module under MIT, shipped alongside the production adapter for a total
+  of 12 authored modules. It targets pinned Abandoned Tunnels and Dungeons &
+  Taverns APIs/data without redistributing their implementations. The locally
+  revised `qm-quest-automation-0.4.3` retains its original MIT notice. Sources,
+  build inputs and verification are in
+  [the runtime module](src/compat/runtime-optimizations/README.md) and
+  [optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
 - **Modified structure templates:** nine inherited NBT resources adjust only
   inventories from upstream structures. Their origin is recorded, but their
   redistribution licenses have not been established. They are not covered by

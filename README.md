@@ -86,19 +86,20 @@ python3 scripts/soqm.py lock
 ./scripts/check
 ```
 
-`overrides/` містить ігровий вміст, `src/compat/` — джерела 11 авторських
+`overrides/` містить ігровий вміст, `src/compat/` — джерела 12 авторських
 модулів, `metadata/` — версії, хеші й редаговані правила кампанії. Прев’ю карт
 генеруються з фактичних координат; вони показують структуру й не замінюють
 огляд інтерфейсу в грі. Сторонні JAR, світи, тестовий мод та кеші залишаються
 поза інсталяційним архівом.
 
 [Локалізація](docs/LOCALIZATION.md) · [Порядок релізу](docs/RELEASE.uk.md) ·
-[План ігрових перевірок](docs/PLAYTEST.uk.md)
+[План ігрових перевірок](docs/PLAYTEST.uk.md) ·
+[Оптимізація генерації та фонової роботи](docs/PERFORMANCE_OPTIMIZATION.md)
 
 ## English
 
 SOQM **0.4.8** is an Expert Minecraft campaign with **1,625 quests in 37 chapters**,
-**122 pinned third-party mods** and **11 authored compatibility modules**.
+**122 pinned third-party mods** and **12 authored compatibility modules**.
 Its **14 original themed reward pools** contain **326 entries covering 240
 distinct items, including 210 modded items**. Every member claims a personal
 pack once per quest, receiving **2–4 independent draws**. Six manufactured

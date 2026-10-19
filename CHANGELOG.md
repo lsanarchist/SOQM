@@ -27,6 +27,15 @@
   pin, recipe evidence and native manufacture/claim/persistence regression gates.
   Details and the complete catalogue are in [REWARDS](docs/REWARDS.md).
 
+- Reuse repeated Abandoned Tunnels height queries within one placement search,
+  keeping the original terrain samples, random sequence and generated pieces.
+- Replace repeated Mayhem guardian UUID sweeps with bounded persistent deadline
+  processing and native lifecycle events, including existing-world migration.
+- Skip capped Quest Automation evidence before accessory/output reads; replace
+  avoidable Dungeons & Taverns polling with native events, direct tag checks
+  and tracked scheduled entities. Keep the updated 0.4.8 questbook and personal
+  rewards. See [runtime optimization details](docs/PERFORMANCE_OPTIMIZATION.md).
+
 - Replace nine skill-milestone tick/NBT criteria with explicit advancement
   grants from Pufferfish Skills unlock rewards. Existing unlocked skills are
   reconciled on login or data reload; advancement IDs, saved completion,

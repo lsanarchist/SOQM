@@ -3,11 +3,14 @@
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
 The table lists **122 pinned third-party dependencies**. SOQM 0.4.8 additionally
-ships **11 authored compatibility modules**, listed with their source and exact
+ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.8` module records production evidence and persists
-personal claim merges for the reward system.
+personal claim merges for the reward system. The separately versioned
+`qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
+and background encounter/dungeon work; `qm-quest-automation-0.4.3` skips
+already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |

@@ -1,6 +1,30 @@
 # Verification status
 
-## SOQM 0.4.8 — progressive personal rewards
+## SOQM 0.4.8 — combined runtime optimizations and personal rewards
+
+After integrating main `fc5328d`, validation on **2026-10-19** passed against
+**122 pinned third-party dependencies**, **12 authored modules** and **1,835
+locked payload files**. All **41 current questbook files** and the progressive
+reward policy/source/JAR remain byte-identical to that main revision.
+
+Both fresh full-pack native gates passed: tunnel equivalence/work counts,
+guardian lifecycle, quest observation and D&T behavior; then the preserved
+0.4.8 manufacture, personal-claim and nonempty progress-migration fixture.
+Each server reloaded **20,077 → 20,077 recipes**, logged zero KubeJS/fatal
+errors, saved all dimensions and exited with code 0. Both optimization JARs
+rebuilt byte-identically.
+
+`./scripts/check` passed **56 Python regressions**, both Node policy suites,
+deterministic generators and installation-package checks. Coordinate previews
+also passed. The merge's missing module/payload registration and broken native
+harness dispatch are repaired with focused regression coverage.
+
+See [the current combined verification](verification-performance.md) for
+exact hashes, native results, limitations and reproduction commands. These
+work-count checks do not establish a total chunk-generation, TPS or client-FPS
+speedup.
+
+## Historical SOQM 0.4.8 reward gate before the optimization merge
 
 Validation completed on **2026-10-19** against the exact locked production
 payload, with upgrade baseline `72bd75d`. **53 Python tests**, both Node policy

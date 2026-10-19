@@ -1,15 +1,40 @@
-# Runtime optimization verification — SOQM 0.4.7
+# Runtime optimization verification — SOQM 0.4.8
 
-Validation completed on **2026-10-19** against the final production payload.
-The branch is based on commit
-[`72bd75d`](https://github.com/lsanarchist/SOQM/commit/72bd75d131a986afe9cf0d11580fdcaf009a208a),
-which includes both the updated questbook and merged skill-advancement patch.
-All **55 questbook files**, campaign identity/route/reward policy files, and the
-merged skill definitions/advancements are byte-identical to that base.
+Validation completed on **2026-10-19** against the combined, locked production
+payload after merging the updated questbook and personal rewards from
+[`fc5328d`](https://github.com/lsanarchist/SOQM/commit/fc5328de31809e5d11fc0f0143e488dee6689090).
+All **41 current questbook files**, campaign identity/route/reward policy files,
+merged skill definitions/advancements and the progressive-rewards source/JAR
+are byte-identical to that base. The complete questbook Git tree is
+`0c1be6ed555e5c80845be44ae53e7072d6715cb5`.
 
-**Result:** the native behavioral and work-count fixture passed in the full
-pinned modpack, including real data reload and clean shutdown. Both changed
-production JARs also reproduced byte-for-byte in an independent build.
+**Result:** the native behavioral and work-count fixture passed against the
+server side of the combined pinned pack, including real data reload and clean
+shutdown. Both optimization JARs reproduced byte-for-byte in an independent
+native build. Module versions remain Quest Automation 0.4.3 and Runtime
+Optimizations 0.4.7 inside pack 0.4.8.
+
+## Merge integration repairs
+
+The merge at
+[`37fdb1e`](https://github.com/lsanarchist/SOQM/commit/37fdb1e7521e0861e2afd86926a4a423831f4e24)
+kept both branches' production implementations, but dropped four optimization
+entries from the payload lock and the runtime module's authored/provenance
+records. Its [CI run](https://github.com/lsanarchist/SOQM/actions/runs/39259910640)
+therefore failed at the payload check. All four files were compared with the
+reviewed optimization commit before restoring their exact pins.
+
+The merge also removed the shared native harness's compiler, source and
+workspace hooks while the performance entrypoint still supplied them. The
+repaired harness supports both probes, retaining the newer reward recipe
+evidence staging, multi-source Java compilation and authored-mod classpath.
+Three offline regressions cover both dispatch paths and the baseline/payload
+gates; module provenance now checks actual source directories and shipped JARs.
+
+No questbook, reward policy, progressive-rewards source, dependency pin or
+production optimization was edited for this integration repair. The original
+0.4.7 evidence remains available in the
+[initial verification record](https://github.com/lsanarchist/SOQM/blob/307cf612ae9b7873df7646ab4769de8d2146e526/reports/verification-performance.md).
 
 ## Runtime and execution
 
@@ -18,8 +43,8 @@ production JARs also reproduced byte-for-byte in an independent build.
 | Minecraft / NeoForge | 1.21.1 / 21.1.262 |
 | JDK | Eclipse Temurin 21.0.12.1+1 |
 | Third-party dependencies verified by hash and size | 122 |
-| Authored modules in the production package | 11; server staging excludes client-only modules |
-| Production override files | 1,846 |
+| Authored modules in the production package | 12; server staging excludes client-only modules |
+| Production override files | 1,835 |
 | Fresh localhost world and synthetic players | Passed; no existing player world was used |
 | Recipe count before and after `/reload` | 20,077 → 20,077 |
 | KubeJS startup / server errors | 0 / 0 |
@@ -29,9 +54,9 @@ production JARs also reproduced byte-for-byte in an independent build.
 | Production payload unchanged during execution | Yes |
 | Fixture and harness sources match the final report | Yes |
 
-The successful local run is `.work/performance-probe/run-20261019T123622.672442Z`. Its complete staging,
+The successful local run is `.work/performance-probe/run-20261019T133759.867231Z`. Its complete staging,
 compilation, startup, fixture, reload and shutdown duration was
-**119.14 seconds**. That duration is not a generation benchmark.
+**111.51 seconds**. That duration is not a generation benchmark.
 Synthetic players use a native NeoForge mock connection and in-memory Netty
 channels while retaining the real packet listener and payload checks. This
 executes server-side event behavior; it does not validate a graphical client
@@ -148,26 +173,70 @@ passed all of these checks:
   already loaded unprocessed wither. The boss condition remains valid after
   reload; this is not a claim that Minecraft reloads every dynamic registry.
 
+## Updated personal rewards and progress migration
+
+The separate 0.4.8 campaign fixture also passed against the **same locked
+production payload** and shared harness as the optimization fixture. It ran in
+`.work/runtime-probe/run-20261019T134030.594760Z` for **113.15 seconds**,
+using the prior shared-reward commit `72bd75d` as its upgrade baseline. This
+exercises the reward branch's actual implementation alongside all server-side
+optimizations, including its native crafting, team and game-mode listeners.
+
+- All **240 catalogue items**, **326 reward entries** and **226 cited production
+  recipes** resolved in the loaded pack. All **1,611 custom reward definitions**
+  passed native NBT and packet serialization.
+- Actual crafting, AE2 Assembler/Inscriber, Mekanism Infuser/Infusing Factory
+  and consumed Sophisticated Storage upgrades recorded production. Inventory
+  possession, reward delivery, creative/fake actors and nonproducing operations
+  did not establish proof.
+- Two synthetic members received independent personal rewards. Two-, three-
+  and four-draw delivery, late joining, expensive-item production gates and
+  disk-backed claim merges on team changes passed.
+- The nonempty upgrade fixture preserved **41 task values**, including **15
+  partial tasks**, and kept the old shared claim history. It rejected **3,250
+  repeated personal claims** across two migrated members while preserving the
+  existing personal book claim.
+- Native AE2 terminal conditions, team production ownership and personal claim
+  persistence survived real `/reload` and independent disk reads.
+- Recipe counts remained **20,077 → 20,077**. KubeJS startup/server and fatal
+  error counts were zero; all dimensions saved and Java exited normally.
+
+The reward fixture uses its existing test-only packet listener, which drops
+outbound interface traffic. Its reward packet serialization is tested
+separately using native registry-aware buffers. This does not establish a real
+client handshake, graphical rendering or a multiplayer survival playthrough.
+
+| Additional integration evidence | SHA-256 |
+| --- | --- |
+| Reward fixture console | `69cfea9a9a29831b07767773b4804f540e9207156268962cb77e944decb323c7` |
+| Reward test-only JAR | `ce8a42414477e5cde81449e6608a17499a386a76f55c22ab7c2681ac316da41a` |
+| `metadata/reward_item_evidence.json` | `52b93305a0440b814612adeafef1a17752ff9169f643fa32f07b9a72b48944de` |
+| `tests/runtime/ProductionEvidenceProbe.java` | `7bf7b72da9f5f308b6c554b8ac0c962ebd2c1fc8b621d777d6f18111e1a83895` |
+| `tests/runtime/ProgressiveRewardsProbe.java` | `375269d27f7c4f916a1445cf7ec3b4d53762a0f018ba61c5c17f1bdbca2d21a0` |
+| `tests/runtime/SoqmRuntimeProbe.java` | `e33286f1e86e66f1d00dc6f59962ee496b5ac72ea3fde5af1996bb05addf5978` |
+
 ## Repository and packaging gates
 
-`./scripts/check` passed **53 Python tests**, the Node equipment/loot policy
-regression, campaign and English regeneration, payload/provenance checks, and
+`./scripts/check` passed **56 Python tests**, both Node equipment/loot and
+progressive-rewards policy regressions, campaign and English regeneration,
+payload/provenance checks, and
 installation ZIP content, CRC, hash and deterministic rebuild checks.
 `python3 scripts/render_campaign.py --check` also passed. The generated archive
-contains the 11 production modules; it contains no native test fixture JAR.
+contains the 12 production modules; it contains no native test fixture JAR.
 
-The tested installation ZIP is `dist/SOQM-0.4.7-curseforge.zip`,
-**2,146,218 bytes**, SHA-256
-`8dae08948a8f89dfd607ec9eaaddf16e222f018efe3316314354236e8cefa42b`.
-The existing CI workflow builds a candidate archive for each reviewed PR
-commit. A CI candidate is distinct from a separately published release.
+The installation ZIP is `dist/SOQM-0.4.8-curseforge.zip`; its exact checksum is
+written to `dist/SHA256SUMS` alongside it. The archive also includes this
+verification record. The existing CI workflow builds a candidate archive and
+its checksum for each reviewed PR commit. A CI candidate is distinct from a
+separately published release.
 
 ## Reproducible production artifacts
 
-Both JARs were compiled twice against the verified native runtime, using a
-fresh output directory for the independent build. Exact binary equality passed.
-Original MIT notices remain embedded. The other nine production JAR pins are
-unchanged by this patch.
+Both optimization JARs were rebuilt against the verified native runtime and
+current 0.4.8 authored-mod classpath in the fresh `.work/integration-rebuild`
+output directory. Exact binary equality with the shipped JARs passed. Original
+MIT notices remain embedded. The other ten production JAR pins are unchanged
+from the updated main branch, including the new progressive-rewards adapter.
 
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
@@ -183,12 +252,12 @@ version requirements are in the [module README](../src/compat/runtime-optimizati
 | File | SHA-256 |
 | --- | --- |
 | `metadata/mods.lock.json` | `df0d6d641d518d73512dbaedbe0197fdd3d2343bc0be65fa0dc038d87cd4168b` |
-| `metadata/authored-mods.json` | `cd64b5b2711648c84742b61db5179266bba2c9c4ad25496591d06692ca289881` |
-| `metadata/payload.sha256.json` | `84d212fdb881ba5badb821abefce80814be3fc50b8784272193ee9d5211dabbb` |
-| `src/compat/provenance.json` | `ac378ae1ff4de3064a12efcbce3b047f54cf51fe9188ffa5df28417946dc397d` |
+| `metadata/authored-mods.json` | `f0639231800bb6f2469448cfb2e5f1c58a4dde9a66bdf34fa1e0f8039210cde3` |
+| `metadata/payload.sha256.json` | `e41dbd05a99c2cc39eb1adf07e2e9518458904ce25a5f46be0c8ca463f96917e` |
+| `src/compat/provenance.json` | `15c5f4a2c111699564d33ca3af333b10df1edeeaf02d351ccf6ef3c692991d5c` |
 | `src/compat/build_optimizations.py` | `e1c2f40bc16db0fd0c9822a10038d5e166649b849c65c3d404ed098ec5faad25` |
 | `scripts/performance_probe.py` | `47e16d858a217e2c058e539d763b936df3b36a25b8087116d51db33694efb772` |
-| `scripts/runtime_probe.py` | `71accb1c9959ef0a9f5607b9cfaf9b1d8840413ef8fbd5c5ca4bc1a600f677e7` |
+| `scripts/runtime_probe.py` | `e6e0c47b728818d5017fd9a4829009c2ab68f37c6669d45f583172839979b32b` |
 
 | Native fixture source | SHA-256 |
 | --- | --- |
@@ -198,8 +267,8 @@ version requirements are in the [module README](../src/compat/runtime-optimizati
 | `tests/runtime/questauto/QuestAutomationPerformanceProbe.java` | `f3ce03e929bbb445fc6eef2fd95969a42869a8d4655f21a8af6ec51bee79f299` |
 | `tests/runtime/dungeons/DungeonsPerformanceProbe.java` | `0440305e106afe70f5c76bdfcce6ef59cb3ce664460b24532f76db21f269e4f4` |
 
-The successful console SHA-256 is `475b65c7752e7f8ec991ff015847c24a786da2b86e2dc73f5149beb46d077364`.
-The local test-only JAR SHA-256 is `032d485c97a1a36e2cf7d8fa8b6e62c0dc9dc75cce04d8ce296918e66913f432`.
+The successful console SHA-256 is `7a6326e952984d46796a7f5656cb6686f511fae5bcc49e33a79ee673e39a4343`.
+The local test-only JAR SHA-256 is `aee057bf03e2c7c6a22542e212e22469f9b234a67908eceac2a115e33d2cedfe`.
 Generated raw JSON reports, downloaded third-party dependencies and test worlds
 remain ignored local outputs. Production sources, the two authored artifacts,
 input pins and this verification record are committed.
@@ -214,7 +283,7 @@ python3 scripts/performance_probe.py \
   --runtime /absolute/path/to/installed/server \
   --java /absolute/path/to/jdk-21/bin/java \
   --accept-eula \
-  --baseline-ref 72bd75d131a986afe9cf0d11580fdcaf009a208a
+  --baseline-ref fc5328de31809e5d11fc0f0143e488dee6689090
 ```
 
 The default localhost port is 25591. The harness compiles its isolated fixtures,
@@ -223,3 +292,17 @@ checks, reloads data and saves/shuts down. The production payload must match its
 reviewed lock, and it must remain unchanged during execution. A failed fixture,
 KubeJS/fatal error, mismatched recipe count or incomplete shutdown fails the
 command.
+
+To repeat the preserved 0.4.8 reward and nonempty progress-migration gate on
+its separate default localhost port 25590:
+
+```sh
+python3 scripts/runtime_probe.py \
+  --runtime /absolute/path/to/installed/server \
+  --java /absolute/path/to/jdk-21/bin/java \
+  --accept-eula \
+  --baseline-ref 72bd75d131a986afe9cf0d11580fdcaf009a208a
+```
+
+That older baseline intentionally supplies shared claim history; the tested
+production payload is the current 0.4.8 pack in both commands.

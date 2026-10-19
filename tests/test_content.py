@@ -142,8 +142,14 @@ class CompatibilityProvenanceTests(unittest.TestCase):
         provenance = read_json(directory / "provenance.json")
         authored = read_json(ROOT / "metadata/authored-mods.json")
         modules = provenance["modules"]
-        self.assertEqual(len(modules), 11)
+        self.assertEqual(len(modules), 12)
+        self.assertEqual({row["module"] for row in modules},
+                         {path.name for path in directory.iterdir() if (path / "src").is_dir()},
+                         "Every compatibility source module must have provenance")
         self.assertEqual({row["production_jar"] for row in modules}, {row["filename"] for row in authored})
+        self.assertEqual({row["filename"] for row in authored},
+                         {path.name for path in (ROOT / "overrides/mods").glob("*.jar")},
+                         "Every shipped module must have an authored pin")
         for module in modules:
             with self.subTest(module=module["module"]):
                 source = directory / module["module"]

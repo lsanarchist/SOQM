@@ -1,10 +1,15 @@
-# Runtime optimization patch for SOQM 0.4.7
+# Runtime optimization patch for SOQM 0.4.8
 
-This patch builds on the updated **0.4.7 questbook**. It reduces repeated terrain
+This patch builds on the updated **0.4.8 questbook and personal rewards**. It reduces repeated terrain
 queries, fixes the lifetime of Mayhem guardian records, and skips completed
 quest evidence and avoidable Dungeons & Taverns polling. Quest definitions,
 identifiers, layout, text, reward pools, recipes, and recorded FTB quest progress
 are preserved.
+
+The runtime module retains its independent version **0.4.7**, and Quest
+Automation remains **0.4.3**. Both ship alongside the new **0.4.8 progressive
+rewards module**. The combined pack contains 12 authored modules; see the
+[integration verification](../reports/verification-performance.md).
 
 | Area | Change | Intended result |
 | --- | --- | --- |
