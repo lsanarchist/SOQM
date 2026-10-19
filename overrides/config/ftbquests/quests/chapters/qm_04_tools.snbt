@@ -18,7 +18,7 @@
     {
       "id": "514D11ABE082674B",
       "x": -10.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanismtools:osmium_paxel",
         "count": 1
@@ -28,7 +28,7 @@
         "stage_1",
         "tools_osmium",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D118227E562E7"
@@ -53,25 +53,20 @@
       "rewards": [
         {
           "id": "51301378A5C5A976",
-          "type": "item",
-          "item": {
-            "id": "minecraft:stick",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11BFE1742CD9",
       "x": -7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanismtools:steel_paxel",
         "count": 1
@@ -81,7 +76,7 @@
         "stage_1",
         "tools_steel",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D11ABE082674B",
@@ -119,25 +114,20 @@
       "rewards": [
         {
           "id": "51301324167E9AE0",
-          "type": "item",
-          "item": {
-            "id": "minecraft:iron_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11D6D44E1120",
       "x": -10.95,
-      "y": 6.2,
+      "y": 6.67,
       "icon": {
         "id": "mekanismadditions:walkie_talkie",
         "count": 1
@@ -147,7 +137,7 @@
         "stage_1",
         "tools_radio",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D11BFE1742CD9"
@@ -172,25 +162,20 @@
       "rewards": [
         {
           "id": "513013B250D1DDFC",
-          "type": "item",
-          "item": {
-            "id": "mekanism:ingot_osmium",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "514D110144C01D44",
       "x": -4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanismtools:refined_obsidian_paxel",
         "count": 1
@@ -200,7 +185,8 @@
         "stage_3",
         "tools_obsidian",
         "qm_v040",
-        "plain_instruction"
+        "plain_instruction",
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D11BFE1742CD9",
@@ -227,25 +213,20 @@
       "rewards": [
         {
           "id": "5130135C7D41DC36",
-          "type": "item",
-          "item": {
-            "id": "minecraft:stick",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11E17AB94DF9",
       "x": 1.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanism:hdpe_sheet",
         "count": 1
@@ -255,7 +236,7 @@
         "stage_3",
         "tools_plastic",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D118CA784C98D",
@@ -281,25 +262,20 @@
       "rewards": [
         {
           "id": "513013E950F6D31E",
-          "type": "item",
-          "item": {
-            "id": "minecraft:glass",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11197CE0EDFE",
       "x": 4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanismadditions:orange_glow_panel",
         "count": 1
@@ -309,7 +285,7 @@
         "stage_3",
         "tools_lighting",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D11E17AB94DF9"
@@ -328,25 +304,20 @@
       "rewards": [
         {
           "id": "51301318AA2528C1",
-          "type": "item",
-          "item": {
-            "id": "minecraft:glowstone_dust",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11517133D536",
       "x": 7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "mekanismadditions:aqua_balloon",
         "count": 1
@@ -356,7 +327,7 @@
         "stage_3",
         "tools_balloon",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D11197CE0EDFE"
@@ -375,27 +346,22 @@
       "rewards": [
         {
           "id": "513013247A2A1D4A",
-          "type": "item",
-          "item": {
-            "id": "minecraft:string",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693325
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     }
   ],
   "images": [
     {
       "id": "51410410000001CE",
       "x": 0.0,
-      "y": -2.25,
+      "y": -2.45,
       "width": 24.9,
       "height": 0.8,
       "rotation": 0.0,
@@ -411,7 +377,7 @@
     {
       "id": "51410410000001CF",
       "x": 0.0,
-      "y": -1.37,
+      "y": -1.53,
       "width": 24.9,
       "height": 0.43,
       "rotation": 0.0,
@@ -427,7 +393,7 @@
     {
       "id": "51410410000001D0",
       "x": 0.0,
-      "y": -0.71,
+      "y": -0.83,
       "width": 24.9,
       "height": 0.1,
       "rotation": 0.0,
@@ -459,9 +425,9 @@
     {
       "id": "51410410000001D2",
       "x": -6.45,
-      "y": 1.84,
+      "y": 2.05,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -475,9 +441,9 @@
     {
       "id": "51410410000001D3",
       "x": -12.395,
-      "y": 1.84,
+      "y": 2.05,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -491,7 +457,7 @@
     {
       "id": "51410410000001D4",
       "x": -6.37,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -507,9 +473,9 @@
     {
       "id": "51410410000001D5",
       "x": -10.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -523,9 +489,9 @@
     {
       "id": "51410410000001D6",
       "x": -7.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -539,9 +505,9 @@
     {
       "id": "51410410000001D7",
       "x": -4.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -555,9 +521,9 @@
     {
       "id": "51410410000001D8",
       "x": 6.45,
-      "y": 1.84,
+      "y": 2.05,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -571,11 +537,11 @@
     {
       "id": "51410410000001D9",
       "x": 0.505,
-      "y": 1.84,
+      "y": 2.05,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E866B6DB",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -587,7 +553,7 @@
     {
       "id": "51410410000001DA",
       "x": 6.53,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -603,9 +569,9 @@
     {
       "id": "51410410000001DB",
       "x": 1.95,
-      "y": 2.74,
+      "y": 2.72,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -619,9 +585,9 @@
     {
       "id": "51410410000001DC",
       "x": 4.95,
-      "y": 2.74,
+      "y": 2.72,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -635,9 +601,9 @@
     {
       "id": "51410410000001DD",
       "x": 7.95,
-      "y": 2.74,
+      "y": 2.72,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -651,9 +617,9 @@
     {
       "id": "51410410000001DE",
       "x": -6.45,
-      "y": 6.24,
+      "y": 6.87,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -667,11 +633,11 @@
     {
       "id": "51410410000001DF",
       "x": -12.395,
-      "y": 6.24,
+      "y": 6.87,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E88ABC7B",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -683,7 +649,7 @@
     {
       "id": "51410410000001E0",
       "x": -6.37,
-      "y": 4.84,
+      "y": 5.28,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -699,9 +665,9 @@
     {
       "id": "51410410000001E1",
       "x": -10.95,
-      "y": 7.14,
+      "y": 7.54,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,

@@ -1,0 +1,911 @@
+{
+  "schema": 1,
+  "version": "1.0",
+  "max_items_per_roll": 4,
+  "notes": "Original SOQM supplies; weights sum to 100. One native FTB draw; no configured empty result, zero-weight auto-grants, random quantity bonuses, machinery, gate components, boss loot or plastic. Rare small food, XP and naming supplies make later pools distinct.",
+  "sources": {
+    "ftb_quests_version": "2101.1.36",
+    "ftb_quests_sha256": "6a39982c4b3afc00b1e788041a4f0d394e1659e3b3a6e5d078cd790bc36d0018",
+    "ftb_library_version": "2101.1.37",
+    "ftb_library_sha256": "624c2d2d1cbadb946d967e17757bd5b2d129d4d3ed71f2da0c70607d04476ac2",
+    "ftb_source_ref": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+    "craftoria_reference": "d9b70f8c6c1cdb518284287a09b59948d4960b1a"
+  },
+  "pools": [
+    {
+      "key": "survival",
+      "id": "000000006A510001",
+      "min_stage": 0,
+      "fallback": "survival",
+      "title": {
+        "uk_ua": "Припаси для старту",
+        "en_us": "Starting Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:bread",
+          "count": 2,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Хліб",
+            "en_us": "Bread"
+          }
+        },
+        {
+          "item": "minecraft:torch",
+          "count": 4,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Смолоскип",
+            "en_us": "Torch"
+          }
+        },
+        {
+          "item": "minecraft:oak_planks",
+          "count": 4,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Дубові дошки",
+            "en_us": "Oak Planks"
+          }
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Шкіра",
+            "en_us": "Leather"
+          }
+        },
+        {
+          "item": "minecraft:paper",
+          "count": 2,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Папір",
+            "en_us": "Paper"
+          }
+        }
+      ]
+    },
+    {
+      "key": "workshop",
+      "id": "000000006A510002",
+      "min_stage": 0,
+      "fallback": "workshop",
+      "title": {
+        "uk_ua": "Запас майстерні",
+        "en_us": "Workshop Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Шматочок заліза",
+            "en_us": "Iron Nugget"
+          }
+        },
+        {
+          "item": "minecraft:coal",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Вугілля",
+            "en_us": "Coal"
+          }
+        },
+        {
+          "item": "minecraft:copper_ingot",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Мідний злиток",
+            "en_us": "Copper Ingot"
+          }
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
+          }
+        },
+        {
+          "item": "minecraft:gold_nugget",
+          "count": 4,
+          "weight": 5,
+          "name": {
+            "uk_ua": "Шматочок золота",
+            "en_us": "Gold Nugget"
+          }
+        }
+      ]
+    },
+    {
+      "key": "engineering",
+      "id": "000000006A510003",
+      "min_stage": 1,
+      "fallback": "workshop",
+      "title": {
+        "uk_ua": "Запас для виробництва",
+        "en_us": "Factory Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
+          }
+        },
+        {
+          "item": "minecraft:copper_ingot",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Мідний злиток",
+            "en_us": "Copper Ingot"
+          }
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
+          }
+        },
+        {
+          "item": "minecraft:coal",
+          "count": 2,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Вугілля",
+            "en_us": "Coal"
+          }
+        },
+        {
+          "item": "minecraft:glass",
+          "count": 3,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          }
+        }
+      ]
+    },
+    {
+      "key": "power",
+      "id": "000000006A510004",
+      "min_stage": 3,
+      "fallback": "engineering",
+      "title": {
+        "uk_ua": "Запас енергетика",
+        "en_us": "Power Workshop Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Залізний зливок",
+            "en_us": "Iron Ingot"
+          }
+        },
+        {
+          "item": "minecraft:copper_ingot",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Мідний зливок",
+            "en_us": "Copper Ingot"
+          }
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Золотий зливок",
+            "en_us": "Gold Ingot"
+          }
+        },
+        {
+          "item": "minecraft:redstone",
+          "count": 3,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
+          }
+        },
+        {
+          "item": "minecraft:experience_bottle",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
+          }
+        }
+      ]
+    },
+    {
+      "key": "logistics",
+      "id": "000000006A510005",
+      "min_stage": 0,
+      "fallback": "logistics",
+      "title": {
+        "uk_ua": "Припаси для складу",
+        "en_us": "Storage Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:paper",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Папір",
+            "en_us": "Paper"
+          }
+        },
+        {
+          "item": "minecraft:glass",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          }
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Нитка",
+            "en_us": "String"
+          }
+        },
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 4,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Шматочок заліза",
+            "en_us": "Iron Nugget"
+          }
+        },
+        {
+          "item": "minecraft:redstone",
+          "count": 2,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
+          }
+        }
+      ]
+    },
+    {
+      "key": "scholar",
+      "id": "000000006A510006",
+      "min_stage": 0,
+      "fallback": "scholar",
+      "title": {
+        "uk_ua": "Матеріали дослідника",
+        "en_us": "Research Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:paper",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Папір",
+            "en_us": "Paper"
+          }
+        },
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Лазурит",
+            "en_us": "Lapis Lazuli"
+          }
+        },
+        {
+          "item": "minecraft:glass",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          }
+        },
+        {
+          "item": "minecraft:amethyst_shard",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Аметистовий уламок",
+            "en_us": "Amethyst Shard"
+          }
+        },
+        {
+          "item": "minecraft:sugar",
+          "count": 3,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Цукор",
+            "en_us": "Sugar"
+          }
+        }
+      ]
+    },
+    {
+      "key": "arcane",
+      "id": "000000006A510007",
+      "min_stage": 2,
+      "fallback": "scholar",
+      "title": {
+        "uk_ua": "Запас для магічної майстерні",
+        "en_us": "Arcane Workshop Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Лазурит",
+            "en_us": "Lapis Lazuli"
+          }
+        },
+        {
+          "item": "minecraft:amethyst_shard",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Уламок аметисту",
+            "en_us": "Amethyst Shard"
+          }
+        },
+        {
+          "item": "minecraft:quartz",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Кварц",
+            "en_us": "Nether Quartz"
+          }
+        },
+        {
+          "item": "minecraft:glowstone_dust",
+          "count": 2,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Світлокам’яний пил",
+            "en_us": "Glowstone Dust"
+          }
+        },
+        {
+          "item": "minecraft:experience_bottle",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
+          }
+        }
+      ]
+    },
+    {
+      "key": "expedition",
+      "id": "000000006A510008",
+      "min_stage": 0,
+      "fallback": "expedition",
+      "title": {
+        "uk_ua": "Припаси для експедиції",
+        "en_us": "Expedition Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:bread",
+          "count": 2,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Хліб",
+            "en_us": "Bread"
+          }
+        },
+        {
+          "item": "minecraft:torch",
+          "count": 4,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Смолоскип",
+            "en_us": "Torch"
+          }
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 4,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Стріла",
+            "en_us": "Arrow"
+          }
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Шкіра",
+            "en_us": "Leather"
+          }
+        },
+        {
+          "item": "minecraft:white_wool",
+          "count": 2,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Біла вовна",
+            "en_us": "White Wool"
+          }
+        }
+      ]
+    },
+    {
+      "key": "settlement",
+      "id": "000000006A510009",
+      "min_stage": 0,
+      "fallback": "settlement",
+      "title": {
+        "uk_ua": "Посилка для будівельника",
+        "en_us": "Settlement Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:brick",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Цеглина",
+            "en_us": "Brick"
+          }
+        },
+        {
+          "item": "minecraft:oak_planks",
+          "count": 4,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Дубові дошки",
+            "en_us": "Oak Planks"
+          }
+        },
+        {
+          "item": "minecraft:white_wool",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Біла вовна",
+            "en_us": "White Wool"
+          }
+        },
+        {
+          "item": "minecraft:paper",
+          "count": 3,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Папір",
+            "en_us": "Paper"
+          }
+        },
+        {
+          "item": "minecraft:bread",
+          "count": 2,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Хліб",
+            "en_us": "Bread"
+          }
+        }
+      ]
+    },
+    {
+      "key": "space",
+      "id": "000000006A51000A",
+      "min_stage": 3,
+      "fallback": "logistics",
+      "title": {
+        "uk_ua": "Запас космічної майстерні",
+        "en_us": "Space Workshop Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:glass",
+          "count": 3,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          }
+        },
+        {
+          "item": "minecraft:redstone",
+          "count": 3,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
+          }
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Залізний зливок",
+            "en_us": "Iron Ingot"
+          }
+        },
+        {
+          "item": "minecraft:golden_carrot",
+          "count": 1,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Золота морква",
+            "en_us": "Golden Carrot"
+          }
+        },
+        {
+          "item": "minecraft:experience_bottle",
+          "count": 1,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
+          }
+        }
+      ]
+    },
+    {
+      "key": "processing",
+      "id": "000000006A51000B",
+      "min_stage": 0,
+      "fallback": "processing",
+      "title": {
+        "uk_ua": "Сировина для переробки",
+        "en_us": "Processing Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:sand",
+          "count": 4,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Пісок",
+            "en_us": "Sand"
+          }
+        },
+        {
+          "item": "minecraft:gravel",
+          "count": 4,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Гравій",
+            "en_us": "Gravel"
+          }
+        },
+        {
+          "item": "minecraft:cobblestone",
+          "count": 4,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Бруківка",
+            "en_us": "Cobblestone"
+          }
+        },
+        {
+          "item": "minecraft:clay_ball",
+          "count": 4,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Грудка глини",
+            "en_us": "Clay Ball"
+          }
+        },
+        {
+          "item": "minecraft:coal",
+          "count": 2,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Вугілля",
+            "en_us": "Coal"
+          }
+        }
+      ]
+    },
+    {
+      "key": "hunting",
+      "id": "000000006A51000C",
+      "min_stage": 0,
+      "fallback": "hunting",
+      "title": {
+        "uk_ua": "Припаси мисливця",
+        "en_us": "Hunting Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Стріла",
+            "en_us": "Arrow"
+          }
+        },
+        {
+          "item": "minecraft:string",
+          "count": 3,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Нитка",
+            "en_us": "String"
+          }
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Кістка",
+            "en_us": "Bone"
+          }
+        },
+        {
+          "item": "minecraft:cooked_beef",
+          "count": 2,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Стейк",
+            "en_us": "Steak"
+          }
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Шкіра",
+            "en_us": "Leather"
+          }
+        }
+      ]
+    },
+    {
+      "key": "equipment",
+      "id": "000000006A51000D",
+      "min_stage": 0,
+      "fallback": "equipment",
+      "title": {
+        "uk_ua": "Запас для спорядження",
+        "en_us": "Equipment Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:arrow",
+          "count": 4,
+          "weight": 30,
+          "name": {
+            "uk_ua": "Стріла",
+            "en_us": "Arrow"
+          }
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Шкіра",
+            "en_us": "Leather"
+          }
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Нитка",
+            "en_us": "String"
+          }
+        },
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 2,
+          "weight": 15,
+          "name": {
+            "uk_ua": "Лазурит",
+            "en_us": "Lapis Lazuli"
+          }
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
+          }
+        }
+      ]
+    },
+    {
+      "key": "masterwork",
+      "id": "000000006A51000E",
+      "min_stage": 5,
+      "fallback": "power",
+      "title": {
+        "uk_ua": "Запас майстра",
+        "en_us": "Masterwork Supplies"
+      },
+      "entries": [
+        {
+          "item": "minecraft:emerald",
+          "count": 1,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Смарагд",
+            "en_us": "Emerald"
+          }
+        },
+        {
+          "item": "minecraft:gold_ingot",
+          "count": 2,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Золотий зливок",
+            "en_us": "Gold Ingot"
+          }
+        },
+        {
+          "item": "minecraft:golden_carrot",
+          "count": 2,
+          "weight": 25,
+          "name": {
+            "uk_ua": "Золота морква",
+            "en_us": "Golden Carrot"
+          }
+        },
+        {
+          "item": "minecraft:experience_bottle",
+          "count": 1,
+          "weight": 20,
+          "name": {
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
+          }
+        },
+        {
+          "item": "minecraft:name_tag",
+          "count": 1,
+          "weight": 10,
+          "name": {
+            "uk_ua": "Бирка",
+            "en_us": "Name Tag"
+          }
+        }
+      ]
+    }
+  ],
+  "chapter_pools": {
+    "qm_intro": "survival",
+    "qm_v030_02_foundry": "workshop",
+    "qm_v030_03_immersive": "engineering",
+    "qm_v030_04_buildcraft": "engineering",
+    "qm_v030_05_railcraft": "engineering",
+    "qm_02_mek": "engineering",
+    "qm_04_tools": "equipment",
+    "qm_03_nuclear": "power",
+    "qm_v030_09_enderio": "engineering",
+    "qm_v030_10_industrial": "engineering",
+    "qm_v030_11_storage": "logistics",
+    "qm_v030_12_ae2": "logistics",
+    "qm_v030_13_rftools": "logistics",
+    "qm_v030_14_reactors": "power",
+    "qm_v030_15_botania": "arcane",
+    "qm_v030_16_evilcraft": "arcane",
+    "qm_05_apoth": "equipment",
+    "qm_v030_18_divine": "expedition",
+    "qm_v030_19_twilight": "expedition",
+    "qm_v030_20_aether": "expedition",
+    "qm_v030_21_space": "space",
+    "qm_v030_22_millenaire": "settlement",
+    "qm_07_exploration": "expedition",
+    "qm_06_accessories": "equipment",
+    "qm_v030_25_projecte": "masterwork",
+    "qm_v030_26_avaritia": "masterwork",
+    "qm_v030_27_convergence": "masterwork",
+    "qm_v040_28_ironfurnaces": "workshop",
+    "qm_v040_29_exdeorum": "processing",
+    "qm_v040_30_exmachinis": "processing",
+    "qm_v040_31_mobgrinding": "hunting",
+    "qm_v040_32_cannibal": "expedition",
+    "qm_v040_33_netherexoticism": "expedition",
+    "qm_v040_34_terralith": "expedition",
+    "qm_v040_35_travel": "expedition",
+    "qm_v040_36_skills": "scholar",
+    "qm_42_sophisticated": "logistics"
+  },
+  "milestones": {
+    "513011E734464E5D": {
+      "tier": 1,
+      "reason": "Industrial Chassis campaign milestone"
+    },
+    "5130115E1ED084F6": {
+      "tier": 2,
+      "reason": "Precision Mechanism campaign milestone"
+    },
+    "513011AA869D0649": {
+      "tier": 3,
+      "reason": "Dimensional Matrix campaign milestone"
+    },
+    "5130117F2402AE8A": {
+      "tier": 4,
+      "reason": "Stellar Alloy campaign milestone"
+    },
+    "513011AEA75E4401": {
+      "tier": 5,
+      "reason": "Mythic Circuit campaign milestone"
+    },
+    "5130113398623BDE": {
+      "tier": 6,
+      "reason": "EMC Core campaign milestone"
+    },
+    "514D11FF5A4363E6": {
+      "tier": 4,
+      "reason": "Observed controlled first fission cycle"
+    },
+    "514D113E1E8CF8B1": {
+      "tier": 5,
+      "reason": "Observed sustained fusion"
+    },
+    "5140111CF230BACD": {
+      "tier": 3,
+      "reason": "Defeat Ozgum once"
+    },
+    "514011F38EA006A4": {
+      "tier": 3,
+      "reason": "Defeat Rutia once"
+    },
+    "514D11B7AEB78396": {
+      "tier": 2,
+      "reason": "First Nether expedition"
+    },
+    "514D11824471BA9B": {
+      "tier": 3,
+      "reason": "First End expedition"
+    },
+    "514D113D5B1DB1C5": {
+      "tier": 2,
+      "reason": "Use a leveled, upgraded relic"
+    },
+    "514D01000000000C": {
+      "tier": 1,
+      "reason": "Complete expedition readiness"
+    }
+  }
+}

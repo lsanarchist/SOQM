@@ -1317,7 +1317,7 @@ ServerEvents.recipes(function(event) {
           "item": "ae2:logic_processor"
         },
         "!": {
-          "item": "kubejs:dimensional_matrix"
+          "item": "kubejs:industrial_chassis"
         },
         "@": {
           "item": "kubejs:control_assembly"
@@ -1362,7 +1362,7 @@ ServerEvents.recipes(function(event) {
           "item": "ae2:formation_core"
         },
         "!": {
-          "item": "kubejs:dimensional_matrix"
+          "item": "kubejs:industrial_chassis"
         },
         "@": {
           "item": "kubejs:control_assembly"

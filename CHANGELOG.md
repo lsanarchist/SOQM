@@ -2,12 +2,40 @@
 
 ## Unreleased
 
+<<<<<<< HEAD
 - Replace nine skill-milestone tick/NBT criteria with explicit advancement
   grants from Pufferfish Skills unlock rewards. Existing unlocked skills are
   reconciled on login or data reload; advancement IDs, saved completion,
   capstone's any-one-branch rule and historical completion after respec are
   retained. No new mod or polling script is required. See the
   [patch notes](docs/SKILLS_OPTIMIZATION.md) for scope and validation.
+=======
+### 0.4.7 — campaign clarity and thematic rewards
+
+- Move the six-stage Main Route to chapter 00 in the first group. Differentiate
+  finale prerequisites, practical tasks, reference items and optional branches;
+  preserve every existing quest/task/reward/chapter/image ID.
+- Shorten 1,525 titles, remove 1,453 repeated openings and 2,287 obsolete
+  reward/preparation/patch-note paragraphs. Add 67 bilingual core tutorials
+  and editorial names for all 251 map sections.
+- Correct early AE2 preparation, preflight-before-Moon dependencies and
+  furnace/reactor material stages. Bring the initial 1k ME autocrafting setup
+  to stage 2 while gating 4k/16k components so native CPU upgrades stay valid.
+- Convert the existing ME Crafting Terminal task to a real powered-terminal
+  crafting advancement. Clarify that the ME workshop kit checks preparation
+  and does not claim to measure autonomous crafting jobs.
+- Replace 1,611 ordinary payouts with one visible weighted draw from 14 original
+  thematic supply pools. Retain one cube at 14 selected milestones and the
+  personal introductory book. No random machines or material-gate components.
+- Add deterministic campaign regeneration, save-identity/geometry/budget/gate
+  regressions and native FTB/AE2 interaction plus nonempty-save migration tests.
+- Add CI validation and installation ZIP/checksum artifacts for reviewing a
+  specific commit. The complete change and remaining client/performance scope
+  are recorded in [the campaign notes](docs/CAMPAIGN_UPDATE.md).
+
+### Included hotfixes from the current base
+
+>>>>>>> origin/main
 - Update `qm-cannibal-compat` to 0.4.1. Cannibal Villages discovery scans now
   inspect only ready chunks instead of waiting for nearby generation on the
   server thread. Existing discovery flags, titles, sounds, and chest protections

@@ -18,7 +18,7 @@
     {
       "id": "513011BD18533AD4",
       "x": -10.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:twilight_portal_miniature_structure",
         "count": 1
@@ -28,7 +28,7 @@
         "stage_2",
         "native_twilightforest_root",
         "qm_v040",
-        "humor"
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -48,25 +48,20 @@
       "rewards": [
         {
           "id": "513013AECC655D20",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 1.22,
+      "shape": "hexagon",
       "hide_dependency_lines": false
     },
     {
       "id": "513011F638E9FBA0",
       "x": 1.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:naga_courtyard_miniature_structure",
         "count": 1
@@ -76,7 +71,7 @@
         "stage_2",
         "native_twilightforest_progress_naga",
         "qm_v040",
-        "humor"
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -96,25 +91,20 @@
       "rewards": [
         {
           "id": "513013A3D62640F5",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FC22300C21",
       "x": 4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:lich_tower_miniature_structure",
         "count": 1
@@ -124,7 +114,7 @@
         "stage_2",
         "native_twilightforest_progress_lich",
         "qm_v040",
-        "humor"
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -144,25 +134,20 @@
       "rewards": [
         {
           "id": "513013E96F4A2592",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 1.22,
+      "shape": "hexagon",
       "hide_dependency_lines": false
     },
     {
       "id": "5130117733452BD7",
       "x": 1.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:minotaur_labyrinth_miniature_structure",
         "count": 1
@@ -172,7 +157,7 @@
         "stage_2",
         "native_twilightforest_progress_labyrinth",
         "qm_v040",
-        "humor"
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -192,25 +177,20 @@
       "rewards": [
         {
           "id": "513013D6BAC843BE",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "51301198C288386E",
       "x": -7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:raven_feather",
         "count": 1
@@ -220,7 +200,7 @@
         "stage_2",
         "item_twilightforest_raven_feather",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -246,25 +226,20 @@
       "rewards": [
         {
           "id": "513013CDCD6437F4",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:raven_feather",
-            "count": 1
-          },
-          "count": 16,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011993E77D405",
       "x": -4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:torchberries",
         "count": 1
@@ -274,7 +249,7 @@
         "stage_2",
         "item_twilightforest_torchberries",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -300,25 +275,20 @@
       "rewards": [
         {
           "id": "513013A1E264B281",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:torchberries",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301123DAC0957F",
       "x": -1.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:magic_map_focus",
         "count": 1
@@ -328,7 +298,7 @@
         "stage_2",
         "item_twilightforest_magic_map_focus",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -356,25 +326,20 @@
       "rewards": [
         {
           "id": "5130133609B51B70",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:torchberries",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011928D69B5C9",
       "x": -10.95,
-      "y": 4.3,
+      "y": 4.65,
       "icon": {
         "id": "twilightforest:magic_map",
         "count": 1
@@ -384,7 +349,7 @@
         "stage_2",
         "item_twilightforest_magic_map",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -411,25 +376,20 @@
       "rewards": [
         {
           "id": "513013AFEEA4832A",
-          "type": "item",
-          "item": {
-            "id": "minecraft:paper",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301126F3758C23",
       "x": 7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:naga_scale",
         "count": 1
@@ -439,7 +399,7 @@
         "stage_2",
         "item_twilightforest_naga_scale",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -465,25 +425,20 @@
       "rewards": [
         {
           "id": "51301304157ED6DE",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130116411F0C899",
       "x": 10.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "twilightforest:naga_trophy",
         "count": 1
@@ -493,7 +448,7 @@
         "stage_2",
         "item_twilightforest_naga_trophy",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -519,25 +474,20 @@
       "rewards": [
         {
           "id": "513013EA721B7FA2",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301111C88CE9B3",
       "x": 1.95,
-      "y": 4.3,
+      "y": 4.65,
       "icon": {
         "id": "twilightforest:twilight_scepter",
         "count": 1
@@ -547,7 +497,7 @@
         "stage_2",
         "item_twilightforest_twilight_scepter",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -573,25 +523,20 @@
       "rewards": [
         {
           "id": "5130139D621F828B",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130117217D87802",
       "x": 4.95,
-      "y": 4.3,
+      "y": 4.65,
       "icon": {
         "id": "twilightforest:zombie_scepter",
         "count": 1
@@ -601,7 +546,7 @@
         "stage_2",
         "item_twilightforest_zombie_scepter",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -627,25 +572,20 @@
       "rewards": [
         {
           "id": "513013115014BFF0",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130117DB1D40E95",
       "x": 7.95,
-      "y": 4.3,
+      "y": 4.65,
       "icon": {
         "id": "twilightforest:lifedrain_scepter",
         "count": 1
@@ -655,7 +595,7 @@
         "stage_2",
         "item_twilightforest_lifedrain_scepter",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -681,25 +621,20 @@
       "rewards": [
         {
           "id": "5130132AF8065A80",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011663BB1FF46",
       "x": -10.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:raw_ironwood",
         "count": 1
@@ -709,7 +644,7 @@
         "stage_2",
         "item_twilightforest_raw_ironwood",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -735,25 +670,20 @@
       "rewards": [
         {
           "id": "513013F5B2F394CF",
-          "type": "item",
-          "item": {
-            "id": "minecraft:gold_nugget",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011B513B1DFE2",
       "x": -7.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:ironwood_ingot",
         "count": 1
@@ -763,7 +693,7 @@
         "stage_2",
         "item_twilightforest_ironwood_ingot",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -789,25 +719,20 @@
       "rewards": [
         {
           "id": "513013F593D42316",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:ironwood_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011E3E8EE5739",
       "x": -4.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:ironwood_pickaxe",
         "count": 1
@@ -817,7 +742,7 @@
         "stage_2",
         "item_twilightforest_ironwood_pickaxe",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -843,25 +768,20 @@
       "rewards": [
         {
           "id": "513013179B473EBA",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:ironwood_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130111289F59ACE",
       "x": -1.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:ironwood_sword",
         "count": 1
@@ -871,7 +791,7 @@
         "stage_2",
         "item_twilightforest_ironwood_sword",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -897,25 +817,20 @@
       "rewards": [
         {
           "id": "513013B49F1E1BA0",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:ironwood_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301177D8571130",
       "x": -10.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:ironwood_axe",
         "count": 1
@@ -925,7 +840,7 @@
         "stage_2",
         "item_twilightforest_ironwood_axe",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -951,25 +866,20 @@
       "rewards": [
         {
           "id": "5130137FB45ECFCD",
-          "type": "item",
-          "item": {
-            "id": "twilightforest:ironwood_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011A311704AB4",
       "x": -7.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:ironwood_helmet",
         "count": 1
@@ -979,7 +889,7 @@
         "stage_2",
         "set_twilightforest_ironwood",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1041,25 +951,20 @@
       "rewards": [
         {
           "id": "513013EF9F04D3C8",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011517D617212",
       "x": -4.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:steeleaf_ingot",
         "count": 1
@@ -1069,7 +974,7 @@
         "stage_2",
         "item_twilightforest_steeleaf_ingot",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1095,25 +1000,20 @@
       "rewards": [
         {
           "id": "51301364E2C747DF",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011148D68B3DC",
       "x": 4.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:hydra_trophy",
         "count": 1
@@ -1123,7 +1023,7 @@
         "stage_3",
         "native_twilightforest_progress_hydra",
         "qm_v040",
-        "humor"
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1143,25 +1043,20 @@
       "rewards": [
         {
           "id": "513013D4D9A67C5F",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 1.22,
+      "shape": "hexagon",
       "hide_dependency_lines": false
     },
     {
       "id": "51301100FCAB4EA0",
-      "x": -4.95,
-      "y": 18.1,
+      "x": -10.95,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:fiery_ingot",
         "count": 1
@@ -1171,7 +1066,8 @@
         "stage_3",
         "item_twilightforest_fiery_ingot",
         "qm_v040",
-        "plain_instruction"
+        "plain_instruction",
+        "soqm_role_route"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1198,25 +1094,20 @@
       "rewards": [
         {
           "id": "51301397F54CADE6",
-          "type": "item",
-          "item": {
-            "id": "minecraft:iron_ingot",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false
     },
     {
       "id": "5130117DE98B12AB",
-      "x": -10.95,
-      "y": 15.6,
+      "x": -7.95,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:knight_phantom_trophy",
         "count": 1
@@ -1226,7 +1117,7 @@
         "stage_3",
         "native_twilightforest_progress_knights",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1247,25 +1138,20 @@
       "rewards": [
         {
           "id": "513013F12CE7088C",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D9B1021490",
-      "x": -7.95,
-      "y": 15.6,
+      "x": -4.95,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:dark_tower_miniature_structure",
         "count": 1
@@ -1275,7 +1161,7 @@
         "stage_3",
         "native_twilightforest_progress_ur_ghast",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1295,25 +1181,20 @@
       "rewards": [
         {
           "id": "51301313F5EC0CC8",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
       "hide_dependency_lines": false
     },
     {
       "id": "5130113F3151ADA9",
-      "x": -1.95,
-      "y": 15.6,
+      "x": -7.95,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:ghast_trap",
         "count": 1
@@ -1323,7 +1204,7 @@
         "stage_3",
         "native_twilightforest_ghast_trap",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1343,25 +1224,20 @@
       "rewards": [
         {
           "id": "513013F64A9093FC",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117511BE96E3",
       "x": -4.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:quest_ram_trophy",
         "count": 1
@@ -1371,7 +1247,7 @@
         "stage_3",
         "native_twilightforest_quest_ram",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1391,25 +1267,20 @@
       "rewards": [
         {
           "id": "513013FFDA2504B9",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "513011736E8C2BC2",
       "x": 10.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:minoshroom_trophy",
         "count": 1
@@ -1419,7 +1290,7 @@
         "stage_3",
         "item_twilightforest_minoshroom_trophy",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1446,25 +1317,20 @@
       "rewards": [
         {
           "id": "5130131DC8BCDDF6",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301104B199F59D",
       "x": 1.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:diamond_minotaur_axe",
         "count": 1
@@ -1474,7 +1340,8 @@
         "stage_3",
         "item_twilightforest_diamond_minotaur_axe",
         "qm_v040",
-        "plain_instruction"
+        "plain_instruction",
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1501,25 +1368,20 @@
       "rewards": [
         {
           "id": "513013BB6E8C2B06",
-          "type": "item",
-          "item": {
-            "id": "minecraft:cooked_beef",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011237EA113AB",
       "x": 4.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:meef_stroganoff",
         "count": 1
@@ -1529,7 +1391,7 @@
         "stage_3",
         "item_twilightforest_meef_stroganoff",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1556,25 +1418,20 @@
       "rewards": [
         {
           "id": "513013DC970C8B2D",
-          "type": "item",
-          "item": {
-            "id": "minecraft:torch",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011412EC6E746",
       "x": 7.95,
-      "y": 11.2,
+      "y": 12.27,
       "icon": {
         "id": "twilightforest:hydra_trophy",
         "count": 1
@@ -1584,7 +1441,7 @@
         "stage_3",
         "item_twilightforest_hydra_trophy",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1611,25 +1468,20 @@
       "rewards": [
         {
           "id": "513013AFBF0AE8C8",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130118FFDC6D1ED",
       "x": 7.95,
-      "y": 8.7,
+      "y": 9.47,
       "icon": {
         "id": "twilightforest:fiery_blood",
         "count": 1
@@ -1639,7 +1491,7 @@
         "stage_3",
         "item_twilightforest_fiery_blood",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1667,25 +1519,20 @@
       "rewards": [
         {
           "id": "513013833E690311",
-          "type": "item",
-          "item": {
-            "id": "minecraft:torch",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130112E807AD465",
-      "x": -4.95,
-      "y": 15.6,
+      "x": -1.95,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:fiery_tears",
         "count": 1
@@ -1695,7 +1542,7 @@
         "stage_3",
         "item_twilightforest_fiery_tears",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1722,25 +1569,20 @@
       "rewards": [
         {
           "id": "5130138FC24B54FE",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130115120935175",
-      "x": -1.95,
-      "y": 18.1,
+      "x": -4.95,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:fiery_pickaxe",
         "count": 1
@@ -1750,7 +1592,7 @@
         "stage_3",
         "item_twilightforest_fiery_pickaxe",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1777,25 +1619,20 @@
       "rewards": [
         {
           "id": "5130139EDDD76501",
-          "type": "item",
-          "item": {
-            "id": "minecraft:torch",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301133CE9DAFB6",
-      "x": -10.95,
-      "y": 20.6,
+      "x": -1.95,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:fiery_sword",
         "count": 1
@@ -1805,7 +1642,7 @@
         "stage_3",
         "item_twilightforest_fiery_sword",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1832,25 +1669,20 @@
       "rewards": [
         {
           "id": "5130131378CEEC71",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130114D8DCAF3B6",
-      "x": -7.95,
-      "y": 20.6,
+      "x": -10.95,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:fiery_helmet",
         "count": 1
@@ -1860,7 +1692,7 @@
         "stage_3",
         "set_twilightforest_fiery",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1923,25 +1755,20 @@
       "rewards": [
         {
           "id": "5130131D77532342",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130113A35323B99",
       "x": -10.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:armor_shard",
         "count": 1
@@ -1951,7 +1778,7 @@
         "stage_3",
         "item_twilightforest_armor_shard",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1978,25 +1805,20 @@
       "rewards": [
         {
           "id": "5130134FD3CDCA64",
-          "type": "item",
-          "item": {
-            "id": "minecraft:cooked_beef",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011B725B2BA73",
       "x": -7.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:armor_shard_cluster",
         "count": 1
@@ -2006,7 +1828,7 @@
         "stage_3",
         "item_twilightforest_armor_shard_cluster",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2033,25 +1855,20 @@
       "rewards": [
         {
           "id": "5130133D13E5C628",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301130D2ECE50D",
       "x": 1.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:ore_magnet",
         "count": 1
@@ -2061,7 +1878,7 @@
         "stage_3",
         "item_twilightforest_ore_magnet",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2088,25 +1905,20 @@
       "rewards": [
         {
           "id": "51301310B52030F6",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "5130111AE25CF8DB",
       "x": 4.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:peacock_feather_fan",
         "count": 1
@@ -2116,7 +1928,7 @@
         "stage_3",
         "item_twilightforest_peacock_feather_fan",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2143,25 +1955,20 @@
       "rewards": [
         {
           "id": "513013A3F3862A1F",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "513011A4A167C5D0",
       "x": 7.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:moonworm_queen",
         "count": 1
@@ -2171,7 +1978,7 @@
         "stage_3",
         "item_twilightforest_moonworm_queen",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2198,25 +2005,20 @@
       "rewards": [
         {
           "id": "51301313982C358E",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "513011E7DFF226DA",
       "x": 10.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:crumble_horn",
         "count": 1
@@ -2226,7 +2028,7 @@
         "stage_3",
         "item_twilightforest_crumble_horn",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2253,25 +2055,20 @@
       "rewards": [
         {
           "id": "513013EFECDD7522",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "51301169122E154B",
       "x": -10.95,
-      "y": 31.9,
+      "y": 35.13,
       "icon": {
         "id": "twilightforest:charm_of_life_1",
         "count": 1
@@ -2281,7 +2078,7 @@
         "stage_3",
         "item_twilightforest_charm_of_life_1",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2308,25 +2105,20 @@
       "rewards": [
         {
           "id": "5130131EE69DB60D",
-          "type": "item",
-          "item": {
-            "id": "minecraft:cooked_beef",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "5130115D6116C347",
       "x": -7.95,
-      "y": 31.9,
+      "y": 35.13,
       "icon": {
         "id": "twilightforest:charm_of_life_2",
         "count": 1
@@ -2336,7 +2128,7 @@
         "stage_3",
         "item_twilightforest_charm_of_life_2",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2363,25 +2155,20 @@
       "rewards": [
         {
           "id": "513013EBC135C69A",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "5130117DF0192CE7",
       "x": -4.95,
-      "y": 31.9,
+      "y": 35.13,
       "icon": {
         "id": "twilightforest:charm_of_keeping_1",
         "count": 1
@@ -2391,7 +2178,7 @@
         "stage_3",
         "item_twilightforest_charm_of_keeping_1",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2418,25 +2205,20 @@
       "rewards": [
         {
           "id": "5130134BB758069B",
-          "type": "item",
-          "item": {
-            "id": "minecraft:torch",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "51301122502BED3D",
       "x": -1.95,
-      "y": 31.9,
+      "y": 35.13,
       "icon": {
         "id": "twilightforest:charm_of_keeping_2",
         "count": 1
@@ -2446,7 +2228,7 @@
         "stage_3",
         "item_twilightforest_charm_of_keeping_2",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2473,25 +2255,20 @@
       "rewards": [
         {
           "id": "51301308304B0CE1",
-          "type": "item",
-          "item": {
-            "id": "minecraft:torch",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "513011625C2D89D5",
       "x": -10.95,
-      "y": 34.4,
+      "y": 37.93,
       "icon": {
         "id": "twilightforest:charm_of_keeping_3",
         "count": 1
@@ -2501,7 +2278,7 @@
         "stage_3",
         "item_twilightforest_charm_of_keeping_3",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2528,25 +2305,20 @@
       "rewards": [
         {
           "id": "513013825DAB077F",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t3",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "51301126C904E721",
       "x": 1.95,
-      "y": 27.5,
+      "y": 30.31,
       "icon": {
         "id": "twilightforest:ore_meter",
         "count": 1
@@ -2556,7 +2328,7 @@
         "stage_3",
         "item_twilightforest_ore_meter",
         "qm_v040",
-        "humor"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2583,25 +2355,20 @@
       "rewards": [
         {
           "id": "513013E77951197B",
-          "type": "item",
-          "item": {
-            "id": "minecraft:bread",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "5130112091E38E8F",
       "x": 1.95,
-      "y": 15.6,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:alpha_yeti_fur",
         "count": 1
@@ -2611,7 +2378,7 @@
         "stage_4",
         "native_twilightforest_progress_yeti",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2632,25 +2399,20 @@
       "rewards": [
         {
           "id": "5130133D07B2445D",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FE794AFF67",
       "x": 4.95,
-      "y": 15.6,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:snow_queen_trophy",
         "count": 1
@@ -2660,7 +2422,7 @@
         "stage_4",
         "native_twilightforest_progress_glacier",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2680,25 +2442,20 @@
       "rewards": [
         {
           "id": "5130133C4132A439",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
       "hide_dependency_lines": false
     },
     {
       "id": "513011E3C587FE13",
       "x": -10.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:lamp_of_cinders",
         "count": 1
@@ -2708,7 +2465,7 @@
         "stage_4",
         "native_twilightforest_progress_troll",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2728,25 +2485,20 @@
       "rewards": [
         {
           "id": "513013FB75BB73F1",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130113316500E72",
       "x": -7.95,
-      "y": 25.0,
+      "y": 27.51,
       "icon": {
         "id": "twilightforest:huge_stalk",
         "count": 1
@@ -2756,7 +2508,7 @@
         "stage_4",
         "native_twilightforest_beanstalk",
         "qm_v040",
-        "humor"
+        "soqm_role_practice"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2776,25 +2528,20 @@
       "rewards": [
         {
           "id": "51301370D9684188",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 1.06,
       "shape": "rsquare",
       "hide_dependency_lines": false
     },
     {
       "id": "513011D19AF9A01A",
       "x": 7.95,
-      "y": 15.6,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:alpha_yeti_trophy",
         "count": 1
@@ -2804,7 +2551,7 @@
         "stage_4",
         "item_twilightforest_alpha_yeti_trophy",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2831,25 +2578,20 @@
       "rewards": [
         {
           "id": "513013BF1ACA13F9",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011C0D7822CF5",
       "x": 10.95,
-      "y": 15.6,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:alpha_yeti_fur",
         "count": 1
@@ -2859,7 +2601,7 @@
         "stage_4",
         "item_twilightforest_alpha_yeti_fur",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2886,25 +2628,20 @@
       "rewards": [
         {
           "id": "5130138A56FDD7C2",
-          "type": "item",
-          "item": {
-            "id": "minecraft:cooked_beef",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51301170DA54499B",
       "x": 1.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:yeti_helmet",
         "count": 1
@@ -2914,7 +2651,7 @@
         "stage_4",
         "set_twilightforest_yeti",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -2977,25 +2714,20 @@
       "rewards": [
         {
           "id": "513013E0C352F933",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011F39C7E64FC",
       "x": 4.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:snow_queen_trophy",
         "count": 1
@@ -3005,7 +2737,7 @@
         "stage_4",
         "item_twilightforest_snow_queen_trophy",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3032,25 +2764,20 @@
       "rewards": [
         {
           "id": "51301369F6CF1766",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130112A26C9C751",
       "x": 7.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:ice_bow",
         "count": 1
@@ -3060,7 +2787,7 @@
         "stage_4",
         "item_twilightforest_ice_bow",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3087,25 +2814,20 @@
       "rewards": [
         {
           "id": "513013AA369FFEEB",
-          "type": "item",
-          "item": {
-            "id": "minecraft:arrow",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011664E983EAE",
       "x": 10.95,
-      "y": 18.1,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:ice_sword",
         "count": 1
@@ -3115,7 +2837,7 @@
         "stage_4",
         "item_twilightforest_ice_sword",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3142,25 +2864,20 @@
       "rewards": [
         {
           "id": "51301387AED6753F",
-          "type": "item",
-          "item": {
-            "id": "minecraft:cooked_beef",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011DD0E167683",
       "x": 1.95,
-      "y": 20.6,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:glass_sword",
         "count": 1
@@ -3170,7 +2887,7 @@
         "stage_4",
         "item_twilightforest_glass_sword",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3197,25 +2914,20 @@
       "rewards": [
         {
           "id": "5130139F2943F482",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "513011B3B61CF065",
       "x": 4.95,
-      "y": 20.6,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:triple_bow",
         "count": 1
@@ -3225,7 +2937,7 @@
         "stage_4",
         "item_twilightforest_triple_bow",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3252,25 +2964,20 @@
       "rewards": [
         {
           "id": "513013470A4FF84C",
-          "type": "item",
-          "item": {
-            "id": "minecraft:arrow",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5130110F92233848",
       "x": 7.95,
-      "y": 20.6,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:seeker_bow",
         "count": 1
@@ -3280,7 +2987,7 @@
         "stage_4",
         "item_twilightforest_seeker_bow",
         "qm_v040",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002",
@@ -3307,18 +3014,13 @@
       "rewards": [
         {
           "id": "51301337A75C37EB",
-          "type": "item",
-          "item": {
-            "id": "minecraft:arrow",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     }
@@ -3327,7 +3029,7 @@
     {
       "id": "51410410000005CC",
       "x": 0.0,
-      "y": -2.25,
+      "y": -2.45,
       "width": 24.9,
       "height": 0.8,
       "rotation": 0.0,
@@ -3343,7 +3045,7 @@
     {
       "id": "51410410000005CD",
       "x": 0.0,
-      "y": -1.37,
+      "y": -1.53,
       "width": 24.9,
       "height": 0.43,
       "rotation": 0.0,
@@ -3359,7 +3061,7 @@
     {
       "id": "51410410000005CE",
       "x": 0.0,
-      "y": -0.71,
+      "y": -0.83,
       "width": 24.9,
       "height": 0.1,
       "rotation": 0.0,
@@ -3391,9 +3093,9 @@
     {
       "id": "51410410000005D0",
       "x": -6.45,
-      "y": 3.09,
+      "y": 3.45,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3407,9 +3109,9 @@
     {
       "id": "51410410000005D1",
       "x": -12.395,
-      "y": 3.09,
+      "y": 3.45,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3423,7 +3125,7 @@
     {
       "id": "51410410000005D2",
       "x": -6.37,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -3439,7 +3141,7 @@
     {
       "id": "51410410000005D3",
       "x": -10.95,
-      "y": 2.92,
+      "y": 2.93,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3455,9 +3157,9 @@
     {
       "id": "51410410000005D4",
       "x": -7.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3471,9 +3173,9 @@
     {
       "id": "51410410000005D5",
       "x": -4.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3487,7 +3189,7 @@
     {
       "id": "51410410000005D6",
       "x": -1.95,
-      "y": 2.92,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3503,7 +3205,7 @@
     {
       "id": "51410410000005D7",
       "x": -10.95,
-      "y": 5.42,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3519,9 +3221,9 @@
     {
       "id": "51410410000005D8",
       "x": 6.45,
-      "y": 3.09,
+      "y": 3.45,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3535,11 +3237,11 @@
     {
       "id": "51410410000005D9",
       "x": 0.505,
-      "y": 3.09,
+      "y": 3.45,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E866B6DB",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3551,7 +3253,7 @@
     {
       "id": "51410410000005DA",
       "x": 6.53,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -3567,9 +3269,9 @@
     {
       "id": "51410410000005DB",
       "x": 1.95,
-      "y": 2.74,
+      "y": 2.93,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3583,9 +3285,9 @@
     {
       "id": "51410410000005DC",
       "x": 4.95,
-      "y": 2.74,
+      "y": 2.93,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3599,9 +3301,9 @@
     {
       "id": "51410410000005DD",
       "x": 7.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3615,9 +3317,9 @@
     {
       "id": "51410410000005DE",
       "x": 10.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3631,9 +3333,9 @@
     {
       "id": "51410410000005DF",
       "x": 1.95,
-      "y": 5.24,
+      "y": 5.57,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3647,9 +3349,9 @@
     {
       "id": "51410410000005E0",
       "x": 4.95,
-      "y": 5.24,
+      "y": 5.57,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3663,7 +3365,7 @@
     {
       "id": "51410410000005E1",
       "x": 7.95,
-      "y": 5.42,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3679,9 +3381,9 @@
     {
       "id": "51410410000005E2",
       "x": -6.45,
-      "y": 9.99,
+      "y": 11.07,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3695,11 +3397,11 @@
     {
       "id": "51410410000005E3",
       "x": -12.395,
-      "y": 9.99,
+      "y": 11.07,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E88ABC7B",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3711,7 +3413,7 @@
     {
       "id": "51410410000005E4",
       "x": -6.37,
-      "y": 7.34,
+      "y": 8.08,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -3727,7 +3429,7 @@
     {
       "id": "51410410000005E5",
       "x": -10.95,
-      "y": 9.82,
+      "y": 10.39,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3743,9 +3445,9 @@
     {
       "id": "51410410000005E6",
       "x": -7.95,
-      "y": 9.64,
+      "y": 10.39,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3759,7 +3461,7 @@
     {
       "id": "51410410000005E7",
       "x": -4.95,
-      "y": 9.82,
+      "y": 10.39,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3775,7 +3477,7 @@
     {
       "id": "51410410000005E8",
       "x": -1.95,
-      "y": 9.82,
+      "y": 10.39,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3791,7 +3493,7 @@
     {
       "id": "51410410000005E9",
       "x": -10.95,
-      "y": 12.32,
+      "y": 13.19,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3807,7 +3509,7 @@
     {
       "id": "51410410000005EA",
       "x": -7.95,
-      "y": 12.32,
+      "y": 13.19,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3823,9 +3525,9 @@
     {
       "id": "51410410000005EB",
       "x": -4.95,
-      "y": 12.14,
+      "y": 13.19,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3839,9 +3541,9 @@
     {
       "id": "51410410000005EC",
       "x": 6.45,
-      "y": 9.99,
+      "y": 11.07,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3855,11 +3557,11 @@
     {
       "id": "51410410000005ED",
       "x": 0.505,
-      "y": 9.99,
+      "y": 11.07,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E8B899DE",
+      "image": "color:#E8B58CDB",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3871,7 +3573,7 @@
     {
       "id": "51410410000005EE",
       "x": 6.53,
-      "y": 7.34,
+      "y": 8.08,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -3887,7 +3589,7 @@
     {
       "id": "51410410000005EF",
       "x": 1.95,
-      "y": 9.82,
+      "y": 10.55,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3903,9 +3605,9 @@
     {
       "id": "51410410000005F0",
       "x": 4.95,
-      "y": 9.64,
+      "y": 10.55,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3919,9 +3621,9 @@
     {
       "id": "51410410000005F1",
       "x": 7.95,
-      "y": 9.64,
+      "y": 10.39,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3935,9 +3637,9 @@
     {
       "id": "51410410000005F2",
       "x": 10.95,
-      "y": 9.64,
+      "y": 10.39,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3951,7 +3653,7 @@
     {
       "id": "51410410000005F3",
       "x": 1.95,
-      "y": 12.32,
+      "y": 13.19,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3967,9 +3669,9 @@
     {
       "id": "51410410000005F4",
       "x": 4.95,
-      "y": 12.14,
+      "y": 13.19,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3983,9 +3685,9 @@
     {
       "id": "51410410000005F5",
       "x": 7.95,
-      "y": 12.14,
+      "y": 13.19,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -3999,9 +3701,9 @@
     {
       "id": "51410410000005F6",
       "x": -6.45,
-      "y": 18.14,
+      "y": 20.09,
       "width": 12.0,
-      "height": 8.68,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4015,11 +3717,11 @@
     {
       "id": "51410410000005F7",
       "x": -12.395,
-      "y": 18.14,
+      "y": 20.09,
       "width": 0.11,
-      "height": 8.68,
+      "height": 9.7,
       "rotation": 0.0,
-      "image": "color:#E8D88D77",
+      "image": "color:#E8E393A7",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4031,7 +3733,7 @@
     {
       "id": "51410410000005F8",
       "x": -6.37,
-      "y": 14.24,
+      "y": 15.7,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4046,10 +3748,10 @@
     },
     {
       "id": "51410410000005F9",
-      "x": -10.95,
-      "y": 16.54,
+      "x": -7.95,
+      "y": 18.09,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4062,8 +3764,8 @@
     },
     {
       "id": "51410410000005FA",
-      "x": -7.95,
-      "y": 16.72,
+      "x": -4.95,
+      "y": 18.09,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4078,10 +3780,10 @@
     },
     {
       "id": "51410410000005FB",
-      "x": -4.95,
-      "y": 16.54,
+      "x": -1.95,
+      "y": 18.01,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4094,8 +3796,8 @@
     },
     {
       "id": "51410410000005FC",
-      "x": -1.95,
-      "y": 16.72,
+      "x": -7.95,
+      "y": 23.56,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4111,9 +3813,9 @@
     {
       "id": "51410410000005FD",
       "x": -10.95,
-      "y": 19.04,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4127,7 +3829,7 @@
     {
       "id": "51410410000005FE",
       "x": -7.95,
-      "y": 19.22,
+      "y": 20.81,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4142,10 +3844,10 @@
     },
     {
       "id": "51410410000005FF",
-      "x": -4.95,
-      "y": 19.04,
+      "x": -10.95,
+      "y": 18.17,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4158,10 +3860,10 @@
     },
     {
       "id": "5141041000000600",
-      "x": -1.95,
-      "y": 19.04,
+      "x": -4.95,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4174,10 +3876,10 @@
     },
     {
       "id": "5141041000000601",
-      "x": -10.95,
-      "y": 21.54,
+      "x": -1.95,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4190,10 +3892,10 @@
     },
     {
       "id": "5141041000000602",
-      "x": -7.95,
-      "y": 21.54,
+      "x": -10.95,
+      "y": 23.61,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4207,9 +3909,9 @@
     {
       "id": "5141041000000603",
       "x": 6.45,
-      "y": 18.14,
+      "y": 20.09,
       "width": 12.0,
-      "height": 8.68,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4223,11 +3925,11 @@
     {
       "id": "5141041000000604",
       "x": 0.505,
-      "y": 18.14,
+      "y": 20.09,
       "width": 0.11,
-      "height": 8.68,
+      "height": 9.7,
       "rotation": 0.0,
-      "image": "color:#E873BDB7",
+      "image": "color:#E8F1C96B",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4239,7 +3941,7 @@
     {
       "id": "5141041000000605",
       "x": 6.53,
-      "y": 14.24,
+      "y": 15.7,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4255,9 +3957,9 @@
     {
       "id": "5141041000000606",
       "x": 1.95,
-      "y": 16.54,
+      "y": 18.09,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4271,9 +3973,9 @@
     {
       "id": "5141041000000607",
       "x": 4.95,
-      "y": 16.54,
+      "y": 18.09,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4287,9 +3989,9 @@
     {
       "id": "5141041000000608",
       "x": 7.95,
-      "y": 16.54,
+      "y": 18.01,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4303,9 +4005,9 @@
     {
       "id": "5141041000000609",
       "x": 10.95,
-      "y": 16.54,
+      "y": 18.01,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4319,9 +4021,9 @@
     {
       "id": "514104100000060A",
       "x": 1.95,
-      "y": 19.04,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4335,7 +4037,7 @@
     {
       "id": "514104100000060B",
       "x": 4.95,
-      "y": 19.22,
+      "y": 20.81,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4351,9 +4053,9 @@
     {
       "id": "514104100000060C",
       "x": 7.95,
-      "y": 19.04,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4367,9 +4069,9 @@
     {
       "id": "514104100000060D",
       "x": 10.95,
-      "y": 19.04,
+      "y": 20.81,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4383,9 +4085,9 @@
     {
       "id": "514104100000060E",
       "x": 1.95,
-      "y": 21.54,
+      "y": 23.61,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4399,9 +4101,9 @@
     {
       "id": "514104100000060F",
       "x": 4.95,
-      "y": 21.54,
+      "y": 23.61,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4415,9 +4117,9 @@
     {
       "id": "5141041000000610",
       "x": 7.95,
-      "y": 21.54,
+      "y": 23.61,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4431,9 +4133,9 @@
     {
       "id": "5141041000000611",
       "x": -6.45,
-      "y": 25.04,
+      "y": 27.71,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4447,9 +4149,9 @@
     {
       "id": "5141041000000612",
       "x": -12.395,
-      "y": 25.04,
+      "y": 27.71,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4463,7 +4165,7 @@
     {
       "id": "5141041000000613",
       "x": -6.37,
-      "y": 23.64,
+      "y": 26.12,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4479,9 +4181,9 @@
     {
       "id": "5141041000000614",
       "x": -10.95,
-      "y": 25.94,
+      "y": 28.51,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4495,9 +4197,9 @@
     {
       "id": "5141041000000615",
       "x": -7.95,
-      "y": 25.94,
+      "y": 28.51,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4511,7 +4213,7 @@
     {
       "id": "5141041000000616",
       "x": -4.95,
-      "y": 26.12,
+      "y": 28.38,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4527,9 +4229,9 @@
     {
       "id": "5141041000000617",
       "x": 6.45,
-      "y": 26.29,
+      "y": 29.11,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4543,11 +4245,11 @@
     {
       "id": "5141041000000618",
       "x": 0.505,
-      "y": 26.29,
+      "y": 29.11,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E866B6DB",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4559,7 +4261,7 @@
     {
       "id": "5141041000000619",
       "x": 6.53,
-      "y": 23.64,
+      "y": 26.12,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4575,9 +4277,9 @@
     {
       "id": "514104100000061A",
       "x": 1.95,
-      "y": 25.94,
+      "y": 28.38,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4591,7 +4293,7 @@
     {
       "id": "514104100000061B",
       "x": 4.95,
-      "y": 26.12,
+      "y": 28.38,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4607,7 +4309,7 @@
     {
       "id": "514104100000061C",
       "x": 7.95,
-      "y": 26.12,
+      "y": 28.38,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4623,9 +4325,9 @@
     {
       "id": "514104100000061D",
       "x": 10.95,
-      "y": 25.94,
+      "y": 28.38,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4639,9 +4341,9 @@
     {
       "id": "514104100000061E",
       "x": 1.95,
-      "y": 28.44,
+      "y": 31.18,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4655,9 +4357,9 @@
     {
       "id": "514104100000061F",
       "x": -6.45,
-      "y": 33.19,
+      "y": 36.73,
       "width": 12.0,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4671,11 +4373,11 @@
     {
       "id": "5141041000000620",
       "x": -12.395,
-      "y": 33.19,
+      "y": 36.73,
       "width": 0.11,
-      "height": 6.18,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E88ABC7B",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4687,7 +4389,7 @@
     {
       "id": "5141041000000621",
       "x": -6.37,
-      "y": 30.54,
+      "y": 33.74,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4703,9 +4405,9 @@
     {
       "id": "5141041000000622",
       "x": -10.95,
-      "y": 32.84,
+      "y": 36.0,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4719,9 +4421,9 @@
     {
       "id": "5141041000000623",
       "x": -7.95,
-      "y": 32.84,
+      "y": 36.0,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -4735,7 +4437,7 @@
     {
       "id": "5141041000000624",
       "x": -4.95,
-      "y": 33.02,
+      "y": 36.0,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4751,7 +4453,7 @@
     {
       "id": "5141041000000625",
       "x": -1.95,
-      "y": 33.02,
+      "y": 36.0,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4767,7 +4469,7 @@
     {
       "id": "5141041000000626",
       "x": -10.95,
-      "y": 35.52,
+      "y": 38.8,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

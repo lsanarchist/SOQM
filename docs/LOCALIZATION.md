@@ -1,25 +1,31 @@
 # Локалізація / Localization
 
-Український текст оновлено до кампанії 0.4.6 зі збереженням ID квестів. `en_us.snbt` — **англійський довідник цілей для alpha**, а не завершений художній переклад. Він охоплює 37 глав, 1625 квестів, 1772 задачі й усі ключі оформлення книги. Назви 37 глав і 7 груп перекладено вручну; підписи цілей і вимоги згенеровано з фактичних задач. Довгі підписи на полотні скорочуються; частина секцій поки має функціональні назви `Section N`.
+Кампанія SOQM **0.4.7** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
 
-Для 16 спеціальних автоматичних і 3 ручних інженерних задач англійські умови написано вручну за вихідним описом. Збережено різницю між наявністю предмета, крафтом, досягненням, дією у світі й ручним підтвердженням. У 272 квестах із приміткою до змінених рецептів додано вказівку перевірити рецепт SOQM у JEI через R/U. Числа й механіка беруться з задач; україномовні жарти не копіюються в англійський текст.
+У 0.4.7 прибрано 1453 повторювані вступи, скорочено 1525 назв і вилучено 2287 застарілих абзаців із поверненнями нагород, списками підготовки та патчнотами рецептів. Корисні спеціальні пояснення, зокрема сплави Foundry, збережено. Єдина пам’ятка керування міститься на початку книги.
 
-Назви предметів і досягнень беруться з англійських ресурсів закріплених модів, наявних авторських ресурсів або читабельного перетворення registry ID. У `metadata/quest_english_names.json` записано лише потрібні назви та SHA-256 джерел. Цей словник зберігається в репозиторії, тому звичайна повторна генерація працює без JAR і мережі.
+**67 ключових квестів** мають окремо написані українські й англійські уроки: 61 у `metadata/campaign_tutorials.json` і шість матеріальних рубежів у `metadata/campaign_route.json`. У них описано ранню AE2-мережу, робочий 1k CPU, процесори, канали, P2P, живлення, космічну підготовку, печі та реактори. Умови 16 спеціальних автоматичних і трьох ручних інженерних задач також перекладено вручну. Нове досягнення ME перевіряє фактичний крафт через активний термінал із непорожнім сховищем.
+
+Решта англійських цілей виводиться з фактичних задач. Назви предметів і досягнень надходять із закріплених ресурсів модів, наявних авторських ресурсів або читабельного registry ID. Словник `metadata/quest_english_names.json` містить лише використані назви та SHA-256 джерел. Повний художній переклад залишено поза заявленим обсягом англійського довідника.
+
+Порядок оновлення:
 
 ```bash
+python3 scripts/campaign_refresh.py
 python3 scripts/localize_english.py
-python3 scripts/localize_english.py --check
+python3 scripts/soqm.py lock
+./scripts/check
 ```
 
-Оновити словник з уже завантажених модів можна окремо:
+Обидва генератори мають `--check`: він перевіряє свіжість і нічого не змінює. Редагуй метадані уроків, схему карти або політику нагород, потім запускай генератори. Вони перевіряють стабільні ID; нові задачі й переклади невідомих типів потребують явного розширення схеми.
+
+Для оновлення словника з уже завантажених JAR:
 
 ```bash
 python3 scripts/localize_english.py --mod-dir .cache/mods
 ```
 
-Приймаються лише файли з SHA-256, що відповідає `metadata/mods.lock.json`. Відсутні локальні JAR пропускаються; для них залишається читабельний registry ID або наявне авторське ім’я. Після зміни словника переглянь diff і знову виконай `--check`. Скрипт не змінює `uk_ua.snbt`, ID, залежності, задачі, рецепти чи нагороди.
-
-Потрібні подальша редактура назв, переклад авторського сюжету й гумору та графічна перевірка обох мов. Після зміни цілей, глав або спеціальних перевірок онови генератор; він навмисно завершується помилкою для невідомого типу задачі чи непокритої глави. Редагуй генератор і словник, а не згенерований файл.
+Приймаються лише SHA-256-узгоджені файли з `metadata/mods.lock.json`. Звичайна генерація працює без мережі й без JAR. Назви 14 пулів нагород перекладено вручну; склад і шанси показує штатний FTB Quests. Розмір і розташування підписів перевіряються автоматично; остаточну читабельність обох мов треба оглянути у графічному клієнті.
 
 ## Apotheosis: порожні підказки світових рівнів
 
@@ -55,8 +61,8 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 
 ## English scope
 
-Ukrainian retains the full authored campaign. English currently provides an **alpha objective guide**, covering every chapter, quest, task and canvas-label key. It derives counts and conditions from actual task data, with hand-written explanations for all 16 custom automatic checks and 3 manual engineering checks. All 272 source recipe notes include a JEI R/U reminder.
+English covers every chapter, quest, task, reward-table title and canvas caption. All **251 section names** and **67 core tutorials** have editorial translations. The 16 custom automatic checks, three manual engineering checks and new native ME-craft advancement have explicit English conditions. Other objectives derive their quantities and conditions from actual tasks.
 
-This is not a complete editorial translation of the narrative and humor. Some canvas sections use `Section N`, long captions are shortened, and names without an available English resource fall back to readable registry identifiers. Native advancement goals refer to the actual advancement screen or mod guide. A graphical review of both locales remains required.
+The single introductory controls guide explains inventory detection and JEI. Repeated patch notes and per-quest R/U reminders have been removed. Registry names are retained in the offline name lexicon; unknown display names fall back to readable identifiers. This is an alpha objective guide with authored core lessons; a full literary translation and graphical client review remain separate work.
 
-The generator preserves stable IDs, dependencies, recipes and rewards. Use the commands above to regenerate, verify freshness or refresh relevant display names from SHA-256-verified mod JARs. The committed name lexicon makes normal regeneration deterministic and offline.
+The commands above regenerate and validate the campaign, locale and payload lock. Existing quest, task, reward and image IDs stay stable. See [campaign update](CAMPAIGN_UPDATE.md) for migration and [native validation](RUNTIME_VALIDATION.md) for executable completion checks.

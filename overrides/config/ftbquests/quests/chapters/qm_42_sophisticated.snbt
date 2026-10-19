@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "5142421100000001",
-      "x": -10.15,
+      "x": -10.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedbackpacks:backpack",
@@ -27,7 +27,8 @@
         "qm_rebuild",
         "qm_v042",
         "stage_0",
-        "sophisticated_backpack"
+        "sophisticated_backpack",
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002"
@@ -52,24 +53,19 @@
       "rewards": [
         {
           "id": "5142421300000001",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t0",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000002",
-      "x": 2.75,
+      "x": 1.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedstorage:chest",
@@ -80,7 +76,7 @@
         "qm_v042",
         "stage_0",
         "sophisticated_chest",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002"
@@ -105,24 +101,19 @@
       "rewards": [
         {
           "id": "5142421300000002",
-          "type": "item",
-          "item": {
-            "id": "minecraft:paper",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000003",
-      "x": 6.45,
+      "x": 4.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedstorage:barrel",
@@ -133,7 +124,7 @@
         "qm_v042",
         "stage_0",
         "sophisticated_barrel",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002"
@@ -158,24 +149,19 @@
       "rewards": [
         {
           "id": "5142421300000003",
-          "type": "item",
-          "item": {
-            "id": "minecraft:oak_planks",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000004",
-      "x": -6.45,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedbackpacks:copper_backpack",
@@ -186,7 +172,7 @@
         "qm_v042",
         "stage_0",
         "sophisticated_copper_backpack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001"
@@ -211,24 +197,19 @@
       "rewards": [
         {
           "id": "5142421300000004",
-          "type": "item",
-          "item": {
-            "id": "minecraft:leather",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000005",
-      "x": -2.75,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedbackpacks:iron_backpack",
@@ -239,7 +220,7 @@
         "qm_v042",
         "stage_0",
         "sophisticated_iron_backpack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001"
@@ -264,25 +245,20 @@
       "rewards": [
         {
           "id": "5142421300000005",
-          "type": "item",
-          "item": {
-            "id": "minecraft:string",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000006",
-      "x": -10.15,
-      "y": 4.5,
+      "x": -1.95,
+      "y": 1.85,
       "icon": {
         "id": "sophisticatedbackpacks:gold_backpack",
         "count": 1
@@ -292,7 +268,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_gold_backpack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000005",
@@ -318,25 +294,20 @@
       "rewards": [
         {
           "id": "5142421300000006",
-          "type": "item",
-          "item": {
-            "id": "kubejs:control_assembly",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000007",
-      "x": -6.45,
-      "y": 4.5,
+      "x": -10.95,
+      "y": 4.65,
       "icon": {
         "id": "sophisticatedbackpacks:diamond_backpack",
         "count": 1
@@ -346,7 +317,7 @@
         "qm_v042",
         "stage_3",
         "sophisticated_diamond_backpack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000006",
@@ -372,25 +343,20 @@
       "rewards": [
         {
           "id": "5142421300000007",
-          "type": "item",
-          "item": {
-            "id": "kubejs:quantum_processor",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000008",
-      "x": -2.75,
-      "y": 4.5,
+      "x": -7.95,
+      "y": 4.65,
       "icon": {
         "id": "sophisticatedbackpacks:netherite_backpack",
         "count": 1
@@ -400,7 +366,7 @@
         "qm_v042",
         "stage_4",
         "sophisticated_netherite_backpack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000007",
@@ -426,24 +392,19 @@
       "rewards": [
         {
           "id": "5142421300000008",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000009",
-      "x": 10.15,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "sophisticatedstorage:basic_to_iron_tier_upgrade",
@@ -454,7 +415,7 @@
         "qm_v042",
         "stage_0",
         "sophisticated_iron_storage_kit",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514D010000000002"
@@ -479,25 +440,20 @@
       "rewards": [
         {
           "id": "5142421300000009",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedstorage:basic_to_iron_tier_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "514242110000000A",
-      "x": 2.75,
-      "y": 4.5,
+      "x": 10.95,
+      "y": 1.85,
       "icon": {
         "id": "sophisticatedstorage:iron_to_gold_tier_upgrade",
         "count": 1
@@ -507,7 +463,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_gold_storage_kit",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000009",
@@ -533,25 +489,20 @@
       "rewards": [
         {
           "id": "514242130000000A",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedstorage:iron_to_gold_tier_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "514242110000000B",
-      "x": 6.45,
-      "y": 4.5,
+      "x": 1.95,
+      "y": 4.65,
       "icon": {
         "id": "sophisticatedstorage:gold_to_diamond_tier_upgrade",
         "count": 1
@@ -561,7 +512,7 @@
         "qm_v042",
         "stage_3",
         "sophisticated_diamond_storage_kit",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514242110000000A",
@@ -587,25 +538,20 @@
       "rewards": [
         {
           "id": "514242130000000B",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedstorage:gold_to_diamond_tier_upgrade",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514242110000000C",
-      "x": 10.15,
-      "y": 4.5,
+      "x": 4.95,
+      "y": 4.65,
       "icon": {
         "id": "sophisticatedstorage:diamond_to_netherite_tier_upgrade",
         "count": 1
@@ -615,7 +561,7 @@
         "qm_v042",
         "stage_4",
         "sophisticated_netherite_storage_kit",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514242110000000B",
@@ -641,25 +587,20 @@
       "rewards": [
         {
           "id": "514242130000000C",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedstorage:diamond_to_netherite_tier_upgrade",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514242110000000D",
-      "x": -8.3,
-      "y": 8.75,
+      "x": -10.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:pickup_upgrade",
         "count": 1
@@ -669,7 +610,7 @@
         "qm_v042",
         "stage_1",
         "sophisticated_pickup",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -695,25 +636,20 @@
       "rewards": [
         {
           "id": "514242130000000D",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:pickup_upgrade",
-            "count": 1
-          },
-          "count": 8,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "514242110000000E",
-      "x": -4.6,
-      "y": 8.75,
+      "x": -4.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:advanced_pickup_upgrade",
         "count": 1
@@ -723,7 +659,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_advanced_pickup",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514242110000000D",
@@ -749,25 +685,20 @@
       "rewards": [
         {
           "id": "514242130000000E",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:advanced_pickup_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514242110000000F",
-      "x": -8.3,
-      "y": 11.4,
+      "x": -1.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:magnet_upgrade",
         "count": 1
@@ -777,7 +708,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_magnet",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514242110000000D",
@@ -803,25 +734,20 @@
       "rewards": [
         {
           "id": "514242130000000F",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:magnet_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000010",
-      "x": 4.6,
-      "y": 8.75,
+      "x": 1.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:stack_upgrade_starter_tier",
         "count": 1
@@ -831,7 +757,7 @@
         "qm_v042",
         "stage_1",
         "sophisticated_starter_stack",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -857,25 +783,20 @@
       "rewards": [
         {
           "id": "5142421300000010",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:stack_upgrade_starter_tier",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000011",
-      "x": 8.3,
-      "y": 8.75,
+      "x": 4.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:stack_upgrade_tier_1",
         "count": 1
@@ -885,7 +806,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_stack_tier_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000010",
@@ -911,25 +832,20 @@
       "rewards": [
         {
           "id": "5142421300000011",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:stack_upgrade_tier_1",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000012",
-      "x": 4.6,
-      "y": 11.4,
+      "x": 7.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:compacting_upgrade",
         "count": 1
@@ -939,7 +855,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_compacting",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -965,25 +881,20 @@
       "rewards": [
         {
           "id": "5142421300000012",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:compacting_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000013",
-      "x": -10.15,
-      "y": 15.65,
+      "x": -10.95,
+      "y": 14.29,
       "icon": {
         "id": "sophisticatedbackpacks:crafting_upgrade",
         "count": 1
@@ -993,7 +904,7 @@
         "qm_v042",
         "stage_1",
         "sophisticated_crafting",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -1019,25 +930,20 @@
       "rewards": [
         {
           "id": "5142421300000013",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:crafting_upgrade",
-            "count": 1
-          },
-          "count": 8,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000014",
-      "x": -6.45,
-      "y": 15.65,
+      "x": -7.95,
+      "y": 14.29,
       "icon": {
         "id": "sophisticatedbackpacks:smelting_upgrade",
         "count": 1
@@ -1047,7 +953,7 @@
         "qm_v042",
         "stage_1",
         "sophisticated_smelting",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -1073,25 +979,20 @@
       "rewards": [
         {
           "id": "5142421300000014",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:smelting_upgrade",
-            "count": 1
-          },
-          "count": 8,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000015",
-      "x": -2.75,
-      "y": 15.65,
+      "x": -4.95,
+      "y": 14.29,
       "icon": {
         "id": "sophisticatedbackpacks:auto_smelting_upgrade",
         "count": 1
@@ -1101,7 +1002,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_auto_smelting",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000014",
@@ -1127,25 +1028,20 @@
       "rewards": [
         {
           "id": "5142421300000015",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:auto_smelting_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5142421100000016",
-      "x": -4.6,
-      "y": 11.4,
+      "x": -7.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:deposit_upgrade",
         "count": 1
@@ -1155,7 +1051,7 @@
         "qm_v042",
         "stage_1",
         "sophisticated_deposit",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000001",
@@ -1181,25 +1077,20 @@
       "rewards": [
         {
           "id": "5142421300000016",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedbackpacks:deposit_upgrade",
-            "count": 1
-          },
-          "count": 8,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000017",
-      "x": 4.6,
-      "y": 15.65,
+      "x": 1.95,
+      "y": 14.29,
       "icon": {
         "id": "sophisticatedstorage:controller",
         "count": 1
@@ -1209,7 +1100,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_controller",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5142421100000009",
@@ -1247,25 +1138,20 @@
       "rewards": [
         {
           "id": "5142421300000017",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000018",
-      "x": 8.3,
-      "y": 15.65,
+      "x": 4.95,
+      "y": 14.29,
       "icon": {
         "id": "sophisticatedstorage:hopper_upgrade",
         "count": 1
@@ -1275,7 +1161,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_hopper",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "5130115E1ED084F6"
@@ -1300,25 +1186,20 @@
       "rewards": [
         {
           "id": "5142421300000018",
-          "type": "item",
-          "item": {
-            "id": "sophisticatedstorage:hopper_upgrade",
-            "count": 1
-          },
-          "count": 4,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5142421100000019",
-      "x": 8.3,
-      "y": 11.4,
+      "x": 10.95,
+      "y": 9.47,
       "icon": {
         "id": "sophisticatedstorage:compression_upgrade",
         "count": 1
@@ -1328,7 +1209,7 @@
         "qm_v042",
         "stage_2",
         "sophisticated_compression",
-        "humor"
+        "soqm_role_reference"
       ],
       "dependencies": [
         "514242110000000A"
@@ -1353,18 +1234,13 @@
       "rewards": [
         {
           "id": "5142421300000019",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693317
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     }
@@ -1372,8 +1248,8 @@
   "images": [
     {
       "id": "5142421400000001",
-      "x": 0,
-      "y": -2.25,
+      "x": 0.0,
+      "y": -2.45,
       "width": 24.9,
       "height": 0.8,
       "rotation": 0.0,
@@ -1388,8 +1264,8 @@
     },
     {
       "id": "5142421400000002",
-      "x": 0,
-      "y": -1.37,
+      "x": 0.0,
+      "y": -1.53,
       "width": 24.9,
       "height": 0.43,
       "rotation": 0.0,
@@ -1404,8 +1280,8 @@
     },
     {
       "id": "5142421400000003",
-      "x": 0,
-      "y": -0.71,
+      "x": 0.0,
+      "y": -0.83,
       "width": 24.9,
       "height": 0.1,
       "rotation": 0.0,
@@ -1420,7 +1296,7 @@
     },
     {
       "id": "5142421400000004",
-      "x": 0,
+      "x": 0.0,
       "y": 2.8,
       "width": 1,
       "height": 1,
@@ -1437,9 +1313,9 @@
     {
       "id": "5142421400000005",
       "x": -6.45,
-      "y": 3.15,
-      "width": 12,
-      "height": 6.3,
+      "y": 3.45,
+      "width": 12.0,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1453,9 +1329,9 @@
     {
       "id": "5142421400000006",
       "x": -12.395,
-      "y": 3.15,
+      "y": 3.45,
       "width": 0.11,
-      "height": 6.3,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -1468,9 +1344,9 @@
     },
     {
       "id": "5142421400000007",
-      "x": -6.45,
-      "y": 0.44,
-      "width": 11.65,
+      "x": -6.37,
+      "y": 0.46,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1485,9 +1361,9 @@
     {
       "id": "5142421400000008",
       "x": 6.45,
-      "y": 3.15,
-      "width": 12,
-      "height": 6.3,
+      "y": 3.45,
+      "width": 12.0,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1500,12 +1376,12 @@
     },
     {
       "id": "5142421400000009",
-      "x": 0.5049999999999999,
-      "y": 3.15,
+      "x": 0.505,
+      "y": 3.45,
       "width": 0.11,
-      "height": 6.3,
+      "height": 6.9,
       "rotation": 0.0,
-      "image": "color:#E8E5B85C",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1516,9 +1392,9 @@
     },
     {
       "id": "514242140000000A",
-      "x": 6.45,
-      "y": 0.44,
-      "width": 11.65,
+      "x": 6.53,
+      "y": 0.46,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1533,9 +1409,9 @@
     {
       "id": "514242140000000B",
       "x": -6.45,
-      "y": 10.05,
-      "width": 12,
-      "height": 6.3,
+      "y": 9.67,
+      "width": 12.0,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1549,11 +1425,11 @@
     {
       "id": "514242140000000C",
       "x": -12.395,
-      "y": 10.05,
+      "y": 9.67,
       "width": 0.11,
-      "height": 6.3,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E8E5B85C",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1564,9 +1440,9 @@
     },
     {
       "id": "514242140000000D",
-      "x": -6.45,
-      "y": 7.340000000000001,
-      "width": 11.65,
+      "x": -6.37,
+      "y": 8.08,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1581,9 +1457,9 @@
     {
       "id": "514242140000000E",
       "x": 6.45,
-      "y": 10.05,
-      "width": 12,
-      "height": 6.3,
+      "y": 9.67,
+      "width": 12.0,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1596,12 +1472,12 @@
     },
     {
       "id": "514242140000000F",
-      "x": 0.5049999999999999,
-      "y": 10.05,
+      "x": 0.505,
+      "y": 9.67,
       "width": 0.11,
-      "height": 6.3,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E8E5B85C",
+      "image": "color:#E8B58CDB",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1612,9 +1488,9 @@
     },
     {
       "id": "5142421400000010",
-      "x": 6.45,
-      "y": 7.340000000000001,
-      "width": 11.65,
+      "x": 6.53,
+      "y": 8.08,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1629,9 +1505,9 @@
     {
       "id": "5142421400000011",
       "x": -6.45,
-      "y": 15.700000000000001,
-      "width": 12,
-      "height": 3.8,
+      "y": 14.49,
+      "width": 12.0,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1645,11 +1521,11 @@
     {
       "id": "5142421400000012",
       "x": -12.395,
-      "y": 15.700000000000001,
+      "y": 14.49,
       "width": 0.11,
-      "height": 3.8,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E8E5B85C",
+      "image": "color:#E8E393A7",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1660,9 +1536,9 @@
     },
     {
       "id": "5142421400000013",
-      "x": -6.45,
-      "y": 14.24,
-      "width": 11.65,
+      "x": -6.37,
+      "y": 12.9,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1677,9 +1553,9 @@
     {
       "id": "5142421400000014",
       "x": 6.45,
-      "y": 15.700000000000001,
-      "width": 12,
-      "height": 3.8,
+      "y": 14.49,
+      "width": 12.0,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -1692,12 +1568,12 @@
     },
     {
       "id": "5142421400000015",
-      "x": 0.5049999999999999,
-      "y": 15.700000000000001,
+      "x": 0.505,
+      "y": 14.49,
       "width": 0.11,
-      "height": 3.8,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E8E5B85C",
+      "image": "color:#E8F1C96B",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1708,9 +1584,9 @@
     },
     {
       "id": "5142421400000016",
-      "x": 6.45,
-      "y": 14.24,
-      "width": 11.65,
+      "x": 6.53,
+      "y": 12.9,
+      "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -1724,10 +1600,10 @@
     },
     {
       "id": "5142421400000017",
-      "x": -10.15,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -10.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1740,10 +1616,10 @@
     },
     {
       "id": "5142421400000018",
-      "x": 2.75,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 1.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1756,10 +1632,10 @@
     },
     {
       "id": "5142421400000019",
-      "x": 6.45,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 4.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1772,10 +1648,10 @@
     },
     {
       "id": "514242140000001A",
-      "x": -6.45,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -7.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1788,10 +1664,10 @@
     },
     {
       "id": "514242140000001B",
-      "x": -2.75,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -4.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1804,10 +1680,10 @@
     },
     {
       "id": "514242140000001C",
-      "x": -10.15,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -1.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1820,10 +1696,10 @@
     },
     {
       "id": "514242140000001D",
-      "x": -6.45,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -10.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1836,10 +1712,10 @@
     },
     {
       "id": "514242140000001E",
-      "x": -2.75,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -7.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1852,10 +1728,10 @@
     },
     {
       "id": "514242140000001F",
-      "x": 10.15,
-      "y": 2.59,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 7.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1868,10 +1744,10 @@
     },
     {
       "id": "5142421400000020",
-      "x": 2.75,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 10.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1884,10 +1760,10 @@
     },
     {
       "id": "5142421400000021",
-      "x": 6.45,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 1.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1900,10 +1776,10 @@
     },
     {
       "id": "5142421400000022",
-      "x": 10.15,
-      "y": 5.24,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 4.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1916,10 +1792,10 @@
     },
     {
       "id": "5142421400000023",
-      "x": -8.3,
-      "y": 9.49,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -10.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1932,10 +1808,10 @@
     },
     {
       "id": "5142421400000024",
-      "x": -4.6,
-      "y": 9.49,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -4.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1948,10 +1824,10 @@
     },
     {
       "id": "5142421400000025",
-      "x": -8.3,
-      "y": 12.14,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -1.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1964,10 +1840,10 @@
     },
     {
       "id": "5142421400000026",
-      "x": 4.6,
-      "y": 9.49,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 1.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1980,10 +1856,10 @@
     },
     {
       "id": "5142421400000027",
-      "x": 8.3,
-      "y": 9.49,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 4.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -1996,10 +1872,10 @@
     },
     {
       "id": "5142421400000028",
-      "x": 4.6,
-      "y": 12.14,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 7.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2012,10 +1888,10 @@
     },
     {
       "id": "5142421400000029",
-      "x": -10.15,
-      "y": 16.39,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -10.95,
+      "y": 15.21,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2028,10 +1904,10 @@
     },
     {
       "id": "514242140000002A",
-      "x": -6.45,
-      "y": 16.39,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -7.95,
+      "y": 15.21,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2044,10 +1920,10 @@
     },
     {
       "id": "514242140000002B",
-      "x": -2.75,
-      "y": 16.39,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -4.95,
+      "y": 15.21,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2060,10 +1936,10 @@
     },
     {
       "id": "514242140000002C",
-      "x": -4.6,
-      "y": 12.14,
-      "width": 3.45,
-      "height": 0.4,
+      "x": -7.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2076,10 +1952,10 @@
     },
     {
       "id": "514242140000002D",
-      "x": 4.6,
-      "y": 16.39,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 1.95,
+      "y": 15.21,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2092,10 +1968,10 @@
     },
     {
       "id": "514242140000002E",
-      "x": 8.3,
-      "y": 16.39,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 4.95,
+      "y": 15.21,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -2108,10 +1984,10 @@
     },
     {
       "id": "514242140000002F",
-      "x": 8.3,
-      "y": 12.14,
-      "width": 3.45,
-      "height": 0.4,
+      "x": 10.95,
+      "y": 10.39,
+      "width": 2.72,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,

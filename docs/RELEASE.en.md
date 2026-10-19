@@ -1,4 +1,4 @@
-# Preparing SOQM 0.4.6
+# Preparing SOQM 0.4.7
 
 The current work updates source and builds an alpha locally. A commit does not
 establish publication of a new installation asset, a push or a graphical playtest.
@@ -12,7 +12,7 @@ python3 scripts/soqm.py build
 The local check validates structure, data and packaging. `verify-downloads`
 requires a network connection and checks **122** pinned third-party files,
 not arbitrary latest versions. `build` writes
-`dist/SOQM-0.4.6-curseforge.zip` and a checksum under `dist/`. A failed download
+`dist/SOQM-0.4.7-curseforge.zip` and a checksum under `dist/`. A failed download
 is an incomplete check, not permission to silently substitute versions.
 
 A separate native-server check requires Java 21 and an isolated world. After
@@ -41,9 +41,10 @@ Before accepting the update:
 - Review the diff and `git diff --check` before committing. Generated ZIPs,
   JARs, source archives, caches and JSON reports remain local.
 
-GitHub is used for version control, without adding Actions. Publishing a new
-asset or pushing is a separate action. The [immutable first-alpha links](../downloads/README.md)
-remain historical; they do not provide SOQM 0.4.6.
+The **Validate and package** workflow runs local validation on PRs and main,
+then uploads the installation candidate and SHA256SUMS for 14 days. Publishing
+a separate release remains a separate action. The [immutable first-alpha links](../downloads/README.md)
+remain historical; they do not provide SOQM 0.4.7.
 
 For a future publication, pin the tested commit, ZIP and SHA-256. Distinguish
 completed checks, historical source evidence and untested areas in the notes.

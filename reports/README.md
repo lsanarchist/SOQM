@@ -1,5 +1,6 @@
 # Verification status
 
+<<<<<<< HEAD
 ## Unreleased skill advancement optimization
 
 The [skill patch notes](../docs/SKILLS_OPTIMIZATION.md) describe the replacement
@@ -33,6 +34,48 @@ reload or respec with a player. A fresh full-pack world/client test and a
 before/after TPS benchmark have not been performed for this configuration patch.
 
 ## Unreleased Cannibal 0.4.1 hotfix
+=======
+## SOQM 0.4.7 — current reviewed campaign
+
+Validation completed on **2026-10-19**. The exact final game payload passed
+**48 Python regressions**, the Node equipment/loot policy regression,
+deterministic campaign/English/SVG regeneration, and the native FTB/AE2
+interaction gate. All **122** pinned third-party dependencies verified.
+
+The final native run created a fresh localhost world, reloaded
+**20,077 → 20,077 recipes**, saved all dimensions and exited normally with
+**zero KubeJS startup/server or fatal-server errors**. It also checked:
+
+- **1,611** random rewards through native NBT and network serialization;
+- actual one-time inventory delivery from **all 14** thematic pools;
+- preservation of **all 1,626 old reward claims** and **42 task values**, including
+  **6 partial tasks**, after upgrading the nonempty native save fixture;
+- **1,625 team claims** shared with a second UUID and **one personal book** kept
+  separately claimable for that player;
+- a real AE2 output click that grants the ME advancement and satisfies the
+  existing native FTB task, while ordinary crafting, unpowered networks and
+  empty ME storage fail;
+- independent advancement and nonempty TeamData disk round trips plus reload.
+
+The final report matches the current payload lock and verifies that no
+production file changed during the run. The fixture uses synthetic players,
+creative power and direct block setup to isolate the tested conditions.
+Graphical rendering, survival pacing, long-term multiplayer economy and
+measured travel performance remain separate validation work.
+
+**Exact hashes, runtime, scope and reproduction:**
+[verification-0.4.7.md](verification-0.4.7.md) ·
+[native harness documentation](../docs/RUNTIME_VALIDATION.md).
+The successful CI workflow for a commit additionally provides the installation
+ZIP and checksum. A candidate archive is distinct from a separately published
+release. Generated raw JSON reports and native test worlds remain local.
+
+A standard smoke also passed before the final coordinate/caption adjustments.
+That earlier report is not presented as the exact final payload test; the final
+interaction run includes its own fresh-world startup, reload and saved shutdown.
+
+## Historical Cannibal 0.4.1 hotfix validation (before 0.4.7)
+>>>>>>> origin/main
 
 The Cannibal compatibility module is rebuilt as
 `qm-cannibal-compat-0.4.1.jar`, SHA-256

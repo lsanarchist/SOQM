@@ -1,84 +1,116 @@
 <p align="center"><img src="assets/banner.svg" alt="Shout Out to Questing Mayhem" width="100%"></p>
 
-<p align="center"><b>SOQM 0.4.6 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
+<p align="center"><b>SOQM 0.4.7 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
-**Shout Out to Questing Mayhem (SOQM)** — Expert-збірка про виробничі ланцюги,
+**Shout Out to Questing Mayhem (SOQM)** — Expert-кампанія про виробничі ланцюги,
 магію та дослідження. **1625 квестів у 37 главах** ведуть від першої майстерні
-до великих автоматизованих систем. Поточна основа — Questing Mayhem Expert
-**0.4.6**; SOQM зберігає власне оформлення, політики та відтворюваний процес збірки.
+до великих автоматизованих систем. Основа — Questing Mayhem Expert **0.4.6**;
+SOQM розвиває власні рецепти, квести, баланс та відтворюваний процес збірки.
 
-У 0.4.6 зменшено випадкові запаси у скринях, прибрано пластик/HDPE з випадкового
-луту, оновлено 280 квестових іконок і поліпшено українські пояснення поступу.
-Рецепти цього оновлення та стабільні ID квестів, задач і нагород збережено.
-[Зміни](CHANGELOG.md) · [Стан перевірок](reports/README.md)
+**У 0.4.7 головний маршрут став першою главою**, матеріальні рубежі отримали
+виразні вузли, а додаткові гілки — окремі позначки. Замість великих однотипних
+виплат працюють **14 тематичних пулів нагород** із видимими шансами.
+Перша компактна AE2-мережа й 1k-автокрафт доступні після точного механізму;
+космічне спорядження вивчається до першого польоту. Книга містить **67 основних
+уроків українською й англійською** та 251 іменовану секцію.
 
-**Статус — alpha.** Свіжа серверна перевірка 0.4.6 пройшла: старт,
-reload **20 077 → 20 077 рецептів**, нуль помилок KubeJS і штатне завершення.
-Повне проходження, графічний клієнт і довгостроковий баланс
-потребують окремої перевірки. Українська містить авторську кампанію; англійська —
-довідник цілей, а не завершений художній переклад.
+[Зміни кампанії](docs/CAMPAIGN_UPDATE.md) · [Пули нагород](docs/REWARDS.md) ·
+[Changelog](CHANGELOG.md) · [Стан перевірок](reports/README.md)
 
 ## Грати
 
-Поточний інсталяційний пакет створюється **локально**:
+У pull request або вкладці **Actions → Validate and package** відкрий успішний
+запуск для потрібного коміту. Артефакт `SOQM-candidate-<commit>` містить
+інсталяційний ZIP і `SHA256SUMS`. Розпакуй зовнішній архів GitHub, потім імпортуй
+`SOQM-0.4.7-curseforge.zip` у сумісний із CurseForge manifest лаунчер.
+Артефакти CI зберігаються 14 днів; їх можна відтворити з того самого коміту.
+
+Локальна підготовка:
 
 ```sh
 ./scripts/check
 python3 scripts/soqm.py verify-downloads
-python3 scripts/soqm.py build
 ```
 
-Результат: `dist/SOQM-0.4.6-curseforge.zip` та контрольна сума в `dist/`.
-Імпортуй цей ZIP як новий профіль у сумісний із CurseForge manifest лаунчер.
-Для MultiMC дивись окремі застереження щодо ручного встановлення в інструкції.
-Потрібні придбана Minecraft Java Edition та Java 21. GitHub `Source code`
-не є інсталяційним пакетом; ZIP 0.4.6 ще не опубліковано як окремий asset.
+`./scripts/check` створює `dist/SOQM-0.4.7-curseforge.zip` та контрольну суму.
+Друга команда окремо звіряє всі 122 сторонні залежності з їхніми SHA-256.
+Потрібні Minecraft Java Edition та Java 21. GitHub **Source code** містить
+репозиторій; імпортувати в лаунчер слід зібраний інсталяційний ZIP.
 
 [Встановлення українською](docs/INSTALL.uk.md) · [Install in English](docs/INSTALL.en.md) ·
-[Поточні та історичні завантаження](downloads/README.md)
+[Поточні й історичні завантаження](downloads/README.md)
 
-- **Expert:** складні рецепти пов’язують промисловість, магію та матеріали вимірів.
-- **Техніка:** Mekanism, Immersive Engineering, AE2, Ender IO, Industrial Foregoing.
-- **Світи:** DivineRPG, Aether, Twilight Forest, Ad Astra та додаткові експедиції.
-- **Mayhem:** тематичні куби, власні компоненти та одноразові квестові нагороди.
-- **Мови:** українська кампанія та англійський довідник; [межі локалізації](docs/LOCALIZATION.md).
+### Оновлення світу
+
+Збережено всі наявні ID квестів, задач, нагород, глав та підписів. Раніше
+отримані нагороди залишаються отриманими; нові пули застосовуються до ще не
+забраних нагород. Завершений квест ME-термінала зберігає старий прогрес,
+незавершений тепер очікує реальний крафт через активний термінал.
+Перед оновленням збережи копію світу й профілю та заміни файли збірки повністю.
+Деталі — у [поясненні міграції](docs/CAMPAIGN_UPDATE.md#оновлення-наявного-світу).
+
+## Що перевірено
+
+Статус збірки — **alpha**. Автоматичні перевірки охоплюють незмінність
+збережених ID, граф залежностей, матеріальні обмеження, пули, локалізацію,
+геометрію карти та інсталяційний архів. Окрема перевірка на справжньому
+NeoForge/FTB Quests/AE2 перевіряє видачу нагород, старий прогрес, живий крафт
+через ME-термінал, збереження та reload.
+
+Підсумки й точні межі перевірки записано в [reports](reports/README.md) та
+[інструкції відтворення](docs/RUNTIME_VALIDATION.md). Повне проходження,
+графічний клієнт, тривала економіка та вимірювання продуктивності потребують
+ігрової перевірки. Збережено актуальне виправлення Cannibal 0.4.1.
 
 ## Розробка
 
-Потрібні Python 3.11+ та Node.js 18+. `./scripts/check` виконує локальні перевірки
-й упаковку; `verify-downloads` окремо перевіряє доступність і хеші **122**
-закріплених сторонніх модів та зберігає їх у локальному кеші. Початкові 111
-залежностей залишено, додано 11. Пакет також використовує **10** авторських
-модулів сумісності: початкові вісім і модулі мобів та компактного луту скринь.
+Потрібні Python 3.11+ та Node.js 18+. Звичайна перевірка не завантажує
+сторонні JAR. Після редагування уроків, карти або політики нагород:
 
-`overrides/` містить ігрові налаштування, квести та скрипти; `src/compat/` —
-джерела модулів. `manifest.json`, `soqm.json` і `metadata/` фіксують версії та
-походження. Генеровані архіви, сторонні JAR, кеші й JSON-звіти залишаються
-локальними. GitHub використовується для контролю версій; поточна підготовка
-не означає публікацію нового пакета.
+```sh
+python3 scripts/campaign_refresh.py
+python3 scripts/localize_english.py
+python3 scripts/render_campaign.py
+python3 scripts/soqm.py lock
+./scripts/check
+```
 
-[Порядок релізу](docs/RELEASE.uk.md) · [План ігрових перевірок](docs/PLAYTEST.uk.md)
+`overrides/` містить ігровий вміст, `src/compat/` — джерела 10 авторських
+модулів, `metadata/` — версії, хеші й редаговані правила кампанії. Прев’ю карт
+генеруються з фактичних координат; вони показують структуру й не замінюють
+огляд інтерфейсу в грі. Сторонні JAR, світи, тестовий мод та кеші залишаються
+поза інсталяційним архівом.
+
+[Локалізація](docs/LOCALIZATION.md) · [Порядок релізу](docs/RELEASE.uk.md) ·
+[План ігрових перевірок](docs/PLAYTEST.uk.md)
 
 ## English
 
-SOQM **0.4.6** is an Expert Minecraft campaign with **1,625 quests in 37 chapters**,
+SOQM **0.4.7** is an Expert Minecraft campaign with **1,625 quests in 37 chapters**,
 **122 pinned third-party mods** and **10 authored compatibility modules**.
-This update brings leaner chest loot, removes random plastic/HDPE, replaces
-280 quest icons and improves Ukrainian progression guidance. Existing quest,
-task and reward IDs remain stable. English provides an alpha objective guide;
-an editorial translation of the narrative and humor remains pending.
+The Main Route is now the first chapter. Distinct map shapes identify finale
+prerequisites, mod development and optional branches. **14 original themed
+reward pools** replace large fixed payouts, with one visible weighted draw per
+ordinary quest. Selected milestones retain one Mayhem Cube.
 
-Build `dist/SOQM-0.4.6-curseforge.zip` locally using the commands above and follow
-the [installation guide](docs/INSTALL.en.md). The 0.4.6 artifact has not been
-published separately. Fresh 0.4.6 dedicated-server startup, reload
-(**20,077 → 20,077 recipes**, zero KubeJS errors) and clean shutdown passed.
-Full graphical playthrough, long-term balance and client performance remain
-unverified. The historical 0.1.0-alpha.1 download is a separate version.
+Early AE2 preparation precedes processors and Precision Mechanism; a compact
+1k autocrafting setup is available at stage 2, while larger components retain
+the matrix gate. Space preparation precedes the first Moon landing. English
+includes **67 authored core tutorials**, all 251 section names and generated
+objectives for the rest of the campaign.
+
+Download the installation candidate and checksum from a successful **Validate
+and package** workflow for the desired commit, or build locally with the commands
+above. See the [installation guide](docs/INSTALL.en.md),
+[native validation](docs/RUNTIME_VALIDATION.md) and [current evidence](reports/README.md).
+Existing progress and claim identities are preserved. Full graphical playthrough,
+long-term balance and performance measurements remain alpha validation work.
 
 ## Авторство
 
-Автор SOQM: **lsanarchist**. Craftoria — орієнтир якості оформлення та зручності.
-Questing Mayhem — натхнення для назви. Проєкт не пов’язаний із цими командами.
+Автор SOQM: **lsanarchist**. Craftoria — орієнтир якості оформлення та зручності;
+пули SOQM мають власний склад і баланс. Questing Mayhem — натхнення для назви.
+Проєкт не пов’язаний із цими командами.
 
 [Моди й автори](MODLIST.md) · [Ліцензії та походження](THIRD_PARTY_NOTICES.md) ·
 [Ліцензія проєкту](LICENSE)

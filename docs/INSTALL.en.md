@@ -1,10 +1,16 @@
-# Installing SOQM 0.4.6
+# Installing SOQM 0.4.7
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
 `metadata/mods.lock.json`; arbitrary individual updates can break progression.
 
-## Current package: build locally
+## Current package: CI candidate or local build
+
+On GitHub, open **Actions → Validate and package** and choose the successful
+run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
+GitHub's outer ZIP. It contains `SOQM-0.4.7-curseforge.zip` and `SHA256SUMS`;
+import that inner installation ZIP into the launcher. CI artifacts remain
+available for 14 days and can be reproduced locally afterward.
 
 From the repository root, with Python 3.11+ and Node.js 18+:
 
@@ -14,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.6-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.6 asset is not claimed. The
+The current output is `dist/SOQM-0.4.7-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.7 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -23,7 +29,7 @@ and the baseline Sources ZIP are not installable game profiles.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.6 ZIP and wait for every download. See the
+   select the built 0.4.7 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing

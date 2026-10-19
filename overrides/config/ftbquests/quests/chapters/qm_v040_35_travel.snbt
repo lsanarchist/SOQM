@@ -18,7 +18,7 @@
     {
       "id": "514011D6A11A4B7F",
       "x": -10.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:warp_dust",
         "count": 1
@@ -27,7 +27,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -53,25 +53,20 @@
       "rewards": [
         {
           "id": "514013B6BA69E56A",
-          "type": "item",
-          "item": {
-            "id": "minecraft:amethyst_shard",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011D5173E409C",
       "x": -7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:warp_stone",
         "count": 1
@@ -79,15 +74,16 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_1",
-        "humor"
+        "stage_2",
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "dependencies": [
         "514D010000000002",
         "514011D6A11A4B7F",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "5130115E1ED084F6"
       ],
       "optional": false,
       "tasks": [
@@ -107,25 +103,20 @@
       "rewards": [
         {
           "id": "514013A55DF240D9",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t1",
-            "count": 1
-          },
-          "count": 1,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011DBDCE74F12",
       "x": -4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:waystone",
         "count": 1
@@ -133,8 +124,8 @@
       "tags": [
         "qm_rebuild",
         "qm_v040",
-        "stage_1",
-        "humor"
+        "stage_2",
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -161,25 +152,20 @@
       "rewards": [
         {
           "id": "514013AD5EF4ABC9",
-          "type": "item",
-          "item": {
-            "id": "minecraft:obsidian",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140115DE8C14840",
       "x": 1.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:blank_scroll",
         "count": 1
@@ -188,7 +174,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -214,25 +200,20 @@
       "rewards": [
         {
           "id": "5140132FBF32D7AD",
-          "type": "item",
-          "item": {
-            "id": "waystones:blank_scroll",
-            "count": 1
-          },
-          "count": 16,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140113F2F5DEC00",
       "x": 4.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:return_scroll",
         "count": 1
@@ -241,7 +222,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -268,25 +249,20 @@
       "rewards": [
         {
           "id": "514013521CC9A00F",
-          "type": "item",
-          "item": {
-            "id": "minecraft:ink_sac",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140114D64395E7C",
       "x": 7.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:warp_scroll",
         "count": 1
@@ -295,7 +271,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -322,25 +298,20 @@
       "rewards": [
         {
           "id": "514013B3C859DF71",
-          "type": "item",
-          "item": {
-            "id": "minecraft:paper",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51401139B8D07E4A",
       "x": 10.95,
-      "y": 1.8,
+      "y": 1.85,
       "icon": {
         "id": "waystones:portal_scroll",
         "count": 1
@@ -349,7 +320,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -376,25 +347,20 @@
       "rewards": [
         {
           "id": "51401356219EB197",
-          "type": "item",
-          "item": {
-            "id": "minecraft:ink_sac",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5140118857C10A05",
       "x": -10.95,
-      "y": 6.2,
+      "y": 6.67,
       "icon": {
         "id": "waystones:dormant_shard",
         "count": 1
@@ -403,7 +369,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -430,25 +396,20 @@
       "rewards": [
         {
           "id": "51401363B58DC6DE",
-          "type": "item",
-          "item": {
-            "id": "minecraft:flint",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "51401120C974D031",
       "x": -7.95,
-      "y": 6.2,
+      "y": 6.67,
       "icon": {
         "id": "waystones:warp_plate",
         "count": 1
@@ -457,7 +418,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -484,25 +445,20 @@
       "rewards": [
         {
           "id": "5140138D03243658",
-          "type": "item",
-          "item": {
-            "id": "minecraft:stone_bricks",
-            "count": 1
-          },
-          "count": 64,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401126398A63F3",
       "x": -4.95,
-      "y": 6.2,
+      "y": 6.67,
       "icon": {
         "id": "waystones:twinbound_feather",
         "count": 1
@@ -511,7 +467,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_2",
-        "humor"
+        "soqm_role_reference"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -538,25 +494,20 @@
       "rewards": [
         {
           "id": "514013F9E4CA561F",
-          "type": "item",
-          "item": {
-            "id": "minecraft:ink_sac",
-            "count": 1
-          },
-          "count": 32,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
+      "size": 0.9,
       "shape": "rsquare",
       "hide_dependency_lines": true
     },
     {
       "id": "5140112E15CD6067",
       "x": 1.95,
-      "y": 6.2,
+      "y": 6.67,
       "icon": {
         "id": "yigd:grave_key",
         "count": 1
@@ -565,7 +516,7 @@
         "qm_rebuild",
         "qm_v040",
         "stage_1",
-        "humor"
+        "soqm_role_optional"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -586,27 +537,22 @@
       "rewards": [
         {
           "id": "51401361BEEE75EB",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t1",
-            "count": 1
-          },
-          "count": 2,
           "team_reward": true,
           "auto": "disabled",
-          "random_bonus": 0
+          "type": "random",
+          "table_id": 1783693320
         }
       ],
-      "size": 1.0,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     }
   ],
   "images": [
     {
       "id": "514104100000097C",
       "x": 0.0,
-      "y": -2.25,
+      "y": -2.45,
       "width": 24.9,
       "height": 0.8,
       "rotation": 0.0,
@@ -622,7 +568,7 @@
     {
       "id": "514104100000097D",
       "x": 0.0,
-      "y": -1.37,
+      "y": -1.53,
       "width": 24.9,
       "height": 0.43,
       "rotation": 0.0,
@@ -638,7 +584,7 @@
     {
       "id": "514104100000097E",
       "x": 0.0,
-      "y": -0.71,
+      "y": -0.83,
       "width": 24.9,
       "height": 0.1,
       "rotation": 0.0,
@@ -670,9 +616,9 @@
     {
       "id": "5141041000000980",
       "x": -6.45,
-      "y": 1.84,
+      "y": 2.05,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -686,9 +632,9 @@
     {
       "id": "5141041000000981",
       "x": -12.395,
-      "y": 1.84,
+      "y": 2.05,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -702,7 +648,7 @@
     {
       "id": "5141041000000982",
       "x": -6.37,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -718,9 +664,9 @@
     {
       "id": "5141041000000983",
       "x": -10.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -734,9 +680,9 @@
     {
       "id": "5141041000000984",
       "x": -7.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -750,9 +696,9 @@
     {
       "id": "5141041000000985",
       "x": -4.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -766,9 +712,9 @@
     {
       "id": "5141041000000986",
       "x": 6.45,
-      "y": 1.84,
+      "y": 2.05,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -782,11 +728,11 @@
     {
       "id": "5141041000000987",
       "x": 0.505,
-      "y": 1.84,
+      "y": 2.05,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E866B6DB",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -798,7 +744,7 @@
     {
       "id": "5141041000000988",
       "x": 6.53,
-      "y": 0.44,
+      "y": 0.46,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -814,9 +760,9 @@
     {
       "id": "5141041000000989",
       "x": 1.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -830,9 +776,9 @@
     {
       "id": "514104100000098A",
       "x": 4.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -846,9 +792,9 @@
     {
       "id": "514104100000098B",
       "x": 7.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -862,9 +808,9 @@
     {
       "id": "514104100000098C",
       "x": 10.95,
-      "y": 2.74,
+      "y": 2.77,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -878,9 +824,9 @@
     {
       "id": "514104100000098D",
       "x": -6.45,
-      "y": 6.24,
+      "y": 6.87,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -894,11 +840,11 @@
     {
       "id": "514104100000098E",
       "x": -12.395,
-      "y": 6.24,
+      "y": 6.87,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E88ABC7B",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -910,7 +856,7 @@
     {
       "id": "514104100000098F",
       "x": -6.37,
-      "y": 4.84,
+      "y": 5.28,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -926,9 +872,9 @@
     {
       "id": "5141041000000990",
       "x": -10.95,
-      "y": 7.14,
+      "y": 7.59,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -942,9 +888,9 @@
     {
       "id": "5141041000000991",
       "x": -7.95,
-      "y": 7.14,
+      "y": 7.59,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -958,9 +904,9 @@
     {
       "id": "5141041000000992",
       "x": -4.95,
-      "y": 7.14,
+      "y": 7.59,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
@@ -974,9 +920,9 @@
     {
       "id": "5141041000000993",
       "x": 6.45,
-      "y": 6.24,
+      "y": 6.87,
       "width": 12.0,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -990,11 +936,11 @@
     {
       "id": "5141041000000994",
       "x": 0.505,
-      "y": 6.24,
+      "y": 6.87,
       "width": 0.11,
-      "height": 3.68,
+      "height": 4.1,
       "rotation": 0.0,
-      "image": "color:#E8B899DE",
+      "image": "color:#E8B58CDB",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -1006,7 +952,7 @@
     {
       "id": "5141041000000995",
       "x": 6.53,
-      "y": 4.84,
+      "y": 5.28,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -1022,9 +968,9 @@
     {
       "id": "5141041000000996",
       "x": 1.95,
-      "y": 7.14,
+      "y": 7.54,
       "width": 2.72,
-      "height": 0.36,
+      "height": 0.72,
       "rotation": 0.0,
       "image": "color:#0017202B",
       "text_on_image": true,
