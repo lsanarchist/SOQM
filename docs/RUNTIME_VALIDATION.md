@@ -1,9 +1,11 @@
 # Native interaction validation
 
 `scripts/runtime_probe.py` extends the dedicated-server smoke test with real
-FTB Quests and AE2 operations. The harness compiles
-`tests/runtime/SoqmRuntimeProbe.java` against the pinned Minecraft 1.21.1,
-NeoForge 21.1.262, AE2 19.2.18 and FTB Quests 2101.1.36 APIs. Its test-only mod
+FTB Quests, team transitions, AE2/Mekanism production and Sophisticated Storage
+operations. The harness compiles the three helpers in `tests/runtime/` against
+the pinned Minecraft 1.21.1, NeoForge 21.1.262, AE2 19.2.18, FTB Quests
+2101.1.36 and other locked mod APIs, including the authored production adapter.
+Its test-only mod
 is installed in an ignored, fresh localhost world. It is never copied into
 `overrides/mods` or the distributable pack.
 
@@ -20,15 +22,15 @@ python3 scripts/smoke_server.py --accept-eula --java /absolute/path/to/jdk-21/bi
 ```
 
 The smoke report records its `workspace`. Pass the `server` directory in that
-workspace to the interaction probe and select the original commit whose quest
-data should survive the upgrade:
+workspace to the interaction probe and select the previous shared-reward commit.
+For the 0.4.8 migration, use the merged 0.4.7 plus skills-fix base:
 
 ```sh
 python3 scripts/runtime_probe.py \
   --accept-eula \
   --java /absolute/path/to/jdk-21/bin/java \
   --runtime .work/smoke/run-TIMESTAMP/server \
-  --baseline-ref ORIGINAL_COMMIT
+  --baseline-ref 72bd75d131a986afe9cf0d11580fdcaf009a208a
 ```
 
 The default gate requires the production payload to match its reviewed lock,
@@ -38,28 +40,50 @@ for development: its report explicitly records that exception and the exact
 staged snapshot. Development results do not replace the final locked gate.
 
 The report is `reports/runtime-probe.json`. Its workspace contains the compiler
-log, server console, native result JSON and synthetic progress fixture. Reports,
+log, server console, native result JSON, recipe-evidence copy and synthetic progress fixtures. Reports,
 worlds, downloaded dependencies and test binaries are ignored by Git. The
 server binds to `127.0.0.1`, requires online authentication for any external
 connection and creates its synthetic player in process. It does not read
 launcher accounts, existing worlds or real player state.
 
+Synthetic players use an in-memory Netty channel and a test-only packet listener
+that discards outbound interface packets. This does not simulate a client
+handshake or certify client rendering. Reward packet serialization is exercised
+separately through the native registry-aware buffers; all manufacture, team,
+claim and persistence operations still execute in the real server runtime.
+
 ## What the native fixture checks
 
-- Every campaign random reward resolves to a nonempty table of registered
-  items with positive weights. Each reward passes the mod's actual NBT and
-  registry-aware network serialization and deserialization; native weighted
-  selection returns one configured entry.
-- A representative reward from every distinct pool is claimed through native
-  `TeamData.claimReward`. The synthetic player's inventory must receive exactly
-  one configured prize and must remain unchanged on a repeated claim.
-- Quest data from the specified original Git commit creates a nonempty native
-  `TeamData` fixture with partial and complete task progress and every old
-  reward already claimed. Loading that serialized state against the current
-  quest definitions must preserve task progress and reward claim IDs, including
-  rewards whose type changed from item to random. Repeated claims stay blocked.
-  A second player UUID must share the team claims while retaining a separate
-  claim for the personal introductory book.
+- All 1,626 outer rewards are personal and manual. The 1,611 native
+  `CustomReward` definitions pass actual NBT and registry-aware packet round
+  trips with their existing 64-bit IDs, tags and parent quest IDs intact.
+- The actual schema-2 JSON must load all 14 themes and 326 entries, with
+  localized milestone names and no emergency fallback. Every catalogue item
+  and every cited production recipe is checked against the live registries
+  after KubeJS recipe overrides; raw JAR presence alone is insufficient.
+- Native `TeamData.claimReward` drives the real KubeJS callback and native
+  `ItemReward` delivery. Two members take different independent results from
+  the same quest, and each second claim must deliver nothing. Actual manufacture
+  advances the tested pack from two to three to four draws. A high team level
+  and inventory possession cannot unlock a still-unproduced expensive item.
+- Actual grid crafts, Inscriber processor completion, Molecular Assembler
+  output, Mekanism Infuser/Infusing Factory completion and a consumed in-world
+  Sophisticated Storage tier upgrade establish proof. The production fixture
+  also exercises reset/Name Press recipes, creative placement, nonproducing
+  operations and captured machine-team ownership as negative cases.
+- Personal production and the party union are separate. Joining shares the
+  player's own discoveries; leaving retains only personal manufacture while
+  the old party keeps its union. Creating another party must not launder copied
+  FTB extra data into new discoveries. A machine captured for a former team
+  cannot grant production to its owner's new party.
+- Quest data from the specified base creates a nonempty native `TeamData`
+  fixture with partial/complete tasks and all old rewards claimed. The 1,625
+  historical shared `NIL_UUID` keys remain stored and intentionally yield one
+  new personal entitlement for each member. Existing personal book claims
+  remain claimed. Both members' second personal claims stay blocked.
+- Personal claims are saved, then the member leaves and joins another team.
+  An independent native reader checks persisted team data, so a cached live
+  claim cannot hide a missing `markDirty()` after native FTB claim merging.
 - The ME fixture places real AE2 cable, terminal, drive and storage cell blocks.
   It takes the recipe result through `CraftingTermSlot.doClick`, which invokes
   AE2's normal crafted-item event. An ordinary crafting menu, an unpowered
@@ -68,17 +92,25 @@ launcher accounts, existing worlds or real player state.
   The existing ME quest's native advancement task must reject the unearned
   criterion and accept the earned one through the mod's task submission API.
 - A server data reload must preserve the recipe count. The completed ME
-  advancement and nonempty quest progress are checked again after native
-  advancement reload and disk serialization/load. The server must then save
+  advancement, production journal, personal claims and nonempty quest progress
+  are checked again after native reload and independent disk reads. The server must then save
   all dimensions and exit normally, with no KubeJS or fatal server errors.
 
-The fixture supplies creative power, direct item/block setup and completion
-flags for the existing ME quest's prerequisites to isolate the conditions under
-test. Its ME task and advancement start unearned and must be completed by the
-real terminal craft. The fixture does not establish how long a survival player
+The fixture supplies creative power, direct recipe ingredients/block setup and
+completion flags for existing quest prerequisites to isolate the conditions
+under test. Its successful producer actors use survival mode; costly components
+must pass through actual native recipe output paths. It never writes a positive
+production flag directly. The ME task and advancement start unearned and must
+be completed by the real terminal craft. The fixture does not establish how long a survival player
 needs to build that network. The milestone is a **successful craft in a powered ME
 crafting terminal with stored items**, not a scheduled pattern-based
 autocrafting job. The separate workshop kit quest describes item preparation.
+
+The production adapter separately observes actual Molecular Assembler recipe
+completion. It does not treat an arbitrary AE2 processing CPU job as proof:
+returning an already existing item can satisfy that job. Other machine families
+are outside the explicitly supported catalogue routes. Final run results and
+their exact payload/source hashes are recorded in [reports](../reports/README.md).
 
 ## Exploration performance remains a separate experiment
 

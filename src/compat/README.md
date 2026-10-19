@@ -1,10 +1,9 @@
 # Compatibility sources
 
-SOQM 0.4.7 uses **eleven** authored compatibility modules. Ten were recovered from
-the supplied Questing Mayhem Expert source chain, and `runtime-optimizations` is
-an original local module. The original eight include full MIT notices, which
-must remain with their source and binaries. The recovered `mob-compat` and
-`chest-balance` modules
+SOQM 0.4.8 uses **eleven** authored compatibility modules: ten recovered from
+the supplied Questing Mayhem Expert source chain and a new production-evidence
+adapter. The original eight include full MIT
+notices, which must remain with their source and binaries. The two new modules
 declare MIT in `neoforge.mods.toml`, but neither their source nor JAR supplied a
 full license/copyright notice. Their local `LICENSE` files record that declaration
 and missing notice; they do not invent an upstream copyright holder.
@@ -15,30 +14,33 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chancecubes` | `qm-chancecubes-compat-0.4.1.jar` | 0.4.1 |
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
-| `quest-automation` | `qm-quest-automation-0.4.3.jar` | 0.4.2, then bounded evidence observation |
+| `quest-automation` | `qm-quest-automation-0.4.2.jar` | 0.4.2 |
 | `quest-ui` | `qm-quest-ui-0.4.2.jar` | 0.4.2 |
 | `village-guard` | `qm-village-guard-0.4.2.jar` | 0.4.2 |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
 | `chest-balance` | `qm-chest-balance-0.4.6.jar` | 0.4.6 |
-| `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | Original local MIT module |
+| `progressive-rewards` | `qm-progressive-rewards-0.4.8.jar` | New SOQM 0.4.8 source and native API build |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
 archive hashes and production-JAR hashes. The Cannibal module has a local
-nonblocking discovery fix; Quest Automation stops observing evidence already at
-its team cap. The other recovered binary pins remain unchanged.
-See [Cannibal build and validation notes](cannibal/README.md) and
-[runtime optimization build and validation notes](runtime-optimizations/README.md).
-The chest module
+nonblocking discovery fix; the other recovered binary pins remain unchanged.
+See [Cannibal build and validation notes](cannibal/README.md). The chest module
 limits first-fill loot in exact target tables;
 existing player inventories and already generated loot are outside that policy.
 
-**Independent recompilation of all eleven production JARs has not been
-reproduced.** Native API builds exist for Cannibal, Quest Automation 0.4.3 and
-Runtime Optimizations 0.4.7. Matching recovered source and binary provenance for
-the other eight modules does not show that compiling this tree produces
-identical bytes. Historical build scripts can
+The new [production adapter](progressive-rewards/README.md) records successful
+manufacture for the personal reward catalogue and persists native FTB claim
+merges after team transitions. It has its own Java 21 native-API build script,
+MIT notice, pinned binary and source hashes. Its production facts are written
+from actual craft/finish events; it does not scan player inventories on ticks.
+
+**Independent recompilation of all ten recovered production JARs has not been
+reproduced.** The Cannibal and new production-adapter builds are documented
+separately. Matching recovered
+source and binary provenance for the other modules does not show that compiling
+this tree produces identical bytes. Historical build scripts can
 require workspace-specific compiler/API paths and server installations; client
 modules additionally need the correctly mapped Minecraft 1.21.1 client API.
 

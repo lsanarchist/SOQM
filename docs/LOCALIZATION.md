@@ -1,6 +1,6 @@
 # Локалізація / Localization
 
-Кампанія SOQM **0.4.7** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
+Кампанія SOQM **0.4.8** має український текст та англійський довідник цілей для alpha: **37 глав, 1625 квестів, 1772 задачі**. Книга має 251 тематичну секцію зі змістовними назвами обома мовами. Підписи на карті прив’язані до ID конкретного квесту: переміщення вузла не може запозичити назву сусіда.
 
 У 0.4.7 прибрано 1453 повторювані вступи, скорочено 1525 назв і вилучено 2287 застарілих абзаців із поверненнями нагород, списками підготовки та патчнотами рецептів. Корисні спеціальні пояснення, зокрема сплави Foundry, збережено. Єдина пам’ятка керування міститься на початку книги.
 
@@ -25,7 +25,7 @@ python3 scripts/soqm.py lock
 python3 scripts/localize_english.py --mod-dir .cache/mods
 ```
 
-Приймаються лише SHA-256-узгоджені файли з `metadata/mods.lock.json`. Звичайна генерація працює без мережі й без JAR. Назви 14 пулів нагород перекладено вручну; склад і шанси показує штатний FTB Quests. Розмір і розташування підписів перевіряються автоматично; остаточну читабельність обох мов треба оглянути у графічному клієнті.
+Приймаються лише SHA-256-узгоджені файли з `metadata/mods.lock.json`. Звичайна генерація працює без мережі й без JAR. Назви 14 пулів, шести рівнів і всіх 326 позицій нагород перекладено вручну в `metadata/reward_pools.json`. У FTB Quests показано назву й іконку особистого пакунка; актуальний склад, шанси та умови відкриття показують `/soqm rewards` і `/soqm rewards pool <тема>` мовою гравця. Початок книги пояснює особисте отримання, виробничі умови й міграцію старого світу обома мовами. Розмір і розташування підписів перевіряються автоматично; остаточну читабельність обох мов треба оглянути у графічному клієнті.
 
 ## Apotheosis: порожні підказки світових рівнів
 
@@ -61,7 +61,7 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 
 ## English scope
 
-English covers every chapter, quest, task, reward-table title and canvas caption. All **251 section names** and **67 core tutorials** have editorial translations. The 16 custom automatic checks, three manual engineering checks and new native ME-craft advancement have explicit English conditions. Other objectives derive their quantities and conditions from actual tasks.
+English covers every chapter, quest, task, personal reward-pack title and canvas caption. All **251 section names** and **67 core tutorials** have editorial translations. The 14 reward themes, six production milestones, all 326 prize entries and read-only commands are bilingual. Current per-draw odds and locked requirements are shown by the reward commands, while the native FTB tooltip names the pack. The 16 custom automatic checks, three manual engineering checks and native ME-craft advancement have explicit English conditions. Other objectives derive their quantities and conditions from actual tasks.
 
 The single introductory controls guide explains inventory detection and JEI. Repeated patch notes and per-quest R/U reminders have been removed. Registry names are retained in the offline name lexicon; unknown display names fall back to readable identifiers. This is an alpha objective guide with authored core lessons; a full literary translation and graphical client review remain separate work.
 

@@ -22,7 +22,8 @@ import campaign_rewards
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
 INTRO = "514D010000000001"
-OBSOLETE_PREFIXES = ("Крафт 0.4.3:", "Матеріальна підготовка:", "Спільний рецепт кампанії:", "Нагорода:")
+OBSOLETE_PREFIXES = ("Крафт 0.4.3:", "Матеріальна підготовка:", "Спільний рецепт кампанії:",
+                     "Нагорода:", "Нагорода команді одноразова.")
 GATE_TITLES = dict(zip(campaign_layout.GATES, (
     "Промислове шасі", "Точний механізм", "Вимірна матриця",
     "Зоряний композит", "Міфічна схема", "Ядро EMC",
@@ -82,6 +83,13 @@ def edit_text(chapters: list[dict], locale: dict) -> dict:
         locale[key] = [re.sub(r"глав(?:а|и|у|і) 27", "«Головний маршрут»", line, flags=re.I) for line in filtered]
         for old, new in TITLE_ALIASES.items():
             locale[key] = [line.replace(old, new) for line in locale[key]]
+        if ident == "514D01000000000C":
+            locale[key] = [line.replace("Нагорода одноразова для команди.",
+                                       "Кожен учасник забирає один куб за цей квест.") for line in locale[key]]
+        if ident == "514D113C4B748351":
+            locale[key] = [line.replace(
+                "За квести ти отримуєш сім рівнів Mayhem Cube з окремими пулами предметів, споруд і подій.",
+                "Існує сім рівнів Mayhem Cube з окремими пулами предметів, споруд і подій. Вибрані рубежі дають куби як особисті нагороди.") for line in locale[key]]
 
     for ident, title in GATE_TITLES.items():
         locale[f"quest.{ident}.title"] = title
@@ -93,14 +101,18 @@ def edit_text(chapters: list[dict], locale: dict) -> dict:
         "Шестикутники показують передумови фіналу в книзі; більші вузли — матеріальні рубежі. Квадрати відкривають практичні уроки й розвиток мода. Відкритий опис квесту показує всі залежності, навіть якщо їхні лінії приховано на загальній карті.",
         "Предметні задачі перевіряють інвентар без вилучення: потримай потрібні речі до встановлення чи витрати. Досягнення, події та відвідування перевіряють відповідну дію. Три інженерні задачі позначено як ручне підтвердження — їх відмічають після власної перевірки установки.",
         "Пам’ятка книги: ПКМ із Quest Book; клавіша Open Quests налаштовується в Керуванні → FTB Quests. Над предметом R відкриває рецепт, U — застосування. У рецептах користуйся JEI поточної збірки; там показано актуальні інгредієнти.",
-        "Звичайна нагорода — один приз із тематичного пулу. Наведи на неї курсор, щоб побачити склад і шанси. Нагороди одноразові для команди; книгу кожен отримує особисто. Вибрані важливі рубежі дають один Mayhem Cube: для його подій виділи майданчик подалі від бази.",
+        "Кожен учасник особисто забирає нагороду раз за квест. Звичайний пакунок дає 2–4 випадкові призи; кількість і шанси рідкісних речей зростають із виготовленням шести матеріальних рубежів командою. Дорогі предмети з’являються в пулі після справжнього виготовлення саме цього предмета. Підібраний або подарований предмет не є доказом виробництва.",
+        "Команда /soqm rewards показує рівень нагород, а /soqm rewards pool <тема> — доступні призи, їхні поточні шанси за один вибір та умови ще закритих речей. Вибрані рубежі дають кожному по одному Mayhem Cube: для його подій виділи майданчик подалі від бази.",
+        "Після переходу зі старих спільних нагород кожен має одну нову особисту спробу за вже виконані квести. Старі персональні отримання й вступна книга залишаються отриманими. Прогрес виробництва починає фіксуватися після встановлення цього оновлення; для старого світу виготов один новий зразок потрібного предмета. Після зміни команди забери й знову встанови власні виробничі машини: так їхні наступні цикли враховуватимуться для нової команди.",
     ]
     return dict(report)
 
 
 def refresh(chapters: list[dict], locale: dict, groups: list[dict]) -> dict:
-    expected = load_json(ROOT / "metadata/campaign_identity.json")["sha256"]
-    if persistent_identity(chapters, groups) != expected:
+    identities = load_json(ROOT / "metadata/campaign_identity.json")
+    expected = identities["sha256"]
+    allowed_inputs = {expected, identities.get("previous_claim_scope", {}).get("sha256")}
+    if persistent_identity(chapters, groups) not in allowed_inputs:
         raise ValueError("Persistent campaign identities changed; review migration before refreshing")
     report = {"editorial": edit_text(chapters, locale)}
     report["progression"] = campaign_progression.apply(chapters, locale)
@@ -127,13 +139,16 @@ def main() -> int:
     report = refresh(chapters, locale, groups)
     outputs = {path: serialize(chapter) for path, chapter in zip(paths, chapters)}
     outputs[locale_path] = serialize(locale)
-    for table in campaign_rewards.build_tables():
-        outputs[campaign_rewards.TABLES_PATH / f"{table['id']}.snbt"] = serialize(table)
+    outputs.update(campaign_rewards.expected_outputs(chapters))
     stale = [str(path.relative_to(ROOT)) for path, content in outputs.items()
              if not path.exists() or path.read_text(encoding="utf-8") != content]
+    retired_tables = campaign_rewards.obsolete_tables()
+    stale.extend(str(path.relative_to(ROOT)) for path in retired_tables)
     if args.check and stale:
         parser.exit(1, "Campaign data is stale; run python3 scripts/campaign_refresh.py\n" + "\n".join(stale) + "\n")
     if not args.check:
+        for path in retired_tables:
+            path.unlink()
         for path, content in outputs.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")

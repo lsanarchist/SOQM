@@ -1,18 +1,38 @@
 # Verification status
 
-## Current runtime optimization patch
+## SOQM 0.4.8 — progressive personal rewards
 
-The worldgen, guardian lifecycle and background-observation changes are
-documented in [the patch notes](../docs/PERFORMANCE_OPTIMIZATION.md). The exact
-native run, behavior checks, work counts, build hashes and limits are recorded
-in [verification-performance.md](verification-performance.md).
+Validation completed on **2026-10-19** against the exact locked production
+payload, with upgrade baseline `72bd75d`. **53 Python tests**, both Node policy
+regressions, deterministic generators, all **122 third-party pins**,
+**11 authored-module pins**, **1,832 payload hashes** and installation-package
+CRC/content/hash/rebuild checks passed.
 
-This patch is based on `72bd75d`, which already includes the updated campaign
-and merged skill-advancement optimization. Their historical evidence below
-applies to their recorded payloads; it is not substituted for the current
-native performance regression run.
+The final dedicated-server run loaded all **240 catalogue items** and
+**226 cited production recipe IDs**, serialized all **1,611 native custom
+rewards**, and exercised actual AE2, Mekanism, crafting-grid and Sophisticated
+Storage manufacture. It verified independent personal claims, 2/3/4-draw
+delivery, expensive-item exclusion before manufacture, late joining, old shared
+claim migration, party ownership, disk-backed leave/join and reload persistence.
+The nonempty upgrade fixture retained **41 task values**, including **15 partial
+tasks**, and rejected **3,250 repeat personal claims** across two migrated
+members. Existing personal book claims stayed used.
 
-## Skill advancement optimization — original validation
+The server reloaded **20,077 → 20,077 recipes**, saved its dimensions and exited
+with code 0, with **zero KubeJS startup/server or fatal-server errors**. The
+production payload was unchanged during execution. The new adapter JAR was
+rebuilt byte-identically. Graphical rendering, live two-client interaction,
+survival pacing and long-term multiplayer economy were not tested.
+
+**Exact scope, migration rules, hashes and reproduction:**
+[verification-0.4.8.md](verification-0.4.8.md) ·
+[reward catalogue](../docs/REWARDS.md) ·
+[native harness guide](../docs/RUNTIME_VALIDATION.md).
+Successful CI provides an installation candidate and its checksum; a PR
+candidate is distinct from a separately published release. Raw native reports
+and test worlds remain local and are not part of the game payload.
+
+## Historical skill optimization checks before the 0.4.8 reward update
 
 The [skill patch notes](../docs/SKILLS_OPTIMIZATION.md) describe the replacement
 of nine tick/NBT criteria with native Pufferfish Skills command rewards in
@@ -44,7 +64,7 @@ These offline checks and source inspections do not execute Minecraft login,
 reload or respec with a player. A fresh full-pack world/client test and a
 before/after TPS benchmark have not been performed for this configuration patch.
 
-## SOQM 0.4.7 campaign — validation before the runtime patch
+## SOQM 0.4.7 — historical campaign baseline
 
 Validation completed on **2026-10-19**. The exact final game payload passed
 **48 Python regressions**, the Node equipment/loot policy regression,
@@ -66,7 +86,7 @@ The final native run created a fresh localhost world, reloaded
   empty ME storage fail;
 - independent advancement and nonempty TeamData disk round trips plus reload.
 
-The final campaign report matches its recorded payload lock and verifies that no
+That release's final report matched its payload lock and verified that no
 production file changed during the run. The fixture uses synthetic players,
 creative power and direct block setup to isolate the tested conditions.
 Graphical rendering, survival pacing, long-term multiplayer economy and

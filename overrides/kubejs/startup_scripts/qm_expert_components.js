@@ -1,4 +1,4 @@
-// Five manufactured components; never awarded by quests, loot or EMC.
+// Five manufactured components; quest prizes require prior manufacture of the same item. Loot and EMC remain disabled.
 StartupEvents.registry('item', function (event) {
   event.create("industrial_chassis").displayName("Промислове шасі").texture("kubejs:item/industrial_chassis").maxStackSize(64);
   event.create("precision_mechanism").displayName("Точний механізм").texture("kubejs:item/precision_mechanism").maxStackSize(64);

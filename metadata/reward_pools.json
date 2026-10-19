@@ -1,8 +1,8 @@
 {
-  "schema": 1,
-  "version": "1.0",
+  "schema": 2,
+  "version": "2.0",
   "max_items_per_roll": 4,
-  "notes": "Original SOQM supplies; weights sum to 100. One native FTB draw; no configured empty result, zero-weight auto-grants, random quantity bonuses, machinery, gate components, boss loot or plastic. Rare small food, XP and naming supplies make later pools distinct.",
+  "notes": "Original SOQM progressive personal supplies. Each quest slot gives 2–4 independent draws with replacement. First choose an eligible rarity, then an eligible item by weight. Every manufactured reward requires the team to have really crafted that same item through a supported productive recipe; delivery, pickup, loot, quest detection and inventory are not proof. Expensive rewards have count 1. No plastic or HDPE rewards, including after unlock.",
   "sources": {
     "ftb_quests_version": "2101.1.36",
     "ftb_quests_sha256": "6a39982c4b3afc00b1e788041a4f0d394e1659e3b3a6e5d078cd790bc36d0018",
@@ -11,573 +11,4645 @@
     "ftb_source_ref": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
     "craftoria_reference": "d9b70f8c6c1cdb518284287a09b59948d4960b1a"
   },
+  "claim_scope": "personal_once_per_reward",
+  "production_scope": "team",
+  "selection": "eligible_rarity_then_weighted_entry_with_replacement",
+  "draws_by_level": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    4,
+    4
+  ],
+  "rarity_weights_by_level": [
+    {
+      "common": 70,
+      "uncommon": 25,
+      "rare": 4,
+      "epic": 1
+    },
+    {
+      "common": 65,
+      "uncommon": 28,
+      "rare": 6,
+      "epic": 1
+    },
+    {
+      "common": 58,
+      "uncommon": 31,
+      "rare": 9,
+      "epic": 2
+    },
+    {
+      "common": 50,
+      "uncommon": 35,
+      "rare": 12,
+      "epic": 3
+    },
+    {
+      "common": 45,
+      "uncommon": 36,
+      "rare": 15,
+      "epic": 4
+    },
+    {
+      "common": 38,
+      "uncommon": 39,
+      "rare": 18,
+      "epic": 5
+    },
+    {
+      "common": 32,
+      "uncommon": 41,
+      "rare": 21,
+      "epic": 6
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "item": "kubejs:industrial_chassis",
+      "name": {
+        "uk_ua": "Промислове шасі",
+        "en_us": "Industrial Chassis"
+      }
+    },
+    {
+      "level": 2,
+      "item": "kubejs:precision_mechanism",
+      "name": {
+        "uk_ua": "Точний механізм",
+        "en_us": "Precision Mechanism"
+      }
+    },
+    {
+      "level": 3,
+      "item": "kubejs:dimensional_matrix",
+      "name": {
+        "uk_ua": "Вимірна матриця",
+        "en_us": "Dimensional Matrix"
+      }
+    },
+    {
+      "level": 4,
+      "item": "kubejs:stellar_alloy",
+      "name": {
+        "uk_ua": "Зоряний композит",
+        "en_us": "Stellar Alloy"
+      }
+    },
+    {
+      "level": 5,
+      "item": "kubejs:mythic_circuit",
+      "name": {
+        "uk_ua": "Міфічна схема",
+        "en_us": "Mythic Circuit"
+      }
+    },
+    {
+      "level": 6,
+      "item": "kubejs:emc_core",
+      "name": {
+        "uk_ua": "Ядро EMC",
+        "en_us": "EMC Core"
+      }
+    }
+  ],
+  "fallback_pool": "survival",
+  "supported_production_methods": [
+    "crafting",
+    "ae2_inscriber",
+    "mekanism_infusing"
+  ],
+  "forbidden_reward_item_fragments": [
+    "plastic",
+    "hdpe"
+  ],
   "pools": [
     {
       "key": "survival",
       "id": "000000006A510001",
-      "min_stage": 0,
-      "fallback": "survival",
       "title": {
         "uk_ua": "Припаси для старту",
         "en_us": "Starting Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:bread",
           "count": 2,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Хліб",
             "en_us": "Bread"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:torch",
           "count": 4,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Смолоскип",
             "en_us": "Torch"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:botania_extras/torch_flame_laced",
+              "evilcraft:crafting/minecraft_torch",
+              "twilightforest:berry_torch"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:oak_planks",
           "count": 4,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Дубові дошки",
             "en_us": "Oak Planks"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:leather",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шкіра",
             "en_us": "Leather"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:paper",
           "count": 2,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Папір",
             "en_us": "Paper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:paper"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "ecologics:crab_meat",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Крабове м’ясо",
+            "en_us": "Crab Meat"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:crab_meat",
+              "ecologics:crab_meat_from_campfire_cooking",
+              "ecologics:crab_meat_from_smoking"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "ecologics:coconut_slice",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Скибка кокоса",
+            "en_us": "Coconut Slice"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "ecologics:walnut",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Волоський горіх",
+            "en_us": "Walnut"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "twilightforest:cooked_venison",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Стейк з оленини",
+            "en_us": "Venison Steak"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "twilightforest:food/campfired_venison",
+              "twilightforest:food/smelted_venison",
+              "twilightforest:food/smoked_venison"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "aether:blue_berry",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Синя ягода",
+            "en_us": "Blue Berry"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "ecologics:coconut_planks",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кокосові дошки",
+            "en_us": "Coconut Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:coconut_planks"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:coconut_planks"
+          ]
+        },
+        {
+          "item": "ecologics:walnut_planks",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Горіхові дошки",
+            "en_us": "Walnut Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:walnut_planks"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:walnut_planks"
+          ]
+        },
+        {
+          "item": "exdeorum:crook",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Палиця з гаком",
+            "en_us": "Crook"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:crook"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:crook"
+          ]
+        },
+        {
+          "item": "exdeorum:wooden_hammer",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Дерев’яний молот",
+            "en_us": "Wooden Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:wooden_hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:wooden_hammer"
+          ]
+        },
+        {
+          "item": "exdeorum:string_mesh",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Нитяна сітка",
+            "en_us": "String Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:string_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:string_mesh"
+          ]
+        },
+        {
+          "item": "immersiveengineering:hemp_fabric",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Міцна тканина",
+            "en_us": "Tough Fabric"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/hemp_fabric"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:hemp_fabric"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:backpack",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Наплічник",
+            "en_us": "Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:backpack"
+          ]
+        },
+        {
+          "item": "millenaire:masa",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Маса з кукурудзи",
+            "en_us": "Masa"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:masa"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "aether:cold_parachute",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Холодний парашут",
+            "en_us": "Cold Parachute"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:cold_parachute"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "aether:cold_parachute"
+          ]
+        },
+        {
+          "item": "botania:travel_belt",
+          "count": 1,
+          "weight": 4,
+          "rarity": "epic",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Пояс мандрівника",
+            "en_us": "Sojourner's Sash"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:travel_belt"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:travel_belt"
+          ]
         }
       ]
     },
     {
       "key": "workshop",
       "id": "000000006A510002",
-      "min_stage": 0,
-      "fallback": "workshop",
       "title": {
         "uk_ua": "Запас майстерні",
         "en_us": "Workshop Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:iron_nugget",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шматочок заліза",
             "en_us": "Iron Nugget"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:aether_iron_nugget_from_smelting",
+              "mekanismtools:iron_nugget_from_smelting",
+              "twilightforest:material/smelted_iron_nugget"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:coal",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Вугілля",
             "en_us": "Coal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/coal_from_smelting_glacio_coal_ore",
+              "ad_astra:smelting/coal_from_smelting_venus_coal_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:copper_ingot",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Мідний злиток",
+            "uk_ua": "Мідний зливок",
             "en_us": "Copper Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/nugget_copper_to_copper_ingot",
+              "immersiveengineering:smelting/copper_ingot_from_dust",
+              "mekanism:processing/copper/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:iron_ingot",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Залізний злиток",
             "en_us": "Iron Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:gold_nugget",
           "count": 4,
-          "weight": 5,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шматочок золота",
             "en_us": "Gold Nugget"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:aether_gold_nugget_from_smelting",
+              "mekanismtools:gold_nugget_from_smelting",
+              "twilightforest:material/smelted_gold_nugget"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "immersiveengineering:plate_iron",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна пластина",
+            "en_us": "Iron Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_iron_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_iron"
+          ]
+        },
+        {
+          "item": "immersiveengineering:plate_copper",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Мідна пластина",
+            "en_us": "Copper Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_copper_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_copper"
+          ]
+        },
+        {
+          "item": "immersiveengineering:plate_aluminum",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Алюмінієва пластина",
+            "en_us": "Aluminium Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_aluminum_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_aluminum"
+          ]
+        },
+        {
+          "item": "immersiveengineering:plate_steel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Сталева пластина",
+            "en_us": "Steel Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_steel_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_steel"
+          ]
+        },
+        {
+          "item": "immersiveengineering:stick_steel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Сталевий стрижень",
+            "en_us": "Steel Rod"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/stick_steel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:stick_steel"
+          ]
+        },
+        {
+          "item": "immersiveengineering:wirecoil_copper",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Котушка дроту низької напруги",
+            "en_us": "LV Wire Coil"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/wirecoil_copper"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:wirecoil_copper"
+          ]
+        },
+        {
+          "item": "immersiveengineering:hemp_fabric",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Міцна тканина",
+            "en_us": "Tough Fabric"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/hemp_fabric"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:hemp_fabric"
+          ]
+        },
+        {
+          "item": "immersiveengineering:treated_wood_horizontal",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Просочені дошки",
+            "en_us": "Treated Wood Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/treated_wood_horizontal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:treated_wood_horizontal"
+          ]
+        },
+        {
+          "item": "immersiveengineering:component_iron",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізний механічний компонент",
+            "en_us": "Iron Mechanical Component"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/component_iron"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:component_iron"
+          ]
+        },
+        {
+          "item": "immersiveengineering:component_steel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталевий механічний компонент",
+            "en_us": "Steel Mechanical Component"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/component_steel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:component_steel"
+          ]
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "weight": 5,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Молот інженера",
+            "en_us": "Engineer's Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:hammer"
+          ]
+        },
+        {
+          "item": "immersiveengineering:screwdriver",
+          "count": 1,
+          "weight": 5,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Викрутка інженера",
+            "en_us": "Engineer's Screwdriver"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/screwdriver"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:screwdriver"
+          ]
+        },
+        {
+          "item": "kubejs:industrial_chassis",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Промислове шасі",
+            "en_us": "Industrial Chassis"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/industrial_chassis"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:industrial_chassis"
+          ]
+        },
+        {
+          "item": "kubejs:electromechanical_drive",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Електромеханічний привід",
+            "en_us": "Electromechanical Drive"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/electromechanical_drive"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:electromechanical_drive"
+          ]
+        },
+        {
+          "item": "kubejs:sealed_process_chamber",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Герметична камера",
+            "en_us": "Sealed Process Chamber"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/sealed_process_chamber"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:sealed_process_chamber"
+          ]
+        },
+        {
+          "item": "mekanism:steel_casing",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталевий корпус",
+            "en_us": "Steel Casing"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/mekanism/steel_casing"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:steel_casing"
+          ]
+        },
+        {
+          "item": "enderio:ensouled_chassis",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Одухотворене шасі",
+            "en_us": "Ensouled Chassis"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "enderio:ensouled_chassis"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:ensouled_chassis"
+          ]
+        },
+        {
+          "item": "ironfurnaces:augment_fuel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Модуль ощадного палива",
+            "en_us": "Augment: Fuel Efficiency"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/ironfurnaces/augments/augment_fuel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ironfurnaces:augment_fuel"
+          ]
+        },
+        {
+          "item": "ironfurnaces:augment_speed",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Модуль швидкості печі",
+            "en_us": "Augment: Speed"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/ironfurnaces/augments/augment_speed"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ironfurnaces:augment_speed"
+          ]
         }
       ]
     },
     {
       "key": "engineering",
       "id": "000000006A510003",
-      "min_stage": 1,
-      "fallback": "workshop",
       "title": {
         "uk_ua": "Запас для виробництва",
         "en_us": "Factory Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:redstone",
           "count": 3,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Редстоун",
             "en_us": "Redstone Dust"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:copper_ingot",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Мідний злиток",
+            "uk_ua": "Мідний зливок",
             "en_us": "Copper Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/nugget_copper_to_copper_ingot",
+              "immersiveengineering:smelting/copper_ingot_from_dust",
+              "mekanism:processing/copper/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:iron_ingot",
           "count": 1,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Залізний злиток",
             "en_us": "Iron Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:coal",
           "count": 2,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Вугілля",
             "en_us": "Coal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/coal_from_smelting_glacio_coal_ore",
+              "ad_astra:smelting/coal_from_smelting_venus_coal_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:glass",
           "count": 3,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Скло",
             "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "mekanism:basic_control_circuit",
+          "count": 1,
+          "weight": 16,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Базова керувальна схема",
+            "en_us": "Basic Control Circuit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:control_circuit/basic"
+            ],
+            "method": "mekanism_infusing"
+          },
+          "requires_craft": [
+            "mekanism:basic_control_circuit"
+          ]
+        },
+        {
+          "item": "mekanism:advanced_control_circuit",
+          "count": 1,
+          "weight": 14,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшена керувальна схема",
+            "en_us": "Advanced Control Circuit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/mekanism/control_circuit/advanced"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:advanced_control_circuit"
+          ]
+        },
+        {
+          "item": "mekanism:elite_control_circuit",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Елітна керувальна схема",
+            "en_us": "Elite Control Circuit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/mekanism/control_circuit/elite"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:elite_control_circuit"
+          ]
+        },
+        {
+          "item": "mekanism:ultimate_control_circuit",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Найвища керувальна схема",
+            "en_us": "Ultimate Control Circuit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/mekanism/control_circuit/ultimate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:ultimate_control_circuit"
+          ]
+        },
+        {
+          "item": "mekanism:alloy_infused",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Збагачений сплав",
+            "en_us": "Infused Alloy"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:metallurgic_infusing/alloy/infused"
+            ],
+            "method": "mekanism_infusing"
+          },
+          "requires_craft": [
+            "mekanism:alloy_infused"
+          ]
+        },
+        {
+          "item": "mekanism:alloy_reinforced",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Зміцнений сплав",
+            "en_us": "Reinforced Alloy"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:metallurgic_infusing/alloy/reinforced"
+            ],
+            "method": "mekanism_infusing"
+          },
+          "requires_craft": [
+            "mekanism:alloy_reinforced"
+          ]
+        },
+        {
+          "item": "mekanism:alloy_atomic",
+          "count": 1,
+          "weight": 10,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Атомний сплав",
+            "en_us": "Atomic Alloy"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:metallurgic_infusing/alloy/atomic"
+            ],
+            "method": "mekanism_infusing"
+          },
+          "requires_craft": [
+            "mekanism:alloy_atomic"
+          ]
+        },
+        {
+          "item": "ae2:logic_processor",
+          "count": 1,
+          "weight": 14,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Логічний процесор",
+            "en_us": "Logic Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/logic_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:logic_processor"
+          ]
+        },
+        {
+          "item": "ae2:calculation_processor",
+          "count": 1,
+          "weight": 14,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Обчислювальний процесор",
+            "en_us": "Calculation Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/calculation_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:calculation_processor"
+          ]
+        },
+        {
+          "item": "ae2:engineering_processor",
+          "count": 1,
+          "weight": 14,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Інженерний процесор",
+            "en_us": "Engineering Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/engineering_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:engineering_processor"
+          ]
+        },
+        {
+          "item": "enderio:basic_capacitor",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Базовий конденсатор",
+            "en_us": "Basic Capacitor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "enderio:basic_capacitor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:basic_capacitor"
+          ]
+        },
+        {
+          "item": "enderio:double_layer_capacitor",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Двошаровий конденсатор",
+            "en_us": "Double-Layer Capacitor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/enderio/double_layer_capacitor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:double_layer_capacitor"
+          ]
+        },
+        {
+          "item": "enderio:octadic_capacitor",
+          "count": 1,
+          "weight": 10,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Восьмишаровий конденсатор",
+            "en_us": "Octadic Capacitor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/enderio/octadic_capacitor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:octadic_capacitor"
+          ]
+        },
+        {
+          "item": "buildcraftcore:gears/gear_iron",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна шестерня",
+            "en_us": "Iron Gear"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "buildcraftcore:gears/gear_iron"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "buildcraftcore:gears/gear_iron"
+          ]
+        },
+        {
+          "item": "buildcraftcore:gears/gear_gold",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Золота шестерня",
+            "en_us": "Gold Gear"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "buildcraftcore:gears/gear_gold"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "buildcraftcore:gears/gear_gold"
+          ]
+        },
+        {
+          "item": "kubejs:industrial_chassis",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Промислове шасі",
+            "en_us": "Industrial Chassis"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/industrial_chassis"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:industrial_chassis"
+          ]
+        },
+        {
+          "item": "kubejs:electromechanical_drive",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Електромеханічний привід",
+            "en_us": "Electromechanical Drive"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/electromechanical_drive"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:electromechanical_drive"
+          ]
+        },
+        {
+          "item": "kubejs:precision_mechanism",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Точний механізм",
+            "en_us": "Precision Mechanism"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/precision_mechanism"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:precision_mechanism"
+          ]
+        },
+        {
+          "item": "kubejs:control_assembly",
+          "count": 1,
+          "weight": 10,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Блок керування",
+            "en_us": "Control Assembly"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/control_assembly"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:control_assembly"
+          ]
         }
       ]
     },
     {
       "key": "power",
       "id": "000000006A510004",
-      "min_stage": 3,
-      "fallback": "engineering",
       "title": {
         "uk_ua": "Запас енергетика",
         "en_us": "Power Workshop Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
-          "item": "minecraft:iron_ingot",
-          "count": 1,
-          "weight": 20,
-          "name": {
-            "uk_ua": "Залізний зливок",
-            "en_us": "Iron Ingot"
-          }
-        },
-        {
-          "item": "minecraft:copper_ingot",
+          "item": "minecraft:coal",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Мідний зливок",
-            "en_us": "Copper Ingot"
-          }
-        },
-        {
-          "item": "minecraft:gold_ingot",
-          "count": 1,
-          "weight": 15,
-          "name": {
-            "uk_ua": "Золотий зливок",
-            "en_us": "Gold Ingot"
+            "uk_ua": "Вугілля",
+            "en_us": "Coal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/coal_from_smelting_glacio_coal_ore",
+              "ad_astra:smelting/coal_from_smelting_venus_coal_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:redstone",
           "count": 3,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Редстоун",
             "en_us": "Redstone Dust"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
-          "item": "minecraft:experience_bottle",
-          "count": 1,
-          "weight": 15,
+          "item": "minecraft:copper_ingot",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Пляшечка досвіду",
-            "en_us": "Bottle o’ Enchanting"
+            "uk_ua": "Мідний зливок",
+            "en_us": "Copper Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/nugget_copper_to_copper_ingot",
+              "immersiveengineering:smelting/copper_ingot_from_dust",
+              "mekanism:processing/copper/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "minecraft:glass",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "immersiveengineering:wirecoil_copper",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Котушка дроту низької напруги",
+            "en_us": "LV Wire Coil"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/wirecoil_copper"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:wirecoil_copper"
+          ]
+        },
+        {
+          "item": "immersiveengineering:wirecoil_electrum",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Котушка дроту середньої напруги",
+            "en_us": "MV Wire Coil"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/wirecoil_electrum"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:wirecoil_electrum"
+          ]
+        },
+        {
+          "item": "immersiveengineering:wirecoil_steel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Котушка дроту високої напруги",
+            "en_us": "HV Wire Coil"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/wirecoil_steel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:wirecoil_steel"
+          ]
+        },
+        {
+          "item": "immersiveengineering:connector_lv",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Роз’єм низької напруги",
+            "en_us": "LV Wire Connector"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/connector_lv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:connector_lv"
+          ]
+        },
+        {
+          "item": "immersiveengineering:capacitor_lv",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Накопичувач низької напруги",
+            "en_us": "LV Accumulator"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/capacitor_lv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:capacitor_lv"
+          ]
+        },
+        {
+          "item": "immersiveengineering:connector_mv",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Роз’єм середньої напруги",
+            "en_us": "MV Wire Connector"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/connector_mv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:connector_mv"
+          ]
+        },
+        {
+          "item": "immersiveengineering:capacitor_mv",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Накопичувач середньої напруги",
+            "en_us": "MV Accumulator"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/immersiveengineering/crafting/capacitor_mv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:capacitor_mv"
+          ]
+        },
+        {
+          "item": "immersiveengineering:connector_hv",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Роз’єм високої напруги",
+            "en_us": "HV Wire Connector"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/connector_hv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:connector_hv"
+          ]
+        },
+        {
+          "item": "immersiveengineering:capacitor_hv",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Накопичувач високої напруги",
+            "en_us": "HV Accumulator"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/immersiveengineering/crafting/capacitor_hv"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:capacitor_hv"
+          ]
+        },
+        {
+          "item": "mekanism:energy_tablet",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Енергетична пластина",
+            "en_us": "Energy Tablet"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:energy_tablet"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:energy_tablet"
+          ]
+        },
+        {
+          "item": "mekanism:basic_energy_cube",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Базовий енергетичний куб",
+            "en_us": "Basic Energy Cube"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/mekanism/energy_cube/basic"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:basic_energy_cube"
+          ]
+        },
+        {
+          "item": "mekanism:advanced_energy_cube",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшений енергетичний куб",
+            "en_us": "Advanced Energy Cube"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/mekanism/energy_cube/advanced"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:advanced_energy_cube"
+          ]
+        },
+        {
+          "item": "mekanism:elite_energy_cube",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Елітний енергетичний куб",
+            "en_us": "Elite Energy Cube"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/mekanism/energy_cube/elite"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:elite_energy_cube"
+          ]
+        },
+        {
+          "item": "mekanism:ultimate_energy_cube",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Найвищий енергетичний куб",
+            "en_us": "Ultimate Energy Cube"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/mekanism/energy_cube/ultimate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:ultimate_energy_cube"
+          ]
+        },
+        {
+          "item": "mekanism:basic_universal_cable",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Базовий універсальний кабель",
+            "en_us": "Basic Universal Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:transmitter/universal_cable/basic"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:basic_universal_cable"
+          ]
+        },
+        {
+          "item": "mekanism:advanced_universal_cable",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшений універсальний кабель",
+            "en_us": "Advanced Universal Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:transmitter/universal_cable/advanced"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:advanced_universal_cable"
+          ]
+        },
+        {
+          "item": "mekanism:elite_universal_cable",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Елітний універсальний кабель",
+            "en_us": "Elite Universal Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:transmitter/universal_cable/elite"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanism:elite_universal_cable"
+          ]
+        },
+        {
+          "item": "enderio:double_layer_capacitor",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Двошаровий конденсатор",
+            "en_us": "Double-Layer Capacitor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/enderio/double_layer_capacitor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:double_layer_capacitor"
+          ]
+        },
+        {
+          "item": "enderio:octadic_capacitor",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Восьмишаровий конденсатор",
+            "en_us": "Octadic Capacitor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/enderio/octadic_capacitor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "enderio:octadic_capacitor"
+          ]
         }
       ]
     },
     {
       "key": "logistics",
       "id": "000000006A510005",
-      "min_stage": 0,
-      "fallback": "logistics",
       "title": {
         "uk_ua": "Припаси для складу",
         "en_us": "Storage Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:paper",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Папір",
             "en_us": "Paper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:paper"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:glass",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Скло",
             "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:string",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Нитка",
             "en_us": "String"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:iron_nugget",
           "count": 4,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шматочок заліза",
             "en_us": "Iron Nugget"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:aether_iron_nugget_from_smelting",
+              "mekanismtools:iron_nugget_from_smelting",
+              "twilightforest:material/smelted_iron_nugget"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:redstone",
           "count": 2,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Редстоун",
             "en_us": "Redstone Dust"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "sophisticatedstorage:barrel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Дерев’яна бочка",
+            "en_us": "Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:acacia_barrel",
+              "sophisticatedstorage:bamboo_barrel",
+              "sophisticatedstorage:birch_barrel",
+              "sophisticatedstorage:cherry_barrel",
+              "sophisticatedstorage:crimson_barrel",
+              "sophisticatedstorage:dark_oak_barrel",
+              "sophisticatedstorage:jungle_barrel",
+              "sophisticatedstorage:mangrove_barrel",
+              "sophisticatedstorage:oak_barrel",
+              "sophisticatedstorage:spruce_barrel",
+              "sophisticatedstorage:spruce_barrel_from_vanilla_barrel",
+              "sophisticatedstorage:warped_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:copper_barrel",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Мідна бочка",
+            "en_us": "Copper Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:copper_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:copper_barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:iron_barrel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна бочка",
+            "en_us": "Iron Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:iron_barrel",
+              "sophisticatedstorage:iron_barrel_from_copper_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:iron_barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:gold_barrel",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Золота бочка",
+            "en_us": "Gold Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/gold_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:gold_barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:diamond_barrel",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Діамантова бочка",
+            "en_us": "Diamond Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/diamond_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:diamond_barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:netherite_barrel",
+          "count": 1,
+          "weight": 4,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Незеритова бочка",
+            "en_us": "Netherite Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/netherite_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:netherite_barrel"
+          ]
+        },
+        {
+          "item": "ae2:logic_processor",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Логічний процесор",
+            "en_us": "Logic Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/logic_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:logic_processor"
+          ]
+        },
+        {
+          "item": "ae2:calculation_processor",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Обчислювальний процесор",
+            "en_us": "Calculation Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/calculation_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:calculation_processor"
+          ]
+        },
+        {
+          "item": "ae2:engineering_processor",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Інженерний процесор",
+            "en_us": "Engineering Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/engineering_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:engineering_processor"
+          ]
+        },
+        {
+          "item": "ae2:fluix_glass_cable",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Скляний флюїксовий ME-кабель",
+            "en_us": "Fluix ME Glass Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:network/cables/glass_fluix"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:fluix_glass_cable"
+          ]
+        },
+        {
+          "item": "ae2:quartz_fiber",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кварцове волокно",
+            "en_us": "Quartz Fiber"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:network/parts/quartz_fiber_part"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:quartz_fiber"
+          ]
+        },
+        {
+          "item": "ae2:cell_component_1k",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Компонент ME-комірки на 1k",
+            "en_us": "1k ME Storage Component"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:network/cells/item_storage_components_cell_1k_part"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:cell_component_1k"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:filter_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення фільтра",
+            "en_us": "Filter Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:filter_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:filter_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:hopper_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення лійки",
+            "en_us": "Hopper Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/hopper_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:hopper_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:stack_upgrade_tier_1",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення стосів, рівень 1",
+            "en_us": "Stack Upgrade Tier 1"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:stack_upgrade_tier_1"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:stack_upgrade_tier_1"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:stack_upgrade_tier_2",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення стосів, рівень 2",
+            "en_us": "Stack Upgrade Tier 2"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/stack_upgrade_tier_2",
+              "kubejs:expert_v042/sophisticatedstorage/stack_upgrade_tier_2_from_tier_1_plus"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:stack_upgrade_tier_2"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:stack_upgrade_tier_3",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшення стосів, рівень 3",
+            "en_us": "Stack Upgrade Tier 3"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/stack_upgrade_tier_3"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:stack_upgrade_tier_3"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:stack_upgrade_tier_4",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Поліпшення стосів, рівень 4",
+            "en_us": "Stack Upgrade Tier 4"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/stack_upgrade_tier_4"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:stack_upgrade_tier_4"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:stack_upgrade_tier_5",
+          "count": 1,
+          "weight": 4,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Поліпшення стосів, рівень 5",
+            "en_us": "Stack Upgrade Tier 5"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/stack_upgrade_tier_5"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:stack_upgrade_tier_5"
+          ]
         }
       ]
     },
     {
       "key": "scholar",
       "id": "000000006A510006",
-      "min_stage": 0,
-      "fallback": "scholar",
       "title": {
         "uk_ua": "Матеріали дослідника",
         "en_us": "Research Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:paper",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Папір",
             "en_us": "Paper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:paper"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:lapis_lazuli",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Лазурит",
             "en_us": "Lapis Lazuli"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/lapis_lazuli_from_smelting_glacio_lapis_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:glass",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Скло",
             "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:amethyst_shard",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Аметистовий уламок",
+            "uk_ua": "Уламок аметисту",
             "en_us": "Amethyst Shard"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:sugar",
           "count": 3,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Цукор",
             "en_us": "Sugar"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "ae2:certus_quartz_cutting_knife",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Ніж із сертус-кварцу",
+            "en_us": "Certus Quartz Cutting Knife"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:tools/certus_quartz_cutting_knife"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:certus_quartz_cutting_knife"
+          ]
+        },
+        {
+          "item": "ae2:certus_quartz_wrench",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Ключ із сертус-кварцу",
+            "en_us": "Certus Quartz Wrench"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:tools/certus_quartz_wrench"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:certus_quartz_wrench"
+          ]
+        },
+        {
+          "item": "ae2:memory_card",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Картка пам’яті",
+            "en_us": "Memory Card"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:tools/network_memory_card"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:memory_card"
+          ]
+        },
+        {
+          "item": "ae2:basic_card",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Базова картка",
+            "en_us": "Basic Card"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:materials/basiccard"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:basic_card"
+          ]
+        },
+        {
+          "item": "ae2:advanced_card",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшена картка",
+            "en_us": "Advanced Card"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:materials/advancedcard"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:advanced_card"
+          ]
+        },
+        {
+          "item": "ae2:capacity_card",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Картка місткості",
+            "en_us": "Capacity Card"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:materials/cardcapacity"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:capacity_card"
+          ]
+        },
+        {
+          "item": "ae2:crafting_card",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Картка виготовлення",
+            "en_us": "Crafting Card"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:materials/cardcrafting"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:crafting_card"
+          ]
+        },
+        {
+          "item": "ae2:wireless_booster",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Підсилювач бездротового зв’язку",
+            "en_us": "Wireless Booster"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:network/wireless_booster"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ae2:wireless_booster"
+          ]
+        },
+        {
+          "item": "ae2:calculation_processor",
+          "count": 1,
+          "weight": 14,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Обчислювальний процесор",
+            "en_us": "Calculation Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ae2:inscriber/calculation_processor"
+            ],
+            "method": "ae2_inscriber"
+          },
+          "requires_craft": [
+            "ae2:calculation_processor"
+          ]
+        },
+        {
+          "item": "apothic_enchanting:basic_bookshelf",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Базова книжкова полиця",
+            "en_us": "Basic Bookshelf"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apothic_enchanting:basic_bookshelf"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apothic_enchanting:basic_bookshelf"
+          ]
+        },
+        {
+          "item": "apothic_enchanting:geode_shelf",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Книжкова полиця стабільності з геодою",
+            "en_us": "Geode-Encased Bookshelf of Stability"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apothic_enchanting:geode_shelf"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apothic_enchanting:geode_shelf"
+          ]
+        },
+        {
+          "item": "apothic_enchanting:hellshelf",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Пекельна книжкова полиця",
+            "en_us": "Hellshelf"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apothic_enchanting:hellshelf"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apothic_enchanting:hellshelf"
+          ]
+        },
+        {
+          "item": "apotheosis:gem_case",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Футляр для самоцвітів",
+            "en_us": "Gem Case"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apotheosis:gem_case"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apotheosis:gem_case"
+          ]
+        },
+        {
+          "item": "rftoolsbase:information_screen",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Інформаційний екран",
+            "en_us": "Information Screen"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "rftoolsbase:information_screen"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "rftoolsbase:information_screen"
+          ]
+        },
+        {
+          "item": "kubejs:quantum_processor",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Квантовий процесор",
+            "en_us": "Quantum Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/quantum_processor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:quantum_processor"
+          ]
         }
       ]
     },
     {
       "key": "arcane",
       "id": "000000006A510007",
-      "min_stage": 2,
-      "fallback": "scholar",
       "title": {
         "uk_ua": "Запас для магічної майстерні",
         "en_us": "Arcane Workshop Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:lapis_lazuli",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Лазурит",
             "en_us": "Lapis Lazuli"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/lapis_lazuli_from_smelting_glacio_lapis_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:amethyst_shard",
           "count": 2,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Уламок аметисту",
             "en_us": "Amethyst Shard"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
-          "item": "minecraft:quartz",
+          "item": "minecraft:glass",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Кварц",
-            "en_us": "Nether Quartz"
+            "uk_ua": "Скло",
+            "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
-          "item": "minecraft:glowstone_dust",
-          "count": 2,
-          "weight": 15,
+          "item": "minecraft:paper",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Світлокам’яний пил",
-            "en_us": "Glowstone Dust"
+            "uk_ua": "Папір",
+            "en_us": "Paper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:paper"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:experience_bottle",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Пляшечка досвіду",
             "en_us": "Bottle o’ Enchanting"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "botania:white_petal",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Біла містична пелюстка",
+            "en_us": "Mystical White Petal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:petal_white",
+              "botania:petal_white_double"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:white_petal"
+          ]
+        },
+        {
+          "item": "botania:purple_petal",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Фіолетова містична пелюстка",
+            "en_us": "Mystical Purple Petal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:petal_purple",
+              "botania:petal_purple_double"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:purple_petal"
+          ]
+        },
+        {
+          "item": "botania:light_blue_petal",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Блакитна містична пелюстка",
+            "en_us": "Mystical Light Blue Petal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:petal_light_blue",
+              "botania:petal_light_blue_double"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:light_blue_petal"
+          ]
+        },
+        {
+          "item": "botania:pink_petal",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Рожева містична пелюстка",
+            "en_us": "Mystical Pink Petal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:petal_pink",
+              "botania:petal_pink_double"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:pink_petal"
+          ]
+        },
+        {
+          "item": "botania:vine_ball",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Куля з ліан",
+            "en_us": "Vine Ball"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:vine_ball"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:vine_ball"
+          ]
+        },
+        {
+          "item": "botania:lexicon",
+          "count": 1,
+          "weight": 3,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Лексика Botania",
+            "en_us": "Lexica Botania"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:lexicon"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:lexicon"
+          ]
+        },
+        {
+          "item": "botania:incense_plate",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Підставка для пахощів",
+            "en_us": "Incense Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:incense_plate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:incense_plate"
+          ]
+        },
+        {
+          "item": "botania:incense_stick",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Паличка пахощів",
+            "en_us": "Incense Stick"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:incense_stick"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:incense_stick"
+          ]
+        },
+        {
+          "item": "botania:lens_normal",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Лінза мани",
+            "en_us": "Mana Lens"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:lens_normal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:lens_normal"
+          ]
+        },
+        {
+          "item": "botania:lens_magnet",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Магнітна лінза",
+            "en_us": "Magnetizing Lens"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:lens_magnet"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:lens_magnet"
+          ]
+        },
+        {
+          "item": "botania:mana_tablet",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Планшет мани",
+            "en_us": "Mana Tablet"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:mana_tablet",
+              "botania:mana_tablet_alt"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:mana_tablet"
+          ]
+        },
+        {
+          "item": "botania:monocle",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Монокль провидця мани",
+            "en_us": "Manaseer Monocle"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:monocle"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:monocle"
+          ]
+        },
+        {
+          "item": "evilcraft:blood_orb_empty",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Порожня кров’яна сфера",
+            "en_us": "Empty Orb"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "evilcraft:crafting/blood_orb_empty"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "evilcraft:blood_orb_empty"
+          ]
+        },
+        {
+          "item": "evilcraft:gem_stone_torch",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Самоцвітний смолоскип",
+            "en_us": "Gemstone Torch"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "evilcraft:crafting/gem_stone_torch"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "evilcraft:gem_stone_torch"
+          ]
+        },
+        {
+          "item": "evilcraft:bowl_of_promises_empty",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Чаша порожніх обіцянок",
+            "en_us": "Bowl of Empty Promises"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "evilcraft:crafting/bowl_of_promises_empty"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "evilcraft:bowl_of_promises_empty"
+          ]
+        },
+        {
+          "item": "evilcraft:blood_infusion_core",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Ядро насичення кров’ю",
+            "en_us": "Blood Infusion Core"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "evilcraft:crafting/blood_infusion_core"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "evilcraft:blood_infusion_core"
+          ]
+        },
+        {
+          "item": "evilcraft:blood_pearl_of_teleportation",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Кров’яна перлина телепортації",
+            "en_us": "Blood Pearl of Teleportation"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "evilcraft:crafting/blood_pearl_of_teleportation"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "evilcraft:blood_pearl_of_teleportation"
+          ]
+        },
+        {
+          "item": "kubejs:arcane_conduit",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Арканний провідник",
+            "en_us": "Arcane Conduit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/arcane_conduit"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:arcane_conduit"
+          ]
+        },
+        {
+          "item": "kubejs:dimensional_matrix",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Вимірна матриця",
+            "en_us": "Dimensional Matrix"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/dimensional_matrix"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:dimensional_matrix"
+          ]
         }
       ]
     },
     {
       "key": "expedition",
       "id": "000000006A510008",
-      "min_stage": 0,
-      "fallback": "expedition",
       "title": {
         "uk_ua": "Припаси для експедиції",
         "en_us": "Expedition Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:bread",
           "count": 2,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Хліб",
             "en_us": "Bread"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:torch",
           "count": 4,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Смолоскип",
             "en_us": "Torch"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:botania_extras/torch_flame_laced",
+              "evilcraft:crafting/minecraft_torch",
+              "twilightforest:berry_torch"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:arrow",
           "count": 4,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Стріла",
             "en_us": "Arrow"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:leather",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шкіра",
             "en_us": "Leather"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:white_wool",
           "count": 2,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Біла вовна",
             "en_us": "White Wool"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:cotton_to_wool"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "ecologics:crab_meat",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Крабове м’ясо",
+            "en_us": "Crab Meat"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:crab_meat",
+              "ecologics:crab_meat_from_campfire_cooking",
+              "ecologics:crab_meat_from_smoking"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "twilightforest:cooked_venison",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Стейк з оленини",
+            "en_us": "Venison Steak"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "twilightforest:food/campfired_venison",
+              "twilightforest:food/smelted_venison",
+              "twilightforest:food/smoked_venison"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "twilightforest:cooked_meef",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Стейк із мінотавра",
+            "en_us": "Meef Steak"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "twilightforest:food/campfired_meef",
+              "twilightforest:food/smelted_meef",
+              "twilightforest:food/smoked_meef"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "aether:blue_berry",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Синя ягода",
+            "en_us": "Blue Berry"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "ecologics:coconut_slice",
+          "count": 3,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Скибка кокоса",
+            "en_us": "Coconut Slice"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "waystones:blank_scroll",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Порожній сувій",
+            "en_us": "Blank Scroll"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:blank_scroll"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:blank_scroll"
+          ]
+        },
+        {
+          "item": "waystones:warp_dust",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Пил переміщення",
+            "en_us": "Warp Dust"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:warp_dust"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:warp_dust"
+          ]
+        },
+        {
+          "item": "waystones:return_scroll",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Сувій повернення",
+            "en_us": "Return Scroll"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:return_scroll"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:return_scroll"
+          ]
+        },
+        {
+          "item": "waystones:warp_scroll",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сувій переміщення",
+            "en_us": "Warp Scroll"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:warp_scroll"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:warp_scroll"
+          ]
+        },
+        {
+          "item": "waystones:portal_scroll",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Портальний сувій",
+            "en_us": "Portal Scroll"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:portal_scroll"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:portal_scroll"
+          ]
+        },
+        {
+          "item": "aether:ambrosium_torch",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Амброзієвий смолоскип",
+            "en_us": "Ambrosium Torch"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:ambrosium_torch"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "aether:ambrosium_torch"
+          ]
+        },
+        {
+          "item": "aether:cold_parachute",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Холодний парашут",
+            "en_us": "Cold Parachute"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:cold_parachute"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "aether:cold_parachute"
+          ]
+        },
+        {
+          "item": "aether:golden_parachute",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Золотий парашут",
+            "en_us": "Golden Parachute"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "aether:golden_parachute"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "aether:golden_parachute"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:backpack",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Наплічник",
+            "en_us": "Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:feeding_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення годування",
+            "en_us": "Feeding Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:feeding_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:feeding_upgrade"
+          ]
+        },
+        {
+          "item": "botania:travel_belt",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Пояс мандрівника",
+            "en_us": "Sojourner's Sash"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:travel_belt"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:travel_belt"
+          ]
+        },
+        {
+          "item": "ecologics:coconut_boat",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кокосовий човен",
+            "en_us": "Coconut Boat"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:coconut_boat"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:coconut_boat"
+          ]
         }
       ]
     },
     {
       "key": "settlement",
       "id": "000000006A510009",
-      "min_stage": 0,
-      "fallback": "settlement",
       "title": {
         "uk_ua": "Посилка для будівельника",
         "en_us": "Settlement Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:brick",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Цеглина",
             "en_us": "Brick"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:oak_planks",
           "count": 4,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Дубові дошки",
             "en_us": "Oak Planks"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:white_wool",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Біла вовна",
             "en_us": "White Wool"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:cotton_to_wool"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:paper",
           "count": 3,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Папір",
             "en_us": "Paper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanism:paper"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:bread",
           "count": 2,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Хліб",
             "en_us": "Bread"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "ecologics:coconut_planks",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кокосові дошки",
+            "en_us": "Coconut Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:coconut_planks"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:coconut_planks"
+          ]
+        },
+        {
+          "item": "ecologics:walnut_planks",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Горіхові дошки",
+            "en_us": "Walnut Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:walnut_planks"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:walnut_planks"
+          ]
+        },
+        {
+          "item": "ecologics:azalea_planks",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Азалієві дошки",
+            "en_us": "Azalea Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:azalea_planks"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ecologics:azalea_planks"
+          ]
+        },
+        {
+          "item": "millenaire:byzantine_stone_tiles",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Візантійська кам’яна плитка",
+            "en_us": "Byzantine Stone Tiles"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:byzantine_stone_tiles"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "millenaire:byzantine_stone_tiles"
+          ]
+        },
+        {
+          "item": "millenaire:byzantine_sandstone_tiles",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Візантійська пісковикова плитка",
+            "en_us": "Byzantine Sandstone Tiles"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:byzantine_sandstone_tiles"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "millenaire:byzantine_sandstone_tiles"
+          ]
+        },
+        {
+          "item": "millenaire:ice_brick",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Крижана цегла",
+            "en_us": "Ice Brick"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:ice_brick"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "millenaire:ice_brick"
+          ]
+        },
+        {
+          "item": "millenaire:masa",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Маса з кукурудзи",
+            "en_us": "Masa"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:masa"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "millenaire:cider",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Сидр",
+            "en_us": "Cider"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "millenaire:cider"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "millenaire:cider"
+          ]
+        },
+        {
+          "item": "immersiveengineering:treated_wood_horizontal",
+          "count": 4,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Просочені дошки",
+            "en_us": "Treated Wood Planks"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/treated_wood_horizontal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:treated_wood_horizontal"
+          ]
+        },
+        {
+          "item": "immersiveengineering:cushion",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Подушка для приземлення",
+            "en_us": "Jump Cushion"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/cushion"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:cushion"
+          ]
+        },
+        {
+          "item": "immersiveengineering:lantern",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Інженерський ліхтар",
+            "en_us": "Lantern"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/lantern"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:lantern"
+          ]
+        },
+        {
+          "item": "immersiveengineering:crate",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Дерев’яний ящик",
+            "en_us": "Wooden Storage Crate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/crate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:crate"
+          ]
+        },
+        {
+          "item": "immersiveengineering:reinforced_crate",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Зміцнений ящик",
+            "en_us": "Reinforced Storage Crate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/reinforced_crate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:reinforced_crate"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:barrel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Дерев’яна бочка",
+            "en_us": "Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:acacia_barrel",
+              "sophisticatedstorage:bamboo_barrel",
+              "sophisticatedstorage:birch_barrel",
+              "sophisticatedstorage:cherry_barrel",
+              "sophisticatedstorage:crimson_barrel",
+              "sophisticatedstorage:dark_oak_barrel",
+              "sophisticatedstorage:jungle_barrel",
+              "sophisticatedstorage:mangrove_barrel",
+              "sophisticatedstorage:oak_barrel",
+              "sophisticatedstorage:spruce_barrel",
+              "sophisticatedstorage:spruce_barrel_from_vanilla_barrel",
+              "sophisticatedstorage:warped_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:copper_barrel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Мідна бочка",
+            "en_us": "Copper Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:copper_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:copper_barrel"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:iron_barrel",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна бочка",
+            "en_us": "Iron Barrel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:iron_barrel",
+              "sophisticatedstorage:iron_barrel_from_copper_barrel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:iron_barrel"
+          ]
+        },
+        {
+          "item": "waystones:blank_scroll",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Порожній сувій",
+            "en_us": "Blank Scroll"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "waystones:blank_scroll"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "waystones:blank_scroll"
+          ]
+        },
+        {
+          "item": "rftoolsbase:information_screen",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Інформаційний екран",
+            "en_us": "Information Screen"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "rftoolsbase:information_screen"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "rftoolsbase:information_screen"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:hopper_upgrade",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення лійки",
+            "en_us": "Hopper Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/hopper_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:hopper_upgrade"
+          ]
         }
       ]
     },
     {
       "key": "space",
       "id": "000000006A51000A",
-      "min_stage": 3,
-      "fallback": "logistics",
       "title": {
         "uk_ua": "Запас космічної майстерні",
         "en_us": "Space Workshop Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:glass",
           "count": 3,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Скло",
             "en_us": "Glass"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:redstone",
           "count": 3,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Редстоун",
             "en_us": "Redstone Dust"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:iron_ingot",
           "count": 1,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
-            "uk_ua": "Залізний зливок",
+            "uk_ua": "Залізний злиток",
             "en_us": "Iron Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:golden_carrot",
           "count": 1,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Золота морква",
             "en_us": "Golden Carrot"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:experience_bottle",
           "count": 1,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Пляшечка досвіду",
             "en_us": "Bottle o’ Enchanting"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "ad_astra:iron_rod",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізний стрижень",
+            "en_us": "Iron Rod"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:iron_rod"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:iron_rod"
+          ]
+        },
+        {
+          "item": "ad_astra:steel_rod",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталевий стрижень",
+            "en_us": "Steel Rod"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:steel_rod"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:steel_rod"
+          ]
+        },
+        {
+          "item": "immersiveengineering:plate_iron",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна пластина",
+            "en_us": "Iron Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_iron_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_iron"
+          ]
+        },
+        {
+          "item": "immersiveengineering:plate_steel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталева пластина",
+            "en_us": "Steel Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_steel_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "immersiveengineering:plate_steel"
+          ]
+        },
+        {
+          "item": "ad_astra:fan",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Вентилятор двигуна",
+            "en_us": "Fan"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:fan"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:fan"
+          ]
+        },
+        {
+          "item": "ad_astra:engine_frame",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Рама двигуна",
+            "en_us": "Engine Frame"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:engine_frame"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:engine_frame"
+          ]
+        },
+        {
+          "item": "ad_astra:oxygen_gear",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Кисневий комплект",
+            "en_us": "Oxygen Gear"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:oxygen_gear"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:oxygen_gear"
+          ]
+        },
+        {
+          "item": "ad_astra:oxygen_sensor",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Кисневий датчик",
+            "en_us": "Oxygen Sensor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:oxygen_sensor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:oxygen_sensor"
+          ]
+        },
+        {
+          "item": "ad_astra:steel_cable",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталевий кабель",
+            "en_us": "Steel Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:steel_cable"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:steel_cable"
+          ]
+        },
+        {
+          "item": "ad_astra:desh_cable",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Кабель із дешу",
+            "en_us": "Desh Cable"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:desh_cable"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:desh_cable"
+          ]
+        },
+        {
+          "item": "ad_astra:desh_plate",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Пластина з дешу",
+            "en_us": "Desh Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_desh_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:desh_plate"
+          ]
+        },
+        {
+          "item": "ad_astra:ostrum_plate",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Острумова пластина",
+            "en_us": "Ostrum Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_ostrum_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:ostrum_plate"
+          ]
+        },
+        {
+          "item": "ad_astra:calorite_plate",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Калоритова пластина",
+            "en_us": "Calorite Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "immersiveengineering:crafting/plate_calorite_hammering"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:calorite_plate"
+          ]
+        },
+        {
+          "item": "kubejs:propulsion_turbine",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Реактивна турбіна",
+            "en_us": "Propulsion Turbine"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v043/propulsion_turbine"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:propulsion_turbine"
+          ]
+        },
+        {
+          "item": "kubejs:stellar_alloy",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Зоряний композит",
+            "en_us": "Stellar Alloy"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/stellar_alloy"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:stellar_alloy"
+          ]
+        },
+        {
+          "item": "kubejs:radiation_shield",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Радіаційний захист",
+            "en_us": "Radiation Shield"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/radiation_shield"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:radiation_shield"
+          ]
+        },
+        {
+          "item": "kubejs:reinforced_netherite_plate",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Посилена незеритова пластина",
+            "en_us": "Reinforced Netherite Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/reinforced_netherite_plate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:reinforced_netherite_plate"
+          ]
+        },
+        {
+          "item": "ad_astra:coal_generator",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Вугільний генератор",
+            "en_us": "Coal Generator"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:coal_generator"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ad_astra:coal_generator"
+          ]
+        },
+        {
+          "item": "ad_astra:cheese",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Сир",
+            "en_us": "Cheese"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/cheese_from_smelting_moon_cheese_ore"
+            ],
+            "method": "starter_supply"
           }
         }
       ]
@@ -585,228 +4657,1888 @@
     {
       "key": "processing",
       "id": "000000006A51000B",
-      "min_stage": 0,
-      "fallback": "processing",
       "title": {
         "uk_ua": "Сировина для переробки",
         "en_us": "Processing Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:sand",
           "count": 4,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Пісок",
             "en_us": "Sand"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "extrautilitiesreborn:rev_cs_1_rcp"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:gravel",
           "count": 4,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Гравій",
             "en_us": "Gravel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "extrautilitiesreborn:rev_cg_1_rcp"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:cobblestone",
           "count": 4,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Бруківка",
             "en_us": "Cobblestone"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:cobblestone",
+              "extrautilitiesreborn:rev_cc_1_rcp",
+              "terralith:cobblestone_from_stone_slab"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:clay_ball",
           "count": 4,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Грудка глини",
             "en_us": "Clay Ball"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:coal",
           "count": 2,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Вугілля",
             "en_us": "Coal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/coal_from_smelting_glacio_coal_ore",
+              "ad_astra:smelting/coal_from_smelting_venus_coal_ore"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "exdeorum:crook",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Палиця з гаком",
+            "en_us": "Crook"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:crook"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:crook"
+          ]
+        },
+        {
+          "item": "exdeorum:bone_crook",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кістяна палиця з гаком",
+            "en_us": "Bone Crook"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:bone_crook"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:bone_crook"
+          ]
+        },
+        {
+          "item": "exdeorum:wooden_hammer",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Дерев’яний молот",
+            "en_us": "Wooden Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:wooden_hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:wooden_hammer"
+          ]
+        },
+        {
+          "item": "exdeorum:iron_hammer",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізний молот",
+            "en_us": "Iron Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:iron_hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:iron_hammer"
+          ]
+        },
+        {
+          "item": "exdeorum:diamond_hammer",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Діамантовий молот",
+            "en_us": "Diamond Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:diamond_hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:diamond_hammer"
+          ]
+        },
+        {
+          "item": "exdeorum:string_mesh",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Нитяна сітка",
+            "en_us": "String Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:string_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:string_mesh"
+          ]
+        },
+        {
+          "item": "exdeorum:flint_mesh",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кременева сітка",
+            "en_us": "Flint Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:flint_mesh",
+              "exdeorum:flint_mesh_from_string_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:flint_mesh"
+          ]
+        },
+        {
+          "item": "exdeorum:iron_mesh",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізна сітка",
+            "en_us": "Iron Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exdeorum:iron_mesh",
+              "exdeorum:iron_mesh_from_flint_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:iron_mesh"
+          ]
+        },
+        {
+          "item": "exdeorum:golden_mesh",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Золота сітка",
+            "en_us": "Golden Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exdeorum/golden_mesh",
+              "kubejs:expert_v040/exdeorum/golden_mesh_from_iron_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:golden_mesh"
+          ]
+        },
+        {
+          "item": "exdeorum:diamond_mesh",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Діамантова сітка",
+            "en_us": "Diamond Mesh"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exdeorum/diamond_mesh",
+              "kubejs:expert_v040/exdeorum/diamond_mesh_from_golden_mesh"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exdeorum:diamond_mesh"
+          ]
+        },
+        {
+          "item": "exmachinis:comparator_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення компаратора",
+            "en_us": "Comparator Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exmachinis:comparator_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:comparator_upgrade"
+          ]
+        },
+        {
+          "item": "exmachinis:gold_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Золоте поліпшення",
+            "en_us": "Gold Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exmachinis:gold_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:gold_upgrade"
+          ]
+        },
+        {
+          "item": "exmachinis:diamond_upgrade",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Діамантове поліпшення",
+            "en_us": "Diamond Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exmachinis/diamond_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:diamond_upgrade"
+          ]
+        },
+        {
+          "item": "exmachinis:netherite_upgrade",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Незеритове поліпшення",
+            "en_us": "Netherite Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exmachinis/netherite_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:netherite_upgrade"
+          ]
+        },
+        {
+          "item": "exmachinis:item_buffer",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Буфер предметів",
+            "en_us": "Item Buffer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "exmachinis:item_buffer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:item_buffer"
+          ]
+        },
+        {
+          "item": "exmachinis:flux_hammer",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Енергетичний молот",
+            "en_us": "Flux Hammer"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exmachinis/flux_hammer"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:flux_hammer"
+          ]
+        },
+        {
+          "item": "exmachinis:flux_sieve",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Енергетичне сито",
+            "en_us": "Flux Sieve"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/exmachinis/flux_sieve"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "exmachinis:flux_sieve"
+          ]
+        },
+        {
+          "item": "ironfurnaces:augment_blasting",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Модуль плавлення руд",
+            "en_us": "Augment: Blasting"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ironfurnaces:augments/augment_blasting"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ironfurnaces:augment_blasting"
+          ]
+        },
+        {
+          "item": "ironfurnaces:augment_smoking",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Модуль копчення",
+            "en_us": "Augment: Smoking"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ironfurnaces:augments/augment_smoking"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "ironfurnaces:augment_smoking"
+          ]
         }
       ]
     },
     {
       "key": "hunting",
       "id": "000000006A51000C",
-      "min_stage": 0,
-      "fallback": "hunting",
       "title": {
         "uk_ua": "Припаси мисливця",
         "en_us": "Hunting Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:arrow",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Стріла",
             "en_us": "Arrow"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:string",
           "count": 3,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Нитка",
             "en_us": "String"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:bone",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Кістка",
             "en_us": "Bone"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:cooked_beef",
           "count": 2,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Стейк",
             "en_us": "Steak"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:leather",
           "count": 1,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шкіра",
             "en_us": "Leather"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "ecologics:crab_meat",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Крабове м’ясо",
+            "en_us": "Crab Meat"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ecologics:crab_meat",
+              "ecologics:crab_meat_from_campfire_cooking",
+              "ecologics:crab_meat_from_smoking"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "twilightforest:cooked_venison",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Стейк з оленини",
+            "en_us": "Venison Steak"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "twilightforest:food/campfired_venison",
+              "twilightforest:food/smelted_venison",
+              "twilightforest:food/smoked_venison"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "twilightforest:cooked_meef",
+          "count": 2,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Стейк із мінотавра",
+            "en_us": "Meef Steak"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "twilightforest:food/campfired_meef",
+              "twilightforest:food/smelted_meef",
+              "twilightforest:food/smoked_meef"
+            ],
+            "method": "starter_supply"
+          }
+        },
+        {
+          "item": "mob_grinding_utils:mob_swab",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Мазок моба",
+            "en_us": "Mob Swab"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_mob_swab"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:mob_swab"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:absorption_upgrade",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення поглинання",
+            "en_us": "Absorption Radius Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_absorbtion_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:absorption_upgrade"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:fan_upgrade_speed",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення швидкості вентилятора",
+            "en_us": "Mob Fan Distance Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_fan_upgrade_speed"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:fan_upgrade_speed"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:fan_upgrade_width",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення ширини вентилятора",
+            "en_us": "Mob Fan Width Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_fan_upgrade_width"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:fan_upgrade_width"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:fan_upgrade_height",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення висоти вентилятора",
+            "en_us": "Mob Fan Height Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_fan_upgrade_height"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:fan_upgrade_height"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:xp_tap",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Кран досвіду",
+            "en_us": "XP Tap"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_xp_tap"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:xp_tap"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:spikes",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Шипи",
+            "en_us": "Iron Spikes"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_spikes"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:spikes"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:tinted_glass",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Тоноване скло ферми мобів",
+            "en_us": "Tinted Glass"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_tintedglass"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:tinted_glass"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:saw_upgrade_sharpness",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення гостроти дробарки",
+            "en_us": "Mob Masher Upgrade Sharpness"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mob_grinding_utils:recipe_saw_upgrade_sharpness"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:saw_upgrade_sharpness"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:saw_upgrade_beheading",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення обезголовлення",
+            "en_us": "Mob Masher Upgrade Beheading"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/mob_grinding_utils/recipe_saw_upgrade_beheading"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:saw_upgrade_beheading"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:saw_upgrade_looting",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення здобичі",
+            "en_us": "Mob Masher Upgrade Looting"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/mob_grinding_utils/recipe_saw_upgrade_looting"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:saw_upgrade_looting"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:fan",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Вентилятор ферми мобів",
+            "en_us": "Mob Fan"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/mob_grinding_utils/recipe_fan"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:fan"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:absorption_hopper",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поглинальна лійка",
+            "en_us": "Absorption Hopper"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/mob_grinding_utils/recipe_absorption_hopper"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:absorption_hopper"
+          ]
+        },
+        {
+          "item": "mob_grinding_utils:xpsolidifier",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Затверджувач досвіду",
+            "en_us": "XP Solidifier"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v040/mob_grinding_utils/recipe_solidifier"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mob_grinding_utils:xpsolidifier"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:pickup_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення підбирання",
+            "en_us": "Pickup Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedstorage:pickup_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:pickup_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedstorage:advanced_pickup_upgrade",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшене підбирання",
+            "en_us": "Advanced Pickup Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedstorage/advanced_pickup_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedstorage:advanced_pickup_upgrade"
+          ]
         }
       ]
     },
     {
       "key": "equipment",
       "id": "000000006A51000D",
-      "min_stage": 0,
-      "fallback": "equipment",
       "title": {
         "uk_ua": "Запас для спорядження",
         "en_us": "Equipment Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:arrow",
           "count": 4,
-          "weight": 30,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Стріла",
             "en_us": "Arrow"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:leather",
           "count": 1,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Шкіра",
             "en_us": "Leather"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:string",
           "count": 2,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Нитка",
             "en_us": "String"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:lapis_lazuli",
           "count": 2,
-          "weight": 15,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Лазурит",
             "en_us": "Lapis Lazuli"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/lapis_lazuli_from_smelting_glacio_lapis_ore"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:iron_ingot",
           "count": 1,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Залізний злиток",
             "en_us": "Iron Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "sophisticatedbackpacks:backpack",
+          "count": 1,
+          "weight": 10,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Наплічник",
+            "en_us": "Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:copper_backpack",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Мідний наплічник",
+            "en_us": "Copper Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:copper_backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:copper_backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:iron_backpack",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Залізний наплічник",
+            "en_us": "Iron Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:iron_backpack",
+              "sophisticatedbackpacks:iron_backpack_from_copper"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:iron_backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:gold_backpack",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Золотий наплічник",
+            "en_us": "Gold Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedbackpacks/gold_backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:gold_backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:diamond_backpack",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Діамантовий наплічник",
+            "en_us": "Diamond Backpack"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedbackpacks/diamond_backpack"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:diamond_backpack"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:pickup_upgrade",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення підбирання",
+            "en_us": "Pickup Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:pickup_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:pickup_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:filter_upgrade",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Поліпшення фільтра",
+            "en_us": "Filter Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:filter_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:filter_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:feeding_upgrade",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення годування",
+            "en_us": "Feeding Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:feeding_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:feeding_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:magnet_upgrade",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Поліпшення магніту",
+            "en_us": "Magnet Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "sophisticatedbackpacks:magnet_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:magnet_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:advanced_magnet_upgrade",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшений магніт",
+            "en_us": "Advanced Magnet Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedbackpacks/advanced_magnet_upgrade",
+              "kubejs:expert_v042/sophisticatedbackpacks/advanced_magnet_upgrade_from_basic"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:advanced_magnet_upgrade"
+          ]
+        },
+        {
+          "item": "sophisticatedbackpacks:advanced_pickup_upgrade",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Поліпшене підбирання",
+            "en_us": "Advanced Pickup Upgrade"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/sophisticatedbackpacks/advanced_pickup_upgrade"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "sophisticatedbackpacks:advanced_pickup_upgrade"
+          ]
+        },
+        {
+          "item": "mekanismtools:steel_pickaxe",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталева кирка",
+            "en_us": "Steel Pickaxe"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanismtools:steel/tools/pickaxe"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanismtools:steel_pickaxe"
+          ]
+        },
+        {
+          "item": "mekanismtools:steel_shield",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сталевий щит",
+            "en_us": "Steel Shield"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "mekanismtools:steel/shield"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "mekanismtools:steel_shield"
+          ]
+        },
+        {
+          "item": "botania:travel_belt",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Пояс мандрівника",
+            "en_us": "Sojourner's Sash"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:travel_belt"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:travel_belt"
+          ]
+        },
+        {
+          "item": "botania:magnet_ring",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Перстень намагнічування",
+            "en_us": "Ring of Magnetization"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/botania/magnet_ring"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:magnet_ring"
+          ]
+        },
+        {
+          "item": "botania:super_travel_belt",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Пояс навколосвітнього мандрівника",
+            "en_us": "Globetrotter's Sash"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "botania:super_travel_belt"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "botania:super_travel_belt"
+          ]
+        },
+        {
+          "item": "apotheosis:gem_case",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 0,
+          "name": {
+            "uk_ua": "Футляр для самоцвітів",
+            "en_us": "Gem Case"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apotheosis:gem_case"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apotheosis:gem_case"
+          ]
+        },
+        {
+          "item": "apotheosis:sigil_of_enhancement",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Сигіл посилення",
+            "en_us": "Sigil of Enhancement"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "apotheosis:sigil_of_enhancement"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apotheosis:sigil_of_enhancement"
+          ]
+        },
+        {
+          "item": "apotheosis:sigil_of_socketing",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Сигіл гнізда",
+            "en_us": "Sigil of Socketing"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/apotheosis/sigil_of_socketing"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "apotheosis:sigil_of_socketing"
+          ]
         }
       ]
     },
     {
       "key": "masterwork",
       "id": "000000006A51000E",
-      "min_stage": 5,
-      "fallback": "power",
       "title": {
         "uk_ua": "Запас майстра",
         "en_us": "Masterwork Supplies"
       },
+      "fallback": "survival",
       "entries": [
         {
           "item": "minecraft:emerald",
           "count": 1,
-          "weight": 25,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Смарагд",
             "en_us": "Emerald"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:gold_ingot",
-          "count": 2,
-          "weight": 20,
+          "count": 1,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Золотий зливок",
             "en_us": "Gold Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "ad_astra:smelting/gold_ingot_from_smelting_venus_gold_ore",
+              "immersiveengineering:smelting/gold_ingot_from_dust",
+              "mekanism:processing/gold/ingot/from_dust_smelting"
+            ],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:golden_carrot",
-          "count": 2,
-          "weight": 25,
+          "count": 1,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Золота морква",
             "en_us": "Golden Carrot"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:experience_bottle",
           "count": 1,
-          "weight": 20,
+          "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Пляшечка досвіду",
             "en_us": "Bottle o’ Enchanting"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:name_tag",
           "count": 1,
           "weight": 10,
+          "rarity": "common",
+          "min_level": 0,
           "name": {
             "uk_ua": "Бирка",
             "en_us": "Name Tag"
+          },
+          "evidence": {
+            "recipe_ids": [],
+            "method": "starter_supply"
           }
+        },
+        {
+          "item": "kubejs:industrial_chassis",
+          "count": 1,
+          "weight": 6,
+          "rarity": "uncommon",
+          "min_level": 1,
+          "name": {
+            "uk_ua": "Промислове шасі",
+            "en_us": "Industrial Chassis"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/industrial_chassis"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:industrial_chassis"
+          ]
+        },
+        {
+          "item": "kubejs:precision_mechanism",
+          "count": 1,
+          "weight": 8,
+          "rarity": "uncommon",
+          "min_level": 2,
+          "name": {
+            "uk_ua": "Точний механізм",
+            "en_us": "Precision Mechanism"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/precision_mechanism"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:precision_mechanism"
+          ]
+        },
+        {
+          "item": "kubejs:dimensional_matrix",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Вимірна матриця",
+            "en_us": "Dimensional Matrix"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/dimensional_matrix"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:dimensional_matrix"
+          ]
+        },
+        {
+          "item": "kubejs:stellar_alloy",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Зоряний композит",
+            "en_us": "Stellar Alloy"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/stellar_alloy"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:stellar_alloy"
+          ]
+        },
+        {
+          "item": "kubejs:mythic_circuit",
+          "count": 1,
+          "weight": 8,
+          "rarity": "epic",
+          "min_level": 5,
+          "name": {
+            "uk_ua": "Міфічна схема",
+            "en_us": "Mythic Circuit"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert/kubejs/mythic_circuit"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:mythic_circuit"
+          ]
+        },
+        {
+          "item": "kubejs:emc_core",
+          "count": 1,
+          "weight": 4,
+          "rarity": "epic",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Ядро EMC",
+            "en_us": "EMC Core"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:late_emc/emc_core"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:emc_core"
+          ]
+        },
+        {
+          "item": "kubejs:quantum_processor",
+          "count": 1,
+          "weight": 12,
+          "rarity": "rare",
+          "min_level": 3,
+          "name": {
+            "uk_ua": "Квантовий процесор",
+            "en_us": "Quantum Processor"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/quantum_processor"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:quantum_processor"
+          ]
+        },
+        {
+          "item": "kubejs:radiation_shield",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Радіаційний захист",
+            "en_us": "Radiation Shield"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/radiation_shield"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:radiation_shield"
+          ]
+        },
+        {
+          "item": "kubejs:reinforced_netherite_plate",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 4,
+          "name": {
+            "uk_ua": "Посилена незеритова пластина",
+            "en_us": "Reinforced Netherite Plate"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "kubejs:expert_v042/components/reinforced_netherite_plate"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "kubejs:reinforced_netherite_plate"
+          ]
+        },
+        {
+          "item": "projecte:alchemical_coal",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Алхімічне вугілля",
+            "en_us": "Alchemical Coal"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:alchemical_coal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:alchemical_coal"
+          ]
+        },
+        {
+          "item": "projecte:mobius_fuel",
+          "count": 1,
+          "weight": 14,
+          "rarity": "uncommon",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Паливо Мебіуса",
+            "en_us": "Mobius Fuel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:mobius_fuel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:mobius_fuel"
+          ]
+        },
+        {
+          "item": "projecte:aeternalis_fuel",
+          "count": 1,
+          "weight": 12,
+          "rarity": "uncommon",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Етернальне паливо",
+            "en_us": "Aeternalis Fuel"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:aeternalis_fuel"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:aeternalis_fuel"
+          ]
+        },
+        {
+          "item": "projecte:dark_matter",
+          "count": 1,
+          "weight": 10,
+          "rarity": "rare",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Темна матерія",
+            "en_us": "Dark Matter"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:dark_matter"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:dark_matter"
+          ]
+        },
+        {
+          "item": "projecte:red_matter",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Червона матерія",
+            "en_us": "Red Matter"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:red_matter"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:red_matter"
+          ]
+        },
+        {
+          "item": "projecte:klein_star_ein",
+          "count": 1,
+          "weight": 6,
+          "rarity": "rare",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Зірка Кляйна I",
+            "en_us": "Klein Star Ein"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:klein_star_ein"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:klein_star_ein"
+          ]
+        },
+        {
+          "item": "projecte:klein_star_zwei",
+          "count": 1,
+          "weight": 4,
+          "rarity": "epic",
+          "min_level": 6,
+          "name": {
+            "uk_ua": "Зірка Кляйна II",
+            "en_us": "Klein Star Zwei"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "projecte:klein_star_zwei"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "projecte:klein_star_zwei"
+          ]
+        },
+        {
+          "item": "avaritia:diamond_lattice",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 5,
+          "name": {
+            "uk_ua": "Діамантова решітка",
+            "en_us": "Diamond Lattice"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "avaritia:diamond_lattice_normal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "avaritia:diamond_lattice"
+          ]
+        },
+        {
+          "item": "avaritia:crystal_matrix_ingot",
+          "count": 1,
+          "weight": 6,
+          "rarity": "epic",
+          "min_level": 5,
+          "name": {
+            "uk_ua": "Злиток кристалічної матриці",
+            "en_us": "Crystal Matrix Ingot"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "avaritia:crystal_matrix_ingot_normal"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "avaritia:crystal_matrix_ingot"
+          ]
+        },
+        {
+          "item": "avaritia:neutron_nugget",
+          "count": 1,
+          "weight": 8,
+          "rarity": "rare",
+          "min_level": 5,
+          "name": {
+            "uk_ua": "Нейтронієвий самородок",
+            "en_us": "Neutronium Nugget"
+          },
+          "evidence": {
+            "recipe_ids": [
+              "minecraft:neutron_pile_from_ingots"
+            ],
+            "method": "crafting"
+          },
+          "requires_craft": [
+            "avaritia:neutron_nugget"
+          ]
         }
       ]
     }

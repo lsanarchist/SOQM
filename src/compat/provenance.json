@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions and one original module. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.3 and Runtime Optimizations 0.4.7; recompilation of the other eight production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions. Cannibal 0.4.1 and the new SOQM production adapter have documented native API builds; recompilation of all other recovered production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -196,52 +196,34 @@
       }
     },
     {
-      "module": "runtime-optimizations",
-      "production_jar": "qm-runtime-optimizations-0.4.7.jar",
-      "source_origin": "Original local SOQM implementation; no recovered source archive.",
-      "license_evidence": "Original MIT module; complete notice retained in source and production JAR.",
+      "module": "progressive-rewards",
+      "production_jar": "qm-progressive-rewards-0.4.8.jar",
+      "production_jar_sha256": "fe1f74c356edeee94a362a1f1a25c478dab7c488b56ee706d18221a15c1de17b",
+      "source_origin": "New SOQM 0.4.8 source in this repository",
+      "files_sha256": {
+        "LICENSE": "4658d0329316145efa6274d0fce7b6541f308e1e01e68bcf6126d54fd4cd406a",
+        "README.md": "221d549e0d72d9d78d44f216ac01ba9dee541b89a02f807d9948c65db8964393",
+        "build.py": "207e54b6e94107c2f048c520203ede8a7851c06b3ac90038188fe6fa857eacd2",
+        "resources/META-INF/neoforge.mods.toml": "b77e054277a1ecd2ae44b9cf7b4d37b4acb93fdd8cabada7d29944d571a4152b",
+        "resources/qm_progressive_rewards.mixins.json": "3ac4ab8d7bffb527b1bae85102ee2b8402033e90f31ca8921dbc58d1af6c50b2",
+        "src/qm/rewards/ProductionEvidence.java": "fb8f8b33f75fc4d56cf4603b12691c8311e0c8c9e8569f49f705374034737c01",
+        "src/qm/rewards/ProductionPolicy.java": "b2b3ff2205d056000f5ac62869d38f365ed756491c790f922f9a2c6eda2103ae",
+        "src/qm/rewards/QmProgressiveRewards.java": "a0e7c727f79c82de757442906c9102e240f912a604469cb7b8b41d601a86592e",
+        "src/qm/rewards/mixin/AssemblerProductionMixin.java": "bca9ac962fcf012c1d90b5bc77f130d5d843175bc20d3c916f6d0c25902ac035",
+        "src/qm/rewards/mixin/InfuserProductionMixin.java": "326b0a46662c44f2cd3f38f358e6829115e392448110530aee686b72748af953",
+        "src/qm/rewards/mixin/InfusingFactoryProductionMixin.java": "3f18a657fc1bea6b907ac44ad2116131a62e0ce81b00c273c8526614be6ed965",
+        "src/qm/rewards/mixin/InscriberProductionMixin.java": "bbc712a554c8b4bb20d61fade9ffc3c38b79c73b2e3495b27a162e1f055d4471",
+        "src/qm/rewards/mixin/StorageUpgradeProductionMixin.java": "f53788aeb5794dd2bc63225e426ae7d953392737578bf1d05b6a8d7967f47fcf"
+      },
       "local_revision": {
-        "version": "0.4.7",
-        "change": "Scoped tunnel height reuse, bounded persistent guardian lifecycle, event-based D&T observation and direct phantom tag predicates.",
+        "version": "0.4.8",
+        "change": "Record actual manufacture for personal reward eligibility, preserve personal/team evidence boundaries and persist native claim merges after team transitions.",
         "compiler": "Eclipse Temurin javac 21.0.12.1 (JDK 21.0.12.1+1)",
         "compiler_archive_sha256": "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
         "minecraft": "1.21.1",
         "neoforge": "21.1.262",
-        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
-        "build_script": "src/compat/build_optimizations.py",
-        "build_script_sha256": "e1c2f40bc16db0fd0c9822a10038d5e166649b849c65c3d404ed098ec5faad25"
-      },
-      "upstream_targets": [
-        {
-          "filename": "abandonedtunnels-1.0.0.jar",
-          "sha256": "05061c8d700e870ea8f46fd42e0ca4416148fa1c7908f5d72775813022a62e68",
-          "target_class": "com/manyfunadventures/abandonedtunnels/TunnelStructure.class",
-          "target_class_sha256": "954bc585c4705fbbf4d40df08b81c4063fa5a6dfb9c5be24ca7b0b7191711748"
-        },
-        {
-          "filename": "dungeons-and-taverns-v4.4.4 [NeoForge].jar",
-          "sha256": "1db28e89e0cb76aebe9e40955d1866e8ac1779575d15c2a1e250ac804a762d05"
-        }
-      ],
-      "files_sha256": {
-        "LICENSE": "8948b10fa5deb002755f15beef12e01d757a2ebbc83dac19dea73f44ec8482ec",
-        "README.md": "e7b3d55ed86c0d7bdc8b086197015d3caa2482d91024a38ca3c316f92397c3f5",
-        "resources/META-INF/neoforge.mods.toml": "15d13ea46d0770c33a66ca62b11389d2cb467137d801310afb84f5241a6da5e6",
-        "resources/qm_runtime_optimizations.mixins.json": "7135deb03e11f3c67080245ebd114622817a30213791157b638f75e3b927af62",
-        "src/qm/performance/QmRuntimeOptimizations.java": "e49d5ccd20b61c709a072f60ccb1f194fb447d46a6f319fb596f61087986f782",
-        "src/qm/performance/dungeons/DungeonsDataOptimizations.java": "5285869e2d1083163e61bce30252df8c1b3cd99058e0739179245f013e93bc4e",
-        "src/qm/performance/dungeons/DungeonsEvents.java": "f3810f83b12e2aee385fdc0ad7e5464ff3708aa8b499927eb45d0734d1064113",
-        "src/qm/performance/dungeons/EntityTagCondition.java": "f3ed2525ec76f19f94aa7b54ab69279c6557ff86c0d03754203b3300387b8539",
-        "src/qm/performance/guardian/DeadlineIndex.java": "7012d74099b50406cb7f86fe8f16a659133392b403a7840ff22dfb50c6fc3de3",
-        "src/qm/performance/guardian/GuardianLedger.java": "2645c9bd6e93f68c6ea9823ae5ff8067290aecd09325c3b9b88ea6245387256a",
-        "src/qm/performance/guardian/GuardianLifecycle.java": "9da1af7f23de2047e4d4b5148b0c3d75cec47cc742dfab4a9fe819d2772aaf02",
-        "src/qm/performance/mixin/dungeons/AdvancementDataMixin.java": "3d018993b59b6b645c02d1dd8f6f414a9bb2c78030cd727487ba2974dcac96fb",
-        "src/qm/performance/mixin/dungeons/EnchantmentDataMixin.java": "dab4f1a21bd263f2460da57707cd865ea7c9909556529cf46aa2f91dc26ca0ff",
-        "src/qm/performance/mixin/guardian/GuardianDespawnMixin.java": "576ae68d3b5b24fb7837c0d5bd1dc42079d3347ee020b6b69431bed8fdad83d0",
-        "src/qm/performance/mixin/worldgen/TunnelStructureMixin.java": "cfd0397a5d228a19fcf079c271d2b0dda5ad6a017496f831ca4b221eb59ec8ae",
-        "src/qm/performance/worldgen/TunnelHeightCache.java": "510d8b5209c03ef25093432e8846212f14eaf4aa5741581646eb943511d87065"
-      },
-      "production_jar_sha256": "07a75c97becb0f365391ad157eecc809a6de40fe92bfb12765add26a5ac12b11"
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0"
+      }
     }
   ]
 }

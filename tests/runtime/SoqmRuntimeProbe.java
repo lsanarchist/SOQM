@@ -20,12 +20,9 @@ import dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag;
 import dev.ftb.mods.ftblibrary.snbt.SNBT;
 import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
 import dev.ftb.mods.ftbquests.quest.TeamData;
-import dev.ftb.mods.ftbquests.quest.reward.ItemReward;
-import dev.ftb.mods.ftbquests.quest.reward.RandomReward;
 import dev.ftb.mods.ftbquests.quest.reward.Reward;
 import dev.ftb.mods.ftbquests.quest.task.Task;
 import dev.ftb.mods.ftbquests.quest.task.AdvancementTask;
-import io.netty.buffer.Unpooled;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -38,9 +35,7 @@ import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
-import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -50,7 +45,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.CommonListenerCookie;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -78,6 +72,7 @@ public final class SoqmRuntimeProbe {
     private BlockPos origin;
     private SNBTCompoundTag upgradeState;
     private final List<Long> claimedRewardIds = new ArrayList<>();
+    private final List<Long> legacySharedRewardIds = new ArrayList<>();
     private TeamData meTaskTeam;
 
     public SoqmRuntimeProbe() { NeoForge.EVENT_BUS.addListener(this::tick); }
@@ -88,10 +83,9 @@ public final class SoqmRuntimeProbe {
         try {
             if (stage == 0) {
                 check(ServerQuestFile.INSTANCE != null, "FTB quest file is loaded");
-                testRewards(server);
+                testRecipeEvidence(server);
                 testProgressUpgrade(server);
                 prepareWorkshop(server);
-                testClaimDelivery();
                 began = server.getTickCount(); stage = 1;
             } else if (stage == 1 && server.getTickCount() - began >= 80) {
                 check(!terminal.getMainNode().isActive(), "Unpowered ME fixture must be inactive");
@@ -117,10 +111,16 @@ public final class SoqmRuntimeProbe {
                 results.put("me_native_terminal_craft_passed", true);
                 results.put("me_network_storage_preserved", true);
                 player.getAdvancements().save();
+                ProductionEvidenceProbe.begin(server, results);
+                stage = 4;
+            } else if (stage == 4 && ProductionEvidenceProbe.tick(server, results)) {
+                ProgressiveRewardsProbe.run(server, results);
                 writeResult(false, "awaiting_reload", null);
                 stage = 3;
             } else if (stage == 3 && Files.exists(Path.of("soqm_probe_reload_complete"))) {
                 testReloadPersistence(server);
+                ProductionEvidenceProbe.verifyReload(server, results);
+                ProgressiveRewardsProbe.verifyReload(server, results);
                 finish(true, null);
             }
         } catch (Throwable failure) {
@@ -129,45 +129,35 @@ public final class SoqmRuntimeProbe {
         }
     }
 
-    private void testRewards(MinecraftServer server) {
-        ServerQuestFile file = ServerQuestFile.INSTANCE;
-        List<RandomReward> randomRewards = new ArrayList<>();
-        file.forAllQuests(q -> q.getRewards().forEach(r -> { if (r instanceof RandomReward rr) randomRewards.add(rr); }));
-        check(!randomRewards.isEmpty(), "Actual campaign has native random rewards");
-        int weightedEntries = 0;
-        for (RandomReward reward : randomRewards) {
-            var table = reward.getTable();
-            check(table != null && !table.getWeightedRewards().isEmpty(), "Resolved nonempty reward table");
-            check(table.getTotalWeight(false) > 0, "Positive table weight");
-            for (var entry : table.getWeightedRewards()) {
-                check(entry.getWeight() > 0 && Float.isFinite(entry.getWeight()), "Finite positive reward weight");
-                check(entry.getReward() instanceof ItemReward item && !item.getItem().isEmpty() && item.getCount() > 0,
-                        "Each table entry resolves to a real item");
-                weightedEntries++;
+    private void testRecipeEvidence(MinecraftServer server) throws Exception {
+        JsonObject items = JsonParser.parseString(Files.readString(Path.of("soqm_probe_recipe_evidence.json")))
+                .getAsJsonObject().getAsJsonObject("items");
+        var uniqueRecipes = new java.util.HashSet<String>();
+        int manufactured = 0;
+        for (var itemEntry : items.entrySet()) {
+            String itemId = itemEntry.getKey();
+            check(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemId)),
+                    "Catalogue prize is registered: " + itemId);
+            JsonObject evidence = itemEntry.getValue().getAsJsonObject();
+            if (evidence.get("starter_supply").getAsBoolean()) continue;
+            var recipes = evidence.getAsJsonArray("production_recipes");
+            check(recipes != null && !recipes.isEmpty(), "Expensive prize has productive recipe evidence: " + itemId);
+            for (var element : recipes) {
+                JsonObject definition = element.getAsJsonObject();
+                String id = definition.get("id").getAsString();
+                var recipe = server.getRecipeManager().byKey(ResourceLocation.parse(id));
+                check(recipe.isPresent(), "Production recipe remains registered after pack overrides: " + id + " -> " + itemId);
+                ItemStack output = recipe.orElseThrow().value().getResultItem(server.registryAccess());
+                check(output.isEmpty() || BuiltInRegistries.ITEM.getKey(output.getItem()).toString().equals(itemId),
+                        "A fixed recipe output matches its catalogue evidence: " + id + " -> " + itemId);
+                uniqueRecipes.add(id);
             }
-            CompoundTag disk = new CompoundTag();
-            reward.writeData(disk, server.registryAccess());
-            RandomReward diskCopy = new RandomReward(reward.id, reward.getQuest());
-            diskCopy.readData(disk, server.registryAccess());
-            check(diskCopy.getTable() != null && diskCopy.getTable().id == table.id,
-                    "Random reward NBT round trip retains table");
-            RegistryFriendlyByteBuf network = new RegistryFriendlyByteBuf(Unpooled.buffer(), server.registryAccess());
-            try {
-                reward.writeNetData(network);
-                RandomReward networkCopy = new RandomReward(reward.id, reward.getQuest());
-                networkCopy.readNetData(network);
-                check(network.readableBytes() == 0 && networkCopy.getTable() != null
-                        && networkCopy.getTable().id == table.id, "Native reward packet round trip");
-            } finally { network.release(); }
-            RandomSource random = RandomSource.create(884411L);
-            for (int i = 0; i < 32; i++) {
-                var selected = table.generateWeightedRandomRewards(random, 1, false);
-                check(selected.size() == 1 && table.getWeightedRewards().contains(selected.iterator().next()),
-                        "A native random claim resolves to exactly one configured reward");
-            }
+            manufactured++;
         }
-        results.put("native_random_rewards_roundtripped", randomRewards.size());
-        results.put("resolved_weighted_entries", weightedEntries);
+        check(manufactured == 202, "Every distinct manufactured reward has a native recipe route");
+        results.put("native_registered_catalogue_items", items.size());
+        results.put("native_registered_manufactured_catalogue_items", manufactured);
+        results.put("native_registered_production_recipe_ids", uniqueRecipes.size());
     }
 
     private void testProgressUpgrade(MinecraftServer server) throws Exception {
@@ -193,7 +183,7 @@ public final class SoqmRuntimeProbe {
         });
         check(!progress.isEmpty() && !claimed.isEmpty(), "Upgrade fixture contains actual progress and claims");
         SNBTCompoundTag saved = before.serializeNBT();
-        SNBT.tryWrite(Path.of("soqm_probe_before.snbt").toAbsolutePath(), saved);
+        SNBT.tryWrite(Path.of("soqm_probe_legacy.snbt").toAbsolutePath(), saved);
         TeamData after = new TeamData(TEAM, current);
         after.deserializeNBT(saved);
         int partial = 0;
@@ -202,64 +192,43 @@ public final class SoqmRuntimeProbe {
             check(task != null && after.getProgress(task) == before.getProgress(oldTask), "Task progress retained by persistent ID");
             if (before.getProgress(oldTask) < oldTask.getMaxProgress()) partial++;
         }
-        int teamClaims = 0;
+        check(saved.equals(after.serializeNBT()), "Loading personal reward definitions preserves all legacy claim keys");
+        int sharedMigrations = 0;
         int personalClaims = 0;
         for (Reward oldReward : claimed) {
             Reward reward = current.getReward(oldReward.id);
-            check(reward != null && after.isRewardClaimed(PLAYER, reward), "Old claimed reward remains claimed after type change");
-            check(!after.markRewardAsClaimed(PLAYER, reward, 2_000_000L), "Reload cannot grant a second claim");
-            check(oldReward.isTeamReward() == reward.isTeamReward(), "Upgrade preserves team/personal reward scope");
-            check(after.isRewardClaimed(TEAMMATE, reward) == oldReward.isTeamReward(),
-                    "A teammate shares team claims while keeping a separate personal-book claim");
+            check(reward != null && !reward.isTeamReward(), "Every current reward has personal claim scope");
             if (oldReward.isTeamReward()) {
-                check(!after.markRewardAsClaimed(TEAMMATE, reward, 2_000_000L), "A teammate cannot claim a shared reward twice");
-                teamClaims++;
+                check(after.isRewardClaimed(new UUID(0L, 0L), reward), "The historical shared NIL_UUID claim remains recorded");
+                check(!after.isRewardClaimed(PLAYER, reward) && !after.isRewardClaimed(TEAMMATE, reward),
+                        "A legacy shared claim intentionally grants each member one new personal entitlement");
+                check(after.markRewardAsClaimed(PLAYER, reward, 2_000_000L)
+                        && after.markRewardAsClaimed(TEAMMATE, reward, 2_000_001L),
+                        "Both members may take their new personal reward once");
+                check(!after.markRewardAsClaimed(PLAYER, reward, 2_000_002L)
+                        && !after.markRewardAsClaimed(TEAMMATE, reward, 2_000_003L),
+                        "Personal migration does not allow duplicate claims");
+                check(after.isRewardClaimed(new UUID(0L, 0L), reward), "Personal claims retain historical shared evidence");
+                legacySharedRewardIds.add(reward.id);
+                sharedMigrations++;
             } else {
+                check(after.isRewardClaimed(PLAYER, reward)
+                        && !after.markRewardAsClaimed(PLAYER, reward, 2_000_000L),
+                        "An existing personal book claim is retained without a new entitlement");
+                check(!after.isRewardClaimed(TEAMMATE, reward), "The other member keeps an independent personal book entitlement");
                 personalClaims++;
             }
         }
-        check(teamClaims > 0 && personalClaims > 0, "Both shared and personal reward scopes were exercised");
+        check(sharedMigrations == 1625 && personalClaims == 1, "Exactly the authorized shared-to-personal migration was exercised");
         check(partial > 0, "Nonempty partial task progress was exercised");
-        check(saved.equals(after.serializeNBT()), "Native TeamData round trip retains full fixture state");
-        upgradeState = saved;
+        upgradeState = after.serializeNBT();
+        SNBT.tryWrite(Path.of("soqm_probe_before.snbt").toAbsolutePath(), upgradeState);
         claimed.forEach(reward -> claimedRewardIds.add(reward.id));
-        results.put("old_claims_preserved_and_duplicate_claims_rejected", claimed.size());
+        results.put("legacy_shared_keys_preserved_and_new_personal_entitlements", sharedMigrations);
+        results.put("migrated_personal_duplicate_claims_rejected_for_two_members", sharedMigrations * 2);
         results.put("task_progress_preserved", progress.size());
         results.put("partial_tasks_preserved", partial);
-        results.put("team_claims_shared_with_second_player", teamClaims);
-        results.put("personal_claims_distinct_for_second_player", personalClaims);
-    }
-
-    private void testClaimDelivery() {
-        var seenTables = new java.util.HashSet<Long>();
-        List<RandomReward> representatives = new ArrayList<>();
-        ServerQuestFile.INSTANCE.forAllQuests(q -> q.getRewards().forEach(reward -> {
-            if (reward instanceof RandomReward random && seenTables.add(random.getTable().id)) representatives.add(random);
-        }));
-        TeamData claims = new TeamData(UUID.fromString("764ff5bb-a6e5-4f31-a427-c0afad2055c0"), ServerQuestFile.INSTANCE);
-        for (RandomReward reward : representatives) {
-            player.getInventory().clearContent();
-            claims.claimReward(player, reward, false);
-            List<ItemStack> inventory = new ArrayList<>();
-            for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
-                ItemStack stack = player.getInventory().getItem(i);
-                if (!stack.isEmpty()) inventory.add(stack.copy());
-            }
-            check(!inventory.isEmpty(), "Native random claim delivers items to the synthetic player");
-            boolean configured = reward.getTable().getWeightedRewards().stream().anyMatch(entry -> {
-                ItemReward item = (ItemReward) entry.getReward();
-                return inventory.stream().allMatch(stack -> ItemStack.isSameItemSameComponents(stack, item.getItem()))
-                        && inventory.stream().mapToInt(ItemStack::getCount).sum() == item.getCount();
-            });
-            check(configured, "Delivered stack matches exactly one configured weighted reward");
-            int count = inventory.stream().mapToInt(ItemStack::getCount).sum();
-            claims.claimReward(player, reward, false);
-            int countAfter = 0;
-            for (int i = 0; i < player.getInventory().getContainerSize(); i++) countAfter += player.getInventory().getItem(i).getCount();
-            check(countAfter == count, "Claiming the same native random reward twice delivers nothing extra");
-        }
-        player.getInventory().clearContent();
-        results.put("native_random_claim_deliveries_and_duplicate_rejections", representatives.size());
+        results.put("existing_personal_book_claims_preserved", personalClaims);
     }
 
     private void testReloadPersistence(MinecraftServer server) throws Exception {
@@ -290,8 +259,12 @@ public final class SoqmRuntimeProbe {
             Reward reward = ServerQuestFile.INSTANCE.getReward(id);
             check(reward != null && restoredTeam.isRewardClaimed(PLAYER, reward)
                     && !restoredTeam.markRewardAsClaimed(PLAYER, reward, 3_000_000L), "Claim remains blocked after data reload");
-            check(restoredTeam.isRewardClaimed(TEAMMATE, reward) == reward.isTeamReward(),
-                    "Team and personal claim scope survives disk and data reload");
+            check(restoredTeam.isRewardClaimed(TEAMMATE, reward) == legacySharedRewardIds.contains(id),
+                    "Each member's personal claims survive disk and data reload independently");
+            if (legacySharedRewardIds.contains(id)) {
+                check(restoredTeam.isRewardClaimed(new UUID(0L, 0L), reward),
+                        "Historical shared claim keys survive disk and data reload");
+            }
         }
         results.put("me_advancement_reload_and_disk_persistence", true);
         results.put("nonempty_team_state_reload_and_disk_persistence", true);

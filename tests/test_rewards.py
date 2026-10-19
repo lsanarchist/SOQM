@@ -1,304 +1,230 @@
-"""Offline migration, progression and budget checks for native FTB supply rewards.
-
-These checks cover the data contract, not a substitute implementation of FTB's
-random generator. The pinned Java classes and in-game checks are documented in
-docs/REWARDS.md. No Minecraft installation or network is needed for this suite.
-"""
-
-from collections import Counter
+"""Regressions for progressive, personal reward policy and saved identities."""
 from copy import deepcopy
 from fractions import Fraction
 import json
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / 'scripts'))
 import campaign_rewards as rewards
+import campaign_refresh as refresh
 
 
-def read_json(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+def load(path):
+    return json.loads(path.read_text(encoding='utf-8'))
 
 
 def quests(chapters):
-    return [quest for chapter in chapters for quest in chapter["quests"]]
+    return [q for chapter in chapters for q in chapter['quests']]
 
 
 def outer_rewards(chapters):
-    return [reward for quest in quests(chapters) for reward in quest["rewards"]]
+    return [r for q in quests(chapters) for r in q['rewards']]
 
 
-def without_rewards(chapters):
-    result = deepcopy(chapters)
-    for quest in quests(result):
-        del quest["rewards"]
-    return result
-
-
-class RewardMigrationTests(unittest.TestCase):
+class ProgressiveRewardPolicyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.original = [read_json(path) for path in sorted((rewards.QUESTS / "chapters").glob("*.snbt"))]
-        cls.migrated = deepcopy(cls.original)
-        cls.locale = {"unrelated.key": "Existing translation"}
-        cls.summary = rewards.apply(cls.migrated, cls.locale)
         cls.policy = rewards.load_policy()
-        cls.tables = rewards.build_tables(cls.policy)
-        cls.tables_by_id = {int(table["id"], 16): table for table in cls.tables}
+        cls.chapters = rewards.chapters_from_disk()
+        cls.by_key = {p['key']: p for p in cls.policy['pools']}
+        cls.runtime = load(rewards.RUNTIME_PATH)
+        cls.all_produced = set(cls.runtime['production_items'])
+        cls.entries = [e for p in cls.policy['pools'] for e in p['entries']]
+        cls.groups = load(rewards.QUESTS / 'chapter_groups.snbt')['chapter_groups']
 
-    def test_migration_preserves_every_persistent_object_and_completion_condition(self):
-        self.assertEqual(rewards.persistent_ids(self.original), rewards.persistent_ids(self.migrated))
-        self.assertEqual(without_rewards(self.original), without_rewards(self.migrated))
-        self.assertEqual(len(self.migrated), 37)
-        self.assertEqual(len(quests(self.migrated)), 1625)
-        self.assertEqual(sum(len(q["tasks"]) for q in quests(self.migrated)), 1772)
-        self.assertEqual(len(outer_rewards(self.migrated)), 1626)
+    def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
+        self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
+        self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
+        self.assertEqual(len(self.runtime['reward_mappings']), 1611)
+        owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
+        for ident, mapping in self.runtime['reward_mappings'].items():
+            self.assertRegex(ident, rewards.ID_PATTERN)
+            self.assertEqual(mapping['quest_id'], owners[ident])
+            self.assertIn(mapping['pool'], self.by_key)
+        self.assertEqual(len(self.by_key), 14)
 
-    def test_outer_claim_identity_and_manual_team_behavior_are_unchanged(self):
-        """FTB claim keys use outer reward ID and personal/team scope, not type."""
-        for old, new in zip(outer_rewards(self.original), outer_rewards(self.migrated)):
-            with self.subTest(reward=old["id"]):
-                self.assertEqual((old["id"], old.get("team_reward", True)),
-                                 (new["id"], new.get("team_reward", True)))
-                self.assertEqual(old.get("auto", "disabled"), new.get("auto", "disabled"))
-                self.assertEqual(new["auto"], "disabled")
-        for quest in quests(self.migrated):
-            self.assertFalse(quest.get("can_repeat", False), quest["id"])
-            self.assertFalse(quest.get("repeatable", False), quest["id"])
+    def test_only_authorized_claim_scope_changes_without_changing_saved_ownership(self):
+        identity = load(ROOT / 'metadata/campaign_identity.json')
+        self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), identity['sha256'])
+        legacy = deepcopy(self.chapters)
+        changes = 0
+        for reward in outer_rewards(legacy):
+            self.assertFalse(reward['team_reward'])
+            if reward.get('item', {}).get('id') != 'ftbquests:book':
+                reward['team_reward'] = True
+                changes += 1
+        self.assertEqual(changes, 1625)
+        self.assertEqual(refresh.persistent_identity(legacy, self.groups), identity['previous_claim_scope']['sha256'])
+        self.assertEqual(rewards.persistent_ids(legacy), rewards.persistent_ids(self.chapters))
+        for quest in quests(self.chapters):
+            self.assertFalse(quest.get('can_repeat', False))
+            self.assertFalse(quest.get('repeatable', False))
 
-    def test_only_reviewed_milestones_keep_one_cube_and_intro_book_stays_personal(self):
-        seen_milestones = Counter()
-        books = []
-        for quest in quests(self.migrated):
-            for reward in quest["rewards"]:
-                if reward["type"] == "random":
-                    self.assertTrue(reward["team_reward"])
+    def test_native_custom_flags_icons_and_localized_titles_are_complete(self):
+        uk = load(rewards.QUESTS / 'lang/uk_ua.snbt')
+        en = load(rewards.QUESTS / 'lang/en_us.snbt')
+        count = 0
+        for reward in outer_rewards(self.chapters):
+            self.assertFalse(reward['team_reward'])
+            self.assertEqual(reward.get('auto', 'disabled'), 'disabled')
+            if reward['type'] == 'custom':
+                count += 1
+                self.assertIn(rewards.PROGRESSIVE_TAG, reward['tags'])
+                self.assertRegex(reward['icon'], rewards.ITEM_PATTERN)
+                self.assertNotIn('table_id', reward)
+                self.assertNotIn('command', reward)
+                self.assertNotIn('item', reward)
+                for locale in (uk, en):
+                    self.assertTrue(locale[f"reward.{reward['id']}.title"])
+        self.assertEqual(count, 1611)
+
+    def test_fixed_milestones_and_original_personal_book_are_retained(self):
+        cubes = books = 0
+        for quest in quests(self.chapters):
+            for reward in quest['rewards']:
+                if reward['type'] == 'custom':
                     continue
-                self.assertEqual(reward["type"], "item")
-                if reward["item"]["id"] == "ftbquests:book":
-                    self.assertEqual(quest["id"], rewards.BOOK_QUEST)
-                    self.assertFalse(reward["team_reward"])
-                    books.append(reward)
+                self.assertEqual(reward['type'], 'item')
+                self.assertEqual(reward.get('count', 1), 1)
+                if reward['item']['id'] == 'ftbquests:book':
+                    books += 1
+                    self.assertEqual(quest['id'], rewards.BOOK_QUEST)
                 else:
-                    self.assertIn(quest["id"], self.policy["milestones"])
-                    milestone = self.policy["milestones"][quest["id"]]
-                    self.assertEqual(reward["item"]["id"], f"kubejs:mayhem_cube_t{milestone['tier']}")
-                    self.assertEqual(reward["count"], 1)
-                    self.assertEqual(reward["random_bonus"], 0)
-                    self.assertTrue(reward["team_reward"])
-                    seen_milestones[quest["id"]] += 1
-        self.assertEqual(seen_milestones, Counter({qid: 1 for qid in self.policy["milestones"]}))
-        self.assertEqual(len(books), 1)
-        old_book = next(r for r in outer_rewards(self.original)
-                        if r.get("item", {}).get("id") == "ftbquests:book")
-        self.assertEqual(books[0], old_book)
-        self.assertEqual(self.summary["milestone_cubes"], 14)
-        self.assertEqual(self.summary["random_rewards"], 1611)
-        self.assertEqual(self.summary["personal_books"], 1)
+                    cubes += 1
+                    self.assertEqual(reward['item']['id'], f"kubejs:mayhem_cube_t{self.policy['milestones'][quest['id']]['tier']}")
+        self.assertEqual((cubes, books), (14, 1))
 
-    def test_random_reward_references_fit_pinned_json_snbt_integer_parser(self):
-        used = set()
-        for reward in outer_rewards(self.migrated):
-            if reward["type"] == "random":
-                ident = reward["table_id"]
-                self.assertIs(type(ident), int, "RandomReward.readData uses getLong, not a hex string")
-                self.assertGreater(ident, 0)
-                self.assertLessEqual(ident, 2**31 - 1, "Bare JSON longs fail pinned SNBT Integer.parseInt")
-                self.assertIn(ident, self.tables_by_id)
-                self.assertNotIn("item", reward)
-                self.assertNotIn("count", reward)
-                self.assertNotIn("command", reward)
-                used.add(ident)
-        self.assertEqual(used, set(self.tables_by_id), "Unused tables need an explicit design review")
+    def test_player_guidance_matches_personal_claims_and_real_reward_types(self):
+        uk = load(rewards.QUESTS / 'lang/uk_ua.snbt')
+        all_descriptions = '\n'.join(line for key, lines in uk.items() if key.endswith('.quest_desc') for line in lines)
+        self.assertNotIn('Нагорода одноразова для команди', all_descriptions)
+        self.assertNotIn('Нагорода команді одноразова', all_descriptions)
+        for ident in ('5142421100000008', '5142421100000017', '5142421100000019'):
+            quest = next(q for q in quests(self.chapters) if q['id'] == ident)
+            self.assertTrue(all(r['type'] == 'custom' for r in quest['rewards']))
+            self.assertNotIn('збережи куб', '\n'.join(uk[f'quest.{ident}.quest_desc']))
 
-    def test_pool_themes_and_fallbacks_respect_each_quests_stage(self):
-        self.assertEqual(set(self.policy["chapter_pools"]), {c["filename"] for c in self.migrated})
-        pools = {int(pool["id"], 16): pool for pool in self.policy["pools"]}
-        for chapter in self.migrated:
-            for quest in chapter["quests"]:
-                for reward in quest["rewards"]:
-                    if reward["type"] == "random":
-                        pool = pools[reward["table_id"]]
-                        with self.subTest(quest=quest["id"], pool=pool["key"]):
-                            self.assertLessEqual(pool["min_stage"], rewards.quest_stage(quest))
-                            for entry in pool["entries"]:
-                                self.assertLessEqual(rewards.SAFE_ITEMS[entry["item"]], rewards.quest_stage(quest))
-        # Concrete boundary: early magic objectives get research supplies, not Nether materials.
-        magic = {"filename": "qm_v030_15_botania"}
-        self.assertEqual(rewards.choose_pool(magic, {"tags": ["stage_0"]}, self.policy)["key"], "scholar")
-        self.assertEqual(rewards.choose_pool(magic, {"tags": ["stage_2"]}, self.policy)["key"], "arcane")
-        finale = {"filename": "qm_v030_26_avaritia"}
-        self.assertEqual(rewards.choose_pool(finale, {"tags": ["stage_0"]}, self.policy)["key"], "workshop")
-        self.assertEqual(rewards.choose_pool(finale, {"tags": ["stage_5"]}, self.policy)["key"], "masterwork")
-
-    def test_intro_iron_tool_rewards_cannot_recreate_ninety_six_ingot_payout(self):
-        """The former 32+32+32 iron payout is removed, independently of pool EV."""
-        tool_quests = {"513011209CCD8C68", "513011350308FBB4", "51301129D6E9E5E6"}
-        actual = [q for q in quests(self.migrated) if q["id"] in tool_quests]
-        self.assertEqual(len(actual), 3)
-        for quest in actual:
-            reward, = quest["rewards"]
-            self.assertEqual(reward["type"], "random")
-            table = self.tables_by_id[reward["table_id"]]
-            self.assertTrue(all(r["item"]["id"] not in {"minecraft:iron_ingot", "minecraft:iron_nugget"}
-                                for r in table["rewards"]))
-            self.assertTrue(all(r["count"] <= 4 for r in table["rewards"]))
-
-    def test_ordinary_rewards_cannot_supply_a_quest_unlock_or_nested_cube(self):
-        actual_items = {r["item"]["id"] for table in self.tables for r in table["rewards"]}
-        forbidden = {
-            "minecraft:bucket", "minecraft:diamond", "minecraft:netherite_ingot",
-            "minecraft:blaze_rod", "minecraft:ender_pearl", "minecraft:nether_star",
-            "mekanism:hdpe_pellet", "ae2:logic_processor", "ae2:calculation_processor",
-            "ae2:engineering_processor", "kubejs:industrial_chassis",
-            "kubejs:precision_mechanism", "kubejs:dimensional_matrix", "kubejs:stellar_alloy",
-            "kubejs:mythic_circuit", "kubejs:emc_core", "kubejs:quantum_processor",
+    def test_catalogue_is_substantially_larger_and_contains_real_mod_families(self):
+        self.assertGreaterEqual(len(self.entries), 14 * 16)
+        modded = {e['item'] for e in self.entries if not e['item'].startswith('minecraft:')}
+        self.assertGreaterEqual(len(modded), 50)
+        items = {e['item'] for e in self.entries}
+        required = set(rewards.GATES) | {
+            'kubejs:quantum_processor', 'kubejs:radiation_shield', 'kubejs:reinforced_netherite_plate',
+            'ae2:logic_processor', 'ae2:calculation_processor', 'ae2:engineering_processor',
+            'sophisticatedstorage:barrel', 'sophisticatedstorage:iron_barrel',
+            'sophisticatedstorage:gold_barrel', 'sophisticatedstorage:diamond_barrel',
+            'sophisticatedstorage:netherite_barrel',
         }
-        self.assertFalse(actual_items & forbidden)
-        self.assertLessEqual(actual_items, set(rewards.SAFE_ITEMS))
-        self.assertTrue(all(item.startswith("minecraft:") for item in actual_items))
-        for table in self.tables:
-            self.assertTrue(all(r["type"] == "item" for r in table["rewards"]), "No nested random rolls")
+        self.assertFalse(required - items, required - items)
+        for entry in self.entries:
+            self.assertTrue(entry['evidence'])
 
-    def test_apply_is_idempotent_and_locale_only_adds_pool_titles(self):
-        again = deepcopy(self.migrated)
-        locale = deepcopy(self.locale)
-        report = rewards.apply(again, locale)
-        self.assertEqual(again, self.migrated)
-        self.assertEqual(locale, self.locale)
-        self.assertEqual(report, self.summary)
-        self.assertEqual(locale["unrelated.key"], "Existing translation")
-        expected = rewards.locale_entries("uk_ua")
-        self.assertEqual(set(locale), set(expected) | {"unrelated.key"})
-        self.assertEqual(set(expected), set(rewards.locale_entries("en_us")))
-        self.assertEqual(len(expected), 14)
+    def test_requested_expensive_items_require_production_of_that_exact_output(self):
+        requested = set(rewards.GATES) | {'kubejs:quantum_processor', 'kubejs:radiation_shield',
+                    'kubejs:reinforced_netherite_plate', 'ae2:logic_processor',
+                    'ae2:calculation_processor', 'ae2:engineering_processor'}
+        for entry in self.entries:
+            if entry['item'] in requested or entry['item'].startswith(('sophisticatedstorage:', 'sophisticatedbackpacks:')):
+                self.assertIn(entry['item'], entry['requires_craft'])
+                self.assertEqual(entry['count'], 1)
 
-    def test_stage_budgets_are_complete_and_early_claims_have_no_late_supplies(self):
-        budgets = self.summary["stage_budgets"]
-        self.assertEqual(sum(b["claims"] for b in budgets.values()), 1611)
-        self.assertAlmostEqual(sum(b["expected_supply_items"] for b in budgets.values()),
-                               self.summary["expected_supply_items"], places=3)
-        for key in ("expected_golden_carrots", "expected_xp_bottles", "expected_name_tags", "expected_emeralds"):
-            self.assertEqual(budgets["early_0_1"][key], 0)
-        self.assertEqual(budgets["mid_2_3"]["expected_name_tags"], 0)
-        self.assertEqual(budgets["mid_2_3"]["expected_emeralds"], 0)
-        self.assertGreater(budgets["late_4_6"]["expected_name_tags"], 0)
-        self.assertGreater(budgets["late_4_6"]["expected_emeralds"], 0)
-        for budget in budgets.values():
-            self.assertLessEqual(budget["expected_supply_items"], budget["claims"] * 4)
-            self.assertLessEqual(budget["expected_iron_ingots"], budget["claims"] * 0.4)
+    def test_fresh_team_and_high_level_without_specific_production_keep_items_locked(self):
+        for pool in self.policy['pools']:
+            fresh = rewards.eligible_entries(pool, 0, set())
+            self.assertGreaterEqual(len(fresh), 5)
+            self.assertTrue(all(not e.get('requires_craft') for e in fresh))
+            all_gates = set(rewards.GATES)
+            unlocked = {e['item'] for e in rewards.eligible_entries(pool, 6, all_gates)}
+            for entry in pool['entries']:
+                if set(entry.get('requires_craft', [])) - all_gates:
+                    self.assertNotIn(entry['item'], unlocked)
 
-    def test_all_table_and_inner_ids_are_unique_and_do_not_overlap_saved_ids(self):
-        groups = read_json(rewards.QUESTS / "chapter_groups.snbt")["chapter_groups"]
-        ids = rewards.persistent_ids(self.migrated) + [group["id"] for group in groups]
-        new_ids = [table["id"] for table in self.tables]
-        new_ids.extend(r["id"] for table in self.tables for r in table["rewards"])
-        self.assertFalse(set(ids) & set(new_ids))
-        self.assertEqual(len(ids + new_ids), len(set(ids + new_ids)))
-        self.assertEqual(len(new_ids), 84)
-        self.assertTrue(all(rewards.ID_PATTERN.fullmatch(ident) for ident in new_ids))
+    def test_logic_processor_and_lower_barrel_do_not_unlock_other_variants(self):
+        produced = set(rewards.GATES) | {'ae2:logic_processor', 'sophisticatedstorage:iron_barrel'}
+        items = {e['item'] for p in self.policy['pools'] for e in rewards.eligible_entries(p, 6, produced)}
+        self.assertIn('ae2:logic_processor', items)
+        self.assertIn('sophisticatedstorage:iron_barrel', items)
+        for item in ('ae2:engineering_processor', 'ae2:calculation_processor', 'sophisticatedstorage:diamond_barrel'):
+            self.assertNotIn(item, items)
 
-    def test_bad_existing_claim_flags_or_ids_require_review(self):
-        changed = deepcopy(self.original)
-        reward = next(r for r in outer_rewards(changed) if r.get("team_reward", True))
-        reward["auto"] = "enabled"
-        with self.assertRaisesRegex(ValueError, "non-manual"):
-            rewards.apply(changed, {})
-        collision = deepcopy(self.original)
-        collision[0]["id"] = self.tables[0]["id"]
-        before = deepcopy(collision)
-        with self.assertRaisesRegex(ValueError, "collide"):
-            rewards.apply(collision, {})
-        self.assertEqual(collision, before)
+    def test_every_catalogue_entry_is_reachable_and_more_evidence_never_relocks_a_prize(self):
+        for pool in self.policy['pools']:
+            complete = rewards.eligible_entries(pool, 6, self.all_produced)
+            self.assertEqual(complete, pool['entries'])
+            previous = set()
+            produced = set()
+            for item in sorted(self.all_produced):
+                produced.add(item)
+                level = rewards.production_level(produced, self.policy)
+                current = {e['item'] for e in rewards.eligible_entries(pool, level, produced)}
+                self.assertLessEqual(previous, current)
+                previous = current
 
+    def test_exact_probabilities_normalize_at_each_level_with_locked_groups(self):
+        for level in range(7):
+            produced = set(rewards.GATES[:level])
+            self.assertEqual(rewards.production_level(produced, self.policy), level)
+            for pool in self.policy['pools']:
+                odds = rewards.probabilities(pool, level, produced, self.policy)
+                self.assertEqual(sum(odds.values()), Fraction(1))
+                self.assertTrue(all(0 < p <= 1 for p in odds.values()))
+                self.assertEqual(set(odds), {e['item'] for e in rewards.eligible_entries(pool, level, produced)})
 
-class RewardBudgetTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.policy = rewards.load_policy()
+    def test_more_draws_and_rare_group_weights_follow_actual_material_milestones(self):
+        self.assertEqual(self.policy['draws_by_level'], [2, 2, 3, 3, 3, 4, 4])
+        rare = [r['rare'] + r['epic'] for r in self.policy['rarity_weights_by_level']]
+        self.assertEqual(rare, sorted(rare))
+        self.assertGreater(rare[-1], rare[0])
+        self.assertEqual(rewards.production_level(set(), self.policy), 0)
+        self.assertEqual(rewards.production_level({'kubejs:precision_mechanism'}, self.policy), 2)
 
-    def test_one_small_positive_weighted_draw_and_visible_probabilities(self):
-        for table in rewards.build_tables(self.policy):
-            with self.subTest(table=table["id"]):
-                self.assertEqual(table["loot_size"], 1)
-                self.assertEqual(table["empty_weight"], 0)
-                self.assertFalse(table["hide_tooltip"])
-                self.assertTrue(table["use_title"])
-                self.assertEqual(len(table["rewards"]), 5)
-                self.assertEqual(sum(r["weight"] for r in table["rewards"]), 100)
-                for entry in table["rewards"]:
-                    self.assertGreater(entry["weight"], 0, "Zero-weight FTB entries are automatic grants")
-                    self.assertGreaterEqual(entry["count"], 1)
-                    self.assertLessEqual(entry["count"], 4)
-                    self.assertEqual(entry["random_bonus"], 0)
+    def test_plastic_hdpe_nested_cubes_and_oversized_stacks_remain_excluded(self):
+        for entry in self.entries:
+            self.assertFalse(any(x in entry['item'] for x in ('plastic', 'hdpe', 'mayhem_cube')))
+            self.assertLessEqual(entry['count'], 4)
+        # Even four identical draws cannot recreate a 32/64-item ordinary payout.
+        self.assertLessEqual(max(self.policy['draws_by_level']) * max(e['count'] for e in self.entries), 16)
 
-    def test_weighted_supply_and_iron_budget_with_exact_arithmetic(self):
-        iron_units = {"minecraft:iron_ingot": Fraction(1), "minecraft:iron_nugget": Fraction(1, 9)}
-        for pool in self.policy["pools"]:
-            with self.subTest(pool=pool["key"]):
-                self.assertLessEqual(rewards.expected_units(pool), 4)
-                self.assertGreaterEqual(rewards.expected_units(pool), 1)
-                self.assertLessEqual(rewards.expected_iron(pool), Fraction(2, 5))
-                # Even the luckiest individual supply claim is at most one ingot.
-                self.assertLessEqual(max(e["count"] * iron_units.get(e["item"], 0) for e in pool["entries"]), 1)
-        workshop = next(pool for pool in self.policy["pools"] if pool["key"] == "workshop")
-        self.assertEqual(rewards.expected_iron(workshop), Fraction(17, 60))
-        self.assertEqual(rewards.expected_units(workshop), Fraction(51, 20))
+    def test_whitelist_equals_exact_craft_requirements_and_has_no_stale_tables(self):
+        expected = set(rewards.GATES)
+        for entry in self.entries:
+            expected.update(entry.get('requires_craft', []))
+        self.assertEqual(self.runtime['production_items'], sorted(expected))
+        self.assertEqual(rewards.obsolete_tables(), [])
+        self.assertTrue(all('evidence' not in e for p in self.runtime['pools'] for e in p['entries']))
 
-    def test_policy_rejects_unsafe_budget_schema_and_progression_changes(self):
-        def mutate(path, value):
+    def test_refresh_is_idempotent_and_keeps_unrelated_locale_and_saved_ids(self):
+        chapters = deepcopy(self.chapters)
+        locale = {'unrelated.key': 'untouched'}
+        report = rewards.apply(chapters, locale)
+        self.assertEqual(chapters, self.chapters)
+        self.assertEqual(report['personal_rewards'], 1626)
+        self.assertEqual(report['progressive_rewards'], 1611)
+        self.assertEqual(locale['unrelated.key'], 'untouched')
+        again = deepcopy(locale)
+        self.assertEqual(rewards.apply(chapters, again), report)
+        self.assertEqual(again, locale)
+        self.assertEqual(set(rewards.locale_entries('uk_ua')), set(rewards.locale_entries('en_us')))
+
+    def test_invalid_conditions_or_quantities_are_rejected_before_publication(self):
+        for mutation in ('negative_weight', 'too_many', 'missing_exact_proof', 'plastic'):
             policy = deepcopy(self.policy)
-            current = policy
-            for key in path[:-1]:
-                current = current[key]
-            current[path[-1]] = value
-            return policy
-
-        cases = [
-            (("pools", 0, "entries", 0, "weight"), 0, "Zero weight"),
-            (("pools", 0, "entries", 0, "item"), "mekanism:hdpe_pellet", "Unsafe item"),
-            (("pools", 0, "entries", 0, "item"), "minecraft:glowstone_dust", "premature"),
-            (("pools", 0, "entries", 0, "count"), 16, "small stack"),
-            (("pools", 0, "entries", 0, "count"), True, "small stack"),
-            (("pools", 0, "entries", 0, "weight"), 29, "total 100"),
-            (("pools", 0, "id"), "0414572B7C36F04F", "JSON-safe range"),
-            (("pools", 0, "id"), self.policy["pools"][1]["id"], "ID collision"),
-            (("pools", 2, "fallback"), "engineering", "fallback cycle"),
-        ]
-        for path, value, error in cases:
-            with self.subTest(path=path, value=value):
-                with self.assertRaisesRegex(ValueError, error):
-                    rewards.validate_policy(mutate(path, value))
-        iron_heavy = deepcopy(self.policy)
-        workshop = iron_heavy["pools"][1]
-        next(e for e in workshop["entries"] if e["item"] == "minecraft:iron_ingot")["count"] = 4
-        with self.assertRaisesRegex(ValueError, "expected iron"):
-            rewards.validate_policy(iron_heavy)
-
-    def test_committed_tables_match_reviewed_policy_exactly(self):
-        expected = rewards.expected_files(self.policy)
-        committed = {path.name: path.read_text(encoding="utf-8")
-                     for path in rewards.TABLES_PATH.glob("*.snbt")}
-        self.assertEqual(committed, expected, "Regenerate with python scripts/campaign_rewards.py --write")
-        for filename, content in committed.items():
-            self.assertEqual(json.loads(content)["id"], Path(filename).stem)
-
-    def test_table_writer_is_deterministic_and_refuses_silent_id_removal(self):
-        with tempfile.TemporaryDirectory() as temporary:
-            directory = Path(temporary)
-            self.assertEqual(rewards.write_tables(directory), 14)
-            first = {p.name: p.read_bytes() for p in directory.iterdir()}
-            self.assertEqual(rewards.write_tables(directory), 14)
-            self.assertEqual(first, {p.name: p.read_bytes() for p in directory.iterdir()})
-            stale = directory / "000000006A51FFFF.snbt"
-            stale.write_text("{}\n", encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "stale table IDs"):
-                rewards.write_tables(directory)
-            self.assertTrue(stale.exists())
+            entry = next(e for p in policy['pools'] for e in p['entries'] if e['item'] == 'kubejs:industrial_chassis')
+            if mutation == 'negative_weight': entry['weight'] = -1
+            elif mutation == 'too_many': entry['count'] = 64
+            elif mutation == 'missing_exact_proof': entry['requires_craft'] = []
+            else: entry['item'] = 'mekanism:hdpe_pellet'
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                rewards.validate_policy(policy)
+        chapters = deepcopy(self.chapters)
+        outer_rewards(chapters)[0]['auto'] = 'enabled'
+        with self.assertRaisesRegex(ValueError, 'non-manual'):
+            rewards.apply(chapters, {})
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

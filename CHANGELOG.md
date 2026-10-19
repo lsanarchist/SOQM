@@ -2,7 +2,30 @@
 
 ## Unreleased
 
-### Skill advancement observation
+### 0.4.8 — personal rewards that improve with production
+
+- Expand the 14 themed pools to 326 entries: 240 distinct items, including 210
+  modded items. Add custom chassis/circuits, AE2 processors, all six
+  Sophisticated barrel tiers, storage/backpack upgrades and useful modded supplies.
+- Award each member one personal pack per ordinary quest, with 2/2/3/3/3/4/4
+  independent draws at production levels 0–6. Increase rare/epic group weights
+  as the team manufactures the six material milestones. Keep all outer reward IDs.
+- Require actual production of the exact expensive prize. Add an event-based
+  native adapter for crafting, AE2 assembly/Inscriber, Mekanism infusing and
+  consumed Sophisticated Storage upgrades. Pickup, reward delivery, renaming,
+  reset recipes, fake players and creative manufacture do not establish proof.
+- Keep production discoveries in persisted FTB Teams data. Party discoveries
+  remain shared; departing members retain only their own production. Preserve
+  native personal claims across team transitions and persist merged claim data.
+- Intentionally grant one new personal entitlement for each formerly shared
+  reward on completed quests. Preserve historical shared keys and old personal
+  book claims; subsequent duplicate claims remain blocked for each member.
+- Add bilingual read-only reward status, eligible-item odds and unlock conditions
+  through `/soqm rewards` and `/soqm rewards pool <theme>`. Retire the 14 static
+  tables. Keep plastic/HDPE excluded and produce fresh, empty default containers.
+- Include the authored production adapter source, deterministic build, binary
+  pin, recipe evidence and native manufacture/claim/persistence regression gates.
+  Details and the complete catalogue are in [REWARDS](docs/REWARDS.md).
 
 - Replace nine skill-milestone tick/NBT criteria with explicit advancement
   grants from Pufferfish Skills unlock rewards. Existing unlocked skills are
@@ -10,25 +33,6 @@
   capstone's any-one-branch rule and historical completion after respec are
   retained. No new mod or polling script is required. See the
   [patch notes](docs/SKILLS_OPTIMIZATION.md) for scope and validation.
-
-### 0.4.7 — world generation and background work
-
-- Reuse duplicate Abandoned Tunnels height queries within one generation call;
-  preserve placement, random draws, terrain checks and tunnel layout.
-- Migrate Mayhem guardian tickets into a versioned persistent ledger with
-  bounded indexing and expiry. Missing, captured and expired entities no
-  longer leave a permanently growing periodic UUID lookup list.
-- Update Quest Automation to 0.4.3: skip capped team evidence before Curios and
-  Relics reads, and lazily inspect machine outputs only when nearby teams need
-  them. Preserve the updated campaign IDs and progress format.
-- Replace Dungeons & Taverns global periodic entity selectors with lifecycle
-  tracking; retain the five-tick conversion phase. Use advancement events for
-  root discovery criteria and direct tags for the phantom-boss condition.
-  Scope quest-trader advancement resets to the source player.
-- Add the original MIT Runtime Optimizations 0.4.7 module, reproducible native
-  builds and full-pack behavioral/work-count fixtures. See
-  [deployment notes](docs/PERFORMANCE_OPTIMIZATION.md) and
-  [verification evidence](reports/verification-performance.md).
 
 ### 0.4.7 — campaign clarity and thematic rewards
 
