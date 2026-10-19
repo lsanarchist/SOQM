@@ -21,6 +21,38 @@ python3 scripts/localize_english.py --mod-dir .cache/mods
 
 Потрібні подальша редактура назв, переклад авторського сюжету й гумору та графічна перевірка обох мов. Після зміни цілей, глав або спеціальних перевірок онови генератор; він навмисно завершується помилкою для невідомого типу задачі чи непокритої глави. Редагуй генератор і словник, а не згенерований файл.
 
+## Apotheosis: порожні підказки світових рівнів
+
+У закріпленій Apotheosis **8.9.0** українські описи світових рівнів, навчання та
+вимоги розблокування вже є. Порожня рамка підказки на екрані «Притулок» пов'язана
+з обрізанням тексту: підказки піктограм малюються перед кнопкою активації, а
+довгий напис цієї кнопки вмикає область відсікання, коли текст підказки ще
+перебуває в буфері відображення.
+
+Кнопка має ширину 60 px і внутрішні відступи по 2 px — для тексту залишається
+**56 px**. Ресурс `overrides/kubejs/assets/apotheosis/lang/uk_ua.json` замінює
+лише два підписи. Ширини обчислені за стандартним растровим шрифтом Minecraft
+1.21.1:
+
+| Ключ | Початковий підпис | Ширина | Новий підпис | Ширина |
+| --- | --- | --- | --- | --- |
+| `button.apotheosis.activate` | Активувати | 59 px | Увімкнути | 49 px |
+| `button.apotheosis.activated` | Активовано | 59 px | Активно | 41 px |
+
+Повні описи та вимоги продовжують надходити з ресурсів Apotheosis. Це обхід
+проблеми через локалізацію для стандартного шрифту; ресурсні пакети з іншими
+шрифтами можуть змінити ширини. Порядок відображення та розмір кнопки звірено
+з класами закріпленого JAR, але графічний клієнт із цією правкою ще не перевірено.
+
+Для графічної перевірки вибери українську мову і стандартний шрифт без
+примусового Unicode. На екрані світових рівнів наведи курсор на відкриті й
+заблоковані піктограми, коли кнопка показує «Активно», а потім — «Увімкнути».
+Текст підказок має бути видимим в обох станах; перевір також кнопку «Деталі».
+
+Джерела: [SimpleTexButton](https://github.com/Shadows-of-Fire/Apotheosis/blob/1.21/src/main/java/dev/shadowsoffire/apotheosis/client/SimpleTexButton.java),
+[WorldTierSelectScreen](https://github.com/Shadows-of-Fire/Apotheosis/blob/1.21/src/main/java/dev/shadowsoffire/apotheosis/client/WorldTierSelectScreen.java),
+[споріднений upstream-звіт про кирилицю](https://github.com/Shadows-of-Fire/Apotheosis/issues/1756).
+
 ## English scope
 
 Ukrainian retains the full authored campaign. English currently provides an **alpha objective guide**, covering every chapter, quest, task and canvas-label key. It derives counts and conditions from actual task data, with hand-written explanations for all 16 custom automatic checks and 3 manual engineering checks. All 272 source recipe notes include a JEI R/U reminder.

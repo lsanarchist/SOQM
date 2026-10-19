@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Work around empty Ukrainian Apotheosis World Tier tooltips with the default
+  font by shortening the two activation captions to fit their button. The
+  resource and font bounds are verified; graphical client verification is pending.
+
 ## 0.4.6 — local alpha update
 
 SOQM now uses the supplied Questing Mayhem Expert **0.4.6** baseline, while
