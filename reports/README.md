@@ -1,5 +1,31 @@
 # Verification status
 
+## Inventory Profiles Next and English landing page — after SOQM 0.4.9
+
+Validated on **2026-10-19** against merged main
+`1dc7c21b00f94b4045466376e0b23e70ddaa6f71`. The pack now has **125 pinned
+third-party dependencies**, **12 authored modules** and **1,837 locked payload
+files**. The previous 122 dependency entries and existing game files are
+unchanged; the only new game file is the IPN sorting configuration.
+
+The exact Inventory Profiles Next **2.2.5**, libIPN **6.6.3** and Kotlin for
+Forge **5.12.0** JARs were downloaded from the official CurseForge CDN and
+checked for byte count, SHA-256, SHA-512 and ZIP integrity. Their embedded
+NeoForge metadata supports the pinned Minecraft **1.21.1 / NeoForge 21.1.262**
+runtime. Both IPN and libIPN still declare the Kotlin language loader in these
+NeoForge builds, so Kotlin for Forge is included. See the exact file links in
+[MODLIST.md](../MODLIST.md).
+
+`./scripts/check` passed **72 Python tests**, both Node policy suites,
+generator/localization freshness and deterministic installation packaging.
+All **10 coordinate previews** also passed their freshness check. The
+middle-button sorting override was checked against the exact IPN/libIPN
+configuration deserializers; other shortcuts retain upstream defaults.
+
+This verifies metadata, downloaded files and packaging. The graphical client
+was not launched, and this addition does not repeat the historical download
+audit of the 122 unchanged files or certify in-game sorting behavior.
+
 ## Cardboard Box quest and pack logic fixes — after SOQM 0.4.9
 
 Validation on **2026-10-19** passed against merged main

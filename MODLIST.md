@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **122 pinned third-party dependencies**. SOQM 0.4.8 additionally
+The table lists **125 pinned third-party dependencies**. SOQM 0.4.8 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -11,6 +11,11 @@ personal claim merges for the reward system. The separately versioned
 `qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
 and background encounter/dungeon work; `qm-quest-automation-0.4.3` skips
 already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
+
+Inventory Profiles Next uses libIPN and Kotlin for Forge. All three are marked
+`client` here because only the client inventory tools need them in SOQM; the
+dedicated-server harness excludes this dependency chain. Kotlin for Forge can
+also support server mods in other packs.
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
@@ -69,13 +74,16 @@ already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMI
 | ImmediatelyFast | 1.6.15+1.21.1 | client | [project 686911 / file 9165518](https://www.curseforge.com/minecraft/mc-mods/immediatelyfast/files/9165518) |
 | Immersive Engineering | 12.4.2-194 | both (baseline) | [project 231951 / file 6733669](https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669) |
 | Industrial Foregoing | 3.6.39 | both (baseline) | [project 266515 / file 8370717](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing/files/8370717) |
+| Inventory Profiles Next | 2.2.5 | client | [project 495267 / file 7810574](https://www.curseforge.com/minecraft/mc-mods/inventory-profiles-next/files/7810574) |
 | Iron Chests | 16.0.7 | both (baseline) | [project 228756 / file 5491156](https://www.curseforge.com/minecraft/mc-mods/iron-chests/files/5491156) |
 | Iron Furnaces | 4.3.2 | both | [project 237664 / file 7034259](https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259) |
 | Jade Addons (Neo/Forge) | 6.1.2+neoforge | both | [project 583345 / file 9056575](https://www.curseforge.com/minecraft/mc-mods/jade-addons/files/9056575) |
 | Jade 🔍 | 15.10.6+neoforge | both | [project 324717 / file 8591319](https://www.curseforge.com/minecraft/mc-mods/jade/files/8591319) |
 | JEI | 19.64.0.455 | both (baseline) | [project 238222 / file 9205121](https://www.curseforge.com/minecraft/mc-mods/jei/files/9205121) |
 | Kobolds | 4.0.1 | both (baseline) | [project 484967 / file 8198851](https://www.curseforge.com/minecraft/mc-mods/kobolds/files/8198851) |
+| Kotlin for Forge | 5.12.0 | client | [project 351264 / file 8335665](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge/files/8335665) |
 | KubeJS | 2101.7.2-build.377 | both (baseline) | [project 238086 / file 8843626](https://www.curseforge.com/minecraft/mc-mods/kubejs/files/8843626) |
+| libIPN | 6.6.3 | client | [project 679177 / file 7810552](https://www.curseforge.com/minecraft/mc-mods/libipn/files/7810552) |
 | Lithium (Fabric/NeoForge) | 0.15.4+mc1.21.1 | both | [project 360438 / file 8330365](https://www.curseforge.com/minecraft/mc-mods/lithium/files/8330365) |
 | Lithostitched | 1.8.1 | both (baseline) | [project 936015 / file 9170709](https://www.curseforge.com/minecraft/mc-mods/lithostitched/files/9170709) |
 | LootJS | 1.21.1-3.7.0 | both (baseline) | [project 570630 / file 8009262](https://www.curseforge.com/minecraft/mc-mods/lootjs/files/8009262) |

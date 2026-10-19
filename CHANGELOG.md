@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+- Replace the long bilingual repository landing page with a concise English
+  introduction, gameplay highlights and installation/documentation links.
+- Add Inventory Profiles Next 2.2.5 for inventory sorting, item transfers and
+  locked slots, plus libIPN 6.6.3 and Kotlin for Forge 5.12.0 for Minecraft
+  1.21.1 / NeoForge. Pin official CurseForge files, byte counts and SHA-256
+  hashes; include all three in the client manifest and exclude this client-only
+  dependency chain from the dedicated-server harness.
+- Bind Inventory Profiles Next sorting to the middle mouse button so JEI keeps
+  its `R` recipe shortcut. Open the inventory settings with `R+C`.
+
 - Expand 286 quests with reviewed Ukrainian/English lessons covering industry,
   magic, expeditions, starter equipment and endgame production; fully translate
   all 35 Modern Foundry lessons. Correct Mythic Circuit reward eligibility,

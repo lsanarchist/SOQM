@@ -40,6 +40,16 @@ and the baseline Sources ZIP are not installable game profiles.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
+## Inventory sorting
+
+Inventory Profiles Next sorts inventory slots with the **middle mouse button**
+in SOQM. This leaves **R** for JEI recipes and **U** for item uses. Open the IPN
+settings with **R+C** to customize shortcuts, locked slots and item transfers.
+
+The client manifest includes Inventory Profiles Next, libIPN and Kotlin for
+Forge at their pinned versions. This dependency chain is only needed by the
+client in SOQM and is excluded by the dedicated-server harness.
+
 ## Existing MultiMC profile
 
 The CurseForge ZIP contains a manifest and `overrides/`; it is not a standalone
@@ -52,7 +62,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
 2. Work on a copied profile. Extract the **built** ZIP temporarily and merge
    the contents of `overrides/` into its `.minecraft/`, applying the pack files.
    Do not copy the manifest itself or a GitHub source archive into that folder.
-3. Install the **122** exact third-party JARs referenced by the manifest/lock
+3. Install the **125** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
    the package's **12** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.

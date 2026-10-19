@@ -2,173 +2,57 @@
 
 <p align="center"><b>SOQM 0.4.9 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
-**Shout Out to Questing Mayhem (SOQM)** — Expert-кампанія про виробничі ланцюги,
-магію та дослідження. **1626 квестів у 37 главах** ведуть від першої майстерні
-до великих автоматизованих систем. Основа — Questing Mayhem Expert **0.4.6**;
-SOQM розвиває власні рецепти, квести, баланс та відтворюваний процес збірки.
+**Shout Out to Questing Mayhem (SOQM)** is an Expert Minecraft modpack about
+turning a small workshop into an automated empire. Over **1,600 quests across
+37 chapters** connect technology, magic and exploration through custom recipes,
+material milestones and guided production routes.
 
-**У 0.4.9 квестбук веде через послідовні виробничі гілки:** ручне просіювання,
-FE-машини та ME-вихід; ME-скриня, перший крафт, мінімальний автокрафт і
-масштабування. Дев'ять глав мають карти з рухом згори вниз, основними лініями
-й бічними поліпшеннями. Переглянуто також промислові машини, паливні цикли,
-реактори та ферми мобів. [Маршрути й карти](docs/QUEST_BRANCHES.md).
+## What to expect
 
-**Особисті нагороди з 0.4.8 розвиваються разом із виробництвом команди:** 14 тематичних
-пулів містять **326 варіантів — 240 різних предметів, серед них 210 модових**.
-Кожен учасник забирає власний пакунок із **2–4 випадковими призами** раз за квест.
-Шасі, схеми, процесори, бочки й дорогі поліпшення починають випадати після
-справжнього виготовлення командою саме цього предмета. Пластик і HDPE виключені.
-Поточний рівень показує `/soqm rewards`, склад і шанси — `/soqm rewards pool <тема>`.
+- **Quest-guided progression:** follow the main campaign, learn each production
+  chain and branch into optional upgrades as your base grows.
+- **Technology and automation:** progress from Ex Deorum resource gathering to
+  Mekanism factories, reactors and Applied Energistics 2 storage and autocrafting.
+- **Magic and exploration:** develop Botania Revived and EvilCraft, explore
+  The Twilight Forest, The Aether and DivineRPG, and travel into space with Ad Astra.
+- **Demanding late-game crafting:** connect production across mods to make custom
+  components and work towards Re-Avaritia recipes.
+- **Personal, progressive rewards:** every teammate can claim a quest reward.
+  Reward pools improve with team production, and expensive components unlock only
+  after the team has actually made them.
+- **Everyday conveniences:** inventory sorting with Inventory Profiles Next,
+  upgradeable storage and backpacks, recipe lookup, maps and waystones.
 
-Головний маршрут стоїть першим, матеріальні рубежі мають виразні вузли,
-а додаткові гілки — окремі позначки. Перша компактна AE2-мережа й
-1k-автокрафт доступні після точного механізму. Нові описи гілок написано
-українською й англійською; усі 251 секція книги мають змістовні назви.
+**Status: alpha.** Campaign balance, full playthroughs and long-term multiplayer
+behavior are still being validated.
 
-[Зміни кампанії](docs/CAMPAIGN_UPDATE.md) · [Пули нагород](docs/REWARDS.md) ·
-[Changelog](CHANGELOG.md) · [Стан перевірок](reports/README.md)
+## Play
 
-Поточне доповнення додає необов’язковий квест **Cardboard Box** після лісопилки
-Mekanism, виправляє маршрут біопалива до PRC, зарахування термоядерної генерації
-під навантаженням і пояснення запуску реакторів. Блоки крафтового CPU AE2
-не пакуються в коробки через відтворюваний шлях дублювання інгредієнтів.
-[Результати перевірки логіки](docs/PACK_LOGIC_AUDIT.md).
+Requires **Minecraft Java Edition, Java 21 and NeoForge 21.1.262**.
 
-Наступне редагування додає **286 двомовних уроків** для промисловості, магії,
-експедицій, початкових інструментів і пізніх рецептів. Загалом 572 квести мають
-авторські пояснення обома мовами. Спостерігач нагород раніше відсікає
-невідстежувані результати виробництва, скорочуючи читання інгредієнтів і копії
-предметів. [Обсяг змін і перевірки](docs/QUEST_LESSONS_AND_OBSERVER.md).
+1. Open [Actions → Validate and package](https://github.com/lsanarchist/SOQM/actions/workflows/validate.yml)
+   and choose a successful run for the commit you want.
+2. Download `SOQM-candidate-<commit>` and extract GitHub's outer ZIP.
+3. Import the enclosed `SOQM-0.4.9-curseforge.zip` into the CurseForge App.
 
-## Грати
+CI candidates are retained for 14 days. The
+[installation guide](docs/INSTALL.en.md) covers local builds, other launchers
+and updating existing worlds. GitHub's **Source code** archive contains the
+repository; use the **installation ZIP** to create a game profile.
 
-У pull request або вкладці **Actions → Validate and package** відкрий успішний
-запуск для потрібного коміту. Артефакт `SOQM-candidate-<commit>` містить
-інсталяційний ZIP і `SHA256SUMS`. Розпакуй зовнішній архів GitHub, потім імпортуй
-`SOQM-0.4.9-curseforge.zip` у сумісний із CurseForge manifest лаунчер.
-Артефакти CI зберігаються 14 днів; їх можна відтворити з того самого коміту.
+## Learn more
 
-Локальна підготовка:
+[Installation](docs/INSTALL.en.md) · [Mod list](MODLIST.md) ·
+[Quest routes](docs/QUEST_BRANCHES.md) · [Rewards](docs/REWARDS.md) ·
+[Changelog](CHANGELOG.md) · [Validation reports](reports/README.md) ·
+[Development and release guide](docs/RELEASE.en.md)
 
-```sh
-./scripts/check
-python3 scripts/soqm.py verify-downloads
-```
+## Credits
 
-`./scripts/check` створює `dist/SOQM-0.4.9-curseforge.zip` та контрольну суму.
-Друга команда окремо звіряє всі 122 сторонні залежності з їхніми SHA-256.
-Потрібні Minecraft Java Edition та Java 21. GitHub **Source code** містить
-репозиторій; імпортувати в лаунчер слід зібраний інсталяційний ZIP.
+Created by **lsanarchist**, building on the Questing Mayhem Expert 0.4.6 base.
+Questing Mayhem inspired the name; Craftoria is a reference for presentation
+and usability. SOQM is independent of both teams.
 
-[Встановлення українською](docs/INSTALL.uk.md) · [Install in English](docs/INSTALL.en.md) ·
-[Поточні й історичні завантаження](downloads/README.md)
-
-### Оновлення світу
-
-Збережено всі наявні ID квестів, задач, нагород, глав та підписів і виконані задачі.
-**Перехід із 0.4.8 на 0.4.9 не видає повторних нагород і не скидає журнал
-виробництва.** Змінилися порядок, залежності й пояснення квестів; умови задач
-та нагород збережено. Нові передумови застосовуються до подальшого проходження.
-Якщо переходиш із версії до особистих нагород 0.4.8, колишні спільні нагороди
-дають кожному одну нову особисту спробу. Старі персональні отримання зберігаються;
-перехід між командами не відновлює використану спробу.
-
-Історії виробництва до 0.4.8 не було: для таких давніх предметів виготов один
-новий зразок. Отримання з квесту, підбирання й наявність у сховищі
-не відкривають виробничий приз. Команда ділиться відкриттями; після виходу
-гравець зберігає власні виготовлені предмети, а колишня команда — свій доробок.
-Перед оновленням збережи копію світу й профілю та заміни файли збірки повністю.
-Деталі — у [поясненні міграції](docs/CAMPAIGN_UPDATE.md#оновлення-наявного-світу).
-
-## Що перевірено
-
-Статус збірки — **alpha**. Автоматичні перевірки охоплюють незмінність
-збережених ID, граф залежностей, матеріальні обмеження, пули, локалізацію,
-геометрію карти та інсталяційний архів. Окрема перевірка на справжньому
-NeoForge/FTB Quests/AE2/Mekanism перевіряє особисту видачу нагород, міграцію
-старого прогресу, справжнє виготовлення, командну належність, збереження та reload.
-
-Підсумки й точні межі перевірки записано в [reports](reports/README.md) та
-[інструкції відтворення](docs/RUNTIME_VALIDATION.md). Повне проходження,
-графічний клієнт, тривала економіка та вимірювання продуктивності потребують
-ігрової перевірки. Збережено актуальне виправлення Cannibal 0.4.1.
-
-## Розробка
-
-Потрібні Python 3.11+ та Node.js 18+. Звичайна перевірка не завантажує
-сторонні JAR. Після редагування уроків, карти або політики нагород:
-
-```sh
-python3 scripts/campaign_refresh.py
-python3 scripts/localize_english.py
-python3 scripts/render_campaign.py
-python3 scripts/soqm.py lock
-./scripts/check
-```
-
-`overrides/` містить ігровий вміст, `src/compat/` — джерела 12 авторських
-модулів, `metadata/` — версії, хеші й редаговані правила кампанії. Прев’ю карт
-генеруються з фактичних координат; вони показують структуру й не замінюють
-огляд інтерфейсу в грі. Сторонні JAR, світи, тестовий мод та кеші залишаються
-поза інсталяційним архівом.
-
-[Локалізація](docs/LOCALIZATION.md) · [Порядок релізу](docs/RELEASE.uk.md) ·
-[План ігрових перевірок](docs/PLAYTEST.uk.md) ·
-[Оптимізація генерації та фонової роботи](docs/PERFORMANCE_OPTIMIZATION.md)
-
-## English
-
-SOQM **0.4.9** is an Expert Minecraft campaign with **1,626 quests in 37 chapters**,
-**122 pinned third-party mods** and **12 authored compatibility modules**.
-Its **14 original themed reward pools** contain **326 entries covering 240
-distinct items, including 210 modded items**. Every member claims a personal
-pack once per quest, receiving **2–4 independent draws**. Six manufactured
-campaign milestones increase draw counts and rare-prize weights. Expensive
-chassis, circuits, processors, barrels and upgrades require actual production
-of that exact item by the team; inventory possession and reward delivery do
-not unlock them. Plastic and HDPE remain excluded. Inspect the current level
-with `/soqm rewards` and live per-draw odds with `/soqm rewards pool <theme>`.
-
-The Main Route remains the first chapter. Distinct map shapes identify finale
-prerequisites, mod development and optional branches. Fourteen selected
-milestones retain one Mayhem Cube for each member.
-
-Version 0.4.9 groups nine chapters into production routes with visible local
-dependencies and optional upgrade branches. Ex Deorum advances from manual
-sifting through FE machines to external-buffer ME import. AE2 starts with a
-one-cell ME Chest and progresses through actual terminal crafting, a minimal
-1k autocrafting setup, processing, channels, P2P and remote storage. Industry,
-fuel cycles and mob farms gain corresponding assembly and operating sequences.
-The compact AE2 setup remains available after Precision Mechanism at stage 2.
-New branch lessons and all 251 section names have authored Ukrainian and English
-text. See [quest branches](docs/QUEST_BRANCHES.md) for routes and coordinate maps.
-
-Download the installation candidate and checksum from a successful **Validate
-and package** workflow for the desired commit, or build locally with the commands
-above. See the [installation guide](docs/INSTALL.en.md),
-[native validation](docs/RUNTIME_VALIDATION.md) and [current evidence](reports/README.md).
-Existing quest progress and IDs are preserved. **An upgrade from 0.4.8 to 0.4.9
-preserves used personal claims and production discoveries.** Only an upgrade
-from the pre-0.4.8 shared rewards introduces one personal entitlement per member;
-old personal claims remain claimed. Leaving or joining teams does not reset a used
-claim. Items made before the production journal existed need a new sample.
-Full graphical playthrough, long-term multiplayer balance
-and performance measurements remain alpha validation work.
-
-The current addition introduces an optional Cardboard Box lesson after the
-Precision Sawmill, corrects the PRC Bio Fuel route, and fixes fusion completion
-when consumers use all generated energy. AE2 crafting CPU blocks cannot be
-boxed because the pinned versions retain an ingredient duplication path.
-All original quest, task and reward identities remain intact; see the
-[logic audit](docs/PACK_LOGIC_AUDIT.md).
-
-## Авторство
-
-Автор SOQM: **lsanarchist**. Craftoria — орієнтир якості оформлення та зручності;
-пули SOQM мають власний склад і баланс. Questing Mayhem — натхнення для назви.
-Проєкт не пов’язаний із цими командами.
-
-[Моди й автори](MODLIST.md) · [Ліцензії та походження](THIRD_PARTY_NOTICES.md) ·
-[Ліцензія проєкту](LICENSE)
+[Mod authors and licenses](THIRD_PARTY_NOTICES.md) · [Project license](LICENSE)
 
 Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.

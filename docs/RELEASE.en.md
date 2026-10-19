@@ -10,7 +10,7 @@ python3 scripts/soqm.py build
 ```
 
 The local check validates structure, data and packaging. `verify-downloads`
-requires a network connection and checks **122** pinned third-party files,
+requires a network connection and checks **125** pinned third-party files,
 not arbitrary latest versions. `build` writes
 `dist/SOQM-0.4.9-curseforge.zip` and a checksum under `dist/`. A failed download
 is an incomplete check, not permission to silently substitute versions.
