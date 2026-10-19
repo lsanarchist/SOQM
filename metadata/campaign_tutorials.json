@@ -1,0 +1,1108 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "name": "Applied Energistics 2 19.2.18 bundled guide and recipes",
+      "filename": "appliedenergistics2-19.2.18.jar",
+      "sha256": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39",
+      "paths": [
+        "assets/ae2/ae2guide/",
+        "data/ae2/recipe/"
+      ],
+      "url": "https://guide.appliedenergistics.org/1.21.1/"
+    },
+    {
+      "name": "Ad Astra 1.16.26 bundled Astrodux",
+      "filename": "adastra-1.21.1-1.16.26-neoforge.jar",
+      "sha256": "b8d1441e284db2e1e8ce5ffe739452633c90725312e476db8d8a0a4b64126856",
+      "paths": [
+        "assets/ad_astra/patchouli_books/astrodux/en_us/",
+        "data/ad_astra/advancement/"
+      ],
+      "url": "https://github.com/terrarium-earth/Ad-Astra/tree/1.21.1"
+    },
+    {
+      "name": "Mekanism 10.7.19.85 pinned recipes and interface text",
+      "filename": "Mekanism-1.21.1-10.7.19.85.jar",
+      "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+      "paths": [
+        "data/mekanism/recipe/metallurgic_infusing/alloy/infused.json",
+        "assets/mekanism/lang/en_us.json"
+      ]
+    },
+    {
+      "name": "Mekanism Generators 10.7.19.85 pinned interface text",
+      "filename": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+      "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+      "paths": [
+        "assets/mekanismgenerators/lang/en_us.json"
+      ]
+    },
+    {
+      "name": "Extreme Reactors 2.4.28 bundled guide",
+      "filename": "ExtremeReactors2-1.21.1-2.4.28.jar",
+      "sha256": "74fdfdfc91c3c8e5a439d411e6f081d12193635fffe2c55142f2f28f75b9d621",
+      "paths": [
+        "assets/bigreactors/patchouli_books/erguide/en_us/entries/reactor/"
+      ]
+    },
+    {
+      "name": "Iron Furnaces 4.3.2 pinned augment interface text",
+      "filename": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+      "sha256": "97c0d7c323fda4aa852fdce69bf1250a40323bb9d34ef6c87790e07334d1c2de",
+      "paths": [
+        "assets/ironfurnaces/lang/en_us.json"
+      ]
+    },
+    {
+      "name": "SOQM authored recipes and quest conditions",
+      "paths": [
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/kubejs/server_scripts/qm_expert_v042.js",
+        "overrides/kubejs/server_scripts/qm_expert_v040.js",
+        "overrides/kubejs/server_scripts/soqm_me_workshop.js",
+        "src/compat/quest-automation/"
+      ]
+    }
+  ],
+  "quests": {
+    "514D11B512FA3533": {
+      "uk_ua": {
+        "title": "Перше живлення машини",
+        "description": [
+          "З’єднай вихід Heat Generator з машиною через Universal Cable. Кабель передає енергію; рідину та хімію він не переносить.",
+          "Для короткого тесту поклади паливо в генератор і відкрий машину: її енергетичний буфер має почати наповнюватися. Далі підключай постійне джерело під реальне споживання.",
+          "Якщо заряду немає, перевір з’єднання, налаштування енергетичних сторін і режим редстоуну. Порожній заряджений блок ще не виконує рецепт."
+        ]
+      },
+      "en_us": {
+        "title": "Power the First Machine",
+        "description": [
+          "Connect the Heat Generator output to a machine with Universal Cable. This cable carries energy, not fluids or chemicals.",
+          "For a short test, put fuel in the generator and open the machine: its energy buffer should fill. Then choose a sustained supply for your actual load.",
+          "If no charge arrives, check connections, energy-side settings and redstone control. A charged empty machine has not completed a recipe."
+        ]
+      }
+    },
+    "514D11B65A3EE8C0": {
+      "uk_ua": {
+        "title": "Перший сплав у Metallurgic Infuser",
+        "description": [
+          "Наповнювач поєднує предмет із запасом реагенту. Для проби подай мідь та редстоун за рецептом Infused Alloy; дочекайся готового сплаву.",
+          "У Side Config розділи звичайний предметний вхід, Extra для реагенту та вихід. Під час автоматизації окремо налаштуй фільтри й виведення результату.",
+          "Реагент залишається у внутрішньому буфері. Для іншого типу насичення використай окрему машину або свідомо очисть залишок; зайвий реагент не перетворюється на потрібний."
+        ]
+      },
+      "en_us": {
+        "title": "First Alloy in the Metallurgic Infuser",
+        "description": [
+          "The infuser combines an item with its stored infusion material. Test the Infused Alloy recipe with copper and redstone, then wait for a finished alloy.",
+          "In Side Config, separate the ordinary item input, the Extra reagent input and the output. Add filters and output extraction before automating batches.",
+          "Infusion material remains in the internal buffer. Use another machine for a different type, or deliberately clear the residue; the wrong infusion material cannot substitute for the right one."
+        ]
+      }
+    },
+    "514D1154FFE3DABB": {
+      "uk_ua": {
+        "title": "Збагачення перед електропіччю",
+        "description": [
+          "Спочатку подай відповідну сировину в Enrichment Chamber, а отриманий продукт — в Energized Smelter. Вихід і кількість залежать від конкретного рецепта, тому порівняй його в JEI.",
+          "На малому тесті передай одну партію вручну. Потім з’єднай предметний вихід першої машини зі входом другої та ввімкни потрібне автоматичне виведення.",
+          "Успішний результат — готовий зливок і звільнений вихід обох машин. Переповнений приймач зупиняє лінію навіть за повного заряду."
+        ]
+      },
+      "en_us": {
+        "title": "Enrichment before Electric Smelting",
+        "description": [
+          "Feed a supported raw material into the Enrichment Chamber, then send its product to the Energized Smelter. Check the specific JEI recipe for the actual yield.",
+          "Move one small batch manually first. Then connect the first machine’s item output to the second machine’s input and enable the appropriate automatic ejection.",
+          "The test succeeds when the finished ingot reaches storage and both outputs clear. A full destination stops the line even when every machine has power."
+        ]
+      }
+    },
+    "514D118EBA5C411D": {
+      "uk_ua": {
+        "title": "Предмети, рідини та хімія",
+        "description": [
+          "Logistical Transporter переносить предмети, Mechanical Pipe — рідини, Pressurized Tube — хімічні речовини Mekanism. Спершу визнач тип ресурсу в рецепті й обери відповідну лінію.",
+          "Configurator змінює режим кінця труби. Якщо джерело саме не виводить ресурс, налаштуй витягування на його боці; у приймачі дозволь відповідний вхід.",
+          "Перевір кожен потік окремою малою партією. Три схожі зовні труби не замінюють одна одну."
+        ]
+      },
+      "en_us": {
+        "title": "Items, Fluids and Chemicals",
+        "description": [
+          "Logistical Transporters carry items, Mechanical Pipes carry fluids, and Pressurized Tubes carry Mekanism chemicals. Identify the resource type in the recipe before choosing a line.",
+          "Use a Configurator to set the connection mode. If the source does not eject automatically, enable extraction at that end and allow the matching input on the destination.",
+          "Test each resource with a small batch. These three similar-looking pipes are not interchangeable."
+        ]
+      }
+    },
+    "514D1121D23494BB": {
+      "uk_ua": {
+        "title": "Постійна енергія від вітру",
+        "description": [
+          "Постав Wind Generator вище над базою та з’єднай його з енергетичною мережею. Виробіток залежить від висоти й умов світу; дивись фактичне значення в інтерфейсі.",
+          "Порівняй виробництво зі споживанням під час роботи кількох машин. Energy Cube згладжує короткі піки, але не покриває постійний дефіцит генерації."
+        ]
+      },
+      "en_us": {
+        "title": "Sustained Wind Power",
+        "description": [
+          "Place the Wind Generator high above the base and connect it to the power network. Output depends on height and world conditions; read its actual production in the interface.",
+          "Compare generation with consumption while several machines run. An Energy Cube absorbs brief peaks but cannot solve a sustained generation deficit."
+        ]
+      }
+    },
+    "513011CFBA3A9CF5": {
+      "uk_ua": {
+        "title": "Inscriber: від заготовки до процесора",
+        "description": [
+          "Підведи FE безпосередньо або живлення AE. Для Calculation Processor спочатку надрукуй обчислювальну заготовку відповідним пресом, окремо — Printed Silicon; потім з’єднай обидві заготовки з редстоуном.",
+          "Преси багаторазові. Для фінального збирання прибери прес і розклади заготовки за рецептом. Повтори друк партією до витрати матеріалів на точний механізм.",
+          "Для простого транспорту можна вимкнути розділення входів за сторонами. У sided-режимі верх і низ відповідають крайнім слотам, бічні грані — середньому входу та готовому виходу."
+        ]
+      },
+      "en_us": {
+        "title": "Inscriber: From Print to Processor",
+        "description": [
+          "Supply FE directly or AE power. For a Calculation Processor, print its circuit with the matching press and print silicon separately; then combine both prints with redstone.",
+          "Presses are reusable. Remove the press for final assembly and arrange the printed parts as the recipe shows. Make a small batch before spending processors on the Precision Mechanism.",
+          "Non-sided mode simplifies transport. In sided mode, the top and bottom access the outer slots, while the horizontal faces serve the middle input and finished output."
+        ]
+      }
+    },
+    "513011E6243A5B01": {
+      "uk_ua": {
+        "title": "Calculation Processor для точного механізму",
+        "description": [
+          "Це перший потрібний внесок AE2 у спільну промислову прогресію. Спочатку підготуй Inscriber, Calculation Press, Silicon Press та кремній; велика ME-мережа тут ще не потрібна.",
+          "Надрукуй Printed Calculation Circuit і Printed Silicon, з’єднай їх із редстоуном у пресі. Готові процесори потрібні рецепту точного механізму в главі «00 · Головний маршрут».",
+          "Після точного механізму повертайся до живлення, сховища й першого автокрафту. Перший процесор не повинен вимагати вже готового точного механізму."
+        ]
+      },
+      "en_us": {
+        "title": "Calculation Processor for Precision",
+        "description": [
+          "This is AE2’s first required contribution to shared industrial progression. Prepare an Inscriber, Calculation Press, Silicon Press and silicon; a large ME network is not needed yet.",
+          "Print the Calculation Circuit and Printed Silicon, then combine them with redstone in the Inscriber. Finished processors are ingredients of the Precision Mechanism in chapter 00, Main Route.",
+          "After precision production, return for network power, storage and basic autocrafting. The first processor is deliberately available before that milestone."
+        ]
+      }
+    },
+    "5130110AD7EC7A65": {
+      "uk_ua": {
+        "title": "Charger: зарядити кварц",
+        "description": [
+          "Підведи живлення до Charger, поклади Certus Quartz Crystal та забери заряджений кристал після перетворення.",
+          "Для Fluix потрібен саме Charged Certus Quartz. Звичайний кристал і пил не замінюють його у водному рецепті; Charger не є сховищем для всіх матеріалів AE2."
+        ]
+      },
+      "en_us": {
+        "title": "Charger: Charge the Quartz",
+        "description": [
+          "Power the Charger, insert a Certus Quartz Crystal and collect the charged crystal after conversion.",
+          "The water recipe for Fluix needs Charged Certus Quartz. An ordinary crystal or dust is not a substitute; the Charger is not general-purpose AE2 storage."
+        ]
+      }
+    },
+    "513011020C4B1739": {
+      "uk_ua": {
+        "title": "Перші Fluix-кристали",
+        "description": [
+          "Кинь Charged Certus Quartz, кварц Незеру та редстоун разом у воду; дочекайся перетворення й забери Fluix-кристали.",
+          "Перевір, що всі три предмети потрапили в той самий блок води. Fluix Dust виготовляй уже з готового кристала для наступних рецептів."
+        ]
+      },
+      "en_us": {
+        "title": "First Fluix Crystals",
+        "description": [
+          "Drop Charged Certus Quartz, Nether Quartz and redstone together into water, wait for the conversion and collect the Fluix crystals.",
+          "Ensure all three ingredients reach the same water block. Produce Fluix Dust from the finished crystals for subsequent recipes."
+        ]
+      }
+    },
+    "5130112BC0CDCCBA": {
+      "uk_ua": {
+        "title": "AE2: маршрут до першої мережі",
+        "description": [
+          "Порядок майстерні: кварц і преси → Inscriber → Calculation Processor → точний механізм. Потім з’єднай Energy Acceptor, сховище та термінал.",
+          "Мала мережа без Controller підтримує до восьми пристроїв, які потребують каналу, у стандартному режимі. Для першого автокрафту достатньо окремого CPU з 1k Crafting Storage, Pattern Provider і Molecular Assembler.",
+          "Controller, більші компоненти сховища та віддалені мережі належать наступним рубежам. Вбудований Guide містить схеми пристроїв; JEI показує змінені рецепти саме цієї збірки."
+        ]
+      },
+      "en_us": {
+        "title": "AE2: Your First Network Route",
+        "description": [
+          "Workshop order: quartz and presses, then an Inscriber, Calculation Processor and Precision Mechanism. Next connect an Energy Acceptor, storage and a terminal.",
+          "With standard channels, a small network without a Controller supports up to eight channel-using devices. Basic autocrafting needs a CPU containing 1k Crafting Storage, a Pattern Provider and a Molecular Assembler.",
+          "Controllers, larger storage components and remote networks belong to later milestones. The built-in Guide provides device diagrams; JEI shows this pack’s modified recipes."
+        ]
+      }
+    },
+    "513011C6833500D4": {
+      "uk_ua": {
+        "title": "Живлення малої ME-мережі",
+        "description": [
+          "Energy Acceptor перетворює зовнішню енергію на AE. З’єднай генератор із приймачем, а приймач — із Fluix-кабелем мережі.",
+          "Для першої перевірки підключи ME Drive із коміркою та Terminal. Якщо мережа мерехтить при переміщенні стаку, перевір постійне живлення і додай Energy Cell для короткого пікового навантаження."
+        ]
+      },
+      "en_us": {
+        "title": "Power a Small ME Network",
+        "description": [
+          "The Energy Acceptor converts external power into AE. Connect your generator to the acceptor and connect the acceptor to the network’s Fluix cable.",
+          "Test with an ME Drive containing a storage cell and a Terminal. If moving a stack makes the network flicker, check sustained power and add an Energy Cell to handle the brief peak."
+        ]
+      }
+    },
+    "513011F37B07AD68": {
+      "uk_ua": {
+        "title": "Energy Cell: запас для піків",
+        "description": [
+          "Під’єднай Energy Cell до ME-мережі й дай їй зарядитися. Вона збільшує енергетичний буфер мережі, а не кількість предметів чи каналів.",
+          "Перевір великий перенос предметів у терміналі. Якщо заряд продовжує падати після операції, споживання перевищує генерацію: більша батарея лише відкладе зупинку."
+        ]
+      },
+      "en_us": {
+        "title": "Energy Cell: Buffer the Peaks",
+        "description": [
+          "Connect the Energy Cell to the ME network and let it charge. It increases the network’s energy buffer, not item capacity or channel count.",
+          "Test a large item transfer in the terminal. If charge keeps falling afterwards, demand exceeds generation; a bigger battery only postpones the shutdown."
+        ]
+      }
+    },
+    "5130117628101229": {
+      "uk_ua": {
+        "title": "Fluix-кабель і вісім каналів",
+        "description": [
+          "З’єднай приймач енергії, ME Drive та Terminal. У стандартному режимі звичайний кабель переносить до восьми каналів; кожен підключений пристрій перевіряй окремо.",
+          "Мережа без Controller також має загальну межу у вісім канальних пристроїв. Новий відрізок кабелю не збільшує цю межу. Smart Cable допоможе побачити використання каналів."
+        ]
+      },
+      "en_us": {
+        "title": "Fluix Cable and Eight Channels",
+        "description": [
+          "Connect the Energy Acceptor, ME Drive and Terminal. In standard mode, ordinary cable carries up to eight channels; check each attached device.",
+          "A controller-free network also has a total limit of eight channel-using devices. Adding cable does not increase that limit. Smart Cable makes channel usage visible."
+        ]
+      }
+    },
+    "513011FEDA3CDB61": {
+      "uk_ua": {
+        "title": "Щільний кабель для магістралі",
+        "description": [
+          "У стандартному режимі Dense Cable переносить до 32 каналів. Відводи до пристроїв роби звичайним кабелем, який має власну межу у вісім.",
+          "Щільний кабель не збільшує загальну межу мережі без Controller. Не вставляй звичайний блок або кабель у магістраль: така ланка може знову звузити її до восьми каналів."
+        ]
+      },
+      "en_us": {
+        "title": "Dense Cable for the Trunk",
+        "description": [
+          "In standard mode, Dense Cable carries up to 32 channels. Branch to devices with ordinary cable, which has its own eight-channel limit.",
+          "Dense cable does not increase a controller-free network’s overall limit. Avoid putting an ordinary block or cable in the trunk, because that section can restrict it to eight channels again."
+        ]
+      }
+    },
+    "513011A5B6C4DF0D": {
+      "uk_ua": {
+        "title": "Quartz Fiber: живлення без об’єднання",
+        "description": [
+          "Quartz Fiber передає енергію між двома ME-мережами, але залишає їхні канали та сховища окремими. Це зручно для невеликої підмережі поруч із головною.",
+          "Після підключення перевір: обидві мережі мають живлення, але предмети другої не з’являються в першому терміналі тільки через волокно."
+        ]
+      },
+      "en_us": {
+        "title": "Quartz Fiber: Power without Merging",
+        "description": [
+          "Quartz Fiber shares power between two ME networks while keeping their channels and storage separate. Use it to supply a small subnetwork beside the main one.",
+          "After connecting it, check that both networks have power. The second network’s items should not become visible in the first terminal merely because the fiber is present."
+        ]
+      }
+    },
+    "5130117C40A8D2E1": {
+      "uk_ua": {
+        "title": "ME Drive: перше цифрове сховище",
+        "description": [
+          "Спочатку підготуй золоту скриню Iron Chests, залізні блоки, Engineering Processors, Fluix-кабелі, Control Assembly і Precision Mechanism. Повний актуальний рецепт відкривай в JEI.",
+          "Підключи готовий Drive до живої ME-мережі та встанови Item Storage Cell. Сам порожній Drive предметів не зберігає.",
+          "Через Terminal поклади й забери кілька різних предметів. Якщо місце раптово закінчилося, перевір і байти, і кількість типів на комірці; це різні обмеження."
+        ]
+      },
+      "en_us": {
+        "title": "ME Drive: First Digital Storage",
+        "description": [
+          "Prepare an Iron Chests gold chest, iron blocks, Engineering Processors, Fluix cables, Control Assembly and Precision Mechanism. Open JEI for the complete current recipe.",
+          "Connect the finished Drive to a powered ME network and insert an Item Storage Cell. An empty Drive cannot store items.",
+          "Insert and retrieve several different items through the Terminal. If storage fills unexpectedly, check both byte capacity and the cell’s type count; they are separate limits."
+        ]
+      }
+    },
+    "5130112C9685F877": {
+      "uk_ua": {
+        "title": "Terminal: перевірити доступ до сховища",
+        "description": [
+          "Постав Terminal на підключений ME-кабель і відкрий його ПКМ. Він показує вміст доступних комірок та інших сховищ мережі.",
+          "Поклади простий предмет через термінал, закрий вікно та забери його знову. Порожній список за наявності комірки — привід перевірити живлення, канали й тип комірки."
+        ]
+      },
+      "en_us": {
+        "title": "Terminal: Test Storage Access",
+        "description": [
+          "Place the Terminal on a connected ME cable and right-click it. It displays the cells and other storage available to that network.",
+          "Insert a simple item, close the screen and retrieve it again. If a cell is installed but the list remains empty, check power, channels and whether the cell stores the right resource type."
+        ]
+      }
+    },
+    "513011AAD4652E6F": {
+      "uk_ua": {
+        "title": "Перший крафт у ME-терміналі",
+        "description": [
+          "Під’єднай Crafting Terminal до живої мережі зі сховищем. Залиш у ME хоча б один запасний предмет, наприклад кругляк, а з колоди у сітці термінала зроби дошки й забери результат.",
+          "Для зарахування потрібен справжній крафт у терміналі з активним живленням, каналом і непорожнім мережевим сховищем у момент крафту. Сам блок, порожня мережа або звичайний верстак умову не виконують.",
+          "Це ручне виготовлення з доступом до мережевого складу. Для замовлення рецепта без ручної сітки далі потрібні шаблон, Pattern Provider, Molecular Assembler і CPU зі сховищем автокрафту."
+        ],
+        "task_titles": {
+          "5130123B461D5BCE": "Автоматично: крафт у живому ME-терміналі"
+        }
+      },
+      "en_us": {
+        "title": "First Craft in an ME Terminal",
+        "description": [
+          "Connect a Crafting Terminal to a live network with storage. Keep at least one spare item, such as cobblestone, in ME storage, then turn a log into planks in the terminal grid and take the result.",
+          "Completion requires a real terminal craft with active power, a channel and nonempty network storage at the time of crafting. Owning the block, an empty network or an ordinary crafting table does not satisfy this check.",
+          "This is manual crafting backed by network storage. Request-based autocrafting additionally needs a pattern, Pattern Provider, Molecular Assembler and a CPU with crafting storage."
+        ],
+        "task_titles": {
+          "5130123B461D5BCE": "Automatic: craft in a live ME terminal"
+        }
+      }
+    },
+    "513011F797E11624": {
+      "uk_ua": {
+        "title": "1k-компонент: початок зберігання",
+        "description": [
+          "1k Cell Component — заготовка для комірки предметів або рідин, а також для найменшого Crafting Storage. Сам компонент у Drive не працює.",
+          "Обери результат у JEI: Item Storage Cell зберігає предмети, а 1k Crafting Storage керує одним невеликим замовленням як CPU. Одна назва розміру не робить їх взаємозамінними."
+        ]
+      },
+      "en_us": {
+        "title": "1k Component: Start Small",
+        "description": [
+          "The 1k Cell Component is an ingredient for item or fluid cells and for the smallest Crafting Storage. The bare component does not work in a Drive.",
+          "Choose the result in JEI: an Item Storage Cell stores items, while 1k Crafting Storage can form a CPU for one small job. Sharing a size name does not make them interchangeable."
+        ]
+      }
+    },
+    "5130115B3F92B69A": {
+      "uk_ua": {
+        "title": "1k Item Cell: вставити й перевірити",
+        "description": [
+          "З’єднай 1k-компонент із корпусом предметної комірки та встав готову Item Storage Cell у ME Drive.",
+          "Поклади через Terminal кілька видів матеріалів. Комірка має обмеження за байтами та типами; додаткові однакові предмети й новий тип заповнюють її по-різному."
+        ]
+      },
+      "en_us": {
+        "title": "1k Item Cell: Insert and Test",
+        "description": [
+          "Combine the 1k component with an item-cell housing and insert the completed Item Storage Cell into an ME Drive.",
+          "Store several material types through the Terminal. The cell has both byte and type limits; adding more of an existing item differs from introducing another type."
+        ]
+      }
+    },
+    "5130118AC1E7A654": {
+      "uk_ua": {
+        "title": "Blank Pattern: носій рецепта",
+        "description": [
+          "Поклади Blank Pattern у Pattern Encoding Terminal. Спочатку вибери режим: Crafting для верстакового рецепта або Processing для операції зовнішньої машини.",
+          "Порожня заготовка не додає рецепт до мережі. Після кодування перенеси отриманий шаблон у Pattern Provider біля виконавця."
+        ]
+      },
+      "en_us": {
+        "title": "Blank Pattern: Recipe Medium",
+        "description": [
+          "Insert a Blank Pattern into the Pattern Encoding Terminal. Choose Crafting for a crafting-table recipe or Processing for an external machine operation.",
+          "A blank pattern does not register a recipe with the network. After encoding, move the resulting pattern into a Pattern Provider next to its executor."
+        ]
+      }
+    },
+    "513011E89C668AA7": {
+      "uk_ua": {
+        "title": "Закодувати перший шаблон",
+        "description": [
+          "У Pattern Encoding Terminal увімкни Crafting і перенеси простий рецепт, наприклад колоду в дошки. Перевір вихід та його кількість, встав Blank Pattern і закодуй.",
+          "Постав Pattern Provider поряд із Molecular Assembler, поклади шаблон у Provider. У мережі також потрібен CPU: для першої спроби вистачить одного 1k Crafting Storage.",
+          "Поклади сировину в ME і замов невелику партію через Terminal. Якщо рецепт не з’явився, перевір слот шаблона, живлення та канал Provider."
+        ]
+      },
+      "en_us": {
+        "title": "Encode the First Pattern",
+        "description": [
+          "Choose Crafting in the Pattern Encoding Terminal and transfer a simple recipe such as logs into planks. Check the output and quantity, insert a Blank Pattern and encode it.",
+          "Place a Pattern Provider beside a Molecular Assembler and put the pattern in the Provider. Connect a CPU too; a single 1k Crafting Storage is enough for the first test.",
+          "Store the ingredients in ME and request a small batch through the Terminal. If the recipe is absent, check the pattern slot, power and the Provider’s channel."
+        ]
+      }
+    },
+    "5130112A016321B8": {
+      "uk_ua": {
+        "title": "Crafting Pattern: рецепт верстака",
+        "description": [
+          "Цей шаблон описує звичайний верстаковий рецепт. Постав його у Pattern Provider, що торкається Molecular Assembler; вихід збирача повертається через сусідній Provider.",
+          "Для тесту замов одну операцію, а потім малу партію. Processing Pattern із такими самими іконками не перетворює довільну машину на верстак."
+        ]
+      },
+      "en_us": {
+        "title": "Crafting Pattern: Table Recipe",
+        "description": [
+          "This pattern describes an ordinary crafting-table recipe. Insert it into a Pattern Provider touching a Molecular Assembler; the assembler can return its result through that adjacent Provider.",
+          "Test one operation, then a small batch. A Processing Pattern with matching icons does not turn an arbitrary machine into a crafting table."
+        ]
+      }
+    },
+    "513011F60668F4F2": {
+      "uk_ua": {
+        "title": "Processing Pattern: зовнішня машина",
+        "description": [
+          "У режимі Processing точно задай предметні входи й очікувані виходи операції. Provider має передати входи в правильний слот зовнішньої машини.",
+          "Налаштуй повернення готового продукту в ME через Import Bus, Interface або зворотні слоти Provider. Скриня зі Storage Bus сама по собі не повідомляє CPU про завершення операції.",
+          "Спочатку замов один простий цикл. Для Metallurgic Infuser окремо забезпеч потрібний реагент і його Extra-вхід: предметний шаблон не налаштовує хімічний буфер."
+        ]
+      },
+      "en_us": {
+        "title": "Processing Pattern: External Machine",
+        "description": [
+          "In Processing mode, specify the operation’s exact item inputs and expected outputs. The Provider must deliver those inputs to the correct machine slots.",
+          "Return the product into ME through an Import Bus, Interface or the Provider’s return slots. A chest with a Storage Bus alone does not notify the CPU that processing finished.",
+          "Request one simple cycle first. For a Metallurgic Infuser, supply the correct reagent through its Extra input separately; an item pattern does not configure the infusion buffer."
+        ]
+      }
+    },
+    "513011562F81FD24": {
+      "uk_ua": {
+        "title": "Pattern Provider: передати завдання",
+        "description": [
+          "Підключи Provider до ME-мережі та постав його впритул до Molecular Assembler або входу зовнішньої машини. Поклади всередину відповідний закодований шаблон.",
+          "Provider подає матеріали за запитом CPU. У Crafting-режимі працює збирач; у Processing-режимі налаштована машина та окремий шлях повернення продукту.",
+          "Якщо завдання очікує вічно, перевір правильний бік машини, вільне місце й повернення точного виходу. Додавання другого шаблона не виправляє зламаний маршрут."
+        ]
+      },
+      "en_us": {
+        "title": "Pattern Provider: Send the Job",
+        "description": [
+          "Connect the Provider to ME and place it directly beside a Molecular Assembler or the input of an external machine. Insert the corresponding encoded pattern.",
+          "The Provider supplies ingredients when a CPU requests them. Crafting uses an assembler; Processing uses a configured machine and a return path for its product.",
+          "If a job waits indefinitely, inspect the machine’s input face, free space and exact returned output. Adding another pattern does not fix a broken route."
+        ]
+      }
+    },
+    "5130112D00658B23": {
+      "uk_ua": {
+        "title": "Molecular Assembler: виконавець рецепта",
+        "description": [
+          "Збирач виконує Crafting Patterns. Для першого автокрафту постав його поряд із мережевим Pattern Provider та встав шаблон у Provider.",
+          "Забезпеч живлення й CPU з Crafting Storage; один лише Crafting Unit не має пам’яті для замовлення. Перевір рецепт дошок перед складними міжмодовими ланцюгами.",
+          "Expert-рецепт зберігає готовий RFTools Crafter T1, керування й точний механізм. Промислове шасі дозволяє зібрати перший автокрафт до вимірної матриці."
+        ]
+      },
+      "en_us": {
+        "title": "Molecular Assembler: Execute the Recipe",
+        "description": [
+          "The assembler executes Crafting Patterns. For basic autocrafting, place it beside a networked Pattern Provider and insert the pattern in the Provider.",
+          "Supply power and a CPU with Crafting Storage; a Crafting Unit alone has no job storage. Test a plank recipe before complex cross-mod chains.",
+          "The expert recipe retains the complete RFTools Crafter T1, control electronics and Precision Mechanism. Industrial Chassis allows this first setup before Dimensional Matrix."
+        ]
+      }
+    },
+    "513011B5F7F592D8": {
+      "uk_ua": {
+        "title": "Crafting Unit ще не є CPU",
+        "description": [
+          "Crafting Unit — основа для блоків автокрафту та заповнювач форми CPU. Сам по собі він не приймає замовлення: потрібен щонайменше один Crafting Storage.",
+          "Для найменшого CPU поєднай Unit з 1k Cell Component і постав готовий 1k Crafting Storage в мережу. Великий CPU складається в суцільний прямокутний блок без порожнин.",
+          "Рецепт Unit зберігає Ender IO Crafter, процесори, залізний блок і точний механізм. Вимірна матриця знадобиться під час переходу до більших компонентів."
+        ]
+      },
+      "en_us": {
+        "title": "A Crafting Unit Is Not Yet a CPU",
+        "description": [
+          "A Crafting Unit is a base ingredient and a filler block for CPU shape. It cannot accept jobs by itself: the CPU needs at least one Crafting Storage block.",
+          "For the smallest CPU, combine a Unit with a 1k Cell Component and connect the resulting 1k Crafting Storage to ME. Larger CPUs must form a solid rectangular prism without gaps.",
+          "The Unit recipe retains the Ender IO Crafter, processors, iron block and Precision Mechanism. Dimensional Matrix is reserved for scaling to larger components."
+        ]
+      }
+    },
+    "513011DEEBB429E9": {
+      "uk_ua": {
+        "title": "Перший CPU: 1k Crafting Storage",
+        "description": [
+          "Один 1k Crafting Storage є найменшим робочим CPU. Підключи його до тієї самої мережі, що й Pattern Provider, і замов одну просту операцію.",
+          "Кожен окремий CPU веде одне замовлення. Ємність визначає розмір доступних робіт; швидкість зовнішньої машини — інше обмеження.",
+          "Почни з дошок, потім перевір кілька пов’язаних шаблонів. Для більших партій або паралельних замовлень плануй пізніші блоки та додаткові CPU."
+        ]
+      },
+      "en_us": {
+        "title": "First CPU: 1k Crafting Storage",
+        "description": [
+          "A single 1k Crafting Storage is the smallest working CPU. Connect it to the same network as the Pattern Provider and request one simple operation.",
+          "Each separate CPU handles one job. Storage limits job size; the external machine’s processing speed is a different constraint.",
+          "Start with planks, then test a few connected patterns. Larger batches or simultaneous jobs call for later components and additional CPUs."
+        ]
+      }
+    },
+    "5130114905904323": {
+      "uk_ua": {
+        "title": "4k: масштабування після матриці",
+        "description": [
+          "4k Cell Component використовує менші компоненти та Dimensional Matrix. Цей рубіж відкриває більші комірки й більші CPU; перша мала система працює на 1k раніше.",
+          "Обери, чи тобі бракує місця для предметів, чи пам’яті одного замовлення. Item Storage Cell та Crafting Storage вирішують різні задачі."
+        ]
+      },
+      "en_us": {
+        "title": "4k: Scale after the Matrix",
+        "description": [
+          "The 4k Cell Component requires smaller components and a Dimensional Matrix. This milestone opens larger cells and CPUs; the first small system can use 1k earlier.",
+          "Decide whether you need more item storage or more memory for one crafting job. Item Storage Cells and Crafting Storage solve different problems."
+        ]
+      }
+    },
+    "513011BBCA06FEA6": {
+      "uk_ua": {
+        "title": "16k: масштабування після матриці",
+        "description": [
+          "16k Cell Component використовує менші компоненти та Dimensional Matrix. Цей рубіж відкриває більші комірки й більші CPU; перша мала система працює на 1k раніше.",
+          "Обери, чи тобі бракує місця для предметів, чи пам’яті одного замовлення. Item Storage Cell та Crafting Storage вирішують різні задачі."
+        ]
+      },
+      "en_us": {
+        "title": "16k: Scale after the Matrix",
+        "description": [
+          "The 16k Cell Component requires smaller components and a Dimensional Matrix. This milestone opens larger cells and CPUs; the first small system can use 1k earlier.",
+          "Decide whether you need more item storage or more memory for one crafting job. Item Storage Cells and Crafting Storage solve different problems."
+        ]
+      }
+    },
+    "5130119BD717861F": {
+      "uk_ua": {
+        "title": "Controller: вирости за вісім каналів",
+        "description": [
+          "Controller відкриває більшу мережу після Dimensional Matrix. У стандартному режимі кожна його доступна грань надає до 32 каналів через відповідну магістраль.",
+          "Проклади Dense Cable до окремих гілок, далі звичайні кабелі до пристроїв. Перевір шлях кожної гілки: коротке з’єднання через звичайний блок може стати вузьким місцем.",
+          "Додаткове живлення та Energy Cell потрібні зі зростанням навантаження. Controller не збільшує місткість установлених комірок."
+        ]
+      },
+      "en_us": {
+        "title": "Controller: Grow beyond Eight Channels",
+        "description": [
+          "The Controller unlocks a larger network after Dimensional Matrix. In standard mode, each available face can supply up to 32 channels through suitable cable.",
+          "Use Dense Cable for trunks and ordinary cable for device branches. Inspect each route: a shortcut through an ordinary block may become a bottleneck.",
+          "Provide enough power and buffering for the growing load. A Controller does not enlarge the storage cells already installed."
+        ]
+      }
+    },
+    "51301130F8B93E94": {
+      "uk_ua": {
+        "title": "Комплект для ME-майстерні",
+        "description": [
+          "Підготуй зазначені блоки для автокрафту та зовнішньої обробки. Завдання перевіряють компоненти в інвентарі; їх виконання ще не доводить, що система зібрана й працює.",
+          "Для тестового стенда додай 1k Crafting Storage, живлення, сховище й термінал. Постав Provider поряд з Assembler, закодуй рецепт дошок та замов малу партію.",
+          "Після цього налаштуй окремий Processing Pattern для Infuser: предметний вхід, потрібний реагент і повернення продукту. Успішне завершення побачиш у стані замовлення CPU."
+        ]
+      },
+      "en_us": {
+        "title": "ME Workshop Components",
+        "description": [
+          "Prepare the listed blocks for autocrafting and external processing. The tasks detect inventory components; completion does not prove the system is built or running.",
+          "For a test bench, add 1k Crafting Storage, power, storage and a terminal. Put the Provider beside the Assembler, encode a plank recipe and request a small batch.",
+          "Then configure a separate Processing Pattern for the Infuser: item input, the correct infusion material and product return. Check completion in the CPU’s job status."
+        ]
+      }
+    },
+    "513011E0DFFECB6C": {
+      "uk_ua": {
+        "title": "ME P2P: зв’язати вхід і вихід",
+        "description": [
+          "ME P2P переносить канали через мережу, що живить самі тунелі. Зроби пару тунелів на одній допоміжній мережі; кожен її кінець також потребує каналу.",
+          "Memory Card: Shift+ПКМ по входу створює частоту, звичайний ПКМ по виходу копіює її. У стандартному режимі пара переносить до 32 каналів; кілька виходів ділять їх між собою.",
+          "Перевір частоту, живлення й канали обох кінців. ME P2P не можна вкладати в інший ME P2P для нескінченного множення каналів."
+        ]
+      },
+      "en_us": {
+        "title": "ME P2P: Link Input and Output",
+        "description": [
+          "ME P2P transports channels across a network that powers the tunnels themselves. Build a pair on one support network; each endpoint also consumes a channel there.",
+          "With a Memory Card, shift-right-click the input to create a frequency, then right-click the output to copy it. A pair carries up to 32 channels in standard mode; multiple outputs share them.",
+          "Check matching frequencies, power and both endpoint channels. Nesting ME P2P inside another ME P2P does not create unlimited channels."
+        ]
+      }
+    },
+    "513011578532ED51": {
+      "uk_ua": {
+        "title": "Item P2P: перенести предметний потік",
+        "description": [
+          "Налаштуй тунель на предмети ПКМ зі скринею або лійкою. Зв’яжи вхід і вихід Memory Card: Shift+ПКМ на вході, ПКМ на виході.",
+          "Постав лійку або інший активний подавач до входу, а приймач — до виходу. Пара працює як віддалене з’єднання граней; дві пасивні скрині самі предмети не пересувають."
+        ]
+      },
+      "en_us": {
+        "title": "Item P2P: Carry an Item Flow",
+        "description": [
+          "Attune the tunnel to items by right-clicking it with a chest or hopper. Link input and output with a Memory Card: shift-right-click the input, then right-click the output.",
+          "Feed the input with a hopper or another active inserter and place storage at the output. The pair remotely connects faces; two passive chests will not transfer items by themselves."
+        ]
+      }
+    },
+    "51301162B4562E25": {
+      "uk_ua": {
+        "title": "Fluid P2P: окремий маршрут рідини",
+        "description": [
+          "Налаштуй тунель відром або пляшкою та зв’яжи пару Memory Card. Подай рідину вхідному тунелю насосом або трубою з витягуванням; приймач постав біля виходу.",
+          "Перевір заповнення бака малою порцією. Цей тунель переносить рідину між гранями, а не автоматично додає її до Fluid Storage Cell; хімічні речовини Mekanism також потребують свого сумісного транспорту."
+        ]
+      },
+      "en_us": {
+        "title": "Fluid P2P: A Separate Fluid Route",
+        "description": [
+          "Attune the tunnel with a bucket or bottle and link the pair with a Memory Card. Push fluid into the input using a pump or extracting pipe, with a tank at the output.",
+          "Test a small amount. The tunnel moves fluid between faces; it does not automatically store it in a Fluid Storage Cell, and Mekanism chemicals need compatible transport of their own."
+        ]
+      }
+    },
+    "513011285F6711C0": {
+      "uk_ua": {
+        "title": "FE P2P: передати зовнішню енергію",
+        "description": [
+          "Налаштуй тунель енергетичним предметом та зв’яжи пару Memory Card. Підключи генератор до входу, споживач — до виходу, а самі тунелі тримай на живій ME-мережі.",
+          "Це маршрут FE до іншої машини, а не заміна Energy Acceptor. Передавання збільшує споживання AE тунелями; перевір баланс енергії під навантаженням."
+        ]
+      },
+      "en_us": {
+        "title": "FE P2P: Carry External Power",
+        "description": [
+          "Attune the tunnel with an energy-containing item and link the pair with a Memory Card. Connect generation to the input and a consumer to the output while keeping the tunnels on a live ME network.",
+          "This carries FE to another machine; it does not replace an Energy Acceptor. Transfer increases the tunnels’ AE demand, so test the power balance under load."
+        ]
+      }
+    },
+    "513011DF59EDD6B8": {
+      "uk_ua": {
+        "title": "Redstone P2P: передати сигнал",
+        "description": [
+          "Налаштуй тунелі редстоуновим компонентом і зв’яжи їх Memory Card. До входу подай сигнал від важеля, біля виходу постав лампу або інший індикатор.",
+          "Перевір обидва стани важеля. Цей канал переносить сигнал редстоуну; предмети та енергія FE через нього не проходять."
+        ]
+      },
+      "en_us": {
+        "title": "Redstone P2P: Carry a Signal",
+        "description": [
+          "Attune the tunnels with a redstone component and pair them with a Memory Card. Feed the input from a lever and place a lamp or other indicator at the output.",
+          "Test both lever states. This tunnel carries a redstone signal, not items or FE power."
+        ]
+      }
+    },
+    "513011F21184218C": {
+      "uk_ua": {
+        "title": "Formation Plane: поставити блок",
+        "description": [
+          "Formation Plane розміщує блоки або викидає предмети перед своєю гранню, коли їх вставляють у мережу. Для проби використай окрему підмережу та один дозволений матеріал у фільтрі.",
+          "Подай предмет через Interface або Import Bus і перевір місце перед площиною. У головній мережі на вибір місця зберігання впливають пріоритети; для автоматичного розміщення у захищеному чанку дозволь відповідні дії fake player."
+        ]
+      },
+      "en_us": {
+        "title": "Formation Plane: Place a Block",
+        "description": [
+          "The Formation Plane places blocks or drops items in front of its face when they are inserted into its network. Test on a separate subnetwork with one allowed material in its filter.",
+          "Insert an item through an Interface or Import Bus and check the target space. Storage priorities affect a shared network; claimed chunks must allow the relevant fake-player placement actions."
+        ]
+      }
+    },
+    "51301142E35FA369": {
+      "uk_ua": {
+        "title": "Annihilation Plane: забрати блок",
+        "description": [
+          "Annihilation Plane ламає блок перед собою або підбирає предмет, який торкнувся її грані. Вона працює лише тоді, коли мережа може прийняти результат.",
+          "Для фільтра зроби окрему підмережу зі сховищем, яке приймає потрібний дроп. Фільтрується результат руйнування, тому Silk Touch і звичайний дроп дають різні умови.",
+          "Перевір один дешевий блок, вільне місце в комірці та дозволи fake player у захищеному чанку. Це не магніт, що збирає предмети навколо."
+        ]
+      },
+      "en_us": {
+        "title": "Annihilation Plane: Collect a Block",
+        "description": [
+          "The Annihilation Plane breaks the block in front of it or collects items touching its face. It operates only when its network can store the result.",
+          "Filter it using a separate subnetwork whose storage accepts the desired drops. The filter applies to the dropped result, so Silk Touch and normal drops produce different conditions.",
+          "Test a cheap block, free cell space and fake-player permissions in claimed chunks. This device is not an area-wide item magnet."
+        ]
+      }
+    },
+    "5130111C6FFD51A9": {
+      "uk_ua": {
+        "title": "Wireless Access Point: прив’язати термінал",
+        "description": [
+          "Підключи точку доступу до ME та забезпеч їй канал. У верхній правий слот її інтерфейсу встав бездротовий термінал, щоб прив’язати його до цієї мережі.",
+          "Заряди термінал і перевір доступ поруч із точкою. Дальність і споживання змінюються з Wireless Boosters; перед розширенням перевір фактичну область покриття."
+        ]
+      },
+      "en_us": {
+        "title": "Wireless Access Point: Pair a Terminal",
+        "description": [
+          "Connect the Access Point to ME and provide a channel. Insert a wireless terminal into the top-right slot of its interface to pair it with that network.",
+          "Charge the terminal and test access nearby. Wireless Boosters change range and power demand; check actual coverage before expanding."
+        ]
+      }
+    },
+    "51301150484DEC3C": {
+      "uk_ua": {
+        "title": "Wireless Receiver: компонент зв’язку",
+        "description": [
+          "Wireless Receiver використовується в рецептах бездротового обладнання. Сам предмет не створює покриття й не прив’язує термінал.",
+          "Наступний робочий вузол — Wireless Access Point у живій ME-мережі. Готовий термінал прив’язується через слот точки доступу, а для роботи потребує власного заряду."
+        ]
+      },
+      "en_us": {
+        "title": "Wireless Receiver: Radio Component",
+        "description": [
+          "The Wireless Receiver is a crafting component for wireless equipment. The item alone does not provide coverage or pair a terminal.",
+          "The working network device is a Wireless Access Point on live ME. Pair the completed terminal through the Access Point’s slot and keep the terminal charged."
+        ]
+      }
+    },
+    "513011399BE50497": {
+      "uk_ua": {
+        "title": "Wireless Booster: розширити покриття",
+        "description": [
+          "Встав Booster у Wireless Access Point, а не в комірку зберігання. Він збільшує дальність точки разом із її енергетичним споживанням.",
+          "Перевір зв’язок на потрібній відстані та зміну навантаження. Друга точка доступу біля віддаленого цеху іноді зручніша за максимальне посилення однієї."
+        ]
+      },
+      "en_us": {
+        "title": "Wireless Booster: Extend Coverage",
+        "description": [
+          "Install the Booster in a Wireless Access Point, not a storage cell. It increases the point’s range and energy demand.",
+          "Test the desired distance and resulting load. A second access point near a remote workshop may be more convenient than maximizing one point’s range."
+        ]
+      }
+    },
+    "5130110CD6572A2C": {
+      "uk_ua": {
+        "title": "Бездротовий доступ до предметів",
+        "description": [
+          "Заряди Wireless Terminal у Charger. Прив’яжи його через верхній правий слот підключеної Wireless Access Point.",
+          "Відкрий термінал біля точки, забери предмет і перевір роботу далі від неї. Для доступу одночасно потрібні заряд предмета, жива мережа та покриття точки."
+        ]
+      },
+      "en_us": {
+        "title": "Wireless Item Access",
+        "description": [
+          "Charge the Wireless Terminal in a Charger. Pair it through the top-right slot of a connected Wireless Access Point.",
+          "Open it near the point, retrieve an item and test it farther away. Access requires terminal charge, a live network and access-point coverage at the same time."
+        ]
+      }
+    },
+    "513011C40B19897D": {
+      "uk_ua": {
+        "title": "Бездротова сітка крафту",
+        "description": [
+          "Wireless Crafting Terminal додає ручну сітку рецепта до переносного доступу. Заряди його та прив’яжи у Wireless Access Point так само, як звичайний бездротовий термінал.",
+          "Перевір простий крафт у зоні покриття. Ручна сітка не замінює CPU та шаблони для автоматичних замовлень."
+        ]
+      },
+      "en_us": {
+        "title": "Wireless Crafting Grid",
+        "description": [
+          "The Wireless Crafting Terminal adds a manual recipe grid to portable access. Charge it and pair it in a Wireless Access Point just like the ordinary wireless terminal.",
+          "Test a simple craft within coverage. The manual grid does not replace CPUs and patterns for automatic crafting requests."
+        ]
+      }
+    },
+    "5130112D86FBD3AF": {
+      "uk_ua": {
+        "title": "Quantum Link: центр віддаленого мосту",
+        "description": [
+          "Quantum Link Chamber ставиться в центр плоского кільця з восьми Quantum Rings. Для робочого зв’язку потрібна така конструкція на обох кінцях.",
+          "У центральні камери встав дві сингулярності з однієї заплутаної пари. Самотня камера без сформованого кільця до мережі не підключається."
+        ]
+      },
+      "en_us": {
+        "title": "Quantum Link: Center of a Remote Bridge",
+        "description": [
+          "Place the Quantum Link Chamber in the center of a flat ring of eight Quantum Rings. A working connection requires this structure at both endpoints.",
+          "Insert the two singularities from one entangled pair into the center chambers. A lone chamber without its complete ring does not connect to a network."
+        ]
+      }
+    },
+    "5130112C1D24E77E": {
+      "uk_ua": {
+        "title": "Quantum Bridge: два завантажені кінці",
+        "description": [
+          "Збери на кожному кінці вісім Quantum Rings навколо Link Chamber, встав спарені сингулярності й підведи кабель до кільця біля центру. Кутові блоки кільця до кабелів не підключаються.",
+          "Обидві сторони потребують живлення й завантажених чанків. У стандартному режимі міст переносить сумарно до 32 каналів, навіть якщо кабелі підведені з кількох граней.",
+          "Спочатку перевір міст між двома близькими майданчиками, потім перенось його між базами або вимірами."
+        ]
+      },
+      "en_us": {
+        "title": "Quantum Bridge: Two Loaded Endpoints",
+        "description": [
+          "At each endpoint, build eight Quantum Rings around a Link Chamber, insert matching singularities and connect cable to a ring next to the center. Corner rings do not connect to cables.",
+          "Both endpoints need power and loaded chunks. In standard mode the bridge carries 32 channels in total, even with cables attached to several faces.",
+          "Test the bridge between nearby platforms before moving it between bases or dimensions."
+        ]
+      }
+    },
+    "513011C1618FC593": {
+      "uk_ua": {
+        "title": "Спарені квантові сингулярності",
+        "description": [
+          "Вибухова реакція звичайної Singularity з Ender Pearl або Ender Dust створює заплутану пару. Виконуй її на окремому майданчику, де можеш зібрати обидва результати.",
+          "Збережи пару разом і підпиши її. Для Quantum Bridge потрібен один предмет цієї самої пари на кожному кінці; дві випадкові сингулярності не утворюють зв’язок."
+        ]
+      },
+      "en_us": {
+        "title": "Paired Quantum Singularities",
+        "description": [
+          "An explosive reaction between a Singularity and an Ender Pearl or Ender Dust creates an entangled pair. Use a separate work area where you can recover both results.",
+          "Keep each pair together and label it. A Quantum Bridge needs one member of the same pair at each endpoint; unrelated singularities will not link."
+        ]
+      }
+    },
+    "51301112D49F4FE1": {
+      "uk_ua": {
+        "title": "Spatial IO: спочатку один блок",
+        "description": [
+          "Підключи порт і Spatial Pylons до однієї окремої ME-мережі. Почни з малого об’єму за схемою Guide; у порту перевір розміри та потрібну енергію.",
+          "Встав порожню Spatial Storage Cell і подай редстоуновий імпульс ззовні області. Для проби перенеси дешевий блок, потім повтори операцію тією самою коміркою, щоб повернути його.",
+          "Операція обмінює весь об’єм разом із сутностями. Не стій у ньому під час тесту. Після першого використання розміри комірки закріплені й не переформатовуються."
+        ]
+      },
+      "en_us": {
+        "title": "Spatial IO: Start with One Block",
+        "description": [
+          "Connect the port and Spatial Pylons to one dedicated ME network. Start with a small volume from a Guide diagram and inspect its dimensions and required energy in the port.",
+          "Insert a blank Spatial Storage Cell and pulse the port with redstone from outside the volume. Test a cheap block, then repeat with the same cell to bring it back.",
+          "The operation swaps the entire volume, including entities. Stand outside during testing. A cell’s dimensions become fixed on first use and cannot be reformatted."
+        ]
+      }
+    },
+    "5130116CC5036025": {
+      "uk_ua": {
+        "title": "Кімната у Spatial Storage",
+        "description": [
+          "Після тесту одного блока підготуй малу кімнату в межах Pylons. Перевір її точні X/Y/Z у Spatial IO Port, запас енергії та комірку відповідного розміру.",
+          "Зроби цикл збереження й повернення ззовні області. Зайти всередину — окремий ризикований крок, для якого потрібен незалежний спосіб повернення; просто мати просторову комірку недостатньо."
+        ]
+      },
+      "en_us": {
+        "title": "A Room in Spatial Storage",
+        "description": [
+          "After the single-block test, prepare a small room within the Pylons. Check its exact X/Y/Z in the Spatial IO Port, sufficient stored energy and a suitably sized cell.",
+          "Perform the store-and-restore cycle from outside the volume. Entering it is a separate step requiring an independent return method; merely owning a spatial cell is insufficient."
+        ]
+      }
+    },
+    "5130112D843FED07": {
+      "uk_ua": {
+        "title": "Oxygen Loader: заправка перед польотом",
+        "description": [
+          "Підключи Oxygen Loader до енергії, подай воду в його водяний бак і дочекайся накопичення кисню. Вода переробляється на кисень усередині машини.",
+          "Через призначений слот наповни Space Suit та запасні Gas Tanks. Перевір кількість кисню в підказці готового спорядження до від’єднання й польоту.",
+          "Це наземна підготовка до першого Місяця. Oxygen Distributor створює придатну для життя область на базі й вирішує іншу задачу."
+        ]
+      },
+      "en_us": {
+        "title": "Oxygen Loader: Fill before Flight",
+        "description": [
+          "Power the Oxygen Loader, supply water to its water tank and wait for oxygen to accumulate. The machine converts water into oxygen.",
+          "Use its container slot to fill the Space Suit and spare Gas Tanks. Inspect the oxygen amount on the finished equipment before disconnecting and launching.",
+          "This is ground preparation for the first Moon trip. An Oxygen Distributor creates a habitable area at a base and serves a different purpose."
+        ]
+      }
+    },
+    "5130115956283BA9": {
+      "uk_ua": {
+        "title": "Заправлений скафандр до першого Місяця",
+        "description": [
+          "Збери Space Suit і наповни його киснем в Oxygen Loader. Одягни повний звичайний космічний комплект: грудна частина постачає кисень, але не замінює решту спорядження.",
+          "Перевір фактичний запас кисню й візьми наповнені Gas Tanks. Цей комплект призначений для холодного безповітряного середовища; для гарячих планет потрібен наступний тип захисту.",
+          "Предметне завдання приймає скафандр незалежно від заповнення. Перед стартом перевір заправку самостійно: галочка не вимірює запас кисню."
+        ]
+      },
+      "en_us": {
+        "title": "Fill the Suit before the First Moon Trip",
+        "description": [
+          "Craft the Space Suit and fill it with oxygen in an Oxygen Loader. Equip the complete ordinary space set: the chest piece supplies oxygen but does not replace the other equipment.",
+          "Check actual oxygen reserves and carry filled Gas Tanks. This set protects in cold airless environments; hot planets need the next protection tier.",
+          "The item task accepts the suit regardless of its fill level. Check oxygen before launch yourself: the completion mark does not measure the reserve."
+        ]
+      }
+    },
+    "5130114FE09DA6CE": {
+      "uk_ua": {
+        "title": "Повний космічний комплект",
+        "description": [
+          "Підготуй Space Helmet, Space Pants і Space Boots до першої посадки. Одягни їх разом із заправленою грудною частиною Space Suit.",
+          "Перевір чотири слоти броні перед стартом. Звичайна сильна броня з іншого мода не обов’язково дає потрібний захист від середовища Ad Astra."
+        ]
+      },
+      "en_us": {
+        "title": "Complete Space Equipment",
+        "description": [
+          "Prepare the Space Helmet, Space Pants and Space Boots before the first landing. Equip them together with the oxygen-filled Space Suit chest piece.",
+          "Check all four armor slots before departure. Strong armor from another mod does not automatically provide Ad Astra’s environmental protection."
+        ]
+      }
+    },
+    "513011984F5B40C8": {
+      "uk_ua": {
+        "title": "Кисень як ресурс експедиції",
+        "description": [
+          "Відро кисню отримай з Oxygen Loader після переробки води. Це зручна перевірка виробництва ресурсу на Землі, до першого польоту.",
+          "Для тривалої подорожі заправляй скафандр і Gas Tanks та дивись їхні місткості. Наявність одного відра не підтверджує достатній запас для всієї експедиції."
+        ]
+      },
+      "en_us": {
+        "title": "Oxygen as an Expedition Supply",
+        "description": [
+          "Fill an oxygen bucket from the Oxygen Loader after it processes water. This checks ground-based oxygen production before the first flight.",
+          "For a longer trip, fill the suit and Gas Tanks and inspect their capacities. Owning one bucket does not prove you have enough oxygen for the expedition."
+        ]
+      }
+    },
+    "513011A99D6EA3A8": {
+      "uk_ua": {
+        "title": "Паливо на старт і повернення",
+        "description": [
+          "Перероби нафту на Fuel у живій Fuel Refinery. Ракета використовує готове паливо; відро сирої нафти його не замінює.",
+          "Відкрий інвентар установленої ракети через Shift+ПКМ та заповни її бак за індикатором. Окремо поклади в вантаж запас на зворотний старт і майданчик для запуску.",
+          "Підготуй повернення ще на Землі: книга перевіряє предмет, а не всі запаси ракети."
+        ]
+      },
+      "en_us": {
+        "title": "Fuel for Departure and Return",
+        "description": [
+          "Process oil into Fuel in a powered Fuel Refinery. The rocket uses refined fuel; a bucket of crude oil is not a substitute.",
+          "Shift-right-click the placed rocket and fill its tank according to the gauge. Pack fuel for a return launch and a launch pad separately in its cargo.",
+          "Prepare the return trip on Earth. The quest checks an item, not all of the rocket’s supplies."
+        ]
+      }
+    },
+    "513011ABD424EA8F": {
+      "uk_ua": {
+        "title": "Ракета першого рівня: підготувати старт",
+        "description": [
+          "Збери ракету у NASA Workbench, постав Launch Pad і встанови ракету в його центрі. Її інвентар із паливом відкривається через Shift+ПКМ.",
+          "До зльоту підготуй повний заправлений скафандр, запас кисню, їжу, інструменти, стійке до безповітряного середовища світло та паливо й майданчик для повернення.",
+          "Сядь у заправлену ракету та натисни клавішу стрибка. Після посадки забери ракету й вантаж із посадкового модуля; не залишай засіб повернення в ньому."
+        ]
+      },
+      "en_us": {
+        "title": "Tier 1 Rocket: Prepare to Launch",
+        "description": [
+          "Craft the rocket in a NASA Workbench, build a Launch Pad and place the rocket in its center. Shift-right-click opens its fuel and cargo inventory.",
+          "Before launching, prepare a full oxygen-filled space set, spare oxygen, food, tools, airless-safe lighting and the fuel and launch pad for your return.",
+          "Enter the fueled rocket and press the jump key. After landing, recover the rocket and cargo from the lander instead of leaving your return equipment inside."
+        ]
+      }
+    },
+    "5130113E390D02AA": {
+      "uk_ua": {
+        "title": "Перша посадка: Desh і зворотний маршрут",
+        "description": [
+          "На Місяці стеж за киснем і збережи комплект повернення. Звичайні смолоскипи та вода тут поводяться інакше, ніж на Землі; використовуй придатне освітлення.",
+          "Здобудь Desh під землею. Спочатку поверни достатній запас для обробки й пластин: саме вони беруть участь у Stellar Alloy та радіаційному захисті.",
+          "Для зворотного польоту забери спорядження з посадкового модуля, встанови Launch Pad і ракету та заправ її. Місячна база з Oxygen Distributor — окремий наступний проєкт."
+        ]
+      },
+      "en_us": {
+        "title": "First Landing: Desh and a Return Route",
+        "description": [
+          "On the Moon, watch your oxygen and keep the return kit intact. Ordinary torches and water behave differently from Earth; use suitable lighting.",
+          "Mine Desh underground. Return with enough for processing and plates, which contribute to Stellar Alloy and radiation shielding.",
+          "For the return flight, recover equipment from the lander, place the Launch Pad and rocket and refuel it. A lunar base with an Oxygen Distributor is a separate next project."
+        ]
+      }
+    },
+    "51301162F20C9431": {
+      "uk_ua": {
+        "title": "Zip Gun: керований поштовх",
+        "description": [
+          "Візьми Zip Gun у руку та використай його, щоб отримати поштовх. Нативна умова перевіряє саме використання предмета, а не тільки його наявність.",
+          "Спочатку спробуй на відкритому безпечному майданчику. У невагомості це засіб маневру; простеж за напрямком і способом повернення до опори."
+        ]
+      },
+      "en_us": {
+        "title": "Zip Gun: A Controlled Boost",
+        "description": [
+          "Hold the Zip Gun and use it to propel yourself. The native condition checks using the item, not merely owning it.",
+          "Test in an open safe area first. It assists movement in zero gravity; watch your direction and keep a way back to stable ground."
+        ]
+      }
+    },
+    "513011AB19DDDE4C": {
+      "uk_ua": {
+        "title": "Базовий реактор після матеріалів Місяця",
+        "description": [
+          "Контролер Basic Extreme Reactor потребує Dimensional Matrix, Quantum Processor і Radiation Shield. Для захисту потрібні Desh-пластини, тому робочий реактор належить етапу після першого Місяця.",
+          "Збери замкнений корпус із потрібними паливними й керувальними стрижнями, портом палива та виходом енергії за схемою Extreme Reactors. Відкрий контролер і перевір, що мультиблок сформований.",
+          "Почни з малого паливного запасу й перевір виведення енергії та відходів. Ця гілка дає електрику; продукти ядерної кампанії Mekanism виробляє інша система."
+        ]
+      },
+      "en_us": {
+        "title": "Basic Reactor after Lunar Materials",
+        "description": [
+          "The Basic Extreme Reactor controller requires Dimensional Matrix, Quantum Processor and Radiation Shield. The shield needs Desh plates, placing a working reactor after the first Moon trip.",
+          "Build a closed casing with the required fuel and control rods, a fuel port and an energy output using the Extreme Reactors diagram. Open the controller and verify that the multiblock has formed.",
+          "Begin with a small fuel reserve and test energy and waste handling. This branch supplies electricity; Mekanism’s nuclear progression products come from a separate system."
+        ]
+      }
+    },
+    "513011FE8D522CBB": {
+      "uk_ua": {
+        "title": "Посилений реактор під навантаження",
+        "description": [
+          "Посилений контролер додає Stellar Alloy до радіаційного захисту й квантової електроніки. Усі частини конструкції мають належати сумісному рівню.",
+          "Спочатку визнач вихід: безпосередня електрика чи гаряча рідина для турбіни. Для другого варіанта потрібен повний маршрут теплоносія й повернення, а не тільки більший корпус.",
+          "Перевір сформованість, паливний потік і споживача на малому режимі. Володіння контролером у квесті не є перевіркою працюючого мультиблока."
+        ]
+      },
+      "en_us": {
+        "title": "Reinforced Reactor for the Load",
+        "description": [
+          "The reinforced controller adds Stellar Alloy to radiation shielding and quantum electronics. Use compatible-tier parts throughout the structure.",
+          "Choose the output first: direct electricity or heated fluid for a turbine. The latter needs a complete coolant and return circuit, not just a larger casing.",
+          "Check formation, fuel flow and the consumer at a small operating rate. Owning the controller for its quest does not verify a working multiblock."
+        ]
+      }
+    },
+    "514011DDB6B69693": {
+      "uk_ua": {
+        "title": "Golden Furnace після точного механізму",
+        "description": [
+          "У цій збірці золота піч потребує керування, Precision Mechanism і промислового шасі. Вона належить до другого виробничого етапу, навіть якщо золото вже знайдене.",
+          "Онови сумісну попередню піч за рецептом і перевір плавлення малої партії. Augments мають різне призначення: спершу обери швидкість, економію палива або потрібний режим."
+        ]
+      },
+      "en_us": {
+        "title": "Golden Furnace after Precision",
+        "description": [
+          "This pack’s Golden Furnace requires control electronics, Precision Mechanism and Industrial Chassis. It belongs to the second production stage even if gold is available earlier.",
+          "Upgrade a compatible earlier furnace using the recipe and test a small batch. Augments serve different purposes; first choose speed, fuel efficiency or the required processing mode."
+        ]
+      }
+    },
+    "514011AAAA9555C0": {
+      "uk_ua": {
+        "title": "Diamond Furnace після вимірної матриці",
+        "description": [
+          "Diamond Furnace потребує Quantum Processor та Dimensional Matrix на додачу до попередньої печі й точного механізму. Ця драбина продовжується після спільних матеріалів вимірів.",
+          "Emerald і Crystal продовжують той самий етап; Netherite потребує вже матеріалів Місяця та Stellar Alloy. Плануй піч під потрібну пропускну здатність, а не лише колір корпуса."
+        ]
+      },
+      "en_us": {
+        "title": "Diamond Furnace after the Matrix",
+        "description": [
+          "The Diamond Furnace requires Quantum Processor and Dimensional Matrix in addition to the previous furnace and Precision Mechanism. This ladder resumes after the shared dimension materials.",
+          "Emerald and Crystal continue within that stage; Netherite needs lunar materials and Stellar Alloy. Choose furnace capacity for your actual throughput rather than its casing color."
+        ]
+      }
+    }
+  }
+}

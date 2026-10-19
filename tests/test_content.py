@@ -45,6 +45,10 @@ class CampaignContentTests(unittest.TestCase):
                 objects.append(("quest", quest["id"]))
                 objects.extend(("task", task["id"]) for task in quest["tasks"])
                 objects.extend(("reward", reward["id"]) for reward in quest["rewards"])
+        for path in sorted((QUESTS / "reward_tables").glob("*.snbt")):
+            table = read_json(path)
+            objects.append(("reward_table", table["id"]))
+            objects.extend(("table_reward", reward["id"]) for reward in table["rewards"])
         invalid = [(kind, ident) for kind, ident in objects if not ID_PATTERN.fullmatch(ident)]
         self.assertEqual(invalid, [], "Persistent IDs must be uppercase 16-digit hexadecimal values")
         duplicates = [ident for ident, count in Counter(ident for _, ident in objects).items() if count > 1]
@@ -105,13 +109,21 @@ class CampaignContentTests(unittest.TestCase):
                 self.assertFalse(quest.get("can_repeat", False))
                 self.assertFalse(quest.get("repeatable", False))
                 for reward in quest["rewards"]:
-                    self.assertEqual(reward["type"], "item")
+                    self.assertIn(reward["type"], {"item", "random"})
                     self.assertEqual(reward.get("auto", "disabled"), "disabled")
-                    personal_book = quest["id"] == INTRO_ID and reward["item"]["id"] == "ftbquests:book"
+                    personal_book = quest["id"] == INTRO_ID and reward.get("item", {}).get("id") == "ftbquests:book"
                     self.assertEqual(reward.get("team_reward", True), not personal_book)
-                    self.assertIs(type(reward.get("count", 1)), int)
-                    self.assertGreater(reward.get("count", 1), 0)
-                    self.assertRegex(reward["item"]["id"], r"^[a-z0-9_.-]+:[a-z0-9_./-]+$")
+                    if reward["type"] == "random":
+                        self.assertIs(type(reward["table_id"]), int)
+                        self.assertGreater(reward["table_id"], 0)
+                        self.assertLess(reward["table_id"], 2 ** 31)
+                        self.assertTrue((QUESTS / "reward_tables" / f"{reward['table_id']:016X}.snbt").is_file())
+                        self.assertNotIn("item", reward)
+                        self.assertNotIn("count", reward)
+                    else:
+                        self.assertIs(type(reward.get("count", 1)), int)
+                        self.assertEqual(reward.get("count", 1), 1)
+                        self.assertRegex(reward["item"]["id"], r"^(?:ftbquests:book|kubejs:mayhem_cube_t[0-6])$")
 
     def test_no_craftoria_runtime_adapters(self):
         """Craftoria is a quality reference, not a bundled runtime dependency."""

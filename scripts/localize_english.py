@@ -12,9 +12,11 @@ import argparse
 import hashlib
 import json
 import re
-import textwrap
 import zipfile
 from pathlib import Path
+
+import campaign_layout
+import campaign_rewards
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
@@ -47,7 +49,7 @@ CHAPTERS = {
     "qm_06_accessories": "24 · Artifacts, Relics and Your Loadout",
     "qm_v030_25_projecte": "25 · ProjectE: Earned Transmutation",
     "qm_v030_26_avaritia": "26 · Avaritia: Final Industry",
-    "qm_v030_27_convergence": "27 · Shared Campaign Milestones",
+    "qm_v030_27_convergence": "00 · Main Route",
     "qm_v040_28_ironfurnaces": "28 · The Iron Furnaces Ladder",
     "qm_v040_29_exdeorum": "29 · Ex Deorum: Resources through Processing",
     "qm_v040_30_exmachinis": "30 · Ex Machinis: Powered Processing",
@@ -63,7 +65,7 @@ CHAPTERS = {
 GROUPS = [
     "Starting Out and Routes", "Materials and Production", "Machines and Power",
     "Networks and Logistics", "Magic and Equipment", "Dimensions and Settlements",
-    "Shared Milestones and the Finale",
+    "Transmutation and the Finale",
 ]
 
 # Task ID -> concise title and hand-translated mechanical requirements.
@@ -110,7 +112,7 @@ SPECIAL = {
     ),
     "514D020000000001": (
         "Welcome to Shout Out to Questing Mayhem",
-        "Start the SOQM Expert campaign. This entry completes automatically through the campaign integration. English is an alpha objective guide; the full authored story and humor are currently available in Ukrainian.",
+        "Start the SOQM Expert campaign. This entry completes automatically through the campaign integration.",
     ),
     "514D02000000000A": (
         "A Successful Millénaire Trade",
@@ -309,6 +311,8 @@ def qm_advancement(advancement: str, names: dict) -> tuple[str, str] | None:
         return title, detail
     if path == "survival/grave_reclaimed":
         return "Recover Your Grave", "Successfully reclaim your OWN YIGD grave through the mod's normal interaction. Finding a grave, an unsuccessful attempt or another player's grave does not count. This is optional after a death; do not die deliberately for it."
+    if path == "ae2/first_me_craft":
+        return "First Craft in the ME Terminal", "Take a real crafting output from a powered ME Crafting Terminal whose active network contains stored items. Owning the terminal, crafting at a workbench, an unpowered network or an empty storage network does not count. This checks a terminal craft; the separate Pattern Provider tutorial explains autonomous jobs."
     if path.startswith("skills/"):
         if short.startswith("points_stage_"):
             item = data["criteria"]["stage_component"]["conditions"]["items"][0]["items"][0]
@@ -376,7 +380,17 @@ def generate() -> tuple[str, dict]:
         raise ValueError("Chapter group count changed; review English group titles")
     for group, title in zip(groups, GROUPS):
         result[f"chapter_group.{group['id']}.title"] = title
-    counts = {"chapters": 0, "quests": 0, "tasks": 0, "recipe_notes": 0}
+    counts = {"chapters": 0, "quests": 0, "tasks": 0, "authored_tutorials": 0, "named_sections": 0}
+    tutorials = load_json(ROOT / "metadata/campaign_tutorials.json")["quests"]
+    route = load_json(ROOT / "metadata/campaign_route.json")["quests"]
+    if set(route) & set(tutorials):
+        raise ValueError("Main route and mod tutorials must have distinct owners")
+    tutorials.update(route)
+    layout = campaign_layout.blueprint()
+    gate_titles = dict(zip(campaign_layout.GATES, (
+        "Industrial Chassis", "Precision Mechanism", "Dimensional Matrix",
+        "Stellar Alloy", "Mythic Circuit", "EMC Core",
+    )))
     chapter_files = sorted((QUESTS / "chapters").glob("*.snbt"))
     if {p.stem for p in chapter_files} != set(CHAPTERS):
         raise ValueError("Chapter set changed; review the English chapter map")
@@ -385,7 +399,11 @@ def generate() -> tuple[str, dict]:
         chapter_title = CHAPTERS[path.stem]
         prefix = f"chapter.{chapter['id']}"
         result[prefix + ".title"] = chapter_title
-        result[prefix + ".chapter_subtitle"] = [f"{len(chapter['quests'])} quests · English objective guide (alpha).", "Follow dependency lines; optional expeditions are marked on their quests."]
+        result[prefix + ".chapter_subtitle"] = [
+            f"{len(chapter['quests'])} quests · English objective guide (alpha).",
+            campaign_layout.LEGEND["en_us"],
+            "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions.",
+        ]
         counts["chapters"] += 1
         quest_titles = {}
         for quest in chapter["quests"]:
@@ -400,57 +418,45 @@ def generate() -> tuple[str, dict]:
                 counts["tasks"] += 1
             special_titles = [SPECIAL[task['id']][0] for task in quest.get("tasks", []) if task["type"] in {"custom", "checkmark"}]
             title = special_titles[0] if special_titles else titles[0] if len(titles) == 1 else " + ".join(titles[:2]) + (" + More" if len(titles) > 2 else "")
+            if qid in tutorials:
+                authored = tutorials[qid]["en_us"]
+                title = authored["title"]
+                descriptions = list(authored["description"])
+                for task_id, task_title in authored.get("task_titles", {}).items():
+                    if task_id not in {task["id"] for task in quest["tasks"]}:
+                        raise ValueError(f"Tutorial task belongs to another quest: {qid}/{task_id}")
+                    result[f"task.{task_id}.title"] = task_title
+                counts["authored_tutorials"] += 1
+            title = gate_titles.get(qid, title)
+            if qid == "514D010000000001":
+                title = "Start the Campaign"
             quest_titles[qid] = title
             result[f"quest.{qid}.title"] = title
-            stage = next((tag.split("_", 1)[1] for tag in quest.get("tags", []) if re.fullmatch(r"stage_\d+", tag)), None)
-            source_subtitle = uk.get(f"quest.{qid}.quest_subtitle", "")
-            optional = quest.get("optional") or "Додаткова експедиція" in source_subtitle
-            subtitle = "Optional expedition" if optional else "Campaign"
-            if stage is not None:
-                subtitle = f"Stage {stage} · " + subtitle
-            result[f"quest.{qid}.quest_subtitle"] = subtitle
-            source_desc = uk.get(f"quest.{qid}.quest_desc", [])
-            if any(task["type"] == "item" and not task.get("only_from_crafting", False) for task in quest.get("tasks", [])):
-                descriptions.append("Inventory detection does not prove crafting or item origin. Hold the required items before placing or spending them; dependency quests still apply.")
-            if any("Крафт 0.4.3:" in line for line in source_desc):
-                descriptions.append("SOQM Expert changes this route's recipes. Hover the task item and press R for recipes or U for uses in JEI; check the installed pack's recipe before making components. Key bindings can be changed in Controls → JEI.")
-                counts["recipe_notes"] += 1
+            stage = campaign_layout.stage(quest)
+            visual_role = campaign_layout.ROLE_NAMES["en_us"][campaign_layout.role(quest)]
+            result[f"quest.{qid}.quest_subtitle"] = f"Stage {stage} · {visual_role}"
             if qid == "514D010000000001":
-                descriptions.extend([
-                    "Progression links industry, magic and dimensions through Industrial Chassis → Precision Mechanism → Dimensional Matrix → Stellar Alloy → Mythic Circuit → EMC Core. Follow the quest dependencies; random rewards do not bypass material stages.",
-                    "Most item tasks detect possession without consumption. Advancements, locations, kills and custom events check their actual actions. The three engineering checkmarks are explicitly manual; mark them only after observing the system.",
-                    "For recipes, hover a task item and press R; U shows uses. Open the Quest Book with right-click, or assign FTB Quests → Open Quests in Controls. Check conflicting key bindings before exploring. Hold F6 for Zume zoom if its default binding is available.",
-                    "Rewards are visible in each quest and are claimed once according to their team settings. Open Mayhem Cubes on a separate test area: their pools can include dangerous events and structures.",
-                    "This English locale covers objectives and important mechanical conditions. The complete Ukrainian narrative and humor have not yet received an editorial English translation. Full campaign balance and graphical playthrough remain separate alpha validation work.",
-                ])
+                descriptions = [
+                    "Start with the Base Foundation, then use the first chapter, 00 · Main Route, to find your next shared goal. Six material milestones connect industry, magic and expeditions.",
+                    "Industrial Chassis needs steel, treated wood and engineering components from chapter 03. Mekanism and Ender IO alloys plus AE2 processors then lead to Precision Mechanism. A compact ME network with a 1k crafting CPU becomes available at this stage.",
+                    "Botania, Aether and Twilight Forest lead to Dimensional Matrix; the Moon and Eden to Stellar Alloy; Mortum, Gaia and Ultimate circuits to Mythic Circuit; antimatter and Calorite to EMC Core. Optional expeditions and collections use circles.",
+                    "Hexagons mark the quest prerequisites of the finale; larger nodes are material milestones. Squares cover practical lessons and mod development. Open any quest to inspect its full prerequisites, including lines hidden on the overview.",
+                    "Item tasks detect inventory without consumption: hold the required items before placing or spending them. Advancements, events and locations check the described action. Three engineering tasks are explicitly manual confirmations after your own system test.",
+                    "Book controls: right-click the Quest Book, or bind Open Quests under Controls → FTB Quests. Hover an item and press R for recipes or U for uses. JEI in the installed pack contains the current recipes.",
+                    "Ordinary rewards draw one prize from a themed pool. Hover the reward to see its entries and chances. Rewards are claimed once for the team; the introductory book is personal. Selected milestones award one Mayhem Cube; open it at a separate test area away from the base.",
+                ]
             result[f"quest.{qid}.quest_desc"] = descriptions
             counts["quests"] += 1
-        # Canvas captions include many abbreviated Ukrainian labels. Reuse the
-        # corresponding English goal by position instead of copying that text.
-        for image in chapter.get("images", []):
-            key = f"image.{image['id']}.title"
-            source = uk.get(key, "")
-            if not source:
-                continue
-            if source == uk.get(prefix + ".title"):
-                title = chapter_title
-            elif "квест" in source and ("секці" in source or "залежност" in source or "Наведи" in source):
-                title = f"{len(chapter['quests'])} quests · Hover a quest to see dependencies"
-            elif not contains_cyrillic(source):
-                title = source
-            elif re.match(r"^\d{2}\s{2}", source):
-                # Functional section headers; editorial section names are pending.
-                title = "Section " + str(int(source[:2]))
-            else:
-                nearest = min(chapter["quests"], key=lambda q: (q["x"] - image["x"]) ** 2 + (q["y"] + 0.94 - image["y"]) ** 2)
-                title = quest_titles[nearest["id"]]
-                title = re.sub(r"^(?:Obtain|Craft) (?:1 × )?", "", title)
-                title = textwrap.fill(textwrap.shorten(title, width=47, placeholder="…"), width=20, break_long_words=False)
-            result[key] = title
+        # Stable caption IDs bind to specific quests; moving a card cannot
+        # accidentally borrow the neighbouring quest's English title.
+        result.update(campaign_layout.canvas_locale(chapter, "en_us", quest_titles, chapter_title))
+        counts["named_sections"] += len(layout[path.stem]["sections"])
+    result.update(campaign_rewards.locale_entries("en_us"))
     expected = set(uk)
     missing = expected - set(result)
-    if missing:
-        raise ValueError(f"Untranslated locale keys: {sorted(missing)[:10]}")
+    extra = set(result) - expected
+    if missing or extra:
+        raise ValueError(f"Locale key mismatch: missing={sorted(missing)[:10]}, extra={sorted(extra)[:10]}")
     if contains_cyrillic(json.dumps(result, ensure_ascii=False)):
         raise ValueError("English guide unexpectedly contains Cyrillic")
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n", counts
