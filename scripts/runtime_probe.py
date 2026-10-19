@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Exercise native FTB claims, progress upgrades and an actual AE2 terminal craft.
+"""Exercise native manufacture, personal claims, team migration and persistence.
 
 This optional integration gate needs the Java 21 JDK, the verified dependency
 cache and a NeoForge installation produced by smoke_server.py. It compiles a
 test-only mod and runs it in a fresh localhost world; the test JAR never enters
 the pack. --baseline-ref identifies the version whose nonempty quest progress
-and claimed rewards must survive the upgrade. No real player data is read.
+and claim history must survive the authorized shared-to-personal upgrade.
+No real player data is read.
 """
 from __future__ import annotations
 
@@ -60,9 +61,10 @@ def compile_probe(java, runtime, workspace, deadline):
     require(javac.is_file(), "Provide a Java 21 JDK; javac is needed for the test-only mod")
     classes = workspace / "probe-classes"
     classes.mkdir()
-    jars = [native, *sorted((runtime / "libraries").rglob("*.jar")), *sorted((ROOT / ".cache/mods").glob("*.jar"))]
+    jars = [native, *sorted((runtime / "libraries").rglob("*.jar")),
+            *sorted((ROOT / ".cache/mods").glob("*.jar")), *sorted((ROOT / "overrides/mods").glob("*.jar"))]
     compiled = subprocess.run([str(javac), "-proc:none", "--release", "21", "-cp", ":".join(map(str, jars)),
-                               "-d", str(classes), str(SOURCE)], capture_output=True, text=True,
+                               "-d", str(classes), *map(str, sorted(SOURCE.parent.glob("*.java")))], capture_output=True, text=True,
                               timeout=min(60, remaining(deadline)))
     (workspace / "compile.log").write_text(compiled.stdout + compiled.stderr, encoding="utf-8")
     require(compiled.returncode == 0, "Native API probe did not compile; inspect compile.log")
@@ -129,10 +131,14 @@ def run(args, report, deadline):
                   pack_version=pack["version"], reviewed_payload_match=reviewed,
                   development_payload_allowed=args.allow_unlocked_payload, production_payload_sha256=payload,
                   third_party_mods_verified=len(pins), native_server_sha256=NATIVE_SHA256,
-                  probe_source_sha256=sha(SOURCE), harness_sha256=sha(Path(__file__)))
+                  probe_source_sha256=sha(SOURCE), harness_sha256=sha(Path(__file__)),
+                  probe_sources_sha256=hashes(SOURCE.parent))
     baseline = workspace / "baseline-quests"
     report["baseline_commit"] = baseline_quests(args.baseline_ref, baseline, deadline)
     report["baseline_quests_sha256"] = hashes(baseline)
+    recipe_evidence = ROOT / "metadata/reward_item_evidence.json"
+    report["reward_recipe_evidence_sha256"] = sha(recipe_evidence)
+    shutil.copyfile(recipe_evidence, server / "soqm_probe_recipe_evidence.json")
     print("Compiling the test-only mod against the pinned native runtime...", flush=True)
     jar = compile_probe(java, runtime, workspace, deadline)
     # Runtime libraries are immutable reused dependencies; each tested payload,

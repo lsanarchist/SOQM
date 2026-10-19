@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.rewards.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "InscriberProductionMixin",
+    "AssemblerProductionMixin",
+    "InfuserProductionMixin",
+    "InfusingFactoryProductionMixin",
+    "StorageUpgradeProductionMixin"
+  ],
+  "injectors": {"defaultRequire": 1}
+}

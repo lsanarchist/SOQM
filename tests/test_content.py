@@ -109,15 +109,14 @@ class CampaignContentTests(unittest.TestCase):
                 self.assertFalse(quest.get("can_repeat", False))
                 self.assertFalse(quest.get("repeatable", False))
                 for reward in quest["rewards"]:
-                    self.assertIn(reward["type"], {"item", "random"})
+                    self.assertIn(reward["type"], {"item", "custom"})
                     self.assertEqual(reward.get("auto", "disabled"), "disabled")
-                    personal_book = quest["id"] == INTRO_ID and reward.get("item", {}).get("id") == "ftbquests:book"
-                    self.assertEqual(reward.get("team_reward", True), not personal_book)
-                    if reward["type"] == "random":
-                        self.assertIs(type(reward["table_id"]), int)
-                        self.assertGreater(reward["table_id"], 0)
-                        self.assertLess(reward["table_id"], 2 ** 31)
-                        self.assertTrue((QUESTS / "reward_tables" / f"{reward['table_id']:016X}.snbt").is_file())
+                    self.assertFalse(reward.get("team_reward", True))
+                    if reward["type"] == "custom":
+                        self.assertIn("soqm:progressive_reward", reward["tags"])
+                        self.assertIn(f"reward.{reward['id']}.title", self.locale)
+                        self.assertIsInstance(reward["icon"], str)
+                        self.assertNotIn("table_id", reward)
                         self.assertNotIn("item", reward)
                         self.assertNotIn("count", reward)
                     else:
@@ -143,7 +142,7 @@ class CompatibilityProvenanceTests(unittest.TestCase):
         provenance = read_json(directory / "provenance.json")
         authored = read_json(ROOT / "metadata/authored-mods.json")
         modules = provenance["modules"]
-        self.assertEqual(len(modules), 10)
+        self.assertEqual(len(modules), 11)
         self.assertEqual({row["production_jar"] for row in modules}, {row["filename"] for row in authored})
         for module in modules:
             with self.subTest(module=module["module"]):

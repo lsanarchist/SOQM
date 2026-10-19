@@ -2,6 +2,13 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
+The table lists **122 pinned third-party dependencies**. SOQM 0.4.8 additionally
+ships **11 authored compatibility modules**, listed with their source and exact
+binary pins in [src/compat](src/compat/README.md) and
+[authored-mods.json](metadata/authored-mods.json). The new
+`qm-progressive-rewards-0.4.8` module records production evidence and persists
+personal claim merges for the reward system.
+
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
 | [Fabric/Forge/Neo] 1.21.1-4.3 | Skeleton Horse Spawn | 4.3 | both | [project 346219 / file 9223613](https://www.curseforge.com/minecraft/mc-mods/skeleton-horse-spawn/files/9223613) |

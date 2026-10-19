@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.7
+# Installing SOQM 0.4.8
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.7-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.8-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.7-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.7 asset is not claimed. The
+The current output is `dist/SOQM-0.4.8-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.8 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -29,7 +29,7 @@ and the baseline Sources ZIP are not installable game profiles.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.7 ZIP and wait for every download. See the
+   select the built 0.4.8 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -54,7 +54,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
    Do not copy the manifest itself or a GitHub source archive into that folder.
 3. Install the **122** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **10** authored modules, these form the SOQM mod set. Remove
+   the package's **11** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.
@@ -67,6 +67,19 @@ instance backup; do not open an already upgraded save in an older version.
 The 1625 quest, 1772 task and 1626 reward IDs are retained. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
 progress; they do not guarantee compatibility with every historical world.
+
+In 0.4.8, previously shared rewards intentionally give every member one new
+personal entitlement on already completed quests. Existing personal claims,
+including the introductory book, remain claimed. Leaving or joining teams does
+not restore a used personal claim. Historical shared claim keys remain stored.
+
+Manufacture one new sample of an expensive item after the update to unlock it;
+existing inventories do not prove production. `/soqm rewards` shows the level,
+and `/soqm rewards pool logistics` shows available prizes and current odds.
+Replace the complete pack payload: the old generated
+`config/ftbquests/quests/reward_tables/000000006A51*.snbt` files are retired;
+the new catalogue is `kubejs/config/soqm_rewards.json`. Existing completed ME
+terminal tasks retain progress; unfinished ones require a real active-network craft.
 
 New loot balance applies when a targeted chest or new personal Lootr inventory
 first generates its contents. Existing generated contents are not cleared.

@@ -1,9 +1,15 @@
 {
   "base_commit": "e71db8398ddc9f07e85981fac942f52dd23f447d",
   "serialization": "SHA-256 of sorted compact JSON; see campaign_refresh.persistent_identity",
-  "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
+  "sha256": "31e699bc3f09cd80dddb6c918aadb77e061c33729eeebca8add52dbd75253c9e",
   "chapters": 37,
   "quests": 1625,
   "tasks": 1772,
-  "outer_rewards": 1626
+  "outer_rewards": 1626,
+  "previous_claim_scope": {
+    "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
+    "base_commit": "72bd75d131a986afe9cf0d11580fdcaf009a208a",
+    "migrated_rewards": 1625,
+    "migration": "Shared NIL_UUID claims remain historical; each player receives one personal claim for previously shared rewards. Existing personal keys, quest/task IDs and ownership remain intact."
+  }
 }
