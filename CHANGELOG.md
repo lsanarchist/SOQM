@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Replace nine skill-milestone tick/NBT criteria with explicit advancement
+  grants from Pufferfish Skills unlock rewards. Existing unlocked skills are
+  reconciled on login or data reload; advancement IDs, saved completion,
+  capstone's any-one-branch rule and historical completion after respec are
+  retained. No new mod or polling script is required. See the
+  [patch notes](docs/SKILLS_OPTIMIZATION.md) for scope and validation.
+
 ### 0.4.7 — campaign clarity and thematic rewards
 
 - Move the six-stage Main Route to chapter 00 in the first group. Differentiate
