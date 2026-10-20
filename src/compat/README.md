@@ -15,7 +15,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
 | `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
-| `quest-ui` | `qm-quest-ui-0.4.3.jar` | 0.4.2, then coordinated HUD and mapped client API build |
+| `quest-ui` | `qm-quest-ui-0.4.4.jar` | 0.4.2, then coordinated HUD, mapped client API build and automatic minimap crash fix |
 | `village-guard` | `qm-village-guard-0.4.2.jar` | 0.4.2 |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
@@ -43,8 +43,9 @@ after a native gate confirms manufacture before the claim is marked used.
 
 The [Quest UI adapter](quest-ui/README.md) retains the existing quest ingredient
 keys and tooltips, and coordinates Xaero, Ultimine, pinned quests and installed
-status HUDs. Its build uses the pinned mapped client API and checks real Mixin
-transformations. The client entry points remain isolated from dedicated servers.
+status HUDs. Its build uses the pinned mapped client API, checks real Mixin
+transformations and executes the native minimap size/scale call chain. The
+client entry points remain isolated from dedicated servers.
 
 The [runtime optimization module](runtime-optimizations/README.md) reuses
 tunnel-height queries within one placement search, bounds Mayhem guardian

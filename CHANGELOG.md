@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### Xaero automatic minimap crash hotfix
+
+- Fix the first-world-render `StackOverflowError` in Quest and HUD Help 0.4.3
+  when Xaero 26.6.0 uses automatic minimap size. Resolve automatic dimensions
+  using Xaero's native user scale before applying SOQM's render-only size cap.
+- Preserve fixed sizes, automatic UI scale, Minecraft GUI scale, enlarged maps
+  and the HUD opt-out. Rebuild and pin `qm-quest-ui-0.4.4.jar`, replacing 0.4.3.
+- Add a behavioral probe for the transformed native size/scale call chain,
+  alongside the existing geometry and Mixin gates. Check both bounded render
+  size and stable source dimensions; transformation success alone did not
+  detect this recursion. A full graphical client playtest remains separate.
+
 ### Early settlement protection
 
 - Add the pinned Torchmaster 21.1.13 build for Minecraft 1.21.1 / NeoForge.
