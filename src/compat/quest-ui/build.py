@@ -26,7 +26,7 @@ def main():
     parser.add_argument("--javac", required=True)
     parser.add_argument("--mods", type=Path, default=ROOT / ".cache/mods")
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--verify", action="store_true", help="Run native Mixin transformations and geometry probes")
+    parser.add_argument("--verify", action="store_true", help="Run native Mixin, minimap sizing and geometry probes")
     args = parser.parse_args()
     compiler = subprocess.check_output([args.javac, "-version"], text=True).strip()
     if not compiler.startswith("javac 21."):
@@ -68,7 +68,7 @@ def main():
             (services / "org.spongepowered.asm.service.IMixinService").write_text("qm.hudprobe.HudMixinProbe$Service\n")
             (services / "org.spongepowered.asm.service.IGlobalPropertyService").write_text("qm.hudprobe.HudMixinProbe$Blackboard\n")
             java = str(Path(args.javac).with_name("java"))
-            for probe in ("HudMixinProbe", "HudGeometryProbe"):
+            for probe in ("HudMixinProbe", "HudGeometryProbe", "HudMinimapScaleProbe"):
                 subprocess.run([java, "-Dmixin.service=qm.hudprobe.HudMixinProbe$Service", "-classpath", classpath,
                                 "qm.hudprobe." + probe], check=True)
         entries = {"META-INF/MANIFEST.MF": b"Manifest-Version: 1.0\r\nFMLModType: MOD\r\nAutomatic-Module-Name: qm.quest.ui\r\n\r\n",

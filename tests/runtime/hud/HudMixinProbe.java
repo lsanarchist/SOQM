@@ -66,6 +66,7 @@ public final class HudMixinProbe {
         var transformer = (IMixinTransformer)constructor.newInstance();
         String[] targets = {
             "xaero.hud.gui.util.GuiUtils", "xaero.hud.module.ModuleSession",
+            "xaero.hud.minimap.config.util.MinimapConfigClientUtils",
             "xaero.hud.minimap.module.MinimapRenderer", "xaero.hud.minimap.info.render.InfoDisplayRenderer",
             "dev.ftb.mods.ftbultimine.client.FTBUltimineClient", "earth.terrarium.adastra.client.screens.player.OverlayScreen",
             "mekanism.client.render.HUDRenderer", "snownee.jade.impl.ui.BoxElement",
