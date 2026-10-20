@@ -28,14 +28,14 @@
         "stage_0",
         "native_millenaire_firstcontact",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -57,8 +57,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -225,16 +225,15 @@
         "stage_1",
         "native_millenaire_friendindeed",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
-        "513011EFC8A2F513",
         "513011E734464E5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -257,9 +256,9 @@
           "random_bonus": 0
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EF844393A4",
@@ -2127,7 +2126,7 @@
     {
       "id": "51410410000006D6",
       "x": -10.95,
-      "y": 2.85,
+      "y": 2.72,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2143,7 +2142,7 @@
     {
       "id": "51410410000006D7",
       "x": -7.95,
-      "y": 2.85,
+      "y": 2.72,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

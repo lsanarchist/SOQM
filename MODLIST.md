@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **124 pinned third-party dependencies**. SOQM 0.4.10 additionally
+The table lists **127 pinned third-party dependencies**. SOQM 0.4.11 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -25,6 +25,7 @@ also support server mods in other packs.
 | Abandoned Tunnels | 1.0.0 | both | [project 1733257 / file 9109672](https://www.curseforge.com/minecraft/mc-mods/abandoned-tunnels/files/9109672) |
 | Abridged | 2.0.2 | both (baseline) | [project 948999 / file 8327782](https://www.curseforge.com/minecraft/mc-mods/abridged/files/8327782) |
 | Ad Astra | 1.16.26 | both (baseline) | [project 635042 / file 8874894](https://www.curseforge.com/minecraft/mc-mods/ad-astra/files/8874894) |
+| Ad Astra: More Structures | 1.0.2 | both | [project 1311898 / file 8762665](https://www.curseforge.com/minecraft/mc-mods/ad-astra-more-structures/files/8762665) |
 | AE_Better_Villagers | 1.15.1.b | both (baseline) | [project 1148167 / file 5956265](https://www.curseforge.com/minecraft/mc-mods/ae2-better-villagers/files/5956265) |
 | Apotheosis | 8.9.0 | both (baseline) | [project 313970 / file 8993983](https://www.curseforge.com/minecraft/mc-mods/apotheosis/files/8993983) |
 | Apothic Attributes | 2.11.0 | both (baseline) | [project 898963 / file 9006294](https://www.curseforge.com/minecraft/mc-mods/apothic-attributes/files/9006294) |
@@ -53,6 +54,7 @@ also support server mods in other packs.
 | Dungeons and Taverns | 1-v4.4.4 | both (baseline) | [project 853794 / file 5768823](https://www.curseforge.com/minecraft/mc-mods/dungeon-and-taverns/files/5768823) |
 | Ecologics | 2.3.7 | both (baseline) | [project 570463 / file 8415537](https://www.curseforge.com/minecraft/mc-mods/ecologics/files/8415537) |
 | Elite Mobs 6.2.3 (NeoForge 1.21.1) | 6.2.3 | both | [project 1583529 / file 9191508](https://www.curseforge.com/minecraft/mc-mods/elite-mobs/files/9191508) |
+| Ember's Underground Rooms | 2.3.2-neoforge | both | [project 1197753 / file 8924057](https://www.curseforge.com/minecraft/mc-mods/embers-underground-rooms/files/8924057) |
 | Ender IO | 8.2.12-beta | both (baseline) | [project 64578 / file 8832691](https://www.curseforge.com/minecraft/mc-mods/ender-io/files/8832691) |
 | Ender Storage | 2.13.0.191 | both (baseline) | [project 245174 / file 6159037](https://www.curseforge.com/minecraft/mc-mods/ender-storage-1-8/files/6159037) |
 | Entity Culling Fabric/Forge | 1.11.3 | client | [project 448233 / file 9100286](https://www.curseforge.com/minecraft/mc-mods/entityculling/files/9100286) |
@@ -136,6 +138,7 @@ also support server mods in other packs.
 | The Aether | 1.5.10 | both (baseline) | [project 255308 / file 7043502](https://www.curseforge.com/minecraft/mc-mods/aether/files/7043502) |
 | The Twilight Forest | 4.8.3345 | both (baseline) | [project 227639 / file 7797302](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest/files/7797302) |
 | Titanium | 4.0.51 | both (baseline) | [project 287342 / file 9129904](https://www.curseforge.com/minecraft/mc-mods/titanium/files/9129904) |
+| Twilight Treehouses | 1.0.2 | both | [project 1227052 / file 6341110](https://www.curseforge.com/minecraft/mc-mods/twilight-treehouses/files/6341110) |
 | Underground Villages Mod | 4.0.3 | both (baseline) | [project 606989 / file 6722723](https://www.curseforge.com/minecraft/mc-mods/underground-villages/files/6722723) |
 | Waystones | 21.1.46 | both | [project 245755 / file 8969751](https://www.curseforge.com/minecraft/mc-mods/waystones/files/8969751) |
 | Xaero's Minimap | 26.6.0 | client | [project 263420 / file 9067173](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap/files/9067173) |

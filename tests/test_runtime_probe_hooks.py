@@ -12,6 +12,7 @@ import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
+import zipfile
 
 
 REPOSITORY = Path(__file__).resolve().parents[1]
@@ -33,13 +34,21 @@ class RuntimeProbeHooksTests(unittest.TestCase):
         self.native = self.runtime / "libraries/net/neoforged/neoforge/21.1.262/neoforge-21.1.262-server.jar"
         self.write(self.java, "test executable path")
         self.write(self.java.with_name("javac"), "test compiler path")
-        self.write(self.native, "test native runtime pin")
+        self.write_jar(self.native, {"fixture.txt": b"test native runtime pin"})
         self.write(self.native.with_name("unix_args.txt"), "test runtime arguments")
         self.write(self.root / "soqm.json", {
             "minecraft": "1.21.1", "neoforge": "21.1.262", "java_major": 21, "version": "0.4.8",
         })
         self.authored = self.root / "overrides/mods/test-progressive-rewards.jar"
-        self.write(self.authored, "test authored dependency")
+        self.embedded_bytes = io.BytesIO()
+        with zipfile.ZipFile(self.embedded_bytes, "w") as nested:
+            nested.writestr("fixture-api.txt", "test embedded API")
+        self.write_jar(self.authored, {
+            "META-INF/jarjar/metadata.json": json.dumps({"jars": [{
+                "path": "META-INF/jarjar/fixture-api.jar"
+            }]}).encode(),
+            "META-INF/jarjar/fixture-api.jar": self.embedded_bytes.getvalue(),
+        })
         self.write(self.root / "metadata/authored-mods.json", [{
             "filename": self.authored.name, "sha256": smoke_server.sha(self.authored),
         }])
@@ -77,6 +86,12 @@ class RuntimeProbeHooksTests(unittest.TestCase):
     def write(self, path, contents):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(contents) if isinstance(contents, (dict, list)) else contents, encoding="utf-8")
+
+    def write_jar(self, path, entries):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(path, "w") as archive:
+            for name, content in entries.items():
+                archive.writestr(name, content)
 
     def command(self, command, **kwargs):
         self.commands.append(command)
@@ -125,6 +140,12 @@ class RuntimeProbeHooksTests(unittest.TestCase):
         self.assertEqual({arg for arg in command if arg.endswith(".java")},
                          {str(self.default_source), str(self.reward_source)})
         self.assertIn(str(self.authored), command[command.index("-cp") + 1].split(":"))
+        embedded = self.root / report["workspace"] / "embedded-api-jars"
+        extracted = list(embedded.glob("*-fixture-api.jar"))
+        self.assertEqual(len(extracted), 1)
+        self.assertEqual(extracted[0].read_bytes(), self.embedded_bytes.getvalue())
+        self.assertIn(str(extracted[0]), command[command.index("-cp") + 1].split(":"))
+        self.assertEqual(list((self.root / report["workspace"] / "server/mods").glob("*")), [])
         self.assertEqual((self.root / report["workspace"]).parent, self.root / ".work/runtime-probe")
         self.assertEqual(report["probe_source_sha256"], smoke_server.sha(self.default_source))
         self.assertEqual(report["probe_sources_sha256"], smoke_server.hashes(self.default_source.parent))

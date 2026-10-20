@@ -9,7 +9,7 @@
         {
           "type": "minecraft:item",
           "name": "enderio:energetic_alloy_ingot",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -17,8 +17,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -26,7 +26,7 @@
         {
           "type": "minecraft:item",
           "name": "enderio:dark_steel_ingot",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -34,8 +34,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -43,7 +43,7 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:alloy_reinforced",
-          "weight": 10,
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -60,7 +60,7 @@
         {
           "type": "minecraft:item",
           "name": "modernfoundry:cobalt_ingot",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -68,8 +68,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -77,24 +77,7 @@
         {
           "type": "minecraft:item",
           "name": "ae2:fluix_crystal",
-          "weight": 10,
-          "quality": 0,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 4,
-                "max": 6
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "immersiveengineering:plate_steel",
-          "weight": 10,
+          "weight": 12,
           "quality": 0,
           "functions": [
             {
@@ -107,17 +90,68 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersiveengineering:plate_steel",
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "botania:manasteel_ingot",
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "evilcraft:dark_gem",
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
         }
       ]
     },
     {
-      "name": "qm_exploration_stronghold_parts",
+      "name": "qm_exploration_stronghold_utility",
       "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mekanism:basic_universal_cable",
+          "name": "mekanism:advanced_universal_cable",
           "weight": 10,
           "quality": 0,
           "functions": [
@@ -126,16 +160,16 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "mekanism:basic_mechanical_pipe",
-          "weight": 10,
+          "name": "immersiveengineering:wirecoil_steel",
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -143,16 +177,33 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 1,
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "immersiveengineering:wirecoil_copper",
-          "weight": 10,
+          "name": "ae2:fluix_glass_cable",
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enderio:conduit_binder",
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -169,7 +220,24 @@
         {
           "type": "minecraft:item",
           "name": "ae2:silicon",
-          "weight": 10,
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -185,8 +253,8 @@
         },
         {
           "type": "minecraft:item",
-          "name": "enderio:conduit_binder",
-          "weight": 10,
+          "name": "minecraft:ender_pearl",
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -194,16 +262,16 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 1,
+                "max": 2
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "mekanism:advanced_universal_cable",
-          "weight": 10,
+          "name": "minecraft:experience_bottle",
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -211,16 +279,16 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 1,
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "immersiveengineering:wirecoil_steel",
-          "weight": 10,
+          "name": "apotheosis:gem_dust",
+          "weight": 4,
           "quality": 0,
           "functions": [
             {
@@ -228,11 +296,17 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 1,
+                "max": 2
               }
             }
           ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.9
         }
       ]
     },
@@ -257,7 +331,20 @@
         {
           "type": "minecraft:item",
           "name": "ae2:logic_processor",
-          "weight": 10,
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ae2:calculation_processor",
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -270,7 +357,72 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:upgrade_speed",
-          "weight": 10,
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mekanism:upgrade_energy",
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enderio:double_layer_capacitor",
+          "weight": 4,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sophisticatedstorage:filter_upgrade",
+          "weight": 4,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "botania:mana_pearl",
+          "weight": 4,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 6,
           "quality": 0,
           "functions": [
             {
@@ -284,7 +436,7 @@
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.05
+          "chance": 0.28
         }
       ]
     },

@@ -88,6 +88,7 @@ public final class SoqmRuntimeProbe {
                 testProgressUpgrade(server);
                 MultiblockMaterialsProbe.run(server, results);
                 prepareWorkshop(server);
+                EquipmentCompatibilityProbe.run(player, results);
                 CardboardTransportProbe.run(server, player, results);
                 FusionRuntimeProbe.run(server, results);
                 began = server.getTickCount(); stage = 1;
@@ -125,6 +126,7 @@ public final class SoqmRuntimeProbe {
                 testReloadPersistence(server);
                 ProductionEvidenceProbe.verifyReload(server, results);
                 ProgressiveRewardsProbe.verifyReload(server, results);
+                EquipmentCompatibilityProbe.run(player, results);
                 finish(true, null);
             }
         } catch (Throwable failure) {

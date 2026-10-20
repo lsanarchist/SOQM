@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+### 0.4.11 — optional exploration, varied dungeon loot and equipment compatibility
+
+- Add the exact Minecraft 1.21.1 NeoForge builds of Twilight Treehouses 1.0.2,
+  Ad Astra: More Structures 1.0.2 and Ember's Underground Rooms 2.3.2. Keep
+  dimension restrictions, reduce Ember's large-dungeon candidate density and
+  correct its jail starting height and restore its missing 1.21 loot table.
+- Replace a prefilled 27-slot moon-tower chest with deferred randomized loot
+  using a scoped native structure processor that preserves chest facing.
+  Existing generated terrain and opened containers are untouched.
+- Make all 67 audited Overworld visit objectives optional leaves. Rewire
+  chapters 01, 22, 23 and 32 to remove 20 directly/transitively blocked
+  follow-ups while preserving all 1,626 quest IDs, tasks, rewards and actual
+  material/dimension/boss progression.
+- Admit Atomic Disassembler and Meka-Tool through FTB Ultimine's additive
+  included-tools tag. Preserve harvest, energy, hunger and block exclusions.
+- Explain the separate Aether accessory inventory on all 32 accessory items
+  in Ukrainian/English, using the player's actual configured key. Keep the
+  native inventory mode and equipped-item state. Limit dedicated backpack
+  relocation to Sophisticated Backpacks so Infinity Backpack keeps its native
+  read/write slot route.
+- Add weighted supplies and one optional useful-component find to five chest
+  profiles; improve native treasure retention with location difficulty, retain
+  3–10-slot ordinary budgets and protect original maps, keys, progression
+  trophies and native Aether treasure.
+  Cover 397 exact tables, including 17 new structure tables. Exclude plastic,
+  nether stars, elite/ultimate circuits and custom late-game progression parts.
+- Rebuild and pin Chest Balance 0.4.11. Add generated-data regressions, optional
+  quest reachability checks and native object probes for 50,000 bounded chest
+  cases, structure codecs and prefilled-container handling. A full client and
+  world-generation playtest remains separate.
+
 ### 0.4.10 — crafting refunds, coordinated HUD and Sophisticated Storage
 
 - Give 41 expensive crafting quests a guaranteed return of reviewed recipe

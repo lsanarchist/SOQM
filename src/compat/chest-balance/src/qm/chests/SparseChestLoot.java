@@ -30,7 +30,8 @@ public final class SparseChestLoot {
     private static final Set<String> PROTECTED = strings("protected_exact");
     private static final Set<String> PROTECTED_NS = strings("protected_namespaces");
     private static final Set<String> VALUABLE = strings("valuable_exact");
-    private static final Map<String, Set<String>> CURATED = curated();
+    private static final Map<String, Set<String>> CURATED = itemGroups("profile_items");
+    private static final Map<String, Set<String>> FINDS = itemGroups("find_items");
     private static final Set<String> REWARD_TABLES = strings("native_reward_tables");
     private static final List<String> BLOCKED_PREFIXES = new ArrayList<>(strings("forbidden_prefixes"));
     private static final List<String> PROTECTED_PARTS = new ArrayList<>(strings("protected_path_parts"));
@@ -55,9 +56,9 @@ public final class SparseChestLoot {
         for (var entry : DATA.getAsJsonObject("routes").entrySet()) out.put(entry.getKey(), entry.getValue().getAsString());
         return Map.copyOf(out);
     }
-    private static Map<String, Set<String>> curated() {
+    private static Map<String, Set<String>> itemGroups(String field) {
         Map<String, Set<String>> out = new HashMap<>();
-        for (var entry : DATA.getAsJsonObject("profile_items").entrySet()) {
+        for (var entry : DATA.getAsJsonObject(field).entrySet()) {
             Set<String> items = new HashSet<>();
             for (var value : entry.getValue().getAsJsonArray()) items.add(value.getAsString());
             out.put(entry.getKey(), Set.copyOf(items));
@@ -110,10 +111,15 @@ public final class SparseChestLoot {
         String profile = profile(tableId);
         if (profile == null) return false;
         JsonObject rules = DATA.getAsJsonObject("profiles").getAsJsonObject(profile);
-        int slotLimit = Math.min(availableSlots, rules.get("max_slots").getAsInt());
+        int slotLimit = Math.min(availableSlots, random.nextIntBetweenInclusive(
+                rules.get("min_slots").getAsInt(), rules.get("max_slots").getAsInt()));
         int unitLimit = rules.get("max_units").getAsInt();
         int stackCap = rules.get("stack_cap").getAsInt();
+        float valuableChance = rules.get("valuable_keep_chance").getAsFloat();
+        int valuableLimit = rules.get("max_valuables").getAsInt();
         var protectedLoot = new ArrayList<ItemStack>();
+        var finds = new ArrayList<ItemStack>();
+        var valuables = new ArrayList<ItemStack>();
         var supply = new ArrayList<ItemStack>();
         var ordinary = new ArrayList<ItemStack>();
         boolean cubeSeen = false;
@@ -121,20 +127,28 @@ public final class SparseChestLoot {
             if (isBlocked(stack)) continue;
             if (isProtected(stack, tableId)) { protectedLoot.add(stack); continue; }
             String id = id(stack);
+            if (FINDS.get(profile).contains(id)) {
+                // The loot table has already rolled this bonus. Keep one small
+                // find ahead of filler instead of applying a second rare roll.
+                stack.setCount(1); finds.add(stack); continue;
+            }
             if (id.equals("chancecubes:chance_cube")) {
                 if (cubeSeen) continue;
                 cubeSeen = true; stack.setCount(1); supply.add(stack); continue;
             }
             if (valuable(stack, profile)) {
-                // Preserve an actual rare find occasionally, without filling a
-                // village with enchanted equipment or completed technology.
-                if (random.nextFloat() >= 0.10F) continue;
+                // Native treasures improve with the danger of the location.
+                // A separate slot limit prevents a treasure-rich source table
+                // from turning this into a pile of enchanted equipment.
+                if (random.nextFloat() >= valuableChance) continue;
                 stack.setCount(1);
+                valuables.add(stack); continue;
             } else {
                 stack.setCount(Math.min(stack.getCount(), Math.min(stackCap, stack.getMaxStackSize())));
             }
             if (CURATED.get(profile).contains(id)) supply.add(stack); else ordinary.add(stack);
         }
+        Util.shuffle(finds, random); Util.shuffle(valuables, random);
         Util.shuffle(supply, random); Util.shuffle(ordinary, random);
         generated.clear();
         // Keep the source's maps, keys, lore, artifacts and boss trophies. They
@@ -147,6 +161,10 @@ public final class SparseChestLoot {
         }
         slotLimit = Math.max(slotLimit, generated.size());
         var selected = new ArrayList<ItemStack>();
+        // At most one curated find per chest, even if upstream modifiers add
+        // more copies. Progression keys and boss trophies still take priority.
+        if (!finds.isEmpty()) selected.add(finds.getFirst());
+        selected.addAll(valuables.subList(0, Math.min(valuableLimit, valuables.size())));
         // Keep one small modded bundle when available, then mix remaining
         // supplies with the source loot so every chest retains local flavor.
         if (!supply.isEmpty()) selected.add(supply.removeFirst());

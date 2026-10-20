@@ -216,19 +216,34 @@
     },
     {
       "module": "chest-balance",
-      "production_jar": "qm-chest-balance-0.4.6.jar",
-      "production_jar_sha256": "93ea3658d522a0d311369ac306e9c9d3147d15ff48cbf26a76ac46ac49414c7d",
+      "production_jar": "qm-chest-balance-0.4.11.jar",
+      "production_jar_sha256": "2026d75df4039f005c3ffb7fb5f515cd3290a45bea22757deb29e9246f838b0c",
       "source_origin": "authoring/v046_work/chest_balance/compat",
       "baseline_archive": "0.4.6",
       "license_evidence": "MIT declaration in neoforge.mods.toml; full upstream notice absent; LICENSE records this limitation.",
       "files_sha256": {
         "LICENSE": "aa64856d52ee63e4bcdc8c517c289557ef924f166cb8c68ba7cbd4266ac93cc8",
-        "resources/META-INF/neoforge.mods.toml": "9f739a20e7e9c20adc337157fbb553ea0cb09948043c8da5882af536d8a62ba3",
+        "resources/META-INF/neoforge.mods.toml": "5b049b8b34a703d9af2dfabfd76eb32c3fc271f986e8cc7d83c9e4cde1e6b844",
         "resources/qm_chest_balance.mixins.json": "4bfa4a15e1b3d31dd9690a963dae022cc0cebe54e1b129859e8e680a31d15618",
-        "resources/qm_chest_policy.json": "d22eeea5d201b03858c6150f1c8819b920abc7a10e68aeccd30960244ac0dcb6",
+        "resources/qm_chest_policy.json": "2ef159a953197808ad4a29acc16240b1d4c1eb2aae53c1bcf62891a94b042591",
         "src/qm/chests/QmChestBalance.java": "d39a11a2069d5cdebe5e5daa90b902b58dc5fdaf3c73b4c6a02d0712234d6b6b",
-        "src/qm/chests/SparseChestLoot.java": "8cc51e42f98dc6356ad723b965fc369131637e9c4b1365bd3f29ce3bc1dbc1e0",
+        "src/qm/chests/SparseChestLoot.java": "7754297b420ae6cfceacfdaaa5ff5ad16bce741981be4b9bb7e8ae7b90635ab7",
         "src/qm/chests/mixin/LootTableFillMixin.java": "0b26eab7fc2c27413b972ae329b0ef140da460939c4affdffc5d4772acc8eb41"
+      },
+      "local_revision": {
+        "version": "0.4.11",
+        "change": "Use bounded profile-specific source treasure retention, single curated finds and variable chest slot budgets; cover three new structure mods and preserve protected native loot.",
+        "baseline_production_jar": "qm-chest-balance-0.4.6.jar",
+        "baseline_production_jar_sha256": "93ea3658d522a0d311369ac306e9c9d3147d15ff48cbf26a76ac46ac49414c7d",
+        "compiler": "Eclipse Temurin javac 21.0.12.1",
+        "compiler_executable_sha256": "55859b80e7a9c4c4736be19ad3addeb35112ca6d17a30c4e0e116afc0a499bdb",
+        "jdk_release_sha256": "ebbd70bf00bab6d39addf51969c5ff244030b86b29de400b9fb10612ebd3ceec",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
+        "build_script": "src/compat/build_optimizations.py",
+        "build_script_sha256": "f65fccf7b421679f059b5ea42b5ddd3f5bbef52ac431e92fb9cc8434a38ea067",
+        "fixed_rebuilt_byte_identically_twice": true
       }
     },
     {

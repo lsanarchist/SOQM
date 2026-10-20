@@ -162,8 +162,8 @@
     },
     {
       "id": "514D11628A7DD0E1",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -10.95,
+      "y": 12.27,
       "icon": {
         "id": "minecraft:oak_slab",
         "count": 1
@@ -173,14 +173,14 @@
         "stage_0",
         "explore_bridge",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D111AFD4E2789"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "id": "514D128D457BEC0E",
@@ -201,14 +201,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11CDA1129F03",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -7.95,
+      "y": 12.27,
       "icon": {
         "id": "minecraft:lantern",
         "count": 1
@@ -218,14 +218,14 @@
         "stage_0",
         "explore_underground",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D111AFD4E2789"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "id": "514D1204E5B8A0D2",
@@ -246,14 +246,14 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "514D11E0ED42C1FF",
-      "x": -10.95,
-      "y": 4.65,
+      "x": -4.95,
+      "y": 12.27,
       "icon": {
         "id": "minecraft:emerald",
         "count": 1
@@ -263,14 +263,14 @@
         "stage_0",
         "explore_trade",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D11CDA1129F03"
+        "514D111AFD4E2789"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "id": "514D126CD02069A0",
@@ -292,8 +292,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -401,14 +401,14 @@
         "stage_0",
         "native_nova_structures_adventure_find_tavern",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -430,8 +430,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -598,8 +598,8 @@
     },
     {
       "id": "514D11A7ED9AA3BB",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -4.95,
+      "y": 1.85,
       "icon": {
         "id": "waystones:warp_scroll",
         "count": 1
@@ -613,8 +613,7 @@
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D11628A7DD0E1",
-        "514D11CDA1129F03",
+        "514D111AFD4E2789",
         "513011E734464E5D"
       ],
       "can_repeat": false,
@@ -641,11 +640,11 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514D113C4B748351",
-      "x": -10.95,
+      "x": -1.95,
       "y": 12.27,
       "icon": {
         "id": "chancecubes:chance_cube",
@@ -697,8 +696,8 @@
     },
     {
       "id": "514D1118E4523B29",
-      "x": -7.95,
-      "y": 12.27,
+      "x": -10.95,
+      "y": 15.07,
       "icon": {
         "id": "chancecubes:chance_cube",
         "count": 1
@@ -739,12 +738,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D118E5C7AB43A",
-      "x": -4.95,
-      "y": 12.27,
+      "x": -1.95,
+      "y": 1.85,
       "icon": {
         "id": "minecraft:compass",
         "count": 1
@@ -757,9 +756,7 @@
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D11E0ED42C1FF",
-        "514D1118E4523B29",
-        "514D1112BAB39A83"
+        "514D11A7ED9AA3BB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -793,7 +790,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116C5420BD02",
@@ -1550,7 +1547,7 @@
         "stage_1",
         "native_nova_structures_adventure_tavern_quest",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1558,7 +1555,7 @@
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -1580,8 +1577,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -1597,7 +1594,7 @@
         "stage_1",
         "native_nova_structures_adventure_find_swamp_village",
         "qm_v040",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
@@ -1605,7 +1602,7 @@
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "advancement",
@@ -1627,8 +1624,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -3917,9 +3914,9 @@
     {
       "id": "5141041000000717",
       "x": -6.45,
-      "y": 3.45,
+      "y": 2.05,
       "width": 12.0,
-      "height": 6.9,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3933,9 +3930,9 @@
     {
       "id": "5141041000000718",
       "x": -12.395,
-      "y": 3.45,
+      "y": 2.05,
       "width": 0.11,
-      "height": 6.9,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3996,8 +3993,8 @@
     },
     {
       "id": "514104100000071C",
-      "x": -4.95,
-      "y": 2.85,
+      "x": -10.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4012,8 +4009,8 @@
     },
     {
       "id": "514104100000071D",
-      "x": -1.95,
-      "y": 2.85,
+      "x": -7.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4028,8 +4025,8 @@
     },
     {
       "id": "514104100000071E",
-      "x": -10.95,
-      "y": 5.65,
+      "x": -4.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4044,8 +4041,8 @@
     },
     {
       "id": "514104100000071F",
-      "x": -4.95,
-      "y": 13.19,
+      "x": -1.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4060,8 +4057,8 @@
     },
     {
       "id": "5141041000000720",
-      "x": -7.95,
-      "y": 5.65,
+      "x": -4.95,
+      "y": 2.85,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4285,9 +4282,9 @@
     {
       "id": "514104100000072E",
       "x": -6.45,
-      "y": 12.47,
+      "y": 13.87,
       "width": 12.0,
-      "height": 4.1,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4301,9 +4298,9 @@
     {
       "id": "514104100000072F",
       "x": -12.395,
-      "y": 12.47,
+      "y": 13.87,
       "width": 0.11,
-      "height": 4.1,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -4332,7 +4329,7 @@
     },
     {
       "id": "5141041000000731",
-      "x": -10.95,
+      "x": -1.95,
       "y": 13.14,
       "width": 2.72,
       "height": 0.72,
@@ -4348,8 +4345,8 @@
     },
     {
       "id": "5141041000000732",
-      "x": -7.95,
-      "y": 13.14,
+      "x": -10.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4909,7 +4906,7 @@
     {
       "id": "5141041000000755",
       "x": -10.95,
-      "y": 31.31,
+      "y": 31.18,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4925,7 +4922,7 @@
     {
       "id": "5141041000000756",
       "x": -7.95,
-      "y": 31.31,
+      "y": 31.18,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4941,7 +4938,7 @@
     {
       "id": "5141041000000757",
       "x": -4.95,
-      "y": 31.31,
+      "y": 31.18,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

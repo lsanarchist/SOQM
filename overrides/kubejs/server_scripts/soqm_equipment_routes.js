@@ -16,7 +16,10 @@ ServerEvents.tags('item', function (event) {
 
   var backItems = before['curios:back'] || [];
   var backpacks = backItems.filter(function (id) {
-    return id.substring(id.indexOf(':') + 1).indexOf('backpack') !== -1;
+    // Sophisticated Backpacks discovers its usable slots from Curios tags.
+    // Industrial Foregoing's Infinity Backpack writes inventory updates into
+    // the native "back" slot; relocating it breaks the read/write route.
+    return id.indexOf('sophisticatedbackpacks:') === 0 && id.endsWith('backpack');
   });
 
   var faceItems = [];

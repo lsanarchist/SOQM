@@ -24,6 +24,66 @@
           "terms": [
             {
               "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_glacio"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:glacio"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_mars"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:mars"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_mercury"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:mercury"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_venus"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:venus"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
               "loot_table_id": "aether:chests/dungeon/gold/gold_dungeon_treasure"
             },
             {

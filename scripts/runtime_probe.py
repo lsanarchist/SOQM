@@ -63,6 +63,22 @@ def compile_probe(java, runtime, workspace, deadline):
     classes.mkdir()
     jars = [native, *sorted((runtime / "libraries").rglob("*.jar")),
             *sorted((ROOT / ".cache/mods").glob("*.jar")), *sorted((ROOT / "overrides/mods").glob("*.jar"))]
+    # Aether's supported equipment API is its bundled Accessories dependency.
+    # javac cannot see nested JARs. Extract only metadata-declared dependencies
+    # from already verified parent artifacts, without adding them to the pack.
+    embedded = workspace / "embedded-api-jars"
+    embedded.mkdir()
+    for parent in list(jars):
+        with zipfile.ZipFile(parent) as archive:
+            if "META-INF/jarjar/metadata.json" not in archive.namelist():
+                continue
+            for entry in json.loads(archive.read("META-INF/jarjar/metadata.json")).get("jars", []):
+                name = entry["path"]
+                require(name.startswith("META-INF/jarjar/") and name.endswith(".jar"),
+                        "Unexpected embedded dependency path")
+                target = embedded / (sha(parent)[:12] + "-" + Path(name).name)
+                target.write_bytes(archive.read(name))
+                jars.append(target)
     compiled = subprocess.run([str(javac), "-proc:none", "--release", "21", "-cp", ":".join(map(str, jars)),
                                "-d", str(classes), *map(str, sorted(SOURCE.parent.glob("*.java")))], capture_output=True, text=True,
                               timeout=min(60, remaining(deadline)))

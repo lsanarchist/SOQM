@@ -9,7 +9,7 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:ingot_osmium",
-          "weight": 10,
+          "weight": 12,
           "quality": 0,
           "functions": [
             {
@@ -17,8 +17,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -34,8 +34,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -51,8 +51,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -60,7 +60,24 @@
         {
           "type": "minecraft:item",
           "name": "immersiveengineering:ingot_nickel",
-          "weight": 10,
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersiveengineering:ingot_lead",
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -70,23 +87,6 @@
                 "type": "minecraft:uniform",
                 "min": 2,
                 "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "immersiveengineering:ingot_lead",
-          "weight": 10,
-          "quality": 0,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
               }
             }
           ]
@@ -102,8 +102,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -111,7 +111,7 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:ingot_steel",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -119,8 +119,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 1,
+                "max": 3
               }
             }
           ]
@@ -128,7 +128,7 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:alloy_infused",
-          "weight": 10,
+          "weight": 4,
           "quality": 0,
           "functions": [
             {
@@ -136,8 +136,25 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "evilcraft:dark_gem",
+          "weight": 5,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
               }
             }
           ]
@@ -145,7 +162,7 @@
       ]
     },
     {
-      "name": "qm_exploration_expedition_parts",
+      "name": "qm_exploration_expedition_utility",
       "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
@@ -160,8 +177,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -169,7 +186,7 @@
         {
           "type": "minecraft:item",
           "name": "mekanism:basic_mechanical_pipe",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -177,8 +194,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 5
+                "min": 2,
+                "max": 3
               }
             }
           ]
@@ -186,7 +203,7 @@
         {
           "type": "minecraft:item",
           "name": "immersiveengineering:wirecoil_copper",
-          "weight": 10,
+          "weight": 8,
           "quality": 0,
           "functions": [
             {
@@ -194,25 +211,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "ae2:silicon",
-          "weight": 10,
-          "quality": 0,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 2
               }
             }
           ]
@@ -220,6 +220,57 @@
         {
           "type": "minecraft:item",
           "name": "enderio:conduit_binder",
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ae2:silicon",
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 10,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:torch",
           "weight": 10,
           "quality": 0,
           "functions": [
@@ -229,10 +280,46 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 3,
-                "max": 5
+                "max": 4
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_pearl",
+          "weight": 4,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 3,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.8
         }
       ]
     },
@@ -257,7 +344,72 @@
         {
           "type": "minecraft:item",
           "name": "enderio:basic_capacitor",
-          "weight": 10,
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersiveengineering:component_iron",
+          "weight": 8,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ae2:printed_logic_processor",
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 6,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle",
+          "weight": 4,
+          "quality": 0,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sophisticatedbackpacks:filter_upgrade",
+          "weight": 3,
           "quality": 0,
           "functions": [
             {
@@ -271,7 +423,7 @@
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.025
+          "chance": 0.16
         }
       ]
     },

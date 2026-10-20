@@ -21,6 +21,40 @@
           "loot_table_id": "ad_astra:chests/village/moon/house"
         },
         {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_mars"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:mars"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_moon"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:moon"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ad_astra_more_structures:chests/common_other"
+        },
+        {
           "condition": "neoforge:loot_table_id",
           "loot_table_id": "immersiveengineering:chests/engineers_house"
         },

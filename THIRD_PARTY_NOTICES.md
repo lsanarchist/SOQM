@@ -17,7 +17,7 @@ with Mojang or Microsoft.
   See [MODLIST.md](MODLIST.md).
 - **Authored compatibility modules:** **10** `qm-*` modules come from the
   supplied baseline: the original eight, `qm-mob-compat-0.4.5` and
-  `qm-chest-balance-0.4.6`. Sources, resources and provenance are retained under
+  `qm-chest-balance-0.4.11` (updated from the recovered 0.4.6 source). Sources, resources and provenance are retained under
   [src/compat/](src/compat/README.md); production binary hashes are pinned
   separately. The original eight include full MIT notices. The two additions
   declare MIT in their mod metadata but did not supply full license/copyright
