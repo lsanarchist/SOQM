@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.12
+# Installing SOQM 0.4.13
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.12-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.13-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.12-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.12 asset is not claimed. The
+The current output is `dist/SOQM-0.4.13-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.13 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.12 ZIP and wait for every download. See the
+   select the built 0.4.13 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -53,6 +53,18 @@ The client manifest includes Inventory Profiles Next, libIPN and Kotlin for
 Forge at their pinned versions. This dependency chain is only needed by the
 client in SOQM and is excluded by the dedicated-server harness.
 
+## Dynamic lighting
+
+The client manifest includes [LambDynamicLights 4.8.11+1.21.1](https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/8780227).
+Hold a torch or lantern in either hand to light the area around you. New profiles
+use the mod's standard enabled settings. Open **Video Settings** or the mod's
+configuration from **Mods** to adjust dynamic lighting; see the
+[author's instructions](https://lambdaurora.dev/projects/lambdynamiclights/).
+
+This is a client-side visual effect. Each player needs the mod on their own
+client; a dedicated server does not need it. The official JAR includes its
+required NeoForge libraries, and SOQM keeps existing personal lighting settings.
+
 ## Existing MultiMC profile
 
 The CurseForge ZIP contains a manifest and `overrides/`; it is not a standalone
@@ -65,7 +77,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
 2. Work on a copied profile. Extract the **built** ZIP temporarily and merge
    the contents of `overrides/` into its `.minecraft/`, applying the pack files.
    Do not copy the manifest itself or a GitHub source archive into that folder.
-3. Install the **128** exact third-party JARs referenced by the manifest/lock
+3. Install the **129** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
    the package's **12** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
@@ -137,6 +149,11 @@ Opening a preview does not claim a reward.
 For a manual update, remove `mods/qm-quest-ui-0.4.4.jar` from the copied profile;
 keep only the new `qm-quest-ui-0.4.5.jar` from the package. Copying files into an
 existing directory does not remove the differently named previous version.
+
+For **0.4.12 → 0.4.13**, update the client profile to the new package so the
+launcher downloads the pinned LambDynamicLights JAR. With a manual installation,
+add the exact file linked above to the client's `mods/` directory and restart
+the client. This update adds no server dependency or world migration step.
 
 Report problems with the SOQM version/commit, launcher, OS, Java, RAM allocation,
 reproduction steps, `logs/latest.log` and any crash report. Remove tokens,

@@ -2,21 +2,25 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **128 pinned third-party dependencies**. SOQM 0.4.11 additionally
+The table lists **129 pinned third-party dependencies**. SOQM 0.4.13 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.10` module records production evidence, preserves
 personal claims, and delivers guaranteed recipe refunds. The client-only
-`qm-quest-ui-0.4.3` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
+`qm-quest-ui-0.4.5` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
 `qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
-and background encounter/dungeon work; `qm-quest-automation-0.4.3` skips
+and background encounter/dungeon work; `qm-quest-automation-0.4.4` skips
 already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
 
 Inventory Profiles Next uses libIPN and Kotlin for Forge. All three are marked
 `client` here because only the client inventory tools need them in SOQM; the
 dedicated-server harness excludes this dependency chain. Kotlin for Forge can
 also support server mods in other packs.
+
+LambDynamicLights is also marked `client` and excluded from the dedicated-server
+harness. Its official JAR includes the required NeoForge libraries. Held-item
+lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynamic-lighting).
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
@@ -85,6 +89,7 @@ also support server mods in other packs.
 | Kobolds | 4.0.1 | both (baseline) | [project 484967 / file 8198851](https://www.curseforge.com/minecraft/mc-mods/kobolds/files/8198851) |
 | Kotlin for Forge | 5.12.0 | client | [project 351264 / file 8335665](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge/files/8335665) |
 | KubeJS | 2101.7.2-build.377 | both (baseline) | [project 238086 / file 8843626](https://www.curseforge.com/minecraft/mc-mods/kubejs/files/8843626) |
+| LambDynamicLights | 4.8.11+1.21.1 | client | [project 393442 / file 8780227](https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/8780227) |
 | libIPN | 6.6.3 | client | [project 679177 / file 7810552](https://www.curseforge.com/minecraft/mc-mods/libipn/files/7810552) |
 | Lithium (Fabric/NeoForge) | 0.15.4+mc1.21.1 | both | [project 360438 / file 8330365](https://www.curseforge.com/minecraft/mc-mods/lithium/files/8330365) |
 | Lithostitched | 1.8.1 | both (baseline) | [project 936015 / file 9170709](https://www.curseforge.com/minecraft/mc-mods/lithostitched/files/9170709) |
