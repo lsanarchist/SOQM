@@ -13,7 +13,7 @@ ServerEvents.recipes(function(event) {
           "item": "minecraft:iron_block"
         },
         "G": {
-          "item": "ironchest:diamond_chest"
+          "item": "sophisticatedstorage:gold_to_diamond_tier_upgrade"
         },
         "B": {
           "item": "ae2:quartz_glass"

@@ -13,6 +13,8 @@ import json
 from pathlib import Path
 import re
 
+import campaign_refunds
+
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / 'overrides/config/ftbquests/quests'
 POLICY_PATH = ROOT / 'metadata/reward_pools.json'
@@ -190,30 +192,49 @@ def locale_entries(language: str = 'uk_ua', policy: dict | None = None, chapters
         raise ValueError('Unreviewed language')
     policy = load_policy() if policy is None else policy
     chapters = chapters_from_disk() if chapters is None else chapters
+    refunds = campaign_refunds.load(chapters)
+    names = campaign_refunds.item_names()
     result = {}
     for chapter in chapters:
         for quest in chapter['quests']:
-            if quest['id'] in policy['milestones']:
+            refund = refunds.get(quest['id'])
+            milestone = policy['milestones'].get(quest['id'])
+            if milestone and not refund:
                 continue
             for reward in quest['rewards']:
                 if reward.get('item', {}).get('id') == 'ftbquests:book':
                     continue
-                result[f"reward.{reward['id']}.title"] = choose_pool(chapter, quest, policy)['title'][language]
+                title = (('Куб Mayhem' if language == 'uk_ua' else 'Mayhem Cube') + f" T{milestone['tier']}"
+                         if milestone else choose_pool(chapter, quest, policy)['title'][language])
+                if refund:
+                    title += ' + ' + ', '.join(f"{p['count']} × {names[p['item']][language]}" for p in refund['items'])
+                result[f"reward.{reward['id']}.title"] = title
     return result
 
 
 def runtime_policy(chapters: list[dict], policy: dict | None = None) -> dict:
     policy = load_policy() if policy is None else policy
+    refunds = campaign_refunds.load(chapters)
     mappings = {}
     for chapter in chapters:
         for quest in chapter['quests']:
             for reward in quest['rewards']:
                 if reward.get('type') == 'custom' and PROGRESSIVE_TAG in reward.get('tags', []):
                     mappings[reward['id']] = {'pool': choose_pool(chapter, quest, policy)['key'], 'quest_id': quest['id']}
+                    if quest['id'] in refunds:
+                        if campaign_refunds.TAG not in reward.get('tags', []):
+                            raise ValueError('Apply the questbook refresh before compiling recipe refunds')
+                        mappings[reward['id']]['refund'] = campaign_refunds.runtime(refunds[quest['id']])
+                        if quest['id'] in policy['milestones']:
+                            mappings[reward['id']]['cube'] = f"kubejs:mayhem_cube_t{policy['milestones'][quest['id']]['tier']}"
+    mapped_refunds = {m['quest_id'] for m in mappings.values() if 'refund' in m}
+    if mapped_refunds != set(refunds):
+        raise ValueError('Every recipe refund needs its retained custom reward slot')
     produced = set(GATES)
     for pool in policy['pools']:
         for entry in pool['entries']:
             produced.update(entry.get('requires_craft', []))
+    produced.update(row['output'] for row in refunds.values())
     pools = [{'key': p['key'], 'title': p['title'], 'fallback': p.get('fallback', 'survival'),
               'entries': [{k: v for k, v in e.items() if k != 'evidence'} for e in p['entries']]} for p in policy['pools']]
     return {'schema': 2, 'version': policy.get('version', '2.0'), 'levels': policy['levels'],
@@ -224,6 +245,7 @@ def runtime_policy(chapters: list[dict], policy: dict | None = None) -> dict:
 
 def apply(chapters: list[dict], locale: dict) -> dict:
     policy = load_policy()
+    refunds = campaign_refunds.load(chapters)
     before = persistent_ids(chapters)
     by_id = {quest['id']: quest for chapter in chapters for quest in chapter['quests']}
     if set(policy['milestones']) - set(by_id):
@@ -232,7 +254,7 @@ def apply(chapters: list[dict], locale: dict) -> dict:
         if milestone['tier'] > quest_stage(by_id[ident]):
             raise ValueError(f'Lucky-cube tier exceeds its quest progression: {ident}')
     usage = Counter()
-    books = cubes = 0
+    books = cubes = refund_cubes = 0
     for chapter in chapters:
         for quest in chapter['quests']:
             pool = choose_pool(chapter, quest, policy)
@@ -245,12 +267,14 @@ def apply(chapters: list[dict], locale: dict) -> dict:
                 if reward.get('auto', 'disabled') != 'disabled':
                     raise ValueError('Review non-manual reward before migration')
                 kept = {k: reward[k] for k in ('id', 'exclude_from_claim_all', 'ignore_reward_blocking', 'hide_tooltip') if k in reward}
-                tags = [t for t in reward.get('tags', []) if t != PROGRESSIVE_TAG and not t.startswith('soqm:reward_pool:')]
+                tags = [t for t in reward.get('tags', []) if t not in {PROGRESSIVE_TAG, campaign_refunds.TAG}
+                        and not t.startswith('soqm:reward_pool:')]
                 reward.clear()
                 reward.update(kept)
                 reward.update({'team_reward': False, 'auto': 'disabled'})
                 milestone = policy['milestones'].get(quest['id'])
-                if milestone:
+                refund = refunds.get(quest['id'])
+                if milestone and not refund:
                     reward.update({'type': 'item', 'item': {'id': f"kubejs:mayhem_cube_t{milestone['tier']}", 'count': 1}, 'count': 1, 'random_bonus': 0})
                     # The old custom pack's localized title must not mask the
                     # cube's real item name after changing this existing slot.
@@ -259,9 +283,15 @@ def apply(chapters: list[dict], locale: dict) -> dict:
                         reward['tags'] = tags
                     cubes += 1
                 else:
-                    reward.update({'type': 'custom', 'icon': pool.get('icon', DEFAULT_ICONS[pool['key']]),
-                                   'tags': tags + [PROGRESSIVE_TAG, 'soqm:reward_pool:' + pool['key']]})
-                    usage[pool['key']] += 1
+                    icon = f"kubejs:mayhem_cube_t{milestone['tier']}" if milestone else pool.get('icon', DEFAULT_ICONS[pool['key']])
+                    reward.update({'type': 'custom', 'icon': icon,
+                                   'tags': tags + [PROGRESSIVE_TAG, 'soqm:reward_pool:' + pool['key']]
+                                           + ([campaign_refunds.TAG] if refund else [])})
+                    if milestone:
+                        cubes += 1
+                        refund_cubes += 1
+                    else:
+                        usage[pool['key']] += 1
     if persistent_ids(chapters) != before:
         raise AssertionError('Reward refresh changed a saved campaign object ID')
     for key in list(locale):
@@ -271,6 +301,8 @@ def apply(chapters: list[dict], locale: dict) -> dict:
     entries = [e for p in policy['pools'] for e in p['entries']]
     return {'personal_rewards': sum(len(q['rewards']) for c in chapters for q in c['quests']),
             'progressive_rewards': sum(usage.values()), 'milestone_cubes': cubes, 'personal_books': books,
+            'recipe_refunds': len(refunds), 'refund_cube_bundles': refund_cubes,
+            'custom_rewards': sum(usage.values()) + refund_cubes,
             'pools': len(policy['pools']), 'catalogue_entries': len(entries), 'distinct_items': len({e['item'] for e in entries}),
             'modded_items': len({e['item'] for e in entries if not e['item'].startswith('minecraft:')}),
             'production_gated_entries': sum(bool(e.get('requires_craft')) for e in entries),

@@ -1,5 +1,44 @@
 # Verification status
 
+## SOQM 0.4.10 — recipe refunds, HUD and Sophisticated Storage
+
+Validated on **2026-10-20** against merged main
+`1a7ecd3b5691888bc807667eb90cbd913e191934`. All **1,626 quests, 1,911 tasks and
+1,627 personal reward IDs** are retained. **41 expensive crafting quests** gain
+guaranteed recipe-ingredient returns alongside their existing pack or cube.
+Iron Chests is removed; six existing tasks now teach Sophisticated Storage.
+The pack contains **124 pinned third-party mods**, **12 authored modules** and
+**1,837 locked game payload files**.
+
+The final full-pack dedicated-server run passed in **110.43 seconds**, with
+**20,055 → 20,055 recipes**, normal shutdown, zero KubeJS/fatal gate errors and
+an unchanged reviewed payload. It exercised **166 multiblock material checks**,
+native inventory debounce, **43 live refund recipe costs**, per-player claim
+gates, real machine manufacture and saved-state reload. All old personal claims,
+43 nonempty task values including 15 partials, and three completed branch quests
+survived. The benchmark loaded no additional chunks; the complete distributions,
+including a synthetic-scan timing outlier, are recorded in the linked report.
+
+The HUD module compiled against the pinned native client; its production Mixins
+transformed **15 classes**, and production geometry passed **394 assertions**
+at three GUI sizes. Both changed modules rebuilt byte-identically. The final
+offline gate passed **118 Python tests with no skips**, both Node suites,
+generation/localization, all 11 coordinate previews and deterministic archive
+checks. All 124 dependency downloads passed size/hash/ZIP verification.
+
+A read-only storage audit also passed on a stopped native test world with
+139 files and 1,097 NBT records. Existing worlds still need their Iron Chests
+contents moved using the old pack before upgrading; there is no automatic
+container conversion. The candidate ZIP includes the audit utility.
+
+**Exact evidence, timing scope, hashes and reproduction:**
+[verification-0.4.10.md](verification-0.4.10.md) ·
+[storage migration](../docs/STORAGE_MIGRATION.md) ·
+[HUD behavior and limitations](../docs/HUD_LAYOUT.md) ·
+[refund catalogue](../docs/REWARDS.md).
+No graphical-client screenshot QA, complete survival playthrough or long-term
+multiplayer economy test is claimed.
+
 ## Multiblock tasks, chronology, map lines and rewards — after SOQM 0.4.9
 
 Validated on **2026-10-20** against main

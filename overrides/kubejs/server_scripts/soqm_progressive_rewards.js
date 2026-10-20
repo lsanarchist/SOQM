@@ -6,6 +6,7 @@ var SOQMProgressiveRewards = (function () {
   var ServerPlayer = Java.loadClass('net.minecraft.server.level.ServerPlayer');
   var FakePlayer = Java.loadClass('net.neoforged.neoforge.common.util.FakePlayer');
   var ProductionEvidence = null;
+  var RecipeRefunds = null;
   var warnings = {};
   var rarities = ['common', 'uncommon', 'rare', 'epic'];
   var defaultDraws = [3, 3, 4, 4, 4, 5, 5];
@@ -16,6 +17,7 @@ var SOQMProgressiveRewards = (function () {
   var itemPattern = /^[a-z0-9_.-]+:[a-z0-9_./-]+$/;
   var poolPattern = /^[a-z0-9_]+$/;
   var marker = 'soqm:progressive_reward';
+  var refundMarker = 'soqm:recipe_refund';
   var rarityNames = {
     uk_ua: {common: 'звичайний', uncommon: 'незвичайний', rare: 'рідкісний', epic: 'епічний'},
     en_us: {common: 'common', uncommon: 'uncommon', rare: 'rare', epic: 'epic'}
@@ -171,6 +173,8 @@ var SOQMProgressiveRewards = (function () {
   }
   try { ProductionEvidence = Java.loadClass('qm.rewards.ProductionEvidence'); }
   catch (error) { warn('adapter', 'Production evidence unavailable; manufactured prizes remain locked. ' + error); }
+  try { RecipeRefunds = Java.loadClass('qm.rewards.RecipeRefunds'); }
+  catch (error) { warn('refund-adapter', 'Recipe-refund adapter unavailable; fixed bundles require the shipped native adapter. ' + error); }
 
   function production(player) {
     var produced = Object.create(null), level = 0;
@@ -268,6 +272,10 @@ var SOQMProgressiveRewards = (function () {
 
   FTBQuestsEvents.customReward(function (event) {
     var reward = event.getReward(), player = event.getPlayer();
+    // The native pre-claim gate and once-per-claim event listener own the fixed
+    // refund and preserved cube. This script adds only the original random pack.
+    // Native routing also remains correct if this JS policy fell back to supplies.
+    if (reward.hasTag(refundMarker) && (RecipeRefunds === null || !RecipeRefunds.beginRandomPack(reward, player))) return;
     var mapping = policy.mappings[code(String(reward.getCodeString()))];
     if (!mapping && !reward.hasTag(marker)) return;
     if (!(player instanceof ServerPlayer) || player instanceof FakePlayer || player.isSpectator()) return;
@@ -303,6 +311,8 @@ var SOQMProgressiveRewards = (function () {
       'Reward level: ' + state.level + '/6; prizes per quest: ' + state.draws + '.');
     say(player, 'Особисте отримання раз за квест. Кожен приз розігрується окремо; повтори додаються.',
       'One personal claim per quest. Each prize is rolled independently; duplicate items are combined.');
+    say(player, 'Вказані в квесті компенсації додають витрачені компоненти до набору або куба після справжнього виготовлення вами чи командою.',
+      'Refunds listed in a quest add consumed components to its pack or cube after actual manufacture by you or your team.');
     if (state.qualityDraws) say(player,
       'Один приз — щонайменше незвичайний, якщо такий уже відкрито в темі. Решта — звичайні жеребкування.',
       'One prize is uncommon or better when this theme has an eligible prize of that quality. The remaining draws use the full pool.');

@@ -1,9 +1,11 @@
-# SOQM production evidence, 0.4.8
+# SOQM production evidence and recipe refunds, 0.4.10
 
 This small authored NeoForge adapter records actual manufacture for the
 progressive quest rewards. FTB Quests remains responsible for each player's
-claim; the KubeJS CustomReward handler chooses and delivers the supplies. This
-adapter neither issues items nor changes a quest's task progress.
+claim; the KubeJS CustomReward handler chooses and delivers the random supplies.
+For reviewed crafting-refund quests the adapter guards the native claim before
+it is spent, then delivers the guaranteed components and any preserved cube.
+It never changes task progress or infers manufacture from a reward payout.
 
 ## Supported manufacture
 
@@ -15,6 +17,7 @@ adapter neither issues items nor changes a quest's task progress.
 | Mekanism Metallurgic Infuser | `CachedRecipe.setOnFinish`, after native `finishProcessing` |
 | Mekanism Infusing Factory, all four tiers | The same post-finish callback, restricted to `FactoryType.INFUSING` |
 | Sophisticated Storage upgrade in the world | Successful native tier replacement followed by actual consumption of the tier-upgrade item |
+| Iron Furnaces upgrade in the world | Pinned `ItemUpgrade.useOn` from-tier branch, actual `shrink(1)` of that upgrade, and verified resulting tier/block entity |
 
 Custom serializers that use an ordinary crafting grid, including Sophisticated
 storage/backpack upgrades and Immersive Engineering shaped recipes, use the
@@ -96,6 +99,84 @@ at server stop. This caches only the configured item catalogue, never a player's
 production facts, current team, actor eligibility, or a machine's captured owner.
 Tracked outputs still pass the same manufacture and accepted-output checks.
 
+## Guaranteed refunds and the native claim boundary
+
+`metadata/recipe_refunds.json` records 41 output-specific fixed returns, exact
+custom recipe IDs, ingredient counts and canonical recipe SHA256 values. The
+compiler adds `refund: {output, items, recipe_ids}` to the existing runtime
+reward mapping. Nine of these slots also contain `cube`, retaining their original
+single Mayhem Cube and tier. The other 32 retain their original random packs.
+All 1627 outer claim IDs remain unchanged; there is no new persistent refund ID.
+
+The [complete 41-quest table](../../../docs/REWARDS.md#повний-перелік-компенсацій--complete-refund-list)
+records each output, returned ingredient, recipe consumption and preserved base
+prize. Thirty-four quests return 25–50% of a repeated direct ingredient. Seven
+return one indivisible secondary component while at least two other distinct
+authored campaign components remain consumed. These are fractions of the named
+ingredients, not estimates of the complete recipe's value. The fixed catalogue
+totals 42 component units per player who completes and claims all 41 refunds.
+
+The design follows fixed material rewards in the pinned
+[Craftoria questbook](https://github.com/TeamAOF/Craftoria/tree/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters)
+and consumed-component refunds in the official
+[Questing Mayhem 1.0.3 release for Minecraft 1.7.10](https://www.curseforge.com/minecraft/modpacks/questing-mayhem/files/3374264).
+Exact upstream quest IDs, recipe examples and the Questing Mayhem archive SHA256
+are in `metadata/recipe_refunds.json`; the full comparison and attribution limits
+are in [REWARDS.md](../../../docs/REWARDS.md#первинні-приклади--primary-source-precedents).
+SOQM validates its own pinned recipe costs and requires real output manufacture.
+
+The authored outputs have real crafting-grid routes. Direct recipe positions are
+counted across every authored alternative; tags are not guessed into exact
+items. A live native test checks all active crafting alternatives. EnderIO reset
+recipes consume the same item and cannot pass the production predicate. AE2 cell
+disassembly returns components into inventory rather than producing a crafting
+output, and does not grant manufacture evidence.
+
+Pinned FTB Quests 2101.1.36 calls `markRewardAsClaimed` before `Reward.claim` in
+the four-argument `TeamData.claimReward(ServerPlayer, Reward, boolean, long)`.
+Its three-argument overload delegates to that method. Cancelling or refusing
+only a KubeJS callback would therefore consume the claim without its refund.
+`RefundClaimMixin` injects at that exact method's HEAD and applies only to
+`soqm:recipe_refund` tags. It verifies the personal manual CustomReward, matching
+parent quest, valid registered policy payload, real survival player and exact
+output manufacture in the player's own/current-party evidence. Denial retains
+the unclaimed state and sends a localized explanation. Unrelated rewards pass
+through unchanged.
+
+The same predicate is used when the successful native `Reward.claim` invocation
+is entered. The server thread cannot apply a resource reload between the HEAD
+check and its synchronous custom event. A scoped context permits the native
+CustomRewardEvent listener to issue fixed prizes once through ordinary transient
+`ItemReward` payloads. KubeJS's `beginRandomPack` consumes the original pack's
+one-time permission inside that same context; cube bundles never roll a pack.
+Repeated/direct custom events outside the context cannot pay again. `finally`
+restores any enclosing context or removes it, including when a callback throws.
+No second persistent claim ledger and no production writes occur during payout.
+
+Native registration happens once at mod construction, never during reload. The
+immutable mapping is rebuilt at startup/resource apply, stores IDs rather than
+stale quest objects, and clears on server stop. Missing or invalid mappings fail
+closed before the FTB claim. A broken JS random policy can still use its normal
+basic-supply fallback, while fixed native prizes retain their independently
+validated delivery path.
+
+The Iron Furnaces hook verifies the pinned 4.3.2 bytecode's sole shrink site after
+its successful from-tier replacement branches. That method ends with vanilla
+`Item.useOn` and returns PASS even on success; `consumesAction()` is therefore not
+used as production evidence. The observer checks exact consumed-item identity,
+a positive one-item count delta, different from/to blocks, the actual final
+block and native furnace block entity, plus the existing survival/team filters.
+The direct Netherite Furnace recipe and the consumed upgrade recipe both cost
+two Netherite Ingots; either supported manufacture route earns one back.
+
+**Existing worlds:** already claimed slots remain claimed, without an automatic
+top-up. Forty of the 41 refund outputs are newly observed; old inventory and
+completed quests cannot prove historical manufacture. An old completed but
+unclaimed quest for those outputs requires a new real craft or supported world
+upgrade. The previously observed Ultimate Energy Cube can use its retained
+production fact. Current-party manufacture enables each member's personal
+claim, while joining/leaving never resets the saved player/reward claim key.
+
 `tests/test_production_observer.py` executes the unchanged callback/filter methods
 with counting inputs to check avoided work and retained manufacture rules. The
 native fixture compares the identity filter with the exact string allowlist for
@@ -113,13 +194,13 @@ python3 src/compat/progressive-rewards/build.py \
   --javac /absolute/path/to/jdk-21/bin/javac
 ```
 
-`--mods` defaults to `.cache/mods`. Eight API JARs are verified against
+`--mods` defaults to `.cache/mods`. Nine API JARs are verified against
 `metadata/mods.lock.json`; the mapped NeoForge 21.1.262 server JAR is verified by
 SHA-256 and precedes the unpatched Minecraft JAR on the compilation classpath.
 Mixin targets use pinned production Mojmap names with `remap=false` and required
 injections. Compilation disables annotation processors. ZIP entry ordering,
 timestamps, permissions, and compression settings are fixed. The output is
-`overrides/mods/qm-progressive-rewards-0.4.9.jar`.
+`overrides/mods/qm-progressive-rewards-0.4.10.jar`.
 
 `tests/runtime/ProductionEvidenceProbe.java` supplies a staged test-only native
 fixture through the pack's runtime probe. It uses real recipe resolution and
@@ -131,3 +212,19 @@ connection and a test-only listener that discards outbound UI packets without
 fabricating a client handshake or delivery acknowledgements. This verifies the
 server behavior, not graphical client interaction. The broader runner records the actual
 verification result; compilation alone is not evidence of a successful game run.
+
+`ProgressiveRewardsProbe` additionally checks live recipe costs, early claims
+remaining unspent, unknown/invalid mappings, correct parent ownership, unrelated
+rewards during invalid refund policy, actual output manufacture, two independent
+team-member refunds, exact cube preservation, reward delivery not unlocking its
+ingredient, repeated event rejection, team transfer, disk persistence and fresh
+post-reload claims. Fixture materials are supplied; actual crafting/output takes,
+native claims and native item delivery are exercised.
+
+The **0.4.10 native run passed**, including all 43 reviewed cost recipes,
+positive/negative furnace upgrades, early-claim denial, two members' personal
+refunds, preserved cubes, no payout-created production evidence, duplicate-event
+rejection and a fresh member's post-reload claim. See the
+[versioned verification report](../../../reports/verification-0.4.10.md) and
+locally generated machine-readable results in `reports/runtime-probe.json`. These
+results establish server behavior, not a graphical client or full playthrough.

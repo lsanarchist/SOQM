@@ -31,6 +31,7 @@ BLUEPRINT = ROOT / "metadata/campaign_layout.json"
 OUTPUTS = (
     ("qm_v030_27_convergence", None, "campaign-route.svg"),
     ("qm_v030_12_ae2", None, "campaign-ae2.svg"),
+    ("qm_v030_11_storage", None, "campaign-storage.svg"),
     ("qm_v040_29_exdeorum", None, "campaign-ex-deorum.svg"),
     ("qm_v040_30_exmachinis", None, "campaign-ex-machinis.svg"),
     ("qm_02_mek", None, "campaign-mekanism.svg"),

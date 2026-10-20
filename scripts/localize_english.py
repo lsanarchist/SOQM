@@ -21,6 +21,8 @@ import campaign_multiblocks
 import campaign_layout
 import campaign_lessons
 import campaign_rewards
+import campaign_refunds
+import campaign_storage
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
@@ -462,6 +464,7 @@ def generate() -> tuple[str, dict]:
                     "A multiblock's Tasks tab lists the blocks for its smallest described construction. Hold them before building: detection does not consume items. A separate formation or operation condition, where present, verifies the finished machine. Three engineering tasks are explicitly manual confirmations after your own system test.",
                     "Book controls: right-click the Quest Book, or bind Open Quests under Controls → FTB Quests. Hover an item and press R for recipes or U for uses. JEI in the installed pack contains the current recipes.",
                     "Every member claims each quest reward personally once. A pack draws 3–5 prizes, increasing as the team produces its material milestones. When the theme has unlocked better prizes, one draw guarantees an uncommon-or-better prize. Expensive components enter their pools only after actual production of that same item; gifts and rewards do not count as manufacturing evidence.",
+                    "Selected expensive crafts also return part of their consumed components. The quest and reward descriptions list exact guaranteed items and quantities in addition to the pack or cube. Claim them after you or your current team actually manufacture the output; an early claim attempt does not consume your entitlement.",
                     "Completed production chains, important structures and adventure goals award Mayhem Cubes. Open them in a separate test area away from the base. Use /soqm rewards to see your reward level, and /soqm rewards pool <theme> for eligible prizes, normal and guaranteed-draw odds, and conditions on locked items.",
                 ]
             result[f"quest.{qid}.quest_desc"] = descriptions
@@ -474,7 +477,9 @@ def generate() -> tuple[str, dict]:
     counts["expanded_lessons"] = campaign_lessons.apply_locale(result, "en_us", lessons)
     chapters = [load_json(path) for path in chapter_files]
     counts["multiblock_lessons"] = campaign_multiblocks.apply_locale(chapters, result, "en_us")
+    counts["storage_lessons"] = campaign_storage.apply_locale(result, "en_us")
     counts["guidance"] = campaign_guidance.apply(chapters, result, "en_us")
+    counts["refund_guidance"] = campaign_refunds.apply_locale(result, "en_us")
     already_authored = set(tutorials) | {ident for ident, patch in branch_patches.items() if "description" in patch}
     counts["authored_tutorials"] += len(set(lessons) - already_authored)
     result.update(campaign_rewards.locale_entries("en_us"))

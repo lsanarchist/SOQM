@@ -162,7 +162,10 @@ def run(args, report, deadline, *, compile_fn=compile_probe, probe_source=SOURCE
         require(sha(target) == row["sha256"], "Dependency staging mismatch")
     shutil.copyfile(jar, server / "mods" / jar.name)
     report["test_mod_sha256"] = sha(jar)
-    (server / "soqm_probe_config.json").write_text(json.dumps({"baseline_quests": str(baseline)}), encoding="utf-8")
+    (server / "soqm_probe_config.json").write_text(json.dumps({
+        "baseline_quests": str(baseline),
+        "recipe_refunds": str(ROOT / "metadata/recipe_refunds.json"),
+    }), encoding="utf-8")
     (server / "eula.txt").write_text("# Explicitly accepted for this isolated test\neula=true\n", encoding="utf-8")
     settings = {
         "server-ip": "127.0.0.1", "server-port": str(args.port), "online-mode": "true", "max-players": "1",

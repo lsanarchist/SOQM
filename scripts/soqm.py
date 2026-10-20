@@ -136,6 +136,9 @@ def lock():
 
 def archive_entries():
     entries = {'manifest.json': (ROOT / 'manifest.json').read_bytes()}
+    audit_tool = ROOT / 'scripts/audit_storage_upgrade.py'
+    require(audit_tool.is_file() and not audit_tool.is_symlink(), 'Storage upgrade audit is missing')
+    entries['tools/audit_storage_upgrade.py'] = audit_tool.read_bytes()
     for path in sorted(PAYLOAD.rglob('*')):
         if path.is_file():
             entries['overrides/' + path.relative_to(PAYLOAD).as_posix()] = path.read_bytes()
@@ -146,7 +149,7 @@ def archive_entries():
                  'downloads/README.md', 'reports/README.md', 'reports/verification-0.4.7.md',
                  'reports/verification-0.4.8.md', 'reports/verification-0.4.9.md', 'reports/verification-performance.md',
                  'reports/verification-pr5.md', 'reports/verification-box-and-logic.md',
-                 'reports/verification-questbook.md', *docs]:
+                 'reports/verification-questbook.md', 'reports/verification-0.4.10.md', *docs]:
         if (ROOT / name).is_file():
             require(not (ROOT / name).is_symlink(), 'Package documentation symlink rejected')
             entries[name] = (ROOT / name).read_bytes()

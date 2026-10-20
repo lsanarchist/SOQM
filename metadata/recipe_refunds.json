@@ -1,0 +1,1130 @@
+{
+  "schema": 1,
+  "version": "1.0",
+  "research": [
+    {
+      "pack": "Craftoria",
+      "commit": "7d940d2111eb39e8b24c463c9e9e3b254ed151a0",
+      "url": "https://github.com/TeamAOF/Craftoria/blob/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters/applied_energistics.snbt",
+      "examples": [
+        "0B94435972292812: Spatial IO Port gives 4 Engineering Processors",
+        "61340C2A12FEAA26: ME Drive gives 8 Quartz Glass"
+      ]
+    },
+    {
+      "pack": "Craftoria",
+      "commit": "7d940d2111eb39e8b24c463c9e9e3b254ed151a0",
+      "url": "https://github.com/TeamAOF/Craftoria/blob/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters/mi_electric_age.snbt",
+      "examples": [
+        "1987DF7742136DC4: Distillation Tower gives 8 Clean Stainless Steel Machine Casings",
+        "5401B18217772D6C: Heat Exchanger gives 6 Frostproof and 6 Heatproof Machine Casings"
+      ]
+    },
+    {
+      "pack": "Questing Mayhem 1.0.3 (Minecraft 1.7.10)",
+      "url": "https://www.curseforge.com/minecraft/modpacks/questing-mayhem/files/3374264",
+      "archive_url": "https://edge.forgecdn.net/files/3374/264/Questing%20Mayhem-1.0.3.zip",
+      "archive_sha256": "22c584d549132744d6f48292a78c315cb256c05a05521de75ba3e4a7c992dbcf",
+      "quest_file": "overrides/config/betterquesting/DefaultQuests.json",
+      "examples": [
+        "q554 Infinity Chest: 1 of 40 Deep Storage Units returned; Extreme Recipe 4.zs line36",
+        "q540 EMC Crafter: 1 of 4 Molecular Assemblers returned; Recipe 12.zs lines219–222",
+        "q428 Signalum Seeds and q448 Terrasteel Seeds: 1 of 4 ingredient blocks returned beside a reward bag; Recipe 4.zs lines415,352",
+        "q424 Fluix Seeds: 1 of 2 Fluix Blocks returned beside a reward bag; Recipe 4.zs line418"
+      ],
+      "attribution": "Official release manifest author DaZombieBoss; current CurseForge project by onemantic. The by-spirit attribution was not established from this archive."
+    }
+  ],
+  "budget_note": "A fixed return of actual direct recipe ingredients accompanies the existing pack or cube. Repeated ingredients return 25–50% of that component; indivisible secondary components are explicitly reviewed as one_component, with at least two other authored campaign components remaining consumed. Percentages never claim to price the complete recipe. One primary quest per output; no convergence/BOM duplicate compensation.",
+  "ingredients": {
+    "ae2:annihilation_core": {
+      "uk_ua": "Ядро знищення",
+      "en_us": "Annihilation Core"
+    },
+    "ae2:calculation_processor": {
+      "uk_ua": "Обчислювальний процесор",
+      "en_us": "Calculation Processor"
+    },
+    "ae2:cell_component_16k": {
+      "uk_ua": "Компонент ME-комірки на 16k",
+      "en_us": "16k ME Storage Component"
+    },
+    "ae2:cell_component_1k": {
+      "uk_ua": "Компонент ME-комірки на 1k",
+      "en_us": "1k ME Storage Component"
+    },
+    "ae2:cell_component_4k": {
+      "uk_ua": "Компонент ME-комірки на 4k",
+      "en_us": "4k ME Storage Component"
+    },
+    "ae2:cell_component_64k": {
+      "uk_ua": "Компонент ME-комірки на 64k",
+      "en_us": "64k ME Storage Component"
+    },
+    "ae2:energy_cell": {
+      "uk_ua": "Енергетична комірка AE2",
+      "en_us": "AE2 Energy Cell"
+    },
+    "ae2:engineering_processor": {
+      "uk_ua": "Інженерний процесор",
+      "en_us": "Engineering Processor"
+    },
+    "ae2:fluix_pearl": {
+      "uk_ua": "Флюїксова перлина",
+      "en_us": "Fluix Pearl"
+    },
+    "enderio:basic_capacitor": {
+      "uk_ua": "Базовий конденсатор",
+      "en_us": "Basic Capacitor"
+    },
+    "enderio:dark_steel_ingot": {
+      "uk_ua": "Злиток темної сталі",
+      "en_us": "Dark Steel Ingot"
+    },
+    "enderio:soularium_block": {
+      "uk_ua": "Блок солярію",
+      "en_us": "Soularium Block"
+    },
+    "kubejs:arcane_conduit": {
+      "uk_ua": "Арканний провідник",
+      "en_us": "Arcane Conduit"
+    },
+    "kubejs:control_assembly": {
+      "uk_ua": "Блок керування",
+      "en_us": "Control Assembly"
+    },
+    "kubejs:electromechanical_drive": {
+      "uk_ua": "Електромеханічний привід",
+      "en_us": "Electromechanical Drive"
+    },
+    "kubejs:sealed_process_chamber": {
+      "uk_ua": "Герметична камера",
+      "en_us": "Sealed Process Chamber"
+    },
+    "mekanism:basic_chemical_tank": {
+      "uk_ua": "Базовий хімічний бак",
+      "en_us": "Basic Chemical Tank"
+    },
+    "mekanism:energy_tablet": {
+      "uk_ua": "Енергетична пластина",
+      "en_us": "Energy Tablet"
+    },
+    "mekanism:qio_drive_base": {
+      "uk_ua": "Базовий QIO-накопичувач",
+      "en_us": "Base QIO Drive"
+    },
+    "mekanism:qio_drive_hyper_dense": {
+      "uk_ua": "Надщільний QIO-накопичувач",
+      "en_us": "Hyper-Dense QIO Drive"
+    },
+    "mekanism:qio_drive_time_dilating": {
+      "uk_ua": "QIO-накопичувач із розширенням часу",
+      "en_us": "Time-Dilating QIO Drive"
+    },
+    "mekanism:steel_casing": {
+      "uk_ua": "Сталевий корпус",
+      "en_us": "Steel Casing"
+    },
+    "mekanism:teleportation_core": {
+      "uk_ua": "Ядро телепортації",
+      "en_us": "Teleportation Core"
+    },
+    "mekanism:thermal_evaporation_block": {
+      "uk_ua": "Блок термічного випаровувача",
+      "en_us": "Thermal Evaporation Block"
+    },
+    "mekanism:ultimate_control_circuit": {
+      "uk_ua": "Найвища керувальна схема",
+      "en_us": "Ultimate Control Circuit"
+    },
+    "mekanismgenerators:fusion_reactor_frame": {
+      "uk_ua": "Каркас термоядерного реактора",
+      "en_us": "Fusion Reactor Frame"
+    },
+    "minecraft:diamond": {
+      "uk_ua": "Діамант",
+      "en_us": "Diamond"
+    },
+    "minecraft:diamond_block": {
+      "uk_ua": "Діамантовий блок",
+      "en_us": "Diamond Block"
+    },
+    "minecraft:netherite_ingot": {
+      "uk_ua": "Незеритовий злиток",
+      "en_us": "Netherite Ingot"
+    },
+    "rftoolsbase:infused_diamond": {
+      "uk_ua": "Наповнений діамант",
+      "en_us": "Infused Diamond"
+    },
+    "rftoolspower:power_core2": {
+      "uk_ua": "Енергетичне ядро II",
+      "en_us": "Power Core II"
+    },
+    "rftoolspower:power_core3": {
+      "uk_ua": "Енергетичне ядро III",
+      "en_us": "Power Core III"
+    }
+  },
+  "refunds": [
+    {
+      "quest_id": "51301100A7D9F653",
+      "output": "rftoolspower:cell3",
+      "output_name": {
+        "uk_ua": "Енергокомірка RFTools III",
+        "en_us": "RFTools Power Cell III"
+      },
+      "items": [
+        {
+          "item": "rftoolspower:power_core3",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/rftoolspower/cell3",
+          "source": "qm_expert_v042.js",
+          "sha256": "01338220bfb70be0f3800a40e6e1985ea6feed9c68a33d473fd3865f6bca8a0a"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130110B5D09E918",
+      "output": "ae2:cell_component_256k",
+      "output_name": {
+        "uk_ua": "Компонент ME-комірки на 256k",
+        "en_us": "256k ME Storage Component"
+      },
+      "items": [
+        {
+          "item": "ae2:cell_component_64k",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_256k_part",
+          "source": "qm_expert_v042.js",
+          "sha256": "fd696bd7b22bffd5af1c383febef6d776b4bbcb2218984fb3b22a1f9458831b9"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011156F29CC4E",
+      "output": "mekanism:pressurized_reaction_chamber",
+      "output_name": {
+        "uk_ua": "Камера реакцій під тиском",
+        "en_us": "Pressurized Reaction Chamber"
+      },
+      "items": [
+        {
+          "item": "mekanism:basic_chemical_tank",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanism/pressurized_reaction_chamber",
+          "source": "qm_expert_progression.js",
+          "sha256": "b668a31190185f6ca5eb9ab697b0f666f483210d4b7bed5e846ced0d533d3983"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130111A90908B6C",
+      "output": "buildcraftsilicon:laser",
+      "output_name": {
+        "uk_ua": "Лазер BuildCraft",
+        "en_us": "BuildCraft Laser"
+      },
+      "items": [
+        {
+          "item": "minecraft:diamond",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/buildcraftsilicon/laser",
+          "source": "qm_expert_v042.js",
+          "sha256": "b87596b20906790149b85894c12a69271fde8d3bd64d3be71346b46c03222c88"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130111D94D99E2B",
+      "output": "enderio:basic_capacitor_bank",
+      "output_name": {
+        "uk_ua": "Базовий банк конденсаторів",
+        "en_us": "Basic Capacitor Bank"
+      },
+      "items": [
+        {
+          "item": "enderio:basic_capacitor",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/enderio/basic_capacitor_bank",
+          "source": "qm_expert_v042.js",
+          "sha256": "04e736dd26ca81b1c877208639118fd3ecd46c0d1943b7ac50def2a244155d79"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130112203442BAE",
+      "output": "mekanism:qio_drive_hyper_dense",
+      "output_name": {
+        "uk_ua": "Надщільний QIO-накопичувач",
+        "en_us": "Hyper-Dense QIO Drive"
+      },
+      "items": [
+        {
+          "item": "mekanism:qio_drive_base",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/qio_drive_hyper_dense",
+          "source": "qm_expert_v042.js",
+          "sha256": "18c03bc41e33607fb66940eff6cf589b23880feb35e25efecc8b9efb9556f02a"
+        }
+      ]
+    },
+    {
+      "quest_id": "51301125F300B5D5",
+      "output": "ad_astra:nasa_workbench",
+      "output_name": {
+        "uk_ua": "Верстак NASA",
+        "en_us": "NASA Workbench"
+      },
+      "items": [
+        {
+          "item": "kubejs:control_assembly",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/ad_astra/nasa_workbench",
+          "source": "qm_expert_progression.js",
+          "sha256": "84231facae5f4bae23d39859e68a0dc9cdced9bb4d8128c6c918f25cdd06ed91"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130112D00658B23",
+      "output": "ae2:molecular_assembler",
+      "output_name": {
+        "uk_ua": "Молекулярний складальник",
+        "en_us": "Molecular Assembler"
+      },
+      "items": [
+        {
+          "item": "ae2:annihilation_core",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/ae2/network/crafting/molecular_assembler",
+          "source": "qm_expert_progression.js",
+          "sha256": "989ed6563894895aa63f2b34333b87656ce9aeeb3e91d17dc113fba2c498f3c4"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130112D86FBD3AF",
+      "output": "ae2:quantum_link",
+      "output_name": {
+        "uk_ua": "Квантове з’єднання ME",
+        "en_us": "ME Quantum Link Chamber"
+      },
+      "items": [
+        {
+          "item": "ae2:fluix_pearl",
+          "count": 1,
+          "minimum_consumed": 4,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/blocks/quantum_link",
+          "source": "qm_expert_v042.js",
+          "sha256": "1eab4417b016a68d0ea75676f0f0db5e65ef1d199e3123b0b00c0262994a999b"
+        }
+      ]
+    },
+    {
+      "quest_id": "51301148615D2591",
+      "output": "enderio:soul_binder",
+      "output_name": {
+        "uk_ua": "Зв’язувач душ",
+        "en_us": "Soul Binder"
+      },
+      "items": [
+        {
+          "item": "enderio:soularium_block",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/enderio/soul_binder",
+          "source": "qm_expert_v042.js",
+          "sha256": "1163779337b088c583b69cb4e5eb4fcb49173fca151dccb1b0fd3feeafc019f2"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130114905904323",
+      "output": "ae2:cell_component_4k",
+      "output_name": {
+        "uk_ua": "Компонент ME-комірки на 4k",
+        "en_us": "4k ME Storage Component"
+      },
+      "items": [
+        {
+          "item": "ae2:cell_component_1k",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_4k_part",
+          "source": "qm_expert_v042.js",
+          "sha256": "e1348d3d66ee8e3785cea4b955e46d52e6123f7f615fb73d13d6d29157eaafd5"
+        }
+      ]
+    },
+    {
+      "quest_id": "51301151F34C43A4",
+      "output": "mekanismgenerators:gas_burning_generator",
+      "output_name": {
+        "uk_ua": "Газовий генератор",
+        "en_us": "Gas-Burning Generator"
+      },
+      "items": [
+        {
+          "item": "mekanism:steel_casing",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanismgenerators/generator/gas_burning",
+          "source": "qm_expert_progression.js",
+          "sha256": "5774b3366a5148924f387e5c1c9e86832aeab6111a7903f4e12b5bd594265c4b"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011675037BC60",
+      "output": "rftoolsdim:dimension_builder",
+      "output_name": {
+        "uk_ua": "Будівник вимірів",
+        "en_us": "Dimension Builder"
+      },
+      "items": [
+        {
+          "item": "minecraft:diamond",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/rftoolsdim/dimension_builder",
+          "source": "qm_expert_progression.js",
+          "sha256": "d65416d3992098ad544e3824ca6b1058599cac7c8c2545ffc619bf0e452da8da"
+        }
+      ]
+    },
+    {
+      "quest_id": "51301167AE8889AA",
+      "output": "enderio:powered_spawner",
+      "output_name": {
+        "uk_ua": "Електричний спавнер",
+        "en_us": "Powered Spawner"
+      },
+      "items": [
+        {
+          "item": "enderio:soularium_block",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/enderio/powered_spawner",
+          "source": "qm_expert_v042.js",
+          "sha256": "1a27150dd73420fcead73eed09dddfbb6f8792959f53b95bba5db035dcb6d3a6"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130116A8EF3B812",
+      "output": "mekanism:qio_drive_array",
+      "output_name": {
+        "uk_ua": "Масив QIO-накопичувачів",
+        "en_us": "QIO Drive Array"
+      },
+      "items": [
+        {
+          "item": "mekanism:teleportation_core",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/qio_drive_array",
+          "source": "qm_expert_v042.js",
+          "sha256": "cd2f6958ee63fbbc3210580655d88c5f3dcd6f2ea05d2dd4662c8867023490e7"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130117AB9046CD2",
+      "output": "industrialforegoing:enchantment_extractor",
+      "output_name": {
+        "uk_ua": "Екстрактор зачарувань",
+        "en_us": "Enchantment Extractor"
+      },
+      "items": [
+        {
+          "item": "minecraft:diamond",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/industrialforegoing/enchantment_extractor",
+          "source": "qm_expert_v042.js",
+          "sha256": "e61895ca762eac2ce018aea89b72879b96b741aca67ea7726b2a1a41c3f21b5c"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130117C40A8D2E1",
+      "output": "ae2:drive",
+      "output_name": {
+        "uk_ua": "Дисковод ME",
+        "en_us": "ME Drive"
+      },
+      "items": [
+        {
+          "item": "ae2:engineering_processor",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/ae2/network/blocks/storage_drive",
+          "source": "qm_expert_progression.js",
+          "sha256": "49e521487ad6da7b777c64a5bbdfef5cc8cbc91497a582a3c5ec3909ef4a8644"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130117C8CDC4800",
+      "output": "ae2:dense_energy_cell",
+      "output_name": {
+        "uk_ua": "Щільна енергетична комірка AE2",
+        "en_us": "Dense Energy Cell"
+      },
+      "items": [
+        {
+          "item": "ae2:energy_cell",
+          "count": 2,
+          "minimum_consumed": 6,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/blocks/energy_dense_energy_cell",
+          "source": "qm_expert_v042.js",
+          "sha256": "c5acc6b51e4ef44bc47eb37a56d830c52bbfa3b2b346523e6a34fd6af6ca2a71"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011835D892AF4",
+      "output": "mekanism:qio_drive_base",
+      "output_name": {
+        "uk_ua": "Базовий QIO-накопичувач",
+        "en_us": "Base QIO Drive"
+      },
+      "items": [
+        {
+          "item": "mekanism:ultimate_control_circuit",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/qio_drive_base",
+          "source": "qm_expert_v042.js",
+          "sha256": "6801aa9c2519308a6caf2ff6d757269f6a278cb5a4bd6d1fcd25873127ce27f5"
+        }
+      ]
+    },
+    {
+      "quest_id": "51301189AE52B1F5",
+      "output": "enderio:sag_mill",
+      "output_name": {
+        "uk_ua": "Млин SAG",
+        "en_us": "SAG Mill"
+      },
+      "items": [
+        {
+          "item": "kubejs:electromechanical_drive",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/enderio/sag_mill",
+          "source": "qm_expert_progression.js",
+          "sha256": "2df27b67393c3a81bdd9d9fa963832e15c23618719d0bb32a38c56e2869f69da"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130119895187FB1",
+      "output": "mekanism:qio_drive_supermassive",
+      "output_name": {
+        "uk_ua": "Надмасивний QIO-накопичувач",
+        "en_us": "Supermassive QIO Drive"
+      },
+      "items": [
+        {
+          "item": "mekanism:qio_drive_time_dilating",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/qio_drive_supermassive",
+          "source": "qm_expert_v042.js",
+          "sha256": "ffb033c551a52ba0e092d5837e63775e2965a59876211467d779f076f47147b0"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130119B9A6344A6",
+      "output": "rftoolspower:dimensionalcell_advanced",
+      "output_name": {
+        "uk_ua": "Покращена міжвимірна комірка",
+        "en_us": "Advanced Dimensional Cell"
+      },
+      "items": [
+        {
+          "item": "rftoolsbase:infused_diamond",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/rftoolspower/dimensionalcell_advanced",
+          "source": "qm_expert_v042.js",
+          "sha256": "beb9f65848ae980b0fe5c981fa788c2a3b4de2a893af96dfa91965b35bead8c1"
+        }
+      ]
+    },
+    {
+      "quest_id": "5130119BD717861F",
+      "output": "ae2:controller",
+      "output_name": {
+        "uk_ua": "Контролер ME",
+        "en_us": "ME Controller"
+      },
+      "items": [
+        {
+          "item": "ae2:engineering_processor",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/ae2/network/blocks/controller",
+          "source": "qm_expert_progression.js",
+          "sha256": "f10292e679c0bef2c6a3d52ba0a64df9b3b3a1b2e7864eabec8ec19a11f3a2bb"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011B5F7F592D8",
+      "output": "ae2:crafting_unit",
+      "output_name": {
+        "uk_ua": "Блок крафту ME",
+        "en_us": "Crafting Unit"
+      },
+      "items": [
+        {
+          "item": "ae2:calculation_processor",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/ae2/network/crafting/cpu_crafting_unit",
+          "source": "qm_expert_progression.js",
+          "sha256": "9ad0a2c5917679006d94b4662c4739ba3b535d53edef1dab715a6799a6983600"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011BBCA06FEA6",
+      "output": "ae2:cell_component_16k",
+      "output_name": {
+        "uk_ua": "Компонент ME-комірки на 16k",
+        "en_us": "16k ME Storage Component"
+      },
+      "items": [
+        {
+          "item": "ae2:cell_component_4k",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_16k_part",
+          "source": "qm_expert_v042.js",
+          "sha256": "ee7c656ea16f3792c60d1be1374dc0504e545f18e46b8d978b1261aa422935c2"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011C1277D6FAE",
+      "output": "mekanism:teleporter",
+      "output_name": {
+        "uk_ua": "Телепортер",
+        "en_us": "Teleporter"
+      },
+      "items": [
+        {
+          "item": "mekanism:steel_casing",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/teleporter",
+          "source": "qm_expert_v042.js",
+          "sha256": "f5d1e24ab1d9ca0db982ca0c12099ab18f539bfb695fc9358b13f0188a3da9a5"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011C1C75B6080",
+      "output": "mekanism:qio_drive_time_dilating",
+      "output_name": {
+        "uk_ua": "QIO-накопичувач із розширенням часу",
+        "en_us": "Time-Dilating QIO Drive"
+      },
+      "items": [
+        {
+          "item": "mekanism:qio_drive_hyper_dense",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/qio_drive_time_dilating",
+          "source": "qm_expert_v042.js",
+          "sha256": "5b39ca53384ffabb7437f3f0229970e1793bab2a178804e8a92eeb0dd9a81c4e"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011D1C9E27BE4",
+      "output": "rftoolspower:cell2",
+      "output_name": {
+        "uk_ua": "Енергокомірка RFTools II",
+        "en_us": "RFTools Power Cell II"
+      },
+      "items": [
+        {
+          "item": "rftoolspower:power_core2",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/rftoolspower/cell2",
+          "source": "qm_expert_v042.js",
+          "sha256": "0e02e8cbc6188419137de94d3241904ccb6a0e0e430b10f75bbac215b2e7e8bb"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011D2DC7B4947",
+      "output": "mekanism:ultimate_energy_cube",
+      "output_name": {
+        "uk_ua": "Найвищий енергетичний куб",
+        "en_us": "Ultimate Energy Cube"
+      },
+      "items": [
+        {
+          "item": "minecraft:diamond_block",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/energy_cube/ultimate",
+          "source": "qm_expert_v042.js",
+          "sha256": "ffc623131e453aba91bd75cc9deaadcee5af9d44203700d4f0a7742fe3666782"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011DA15992023",
+      "output": "ae2:cell_component_64k",
+      "output_name": {
+        "uk_ua": "Компонент ME-комірки на 64k",
+        "en_us": "64k ME Storage Component"
+      },
+      "items": [
+        {
+          "item": "ae2:cell_component_16k",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_64k_part",
+          "source": "qm_expert_v042.js",
+          "sha256": "0a5599a6649611e2278a9f2ed84035287e60687098c6d3410a71aa8cf200e7d9"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011E2552BA5EA",
+      "output": "mekanism:basic_induction_cell",
+      "output_name": {
+        "uk_ua": "Базова індукційна комірка",
+        "en_us": "Basic Induction Cell"
+      },
+      "items": [
+        {
+          "item": "mekanism:energy_tablet",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/induction/cell/basic",
+          "source": "qm_expert_v042.js",
+          "sha256": "20143c9bf5dc626d698d43c17b05a92847fd9d760a79b832bee117b09a634da5"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011EAB08A97F7",
+      "output": "botania:runic_altar",
+      "output_name": {
+        "uk_ua": "Рунічний вівтар",
+        "en_us": "Runic Altar"
+      },
+      "items": [
+        {
+          "item": "kubejs:arcane_conduit",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/botania/runic_altar",
+          "source": "qm_expert_progression.js",
+          "sha256": "f9b0ea72a8d41ede0b6772275be83d8b1c68c8b621a7fdedac70cb06dd00757c"
+        },
+        {
+          "id": "kubejs:expert/botania/runic_altar_alt",
+          "source": "qm_expert_progression.js",
+          "sha256": "7ea5104a7be0e2857ea0049c00a1c2cecb679e8dbf5f52052c907c9bf39cfaab"
+        }
+      ]
+    },
+    {
+      "quest_id": "513011F6F0D21BC6",
+      "output": "mekanism:laser",
+      "output_name": {
+        "uk_ua": "Лазер Mekanism",
+        "en_us": "Mekanism Laser"
+      },
+      "items": [
+        {
+          "item": "mekanism:energy_tablet",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/laser",
+          "source": "qm_expert_v042.js",
+          "sha256": "4f99426279a3466615d1fdd000314f34942556a644a9ef77d1f700e84df21d09"
+        }
+      ]
+    },
+    {
+      "quest_id": "51401117A75D3720",
+      "output": "ironfurnaces:netherite_furnace",
+      "output_name": {
+        "uk_ua": "Незеритова піч",
+        "en_us": "Netherite Furnace"
+      },
+      "items": [
+        {
+          "item": "minecraft:netherite_ingot",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v040/ironfurnaces/furnaces/netherite_furnace",
+          "source": "qm_expert_v040.js",
+          "sha256": "92112e090de25b1aa900ead20ed37f86c145f91eb38abb466db45fee905d42fa"
+        }
+      ],
+      "world_upgrade": {
+        "from": "ironfurnaces:obsidian_furnace",
+        "item": "ironfurnaces:upgrade_netherite",
+        "recipes": [
+          {
+            "id": "kubejs:expert_v040/ironfurnaces/upgrades/upgrade_netherite",
+            "source": "qm_expert_v040.js",
+            "sha256": "beccf0c2ac34f351f0ffefb73eb0b528236b1f2899344969d8a4e4a332ff22e4"
+          }
+        ]
+      }
+    },
+    {
+      "quest_id": "514011CA86FD67E8",
+      "output": "exdeorum:mechanical_hammer",
+      "output_name": {
+        "uk_ua": "Механічний молот",
+        "en_us": "Mechanical Hammer"
+      },
+      "items": [
+        {
+          "item": "enderio:dark_steel_ingot",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v040/exdeorum/mechanical_hammer",
+          "source": "qm_expert_v040.js",
+          "sha256": "468faabea2fd21f8f7ad6e403691c6aa901cc4ddaed85fc266b656ee0c9fa4d5"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D110A613D8197",
+      "output": "mekanism:chemical_infuser",
+      "output_name": {
+        "uk_ua": "Хімічний інфузор",
+        "en_us": "Chemical Infuser"
+      },
+      "items": [
+        {
+          "item": "mekanism:basic_chemical_tank",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/chemical_infuser",
+          "source": "qm_expert_v042.js",
+          "sha256": "d9c844a93979e408243d32e64b561e08f2e4f1fd5760bb40db486f8497ba13d2"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D1121D23494BB",
+      "output": "mekanismgenerators:wind_generator",
+      "output_name": {
+        "uk_ua": "Вітрогенератор",
+        "en_us": "Wind Generator"
+      },
+      "items": [
+        {
+          "item": "mekanism:energy_tablet",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanismgenerators/generator/wind",
+          "source": "qm_expert_progression.js",
+          "sha256": "ce6962b19c476d095ed2bb6768f07a9fba2cb8e1fab9adb7f765ae0b867be7d5"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D113E1E8CF8B1",
+      "output": "mekanismgenerators:fusion_reactor_controller",
+      "output_name": {
+        "uk_ua": "Контролер термоядерного реактора",
+        "en_us": "Fusion Reactor Controller"
+      },
+      "items": [
+        {
+          "item": "mekanismgenerators:fusion_reactor_frame",
+          "count": 1,
+          "minimum_consumed": 4,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanismgenerators/reactor/controller",
+          "source": "qm_expert_progression.js",
+          "sha256": "73b0cad1de4b1773bbfd33a4b457c173af27f087922aa6e405312b442eb42293"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D115314DFB698",
+      "output": "mekanism:chemical_crystallizer",
+      "output_name": {
+        "uk_ua": "Хімічний кристалізатор",
+        "en_us": "Chemical Crystallizer"
+      },
+      "items": [
+        {
+          "item": "kubejs:sealed_process_chamber",
+          "count": 1,
+          "minimum_consumed": 1,
+          "basis": "one_component"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanism/chemical_crystallizer",
+          "source": "qm_expert_progression.js",
+          "sha256": "6daffb067da3699321dbf80d4ccbeed815293de5c87cc333738b0caee3313361"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D11AB5959BBF5",
+      "output": "mekanism:digital_miner",
+      "output_name": {
+        "uk_ua": "Цифровий шахтар",
+        "en_us": "Digital Miner"
+      },
+      "items": [
+        {
+          "item": "mekanism:teleportation_core",
+          "count": 1,
+          "minimum_consumed": 2,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert/mekanism/digital_miner",
+          "source": "qm_expert_progression.js",
+          "sha256": "67a3c81aaaf56a67279f16bb887ea7022953854173fefbb31ec9369874a0c21d"
+        }
+      ]
+    },
+    {
+      "quest_id": "514D11F90042E7F4",
+      "output": "mekanism:thermal_evaporation_controller",
+      "output_name": {
+        "uk_ua": "Контролер термічного випаровувача",
+        "en_us": "Thermal Evaporation Controller"
+      },
+      "items": [
+        {
+          "item": "mekanism:thermal_evaporation_block",
+          "count": 1,
+          "minimum_consumed": 3,
+          "basis": "partial_ingredient"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "kubejs:expert_v042/mekanism/thermal_evaporation/controller",
+          "source": "qm_expert_v042.js",
+          "sha256": "bf0c3dcc99a920f8643514c27661000ea04eb3721be647a72af5d8299b2a1e8d"
+        }
+      ]
+    }
+  ]
+}

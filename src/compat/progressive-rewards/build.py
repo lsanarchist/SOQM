@@ -27,6 +27,7 @@ API_MODS = (
     "architectury-13.0.8-neoforge.jar",
     "sophisticatedcore-1.21.1-1.5.14.2413.jar",
     "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+    "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
 )
 MANIFEST = (
     "Manifest-Version: 1.0\r\n"

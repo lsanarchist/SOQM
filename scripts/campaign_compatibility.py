@@ -16,10 +16,30 @@ import campaign_multiblocks
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "metadata/questbook_compatibility.json"
+CONTENT_UPGRADE = ROOT / "metadata/storage_refund_compatibility.json"
 
 
 def digest(value) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def previous_storage_refunds(chapters: list[dict]) -> list[dict]:
+    """Check the 0.4.10 edits before reconstructing the already reviewed 0.4.9."""
+    snapshot = json.loads(CONTENT_UPGRADE.read_text(encoding="utf-8"))
+    if snapshot.get("schema") != 1 or snapshot.get("base_commit") != "1a7ecd3b5691888bc807667eb90cbd913e191934":
+        raise ValueError("Unknown storage/refund compatibility snapshot")
+    result = deepcopy(chapters)
+    quests = {q["id"]: q for chapter in result for q in chapter["quests"]}
+    for field in ("tasks", "rewards"):
+        for ident, change in snapshot[field].items():
+            if ident not in quests or digest(quests[ident][field]) != change["after_sha256"]:
+                raise ValueError(f"Unreviewed storage/refund {field} change: {ident}")
+            current, before = quests[ident][field], change["before"]
+            key = (lambda obj: (obj["id"], obj.get("team_reward", True))) if field == "rewards" else (lambda obj: obj["id"])
+            if [key(obj) for obj in current] != [key(obj) for obj in before]:
+                raise ValueError(f"A saved storage/refund {field} ID or claim scope changed: {ident}")
+            quests[ident][field] = deepcopy(before)
+    return result
 
 
 def previous_questbook(chapters: list[dict]) -> list[dict]:
@@ -28,7 +48,7 @@ def previous_questbook(chapters: list[dict]) -> list[dict]:
     if snapshot.get("schema") != 1:
         raise ValueError("Unknown questbook compatibility snapshot")
     originals = campaign_multiblocks.load()["migration"]["original_tasks"]
-    result = deepcopy(chapters)
+    result = previous_storage_refunds(chapters)
     quests = {q["id"]: q for chapter in result for q in chapter["quests"]}
     if not (set(snapshot["tasks_after"]) | set(snapshot["rewards"])) <= set(quests):
         raise ValueError("A migrated quest was removed or moved to a different ID")

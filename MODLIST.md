@@ -2,12 +2,13 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **125 pinned third-party dependencies**. SOQM 0.4.8 additionally
+The table lists **124 pinned third-party dependencies**. SOQM 0.4.10 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
-`qm-progressive-rewards-0.4.8` module records production evidence and persists
-personal claim merges for the reward system. The separately versioned
+`qm-progressive-rewards-0.4.10` module records production evidence, preserves
+personal claims, and delivers guaranteed recipe refunds. The client-only
+`qm-quest-ui-0.4.3` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
 `qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
 and background encounter/dungeon work; `qm-quest-automation-0.4.3` skips
 already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
@@ -75,7 +76,6 @@ also support server mods in other packs.
 | Immersive Engineering | 12.4.2-194 | both (baseline) | [project 231951 / file 6733669](https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669) |
 | Industrial Foregoing | 3.6.39 | both (baseline) | [project 266515 / file 8370717](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing/files/8370717) |
 | Inventory Profiles Next | 2.2.5 | client | [project 495267 / file 7810574](https://www.curseforge.com/minecraft/mc-mods/inventory-profiles-next/files/7810574) |
-| Iron Chests | 16.0.7 | both (baseline) | [project 228756 / file 5491156](https://www.curseforge.com/minecraft/mc-mods/iron-chests/files/5491156) |
 | Iron Furnaces | 4.3.2 | both | [project 237664 / file 7034259](https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259) |
 | Jade Addons (Neo/Forge) | 6.1.2+neoforge | both | [project 583345 / file 9056575](https://www.curseforge.com/minecraft/mc-mods/jade-addons/files/9056575) |
 | Jade 🔍 | 15.10.6+neoforge | both | [project 324717 / file 8591319](https://www.curseforge.com/minecraft/mc-mods/jade/files/8591319) |
