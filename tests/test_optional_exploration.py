@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_layout as layout
+import campaign_locales
 import campaign_progression as progression
 import campaign_refresh as refresh
 import localize_english
@@ -131,7 +132,7 @@ class OptionalExplorationTests(unittest.TestCase):
         ]
         quests["514D11E0ED42C1FF"]["dependencies"] = ["514D11CDA1129F03"]
         quests["514D01000000000C"]["dependencies"].append("514D010000000008")
-        progression.apply(chapters, read(QUESTS / "lang/uk_ua.snbt"))
+        progression.apply(chapters, campaign_locales.load("uk_ua"))
         self.assertTrue(set(self.quests) - self.visits <= reachable_without(quests, self.visits))
         for ident in ("514D11A7ED9AA3BB", "514D11E0ED42C1FF", "514D01000000000C"):
             self.assertEqual(quests[ident]["tasks"], self.quests[ident]["tasks"])
@@ -156,7 +157,7 @@ class OptionalExplorationTests(unittest.TestCase):
                 "en_us": "Automatic: Ready for Greater Expeditions",
             },
         }
-        published = {language: read(QUESTS / "lang" / (language + ".snbt"))
+        published = {language: campaign_locales.load(language)
                      for language in ("uk_ua", "en_us")}
         repaired = deepcopy(published["uk_ua"])
         for ident, row in summaries.items():

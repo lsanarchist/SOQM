@@ -22,6 +22,8 @@ import time
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 
+from soqm import payload_hashes, stage_payload
+
 
 ROOT = Path(__file__).resolve().parents[1]
 INSTALLER_NAME = "neoforge-21.1.262-installer.jar"
@@ -58,6 +60,22 @@ def hashes(directory):
         if path.is_file():
             result[path.relative_to(directory).as_posix()] = sha(path)
     return result
+
+
+def production_hashes(root):
+    """Hash the installable payload, including compiled quest translations."""
+    try:
+        return payload_hashes(root)
+    except (ValueError, OSError) as error:
+        raise SmokeFailure(str(error)) from error
+
+
+def stage_production_payload(root, destination, expected_hashes, excluded=()):
+    """Use the same effective files as the release archive for server fixtures."""
+    try:
+        stage_payload(destination, expected_hashes, root=root, excluded=excluded)
+    except (ValueError, OSError) as error:
+        raise SmokeFailure(str(error)) from error
 
 
 def java_network_flags():
@@ -140,7 +158,7 @@ def run(args, report, deadline):
             "The smoke server requires Java 21")
     report["java_version"] = match.group(1) + match.group(2)
     report["pack_version"] = pack["version"]
-    payload = hashes(ROOT / "overrides")
+    payload = production_hashes(ROOT)
     require(payload == read(ROOT / "metadata/payload.sha256.json"), "Payload differs from its reviewed lock")
     pins = read(ROOT / "metadata/mods.lock.json")["mods"]
     authored = read(ROOT / "metadata/authored-mods.json")
@@ -191,16 +209,8 @@ def run(args, report, deadline):
     require(native.is_file() and sha(native) == NATIVE_SHA256, "Installed native server differs from its pin")
     report["native_server_sha256"] = sha(native)
 
-    for source in (ROOT / "overrides").rglob("*"):
-        if not source.is_file():
-            continue
-        relative = source.relative_to(ROOT / "overrides")
-        if relative.parts[0] == "mods" and authored_by_name[source.name].get("side") == "client":
-            continue
-        target = server / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, target)
-        require(sha(target) == payload[relative.as_posix()], "Payload staging hash mismatch")
+    excluded_payload = {"mods/" + name for name, row in authored_by_name.items() if row.get("side") == "client"}
+    stage_production_payload(ROOT, server, payload, excluded_payload)
     for row in selected:
         target = server / "mods" / row["filename"]
         require(not target.exists(), "Third-party and authored mod filenames collide")
@@ -317,7 +327,7 @@ def run(args, report, deadline):
                   console_error_count=console_errors, warnings=warnings,
                   server_elapsed_seconds=round(time.monotonic() - startup_at, 2),
                   console_sha256=sha(console))
-    require(hashes(ROOT / "overrides") == payload, "Production payload changed during the smoke test")
+    require(production_hashes(ROOT) == payload, "Production payload changed during the smoke test")
     require(all(sha(ROOT / name) == digest for name, digest in report["input_sha256"].items()),
             "Input metadata changed during the smoke test; repeat against a stable snapshot")
     require(startup_done, "Dedicated server did not reach the Done startup marker")

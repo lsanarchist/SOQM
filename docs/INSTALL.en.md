@@ -25,6 +25,9 @@ The current output is `dist/SOQM-0.4.11-curseforge.zip`, with its checksum under
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
+The build assembles the quest translation fragments into the two runtime
+language files. Use the built ZIP for installation; copying `overrides/`
+directly from a source checkout omits those generated translations.
 
 ## Fresh CurseForge App profile
 
@@ -62,7 +65,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
 2. Work on a copied profile. Extract the **built** ZIP temporarily and merge
    the contents of `overrides/` into its `.minecraft/`, applying the pack files.
    Do not copy the manifest itself or a GitHub source archive into that folder.
-3. Install the **127** exact third-party JARs referenced by the manifest/lock
+3. Install the **128** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
    the package's **12** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.

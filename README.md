@@ -43,6 +43,8 @@ CI candidates are retained for 14 days. The
 [installation guide](docs/INSTALL.en.md) covers local builds, other launchers
 and updating existing worlds. GitHub's **Source code** archive contains the
 repository; use the **installation ZIP** to create a game profile.
+The build assembles the chapter-based quest translations into the files
+required by FTB Quests; copying the repository's `overrides/` alone omits them.
 
 ## Learn more
 

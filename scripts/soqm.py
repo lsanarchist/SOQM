@@ -9,12 +9,15 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
+import shutil
 import sys
 import time
 import tomllib
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
+
+import campaign_locales
 
 ROOT = Path(__file__).resolve().parent.parent
 PAYLOAD = ROOT / 'overrides'
@@ -48,16 +51,61 @@ def safe_name(name):
     return name
 
 
-def payload_hashes():
-    result = {}
-    for path in sorted(PAYLOAD.rglob('*')):
+def payload_sources(root=None):
+    """Yield installable files, merging chapter locale sources in memory.
+
+    Physical files remain Paths so hashing and server staging can stream JARs.
+    Only the two generated FTB Quests locale files are represented as bytes.
+    """
+    payload = PAYLOAD if root is None else Path(root) / 'overrides'
+    root = ROOT if root is None else Path(root)
+    generated = campaign_locales.runtime_payload(root)
+    seen = set()
+    for path in sorted(payload.rglob('*')):
         require(not path.is_symlink(), 'Payload symlink rejected')
         if path.is_file():
-            name = safe_name(path.relative_to(PAYLOAD).as_posix())
-            require(name.casefold() not in {n.casefold() for n in result},
+            name = safe_name(path.relative_to(payload).as_posix())
+            require(name not in generated,
+                    f'Generated quest locale must not be stored in overrides: {name}; '
+                    'edit metadata/quest_locales instead')
+            require(name.casefold() not in seen,
                     f'Case-colliding file: {name}')
-            result[name] = digest(path)
-    return result
+            seen.add(name.casefold())
+            yield name, path
+    for name, data in sorted(generated.items()):
+        safe_name(name)
+        require(name.casefold() not in seen, f'Case-colliding file: {name}')
+        seen.add(name.casefold())
+        yield name, data
+
+
+def payload_hashes(root=None):
+    result = {}
+    for name, source in payload_sources(root):
+        result[name] = digest(source) if isinstance(source, Path) else hashlib.sha256(source).hexdigest()
+    return dict(sorted(result.items()))
+
+
+def stage_payload(destination, expected_hashes, *, root=None, excluded=()):
+    """Copy the reviewed effective payload to a fresh install/test directory."""
+    destination = Path(destination)
+    excluded = set(excluded)
+    require(excluded <= set(expected_hashes), 'Excluded staging file is not in the reviewed payload')
+    staged = set()
+    for name, source in payload_sources(root):
+        if name in excluded:
+            continue
+        require(name in expected_hashes, f'Unreviewed payload file while staging: {name}')
+        target = destination / name
+        require(not target.is_symlink(), f'Payload staging symlink rejected: {name}')
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if isinstance(source, Path):
+            shutil.copyfile(source, target)
+        else:
+            target.write_bytes(source)
+        require(digest(target) == expected_hashes[name], f'Payload staging hash mismatch: {name}')
+        staged.add(name)
+    require(staged == set(expected_hashes) - excluded, 'Payload files disappeared while staging')
 
 
 def metadata():
@@ -114,14 +162,14 @@ def check():
             if PurePosixPath(name).suffix.casefold() == '.jar'}
     require(jars == expected_jars, 'Only hash-pinned authored JARs may be embedded')
     forbidden_roots = {'saves', 'logs', 'crash-reports', 'screenshots', 'XaeroWaypoints', 'XaeroWorldMap'}
-    for name in actual:
+    for name, source in payload_sources():
         require(name.split('/')[0] not in forbidden_roots, 'Player/runtime data in payload')
         require(PurePosixPath(name).name not in {'options.txt', 'servers.dat', 'usercache.json', '.env'},
                 'Private instance configuration in payload')
         if name.endswith(('.json', '.snbt')):
-            read(PAYLOAD / name)
+            json.loads(source.read_bytes() if isinstance(source, Path) else source)
         if name.endswith('.toml'):
-            tomllib.loads((PAYLOAD / name).read_text(encoding='utf-8'))
+            tomllib.loads((source.read_bytes() if isinstance(source, Path) else source).decode('utf-8'))
         require('craftoria' not in name.casefold(), 'Uncleared upstream-derived file in payload')
     require(read(ROOT / 'manifest.json') == manifest(), 'Manifest is stale; run lock')
     print(f"Validated {len(mods)} pinned third-party mods, {len(authored)} authored mods, {len(actual)} payload files.")
@@ -139,9 +187,8 @@ def archive_entries():
     audit_tool = ROOT / 'scripts/audit_storage_upgrade.py'
     require(audit_tool.is_file() and not audit_tool.is_symlink(), 'Storage upgrade audit is missing')
     entries['tools/audit_storage_upgrade.py'] = audit_tool.read_bytes()
-    for path in sorted(PAYLOAD.rglob('*')):
-        if path.is_file():
-            entries['overrides/' + path.relative_to(PAYLOAD).as_posix()] = path.read_bytes()
+    for name, source in payload_sources():
+        entries['overrides/' + name] = source.read_bytes() if isinstance(source, Path) else source
     docs = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'docs').glob('*.md'))]
     campaign_maps = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'assets').glob('campaign-*.svg'))]
     for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md', 'MODLIST.md', 'CHANGELOG.md',

@@ -19,6 +19,7 @@ import campaign_branches
 import campaign_guidance
 import campaign_multiblocks
 import campaign_layout
+import campaign_locales
 import campaign_lessons
 import campaign_rewards
 import campaign_refunds
@@ -26,7 +27,7 @@ import campaign_storage
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
-OUTPUT = QUESTS / "lang/en_us.snbt"
+OUTPUT = ROOT / "metadata/quest_locales/en_us"
 
 CHAPTERS = {
     "qm_intro": "01 · The Adventure Begins",
@@ -378,7 +379,7 @@ def describe_task(task: dict, names: dict) -> tuple[str, str]:
 
 
 def generate() -> tuple[str, dict]:
-    uk = load_json(QUESTS / "lang/uk_ua.snbt")
+    uk = campaign_locales.load("uk_ua", ROOT)
     names = build_names(uk)
     result = {"file.0000000000000001.title": "Shout Out to Questing Mayhem · Expert · English alpha guide"}
     groups = load_json(QUESTS / "chapter_groups.snbt")["chapter_groups"]
@@ -503,12 +504,23 @@ def main() -> int:
     if args.mod_dir:
         refresh_names(args.mod_dir)
     content, counts = generate()
+    outputs = campaign_locales.expected_outputs(
+        json.loads(content), "en_us", campaign_locales.read_chapters(ROOT), ROOT)
+    stale = [path for path, value in outputs.items()
+             if not path.is_file() or path.read_text(encoding="utf-8") != value]
+    extra = sorted(set(OUTPUT.glob("*.json")) - set(outputs))
     if args.check:
-        if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != content:
-            parser.exit(1, "English objective guide is stale; run python3 scripts/localize_english.py\n")
+        if stale or extra:
+            parser.exit(1, "English objective guide is stale; run python3 scripts/localize_english.py\n"
+                        + "\n".join(str(path.relative_to(ROOT)) for path in [*stale, *extra]) + "\n")
+        campaign_locales.load("en_us", ROOT)
     else:
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT.write_text(content, encoding="utf-8")
+        if extra:
+            parser.exit(1, "Unexpected English locale fragments; review before removing:\n"
+                        + "\n".join(str(path.relative_to(ROOT)) for path in extra) + "\n")
+        for path, value in outputs.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(value, encoding="utf-8")
     print(json.dumps({"output": str(OUTPUT.relative_to(ROOT)), "mode": "check" if args.check else "write", **counts}, ensure_ascii=False))
     return 0
 

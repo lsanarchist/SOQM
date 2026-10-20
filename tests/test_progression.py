@@ -11,6 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_progression as progression
+import campaign_locales
 
 
 def read(path):
@@ -38,7 +39,7 @@ class ProgressionRepairTests(unittest.TestCase):
         directory = ROOT / "overrides/config/ftbquests/quests"
         cls.before = [read(path) for path in sorted((directory / "chapters").glob("*.snbt"))]
         cls.chapters = deepcopy(cls.before)
-        cls.locale = read(directory / "lang/uk_ua.snbt")
+        cls.locale = campaign_locales.load("uk_ua")
         cls.report = progression.apply(cls.chapters, cls.locale)
         cls.quests = flatten(cls.chapters)
 

@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_layout as layout
+import campaign_locales
 import campaign_compatibility as compatibility
 import campaign_refresh as refresh
 import localize_english
@@ -28,14 +29,20 @@ class CampaignPresentationTests(unittest.TestCase):
         cls.by_filename = {c['filename']: c for c in cls.chapters}
         cls.quests = {q['id']: q for c in cls.chapters for q in c['quests']}
         cls.groups = load(QUESTS / "chapter_groups.snbt")["chapter_groups"]
-        cls.uk = load(QUESTS / "lang/uk_ua.snbt")
-        cls.en = load(QUESTS / "lang/en_us.snbt")
+        cls.uk = campaign_locales.load("uk_ua")
+        cls.en = campaign_locales.load("en_us")
         cls.blueprint = layout.blueprint()
 
     def test_original_save_identities_and_claim_scope_are_preserved(self):
         expected = load(ROOT / "metadata/campaign_identity.json")
         self.assertEqual(expected['base_commit'], 'e71db8398ddc9f07e85981fac942f52dd23f447d')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), expected['sha256'])
+        before_torchmaster = compatibility.previous_torchmaster(self.chapters)
+        torchmaster = expected['previous_torchmaster']
+        self.assertEqual(torchmaster['sha256'],
+                         '17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d')
+        self.assertEqual(refresh.persistent_identity(before_torchmaster, self.groups),
+                         torchmaster['sha256'])
         before_update = compatibility.previous_questbook(self.chapters)
         self.assertEqual(refresh.persistent_identity(before_update, self.groups),
                          expected['previous_questbook']['sha256'])

@@ -23,6 +23,30 @@ def digest(value) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
+def previous_torchmaster(chapters: list[dict]) -> list[dict]:
+    """Remove only the reviewed additive torch lesson from a copy of the book."""
+    identity = json.loads((ROOT / "metadata/campaign_identity.json").read_text(encoding="utf-8"))
+    snapshot = identity["previous_torchmaster"]
+    quest_id, image_id = "514B110000000001", "514B140000000001"
+    if (snapshot.get("base_commit") != "226485323c223a7bb6c01354fc88418d08c4836f"
+            or snapshot.get("added_quests") != [quest_id]
+            or snapshot.get("added_images") != [image_id]):
+        raise ValueError("Unknown Torchmaster additive compatibility snapshot")
+    result = deepcopy(chapters)
+    quest_owners = [chapter for chapter in result
+                    if any(quest["id"] == quest_id for quest in chapter["quests"])]
+    image_owners = [chapter for chapter in result
+                    if any(image["id"] == image_id for image in chapter.get("images", []))]
+    if (len(quest_owners) != 1 or len(image_owners) != 1
+            or quest_owners[0]["filename"] != "qm_v030_22_millenaire"
+            or image_owners[0] is not quest_owners[0]):
+        raise ValueError("The additive torch quest or caption was removed or moved")
+    chapter = quest_owners[0]
+    chapter["quests"] = [quest for quest in chapter["quests"] if quest["id"] != quest_id]
+    chapter["images"] = [image for image in chapter["images"] if image["id"] != image_id]
+    return result
+
+
 def previous_storage_refunds(chapters: list[dict]) -> list[dict]:
     """Check the 0.4.10 edits before reconstructing the already reviewed 0.4.9."""
     snapshot = json.loads(CONTENT_UPGRADE.read_text(encoding="utf-8"))
@@ -48,7 +72,7 @@ def previous_questbook(chapters: list[dict]) -> list[dict]:
     if snapshot.get("schema") != 1:
         raise ValueError("Unknown questbook compatibility snapshot")
     originals = campaign_multiblocks.load()["migration"]["original_tasks"]
-    result = previous_storage_refunds(chapters)
+    result = previous_storage_refunds(previous_torchmaster(chapters))
     quests = {q["id"]: q for chapter in result for q in chapter["quests"]}
     if not (set(snapshot["tasks_after"]) | set(snapshot["rewards"])) <= set(quests):
         raise ValueError("A migrated quest was removed or moved to a different ID")

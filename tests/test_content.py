@@ -5,10 +5,14 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import sys
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import campaign_locales
+
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
 INTRO_ID = "514D010000000001"
 ID_PATTERN = re.compile(r"[0-9A-F]{16}\Z")
@@ -27,17 +31,17 @@ class CampaignContentTests(unittest.TestCase):
         cls.quest_list = [quest for chapter in cls.chapters for quest in chapter["quests"]]
         cls.quests = {quest["id"]: quest for quest in cls.quest_list}
         cls.groups = read_json(QUESTS / "chapter_groups.snbt")["chapter_groups"]
-        cls.locale = read_json(QUESTS / "lang/uk_ua.snbt")
+        cls.locale = campaign_locales.load("uk_ua")
 
     def test_campaign_not_truncated(self):
         """A release cannot silently lose chapters, quests, tasks or rewards."""
         self.assertEqual(len(self.chapters), 37)
-        self.assertEqual(len(self.quest_list), 1626)
+        self.assertEqual(len(self.quest_list), 1627)
         additions = read_json(ROOT / 'metadata/multiblock_materials.json')['migration']['added_task_ids']
         expected = read_json(ROOT / 'metadata/campaign_identity.json')['tasks']
-        self.assertEqual(expected, 1773 + len(additions))
+        self.assertEqual(expected, 1773 + len(additions) + 1)  # Additive torch item task.
         self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), expected)
-        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1627)
+        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1628)
 
     def test_all_persistent_ids_are_unique(self):
         objects = [("group", group["id"]) for group in self.groups]

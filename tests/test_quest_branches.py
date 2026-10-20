@@ -14,6 +14,7 @@ import campaign_branches as branches
 import campaign_compatibility as compatibility
 import campaign_multiblocks as multiblocks
 import campaign_layout as layout
+import campaign_locales
 import campaign_progression as progression
 import campaign_refunds as refunds
 
@@ -31,7 +32,7 @@ class ProductionQuestBranchTests(unittest.TestCase):
         cls.quests = {q["id"]: q for c in cls.chapters for q in c["quests"]}
         cls.source = branches.sources()
         cls.blueprint = layout.blueprint()
-        cls.locales = {language: read(cls.directory / "lang" / (language + ".snbt")) for language in ("uk_ua", "en_us")}
+        cls.locales = {language: campaign_locales.load(language) for language in campaign_locales.LANGUAGES}
 
     def test_existing_objectives_and_personal_rewards_are_unchanged(self):
         # One additive quest must not replace the original 0.4.9 save contract.

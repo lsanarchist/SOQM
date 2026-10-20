@@ -63,6 +63,19 @@
         "overrides/kubejs/server_scripts/soqm_me_workshop.js",
         "src/compat/quest-automation/"
       ]
+    },
+    {
+      "name": "Torchmaster 21.1.13 pinned item, recipe and spawning rules",
+      "filename": "torchmaster-neoforge-1.21.1-21.1.13.jar",
+      "sha256": "661afe53647ef687d3d970e5df7b53107d94d080671e25317f67cb02b4349cba",
+      "paths": [
+        "assets/torchmaster/lang/en_us.json",
+        "data/torchmaster/recipe/megatorch.json",
+        "net/xalcon/torchmaster/TorchmasterNeoforgeConfig.class",
+        "net/xalcon/torchmaster/events/TorchmasterEventHandler.class",
+        "net/xalcon/torchmaster/compat/VanillaCompat.class"
+      ],
+      "url": "https://www.curseforge.com/minecraft/mc-mods/torchmaster/files/8949981"
     }
   ],
   "quests": {
@@ -1102,6 +1115,36 @@
           "The Diamond Furnace requires Quantum Processor and Dimensional Matrix in addition to the previous furnace and Precision Mechanism. This ladder resumes after the shared dimension materials.",
           "Emerald and Crystal continue within that stage; Netherite needs lunar materials and Stellar Alloy. Choose furnace capacity for your actual throughput rather than its casing color."
         ]
+      }
+    },
+    "514B110000000001": {
+      "uk_ua": {
+        "title": "Мегафакел: захист поселення",
+        "description": [
+          "Перед розвитком поселення підготуй Mega Torch із Torchmaster. Він блокує природний спавн ворожих мобів у кубічній зоні до 64 блоків у кожен бік від факела за стандартних налаштувань.",
+          "Рецепт: 3 звичайні факели, 2 алмази, 2 золоті блоки та 2 колоди. Звір розкладку в JEI. Для зарахування потримай один Mega Torch в інвентарі: квест його не забирає й не перевіряє встановлення.",
+          "Після зарахування встанови факел біля центру території, яку хочеш захистити. ПКМ по ньому відкриває меню з показом меж дії; для великого поселення перекрий незахищені ділянки додатковими факелами.",
+          "Це не повне вимкнення всіх мобів: уже наявні істоти залишаються і можуть зайти ззовні, а спавнери продовжують працювати. Спеціальні події та напади модів можуть обходити цю перевірку; огорожа й охорона поселення все ще потрібні.",
+          "Mega Torch не блокує природну появу мирних тварин. Для цього в Torchmaster є окрема Dread Lamp зі своєю зоною дії; її рецепт також є в JEI. Для цього квеста лампа не потрібна.",
+          "Це додатковий квест на початку Millénaire. Він не вимагає пошуку поселення чи промислових рубежів і не блокує наступні завдання."
+        ],
+        "task_titles": {
+          "514B120000000001": "Отримай 1 × Mega Torch"
+        }
+      },
+      "en_us": {
+        "title": "Mega Torch: Protect the Settlement",
+        "description": [
+          "Prepare a Mega Torch from Torchmaster before expanding a settlement. With default settings, it prevents natural hostile-mob spawning in a cube extending up to 64 blocks in each direction from the torch.",
+          "The recipe uses 3 ordinary torches, 2 diamonds, 2 gold blocks and 2 logs. Check the layout in JEI. Hold one Mega Torch in your inventory to complete this task: it is not consumed, and placement is not checked.",
+          "After completion, place the torch near the center of the area you want to protect. Right-click it to open the range-display menu; cover any remaining gaps in a large settlement with additional torches.",
+          "This does not disable every mob: existing creatures remain and can walk in from outside, while spawners continue to work. Special events and mod raids may bypass this check, so keep fences and settlement defenses.",
+          "Mega Torch does not prevent passive animals from spawning naturally. Torchmaster also provides a separate Dread Lamp with its own coverage for that purpose; find its recipe in JEI. The lamp is not required by this quest.",
+          "This is an optional quest at the beginning of Millénaire. It requires neither a settlement visit nor industrial milestones, and no later quest depends on it."
+        ],
+        "task_titles": {
+          "514B120000000001": "Obtain 1 × Mega Torch"
+        }
       }
     }
   }

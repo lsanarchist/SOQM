@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **127 pinned third-party dependencies**. SOQM 0.4.11 additionally
+The table lists **128 pinned third-party dependencies**. SOQM 0.4.11 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -138,6 +138,7 @@ also support server mods in other packs.
 | The Aether | 1.5.10 | both (baseline) | [project 255308 / file 7043502](https://www.curseforge.com/minecraft/mc-mods/aether/files/7043502) |
 | The Twilight Forest | 4.8.3345 | both (baseline) | [project 227639 / file 7797302](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest/files/7797302) |
 | Titanium | 4.0.51 | both (baseline) | [project 287342 / file 9129904](https://www.curseforge.com/minecraft/mc-mods/titanium/files/9129904) |
+| Torchmaster | 21.1.13 | both | [project 254268 / file 8949981](https://www.curseforge.com/minecraft/mc-mods/torchmaster/files/8949981) |
 | Twilight Treehouses | 1.0.2 | both | [project 1227052 / file 6341110](https://www.curseforge.com/minecraft/mc-mods/twilight-treehouses/files/6341110) |
 | Underground Villages Mod | 4.0.3 | both (baseline) | [project 606989 / file 6722723](https://www.curseforge.com/minecraft/mc-mods/underground-villages/files/6722723) |
 | Waystones | 21.1.46 | both | [project 245755 / file 8969751](https://www.curseforge.com/minecraft/mc-mods/waystones/files/8969751) |

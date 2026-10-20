@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -15,6 +16,7 @@ from zipfile import ZipFile
 
 
 REPOSITORY = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPOSITORY / "scripts"))
 SPEC = importlib.util.spec_from_file_location("soqm_packaging_under_test", REPOSITORY / "scripts/soqm.py")
 SOQM = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(SOQM)
@@ -47,6 +49,24 @@ def fixture(root):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(REPOSITORY / "overrides/mods" / row["filename"], target)
     write_json(root / "overrides/config/pack.json", {"title": "Тест SOQM"})
+    quests = root / "overrides/config/ftbquests/quests"
+    write_json(quests / "data.snbt", {"id": "0000000000000001", "fallback_locale": "uk_ua"})
+    write_json(quests / "chapter_groups.snbt", {"chapter_groups": []})
+    write_json(quests / "chapters/fixture.snbt", {
+        "id": "1111111111111111", "filename": "fixture", "images": [],
+        "quests": [{"id": "1111111111111112", "tasks": [], "rewards": []}],
+    })
+    for language, title, description in (
+        ("uk_ua", "Мегафакел", ["Отримай один факел.", "Предмет залишається в інвентарі."]),
+        ("en_us", "Mega Torch", ["Obtain one torch.", "The item stays in your inventory."]),
+    ):
+        locale = root / "metadata/quest_locales" / language
+        write_json(locale / "_global.json", {"file.0000000000000001.title": "SOQM"})
+        write_json(locale / "fixture.json", {
+            "chapter.1111111111111111.title": title,
+            "quest.1111111111111112.title": title,
+            "quest.1111111111111112.quest_desc": description,
+        })
     (root / "LICENSE").write_text("Fixture license\n", encoding="utf-8")
     (root / "README.md").write_text("Disposable packaging fixture.\n", encoding="utf-8")
     (root / "scripts").mkdir()
@@ -137,6 +157,57 @@ class ReleasePackagingTests(unittest.TestCase):
         SOQM.zip_bytes(SOQM.archive_entries(), target)
         with self.assertRaisesRegex(ValueError, "Payload changed"):
             self.quiet(SOQM.check_package)
+
+    def test_clean_source_checkout_packages_both_complete_runtime_locales(self):
+        runtime = self.root / "overrides/config/ftbquests/quests/lang"
+        self.assertFalse(runtime.exists(), "The fixture must have only split source locales")
+        self.quiet(SOQM.build)
+        with ZipFile(SOQM.package_path()) as archive:
+            for language, title in (("uk_ua", "Мегафакел"), ("en_us", "Mega Torch")):
+                name = f"overrides/config/ftbquests/quests/lang/{language}.snbt"
+                data = archive.read(name)
+                locale = json.loads(data)
+                self.assertEqual(locale["file.0000000000000001.title"], "SOQM")
+                self.assertEqual(locale["chapter.1111111111111111.title"], title)
+                self.assertEqual(locale["quest.1111111111111112.title"], title)
+                self.assertEqual(len(locale["quest.1111111111111112.quest_desc"]), 2)
+                lock = json.loads((self.root / "metadata/payload.sha256.json").read_text())
+                self.assertEqual(lock[name.removeprefix("overrides/")], hashlib.sha256(data).hexdigest())
+            self.assertFalse(any(name.startswith("metadata/quest_locales/") for name in archive.namelist()))
+        self.assertFalse(runtime.exists(), "Building must not create untracked monolithic source files")
+
+    def test_source_locale_edits_require_reviewed_payload_lock(self):
+        source = self.root / "metadata/quest_locales/uk_ua/fixture.json"
+        locale = json.loads(source.read_text(encoding="utf-8"))
+        locale["quest.1111111111111112.title"] = "Нова назва"
+        write_json(source, locale)
+        with self.assertRaisesRegex(ValueError, "Payload changed"):
+            self.quiet(SOQM.build)
+        self.assertFalse(SOQM.package_path().exists())
+        self.quiet(SOQM.lock)
+        self.quiet(SOQM.build)
+        with ZipFile(SOQM.package_path()) as archive:
+            published = json.loads(archive.read("overrides/config/ftbquests/quests/lang/uk_ua.snbt"))
+        self.assertEqual(published["quest.1111111111111112.title"], "Нова назва")
+
+    def test_physical_runtime_locale_cannot_shadow_split_source(self):
+        source = self.root / "overrides/config/ftbquests/quests/lang/uk_ua.snbt"
+        write_json(source, {"file.0000000000000001.title": "Stale monolith"})
+        with self.assertRaisesRegex(ValueError, "Generated quest locale"):
+            self.quiet(SOQM.lock)
+
+    def test_instance_staging_uses_the_same_merged_locales_as_the_release(self):
+        self.quiet(SOQM.build)
+        destination = self.root / "staged-instance"
+        reviewed = json.loads((self.root / "metadata/payload.sha256.json").read_text(encoding="utf-8"))
+        SOQM.stage_payload(destination, reviewed)
+        with ZipFile(SOQM.package_path()) as archive:
+            for language in ("uk_ua", "en_us"):
+                name = f"config/ftbquests/quests/lang/{language}.snbt"
+                self.assertEqual((destination / name).read_bytes(), archive.read("overrides/" + name))
+        self.assertFalse((destination / "metadata/quest_locales").exists())
+        staged = {path.relative_to(destination).as_posix() for path in destination.rglob("*") if path.is_file()}
+        self.assertEqual(staged, set(reviewed))
 
     def test_download_verification_rejects_traversal_before_cache_or_network(self):
         lock_path = self.root / "metadata/mods.lock.json"
