@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -59,7 +59,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11407706C5A7",
@@ -139,12 +139,13 @@
           "id": "513013E370F2A11A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -231,17 +232,18 @@
           "id": "513013825761E0D3",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D1133CC758B98",

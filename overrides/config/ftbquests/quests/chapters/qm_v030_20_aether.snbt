@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -60,7 +60,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111A101FFA81",
@@ -113,7 +113,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011039AD8F208",
@@ -168,11 +168,11 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301149805BC266",
-      "x": -7.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "aether:book_of_lore",
@@ -215,7 +215,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118F19BC727C",
@@ -253,12 +253,13 @@
           "id": "51301382F0A3B42E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -300,17 +301,18 @@
           "id": "5130133E6786529D",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A4DACB4F03",
@@ -408,7 +410,7 @@
     },
     {
       "id": "5130113ABE2D5811",
-      "x": -4.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "aether:book_of_lore",
@@ -458,7 +460,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011C28458D458",
@@ -1382,7 +1384,7 @@
     },
     {
       "id": "513011971FF0B3C1",
-      "x": 7.95,
+      "x": 10.95,
       "y": 15.07,
       "icon": {
         "id": "aether:bronze_dungeon_key",
@@ -1436,8 +1438,8 @@
     },
     {
       "id": "513011E2BC282EC8",
-      "x": 10.95,
-      "y": 15.07,
+      "x": 1.95,
+      "y": 17.87,
       "icon": {
         "id": "aether:silver_dungeon_key",
         "count": 1
@@ -1490,7 +1492,7 @@
     },
     {
       "id": "513011B798EAE220",
-      "x": 4.95,
+      "x": 7.95,
       "y": 17.87,
       "icon": {
         "id": "aether:gold_dungeon_key",
@@ -1544,7 +1546,7 @@
     },
     {
       "id": "513011332FFE578D",
-      "x": 1.95,
+      "x": 4.95,
       "y": 17.87,
       "icon": {
         "id": "aether:victory_medal",
@@ -2628,7 +2630,7 @@
     {
       "id": "5130119EE81754B1",
       "x": 7.95,
-      "y": 17.87,
+      "y": 15.07,
       "icon": {
         "id": "aether:gold_dungeon_key",
         "count": 1
@@ -2661,17 +2663,18 @@
           "id": "513013D66F0ACD70",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -2805,7 +2808,7 @@
     },
     {
       "id": "514104100000062F",
-      "x": -4.95,
+      "x": -7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2821,7 +2824,7 @@
     },
     {
       "id": "5141041000000630",
-      "x": -7.95,
+      "x": -4.95,
       "y": 2.85,
       "width": 2.72,
       "height": 0.72,
@@ -3350,22 +3353,6 @@
     {
       "id": "5141041000000651",
       "x": 7.95,
-      "y": 18.74,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000652",
-      "x": 7.95,
       "y": 15.94,
       "width": 2.72,
       "height": 0.72,
@@ -3380,7 +3367,7 @@
       "order": 5
     },
     {
-      "id": "5141041000000653",
+      "id": "5141041000000652",
       "x": 10.95,
       "y": 15.94,
       "width": 2.72,
@@ -3396,7 +3383,7 @@
       "order": 5
     },
     {
-      "id": "5141041000000654",
+      "id": "5141041000000653",
       "x": 1.95,
       "y": 18.74,
       "width": 2.72,
@@ -3412,8 +3399,24 @@
       "order": 5
     },
     {
-      "id": "5141041000000655",
+      "id": "5141041000000654",
       "x": 4.95,
+      "y": 18.74,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000655",
+      "x": 7.95,
       "y": 18.74,
       "width": 2.72,
       "height": 0.72,

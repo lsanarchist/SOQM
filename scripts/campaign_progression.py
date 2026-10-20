@@ -264,6 +264,11 @@ def apply(chapters: list[dict], locale: dict) -> dict:
     # Apply them before recipe gates and stage propagation so an editorial
     # branch cannot accidentally bypass a real material requirement.
     report["branches"] = campaign_branches.apply_structure(chapters)
+    # Copper wire coils are a real ingredient of Industrial Chassis. The early
+    # IE branch now teaches their hand crafting before that chassis; the old
+    # catalogue incorrectly locked both coils and steel production behind it.
+    dependencies(CHASSIS, ["51301167DCA596B9", "5130117FBB68BE2D",
+                          "513011D0113472B0", "513011B6D00A0F88", BASE])
     assert_valid_graph(quests)
 
     # Bring too-early item milestones in line with the campaign materials in

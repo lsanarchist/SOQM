@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "513011DEB02F16A6",
-      "x": -10.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "botania:lexicon",
@@ -60,11 +60,11 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BD49DF9AAC",
-      "x": -7.95,
+      "x": -10.95,
       "y": 1.85,
       "icon": {
         "id": "botania:lexicon",
@@ -432,7 +432,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011FB47984BCA",
@@ -581,12 +581,13 @@
           "id": "5130132D111EDAE1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -635,12 +636,13 @@
           "id": "5130130B6AA0D8EE",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -808,7 +810,7 @@
     },
     {
       "id": "513011C8F223AF42",
-      "x": -10.95,
+      "x": -7.95,
       "y": 15.07,
       "icon": {
         "id": "botania:rune_air",
@@ -861,7 +863,7 @@
     },
     {
       "id": "513011EE2F57F8CC",
-      "x": -7.95,
+      "x": -1.95,
       "y": 15.07,
       "icon": {
         "id": "botania:rune_mana",
@@ -1237,8 +1239,8 @@
     },
     {
       "id": "5130115F50002513",
-      "x": 1.95,
-      "y": 4.65,
+      "x": -4.95,
+      "y": 15.07,
       "icon": {
         "id": "botania:hopperhock",
         "count": 1
@@ -1286,12 +1288,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F58C65D660",
-      "x": 4.95,
-      "y": 4.65,
+      "x": -10.95,
+      "y": 15.07,
       "icon": {
         "id": "botania:rannuncarpus",
         "count": 1
@@ -1343,7 +1345,7 @@
     },
     {
       "id": "513011320C984713",
-      "x": 7.95,
+      "x": 1.95,
       "y": 4.65,
       "icon": {
         "id": "botania:hourglass",
@@ -1396,7 +1398,7 @@
     },
     {
       "id": "513011D5B7ED0426",
-      "x": 10.95,
+      "x": 4.95,
       "y": 4.65,
       "icon": {
         "id": "botania:mana_detector",
@@ -1450,8 +1452,8 @@
     },
     {
       "id": "5130115554DD128F",
-      "x": 1.95,
-      "y": 7.45,
+      "x": 7.95,
+      "y": 4.65,
       "icon": {
         "id": "botania:mana_distributor",
         "count": 1
@@ -1504,8 +1506,8 @@
     },
     {
       "id": "513011D3AA93F16F",
-      "x": 4.95,
-      "y": 7.45,
+      "x": 10.95,
+      "y": 4.65,
       "icon": {
         "id": "botania:mana_void",
         "count": 1
@@ -1558,7 +1560,7 @@
     },
     {
       "id": "51301160448F0207",
-      "x": 7.95,
+      "x": 1.95,
       "y": 7.45,
       "icon": {
         "id": "botania:redstone_spreader",
@@ -1611,8 +1613,8 @@
     },
     {
       "id": "51301144C02BB91C",
-      "x": 10.95,
-      "y": 7.45,
+      "x": -10.95,
+      "y": 17.87,
       "icon": {
         "id": "botania:bellows",
         "count": 1
@@ -1665,7 +1667,7 @@
     {
       "id": "51301151FAB0C0E1",
       "x": -10.95,
-      "y": 19.89,
+      "y": 22.69,
       "icon": {
         "id": "botania:lens_normal",
         "count": 1
@@ -1718,7 +1720,7 @@
     {
       "id": "513011B19F1F98A5",
       "x": -7.95,
-      "y": 19.89,
+      "y": 22.69,
       "icon": {
         "id": "botania:lens_speed",
         "count": 1
@@ -1772,7 +1774,7 @@
     {
       "id": "513011CCCC7AED86",
       "x": -4.95,
-      "y": 19.89,
+      "y": 22.69,
       "icon": {
         "id": "botania:lens_power",
         "count": 1
@@ -1826,7 +1828,7 @@
     {
       "id": "513011A84A267B2A",
       "x": -1.95,
-      "y": 19.89,
+      "y": 22.69,
       "icon": {
         "id": "botania:lens_efficiency",
         "count": 1
@@ -1880,7 +1882,7 @@
     {
       "id": "51301105B3645AB0",
       "x": -10.95,
-      "y": 22.69,
+      "y": 25.49,
       "icon": {
         "id": "botania:lens_bounce",
         "count": 1
@@ -1934,7 +1936,7 @@
     {
       "id": "513011B3EC48A328",
       "x": -7.95,
-      "y": 22.69,
+      "y": 25.49,
       "icon": {
         "id": "botania:lens_magnet",
         "count": 1
@@ -1987,8 +1989,8 @@
     },
     {
       "id": "5130118142869DDE",
-      "x": 1.95,
-      "y": 19.89,
+      "x": 4.95,
+      "y": 22.69,
       "icon": {
         "id": "botania:terrasteel_ingot",
         "count": 1
@@ -2026,22 +2028,23 @@
           "id": "513013F649D011D0",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130115FFF875380",
       "x": 4.95,
-      "y": 19.89,
+      "y": 25.49,
       "icon": {
         "id": "botania:pixie_dust",
         "count": 1
@@ -2089,11 +2092,11 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112EF6C53689",
-      "x": 1.95,
+      "x": 7.95,
       "y": 22.69,
       "icon": {
         "id": "botania:alfheim_portal",
@@ -2146,8 +2149,8 @@
     },
     {
       "id": "5130119992BFAE06",
-      "x": 7.95,
-      "y": 19.89,
+      "x": 10.95,
+      "y": 22.69,
       "icon": {
         "id": "botania:alfheim_portal",
         "count": 1
@@ -2157,6 +2160,7 @@
         "stage_3",
         "native_botania_main_elf_portal_open",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_practice"
       ],
       "dependencies": [
@@ -2167,6 +2171,66 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:livingwood",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150126492B3BE04"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:glimmering_livingwood",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122E3128A191"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:alfheim_portal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121ADB8D3694"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:natura_pylon",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012A83780752F"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pool",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012029B70FCD8"
+        },
         {
           "type": "advancement",
           "advancement": "botania:main/elf_portal_open",
@@ -2179,12 +2243,13 @@
           "id": "513013007C1147CA",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -2194,7 +2259,7 @@
     {
       "id": "51301132DB8080C3",
       "x": -10.95,
-      "y": 37.93,
+      "y": 46.33,
       "icon": {
         "id": "botania:mana_gun",
         "count": 1
@@ -2236,12 +2301,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301173A1581288",
-      "x": 10.95,
-      "y": 19.89,
+      "x": 1.95,
+      "y": 22.69,
       "icon": {
         "id": "botania:terra_plate",
         "count": 1
@@ -2251,6 +2316,7 @@
         "stage_3",
         "item_botania_terra_plate",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -2265,6 +2331,30 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012DBAF17739F"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_block",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121C78C2FA57"
+        },
         {
           "type": "item",
           "item": {
@@ -2297,8 +2387,8 @@
     },
     {
       "id": "513011C18D8A2E63",
-      "x": 4.95,
-      "y": 22.69,
+      "x": 1.95,
+      "y": 25.49,
       "icon": {
         "id": "botania:natura_pylon",
         "count": 1
@@ -2351,7 +2441,7 @@
     {
       "id": "513011DB791EB2AB",
       "x": 7.95,
-      "y": 22.69,
+      "y": 25.49,
       "icon": {
         "id": "botania:dreamwood",
         "count": 1
@@ -2404,7 +2494,7 @@
     {
       "id": "513011FCFC519460",
       "x": 10.95,
-      "y": 22.69,
+      "y": 25.49,
       "icon": {
         "id": "botania:elementium_ingot",
         "count": 1
@@ -2457,7 +2547,7 @@
     {
       "id": "513011A5E3EF8710",
       "x": 1.95,
-      "y": 25.49,
+      "y": 28.29,
       "icon": {
         "id": "botania:dragonstone",
         "count": 1
@@ -2510,7 +2600,7 @@
     {
       "id": "513011E3EC40F79D",
       "x": 4.95,
-      "y": 25.49,
+      "y": 28.29,
       "icon": {
         "id": "botania:elf_glass",
         "count": 1
@@ -2563,7 +2653,7 @@
     {
       "id": "5130114C6314ADFB",
       "x": 7.95,
-      "y": 25.49,
+      "y": 28.29,
       "icon": {
         "id": "botania:elven_spreader",
         "count": 1
@@ -2616,7 +2706,7 @@
     {
       "id": "5130112A2549A2A2",
       "x": -10.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:manasteel_pick",
         "count": 1
@@ -2670,7 +2760,7 @@
     {
       "id": "5130110E417B9279",
       "x": -7.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:manasteel_sword",
         "count": 1
@@ -2724,7 +2814,7 @@
     {
       "id": "51301161699ED361",
       "x": -4.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:manasteel_shears",
         "count": 1
@@ -2777,7 +2867,7 @@
     {
       "id": "51301188861C21A4",
       "x": -1.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:manaweave_cloth",
         "count": 1
@@ -2830,7 +2920,7 @@
     {
       "id": "5130116BBA1515FF",
       "x": -10.95,
-      "y": 33.11,
+      "y": 35.91,
       "icon": {
         "id": "botania:manaweave_helmet",
         "count": 1
@@ -2919,7 +3009,7 @@
     {
       "id": "513011004936B5B8",
       "x": 1.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:terrasteel_helmet",
         "count": 1
@@ -3011,7 +3101,7 @@
     {
       "id": "51301141DFD6C1D8",
       "x": 4.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:terra_pick",
         "count": 1
@@ -3065,7 +3155,7 @@
     {
       "id": "513011E3CCB5630C",
       "x": 7.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:terra_sword",
         "count": 1
@@ -3119,7 +3209,7 @@
     {
       "id": "5130115774409001",
       "x": 10.95,
-      "y": 30.31,
+      "y": 33.11,
       "icon": {
         "id": "botania:terra_axe",
         "count": 1
@@ -3173,7 +3263,7 @@
     {
       "id": "5130111146741C8E",
       "x": 1.95,
-      "y": 33.11,
+      "y": 35.91,
       "icon": {
         "id": "botania:elementium_pickaxe",
         "count": 1
@@ -3226,7 +3316,7 @@
     {
       "id": "5130113E6BB0AB8A",
       "x": 4.95,
-      "y": 33.11,
+      "y": 35.91,
       "icon": {
         "id": "botania:elementium_axe",
         "count": 1
@@ -3279,7 +3369,7 @@
     {
       "id": "5130119CD52F2355",
       "x": 7.95,
-      "y": 33.11,
+      "y": 35.91,
       "icon": {
         "id": "botania:elementium_sword",
         "count": 1
@@ -3331,8 +3421,8 @@
     },
     {
       "id": "5130115157F08B66",
-      "x": -7.95,
-      "y": 37.93,
+      "x": -10.95,
+      "y": 40.73,
       "icon": {
         "id": "botania:crystal_bow",
         "count": 1
@@ -3385,8 +3475,8 @@
     },
     {
       "id": "513011A1CAF96497",
-      "x": -4.95,
-      "y": 37.93,
+      "x": -7.95,
+      "y": 40.73,
       "icon": {
         "id": "botania:thorn_chakram",
         "count": 1
@@ -3438,8 +3528,8 @@
     },
     {
       "id": "5130110DEF4C6613",
-      "x": -1.95,
-      "y": 37.93,
+      "x": -4.95,
+      "y": 40.73,
       "icon": {
         "id": "botania:flare_chakram",
         "count": 1
@@ -3491,7 +3581,7 @@
     },
     {
       "id": "5130112919942EFB",
-      "x": -10.95,
+      "x": -1.95,
       "y": 40.73,
       "icon": {
         "id": "botania:star_sword",
@@ -3544,8 +3634,8 @@
     },
     {
       "id": "513011682F5E6E47",
-      "x": -7.95,
-      "y": 40.73,
+      "x": -10.95,
+      "y": 43.53,
       "icon": {
         "id": "botania:thunder_sword",
         "count": 1
@@ -3597,8 +3687,8 @@
     },
     {
       "id": "51301171892A045E",
-      "x": -4.95,
-      "y": 40.73,
+      "x": -7.95,
+      "y": 43.53,
       "icon": {
         "id": "botania:mana_gun",
         "count": 1
@@ -3652,8 +3742,8 @@
     },
     {
       "id": "513011A450B42F4E",
-      "x": -1.95,
-      "y": 40.73,
+      "x": -4.95,
+      "y": 43.53,
       "icon": {
         "id": "botania:cobble_rod",
         "count": 1
@@ -3708,7 +3798,7 @@
     },
     {
       "id": "51301170FB317C97",
-      "x": -10.95,
+      "x": -1.95,
       "y": 43.53,
       "icon": {
         "id": "botania:dirt_rod",
@@ -3764,7 +3854,7 @@
     {
       "id": "513011EC3D07F9A3",
       "x": 1.95,
-      "y": 37.93,
+      "y": 40.73,
       "icon": {
         "id": "botania:gaia_pylon",
         "count": 1
@@ -3774,6 +3864,7 @@
         "stage_5",
         "item_botania_gaia_pylon",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -3788,10 +3879,34 @@
         {
           "type": "item",
           "item": {
-            "id": "botania:gaia_pylon",
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012496DFF28E1"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:beacon",
             "count": 1
           },
           "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012548A26FEE1"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_pylon",
+            "count": 1
+          },
+          "count": 4,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none",
@@ -3813,12 +3928,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130119F6CDCBAEA",
       "x": 4.95,
-      "y": 37.93,
+      "y": 40.73,
       "icon": {
         "id": "botania:gaia_head",
         "count": 1
@@ -3851,12 +3966,13 @@
           "id": "513013DCE15174CC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
@@ -3866,7 +3982,7 @@
     {
       "id": "513011A8AE758F43",
       "x": 7.95,
-      "y": 37.93,
+      "y": 40.73,
       "icon": {
         "id": "botania:gaia_ingot",
         "count": 1
@@ -3918,7 +4034,7 @@
     },
     {
       "id": "513011241BDCE00F",
-      "x": 1.95,
+      "x": 10.95,
       "y": 40.73,
       "icon": {
         "id": "botania:life_essence",
@@ -3952,12 +4068,13 @@
           "id": "5130134BCFE39813",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3966,8 +4083,8 @@
     },
     {
       "id": "5130117ABA3F4F64",
-      "x": 4.95,
-      "y": 40.73,
+      "x": 1.95,
+      "y": 43.53,
       "icon": {
         "id": "botania:corporea_index",
         "count": 1
@@ -3999,12 +4116,13 @@
           "id": "5130135811F5DC0A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -4013,8 +4131,8 @@
     },
     {
       "id": "513011FA714B4E58",
-      "x": 10.95,
-      "y": 37.93,
+      "x": 4.95,
+      "y": 43.53,
       "icon": {
         "id": "botania:gaia_spreader",
         "count": 1
@@ -4181,7 +4299,7 @@
     },
     {
       "id": "5141041000000418",
-      "x": -7.95,
+      "x": -10.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -4197,7 +4315,7 @@
     },
     {
       "id": "5141041000000419",
-      "x": -10.95,
+      "x": -7.95,
       "y": 2.85,
       "width": 2.72,
       "height": 0.72,
@@ -4421,8 +4539,8 @@
     },
     {
       "id": "5141041000000427",
-      "x": 1.95,
-      "y": 5.57,
+      "x": -4.95,
+      "y": 15.99,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4437,8 +4555,8 @@
     },
     {
       "id": "5141041000000428",
-      "x": 4.95,
-      "y": 5.57,
+      "x": -10.95,
+      "y": 15.99,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4453,7 +4571,7 @@
     },
     {
       "id": "5141041000000429",
-      "x": 7.95,
+      "x": 1.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -4469,7 +4587,7 @@
     },
     {
       "id": "514104100000042A",
-      "x": 10.95,
+      "x": 4.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -4485,6 +4603,38 @@
     },
     {
       "id": "514104100000042B",
+      "x": 7.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000042C",
+      "x": 10.95,
+      "y": 5.57,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000042D",
       "x": 1.95,
       "y": 8.37,
       "width": 2.72,
@@ -4500,41 +4650,9 @@
       "order": 5
     },
     {
-      "id": "514104100000042C",
-      "x": 4.95,
-      "y": 8.37,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000042D",
-      "x": 7.95,
-      "y": 8.37,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
       "id": "514104100000042E",
-      "x": 10.95,
-      "y": 8.37,
+      "x": -10.95,
+      "y": 18.79,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4550,9 +4668,9 @@
     {
       "id": "514104100000042F",
       "x": -6.45,
-      "y": 13.87,
+      "y": 15.27,
       "width": 12.0,
-      "height": 6.9,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -4566,9 +4684,9 @@
     {
       "id": "5141041000000430",
       "x": -12.395,
-      "y": 13.87,
+      "y": 15.27,
       "width": 0.11,
-      "height": 6.9,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -4661,7 +4779,7 @@
     },
     {
       "id": "5141041000000436",
-      "x": -10.95,
+      "x": -7.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -4677,7 +4795,7 @@
     },
     {
       "id": "5141041000000437",
-      "x": -7.95,
+      "x": -1.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -4822,7 +4940,7 @@
     {
       "id": "5141041000000440",
       "x": -6.45,
-      "y": 21.49,
+      "y": 24.29,
       "width": 12.0,
       "height": 6.9,
       "rotation": 0.0,
@@ -4838,7 +4956,7 @@
     {
       "id": "5141041000000441",
       "x": -12.395,
-      "y": 21.49,
+      "y": 24.29,
       "width": 0.11,
       "height": 6.9,
       "rotation": 0.0,
@@ -4854,7 +4972,7 @@
     {
       "id": "5141041000000442",
       "x": -6.37,
-      "y": 18.5,
+      "y": 21.3,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -4870,7 +4988,7 @@
     {
       "id": "5141041000000443",
       "x": -10.95,
-      "y": 20.81,
+      "y": 23.61,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4886,7 +5004,7 @@
     {
       "id": "5141041000000444",
       "x": -7.95,
-      "y": 20.81,
+      "y": 23.61,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4902,7 +5020,7 @@
     {
       "id": "5141041000000445",
       "x": -4.95,
-      "y": 20.81,
+      "y": 23.61,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4918,7 +5036,7 @@
     {
       "id": "5141041000000446",
       "x": -1.95,
-      "y": 20.81,
+      "y": 23.61,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4934,7 +5052,7 @@
     {
       "id": "5141041000000447",
       "x": -10.95,
-      "y": 23.61,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4950,7 +5068,7 @@
     {
       "id": "5141041000000448",
       "x": -7.95,
-      "y": 23.61,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4966,7 +5084,7 @@
     {
       "id": "5141041000000449",
       "x": 6.45,
-      "y": 22.89,
+      "y": 25.69,
       "width": 12.0,
       "height": 9.7,
       "rotation": 0.0,
@@ -4982,7 +5100,7 @@
     {
       "id": "514104100000044A",
       "x": 0.505,
-      "y": 22.89,
+      "y": 25.69,
       "width": 0.11,
       "height": 9.7,
       "rotation": 0.0,
@@ -4998,7 +5116,7 @@
     {
       "id": "514104100000044B",
       "x": 6.53,
-      "y": 18.5,
+      "y": 21.3,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -5013,8 +5131,8 @@
     },
     {
       "id": "514104100000044C",
-      "x": 10.95,
-      "y": 20.81,
+      "x": 1.95,
+      "y": 23.61,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5029,8 +5147,8 @@
     },
     {
       "id": "514104100000044D",
-      "x": 1.95,
-      "y": 20.97,
+      "x": 4.95,
+      "y": 23.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5045,7 +5163,7 @@
     },
     {
       "id": "514104100000044E",
-      "x": 1.95,
+      "x": 7.95,
       "y": 23.61,
       "width": 2.72,
       "height": 0.72,
@@ -5061,8 +5179,8 @@
     },
     {
       "id": "514104100000044F",
-      "x": 7.95,
-      "y": 20.89,
+      "x": 10.95,
+      "y": 23.69,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5077,8 +5195,8 @@
     },
     {
       "id": "5141041000000450",
-      "x": 4.95,
-      "y": 23.61,
+      "x": 1.95,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5094,7 +5212,7 @@
     {
       "id": "5141041000000451",
       "x": 4.95,
-      "y": 20.97,
+      "y": 26.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5110,7 +5228,7 @@
     {
       "id": "5141041000000452",
       "x": 7.95,
-      "y": 23.61,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5126,7 +5244,7 @@
     {
       "id": "5141041000000453",
       "x": 10.95,
-      "y": 23.61,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5142,7 +5260,7 @@
     {
       "id": "5141041000000454",
       "x": 1.95,
-      "y": 26.41,
+      "y": 29.21,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5158,7 +5276,7 @@
     {
       "id": "5141041000000455",
       "x": 4.95,
-      "y": 26.41,
+      "y": 29.21,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5174,7 +5292,7 @@
     {
       "id": "5141041000000456",
       "x": 7.95,
-      "y": 26.41,
+      "y": 29.21,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5190,7 +5308,7 @@
     {
       "id": "5141041000000457",
       "x": -6.45,
-      "y": 31.91,
+      "y": 34.71,
       "width": 12.0,
       "height": 6.9,
       "rotation": 0.0,
@@ -5206,7 +5324,7 @@
     {
       "id": "5141041000000458",
       "x": -12.395,
-      "y": 31.91,
+      "y": 34.71,
       "width": 0.11,
       "height": 6.9,
       "rotation": 0.0,
@@ -5222,7 +5340,7 @@
     {
       "id": "5141041000000459",
       "x": -6.37,
-      "y": 28.92,
+      "y": 31.72,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -5238,7 +5356,7 @@
     {
       "id": "514104100000045A",
       "x": -10.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5254,7 +5372,7 @@
     {
       "id": "514104100000045B",
       "x": -7.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5270,7 +5388,7 @@
     {
       "id": "514104100000045C",
       "x": -4.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5286,7 +5404,7 @@
     {
       "id": "514104100000045D",
       "x": -1.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5302,7 +5420,7 @@
     {
       "id": "514104100000045E",
       "x": -10.95,
-      "y": 33.98,
+      "y": 36.78,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5318,7 +5436,7 @@
     {
       "id": "514104100000045F",
       "x": 6.45,
-      "y": 31.91,
+      "y": 34.71,
       "width": 12.0,
       "height": 6.9,
       "rotation": 0.0,
@@ -5334,7 +5452,7 @@
     {
       "id": "5141041000000460",
       "x": 0.505,
-      "y": 31.91,
+      "y": 34.71,
       "width": 0.11,
       "height": 6.9,
       "rotation": 0.0,
@@ -5350,7 +5468,7 @@
     {
       "id": "5141041000000461",
       "x": 6.53,
-      "y": 28.92,
+      "y": 31.72,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -5366,7 +5484,7 @@
     {
       "id": "5141041000000462",
       "x": 1.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5382,7 +5500,7 @@
     {
       "id": "5141041000000463",
       "x": 4.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5398,7 +5516,7 @@
     {
       "id": "5141041000000464",
       "x": 7.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5414,7 +5532,7 @@
     {
       "id": "5141041000000465",
       "x": 10.95,
-      "y": 31.18,
+      "y": 33.98,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5430,7 +5548,7 @@
     {
       "id": "5141041000000466",
       "x": 1.95,
-      "y": 33.98,
+      "y": 36.78,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5446,7 +5564,7 @@
     {
       "id": "5141041000000467",
       "x": 4.95,
-      "y": 33.98,
+      "y": 36.78,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5462,7 +5580,7 @@
     {
       "id": "5141041000000468",
       "x": 7.95,
-      "y": 33.98,
+      "y": 36.78,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5478,7 +5596,7 @@
     {
       "id": "5141041000000469",
       "x": -6.45,
-      "y": 40.93,
+      "y": 43.73,
       "width": 12.0,
       "height": 9.7,
       "rotation": 0.0,
@@ -5494,7 +5612,7 @@
     {
       "id": "514104100000046A",
       "x": -12.395,
-      "y": 40.93,
+      "y": 43.73,
       "width": 0.11,
       "height": 9.7,
       "rotation": 0.0,
@@ -5510,7 +5628,7 @@
     {
       "id": "514104100000046B",
       "x": -6.37,
-      "y": 36.54,
+      "y": 39.34,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -5525,8 +5643,8 @@
     },
     {
       "id": "514104100000046C",
-      "x": -7.95,
-      "y": 38.8,
+      "x": -10.95,
+      "y": 41.6,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5541,8 +5659,8 @@
     },
     {
       "id": "514104100000046D",
-      "x": -4.95,
-      "y": 38.8,
+      "x": -7.95,
+      "y": 41.6,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5557,8 +5675,8 @@
     },
     {
       "id": "514104100000046E",
-      "x": -1.95,
-      "y": 38.8,
+      "x": -4.95,
+      "y": 41.6,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5573,7 +5691,7 @@
     },
     {
       "id": "514104100000046F",
-      "x": -10.95,
+      "x": -1.95,
       "y": 41.6,
       "width": 2.72,
       "height": 0.72,
@@ -5589,8 +5707,8 @@
     },
     {
       "id": "5141041000000470",
-      "x": -7.95,
-      "y": 41.6,
+      "x": -10.95,
+      "y": 44.4,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5605,8 +5723,8 @@
     },
     {
       "id": "5141041000000471",
-      "x": -4.95,
-      "y": 41.6,
+      "x": -7.95,
+      "y": 44.4,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5621,8 +5739,8 @@
     },
     {
       "id": "5141041000000472",
-      "x": -1.95,
-      "y": 41.6,
+      "x": -4.95,
+      "y": 44.4,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5637,7 +5755,7 @@
     },
     {
       "id": "5141041000000473",
-      "x": -10.95,
+      "x": -1.95,
       "y": 44.4,
       "width": 2.72,
       "height": 0.72,
@@ -5654,7 +5772,7 @@
     {
       "id": "5141041000000474",
       "x": -10.95,
-      "y": 38.93,
+      "y": 47.33,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5670,7 +5788,7 @@
     {
       "id": "5141041000000475",
       "x": 6.45,
-      "y": 39.53,
+      "y": 42.33,
       "width": 12.0,
       "height": 6.9,
       "rotation": 0.0,
@@ -5686,7 +5804,7 @@
     {
       "id": "5141041000000476",
       "x": 0.505,
-      "y": 39.53,
+      "y": 42.33,
       "width": 0.11,
       "height": 6.9,
       "rotation": 0.0,
@@ -5702,7 +5820,7 @@
     {
       "id": "5141041000000477",
       "x": 6.53,
-      "y": 36.54,
+      "y": 39.34,
       "width": 11.62,
       "height": 0.66,
       "rotation": 0.0,
@@ -5718,7 +5836,7 @@
     {
       "id": "5141041000000478",
       "x": 1.95,
-      "y": 39.01,
+      "y": 41.81,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5734,7 +5852,7 @@
     {
       "id": "5141041000000479",
       "x": 4.95,
-      "y": 39.01,
+      "y": 41.81,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5750,7 +5868,7 @@
     {
       "id": "514104100000047A",
       "x": 7.95,
-      "y": 39.01,
+      "y": 41.81,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5765,7 +5883,7 @@
     },
     {
       "id": "514104100000047B",
-      "x": 1.95,
+      "x": 10.95,
       "y": 41.6,
       "width": 2.72,
       "height": 0.72,
@@ -5781,8 +5899,8 @@
     },
     {
       "id": "514104100000047C",
-      "x": 4.95,
-      "y": 41.6,
+      "x": 1.95,
+      "y": 44.4,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -5797,8 +5915,8 @@
     },
     {
       "id": "514104100000047D",
-      "x": 10.95,
-      "y": 38.85,
+      "x": 4.95,
+      "y": 44.45,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

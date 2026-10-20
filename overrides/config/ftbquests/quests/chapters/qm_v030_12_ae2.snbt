@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,8 +17,8 @@
   "quests": [
     {
       "id": "513011E6243A5B01",
-      "x": 0.0,
-      "y": 27.67,
+      "x": -4.6,
+      "y": 24.82,
       "icon": {
         "id": "ae2:calculation_processor",
         "count": 1
@@ -66,12 +66,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AF7E8D7059",
-      "x": 4.6,
-      "y": 92.45,
+      "x": 9.2,
+      "y": 82.6,
       "icon": {
         "id": "ae2:fluix_covered_cable",
         "count": 1
@@ -103,22 +103,23 @@
           "id": "51301311270A34D4",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011076371E83C",
       "x": 4.6,
-      "y": 166.87,
+      "y": 149.12,
       "icon": {
         "id": "ae2:certus_quartz_pickaxe",
         "count": 1
@@ -159,12 +160,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112BC0CDCCBA",
-      "x": -9.2,
-      "y": 5.35,
+      "x": -4.6,
+      "y": 4.95,
       "icon": {
         "id": "ae2:guide",
         "count": 1
@@ -211,12 +212,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110AD7EC7A65": [
+          -2.0,
+          2.25,
+          -6.6,
+          4.42
+        ]
+      }
     },
     {
       "id": "513011FD8979C4DD",
-      "x": 9.2,
-      "y": 5.35,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "ae2:meteorite_compass",
         "count": 1
@@ -264,12 +273,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110AD7EC7A65": [
+          3.6,
+          2.25,
+          3.6,
+          4.42
+        ]
+      }
     },
     {
       "id": "5130110F99A1DF48",
       "x": -4.6,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "ae2:certus_quartz_dust",
         "count": 1
@@ -317,12 +334,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011540D59EE53",
-      "x": 0.0,
-      "y": 8.85,
+      "x": 4.6,
+      "y": 8.05,
       "icon": {
         "id": "ae2:charged_certus_quartz_crystal",
         "count": 1
@@ -370,7 +387,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AA8F084F8E",
@@ -422,12 +439,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BBBBE02633",
       "x": 4.6,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "ae2:fluix_dust",
         "count": 1
@@ -475,12 +492,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011020C4B1739",
-      "x": 0.0,
-      "y": 12.35,
+      "x": 4.6,
+      "y": 11.15,
       "icon": {
         "id": "ae2:fluix_crystal",
         "count": 1
@@ -528,12 +545,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011540D59EE53": [
+          8.25,
+          8.5,
+          8.25,
+          10.67
+        ]
+      }
     },
     {
       "id": "5130114314B68D20",
-      "x": -4.6,
-      "y": 24.17,
+      "x": -9.2,
+      "y": 21.72,
       "icon": {
         "id": "ae2:silicon",
         "count": 1
@@ -581,12 +606,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110F99A1DF48": [
+          -6.39,
+          19.23,
+          -10.99,
+          21.4
+        ]
+      }
     },
     {
       "id": "513011310DD7B8C1",
       "x": 0.0,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "ae2:silicon_press",
         "count": 1
@@ -633,12 +666,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011CFBA3A9CF5": [
+          3.81,
+          16.13,
+          3.81,
+          18.3
+        ]
+      }
     },
     {
       "id": "513011072CC6A803",
-      "x": 9.2,
-      "y": 24.17,
+      "x": 4.6,
+      "y": 21.72,
       "icon": {
         "id": "ae2:logic_processor_press",
         "count": 1
@@ -685,12 +726,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011659DFC96EC",
-      "x": -9.2,
-      "y": 24.17,
+      "x": -4.6,
+      "y": 21.72,
       "icon": {
         "id": "ae2:engineering_processor_press",
         "count": 1
@@ -737,12 +778,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D36DC0B032",
       "x": 0.0,
-      "y": 24.17,
+      "y": 21.72,
       "icon": {
         "id": "ae2:calculation_processor_press",
         "count": 1
@@ -789,7 +830,15 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011310DD7B8C1": [
+          3.81,
+          19.23,
+          3.81,
+          21.4
+        ]
+      }
     },
     {
       "id": "5130110AD7EC7A65",
@@ -841,12 +890,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CFBA3A9CF5",
       "x": 0.0,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "ae2:inscriber",
         "count": 1
@@ -893,12 +942,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C6833500D4",
       "x": 0.0,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "ae2:energy_acceptor",
         "count": 1
@@ -947,12 +996,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110F54E2C3D4",
       "x": -4.6,
-      "y": 85.45,
+      "y": 76.4,
       "icon": {
         "id": "ae2:vibration_chamber",
         "count": 1
@@ -1000,12 +1049,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F37B07AD68",
       "x": 4.6,
-      "y": 85.45,
+      "y": 76.4,
       "icon": {
         "id": "ae2:energy_cell",
         "count": 1
@@ -1052,12 +1101,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117C8CDC4800",
-      "x": -4.6,
-      "y": 88.95,
+      "x": 4.6,
+      "y": 79.5,
       "icon": {
         "id": "ae2:dense_energy_cell",
         "count": 1
@@ -1104,12 +1153,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011F37B07AD68": [
+          1.4,
+          76.8,
+          1.4,
+          78.97
+        ]
+      }
     },
     {
       "id": "513011A5B6C4DF0D",
       "x": 9.2,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "ae2:quartz_fiber",
         "count": 1
@@ -1156,12 +1213,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117628101229",
-      "x": 4.6,
-      "y": 35.99,
+      "x": 9.2,
+      "y": 32.29,
       "icon": {
         "id": "ae2:fluix_glass_cable",
         "count": 1
@@ -1209,12 +1266,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011613E92ADD0",
       "x": 9.2,
-      "y": 85.45,
+      "y": 76.4,
       "icon": {
         "id": "ae2:fluix_covered_cable",
         "count": 1
@@ -1261,12 +1318,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EFF7B42EB6",
-      "x": -9.2,
-      "y": 88.95,
+      "x": 9.2,
+      "y": 79.5,
       "icon": {
         "id": "ae2:fluix_smart_cable",
         "count": 1
@@ -1313,12 +1370,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011613E92ADD0": [
+          13.2,
+          76.8,
+          13.2,
+          78.97
+        ]
+      }
     },
     {
       "id": "513011FEDA3CDB61",
-      "x": -9.2,
-      "y": 100.77,
+      "x": -4.6,
+      "y": 90.07,
       "icon": {
         "id": "ae2:fluix_smart_dense_cable",
         "count": 1
@@ -1366,12 +1431,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117C40A8D2E1",
-      "x": 9.2,
-      "y": 46.49,
+      "x": 4.6,
+      "y": 41.59,
       "icon": {
         "id": "ae2:drive",
         "count": 1
@@ -1420,12 +1485,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112C9685F877",
-      "x": 0.0,
-      "y": 39.49,
+      "x": 4.6,
+      "y": 35.39,
       "icon": {
         "id": "ae2:terminal",
         "count": 1
@@ -1473,12 +1538,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301145AC657CE8",
-      "x": 0.0,
-      "y": 42.99,
+      "x": 4.6,
+      "y": 38.49,
       "icon": {
         "id": "ae2:chest",
         "count": 1
@@ -1526,12 +1591,26 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130112C9685F877": [
+          8.25,
+          35.84,
+          8.25,
+          38.01
+        ],
+        "5130115B3F92B69A": [
+          0.45,
+          32.74,
+          0.45,
+          37.94
+        ]
+      }
     },
     {
       "id": "513011AAD4652E6F",
       "x": 0.0,
-      "y": 46.49,
+      "y": 41.59,
       "icon": {
         "id": "ae2:crafting_terminal",
         "count": 1
@@ -1563,22 +1642,31 @@
           "id": "513013EF97E1A220",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301145AC657CE8": [
+          2.73,
+          39.02,
+          -1.87,
+          41.19
+        ]
+      }
     },
     {
       "id": "513011D4AD7B73EE",
       "x": 0.0,
-      "y": 166.87,
+      "y": 149.12,
       "icon": {
         "id": "ae2:fluix_smart_cable",
         "count": 1
@@ -1610,22 +1698,23 @@
           "id": "5130131D34A26F8E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301121BA7BE430",
       "x": -9.2,
-      "y": 170.37,
+      "y": 152.22,
       "icon": {
         "id": "ae2:engineering_processor",
         "count": 1
@@ -1666,12 +1755,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011543F29EA68",
       "x": 4.6,
-      "y": 173.87,
+      "y": 155.32,
       "icon": {
         "id": "ae2:blank_pattern",
         "count": 1
@@ -1712,12 +1801,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130119BD717861F",
       "x": -4.6,
-      "y": 97.27,
+      "y": 86.97,
       "icon": {
         "id": "ae2:controller",
         "count": 1
@@ -1765,12 +1854,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F797E11624",
       "x": 4.6,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "ae2:cell_component_1k",
         "count": 1
@@ -1818,12 +1907,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114905904323",
       "x": 9.2,
-      "y": 112.59,
+      "y": 100.64,
       "icon": {
         "id": "ae2:cell_component_4k",
         "count": 1
@@ -1871,12 +1960,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BBCA06FEA6",
-      "x": -4.6,
-      "y": 116.09,
+      "x": 9.2,
+      "y": 103.74,
       "icon": {
         "id": "ae2:cell_component_16k",
         "count": 1
@@ -1923,12 +2012,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114905904323": [
+          13.2,
+          101.04,
+          13.2,
+          103.21
+        ]
+      }
     },
     {
       "id": "513011DA15992023",
-      "x": 4.6,
-      "y": 119.59,
+      "x": 9.2,
+      "y": 106.84,
       "icon": {
         "id": "ae2:cell_component_64k",
         "count": 1
@@ -1975,12 +2072,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011BBCA06FEA6": [
+          13.2,
+          104.14,
+          13.2,
+          106.31
+        ]
+      }
     },
     {
       "id": "5130110B5D09E918",
       "x": 9.2,
-      "y": 123.09,
+      "y": 109.94,
       "icon": {
         "id": "ae2:cell_component_256k",
         "count": 1
@@ -2027,12 +2132,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011DA15992023": [
+          13.2,
+          107.24,
+          13.2,
+          109.41
+        ]
+      }
     },
     {
       "id": "5130119E287D7DB8",
       "x": -9.2,
-      "y": 35.99,
+      "y": 32.29,
       "icon": {
         "id": "ae2:item_cell_housing",
         "count": 1
@@ -2079,12 +2192,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114BF00256A0",
       "x": 4.6,
-      "y": 73.63,
+      "y": 65.83,
       "icon": {
         "id": "ae2:fluid_cell_housing",
         "count": 1
@@ -2131,12 +2244,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130115B3F92B69A",
-      "x": -4.6,
-      "y": 35.99,
+      "x": 4.6,
+      "y": 32.29,
       "icon": {
         "id": "ae2:item_storage_cell_1k",
         "count": 1
@@ -2183,12 +2296,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011F797E11624": [
+          8.25,
+          29.64,
+          8.25,
+          31.81
+        ]
+      }
     },
     {
       "id": "51301182CE3A5863",
-      "x": -9.2,
-      "y": 116.09,
+      "x": 4.6,
+      "y": 103.74,
       "icon": {
         "id": "ae2:item_storage_cell_4k",
         "count": 1
@@ -2235,12 +2356,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114905904323": [
+          7.2,
+          101.04,
+          2.6,
+          103.21
+        ]
+      }
     },
     {
       "id": "5130113F18CF3F87",
-      "x": -9.2,
-      "y": 119.59,
+      "x": 4.6,
+      "y": 106.84,
       "icon": {
         "id": "ae2:item_storage_cell_16k",
         "count": 1
@@ -2287,12 +2416,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BB9E9B9B54",
-      "x": -9.2,
-      "y": 123.09,
+      "x": 4.6,
+      "y": 109.94,
       "icon": {
         "id": "ae2:item_storage_cell_64k",
         "count": 1
@@ -2339,12 +2468,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CBF904C144",
-      "x": -4.6,
-      "y": 126.59,
+      "x": 9.2,
+      "y": 113.04,
       "icon": {
         "id": "ae2:item_storage_cell_256k",
         "count": 1
@@ -2391,12 +2520,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110B5D09E918": [
+          13.2,
+          110.34,
+          13.2,
+          112.51
+        ]
+      }
     },
     {
       "id": "5130116FD5A290E7",
       "x": -4.6,
-      "y": 77.13,
+      "y": 68.93,
       "icon": {
         "id": "ae2:fluid_storage_cell_1k",
         "count": 1
@@ -2443,12 +2580,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118AC1E7A654",
       "x": -9.2,
-      "y": 51.31,
+      "y": 45.96,
       "icon": {
         "id": "ae2:blank_pattern",
         "count": 1
@@ -2495,12 +2632,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E89C668AA7",
-      "x": -4.6,
-      "y": 54.81,
+      "x": -9.2,
+      "y": 49.06,
       "icon": {
         "id": "ae2:pattern_encoding_terminal",
         "count": 1
@@ -2548,12 +2685,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112A016321B8",
-      "x": -4.6,
-      "y": 58.31,
+      "x": -9.2,
+      "y": 52.16,
       "icon": {
         "id": "ae2:crafting_pattern",
         "count": 1
@@ -2600,12 +2737,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E89C668AA7": [
+          -5.55,
+          49.51,
+          -5.55,
+          51.68
+        ]
+      }
     },
     {
       "id": "513011F60668F4F2",
       "x": 0.0,
-      "y": 73.63,
+      "y": 65.83,
       "icon": {
         "id": "ae2:processing_pattern",
         "count": 1
@@ -2652,12 +2797,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011562F81FD24",
-      "x": -4.6,
-      "y": 61.81,
+      "x": -9.2,
+      "y": 55.26,
       "icon": {
         "id": "ae2:pattern_provider",
         "count": 1
@@ -2704,12 +2849,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130112A016321B8": [
+          -5.55,
+          52.61,
+          -5.55,
+          54.78
+        ]
+      }
     },
     {
       "id": "5130112D00658B23",
-      "x": -4.6,
-      "y": 65.31,
+      "x": -9.2,
+      "y": 58.36,
       "icon": {
         "id": "ae2:molecular_assembler",
         "count": 1
@@ -2757,12 +2910,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011562F81FD24": [
+          -5.55,
+          55.71,
+          -5.55,
+          57.88
+        ]
+      }
     },
     {
       "id": "513011B5F7F592D8",
       "x": 9.2,
-      "y": 61.81,
+      "y": 55.26,
       "icon": {
         "id": "ae2:crafting_unit",
         "count": 1
@@ -2810,12 +2971,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011DEEBB429E9",
       "x": -4.6,
-      "y": 68.81,
+      "y": 61.46,
       "icon": {
         "id": "ae2:1k_crafting_storage",
         "count": 1
@@ -2863,12 +3024,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E167D89EF9",
       "x": 0.0,
-      "y": 131.41,
+      "y": 117.41,
       "icon": {
         "id": "ae2:4k_crafting_storage",
         "count": 1
@@ -2916,12 +3077,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301163BFF719DB",
       "x": -9.2,
-      "y": 131.41,
+      "y": 117.41,
       "icon": {
         "id": "ae2:16k_crafting_storage",
         "count": 1
@@ -2969,12 +3130,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CF924A9057",
       "x": 4.6,
-      "y": 131.41,
+      "y": 117.41,
       "icon": {
         "id": "ae2:64k_crafting_storage",
         "count": 1
@@ -3022,12 +3183,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301108632D508B",
       "x": 9.2,
-      "y": 131.41,
+      "y": 117.41,
       "icon": {
         "id": "ae2:256k_crafting_storage",
         "count": 1
@@ -3075,12 +3236,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301148D4813782",
       "x": 9.2,
-      "y": 134.91,
+      "y": 120.51,
       "icon": {
         "id": "ae2:crafting_accelerator",
         "count": 1
@@ -3128,12 +3289,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130116D325212F4",
-      "x": 4.6,
-      "y": 68.81,
+      "x": 0.0,
+      "y": 61.46,
       "icon": {
         "id": "ae2:crafting_monitor",
         "count": 1
@@ -3185,7 +3346,7 @@
     {
       "id": "5130111C6FFD51A9",
       "x": -4.6,
-      "y": 143.23,
+      "y": 127.98,
       "icon": {
         "id": "ae2:wireless_access_point",
         "count": 1
@@ -3232,12 +3393,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301150484DEC3C": [
+          -0.6,
+          125.28,
+          -0.6,
+          127.45
+        ]
+      }
     },
     {
       "id": "51301150484DEC3C",
       "x": -4.6,
-      "y": 139.73,
+      "y": 124.88,
       "icon": {
         "id": "ae2:wireless_receiver",
         "count": 1
@@ -3284,12 +3453,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011399BE50497",
-      "x": 9.2,
-      "y": 146.73,
+      "x": 0.0,
+      "y": 131.08,
       "icon": {
         "id": "ae2:wireless_booster",
         "count": 1
@@ -3336,12 +3505,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111C6FFD51A9": [
+          -1.8,
+          128.38,
+          2.8,
+          130.55
+        ]
+      }
     },
     {
       "id": "5130110CD6572A2C",
-      "x": 0.0,
-      "y": 146.73,
+      "x": -4.6,
+      "y": 131.08,
       "icon": {
         "id": "ae2:wireless_terminal",
         "count": 1
@@ -3389,12 +3566,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C40B19897D",
-      "x": 0.0,
-      "y": 150.23,
+      "x": -4.6,
+      "y": 134.18,
       "icon": {
         "id": "ae2:wireless_crafting_terminal",
         "count": 1
@@ -3442,12 +3619,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110CD6572A2C": [
+          -7.8,
+          131.48,
+          -7.8,
+          133.65
+        ]
+      }
     },
     {
       "id": "5130112D86FBD3AF",
       "x": -4.6,
-      "y": 158.55,
+      "y": 141.65,
       "icon": {
         "id": "ae2:quantum_link",
         "count": 1
@@ -3494,12 +3679,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130112C1D24E77E": [
+          -0.6,
+          138.95,
+          -0.6,
+          141.12
+        ]
+      }
     },
     {
       "id": "513011C1618FC593",
       "x": -4.6,
-      "y": 162.05,
+      "y": 144.75,
       "icon": {
         "id": "ae2:quantum_entangled_singularity",
         "count": 1
@@ -3508,6 +3701,7 @@
         "qm_rebuild",
         "item_ae2_quantum_entangled_singularity",
         "qm_v040",
+        "multiblock_materials",
         "stage_4",
         "soqm_role_optional"
       ],
@@ -3525,11 +3719,35 @@
             "id": "ae2:quantum_entangled_singularity",
             "count": 1
           },
-          "count": 1,
+          "count": 2,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none",
           "id": "5130126E97134AF5"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "ae2:quantum_ring",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122A9762207A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "ae2:quantum_link",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150129D450EDC85"
         }
       ],
       "rewards": [
@@ -3547,12 +3765,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E0DFFECB6C",
-      "x": 4.6,
-      "y": 104.27,
+      "x": -4.6,
+      "y": 93.17,
       "icon": {
         "id": "ae2:me_p2p_tunnel",
         "count": 1
@@ -3599,12 +3817,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011FEDA3CDB61": [
+          -0.6,
+          90.47,
+          -0.6,
+          92.64
+        ]
+      }
     },
     {
       "id": "513011578532ED51",
       "x": -9.2,
-      "y": 107.77,
+      "y": 96.27,
       "icon": {
         "id": "ae2:item_p2p_tunnel",
         "count": 1
@@ -3651,12 +3877,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E0DFFECB6C": [
+          -6.6,
+          93.57,
+          -11.2,
+          95.74
+        ]
+      }
     },
     {
       "id": "51301162B4562E25",
       "x": -4.6,
-      "y": 107.77,
+      "y": 96.27,
       "icon": {
         "id": "ae2:fluid_p2p_tunnel",
         "count": 1
@@ -3703,12 +3937,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E0DFFECB6C": [
+          -0.6,
+          93.57,
+          -0.6,
+          95.74
+        ]
+      }
     },
     {
       "id": "513011285F6711C0",
-      "x": 4.6,
-      "y": 107.77,
+      "x": 0.0,
+      "y": 96.27,
       "icon": {
         "id": "ae2:fe_p2p_tunnel",
         "count": 1
@@ -3755,12 +3997,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E0DFFECB6C": [
+          -0.6,
+          93.57,
+          4.0,
+          95.74
+        ]
+      }
     },
     {
       "id": "513011DF59EDD6B8",
-      "x": 9.2,
-      "y": 107.77,
+      "x": 4.6,
+      "y": 96.27,
       "icon": {
         "id": "ae2:redstone_p2p_tunnel",
         "count": 1
@@ -3807,12 +4057,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F21184218C",
-      "x": -9.2,
-      "y": 80.63,
+      "x": -4.6,
+      "y": 72.03,
       "icon": {
         "id": "ae2:formation_plane",
         "count": 1
@@ -3859,12 +4109,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301142E35FA369",
-      "x": 9.2,
-      "y": 80.63,
+      "x": 0.0,
+      "y": 72.03,
       "icon": {
         "id": "ae2:annihilation_plane",
         "count": 1
@@ -3911,12 +4161,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111631820BC6": [
+          4.0,
+          69.33,
+          4.0,
+          71.5
+        ]
+      }
     },
     {
       "id": "51301121F7B8F501",
-      "x": -4.6,
-      "y": 170.37,
+      "x": 0.0,
+      "y": 152.22,
       "icon": {
         "id": "ae2:fluix_smart_dense_cable",
         "count": 1
@@ -3947,22 +4205,31 @@
           "id": "513013D7F0359385",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011D4AD7B73EE": [
+          -3.2,
+          149.52,
+          -3.2,
+          151.69
+        ]
+      }
     },
     {
       "id": "5130116CC5036025",
       "x": 4.6,
-      "y": 158.55,
+      "y": 141.65,
       "icon": {
         "id": "ae2:spatial_cell_component_128",
         "count": 1
@@ -3993,22 +4260,31 @@
           "id": "51301336F4CB08B2",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301112D49F4FE1": [
+          8.6,
+          138.95,
+          8.6,
+          141.12
+        ]
+      }
     },
     {
       "id": "5130111631820BC6",
       "x": 0.0,
-      "y": 77.13,
+      "y": 68.93,
       "icon": {
         "id": "ae2:interface",
         "count": 1
@@ -4039,22 +4315,31 @@
           "id": "513013E1E981D8E6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011F60668F4F2": [
+          3.6,
+          66.23,
+          3.6,
+          68.4
+        ]
+      }
     },
     {
       "id": "5130112C1D24E77E",
       "x": -4.6,
-      "y": 155.05,
+      "y": 138.55,
       "icon": {
         "id": "ae2:quantum_ring",
         "count": 1
@@ -4103,12 +4388,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301112D49F4FE1",
       "x": 4.6,
-      "y": 155.05,
+      "y": 138.55,
       "icon": {
         "id": "ae2:spatial_io_port",
         "count": 1
@@ -4156,7 +4441,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -4227,9 +4512,9 @@
     {
       "id": "514104100000031C",
       "x": 0.0,
-      "y": 7.3,
+      "y": 6.475,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4243,9 +4528,9 @@
     {
       "id": "514104100000031D",
       "x": -12.395,
-      "y": 7.3,
+      "y": 6.475,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4274,8 +4559,8 @@
     },
     {
       "id": "514104100000031F",
-      "x": -9.2,
-      "y": 6.22,
+      "x": -4.6,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4290,8 +4575,8 @@
     },
     {
       "id": "5141041000000320",
-      "x": 9.2,
-      "y": 6.22,
+      "x": 0.0,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4307,7 +4592,7 @@
     {
       "id": "5141041000000321",
       "x": -4.6,
-      "y": 21.75,
+      "y": 19.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4322,8 +4607,8 @@
     },
     {
       "id": "5141041000000322",
-      "x": 0.0,
-      "y": 9.77,
+      "x": 4.6,
+      "y": 8.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4355,7 +4640,7 @@
     {
       "id": "5141041000000324",
       "x": 4.6,
-      "y": 21.59,
+      "y": 19.54,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4370,8 +4655,8 @@
     },
     {
       "id": "5141041000000325",
-      "x": 0.0,
-      "y": 13.27,
+      "x": 4.6,
+      "y": 12.07,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4386,8 +4671,8 @@
     },
     {
       "id": "5141041000000326",
-      "x": -4.6,
-      "y": 25.25,
+      "x": -9.2,
+      "y": 22.8,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4419,9 +4704,9 @@
     {
       "id": "5141041000000328",
       "x": 0.0,
-      "y": 22.62,
+      "y": 20.145,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4435,9 +4720,9 @@
     {
       "id": "5141041000000329",
       "x": -12.395,
-      "y": 22.62,
+      "y": 20.145,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -4451,7 +4736,7 @@
     {
       "id": "514104100000032A",
       "x": 0.08,
-      "y": 15.78,
+      "y": 14.13,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4467,7 +4752,7 @@
     {
       "id": "514104100000032B",
       "x": 0.0,
-      "y": 21.75,
+      "y": 19.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4482,8 +4767,8 @@
     },
     {
       "id": "514104100000032C",
-      "x": 9.2,
-      "y": 25.09,
+      "x": 4.6,
+      "y": 22.64,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4498,8 +4783,8 @@
     },
     {
       "id": "514104100000032D",
-      "x": -9.2,
-      "y": 25.09,
+      "x": -4.6,
+      "y": 22.64,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4515,7 +4800,7 @@
     {
       "id": "514104100000032E",
       "x": 0.0,
-      "y": 25.25,
+      "y": 22.8,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4531,7 +4816,7 @@
     {
       "id": "514104100000032F",
       "x": 0.0,
-      "y": 18.25,
+      "y": 16.6,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4546,8 +4831,8 @@
     },
     {
       "id": "5141041000000330",
-      "x": 0.0,
-      "y": 28.75,
+      "x": -4.6,
+      "y": 25.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4563,9 +4848,9 @@
     {
       "id": "5141041000000331",
       "x": 0.0,
-      "y": 39.69,
+      "y": 35.365,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4579,9 +4864,9 @@
     {
       "id": "5141041000000332",
       "x": -12.395,
-      "y": 39.69,
+      "y": 35.365,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -4595,7 +4880,7 @@
     {
       "id": "5141041000000333",
       "x": 0.08,
-      "y": 31.1,
+      "y": 27.8,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4611,7 +4896,7 @@
     {
       "id": "5141041000000334",
       "x": 0.0,
-      "y": 33.41,
+      "y": 30.11,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4627,7 +4912,7 @@
     {
       "id": "5141041000000335",
       "x": -4.6,
-      "y": 86.32,
+      "y": 77.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4643,7 +4928,7 @@
     {
       "id": "5141041000000336",
       "x": 4.6,
-      "y": 86.32,
+      "y": 77.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4658,8 +4943,8 @@
     },
     {
       "id": "5141041000000337",
-      "x": -4.6,
-      "y": 89.82,
+      "x": 4.6,
+      "y": 80.37,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4675,7 +4960,7 @@
     {
       "id": "5141041000000338",
       "x": 9.2,
-      "y": 33.41,
+      "y": 30.11,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4690,8 +4975,8 @@
     },
     {
       "id": "5141041000000339",
-      "x": 4.6,
-      "y": 36.91,
+      "x": 9.2,
+      "y": 33.21,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4707,7 +4992,7 @@
     {
       "id": "514104100000033A",
       "x": 9.2,
-      "y": 86.32,
+      "y": 77.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4722,8 +5007,8 @@
     },
     {
       "id": "514104100000033B",
-      "x": -9.2,
-      "y": 89.82,
+      "x": 9.2,
+      "y": 80.37,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4738,8 +5023,8 @@
     },
     {
       "id": "514104100000033C",
-      "x": -9.2,
-      "y": 101.64,
+      "x": -4.6,
+      "y": 90.94,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4755,9 +5040,9 @@
     {
       "id": "514104100000033D",
       "x": 0.0,
-      "y": 60.26,
+      "y": 53.685,
       "width": 24.9,
-      "height": 21.6,
+      "height": 19.15,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4771,9 +5056,9 @@
     {
       "id": "514104100000033E",
       "x": -12.395,
-      "y": 60.26,
+      "y": 53.685,
       "width": 0.11,
-      "height": 21.6,
+      "height": 19.15,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -4787,7 +5072,7 @@
     {
       "id": "514104100000033F",
       "x": 0.08,
-      "y": 49.92,
+      "y": 44.57,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4802,8 +5087,8 @@
     },
     {
       "id": "5141041000000340",
-      "x": 4.6,
-      "y": 93.32,
+      "x": 9.2,
+      "y": 83.47,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4819,7 +5104,7 @@
     {
       "id": "5141041000000341",
       "x": 0.0,
-      "y": 167.74,
+      "y": 149.99,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4834,8 +5119,8 @@
     },
     {
       "id": "5141041000000342",
-      "x": 9.2,
-      "y": 47.36,
+      "x": 4.6,
+      "y": 42.46,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4850,8 +5135,8 @@
     },
     {
       "id": "5141041000000343",
-      "x": 0.0,
-      "y": 40.41,
+      "x": 4.6,
+      "y": 36.31,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4866,8 +5151,8 @@
     },
     {
       "id": "5141041000000344",
-      "x": 0.0,
-      "y": 43.91,
+      "x": 4.6,
+      "y": 39.41,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4883,7 +5168,7 @@
     {
       "id": "5141041000000345",
       "x": 0.0,
-      "y": 47.49,
+      "y": 42.59,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4899,7 +5184,7 @@
     {
       "id": "5141041000000346",
       "x": -4.6,
-      "y": 98.14,
+      "y": 87.84,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4915,9 +5200,9 @@
     {
       "id": "5141041000000347",
       "x": 0.0,
-      "y": 77.33,
+      "y": 68.905,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4931,9 +5216,9 @@
     {
       "id": "5141041000000348",
       "x": -12.395,
-      "y": 77.33,
+      "y": 68.905,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -4947,7 +5232,7 @@
     {
       "id": "5141041000000349",
       "x": 0.08,
-      "y": 72.24,
+      "y": 64.44,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4963,7 +5248,7 @@
     {
       "id": "514104100000034A",
       "x": 4.6,
-      "y": 167.74,
+      "y": 149.99,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4979,7 +5264,7 @@
     {
       "id": "514104100000034B",
       "x": -9.2,
-      "y": 171.24,
+      "y": 153.09,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4995,7 +5280,7 @@
     {
       "id": "514104100000034C",
       "x": 4.6,
-      "y": 174.74,
+      "y": 156.19,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5011,9 +5296,9 @@
     {
       "id": "514104100000034D",
       "x": 0.0,
-      "y": 89.15,
+      "y": 79.475,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5027,9 +5312,9 @@
     {
       "id": "514104100000034E",
       "x": -12.395,
-      "y": 89.15,
+      "y": 79.475,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -5043,7 +5328,7 @@
     {
       "id": "514104100000034F",
       "x": 0.08,
-      "y": 84.06,
+      "y": 75.01,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5059,7 +5344,7 @@
     {
       "id": "5141041000000350",
       "x": 4.6,
-      "y": 33.41,
+      "y": 30.11,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5075,7 +5360,7 @@
     {
       "id": "5141041000000351",
       "x": 9.2,
-      "y": 113.46,
+      "y": 101.51,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5090,8 +5375,8 @@
     },
     {
       "id": "5141041000000352",
-      "x": -4.6,
-      "y": 116.96,
+      "x": 9.2,
+      "y": 104.61,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5106,8 +5391,8 @@
     },
     {
       "id": "5141041000000353",
-      "x": 4.6,
-      "y": 120.46,
+      "x": 9.2,
+      "y": 107.71,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5123,7 +5408,7 @@
     {
       "id": "5141041000000354",
       "x": 9.2,
-      "y": 123.96,
+      "y": 110.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5139,7 +5424,7 @@
     {
       "id": "5141041000000355",
       "x": -9.2,
-      "y": 36.86,
+      "y": 33.16,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5155,7 +5440,7 @@
     {
       "id": "5141041000000356",
       "x": 4.6,
-      "y": 74.5,
+      "y": 66.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5171,9 +5456,9 @@
     {
       "id": "5141041000000357",
       "x": 0.0,
-      "y": 102.72,
+      "y": 91.595,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5187,9 +5472,9 @@
     {
       "id": "5141041000000358",
       "x": -12.395,
-      "y": 102.72,
+      "y": 91.595,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -5203,7 +5488,7 @@
     {
       "id": "5141041000000359",
       "x": 0.08,
-      "y": 95.88,
+      "y": 85.58,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5218,8 +5503,8 @@
     },
     {
       "id": "514104100000035A",
-      "x": -4.6,
-      "y": 36.91,
+      "x": 4.6,
+      "y": 33.21,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5234,8 +5519,8 @@
     },
     {
       "id": "514104100000035B",
-      "x": -9.2,
-      "y": 116.96,
+      "x": 4.6,
+      "y": 104.61,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5250,8 +5535,8 @@
     },
     {
       "id": "514104100000035C",
-      "x": -9.2,
-      "y": 120.46,
+      "x": 4.6,
+      "y": 107.71,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5266,8 +5551,8 @@
     },
     {
       "id": "514104100000035D",
-      "x": -9.2,
-      "y": 123.96,
+      "x": 4.6,
+      "y": 110.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5282,8 +5567,8 @@
     },
     {
       "id": "514104100000035E",
-      "x": -4.6,
-      "y": 127.46,
+      "x": 9.2,
+      "y": 113.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5299,7 +5584,7 @@
     {
       "id": "514104100000035F",
       "x": -4.6,
-      "y": 78.0,
+      "y": 69.8,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5315,9 +5600,9 @@
     {
       "id": "5141041000000360",
       "x": 0.0,
-      "y": 119.79,
+      "y": 106.815,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5331,9 +5616,9 @@
     {
       "id": "5141041000000361",
       "x": -12.395,
-      "y": 119.79,
+      "y": 106.815,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -5347,7 +5632,7 @@
     {
       "id": "5141041000000362",
       "x": 0.08,
-      "y": 111.2,
+      "y": 99.25,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5363,7 +5648,7 @@
     {
       "id": "5141041000000363",
       "x": -9.2,
-      "y": 52.23,
+      "y": 46.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5378,8 +5663,8 @@
     },
     {
       "id": "5141041000000364",
-      "x": -4.6,
-      "y": 55.73,
+      "x": -9.2,
+      "y": 49.98,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5394,8 +5679,8 @@
     },
     {
       "id": "5141041000000365",
-      "x": -4.6,
-      "y": 59.23,
+      "x": -9.2,
+      "y": 53.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5411,7 +5696,7 @@
     {
       "id": "5141041000000366",
       "x": 0.0,
-      "y": 74.55,
+      "y": 66.75,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5426,8 +5711,8 @@
     },
     {
       "id": "5141041000000367",
-      "x": -4.6,
-      "y": 62.73,
+      "x": -9.2,
+      "y": 56.18,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5442,8 +5727,8 @@
     },
     {
       "id": "5141041000000368",
-      "x": -4.6,
-      "y": 66.23,
+      "x": -9.2,
+      "y": 59.28,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5459,7 +5744,7 @@
     {
       "id": "5141041000000369",
       "x": 9.2,
-      "y": 62.73,
+      "y": 56.18,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5475,9 +5760,9 @@
     {
       "id": "514104100000036A",
       "x": 0.0,
-      "y": 133.36,
+      "y": 118.935,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5491,9 +5776,9 @@
     {
       "id": "514104100000036B",
       "x": -12.395,
-      "y": 133.36,
+      "y": 118.935,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -5507,7 +5792,7 @@
     {
       "id": "514104100000036C",
       "x": 0.08,
-      "y": 130.02,
+      "y": 116.02,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5523,7 +5808,7 @@
     {
       "id": "514104100000036D",
       "x": -4.6,
-      "y": 69.73,
+      "y": 62.38,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5539,7 +5824,7 @@
     {
       "id": "514104100000036E",
       "x": 0.0,
-      "y": 132.28,
+      "y": 118.28,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5555,7 +5840,7 @@
     {
       "id": "514104100000036F",
       "x": -9.2,
-      "y": 132.28,
+      "y": 118.28,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5571,7 +5856,7 @@
     {
       "id": "5141041000000370",
       "x": 4.6,
-      "y": 132.28,
+      "y": 118.28,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5587,7 +5872,7 @@
     {
       "id": "5141041000000371",
       "x": 9.2,
-      "y": 132.28,
+      "y": 118.28,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5603,7 +5888,7 @@
     {
       "id": "5141041000000372",
       "x": 9.2,
-      "y": 135.78,
+      "y": 121.38,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5618,8 +5903,8 @@
     },
     {
       "id": "5141041000000373",
-      "x": 4.6,
-      "y": 69.68,
+      "x": 0.0,
+      "y": 62.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5635,9 +5920,9 @@
     {
       "id": "5141041000000374",
       "x": 0.0,
-      "y": 145.18,
+      "y": 129.505,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5651,9 +5936,9 @@
     {
       "id": "5141041000000375",
       "x": -12.395,
-      "y": 145.18,
+      "y": 129.505,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -5667,7 +5952,7 @@
     {
       "id": "5141041000000376",
       "x": 0.08,
-      "y": 138.34,
+      "y": 123.49,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5683,7 +5968,7 @@
     {
       "id": "5141041000000377",
       "x": -4.6,
-      "y": 144.1,
+      "y": 128.85,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5699,7 +5984,7 @@
     {
       "id": "5141041000000378",
       "x": -4.6,
-      "y": 140.6,
+      "y": 125.75,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5714,8 +5999,8 @@
     },
     {
       "id": "5141041000000379",
-      "x": 9.2,
-      "y": 147.6,
+      "x": 0.0,
+      "y": 131.95,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5730,8 +6015,8 @@
     },
     {
       "id": "514104100000037A",
-      "x": 0.0,
-      "y": 147.6,
+      "x": -4.6,
+      "y": 131.95,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5746,8 +6031,8 @@
     },
     {
       "id": "514104100000037B",
-      "x": 0.0,
-      "y": 151.1,
+      "x": -4.6,
+      "y": 135.05,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5763,9 +6048,9 @@
     {
       "id": "514104100000037C",
       "x": 0.0,
-      "y": 158.75,
+      "y": 141.625,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5779,9 +6064,9 @@
     {
       "id": "514104100000037D",
       "x": -12.395,
-      "y": 158.75,
+      "y": 141.625,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -5795,7 +6080,7 @@
     {
       "id": "514104100000037E",
       "x": 0.08,
-      "y": 153.66,
+      "y": 137.16,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5811,7 +6096,7 @@
     {
       "id": "514104100000037F",
       "x": -4.6,
-      "y": 159.42,
+      "y": 142.52,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5827,7 +6112,7 @@
     {
       "id": "5141041000000380",
       "x": -4.6,
-      "y": 162.92,
+      "y": 145.62,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5842,8 +6127,8 @@
     },
     {
       "id": "5141041000000381",
-      "x": 4.6,
-      "y": 105.14,
+      "x": -4.6,
+      "y": 94.04,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5859,7 +6144,7 @@
     {
       "id": "5141041000000382",
       "x": -9.2,
-      "y": 108.64,
+      "y": 97.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5875,7 +6160,7 @@
     {
       "id": "5141041000000383",
       "x": -4.6,
-      "y": 108.64,
+      "y": 97.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5890,8 +6175,8 @@
     },
     {
       "id": "5141041000000384",
-      "x": 4.6,
-      "y": 108.64,
+      "x": 0.0,
+      "y": 97.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5906,8 +6191,8 @@
     },
     {
       "id": "5141041000000385",
-      "x": 9.2,
-      "y": 108.64,
+      "x": 4.6,
+      "y": 97.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5923,7 +6208,7 @@
     {
       "id": "5141041000000386",
       "x": -4.6,
-      "y": 155.92,
+      "y": 139.42,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -5939,9 +6224,9 @@
     {
       "id": "5141041000000387",
       "x": 0.0,
-      "y": 170.57,
+      "y": 152.195,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -5955,9 +6240,9 @@
     {
       "id": "5141041000000388",
       "x": -12.395,
-      "y": 170.57,
+      "y": 152.195,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -5971,7 +6256,7 @@
     {
       "id": "5141041000000389",
       "x": 0.08,
-      "y": 165.48,
+      "y": 147.73,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -5986,8 +6271,8 @@
     },
     {
       "id": "514104100000038A",
-      "x": -9.2,
-      "y": 81.5,
+      "x": -4.6,
+      "y": 72.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -6002,8 +6287,8 @@
     },
     {
       "id": "514104100000038B",
-      "x": 9.2,
-      "y": 81.5,
+      "x": 0.0,
+      "y": 72.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -6018,8 +6303,8 @@
     },
     {
       "id": "514104100000038C",
-      "x": -4.6,
-      "y": 171.24,
+      "x": 0.0,
+      "y": 153.09,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -6035,7 +6320,7 @@
     {
       "id": "514104100000038D",
       "x": 4.6,
-      "y": 159.42,
+      "y": 142.52,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -6051,7 +6336,7 @@
     {
       "id": "514104100000038E",
       "x": 0.0,
-      "y": 78.0,
+      "y": 69.8,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -6067,7 +6352,7 @@
     {
       "id": "514104100000038F",
       "x": 4.6,
-      "y": 155.92,
+      "y": 139.42,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

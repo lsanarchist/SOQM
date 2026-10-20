@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -65,7 +65,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401188E2DC8B2A",
@@ -117,12 +117,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401111C237D431",
       "x": -9.2,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "exmachinis:flux_compactor",
         "count": 1
@@ -160,17 +160,18 @@
           "id": "514013DAE6490512",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140119A18901AB3",
@@ -222,12 +223,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011FB04BE4F17",
       "x": 0.0,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "exmachinis:gold_upgrade",
         "count": 1
@@ -273,12 +274,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011D678215A73",
       "x": 0.0,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "exmachinis:diamond_upgrade",
         "count": 1
@@ -325,12 +326,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011FB04BE4F17": [
+          3.65,
+          9.77,
+          3.65,
+          11.94
+        ]
+      }
     },
     {
       "id": "5140114A64A45C5A",
-      "x": 9.2,
-      "y": 17.17,
+      "x": 0.0,
+      "y": 15.52,
       "icon": {
         "id": "exmachinis:netherite_upgrade",
         "count": 1
@@ -367,22 +376,31 @@
           "id": "514013B4B7C9B23A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011D678215A73": [
+          3.6,
+          12.82,
+          3.6,
+          14.99
+        ]
+      }
     },
     {
       "id": "5140113E0CEBF67F",
       "x": -4.6,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "exmachinis:comparator_upgrade",
         "count": 1
@@ -428,12 +446,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140119A18901AB3": [
+          -2.0,
+          2.25,
+          -6.6,
+          4.42
+        ]
+      }
     },
     {
       "id": "514011F45FF8C855",
       "x": 0.0,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "exmachinis:flux_hammer",
         "count": 1
@@ -495,22 +521,23 @@
           "id": "5140139239EFC10B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011ADCD0AC819",
       "x": 0.0,
-      "y": 21.99,
+      "y": 19.89,
       "icon": {
         "id": "exmachinis:flux_sieve",
         "count": 1
@@ -571,17 +598,18 @@
           "id": "5140136A25562C5A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -652,9 +680,9 @@
     {
       "id": "51410410000008B6",
       "x": 0.0,
-      "y": 3.8,
+      "y": 3.375,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -668,9 +696,9 @@
     {
       "id": "51410410000008B7",
       "x": -12.395,
-      "y": 3.8,
+      "y": 3.375,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -748,7 +776,7 @@
     {
       "id": "51410410000008BC",
       "x": -9.2,
-      "y": 11.04,
+      "y": 10.19,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -764,9 +792,9 @@
     {
       "id": "51410410000008BD",
       "x": 0.0,
-      "y": 13.87,
+      "y": 12.395,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -780,9 +808,9 @@
     {
       "id": "51410410000008BE",
       "x": -12.395,
-      "y": 13.87,
+      "y": 12.395,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -796,7 +824,7 @@
     {
       "id": "51410410000008BF",
       "x": 0.08,
-      "y": 8.78,
+      "y": 7.93,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -812,7 +840,7 @@
     {
       "id": "51410410000008C0",
       "x": 0.0,
-      "y": 11.09,
+      "y": 10.24,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -828,7 +856,7 @@
     {
       "id": "51410410000008C1",
       "x": 0.0,
-      "y": 14.59,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -843,8 +871,8 @@
     },
     {
       "id": "51410410000008C2",
-      "x": 9.2,
-      "y": 18.04,
+      "x": 0.0,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -860,7 +888,7 @@
     {
       "id": "51410410000008C3",
       "x": -4.6,
-      "y": 6.22,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -876,9 +904,9 @@
     {
       "id": "51410410000008C4",
       "x": 0.0,
-      "y": 22.19,
+      "y": 19.865,
       "width": 24.9,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -892,9 +920,9 @@
     {
       "id": "51410410000008C5",
       "x": -12.395,
-      "y": 22.19,
+      "y": 19.865,
       "width": 0.11,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -908,7 +936,7 @@
     {
       "id": "51410410000008C6",
       "x": 0.08,
-      "y": 20.6,
+      "y": 18.5,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -924,7 +952,7 @@
     {
       "id": "51410410000008C7",
       "x": 0.0,
-      "y": 6.27,
+      "y": 5.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -940,7 +968,7 @@
     {
       "id": "51410410000008C8",
       "x": 0.0,
-      "y": 22.91,
+      "y": 20.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

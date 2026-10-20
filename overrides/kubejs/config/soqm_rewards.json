@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "version": "2.0",
+  "version": "2.1",
   "levels": [
     {
       "level": 1,
@@ -52,33 +52,16 @@
     }
   ],
   "draws_by_level": [
-    2,
-    2,
-    3,
     3,
     3,
     4,
-    4
+    4,
+    4,
+    5,
+    5
   ],
+  "guaranteed_quality_draws": 1,
   "rarity_weights_by_level": [
-    {
-      "common": 70,
-      "uncommon": 25,
-      "rare": 4,
-      "epic": 1
-    },
-    {
-      "common": 65,
-      "uncommon": 28,
-      "rare": 6,
-      "epic": 1
-    },
-    {
-      "common": 58,
-      "uncommon": 31,
-      "rare": 9,
-      "epic": 2
-    },
     {
       "common": 50,
       "uncommon": 35,
@@ -93,15 +76,33 @@
     },
     {
       "common": 38,
-      "uncommon": 39,
-      "rare": 18,
+      "uncommon": 38,
+      "rare": 19,
       "epic": 5
     },
     {
-      "common": 32,
-      "uncommon": 41,
-      "rare": 21,
-      "epic": 6
+      "common": 30,
+      "uncommon": 40,
+      "rare": 23,
+      "epic": 7
+    },
+    {
+      "common": 24,
+      "uncommon": 40,
+      "rare": 27,
+      "epic": 9
+    },
+    {
+      "common": 18,
+      "uncommon": 40,
+      "rare": 30,
+      "epic": 12
+    },
+    {
+      "common": 12,
+      "uncommon": 40,
+      "rare": 33,
+      "epic": 15
     }
   ],
   "pools": [
@@ -115,7 +116,7 @@
       "entries": [
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -126,7 +127,7 @@
         },
         {
           "item": "minecraft:torch",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -137,7 +138,7 @@
         },
         {
           "item": "minecraft:oak_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -148,7 +149,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -159,7 +160,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -170,7 +171,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -181,7 +182,7 @@
         },
         {
           "item": "ecologics:coconut_slice",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -192,7 +193,7 @@
         },
         {
           "item": "ecologics:walnut",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -203,7 +204,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -214,7 +215,7 @@
         },
         {
           "item": "aether:blue_berry",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -225,7 +226,7 @@
         },
         {
           "item": "ecologics:coconut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -239,7 +240,7 @@
         },
         {
           "item": "ecologics:walnut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -254,7 +255,7 @@
         {
           "item": "exdeorum:crook",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -268,7 +269,7 @@
         {
           "item": "exdeorum:wooden_hammer",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -323,7 +324,7 @@
         },
         {
           "item": "millenaire:masa",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -371,19 +372,19 @@
       "fallback": "survival",
       "entries": [
         {
-          "item": "minecraft:iron_nugget",
-          "count": 4,
+          "item": "minecraft:redstone",
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок заліза",
-            "en_us": "Iron Nugget"
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
           }
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -394,7 +395,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -405,7 +406,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -415,19 +416,19 @@
           }
         },
         {
-          "item": "minecraft:gold_nugget",
+          "item": "minecraft:gold_ingot",
           "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок золота",
-            "en_us": "Gold Nugget"
+            "uk_ua": "Золотий зливок",
+            "en_us": "Gold Ingot"
           }
         },
         {
           "item": "immersiveengineering:plate_iron",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -441,7 +442,7 @@
         },
         {
           "item": "immersiveengineering:plate_copper",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -455,7 +456,7 @@
         },
         {
           "item": "immersiveengineering:plate_aluminum",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -469,7 +470,7 @@
         },
         {
           "item": "immersiveengineering:plate_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -483,7 +484,7 @@
         },
         {
           "item": "immersiveengineering:stick_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -497,7 +498,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_copper",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -511,7 +512,7 @@
         },
         {
           "item": "immersiveengineering:hemp_fabric",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -525,7 +526,7 @@
         },
         {
           "item": "immersiveengineering:treated_wood_horizontal",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -568,7 +569,7 @@
         {
           "item": "immersiveengineering:hammer",
           "count": 1,
-          "weight": 5,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -582,7 +583,7 @@
         {
           "item": "immersiveengineering:screwdriver",
           "count": 1,
-          "weight": 5,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -703,7 +704,7 @@
       "entries": [
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -714,7 +715,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -725,7 +726,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -736,7 +737,7 @@
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -747,7 +748,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -758,7 +759,7 @@
         },
         {
           "item": "mekanism:basic_control_circuit",
-          "count": 1,
+          "count": 4,
           "weight": 16,
           "rarity": "uncommon",
           "min_level": 0,
@@ -814,7 +815,7 @@
         },
         {
           "item": "mekanism:alloy_infused",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 0,
@@ -898,7 +899,7 @@
         },
         {
           "item": "enderio:basic_capacitor",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1034,7 +1035,7 @@
       "entries": [
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1045,7 +1046,7 @@
         },
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1056,7 +1057,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1067,7 +1068,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1078,7 +1079,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1089,7 +1090,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_copper",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1103,7 +1104,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_electrum",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1117,7 +1118,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_steel",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1131,7 +1132,7 @@
         },
         {
           "item": "immersiveengineering:connector_lv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1159,7 +1160,7 @@
         },
         {
           "item": "immersiveengineering:connector_mv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1187,7 +1188,7 @@
         },
         {
           "item": "immersiveengineering:connector_hv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1285,7 +1286,7 @@
         },
         {
           "item": "mekanism:basic_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1299,7 +1300,7 @@
         },
         {
           "item": "mekanism:advanced_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1313,7 +1314,7 @@
         },
         {
           "item": "mekanism:elite_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 3,
@@ -1365,7 +1366,7 @@
       "entries": [
         {
           "item": "minecraft:paper",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1376,7 +1377,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1387,7 +1388,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1397,19 +1398,19 @@
           }
         },
         {
-          "item": "minecraft:iron_nugget",
-          "count": 4,
+          "item": "minecraft:iron_ingot",
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок заліза",
-            "en_us": "Iron Nugget"
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
           }
         },
         {
           "item": "minecraft:redstone",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1546,7 +1547,7 @@
         },
         {
           "item": "ae2:fluix_glass_cable",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1560,7 +1561,7 @@
         },
         {
           "item": "ae2:quartz_fiber",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1696,7 +1697,7 @@
       "entries": [
         {
           "item": "minecraft:paper",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1707,7 +1708,7 @@
         },
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1718,7 +1719,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1729,7 +1730,7 @@
         },
         {
           "item": "minecraft:amethyst_shard",
-          "count": 1,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1740,7 +1741,7 @@
         },
         {
           "item": "minecraft:sugar",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1752,7 +1753,7 @@
         {
           "item": "ae2:certus_quartz_cutting_knife",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -1766,7 +1767,7 @@
         {
           "item": "ae2:certus_quartz_wrench",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -1971,7 +1972,7 @@
       "entries": [
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1982,7 +1983,7 @@
         },
         {
           "item": "minecraft:amethyst_shard",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1993,7 +1994,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2004,7 +2005,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2015,7 +2016,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2026,7 +2027,7 @@
         },
         {
           "item": "botania:white_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2040,7 +2041,7 @@
         },
         {
           "item": "botania:purple_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2054,7 +2055,7 @@
         },
         {
           "item": "botania:light_blue_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2068,7 +2069,7 @@
         },
         {
           "item": "botania:pink_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2097,7 +2098,7 @@
         {
           "item": "botania:lexicon",
           "count": 1,
-          "weight": 3,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -2302,7 +2303,7 @@
       "entries": [
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2313,7 +2314,7 @@
         },
         {
           "item": "minecraft:torch",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2324,7 +2325,7 @@
         },
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2335,7 +2336,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2346,7 +2347,7 @@
         },
         {
           "item": "minecraft:white_wool",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2357,7 +2358,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2368,7 +2369,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2379,7 +2380,7 @@
         },
         {
           "item": "twilightforest:cooked_meef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2390,7 +2391,7 @@
         },
         {
           "item": "aether:blue_berry",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2401,7 +2402,7 @@
         },
         {
           "item": "ecologics:coconut_slice",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2482,7 +2483,7 @@
         },
         {
           "item": "aether:ambrosium_torch",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2590,7 +2591,7 @@
       "entries": [
         {
           "item": "minecraft:brick",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2601,7 +2602,7 @@
         },
         {
           "item": "minecraft:oak_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2612,7 +2613,7 @@
         },
         {
           "item": "minecraft:white_wool",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2623,7 +2624,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2634,7 +2635,7 @@
         },
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2645,7 +2646,7 @@
         },
         {
           "item": "ecologics:coconut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2659,7 +2660,7 @@
         },
         {
           "item": "ecologics:walnut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2673,7 +2674,7 @@
         },
         {
           "item": "ecologics:azalea_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2687,7 +2688,7 @@
         },
         {
           "item": "millenaire:byzantine_stone_tiles",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2701,7 +2702,7 @@
         },
         {
           "item": "millenaire:byzantine_sandstone_tiles",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2715,7 +2716,7 @@
         },
         {
           "item": "millenaire:ice_brick",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2729,7 +2730,7 @@
         },
         {
           "item": "millenaire:masa",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2754,7 +2755,7 @@
         },
         {
           "item": "immersiveengineering:treated_wood_horizontal",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2918,7 +2919,7 @@
       "entries": [
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2929,7 +2930,7 @@
         },
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2940,7 +2941,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2951,7 +2952,7 @@
         },
         {
           "item": "minecraft:golden_carrot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2962,7 +2963,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2973,7 +2974,7 @@
         },
         {
           "item": "ad_astra:iron_rod",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -2987,7 +2988,7 @@
         },
         {
           "item": "ad_astra:steel_rod",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -3001,7 +3002,7 @@
         },
         {
           "item": "immersiveengineering:plate_iron",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -3015,7 +3016,7 @@
         },
         {
           "item": "immersiveengineering:plate_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -3085,7 +3086,7 @@
         },
         {
           "item": "ad_astra:steel_cable",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -3099,7 +3100,7 @@
         },
         {
           "item": "ad_astra:desh_cable",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 3,
@@ -3225,7 +3226,7 @@
         },
         {
           "item": "ad_astra:cheese",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3246,7 +3247,7 @@
       "entries": [
         {
           "item": "minecraft:sand",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3257,7 +3258,7 @@
         },
         {
           "item": "minecraft:gravel",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3268,7 +3269,7 @@
         },
         {
           "item": "minecraft:cobblestone",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3279,7 +3280,7 @@
         },
         {
           "item": "minecraft:clay_ball",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3290,7 +3291,7 @@
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3302,7 +3303,7 @@
         {
           "item": "exdeorum:crook",
           "count": 1,
-          "weight": 6,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -3316,7 +3317,7 @@
         {
           "item": "exdeorum:bone_crook",
           "count": 1,
-          "weight": 6,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -3330,7 +3331,7 @@
         {
           "item": "exdeorum:wooden_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -3344,7 +3345,7 @@
         {
           "item": "exdeorum:iron_hammer",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -3358,7 +3359,7 @@
         {
           "item": "exdeorum:diamond_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "rare",
           "min_level": 1,
           "name": {
@@ -3512,7 +3513,7 @@
         {
           "item": "exmachinis:flux_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "rare",
           "min_level": 2,
           "name": {
@@ -3577,7 +3578,7 @@
       "entries": [
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3588,7 +3589,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3599,7 +3600,7 @@
         },
         {
           "item": "minecraft:bone",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3610,7 +3611,7 @@
         },
         {
           "item": "minecraft:cooked_beef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3621,7 +3622,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3632,7 +3633,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3643,7 +3644,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3654,7 +3655,7 @@
         },
         {
           "item": "twilightforest:cooked_meef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3899,7 +3900,7 @@
       "entries": [
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3910,7 +3911,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3921,7 +3922,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3932,7 +3933,7 @@
         },
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3943,7 +3944,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4230,7 +4231,7 @@
       "entries": [
         {
           "item": "minecraft:emerald",
-          "count": 1,
+          "count": 3,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4241,7 +4242,7 @@
         },
         {
           "item": "minecraft:gold_ingot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4252,7 +4253,7 @@
         },
         {
           "item": "minecraft:golden_carrot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4263,7 +4264,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4761,21 +4762,9 @@
       "pool": "arcane",
       "quest_id": "513011655059FC86"
     },
-    "5130130033877C2D": {
-      "pool": "expedition",
-      "quest_id": "513011F0630D0738"
-    },
-    "513013004A550A1B": {
-      "pool": "equipment",
-      "quest_id": "514D11ECA99D525F"
-    },
     "513013006AF40386": {
       "pool": "settlement",
       "quest_id": "513011217B2014E3"
-    },
-    "513013007C1147CA": {
-      "pool": "arcane",
-      "quest_id": "5130119992BFAE06"
     },
     "51301300FBC16190": {
       "pool": "expedition",
@@ -4837,10 +4826,6 @@
       "pool": "engineering",
       "quest_id": "51301100456EE266"
     },
-    "5130130443ADE4C4": {
-      "pool": "engineering",
-      "quest_id": "5130111E28B22B76"
-    },
     "513013044872CB33": {
       "pool": "expedition",
       "quest_id": "51301114FD69794B"
@@ -4864,10 +4849,6 @@
     "51301305261F1770": {
       "pool": "engineering",
       "quest_id": "51301108B9C415A1"
-    },
-    "51301305642F3648": {
-      "pool": "logistics",
-      "quest_id": "5130110C02719C96"
     },
     "51301305BF792DB0": {
       "pool": "engineering",
@@ -4908,10 +4889,6 @@
     "51301307572A4216": {
       "pool": "logistics",
       "quest_id": "5130112D00658B23"
-    },
-    "51301307B8FC130C": {
-      "pool": "expedition",
-      "quest_id": "5130116538F34234"
     },
     "51301307FC046291": {
       "pool": "logistics",
@@ -4985,10 +4962,6 @@
       "pool": "engineering",
       "quest_id": "5130116E0F6E97FC"
     },
-    "51301309E7B674C2": {
-      "pool": "masterwork",
-      "quest_id": "513011CB9674DBF8"
-    },
     "5130130A2C569A0B": {
       "pool": "engineering",
       "quest_id": "51301135FC827F35"
@@ -5017,10 +4990,6 @@
       "pool": "logistics",
       "quest_id": "5130113102728BD5"
     },
-    "5130130B246F2867": {
-      "pool": "engineering",
-      "quest_id": "513011B12DC6165B"
-    },
     "5130130B56BC5248": {
       "pool": "arcane",
       "quest_id": "513011CB5D00E40B"
@@ -5028,14 +4997,6 @@
     "5130130B62348F9B": {
       "pool": "engineering",
       "quest_id": "513011ECEDA27FBB"
-    },
-    "5130130B6AA0D8EE": {
-      "pool": "arcane",
-      "quest_id": "513011EAB08A97F7"
-    },
-    "5130130B7A24B872": {
-      "pool": "engineering",
-      "quest_id": "51301157FF888779"
     },
     "5130130B8382D69A": {
       "pool": "expedition",
@@ -5121,10 +5082,6 @@
       "pool": "power",
       "quest_id": "513011E76CA4FC3F"
     },
-    "5130130FC5272E07": {
-      "pool": "space",
-      "quest_id": "5130113E390D02AA"
-    },
     "5130130FD776729D": {
       "pool": "engineering",
       "quest_id": "513011060A137580"
@@ -5141,10 +5098,6 @@
       "pool": "expedition",
       "quest_id": "51301187CBCBEF83"
     },
-    "513013105B811497": {
-      "pool": "expedition",
-      "quest_id": "51301150CA097A15"
-    },
     "51301310690F8DEF": {
       "pool": "power",
       "quest_id": "5130114F36192ADA"
@@ -5156,10 +5109,6 @@
     "51301310D4BF1448": {
       "pool": "space",
       "quest_id": "51301107EA34F802"
-    },
-    "51301311270A34D4": {
-      "pool": "logistics",
-      "quest_id": "513011AF7E8D7059"
     },
     "513013114D1098EA": {
       "pool": "survival",
@@ -5176,10 +5125,6 @@
     "51301311F1CC2C86": {
       "pool": "masterwork",
       "quest_id": "5130111A96A5FE8C"
-    },
-    "51301312331034AF": {
-      "pool": "expedition",
-      "quest_id": "513011BE93BB8ADB"
     },
     "51301312C40BFE1B": {
       "pool": "masterwork",
@@ -5220,14 +5165,6 @@
     "51301313D9B94354": {
       "pool": "expedition",
       "quest_id": "513011BE0B81B33E"
-    },
-    "51301313DB0749B8": {
-      "pool": "engineering",
-      "quest_id": "513011162F45B0CF"
-    },
-    "51301313F5EC0CC8": {
-      "pool": "expedition",
-      "quest_id": "513011D9B1021490"
     },
     "5130131409AD80CB": {
       "pool": "power",
@@ -5273,10 +5210,6 @@
       "pool": "engineering",
       "quest_id": "513011107F0255F3"
     },
-    "51301316409BDA7F": {
-      "pool": "survival",
-      "quest_id": "514D010000000006"
-    },
     "51301316AC47F5B6": {
       "pool": "masterwork",
       "quest_id": "513011D3B3CABBD0"
@@ -5301,10 +5234,6 @@
       "pool": "logistics",
       "quest_id": "51301100A7D9F653"
     },
-    "51301317453199B1": {
-      "pool": "power",
-      "quest_id": "514D111250CFCDBB"
-    },
     "5130131750266930": {
       "pool": "space",
       "quest_id": "5130119A494692FD"
@@ -5320,10 +5249,6 @@
     "51301317D73788B2": {
       "pool": "expedition",
       "quest_id": "513011F6BD8455A6"
-    },
-    "51301318002830F1": {
-      "pool": "expedition",
-      "quest_id": "51301115487D09F6"
     },
     "5130131858FCCB09": {
       "pool": "arcane",
@@ -5405,10 +5330,6 @@
       "pool": "expedition",
       "quest_id": "513011B318B08FA9"
     },
-    "5130131D34A26F8E": {
-      "pool": "logistics",
-      "quest_id": "513011D4AD7B73EE"
-    },
     "5130131D3ED2FE4F": {
       "pool": "engineering",
       "quest_id": "5130116E42F14F4E"
@@ -5440,14 +5361,6 @@
     "5130131DD4C64195": {
       "pool": "masterwork",
       "quest_id": "513011404E68C817"
-    },
-    "5130131E1F509717": {
-      "pool": "arcane",
-      "quest_id": "51301123305026D9"
-    },
-    "5130131E309CF0C9": {
-      "pool": "expedition",
-      "quest_id": "513011700E5507DB"
     },
     "5130131E3F03A7DB": {
       "pool": "equipment",
@@ -5597,10 +5510,6 @@
       "pool": "arcane",
       "quest_id": "513011BB3FBFDB27"
     },
-    "51301324167E9AE0": {
-      "pool": "equipment",
-      "quest_id": "514D11BFE1742CD9"
-    },
     "5130132429886DC4": {
       "pool": "arcane",
       "quest_id": "513011302BF63D2D"
@@ -5625,10 +5534,6 @@
       "pool": "engineering",
       "quest_id": "513011CCFE17F1FB"
     },
-    "513013250FE98D8E": {
-      "pool": "power",
-      "quest_id": "513011FE8D522CBB"
-    },
     "5130132520E0EDBA": {
       "pool": "masterwork",
       "quest_id": "5130116C9E28AC95"
@@ -5636,10 +5541,6 @@
     "51301325434CEBF3": {
       "pool": "expedition",
       "quest_id": "513011963E4F628C"
-    },
-    "513013254B0F3F6C": {
-      "pool": "workshop",
-      "quest_id": "51301102B4D1DEF4"
     },
     "513013258DDA9765": {
       "pool": "space",
@@ -5668,14 +5569,6 @@
     "51301326C2CCD80A": {
       "pool": "engineering",
       "quest_id": "513011D73BA114A4"
-    },
-    "51301326FABEFD1B": {
-      "pool": "expedition",
-      "quest_id": "513011FA4C1840FC"
-    },
-    "513013279D1E2D37": {
-      "pool": "engineering",
-      "quest_id": "5130113654970E2B"
     },
     "51301327AE279A08": {
       "pool": "expedition",
@@ -5761,10 +5654,6 @@
       "pool": "power",
       "quest_id": "51301145F95C79CF"
     },
-    "5130132D111EDAE1": {
-      "pool": "arcane",
-      "quest_id": "513011DB110983FB"
-    },
     "5130132D68C8B4C8": {
       "pool": "engineering",
       "quest_id": "513011FD1111D1BA"
@@ -5849,10 +5738,6 @@
       "pool": "logistics",
       "quest_id": "513011C785AE43D5"
     },
-    "513013318FC95F5F": {
-      "pool": "space",
-      "quest_id": "5130112935FFF4C2"
-    },
     "51301331D69BD6AF": {
       "pool": "expedition",
       "quest_id": "513011B5C9550701"
@@ -5929,10 +5814,6 @@
       "pool": "arcane",
       "quest_id": "51301160448F0207"
     },
-    "51301335F4EDECFC": {
-      "pool": "masterwork",
-      "quest_id": "51301130F8B93E94"
-    },
     "5130133609B51B70": {
       "pool": "expedition",
       "quest_id": "51301123DAC0957F"
@@ -5948,10 +5829,6 @@
     "5130133672706650": {
       "pool": "engineering",
       "quest_id": "51301154F33E4BE9"
-    },
-    "51301336F4CB08B2": {
-      "pool": "logistics",
-      "quest_id": "5130116CC5036025"
     },
     "513013372EE61ED5": {
       "pool": "logistics",
@@ -6017,10 +5894,6 @@
       "pool": "equipment",
       "quest_id": "513011836E679166"
     },
-    "513013391ECDBE42": {
-      "pool": "logistics",
-      "quest_id": "51301104CFA9A015"
-    },
     "513013395609378F": {
       "pool": "equipment",
       "quest_id": "513011A3D94B7550"
@@ -6045,10 +5918,6 @@
       "pool": "engineering",
       "quest_id": "5130112203442BAE"
     },
-    "5130133AEC4DAA16": {
-      "pool": "engineering",
-      "quest_id": "514D113A135370A8"
-    },
     "5130133B3E380E62": {
       "pool": "logistics",
       "quest_id": "5130111899C7AD4E"
@@ -6069,10 +5938,6 @@
       "pool": "equipment",
       "quest_id": "513011124C2200C6"
     },
-    "5130133C4132A439": {
-      "pool": "expedition",
-      "quest_id": "513011FE794AFF67"
-    },
     "5130133C4CBFDCEA": {
       "pool": "engineering",
       "quest_id": "513011B3B6161380"
@@ -6088,10 +5953,6 @@
     "5130133CB300A510": {
       "pool": "equipment",
       "quest_id": "5130117D1CEC7C24"
-    },
-    "5130133D07B2445D": {
-      "pool": "expedition",
-      "quest_id": "5130112091E38E8F"
     },
     "5130133D13E5C628": {
       "pool": "expedition",
@@ -6121,14 +5982,6 @@
       "pool": "logistics",
       "quest_id": "513011A5B6C4DF0D"
     },
-    "5130133E6786529D": {
-      "pool": "expedition",
-      "quest_id": "5130115D5E2B60E3"
-    },
-    "5130133EB86E7FA6": {
-      "pool": "engineering",
-      "quest_id": "513011585394EA3D"
-    },
     "5130133ED3B7EB50": {
       "pool": "power",
       "quest_id": "51301181BF058BAE"
@@ -6136,10 +5989,6 @@
     "5130133EF7E44199": {
       "pool": "logistics",
       "quest_id": "51301111F4AEB3F2"
-    },
-    "5130133F02B3DD53": {
-      "pool": "engineering",
-      "quest_id": "513011AE9CF26AB0"
     },
     "5130133F20C2DC23": {
       "pool": "expedition",
@@ -6152,10 +6001,6 @@
     "5130133F66842E80": {
       "pool": "engineering",
       "quest_id": "5130110429A8D512"
-    },
-    "5130133F7542FFFC": {
-      "pool": "power",
-      "quest_id": "514D114878C1E1BB"
     },
     "5130133F7940A8A3": {
       "pool": "arcane",
@@ -6212,10 +6057,6 @@
     "513013425FA71CBA": {
       "pool": "power",
       "quest_id": "514D1149705848EC"
-    },
-    "5130134291EF9EBA": {
-      "pool": "expedition",
-      "quest_id": "513011018F3848CA"
     },
     "51301342A96AC7ED": {
       "pool": "engineering",
@@ -6289,17 +6130,9 @@
       "pool": "engineering",
       "quest_id": "513011B10EB819FC"
     },
-    "51301347DC6A02C0": {
-      "pool": "masterwork",
-      "quest_id": "513011AFDB9BDA41"
-    },
     "51301347FE65A372": {
       "pool": "equipment",
       "quest_id": "513011FEFCD336E1"
-    },
-    "5130134810DEBB10": {
-      "pool": "logistics",
-      "quest_id": "5130119AFFF720CF"
     },
     "51301348A7108E0F": {
       "pool": "engineering",
@@ -6357,17 +6190,9 @@
       "pool": "engineering",
       "quest_id": "514D11B512FA3533"
     },
-    "5130134B4E6D6CA4": {
-      "pool": "masterwork",
-      "quest_id": "513011C1CC3201F5"
-    },
     "5130134BB758069B": {
       "pool": "expedition",
       "quest_id": "5130117DF0192CE7"
-    },
-    "5130134BCFE39813": {
-      "pool": "arcane",
-      "quest_id": "513011241BDCE00F"
     },
     "5130134BD6433114": {
       "pool": "expedition",
@@ -6396,10 +6221,6 @@
     "5130134CCF05ADA5": {
       "pool": "arcane",
       "quest_id": "5130118499B8884C"
-    },
-    "5130134CD21F4AD2": {
-      "pool": "space",
-      "quest_id": "51301138CDC4FC6E"
     },
     "5130134D0671E374": {
       "pool": "arcane",
@@ -6497,10 +6318,6 @@
       "pool": "equipment",
       "quest_id": "5130115D13948627"
     },
-    "51301352C8FEE577": {
-      "pool": "expedition",
-      "quest_id": "513011ABF651041B"
-    },
     "51301352DD1726DC": {
       "pool": "workshop",
       "quest_id": "5130114557E8D53C"
@@ -6508,10 +6325,6 @@
     "51301352F13197E9": {
       "pool": "engineering",
       "quest_id": "513011E68E6D4690"
-    },
-    "5130135358B729D5": {
-      "pool": "expedition",
-      "quest_id": "51301121EF0C7608"
     },
     "5130135383D39F36": {
       "pool": "logistics",
@@ -6597,10 +6410,6 @@
       "pool": "logistics",
       "quest_id": "513011EFF7B42EB6"
     },
-    "513013574F1D9E34": {
-      "pool": "engineering",
-      "quest_id": "513011306BCB6E37"
-    },
     "51301357660E2D34": {
       "pool": "expedition",
       "quest_id": "513011A96AABC497"
@@ -6620,10 +6429,6 @@
     "51301357FFE0BE76": {
       "pool": "logistics",
       "quest_id": "51301185B7779201"
-    },
-    "5130135811F5DC0A": {
-      "pool": "arcane",
-      "quest_id": "5130117ABA3F4F64"
     },
     "51301358553FCE92": {
       "pool": "expedition",
@@ -6665,18 +6470,6 @@
       "pool": "workshop",
       "quest_id": "513011B07B76EA2C"
     },
-    "5130135A42DD6ADE": {
-      "pool": "expedition",
-      "quest_id": "5130117E7F94CA5C"
-    },
-    "5130135ABE9CDF03": {
-      "pool": "arcane",
-      "quest_id": "5130111529940E76"
-    },
-    "5130135ACD5C3CDC": {
-      "pool": "expedition",
-      "quest_id": "5130111375CD52A0"
-    },
     "5130135B20B2B46F": {
       "pool": "arcane",
       "quest_id": "513011F6BBEDC253"
@@ -6713,10 +6506,6 @@
       "pool": "workshop",
       "quest_id": "5130114A1BBCC155"
     },
-    "5130135C7D41DC36": {
-      "pool": "equipment",
-      "quest_id": "514D110144C01D44"
-    },
     "5130135CBD02A5EC": {
       "pool": "equipment",
       "quest_id": "51301110DB5170F7"
@@ -6732,10 +6521,6 @@
     "5130135E0722A1EC": {
       "pool": "space",
       "quest_id": "513011F70694CD2B"
-    },
-    "5130135E0A020371": {
-      "pool": "expedition",
-      "quest_id": "513011D34FFB9C53"
     },
     "5130135E252622A7": {
       "pool": "arcane",
@@ -6909,10 +6694,6 @@
       "pool": "engineering",
       "quest_id": "51301109BDC10F3A"
     },
-    "51301364C9254D11": {
-      "pool": "workshop",
-      "quest_id": "513011BD6664E0BF"
-    },
     "51301364E2C747DF": {
       "pool": "expedition",
       "quest_id": "513011517D617212"
@@ -6997,14 +6778,6 @@
       "pool": "engineering",
       "quest_id": "5130118E4A798482"
     },
-    "513013698733D4DC": {
-      "pool": "logistics",
-      "quest_id": "513011675037BC60"
-    },
-    "51301369BC34CB8C": {
-      "pool": "expedition",
-      "quest_id": "513011FE549D5980"
-    },
     "51301369CC589D7D": {
       "pool": "masterwork",
       "quest_id": "513011417ED6EDBA"
@@ -7036,10 +6809,6 @@
     "5130136B3B66C2F8": {
       "pool": "expedition",
       "quest_id": "51301110D8084092"
-    },
-    "5130136B64A9EA15": {
-      "pool": "expedition",
-      "quest_id": "513011B0809BAB8B"
     },
     "5130136B71ACEE1D": {
       "pool": "space",
@@ -7073,10 +6842,6 @@
       "pool": "engineering",
       "quest_id": "513011151DE90C52"
     },
-    "5130136C7F01EC1C": {
-      "pool": "masterwork",
-      "quest_id": "513011AD19E4FCFC"
-    },
     "5130136C9ACB305B": {
       "pool": "expedition",
       "quest_id": "5130112BF3B7F080"
@@ -7101,10 +6866,6 @@
       "pool": "arcane",
       "quest_id": "513011BD49DF9AAC"
     },
-    "5130136D5DF488FE": {
-      "pool": "engineering",
-      "quest_id": "51301110A6A327AA"
-    },
     "5130136DC7640D2F": {
       "pool": "survival",
       "quest_id": "51301192168BC828"
@@ -7124,10 +6885,6 @@
     "5130136E3FF23FBF": {
       "pool": "equipment",
       "quest_id": "513011230C7B3A12"
-    },
-    "5130136E7AC288E4": {
-      "pool": "engineering",
-      "quest_id": "513011EE444C38AF"
     },
     "5130136EA7B5354D": {
       "pool": "arcane",
@@ -7165,10 +6922,6 @@
       "pool": "logistics",
       "quest_id": "5130115C2448F78F"
     },
-    "51301371236B752E": {
-      "pool": "masterwork",
-      "quest_id": "513011103736AECD"
-    },
     "51301371599BD9A3": {
       "pool": "arcane",
       "quest_id": "513011E3EC40F79D"
@@ -7188,10 +6941,6 @@
     "51301372F857958F": {
       "pool": "logistics",
       "quest_id": "513011BB9E9B9B54"
-    },
-    "513013736D0653A4": {
-      "pool": "logistics",
-      "quest_id": "513011CC15383729"
     },
     "5130137375E5CA3E": {
       "pool": "survival",
@@ -7268,10 +7017,6 @@
     "513013756E83C87F": {
       "pool": "logistics",
       "quest_id": "51301136600E9A01"
-    },
-    "513013756F2D87F7": {
-      "pool": "expedition",
-      "quest_id": "513011A9F6BAF65C"
     },
     "51301375E2F44141": {
       "pool": "engineering",
@@ -7409,10 +7154,6 @@
       "pool": "arcane",
       "quest_id": "51301163CE330CB8"
     },
-    "5130137D55EB5F14": {
-      "pool": "equipment",
-      "quest_id": "514D11053C24F796"
-    },
     "5130137D85C8E5FD": {
       "pool": "expedition",
       "quest_id": "513011489F1ED676"
@@ -7465,10 +7206,6 @@
       "pool": "logistics",
       "quest_id": "51301103E224F47D"
     },
-    "513013811E72E43E": {
-      "pool": "expedition",
-      "quest_id": "5130116A0AE0BA27"
-    },
     "513013816C6A9854": {
       "pool": "expedition",
       "quest_id": "51301123FA8E2924"
@@ -7489,21 +7226,9 @@
       "pool": "equipment",
       "quest_id": "513011126D630076"
     },
-    "513013825761E0D3": {
-      "pool": "equipment",
-      "quest_id": "514D11CCD1AF477E"
-    },
     "513013825DAB077F": {
       "pool": "expedition",
       "quest_id": "513011625C2D89D5"
-    },
-    "513013826943F3AF": {
-      "pool": "arcane",
-      "quest_id": "513011F5469C1A38"
-    },
-    "513013826C383133": {
-      "pool": "engineering",
-      "quest_id": "5130114C6BBFCCCD"
     },
     "513013826F732B90": {
       "pool": "engineering",
@@ -7520,10 +7245,6 @@
     "51301382EDE5D7C0": {
       "pool": "power",
       "quest_id": "514D114E75256187"
-    },
-    "51301382F0A3B42E": {
-      "pool": "expedition",
-      "quest_id": "5130118F19BC727C"
     },
     "513013833E690311": {
       "pool": "expedition",
@@ -7569,10 +7290,6 @@
       "pool": "survival",
       "quest_id": "514D010000000008"
     },
-    "51301384FC33B82B": {
-      "pool": "workshop",
-      "quest_id": "5130112B7E67B5BF"
-    },
     "513013853322C1BF": {
       "pool": "logistics",
       "quest_id": "513011E89C668AA7"
@@ -7604,10 +7321,6 @@
     "51301386FAD44D4B": {
       "pool": "equipment",
       "quest_id": "513011DDE81BE33E"
-    },
-    "51301387157C9BCC": {
-      "pool": "engineering",
-      "quest_id": "5130111C5CB00C7E"
     },
     "51301387175D7032": {
       "pool": "expedition",
@@ -7661,10 +7374,6 @@
       "pool": "logistics",
       "quest_id": "5130117C8CDC4800"
     },
-    "51301388DD6844A1": {
-      "pool": "expedition",
-      "quest_id": "513011BD589AF72A"
-    },
     "513013890312456E": {
       "pool": "logistics",
       "quest_id": "51301199219AE3FE"
@@ -7688,10 +7397,6 @@
     "51301389BCF934AD": {
       "pool": "expedition",
       "quest_id": "513011E47BD9C066"
-    },
-    "5130138A12B779D6": {
-      "pool": "engineering",
-      "quest_id": "5130111A675CD3CC"
     },
     "5130138A2CC91328": {
       "pool": "equipment",
@@ -7737,21 +7442,9 @@
       "pool": "engineering",
       "quest_id": "5130112CBAC535EA"
     },
-    "5130138CA6AE2074": {
-      "pool": "expedition",
-      "quest_id": "513011459985A7C5"
-    },
     "5130138CC719BEB5": {
       "pool": "power",
       "quest_id": "51301153341D377A"
-    },
-    "5130138D048E7C46": {
-      "pool": "space",
-      "quest_id": "513011B86476F5E1"
-    },
-    "5130138D5DCC7794": {
-      "pool": "engineering",
-      "quest_id": "513011732D8F780E"
     },
     "5130138D74D65931": {
       "pool": "equipment",
@@ -7841,10 +7534,6 @@
       "pool": "engineering",
       "quest_id": "513011083EFED984"
     },
-    "5130139118224771": {
-      "pool": "expedition",
-      "quest_id": "5130118757F86955"
-    },
     "51301391320D98D6": {
       "pool": "engineering",
       "quest_id": "513011C37B3FFEB2"
@@ -7852,14 +7541,6 @@
     "5130139146B27BDF": {
       "pool": "masterwork",
       "quest_id": "513011D3D4BFF23C"
-    },
-    "513013916F82A916": {
-      "pool": "power",
-      "quest_id": "513011AB19DDDE4C"
-    },
-    "51301391A36FC48F": {
-      "pool": "expedition",
-      "quest_id": "513011BB6996E76A"
     },
     "51301391ACEE8F23": {
       "pool": "engineering",
@@ -8025,10 +7706,6 @@
       "pool": "expedition",
       "quest_id": "513011749691EC34"
     },
-    "5130139852054EAD": {
-      "pool": "engineering",
-      "quest_id": "5130112C76268D3A"
-    },
     "5130139862FF3C30": {
       "pool": "expedition",
       "quest_id": "513011A5FED0B898"
@@ -8088,10 +7765,6 @@
     "5130139A464F9E75": {
       "pool": "logistics",
       "quest_id": "5130119EFAA043E3"
-    },
-    "5130139A8997083F": {
-      "pool": "engineering",
-      "quest_id": "51301167AE8889AA"
     },
     "5130139AC9EF050C": {
       "pool": "space",
@@ -8209,10 +7882,6 @@
       "pool": "engineering",
       "quest_id": "5130111D0F34D9B7"
     },
-    "513013A073408713": {
-      "pool": "engineering",
-      "quest_id": "513011CA9536C271"
-    },
     "513013A07B05D112": {
       "pool": "equipment",
       "quest_id": "5130110CFD664461"
@@ -8220,10 +7889,6 @@
     "513013A0BFBEAD96": {
       "pool": "logistics",
       "quest_id": "513011B67C063C69"
-    },
-    "513013A11938B6D8": {
-      "pool": "power",
-      "quest_id": "514D11E562C03F82"
     },
     "513013A167B9C242": {
       "pool": "space",
@@ -8249,10 +7914,6 @@
       "pool": "expedition",
       "quest_id": "5130118C5D4EA695"
     },
-    "513013A2252D0DFD": {
-      "pool": "engineering",
-      "quest_id": "514D114A28816D5D"
-    },
     "513013A255C28D07": {
       "pool": "expedition",
       "quest_id": "513011CCBD23000B"
@@ -8272,14 +7933,6 @@
     "513013A3D39EDADB": {
       "pool": "expedition",
       "quest_id": "51301163E0363218"
-    },
-    "513013A3D62640F5": {
-      "pool": "expedition",
-      "quest_id": "513011F638E9FBA0"
-    },
-    "513013A3D909D0F3": {
-      "pool": "engineering",
-      "quest_id": "513011A7C9201F3C"
     },
     "513013A3F3862A1F": {
       "pool": "expedition",
@@ -8301,10 +7954,6 @@
       "pool": "logistics",
       "quest_id": "513011C1618FC593"
     },
-    "513013A5EAFCEEFD": {
-      "pool": "engineering",
-      "quest_id": "513011FFA590DC5D"
-    },
     "513013A5ECB30A4A": {
       "pool": "expedition",
       "quest_id": "5130116DB71E217F"
@@ -8312,10 +7961,6 @@
     "513013A659801480": {
       "pool": "equipment",
       "quest_id": "5130113C950B4B1B"
-    },
-    "513013A65A9EE7DD": {
-      "pool": "masterwork",
-      "quest_id": "513011530925ED63"
     },
     "513013A660FECC0A": {
       "pool": "arcane",
@@ -8357,10 +8002,6 @@
       "pool": "logistics",
       "quest_id": "513011CFF060293F"
     },
-    "513013A74D5EBC62": {
-      "pool": "masterwork",
-      "quest_id": "5130116C6474BE0E"
-    },
     "513013A7534D644F": {
       "pool": "expedition",
       "quest_id": "513011588CB720B0"
@@ -8388,10 +8029,6 @@
     "513013A8A9E9081E": {
       "pool": "engineering",
       "quest_id": "51301189138B989B"
-    },
-    "513013A8BA836DAE": {
-      "pool": "expedition",
-      "quest_id": "5130118A9899A738"
     },
     "513013A8FC09BA41": {
       "pool": "engineering",
@@ -8433,10 +8070,6 @@
       "pool": "expedition",
       "quest_id": "5130112A26C9C751"
     },
-    "513013AA39F2E133": {
-      "pool": "engineering",
-      "quest_id": "514D110A613D8197"
-    },
     "513013AA3BE5D877": {
       "pool": "engineering",
       "quest_id": "514D11AB5959BBF5"
@@ -8453,17 +8086,9 @@
       "pool": "logistics",
       "quest_id": "5130112C9685F877"
     },
-    "513013AAFC274398": {
-      "pool": "logistics",
-      "quest_id": "513011E12927F035"
-    },
     "513013AB0D371382": {
       "pool": "workshop",
       "quest_id": "513011D2087879F0"
-    },
-    "513013AB218330EB": {
-      "pool": "engineering",
-      "quest_id": "514D1154FFE3DABB"
     },
     "513013AC0450B0D6": {
       "pool": "expedition",
@@ -8485,10 +8110,6 @@
       "pool": "engineering",
       "quest_id": "5130112227C31308"
     },
-    "513013ACC0154111": {
-      "pool": "expedition",
-      "quest_id": "513011F7A8F75195"
-    },
     "513013ACC8CE7F09": {
       "pool": "arcane",
       "quest_id": "5130115B8812662A"
@@ -8496,10 +8117,6 @@
     "513013ACF61DC4B8": {
       "pool": "survival",
       "quest_id": "51301129D6E9E5E6"
-    },
-    "513013AD0EC17D8E": {
-      "pool": "masterwork",
-      "quest_id": "513011A3AC6C6FB0"
     },
     "513013AD23593794": {
       "pool": "space",
@@ -8529,18 +8146,6 @@
       "pool": "arcane",
       "quest_id": "5130113E6BB0AB8A"
     },
-    "513013AE4C1B7019": {
-      "pool": "masterwork",
-      "quest_id": "513011BD65027BE4"
-    },
-    "513013AE4EF54294": {
-      "pool": "power",
-      "quest_id": "51301182A048FC8B"
-    },
-    "513013AE534AD244": {
-      "pool": "engineering",
-      "quest_id": "5130118DB31A46A1"
-    },
     "513013AE70106538": {
       "pool": "engineering",
       "quest_id": "5130115B49AE7E7C"
@@ -8557,17 +8162,9 @@
       "pool": "expedition",
       "quest_id": "513011BD18533AD4"
     },
-    "513013AF260BDB13": {
-      "pool": "engineering",
-      "quest_id": "51301148615D2591"
-    },
     "513013AF36F8A4B1": {
       "pool": "engineering",
       "quest_id": "513011C1D784F1C8"
-    },
-    "513013AF423235D0": {
-      "pool": "expedition",
-      "quest_id": "5130113F2D7C608A"
     },
     "513013AF4E5A21E3": {
       "pool": "masterwork",
@@ -8597,10 +8194,6 @@
       "pool": "engineering",
       "quest_id": "513011B20346E7E1"
     },
-    "513013B19307F8A9": {
-      "pool": "expedition",
-      "quest_id": "513011227105E2BA"
-    },
     "513013B1B7827C75": {
       "pool": "arcane",
       "quest_id": "51301132DB8080C3"
@@ -8624,10 +8217,6 @@
     "513013B2BC3237F5": {
       "pool": "expedition",
       "quest_id": "513011D3FB0819F1"
-    },
-    "513013B2BEEDCE36": {
-      "pool": "expedition",
-      "quest_id": "513011CBBECFC29F"
     },
     "513013B2D78629D0": {
       "pool": "expedition",
@@ -8673,17 +8262,9 @@
       "pool": "logistics",
       "quest_id": "513011C6833500D4"
     },
-    "513013B57BBAF92B": {
-      "pool": "engineering",
-      "quest_id": "5130110526994D7D"
-    },
     "513013B590D72637": {
       "pool": "engineering",
       "quest_id": "513011E55E071B35"
-    },
-    "513013B5945BC89A": {
-      "pool": "expedition",
-      "quest_id": "513011653562C09D"
     },
     "513013B5A827AE3F": {
       "pool": "logistics",
@@ -8716,10 +8297,6 @@
     "513013B7721766DD": {
       "pool": "expedition",
       "quest_id": "513011618B354F5F"
-    },
-    "513013B794BCA2A4": {
-      "pool": "masterwork",
-      "quest_id": "51301197D92629DB"
     },
     "513013B7FA2C3CC3": {
       "pool": "logistics",
@@ -8756,10 +8333,6 @@
     "513013B99E5BEB37": {
       "pool": "masterwork",
       "quest_id": "513011312954C9E1"
-    },
-    "513013B9D4BFB32C": {
-      "pool": "settlement",
-      "quest_id": "513011707B727ED1"
     },
     "513013B9D5221E49": {
       "pool": "engineering",
@@ -8813,10 +8386,6 @@
       "pool": "logistics",
       "quest_id": "513011FEDA3CDB61"
     },
-    "513013BBD0480DE0": {
-      "pool": "engineering",
-      "quest_id": "513011965BAF66F4"
-    },
     "513013BBDE60061B": {
       "pool": "equipment",
       "quest_id": "514D11268DEDBF9A"
@@ -8869,21 +8438,9 @@
       "pool": "expedition",
       "quest_id": "51301113971C0E7D"
     },
-    "513013BDB2ABD4A6": {
-      "pool": "expedition",
-      "quest_id": "5130115736270719"
-    },
-    "513013BE01BBB6C1": {
-      "pool": "engineering",
-      "quest_id": "5130110CBEF3D218"
-    },
     "513013BE0264CE00": {
       "pool": "engineering",
       "quest_id": "513011C3316F044B"
-    },
-    "513013BE041CED57": {
-      "pool": "engineering",
-      "quest_id": "513011F655EF052F"
     },
     "513013BE2E649E48": {
       "pool": "equipment",
@@ -8900,10 +8457,6 @@
     "513013BF1ACA13F9": {
       "pool": "expedition",
       "quest_id": "513011D19AF9A01A"
-    },
-    "513013BF3C651C99": {
-      "pool": "engineering",
-      "quest_id": "513011D0F247BDDA"
     },
     "513013BFD2CBC380": {
       "pool": "masterwork",
@@ -8929,10 +8482,6 @@
       "pool": "engineering",
       "quest_id": "5130110BC9722D12"
     },
-    "513013C0B1392542": {
-      "pool": "logistics",
-      "quest_id": "5130113706F7FC90"
-    },
     "513013C0C579C208": {
       "pool": "logistics",
       "quest_id": "5130115F8FB3D3A3"
@@ -8949,10 +8498,6 @@
       "pool": "masterwork",
       "quest_id": "5130119CA3A263C4"
     },
-    "513013C11F0D04B2": {
-      "pool": "expedition",
-      "quest_id": "51301152CC86C89E"
-    },
     "513013C1D8483DA0": {
       "pool": "logistics",
       "quest_id": "513011FC1C704211"
@@ -8960,10 +8505,6 @@
     "513013C1FA4919A2": {
       "pool": "engineering",
       "quest_id": "51301133BE177146"
-    },
-    "513013C1FC67BF2F": {
-      "pool": "expedition",
-      "quest_id": "513011BFC9151A29"
     },
     "513013C217EF1E0B": {
       "pool": "survival",
@@ -8984,10 +8525,6 @@
     "513013C28E049368": {
       "pool": "engineering",
       "quest_id": "5130117DB13773F0"
-    },
-    "513013C2C2B9C995": {
-      "pool": "expedition",
-      "quest_id": "513011EF2E948342"
     },
     "513013C2E871C4D0": {
       "pool": "logistics",
@@ -9061,10 +8598,6 @@
       "pool": "workshop",
       "quest_id": "51301183F0DE5463"
     },
-    "513013C6CDCEA689": {
-      "pool": "expedition",
-      "quest_id": "513011E6B7A5065D"
-    },
     "513013C7034949AC": {
       "pool": "arcane",
       "quest_id": "5130111CE1F0B46F"
@@ -9108,10 +8641,6 @@
     "513013C85ECC03C6": {
       "pool": "space",
       "quest_id": "513011AC5E9A34D4"
-    },
-    "513013C867A67CEC": {
-      "pool": "engineering",
-      "quest_id": "5130119426F8E5C3"
     },
     "513013C8B4C6ED7F": {
       "pool": "expedition",
@@ -9177,10 +8706,6 @@
       "pool": "engineering",
       "quest_id": "5130116AAAF4B959"
     },
-    "513013CB84C703A2": {
-      "pool": "masterwork",
-      "quest_id": "5130114AEE1EEE9F"
-    },
     "513013CC622054D4": {
       "pool": "logistics",
       "quest_id": "5130110342A53FEB"
@@ -9192,10 +8717,6 @@
     "513013CCA5C3FAB9": {
       "pool": "settlement",
       "quest_id": "5130111ADCDF0384"
-    },
-    "513013CCB0334CAC": {
-      "pool": "equipment",
-      "quest_id": "514D11362B44E731"
     },
     "513013CCB5EB3B19": {
       "pool": "engineering",
@@ -9228,10 +8749,6 @@
     "513013CEFD29CFF9": {
       "pool": "engineering",
       "quest_id": "5130114938E63897"
-    },
-    "513013CF20AFE1E6": {
-      "pool": "settlement",
-      "quest_id": "513011FA0A66191D"
     },
     "513013CFCEE85283": {
       "pool": "engineering",
@@ -9321,10 +8838,6 @@
       "pool": "arcane",
       "quest_id": "51301188861C21A4"
     },
-    "513013D3B02E8DD1": {
-      "pool": "engineering",
-      "quest_id": "513011027911756D"
-    },
     "513013D445AC834B": {
       "pool": "arcane",
       "quest_id": "51301143DCC22642"
@@ -9348,10 +8861,6 @@
     "513013D4BA674B50": {
       "pool": "equipment",
       "quest_id": "5130111322526B1C"
-    },
-    "513013D4D9A67C5F": {
-      "pool": "expedition",
-      "quest_id": "513011148D68B3DC"
     },
     "513013D4F07E8D20": {
       "pool": "expedition",
@@ -9397,33 +8906,17 @@
       "pool": "space",
       "quest_id": "513011AC257CA77E"
     },
-    "513013D66F0ACD70": {
-      "pool": "expedition",
-      "quest_id": "5130119EE81754B1"
-    },
     "513013D694F8EA18": {
       "pool": "power",
       "quest_id": "51301124BDF694DA"
-    },
-    "513013D6BAC843BE": {
-      "pool": "expedition",
-      "quest_id": "5130117733452BD7"
     },
     "513013D74533F9C1": {
       "pool": "engineering",
       "quest_id": "5130118BFEDE7D48"
     },
-    "513013D76A9EAE5A": {
-      "pool": "expedition",
-      "quest_id": "51301101E12F76D6"
-    },
     "513013D7A5F9AD62": {
       "pool": "power",
       "quest_id": "513011C521E5B4DD"
-    },
-    "513013D7F0359385": {
-      "pool": "logistics",
-      "quest_id": "51301121F7B8F501"
     },
     "513013D7FC1209FF": {
       "pool": "engineering",
@@ -9481,10 +8974,6 @@
       "pool": "engineering",
       "quest_id": "5130116A8EF3B812"
     },
-    "513013DAE9D820AB": {
-      "pool": "engineering",
-      "quest_id": "513011905E9962AB"
-    },
     "513013DB25814938": {
       "pool": "settlement",
       "quest_id": "51301196AD7B5FE4"
@@ -9529,10 +9018,6 @@
       "pool": "expedition",
       "quest_id": "513011237EA113AB"
     },
-    "513013DCA57347A9": {
-      "pool": "masterwork",
-      "quest_id": "513011C06B143334"
-    },
     "513013DCA7BE7A8A": {
       "pool": "space",
       "quest_id": "513011BEB9C533E8"
@@ -9544,10 +9029,6 @@
     "513013DCDC8FE11A": {
       "pool": "equipment",
       "quest_id": "513011F4018BF0E3"
-    },
-    "513013DCE15174CC": {
-      "pool": "arcane",
-      "quest_id": "5130119F6CDCBAEA"
     },
     "513013DD26338982": {
       "pool": "equipment",
@@ -9585,17 +9066,9 @@
       "pool": "equipment",
       "quest_id": "514D11521F7911EE"
     },
-    "513013DE4673092F": {
-      "pool": "engineering",
-      "quest_id": "514D11F90042E7F4"
-    },
     "513013DEA2E5AA07": {
       "pool": "survival",
       "quest_id": "513011F155DE22C0"
-    },
-    "513013DEC809B782": {
-      "pool": "engineering",
-      "quest_id": "51301173D68FCBFF"
     },
     "513013DEFD95B839": {
       "pool": "engineering",
@@ -9661,10 +9134,6 @@
       "pool": "engineering",
       "quest_id": "5130114429000ED1"
     },
-    "513013E1E981D8E6": {
-      "pool": "logistics",
-      "quest_id": "5130111631820BC6"
-    },
     "513013E2E26739D5": {
       "pool": "logistics",
       "quest_id": "513011BBBBE02633"
@@ -9680,10 +9149,6 @@
     "513013E336D0FC74": {
       "pool": "expedition",
       "quest_id": "5130111A0CE60171"
-    },
-    "513013E370F2A11A": {
-      "pool": "equipment",
-      "quest_id": "514D11BF49B78F90"
     },
     "513013E373AE02B1": {
       "pool": "engineering",
@@ -9749,10 +9214,6 @@
       "pool": "settlement",
       "quest_id": "5130113F5F4A6E4A"
     },
-    "513013E6F7EF675B": {
-      "pool": "settlement",
-      "quest_id": "5130119418D33F34"
-    },
     "513013E769485E73": {
       "pool": "arcane",
       "quest_id": "51301142CC660B14"
@@ -9764,10 +9225,6 @@
     "513013E7838DDFEB": {
       "pool": "power",
       "quest_id": "51301144D5FB95D4"
-    },
-    "513013E7E630FB45": {
-      "pool": "equipment",
-      "quest_id": "514D11E79566207A"
     },
     "513013E82D44DD5F": {
       "pool": "masterwork",
@@ -9801,10 +9258,6 @@
       "pool": "equipment",
       "quest_id": "514D11E17AB94DF9"
     },
-    "513013E96F4A2592": {
-      "pool": "expedition",
-      "quest_id": "513011FC22300C21"
-    },
     "513013E98FDF9476": {
       "pool": "expedition",
       "quest_id": "513011A4DACB4F03"
@@ -9832,10 +9285,6 @@
     "513013EA04F34680": {
       "pool": "equipment",
       "quest_id": "514D11407706C5A7"
-    },
-    "513013EA18E2D583": {
-      "pool": "logistics",
-      "quest_id": "5130119B9A6344A6"
     },
     "513013EA47DE4DD5": {
       "pool": "power",
@@ -9913,10 +9362,6 @@
       "pool": "engineering",
       "quest_id": "513011933F7B17EE"
     },
-    "513013EDAEBC7D92": {
-      "pool": "masterwork",
-      "quest_id": "51301150A4E4DACB"
-    },
     "513013EDBCE4D5B4": {
       "pool": "settlement",
       "quest_id": "513011E969A0F7CE"
@@ -9957,10 +9402,6 @@
       "pool": "arcane",
       "quest_id": "513011106E68DB50"
     },
-    "513013EF97E1A220": {
-      "pool": "logistics",
-      "quest_id": "513011AAD4652E6F"
-    },
     "513013EF99CA0A21": {
       "pool": "settlement",
       "quest_id": "513011510E854F5A"
@@ -9984,10 +9425,6 @@
     "513013F051A9299C": {
       "pool": "equipment",
       "quest_id": "5130114C0AC9292F"
-    },
-    "513013F12CE7088C": {
-      "pool": "expedition",
-      "quest_id": "5130117DE98B12AB"
     },
     "513013F12E5F2F1D": {
       "pool": "logistics",
@@ -10113,10 +9550,6 @@
       "pool": "expedition",
       "quest_id": "513011663BB1FF46"
     },
-    "513013F649D011D0": {
-      "pool": "arcane",
-      "quest_id": "5130118142869DDE"
-    },
     "513013F64A9093FC": {
       "pool": "expedition",
       "quest_id": "5130113F3151ADA9"
@@ -10133,10 +9566,6 @@
       "pool": "expedition",
       "quest_id": "513011EF82DE5DDC"
     },
-    "513013F6F3FEE422": {
-      "pool": "logistics",
-      "quest_id": "5130116789638387"
-    },
     "513013F7454D643A": {
       "pool": "equipment",
       "quest_id": "514D119A0E0921E3"
@@ -10144,10 +9573,6 @@
     "513013F79B0B13AB": {
       "pool": "logistics",
       "quest_id": "5130119D00218CE6"
-    },
-    "513013F7D7D88F19": {
-      "pool": "engineering",
-      "quest_id": "51301127D84254AF"
     },
     "513013F831327DB6": {
       "pool": "power",
@@ -10197,10 +9622,6 @@
       "pool": "engineering",
       "quest_id": "513011D09E534066"
     },
-    "513013FA256B8826": {
-      "pool": "expedition",
-      "quest_id": "5130119E518C876F"
-    },
     "513013FAF905B0D2": {
       "pool": "power",
       "quest_id": "513011E1F3FBDA00"
@@ -10208,10 +9629,6 @@
     "513013FB3912F43B": {
       "pool": "arcane",
       "quest_id": "5130116BBA1515FF"
-    },
-    "513013FB62E6CF82": {
-      "pool": "engineering",
-      "quest_id": "51301103F035DDAB"
     },
     "513013FB75BB73F1": {
       "pool": "expedition",
@@ -10276,10 +9693,6 @@
     "513013FEAB721B9E": {
       "pool": "survival",
       "quest_id": "513011F253F82E4C"
-    },
-    "513013FEC9B3E824": {
-      "pool": "engineering",
-      "quest_id": "51301171CA29CEF3"
     },
     "513013FEEB9877FE": {
       "pool": "engineering",
@@ -10381,10 +9794,6 @@
       "pool": "expedition",
       "quest_id": "514011AFA54E5162"
     },
-    "514013166266B601": {
-      "pool": "workshop",
-      "quest_id": "51401117A75D3720"
-    },
     "51401316D415D8C9": {
       "pool": "workshop",
       "quest_id": "51401118B1E42386"
@@ -10396,10 +9805,6 @@
     "5140131781EC1C55": {
       "pool": "workshop",
       "quest_id": "514011DDB6B69693"
-    },
-    "51401317D6BAFDED": {
-      "pool": "expedition",
-      "quest_id": "51401196A35E940E"
     },
     "51401319020783ED": {
       "pool": "processing",
@@ -10440,10 +9845,6 @@
     "514013297968EF1B": {
       "pool": "scholar",
       "quest_id": "5140112348AE663B"
-    },
-    "5140132A9492ED8B": {
-      "pool": "workshop",
-      "quest_id": "514011C570BA4F19"
     },
     "5140132C1C8DAB93": {
       "pool": "processing",
@@ -10501,17 +9902,9 @@
       "pool": "hunting",
       "quest_id": "514011DADE40C3C5"
     },
-    "5140133FE7C8BB81": {
-      "pool": "expedition",
-      "quest_id": "5140113DC7D55324"
-    },
     "5140134049D21550": {
       "pool": "expedition",
       "quest_id": "5140118B3BD5FE05"
-    },
-    "51401342B82581A1": {
-      "pool": "hunting",
-      "quest_id": "51401108F86D0EE4"
     },
     "5140134421251BA4": {
       "pool": "processing",
@@ -10565,10 +9958,6 @@
       "pool": "expedition",
       "quest_id": "5140113F2F5DEC00"
     },
-    "514013559B7278F8": {
-      "pool": "expedition",
-      "quest_id": "5140111E50339358"
-    },
     "51401356219EB197": {
       "pool": "expedition",
       "quest_id": "51401139B8D07E4A"
@@ -10600,10 +9989,6 @@
     "5140136100966EE1": {
       "pool": "processing",
       "quest_id": "514011B0DCF6C72E"
-    },
-    "514013618239F77F": {
-      "pool": "processing",
-      "quest_id": "51401104D4E2DD1D"
     },
     "51401361BEEE75EB": {
       "pool": "expedition",
@@ -10637,10 +10022,6 @@
       "pool": "processing",
       "quest_id": "514011692B337611"
     },
-    "5140136A25562C5A": {
-      "pool": "processing",
-      "quest_id": "514011ADCD0AC819"
-    },
     "5140136F1491C1F9": {
       "pool": "expedition",
       "quest_id": "5140113854F34B41"
@@ -10660,10 +10041,6 @@
     "51401374B6CB8BB7": {
       "pool": "expedition",
       "quest_id": "51401108EBB14413"
-    },
-    "5140137AD3D91F85": {
-      "pool": "processing",
-      "quest_id": "5140118233B3CC83"
     },
     "5140137BFED41D2D": {
       "pool": "scholar",
@@ -10693,10 +10070,6 @@
       "pool": "space",
       "quest_id": "514011FE502C44A2"
     },
-    "51401385C2766AE6": {
-      "pool": "engineering",
-      "quest_id": "514011487657F862"
-    },
     "51401385C6DE2E19": {
       "pool": "scholar",
       "quest_id": "5140111D23162B73"
@@ -10725,14 +10098,6 @@
       "pool": "hunting",
       "quest_id": "51401167B654E27A"
     },
-    "5140138C8C0E491C": {
-      "pool": "expedition",
-      "quest_id": "514011A71FC3AAC5"
-    },
-    "5140138D03243658": {
-      "pool": "expedition",
-      "quest_id": "51401120C974D031"
-    },
     "5140138E1663EF51": {
       "pool": "hunting",
       "quest_id": "514011B902E6E31F"
@@ -10740,18 +10105,6 @@
     "5140138E2786413E": {
       "pool": "expedition",
       "quest_id": "5140119F077326AB"
-    },
-    "5140139057B16162": {
-      "pool": "processing",
-      "quest_id": "5140116F44752FA8"
-    },
-    "5140139239EFC10B": {
-      "pool": "processing",
-      "quest_id": "514011F45FF8C855"
-    },
-    "514013936F5AFEE9": {
-      "pool": "hunting",
-      "quest_id": "5140113D5477C077"
     },
     "51401393F67961B6": {
       "pool": "processing",
@@ -10797,10 +10150,6 @@
       "pool": "expedition",
       "quest_id": "51401119C6668C96"
     },
-    "514013A69460C391": {
-      "pool": "expedition",
-      "quest_id": "5140110E19D2CCEA"
-    },
     "514013A80FE09A5E": {
       "pool": "expedition",
       "quest_id": "514011E34E86A743"
@@ -10813,10 +10162,6 @@
       "pool": "expedition",
       "quest_id": "514011B86174F3B0"
     },
-    "514013A9DC1B41E9": {
-      "pool": "expedition",
-      "quest_id": "5140118A244326DF"
-    },
     "514013AD0D3F455A": {
       "pool": "workshop",
       "quest_id": "5140113C977B9BE0"
@@ -10824,10 +10169,6 @@
     "514013AD1529399C": {
       "pool": "space",
       "quest_id": "514011B95E770D27"
-    },
-    "514013AD5EF4ABC9": {
-      "pool": "expedition",
-      "quest_id": "514011DBDCE74F12"
     },
     "514013B25CAD7281": {
       "pool": "processing",
@@ -10840,10 +10181,6 @@
     "514013B3C859DF71": {
       "pool": "expedition",
       "quest_id": "5140114D64395E7C"
-    },
-    "514013B4B7C9B23A": {
-      "pool": "processing",
-      "quest_id": "5140114A64A45C5A"
     },
     "514013B5572FB632": {
       "pool": "expedition",
@@ -10937,10 +10274,6 @@
       "pool": "processing",
       "quest_id": "514011D7E21C7052"
     },
-    "514013CEBD970D47": {
-      "pool": "expedition",
-      "quest_id": "51401116FD1D244B"
-    },
     "514013CED8AE879D": {
       "pool": "expedition",
       "quest_id": "5140116E105CF379"
@@ -10977,10 +10310,6 @@
       "pool": "hunting",
       "quest_id": "5140115AD58E20D1"
     },
-    "514013DAE6490512": {
-      "pool": "processing",
-      "quest_id": "51401111C237D431"
-    },
     "514013DB88F23A0D": {
       "pool": "expedition",
       "quest_id": "5140113CD35EAECF"
@@ -10988,10 +10317,6 @@
     "514013DE1A9F4DC1": {
       "pool": "expedition",
       "quest_id": "514011756465E0F5"
-    },
-    "514013E18877D69B": {
-      "pool": "processing",
-      "quest_id": "5140116A490EBB49"
     },
     "514013E31F91B692": {
       "pool": "processing",
@@ -11004,10 +10329,6 @@
     "514013E567AE6378": {
       "pool": "expedition",
       "quest_id": "51401117C37D0880"
-    },
-    "514013E60692DDDD": {
-      "pool": "hunting",
-      "quest_id": "5140110D45F1DCC2"
     },
     "514013E7E30BAFD3": {
       "pool": "expedition",
@@ -11033,14 +10354,6 @@
       "pool": "processing",
       "quest_id": "514011CA86FD67E8"
     },
-    "514013ED864E755E": {
-      "pool": "workshop",
-      "quest_id": "514011A4BB290307"
-    },
-    "514013EDAAA30575": {
-      "pool": "hunting",
-      "quest_id": "5140110BC63EC2F8"
-    },
     "514013EF38A2EE3B": {
       "pool": "processing",
       "quest_id": "514011876B475765"
@@ -11056,10 +10369,6 @@
     "514013F2A2967164": {
       "pool": "scholar",
       "quest_id": "51401134EEC95469"
-    },
-    "514013F35AB42AD9": {
-      "pool": "workshop",
-      "quest_id": "514011AAAA9555C0"
     },
     "514013F68BA4973E": {
       "pool": "expedition",
@@ -11117,21 +10426,9 @@
       "pool": "logistics",
       "quest_id": "5142421100000004"
     },
-    "5142421300000005": {
-      "pool": "logistics",
-      "quest_id": "5142421100000005"
-    },
     "5142421300000006": {
       "pool": "logistics",
       "quest_id": "5142421100000006"
-    },
-    "5142421300000007": {
-      "pool": "logistics",
-      "quest_id": "5142421100000007"
-    },
-    "5142421300000008": {
-      "pool": "logistics",
-      "quest_id": "5142421100000008"
     },
     "5142421300000009": {
       "pool": "logistics",
@@ -11144,10 +10441,6 @@
     "514242130000000B": {
       "pool": "logistics",
       "quest_id": "514242110000000B"
-    },
-    "514242130000000C": {
-      "pool": "logistics",
-      "quest_id": "514242110000000C"
     },
     "514242130000000D": {
       "pool": "logistics",
@@ -11189,17 +10482,9 @@
       "pool": "logistics",
       "quest_id": "5142421100000016"
     },
-    "5142421300000017": {
-      "pool": "logistics",
-      "quest_id": "5142421100000017"
-    },
     "5142421300000018": {
       "pool": "logistics",
       "quest_id": "5142421100000018"
-    },
-    "5142421300000019": {
-      "pool": "logistics",
-      "quest_id": "5142421100000019"
     },
     "514A130000000001": {
       "pool": "engineering",

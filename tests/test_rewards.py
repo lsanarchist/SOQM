@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import campaign_rewards as rewards
 import campaign_refresh as refresh
+import campaign_compatibility as compatibility
 
 
 def load(path):
@@ -38,7 +39,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
         self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
         self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
-        self.assertEqual(len(self.runtime['reward_mappings']), 1612)
+        self.assertEqual(len(self.runtime['reward_mappings']), 1433)
         owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
         for ident, mapping in self.runtime['reward_mappings'].items():
             self.assertRegex(ident, rewards.ID_PATTERN)
@@ -49,7 +50,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_only_authorized_claim_scope_changes_without_changing_saved_ownership(self):
         identity = load(ROOT / 'metadata/campaign_identity.json')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), identity['sha256'])
-        original = deepcopy(self.chapters)
+        original = compatibility.previous_questbook(self.chapters)
         # The newly added box quest did not exist in the shared-reward release.
         # Retain that release's exact hash and test only its original objects.
         additions = identity['previous_content']
@@ -86,7 +87,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertNotIn('item', reward)
                 for locale in (uk, en):
                     self.assertTrue(locale[f"reward.{reward['id']}.title"])
-        self.assertEqual(count, 1612)
+        self.assertEqual(count, 1433)
 
     def test_fixed_milestones_and_original_personal_book_are_retained(self):
         cubes = books = 0
@@ -102,7 +103,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 else:
                     cubes += 1
                     self.assertEqual(reward['item']['id'], f"kubejs:mayhem_cube_t{self.policy['milestones'][quest['id']]['tier']}")
-        self.assertEqual((cubes, books), (14, 1))
+        self.assertEqual((cubes, books), (193, 1))
 
     def test_player_guidance_matches_personal_claims_and_real_reward_types(self):
         uk = load(rewards.QUESTS / 'lang/uk_ua.snbt')
@@ -111,7 +112,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         self.assertNotIn('Нагорода команді одноразова', all_descriptions)
         for ident in ('5142421100000008', '5142421100000017', '5142421100000019'):
             quest = next(q for q in quests(self.chapters) if q['id'] == ident)
-            self.assertTrue(all(r['type'] == 'custom' for r in quest['rewards']))
+            self.assertTrue(all(r['type'] == 'item' and r['item']['id'].startswith('kubejs:mayhem_cube_t') for r in quest['rewards']))
             self.assertNotIn('збережи куб', '\n'.join(uk[f'quest.{ident}.quest_desc']))
 
     def test_catalogue_is_substantially_larger_and_contains_real_mod_families(self):
@@ -182,19 +183,54 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertEqual(set(odds), {e['item'] for e in rewards.eligible_entries(pool, level, produced)})
 
     def test_more_draws_and_rare_group_weights_follow_actual_material_milestones(self):
-        self.assertEqual(self.policy['draws_by_level'], [2, 2, 3, 3, 3, 4, 4])
+        self.assertEqual(self.policy['draws_by_level'], [3, 3, 4, 4, 4, 5, 5])
+        self.assertEqual(self.policy['guaranteed_quality_draws'], 1)
         rare = [r['rare'] + r['epic'] for r in self.policy['rarity_weights_by_level']]
         self.assertEqual(rare, sorted(rare))
         self.assertGreater(rare[-1], rare[0])
         self.assertEqual(rewards.production_level(set(), self.policy), 0)
         self.assertEqual(rewards.production_level({'kubejs:precision_mechanism'}, self.policy), 2)
 
+    def test_reserved_quality_draw_never_opens_locked_prizes_and_has_exact_odds(self):
+        for pool in self.policy['pools']:
+            for produced in (set(), set(rewards.GATES), self.all_produced):
+                level = rewards.production_level(produced, self.policy)
+                ordinary = rewards.probabilities(pool, level, produced, self.policy)
+                quality = rewards.quality_probabilities(pool, level, produced, self.policy)
+                self.assertEqual(sum(quality.values()), Fraction(1))
+                self.assertLessEqual(set(quality), set(ordinary))
+                eligible = rewards.eligible_entries(pool, level, produced)
+                premium = {e['item'] for e in eligible if e['rarity'] != 'common'}
+                self.assertEqual(set(quality), premium if premium else set(ordinary))
+
+    def test_cube_milestones_cover_real_branch_achievements_without_new_claim_ids(self):
+        self.assertGreaterEqual(len(self.policy['milestones']), 150)
+        self.assertLessEqual(len(self.policy['milestones']), 220)
+        eligible_chapters = {c['filename'] for c in self.chapters if c['filename'] != 'qm_v040_36_skills'}
+        awarded_chapters = {c['filename'] for c in self.chapters
+                            if any(q['id'] in self.policy['milestones'] for q in c['quests'])}
+        self.assertLessEqual(eligible_chapters, awarded_chapters)
+        for chapter in self.chapters:
+            for quest in chapter['quests']:
+                if quest['id'] in self.policy['milestones']:
+                    self.assertLessEqual(self.policy['milestones'][quest['id']]['tier'], rewards.quest_stage(quest))
+        original = deepcopy(self.chapters)
+        identities = rewards.persistent_ids(original)
+        locale = {f"reward.{reward['id']}.title": 'old pack title'
+                  for quest in quests(original) for reward in quest['rewards']}
+        rewards.apply(original, locale)
+        self.assertEqual(rewards.persistent_ids(original), identities)
+        for quest in quests(original):
+            if quest['id'] in self.policy['milestones']:
+                for reward in quest['rewards']:
+                    self.assertNotIn(f"reward.{reward['id']}.title", locale)
+
     def test_plastic_hdpe_nested_cubes_and_oversized_stacks_remain_excluded(self):
         for entry in self.entries:
             self.assertFalse(any(x in entry['item'] for x in ('plastic', 'hdpe', 'mayhem_cube')))
-            self.assertLessEqual(entry['count'], 4)
-        # Even four identical draws cannot recreate a 32/64-item ordinary payout.
-        self.assertLessEqual(max(self.policy['draws_by_level']) * max(e['count'] for e in self.entries), 16)
+            self.assertLessEqual(entry['count'], 16)
+        # Bulk resources can reach useful stack sizes; expensive prizes remain single units.
+        self.assertLessEqual(max(self.policy['draws_by_level']) * max(e['count'] for e in self.entries), 80)
 
     def test_whitelist_equals_exact_craft_requirements_and_has_no_stale_tables(self):
         expected = set(rewards.GATES)
@@ -210,7 +246,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         report = rewards.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
         self.assertEqual(report['personal_rewards'], 1627)
-        self.assertEqual(report['progressive_rewards'], 1612)
+        self.assertEqual(report['progressive_rewards'], 1433)
         self.assertEqual(locale['unrelated.key'], 'untouched')
         again = deepcopy(locale)
         self.assertEqual(rewards.apply(chapters, again), report)

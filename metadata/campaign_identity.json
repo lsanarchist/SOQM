@@ -1,10 +1,10 @@
 {
   "base_commit": "e71db8398ddc9f07e85981fac942f52dd23f447d",
   "serialization": "SHA-256 of sorted compact JSON; see campaign_refresh.persistent_identity",
-  "sha256": "a5b2531829776eeb7cf1be81bed301d40948b9f800eb2a8ab880874ca3646148",
+  "sha256": "17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d",
   "chapters": 37,
   "quests": 1626,
-  "tasks": 1773,
+  "tasks": 1911,
   "outer_rewards": 1627,
   "previous_claim_scope": {
     "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
@@ -22,5 +22,14 @@
       "514A140000000001"
     ],
     "migration": "One additive optional Cardboard Box quest, task, personal reward and caption. Existing quest/task/reward ownership and claim scope are unchanged; all original hashes are checked on the original objects."
+  },
+  "previous_questbook": {
+    "base_commit": "b77b8586e13902fa7c7b61aa6425bccff13b8ce4",
+    "sha256": "a5b2531829776eeb7cf1be81bed301d40948b9f800eb2a8ab880874ca3646148",
+    "tasks": 1773,
+    "added_tasks": 138,
+    "material_kits": 35,
+    "corrected_counts": 14,
+    "migration": "Add construction item tasks without replacing existing task IDs, reward IDs, ownership or personal claim scope. Existing FTB completion timestamps remain intact. Exact reviewed old task and reward definitions are reconstructed and checked by campaign_compatibility.previous_questbook; new items are non-consuming and required for unfinished quests."
   }
 }

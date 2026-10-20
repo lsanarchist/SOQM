@@ -130,7 +130,7 @@ public final class ProgressiveRewardsProbe {
         denyDuplicate(second, claims, same);
         switchedReward = same.id;
         results.put("native_two_player_personal_claims_and_independent_rolls", true);
-        results.put("native_level_zero_two_draw_delivery", true);
+        results.put("native_level_zero_three_draw_delivery", true);
         party.join(third);
         check(claims.isCompleted(same.getQuest()) && !claims.isRewardClaimed(THIRD, same),
                 "A late joiner inherits completed team progress with their personal reward still available");
@@ -148,7 +148,7 @@ public final class ProgressiveRewardsProbe {
         CustomReward middle = unclaimed(custom, claims, first, pool.get("key").getAsString());
         complete(claims, middle);
         claimTarget(first, claims, middle, pool, eligible(first, pool, 2).getFirst(), 2);
-        results.put("native_production_level_two_three_draw_delivery", true);
+        results.put("native_production_level_two_four_draw_delivery", true);
 
         JsonObject levelSix = milestone(6);
         craftOutput(server, first, levelSix.get("item").getAsString());
@@ -183,7 +183,7 @@ public final class ProgressiveRewardsProbe {
         claimTarget(second, claims, positive, manufacturedPool, manufactured, 6);
         verifyPoolCommand(server, second, manufacturedPool, 6);
         results.put("native_unproduced_expensive_prize_rejected", manufacturedId);
-        results.put("native_actual_craft_unlock_and_four_draw_prize_delivery", manufacturedId);
+        results.put("native_actual_craft_unlock_and_five_draw_prize_delivery", manufacturedId);
 
         testTeamSwitch(server, manager, party, second, third, same, results);
         manager.saveNow();
@@ -223,7 +223,7 @@ public final class ProgressiveRewardsProbe {
                 } finally { buffer.release(); }
             }
         }));
-        check(total[0] == 1627 && custom.size() == 1612, "All actual outer rewards and custom callbacks are covered");
+        check(total[0] == 1627 && custom.size() == 1433, "All actual outer rewards and custom callbacks are covered");
         results.put("native_personal_outer_rewards", total[0]);
         results.put("native_custom_rewards_nbt_and_packet_roundtripped", custom.size());
         return custom;
@@ -405,6 +405,29 @@ public final class ProgressiveRewardsProbe {
         List<JsonObject> entries = eligible(player, pool, level);
         check(entries.contains(target), "Deterministic target is eligible by actual production facts");
         JsonObject rarityWeights = policy.getAsJsonArray("rarity_weights_by_level").get(level).getAsJsonObject();
+        List<JsonObject> premium = entries.stream().filter(entry -> !entry.get("rarity").getAsString().equals("common")).toList();
+        boolean reserved = policy.has("guaranteed_quality_draws") && policy.get("guaranteed_quality_draws").getAsInt() == 1 && !premium.isEmpty();
+        JsonObject first = reserved && !premium.contains(target) ? premium.getFirst() : target;
+        int draws = policy.getAsJsonArray("draws_by_level").get(level).getAsInt();
+        double[] sequence = new double[draws * 2];
+        Map<String, Integer> expected = new HashMap<>();
+        for (int draw = 0; draw < draws; draw++) {
+            JsonObject chosen = draw == 0 ? first : target;
+            List<JsonObject> candidates = draw == 0 && reserved ? premium : entries;
+            double[] interval = selectionInterval(candidates, chosen, rarityWeights);
+            sequence[draw * 2] = interval[0];
+            sequence[draw * 2 + 1] = interval[1];
+            expected.merge(item(chosen), chosen.get("count").getAsInt(), Integer::sum);
+        }
+        player.random.script(sequence);
+        player.getInventory().clearContent();
+        team.claimReward(player, reward, false);
+        check(player.random.calls == draws * 2, "Native JS handler made the intended rarity and item draws");
+        check(inventory(player).equals(expected),
+                "Native delivery matches reserved-quality and ordinary draws, with duplicate quantities combined");
+    }
+
+    private static double[] selectionInterval(List<JsonObject> entries, JsonObject target, JsonObject rarityWeights) {
         String rarity = target.get("rarity").getAsString();
         double groupTotal = 0, beforeGroup = 0;
         for (String candidate : RARITIES) {
@@ -412,9 +435,8 @@ public final class ProgressiveRewardsProbe {
                 groupTotal += rarityWeights.get(candidate).getAsDouble();
             }
         }
-        // Compute the target interval directly, rather than reproducing the
-        // selector's subtraction loop. A fixed midpoint makes every draw known.
-        beforeGroup = 0;
+        // Compute the target interval directly. Different candidate sets for the
+        // reserved first draw and later draws must not silently use the same RNG.
         for (String candidate : RARITIES) {
             if (candidate.equals(rarity)) break;
             if (entries.stream().anyMatch(e -> e.get("rarity").getAsString().equals(candidate))) beforeGroup += rarityWeights.get(candidate).getAsDouble();
@@ -430,13 +452,7 @@ public final class ProgressiveRewardsProbe {
         check(seen && totalEntries > 0 && groupTotal > 0, "Target has a positive probability interval");
         double groupUnit = (beforeGroup + rarityWeights.get(rarity).getAsDouble() / 2) / groupTotal;
         double itemUnit = (beforeEntry + target.get("weight").getAsDouble() / 2) / totalEntries;
-        player.random.script(groupUnit, itemUnit);
-        player.getInventory().clearContent();
-        team.claimReward(player, reward, false);
-        int draws = policy.getAsJsonArray("draws_by_level").get(level).getAsInt();
-        check(player.random.calls == draws * 2, "Native JS handler made the intended rarity and item draws");
-        check(inventory(player).equals(Map.of(item(target), target.get("count").getAsInt() * draws)),
-                "Actual native custom reward delivery matches the selected prize and combined draw count");
+        return new double[]{groupUnit, itemUnit};
     }
 
     private static void denyDuplicate(ProbePlayer player, TeamData team, Reward reward) {
@@ -456,7 +472,7 @@ public final class ProgressiveRewardsProbe {
         check(!eligible.isEmpty(), "Reviewed theme has its own nonempty current pool");
         check(player.messages.stream().anyMatch(line -> line.startsWith(pool.getAsJsonObject("title").get("en_us").getAsString() + " — level " + level + ",")),
                 "Actual command loaded the authored pool title and current production level");
-        long displayed = player.messages.stream().filter(line -> line.matches(".* — (?:<[0-9.]+|[0-9.]+)%$")).count();
+        long displayed = player.messages.stream().filter(line -> line.matches(".* — (?:<[0-9.]+|[0-9.]+)%(?:; first: (?:<[0-9.]+|[0-9.]+)%)?$")).count();
         check(displayed == eligible.size(), "Actual command exposes exactly the authored eligible entries, not emergency fallback supplies");
         long locked = player.messages.stream().filter(line -> line.contains(" — locked: ")).count();
         check(displayed + locked == pool.getAsJsonArray("entries").size(), "The complete locked and unlocked catalogue survived runtime validation");
@@ -532,7 +548,7 @@ public final class ProgressiveRewardsProbe {
         private double[] sequence = {0.25, 0.25};
         private int calls;
         ProbeRandom() { super(661199L); }
-        void script(double first, double second) { sequence = new double[]{first, second}; calls = 0; }
+        void script(double... values) { sequence = values.clone(); calls = 0; }
         @Override public double nextDouble() { return sequence[calls++ % sequence.length]; }
     }
 

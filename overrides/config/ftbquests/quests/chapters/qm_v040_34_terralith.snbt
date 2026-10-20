@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -755,12 +755,13 @@
           "id": "514013559B7278F8",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -896,12 +897,13 @@
           "id": "514013CEBD970D47",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -943,12 +945,13 @@
           "id": "514013A69460C391",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,

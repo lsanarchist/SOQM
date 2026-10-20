@@ -1,5 +1,26 @@
 # Verification status
 
+## Multiblock tasks, chronology, map lines and rewards — after SOQM 0.4.9
+
+Validated on **2026-10-20** against main
+`b77b8586e13902fa7c7b61aa6425bccff13b8ce4`. The book retains **1,626 quests
+and 1,627 personal reward IDs**. It now has **1,911 tasks**, including **138
+additive material objectives** across 35 assemblies. There are **193 personal
+Mayhem Cube milestones** and **1,433 progressive packs** with 3–5 draws.
+
+`./scripts/check` passed **95 Python tests**, both Node suites, generators,
+locale freshness, payload pins and deterministic installation packaging.
+All **10 coordinate previews** passed freshness checks; generated Main Route,
+Mekanism and IE previews were visually inspected. Baseline quest/task/reward
+definitions and historical fingerprints remain independently verified through
+the exact approved additive migration snapshot.
+
+Pinned template/validator and FTB source inspection supports the construction
+counts, curve behavior and existing completed-quest semantics. No new native
+server run, graphical client check or survival playthrough was performed.
+See the [complete verification record](verification-questbook.md) for the
+before/after counts, source comparisons, save behavior and remaining limits.
+
 ## Inventory Profiles Next and English landing page — after SOQM 0.4.9
 
 Validated on **2026-10-19** against merged main

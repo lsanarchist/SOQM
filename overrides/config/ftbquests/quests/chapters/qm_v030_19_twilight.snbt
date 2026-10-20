@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -60,7 +60,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F638E9FBA0",
@@ -97,17 +97,18 @@
           "id": "513013A3D62640F5",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FC22300C21",
@@ -144,12 +145,13 @@
           "id": "513013E96F4A2592",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
@@ -191,17 +193,18 @@
           "id": "513013D6BAC843BE",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301198C288386E",
@@ -254,7 +257,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011993E77D405",
@@ -1125,12 +1128,13 @@
           "id": "513013D4D9A67C5F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
@@ -1139,8 +1143,8 @@
     },
     {
       "id": "51301100FCAB4EA0",
-      "x": -10.95,
-      "y": 17.09,
+      "x": -4.95,
+      "y": 19.89,
       "icon": {
         "id": "twilightforest:fiery_ingot",
         "count": 1
@@ -1190,11 +1194,11 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117DE98B12AB",
-      "x": -7.95,
+      "x": -10.95,
       "y": 17.09,
       "icon": {
         "id": "twilightforest:knight_phantom_trophy",
@@ -1228,21 +1232,22 @@
           "id": "513013F12CE7088C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D9B1021490",
-      "x": -4.95,
+      "x": -7.95,
       "y": 17.09,
       "icon": {
         "id": "twilightforest:dark_tower_miniature_structure",
@@ -1275,12 +1280,13 @@
           "id": "51301313F5EC0CC8",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -1289,8 +1295,8 @@
     },
     {
       "id": "5130113F3151ADA9",
-      "x": -7.95,
-      "y": 22.69,
+      "x": -1.95,
+      "y": 17.09,
       "icon": {
         "id": "twilightforest:ghast_trap",
         "count": 1
@@ -1655,7 +1661,7 @@
     },
     {
       "id": "5130112E807AD465",
-      "x": -1.95,
+      "x": -4.95,
       "y": 17.09,
       "icon": {
         "id": "twilightforest:fiery_tears",
@@ -1709,7 +1715,7 @@
     },
     {
       "id": "5130115120935175",
-      "x": -4.95,
+      "x": -1.95,
       "y": 19.89,
       "icon": {
         "id": "twilightforest:fiery_pickaxe",
@@ -1763,8 +1769,8 @@
     },
     {
       "id": "51301133CE9DAFB6",
-      "x": -1.95,
-      "y": 19.89,
+      "x": -10.95,
+      "y": 22.69,
       "icon": {
         "id": "twilightforest:fiery_sword",
         "count": 1
@@ -1817,7 +1823,7 @@
     },
     {
       "id": "5130114D8DCAF3B6",
-      "x": -10.95,
+      "x": -7.95,
       "y": 22.69,
       "icon": {
         "id": "twilightforest:fiery_helmet",
@@ -2589,17 +2595,18 @@
           "id": "5130133D07B2445D",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FE794AFF67",
@@ -2636,12 +2643,13 @@
           "id": "5130133C4132A439",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -2693,7 +2701,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130113316500E72",
@@ -2740,7 +2748,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D19AF9A01A",
@@ -3988,7 +3996,7 @@
     },
     {
       "id": "51410410000005F9",
-      "x": -7.95,
+      "x": -10.95,
       "y": 18.09,
       "width": 2.72,
       "height": 0.72,
@@ -4004,7 +4012,7 @@
     },
     {
       "id": "51410410000005FA",
-      "x": -4.95,
+      "x": -7.95,
       "y": 18.09,
       "width": 2.72,
       "height": 0.72,
@@ -4020,7 +4028,7 @@
     },
     {
       "id": "51410410000005FB",
-      "x": -1.95,
+      "x": -4.95,
       "y": 18.01,
       "width": 2.72,
       "height": 0.72,
@@ -4036,8 +4044,8 @@
     },
     {
       "id": "51410410000005FC",
-      "x": -7.95,
-      "y": 23.56,
+      "x": -1.95,
+      "y": 17.96,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4084,8 +4092,8 @@
     },
     {
       "id": "51410410000005FF",
-      "x": -10.95,
-      "y": 18.17,
+      "x": -4.95,
+      "y": 20.97,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4100,22 +4108,6 @@
     },
     {
       "id": "5141041000000600",
-      "x": -4.95,
-      "y": 20.81,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000601",
       "x": -1.95,
       "y": 20.81,
       "width": 2.72,
@@ -4131,8 +4123,24 @@
       "order": 5
     },
     {
-      "id": "5141041000000602",
+      "id": "5141041000000601",
       "x": -10.95,
+      "y": 23.61,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000602",
+      "x": -7.95,
       "y": 23.61,
       "width": 2.72,
       "height": 0.72,

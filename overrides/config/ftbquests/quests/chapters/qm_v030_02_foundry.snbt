@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -118,7 +118,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301197819E7391",
@@ -388,7 +388,7 @@
     {
       "id": "51301102B4D1DEF4",
       "x": 1.95,
-      "y": 1.85,
+      "y": 7.45,
       "icon": {
         "id": "modernfoundry:smeltery_controller",
         "count": 1
@@ -399,6 +399,7 @@
         "native_modernfoundry_smeltery_structure",
         "qm_v040",
         "plain_instruction",
+        "multiblock_materials",
         "soqm_role_practice"
       ],
       "dependencies": [
@@ -409,6 +410,78 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:smeltery_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012E150B30577"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_bricks",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012414FB3BD69"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_fuel_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150120E0569881C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_drain",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012527E2289E0"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_faucet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012126B13DEDB"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_basin",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123813353478"
+        },
         {
           "type": "advancement",
           "advancement": "modernfoundry:smeltery/structure",
@@ -421,17 +494,18 @@
           "id": "513013254B0F3F6C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011B95D8BBC10",
@@ -478,7 +552,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114E49A3B3A2",
@@ -529,7 +603,7 @@
     },
     {
       "id": "5130112A675315EA",
-      "x": 4.95,
+      "x": 1.95,
       "y": 1.85,
       "icon": {
         "id": "modernfoundry:grout",
@@ -582,7 +656,7 @@
     },
     {
       "id": "513011885727A0B6",
-      "x": 7.95,
+      "x": 4.95,
       "y": 1.85,
       "icon": {
         "id": "modernfoundry:seared_brick",
@@ -631,11 +705,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130118347056838",
-      "x": 10.95,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "modernfoundry:seared_melter",
@@ -646,6 +720,7 @@
         "stage_1",
         "item_modernfoundry_seared_melter",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -667,6 +742,42 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "5130128C026E4DBD"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_heater",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501266BD793D98"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_faucet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501235EFB762E6"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150125B0867B795"
         }
       ],
       "rewards": [
@@ -684,12 +795,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301143EEA55D59",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 10.95,
+      "y": 1.85,
       "icon": {
         "id": "modernfoundry:seared_heater",
         "count": 1
@@ -741,7 +852,7 @@
     },
     {
       "id": "513011312C231A50",
-      "x": 4.95,
+      "x": 1.95,
       "y": 4.65,
       "icon": {
         "id": "modernfoundry:seared_fuel_tank",
@@ -794,7 +905,7 @@
     },
     {
       "id": "5130118269A1E560",
-      "x": 7.95,
+      "x": 4.95,
       "y": 4.65,
       "icon": {
         "id": "modernfoundry:seared_faucet",
@@ -847,7 +958,7 @@
     },
     {
       "id": "513011890D0653EB",
-      "x": 10.95,
+      "x": 7.95,
       "y": 4.65,
       "icon": {
         "id": "modernfoundry:seared_table",
@@ -900,8 +1011,8 @@
     },
     {
       "id": "513011D2087879F0",
-      "x": 1.95,
-      "y": 7.45,
+      "x": 10.95,
+      "y": 4.65,
       "icon": {
         "id": "modernfoundry:seared_basin",
         "count": 1
@@ -953,7 +1064,7 @@
     },
     {
       "id": "5130119C5F8C1957",
-      "x": 10.95,
+      "x": 4.95,
       "y": 12.27,
       "icon": {
         "id": "minecraft:writable_book",
@@ -1371,7 +1482,7 @@
     },
     {
       "id": "5130112B7E67B5BF",
-      "x": 4.95,
+      "x": 7.95,
       "y": 12.27,
       "icon": {
         "id": "modernfoundry:foundry_controller",
@@ -1382,6 +1493,7 @@
         "stage_3",
         "native_modernfoundry_foundry_structure",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_practice"
       ],
       "dependencies": [
@@ -1392,6 +1504,78 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:foundry_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012E5429218CC"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:scorched_bricks",
+            "count": 1
+          },
+          "count": 14,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501258A92CE88B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:scorched_fuel_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012D2DE209A36"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:scorched_drain",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128323DF2F2A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:scorched_faucet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501268BC0348F8"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:scorched_basin",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122338F9A162"
+        },
         {
           "type": "advancement",
           "advancement": "modernfoundry:foundry/structure",
@@ -1404,21 +1588,22 @@
           "id": "51301384FC33B82B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BD6664E0BF",
-      "x": 7.95,
+      "x": 10.95,
       "y": 12.27,
       "icon": {
         "id": "minecraft:netherite_ingot",
@@ -1451,17 +1636,18 @@
           "id": "51301364C9254D11",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EA4F627DEC",
@@ -2104,7 +2290,7 @@
     },
     {
       "id": "514104100000004E",
-      "x": 4.95,
+      "x": 1.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2120,7 +2306,7 @@
     },
     {
       "id": "514104100000004F",
-      "x": 7.95,
+      "x": 4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2136,7 +2322,7 @@
     },
     {
       "id": "5141041000000050",
-      "x": 10.95,
+      "x": 7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2152,8 +2338,8 @@
     },
     {
       "id": "5141041000000051",
-      "x": 1.95,
-      "y": 5.57,
+      "x": 10.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2168,7 +2354,7 @@
     },
     {
       "id": "5141041000000052",
-      "x": 4.95,
+      "x": 1.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2184,7 +2370,7 @@
     },
     {
       "id": "5141041000000053",
-      "x": 7.95,
+      "x": 4.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2200,7 +2386,7 @@
     },
     {
       "id": "5141041000000054",
-      "x": 10.95,
+      "x": 7.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2216,8 +2402,8 @@
     },
     {
       "id": "5141041000000055",
-      "x": 1.95,
-      "y": 8.37,
+      "x": 10.95,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2233,7 +2419,7 @@
     {
       "id": "5141041000000056",
       "x": 1.95,
-      "y": 2.85,
+      "y": 8.45,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2472,7 +2658,7 @@
     },
     {
       "id": "5141041000000065",
-      "x": 10.95,
+      "x": 4.95,
       "y": 13.14,
       "width": 2.72,
       "height": 0.72,
@@ -2488,7 +2674,7 @@
     },
     {
       "id": "5141041000000066",
-      "x": 4.95,
+      "x": 7.95,
       "y": 13.27,
       "width": 2.72,
       "height": 0.72,
@@ -2504,7 +2690,7 @@
     },
     {
       "id": "5141041000000067",
-      "x": 7.95,
+      "x": 10.95,
       "y": 13.27,
       "width": 2.72,
       "height": 0.72,

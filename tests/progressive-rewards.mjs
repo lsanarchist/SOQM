@@ -263,7 +263,7 @@ assert.equal(Array.from(view.selected.available).find(row => row.entry.item === 
 assert.equal(protectedEntries.preview(new Player()).selected.available.length, 3, 'Missing own-craft gates never become starter prizes');
 const badRandom = new Player({random: [NaN]});
 adapter.claim(badRandom);
-assert.deepEqual(badRandom.inventory, {'minecraft:bread': 8}, 'Selection failure falls back before any inventory delivery');
+assert.deepEqual(badRandom.inventory, {'minecraft:bread': 16}, 'Selection failure falls back before any inventory delivery');
 const deliveryFailure = load(makePolicy(), {failDelivery: true});
 const partial = new Player({random: [0, 0, 0.99, 0]});
 assert.throws(() => deliveryFailure.claim(partial), /delivery failure/);
@@ -289,6 +289,39 @@ assert.equal(reloaded.preview(visitor).state.level, adapter.preview(visitor).sta
 assert.equal(reloaded.preview(visitor).selected.available.length, adapter.preview(visitor).selected.available.length);
 assert.equal(adapter.warnings.filter(line => line.includes('Missing or mismatched mapping')).length, 1);
 
+// A reserved draw must improve quality without using locked manufactured prizes.
+const qualityPolicy = makePolicy();
+qualityPolicy.guaranteed_quality_draws = 1;
+qualityPolicy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+const quality = load(qualityPolicy);
+const unlucky = new Player({random: [0, 0]});
+quality.claim(unlucky);
+assert.deepEqual(unlucky.inventory, {'minecraft:iron_ingot': 2, 'minecraft:bread': 4},
+  'Even the lowest RNG roll gives one eligible premium prize, then ordinary draws');
+assert.equal(unlucky.randomIndex, 6, 'The guarantee reserves one of the draws rather than adding hidden extra rolls');
+const qualityView = quality.preview(new Player());
+const qualityOdds = Object.fromEntries(Array.from(qualityView.selected.available, row => [row.entry.item, row.quality_probability]));
+assert.equal(qualityOdds['minecraft:bread'], 0);
+assert.equal(qualityOdds['minecraft:torch'], 0);
+assert.equal(qualityOdds['minecraft:iron_ingot'], 1);
+assert(!('kubejs:sealed_chassis' in qualityOdds), 'The guaranteed draw cannot unlock unproduced components');
+const allCommonPolicy = makePolicy();
+allCommonPolicy.guaranteed_quality_draws = 1;
+allCommonPolicy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+allCommonPolicy.pools[0].entries = [entry('minecraft:bread', 8, 'common')];
+const allCommon = load(allCommonPolicy), allCommonPlayer = new Player();
+allCommon.claim(allCommonPlayer);
+assert.deepEqual(allCommonPlayer.inventory, {'minecraft:bread': 24}, 'No premium unlock means a useful normal supply draw, never an empty reward');
+assert.equal(allCommon.preview(new Player()).selected.available[0].quality_probability, 1);
+const poorRngEndgame = new Player({produced: ['kubejs:milestone_6'], random: [0, 0]});
+quality.claim(poorRngEndgame);
+assert.deepEqual(poorRngEndgame.inventory, {'minecraft:iron_ingot': 2, 'minecraft:bread': 8});
+assert.equal(quality.preview(poorRngEndgame).state.draws, 5);
+const qualityReader = new Player();
+quality.runCommand(qualityReader, '/soqm rewards pool survival');
+assert(qualityReader.messages.some(line => line.includes('; first: 100.00%')), 'The command exposes exact reserved-draw odds');
+assert.equal(qualityReader.randomIndex, 0);
+
 // The generator/adapter contract must also be exercised against the actual pack
 // JSON. A synthetic-only policy would miss a schema key or mapping mismatch and
 // the emergency supplies could make an integration check appear to succeed.
@@ -298,7 +331,7 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1612, 'Every campaign custom reward is mapped');
+assert.equal(Object.keys(actual.reward_mappings).length, 1433, 'Every campaign custom reward is mapped');
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
 for (const pool of actual.pools) for (const prize of pool.entries) actualRegistry.add(prize.item);
@@ -318,10 +351,13 @@ for (const pool of actual.pools) {
   for (const prize of pool.entries) for (const item of prize.requires_craft || []) allProduced.add(item);
   const end = committed.preview(new Player({produced: [...allProduced]}), pool.key);
   assert.equal(end.state.level, 6);
-  assert.equal(end.state.draws, 4);
+  assert.equal(end.state.draws, 5);
   assert.equal(end.fallback, false);
   assert.equal(end.selected.available.length, pool.entries.length, `${pool.key} loads every unlocked authored entry`);
   assert.equal(end.locked.length, 0);
+  assert.equal(actual.guaranteed_quality_draws, 1);
+  assert.equal(end.state.qualityDraws, 1);
+  assert(Math.abs(Array.from(end.selected.available).reduce((sum, prize) => sum + prize.quality_probability, 0) - 1) < 1e-12);
   assert(Math.abs(Array.from(end.selected.available).reduce((sum, prize) => sum + prize.probability, 0) - 1) < 1e-12);
   const binding = Object.entries(actual.reward_mappings).find(([, row]) => row.pool === pool.key);
   assert(binding, `At least one actual quest uses ${pool.key}`);
@@ -329,6 +365,11 @@ for (const pool of actual.pools) {
   committed.claim(player, {id: binding[0], quest: binding[1].quest_id});
   assert(player.deliveries.length > 0, `${pool.key} actual mapping reaches the custom callback`);
   assert(player.deliveries.every(row => ungated.some(prize => prize.item === row.item)), `${pool.key} gives only initially eligible catalogue prizes`);
+  const experienced = new Player({produced: [...allProduced], random: [0, 0]});
+  committed.claim(experienced, {id: binding[0], quest: binding[1].quest_id});
+  const premiumItems = new Set(pool.entries.filter(prize => prize.rarity !== 'common').map(prize => prize.item));
+  assert(experienced.deliveries.some(row => premiumItems.has(row.item)), `${pool.key} always includes an eligible premium prize even with the lowest RNG`);
+  assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1612-reward policy contract, production gates, normalized two-stage odds, 2/3/4 replacement draws, personal RNG, duplicate combining, exact outer IDs, fallback failures, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1433-reward policy contract, production gates, normalized two-stage odds, legacy 2/3/4 and new 3/4/5 draws, reserved quality prize, personal RNG, duplicate combining, exact outer IDs, fallback failures, read-only bilingual commands, reload');

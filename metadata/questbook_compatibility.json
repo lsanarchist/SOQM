@@ -1,0 +1,2908 @@
+{
+  "schema": 1,
+  "base_commit": "b77b8586e13902fa7c7b61aa6425bccff13b8ce4",
+  "description": "Exact reviewed additive material objectives and reward-content replacements; reconstructs prior objects for immutable historical compatibility tests. No player data.",
+  "tasks_after": {
+    "513011027911756D": "b0db3387f3576c376d1148d1719407ee5854bb67f64a5f7ecb1d45d2a27e77d2",
+    "51301102B4D1DEF4": "d296a683405e169d0388d286b709759ed89da12d0c5a762c0434d8fbc6047cc3",
+    "51301103F035DDAB": "4dd3766303a6a5e1826adfbdf5088dd5d32b49651466a8b4669cf5a85124066f",
+    "5130110CBEF3D218": "4d84101d202aab68c7fb44c3f76e162b1f5a3be89aa7951c0dca376b834e67ce",
+    "5130111A675CD3CC": "5820f5cf06775b0ab6e7cf8f3a26262af2bb90aeb160edf24208524c47bb81e1",
+    "5130112B7E67B5BF": "dfba8b14db09e14f867f46fd1e138308a77783d9537514a6186acb6e5fc752c6",
+    "5130112C76268D3A": "926fdabb113124b9c7257ba7f5b9d1ae3a1f4d92e4cc6c87351caece3e375c68",
+    "513011306BCB6E37": "2ff1420550a0e9f6c097e26dac5560b54cc03343652f268db15be145a817f331",
+    "51301157FF888779": "a655d70f4dea015ea53f8cf831063320738d6b13742bf5841f5ca19525c482ca",
+    "513011585394EA3D": "373775c75c7ddac591f98098784e82d596e3678fc1c1ab4f6ace78510be6fbcc",
+    "51301173A1581288": "44af8929f2479f02dbf34c38f0da4e8ce539e6bb12fad12d489c0519e3cee0b9",
+    "51301173D68FCBFF": "8de775fbd2c904f58fbf755e194e33df1cccb422903feaf37b80a883520855de",
+    "51301182A048FC8B": "22b0d1db021fdb9aacf245affb71d288cf49cfb908cdc505b9fe3121a091f890",
+    "5130118347056838": "fa85c8ce2bbbeb333f98afa6f9c8b6e368f736aec548819100d53665003dc92c",
+    "5130118DB31A46A1": "a6a075c46647af9fa1e4b56702b67c1473b597e9b0d80a8806eea9f2454aa768",
+    "513011965BAF66F4": "0b4d74b67862c71daa2bc5b47a1d46c971fbd234037c9e227a903ef437f00b6d",
+    "5130119992BFAE06": "c2fad902451b96cd0e0424e912314d365194cd669e1ec8823747541b9ef980fa",
+    "513011AB19DDDE4C": "d467669972d9810135794815eea29fa0462afd1a484189c7d9dc4e207a966fe3",
+    "513011AE9CF26AB0": "0f29f5c1436b60dd836dec91ed09f4eff99f3cac64d1211cf05a034c091a3560",
+    "513011B12DC6165B": "8d73c04a1155564d78ac1638692578e6fbef633e57afe7938f46bcc3c8cc5dcc",
+    "513011C1277D6FAE": "c031cce970423bf1bfa768fb76f8c323762741499f927e854e493d83ccee76de",
+    "513011C1618FC593": "0b9f0e3bc75a21f6e16becc4bda3347888a8c383f8e7cf2c6d8676d1e21bc809",
+    "513011C793F4D2F0": "2b8ca62554a88d5dc68414c8d40c9ccc4191f96dcf652e9b3488ad61532318d1",
+    "513011CA9536C271": "36065a65ba58bc35fa9b4771fae36280f4fa5e97ca56c11e6fab21789e4cdf12",
+    "513011D0F247BDDA": "d5a53dfcd87b2f769cdf8b92d8af7fea3b089b6ce20dd9c574df1dfaf7c5cfac",
+    "513011EC3D07F9A3": "dfff52c6971afed3381b2e375ee168e54ed36f953b02db6cb316191f9a5e4101",
+    "513011ED63C6B222": "d2f37ff0b7c1fe79d51e918dc048f410f260d14e79a7a405b7b2e118c8b67430",
+    "513011EE444C38AF": "eb1c3f3610f51dd1624449c90ee8a3deea493def0e26e9f21b4efbe6dee62999",
+    "513011FE8D522CBB": "765a9176c89544b140ca3e875a81e31868919331f7730f1f6fc2d50a37b4d9a5",
+    "513011FFA590DC5D": "26208ded6ad594c4046125e61f92f2fe34853f079ffe284badeecaa541d6eed1",
+    "514D111250CFCDBB": "eaa59e3bf56bbb53c525148a55e8d01930f21287dd1fe29fcf18f580557880a8",
+    "514D113E1E8CF8B1": "afdc997482217759f6ea6226cb1a41fcd74c4f8a9a0ea506f7f817a601c13e53",
+    "514D114878C1E1BB": "8efc299127991eef6a60263bcd2331a8632811e8d82b17ed8cf7e756f34e611b",
+    "514D11CD9798EC9F": "567a727fa56e294c3efa2889d2cb01e6ade6fcfba1af60094e7e49e6a1bae038",
+    "514D11F90042E7F4": "38ed20974abb34d50c7818ea94bd90bab764fde2a8455aeda880498c627bc28c"
+  },
+  "rewards": {
+    "513011018F3848CA": {
+      "before": [
+        {
+          "id": "5130134291EF9EBA",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "86941d3b505a652774c50d851660b6031e36f5d548de8470d88f6a27b5b11556"
+    },
+    "51301101E12F76D6": {
+      "before": [
+        {
+          "id": "513013D76A9EAE5A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "0236264d8b7cbe731d3f2f64ec7670844b2688b7a386b65a864426eda1a88b36"
+    },
+    "513011027911756D": {
+      "before": [
+        {
+          "id": "513013D3B02E8DD1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "88f77e2a63d4799fa4e0b268cf99d94ffe5ae06fd7500f8fcbb37d32deacde84"
+    },
+    "51301102B4D1DEF4": {
+      "before": [
+        {
+          "id": "513013254B0F3F6C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "eb62732067ea99f23277d54c86c85580763a30f63aa1df8e21c2766ffc761504"
+    },
+    "51301103F035DDAB": {
+      "before": [
+        {
+          "id": "513013FB62E6CF82",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "68890e09cfe405859a83364b9ecd4d27017498157dc6013dc24fc530cce52ed4"
+    },
+    "51301104CFA9A015": {
+      "before": [
+        {
+          "id": "513013391ECDBE42",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "2985fa7cefac469b8b473f74d8f2d390db36b510ac121fc46a1c9bf128f9ecc3"
+    },
+    "5130110526994D7D": {
+      "before": [
+        {
+          "id": "513013B57BBAF92B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "b68a65f9948b1f18d87921e88255ab7f894acd7f2cbf27dd83ca281c9896e8f8"
+    },
+    "5130110C02719C96": {
+      "before": [
+        {
+          "id": "51301305642F3648",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "4debad0463fe9ef96a020f87b495fdc49e46ff3a99c86aa944b1304ff047a121"
+    },
+    "5130110CBEF3D218": {
+      "before": [
+        {
+          "id": "513013BE01BBB6C1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "5674bb97deb4aac1b791ee87ff6cb9f625a41ba414e146070313270d881cd928"
+    },
+    "513011103736AECD": {
+      "before": [
+        {
+          "id": "51301371236B752E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "9ae1a0b88b048381c2911cb88f8b26091a498b07ad45ce84af2398fca58aab01"
+    },
+    "51301110A6A327AA": {
+      "before": [
+        {
+          "id": "5130136D5DF488FE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "1ba35388c058e6cd12301ac281feb34e54e09e2d7cc9848f23a017ffbc7151fb"
+    },
+    "5130111375CD52A0": {
+      "before": [
+        {
+          "id": "5130135ACD5C3CDC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "10cd318ed007a0afc6053c120ac2e6cea653177bea315be2d1a8968ec3274ff5"
+    },
+    "513011148D68B3DC": {
+      "before": [
+        {
+          "id": "513013D4D9A67C5F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "a906542bd51db40c5e50b66651f5eb78f8abf9d27a91196b9289749eff5ec095"
+    },
+    "5130111529940E76": {
+      "before": [
+        {
+          "id": "5130135ABE9CDF03",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "f12ad7e616ab47386ea29fcefba91d20ee8d11836724b1c6888eab1b9a5a8b23"
+    },
+    "51301115487D09F6": {
+      "before": [
+        {
+          "id": "51301318002830F1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "7297449b49f107c5f9a9dceeee62f145a3237547c4b81724c856009b43c223ba"
+    },
+    "513011162F45B0CF": {
+      "before": [
+        {
+          "id": "51301313DB0749B8",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "c9c0938c8bbb7456ab3d0f91fe8eaa0e466d7e1d15c89a0a5b8c60891ae3401b"
+    },
+    "5130111631820BC6": {
+      "before": [
+        {
+          "id": "513013E1E981D8E6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "f2365c1a127b5b6f979c639630c9cfd93f034ede76763906c7d702c278c59fed"
+    },
+    "5130111A675CD3CC": {
+      "before": [
+        {
+          "id": "5130138A12B779D6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "f84627789a37688ac47a5f47643d405cf7ce5ab55bc391649642ede1b27f9048"
+    },
+    "5130111C5CB00C7E": {
+      "before": [
+        {
+          "id": "51301387157C9BCC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "d8fad00264f29ca9d5ee46d430430d447d24530ebeb550d51bd015edb40db5c9"
+    },
+    "5130111E28B22B76": {
+      "before": [
+        {
+          "id": "5130130443ADE4C4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "dab70118cd9cbda0c0a4e1a345fbf471c158c23d3c764ba76b13adb1494a68ba"
+    },
+    "5130112091E38E8F": {
+      "before": [
+        {
+          "id": "5130133D07B2445D",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "177517a577ba00f2b8df96e65406cb119f7dfebb90e42f7662772be0e0abdc49"
+    },
+    "51301121EF0C7608": {
+      "before": [
+        {
+          "id": "5130135358B729D5",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "666df53cd635e51532547be0163041104cf378e8e54409885f8d0b20c4842e65"
+    },
+    "51301121F7B8F501": {
+      "before": [
+        {
+          "id": "513013D7F0359385",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "9802fc46446cdfffbf2cfedef5a5344d802c23bb8a6f215546a66e518c9e8943"
+    },
+    "513011227105E2BA": {
+      "before": [
+        {
+          "id": "513013B19307F8A9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "df220d4bd66ec866e83d4ebf0ca42b69366c440bbfc6bc48cf8a71673c5670f5"
+    },
+    "51301123305026D9": {
+      "before": [
+        {
+          "id": "5130131E1F509717",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "15a6e5f8a243f33105a15a0488a6084cdb4266632c2af75fb8134ee33e105749"
+    },
+    "513011241BDCE00F": {
+      "before": [
+        {
+          "id": "5130134BCFE39813",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "3592a772bc9a571d3e19ea6658cc4e201362ee15bb278bb81a0e7117769ee7eb"
+    },
+    "51301127D84254AF": {
+      "before": [
+        {
+          "id": "513013F7D7D88F19",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "334a9b9b429d4ab7ce00d729595bcdc34152faaca0118ae5ab7f5c7986a5e28d"
+    },
+    "5130112935FFF4C2": {
+      "before": [
+        {
+          "id": "513013318FC95F5F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "ad_astra:space_helmet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:space"
+          ]
+        }
+      ],
+      "after_sha256": "0fea2eb5eb413e40a1576b48039fd622e879d2fa784c7a792bb3d5fb02594684"
+    },
+    "5130112B7E67B5BF": {
+      "before": [
+        {
+          "id": "51301384FC33B82B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "08eba69ae1ed2ee6d0b11fa0684088b6839db999812b72d97583cd27b8547580"
+    },
+    "5130112C76268D3A": {
+      "before": [
+        {
+          "id": "5130139852054EAD",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "371dafdb79a731e0e3e8aa6ccc034c1e1c3834192c40fa8b1b7ddf80c9c8ccfc"
+    },
+    "513011306BCB6E37": {
+      "before": [
+        {
+          "id": "513013574F1D9E34",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "d7bf49089404fe8fa16ad72bfa72e87c855555974725e3b8df7edc33e74e00b3"
+    },
+    "51301130F8B93E94": {
+      "before": [
+        {
+          "id": "51301335F4EDECFC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "3a02ddc15169bdb8a285de3214f3aedb63631b70973de6ce05217030014bfd63"
+    },
+    "5130113654970E2B": {
+      "before": [
+        {
+          "id": "513013279D1E2D37",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "076ec79e3569eaee16beef4e7b07a379fd9d88bc1f3c7093ed473cccc2d089b3"
+    },
+    "5130113706F7FC90": {
+      "before": [
+        {
+          "id": "513013C0B1392542",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "b12780363c4d59c7ec9725732739efb7dc86c3a19ddadc1b003e0e46d0f629d0"
+    },
+    "51301138CDC4FC6E": {
+      "before": [
+        {
+          "id": "5130134CD21F4AD2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "ad_astra:space_helmet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:space"
+          ]
+        }
+      ],
+      "after_sha256": "fc96f0fb387a4463f5caacba68fd86de703ae08201cd9030f917158ac711f1fe"
+    },
+    "5130113E390D02AA": {
+      "before": [
+        {
+          "id": "5130130FC5272E07",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "ad_astra:space_helmet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:space"
+          ]
+        }
+      ],
+      "after_sha256": "7c14e61876f43f05a14df319ca11712a8fe724fd106a39f4c710b5283c859af8"
+    },
+    "5130113F2D7C608A": {
+      "before": [
+        {
+          "id": "513013AF423235D0",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "1397ec5834d3606dba64dc469f41584a6764a6ec93677ba233d25c9fca32258d"
+    },
+    "513011459985A7C5": {
+      "before": [
+        {
+          "id": "5130138CA6AE2074",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "63c508a292952a8a230dbc7fd0cc2e09c9ab14951f889154609ee29cbec3f82f"
+    },
+    "51301148615D2591": {
+      "before": [
+        {
+          "id": "513013AF260BDB13",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "b33824405c4cec4966a6e39c5eac53cd5709ee15b4a4ba5a0451cdef5f30ca4e"
+    },
+    "5130114AEE1EEE9F": {
+      "before": [
+        {
+          "id": "513013CB84C703A2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "80d03a008863af01d8d8b3b8127ef31acd0e60a9224f817e436ab577e2803778"
+    },
+    "5130114C6BBFCCCD": {
+      "before": [
+        {
+          "id": "513013826C383133",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "2488e1a0698a964c2ce0f10392aef6e91df1d799bc8c0e5b8527e974623b7e86"
+    },
+    "51301150A4E4DACB": {
+      "before": [
+        {
+          "id": "513013EDAEBC7D92",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "cd9dba36405d6c032d80e44ca1831152274f453df349fcdf0bd04b1862c57a7a"
+    },
+    "51301150CA097A15": {
+      "before": [
+        {
+          "id": "513013105B811497",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "f277853f24a7b5d721891da1f401072456d3eb7f096a04f80b8d0faf3689a517"
+    },
+    "51301152CC86C89E": {
+      "before": [
+        {
+          "id": "513013C11F0D04B2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "8543b002a9196b70451f41a2352b5b1703041fddc3baf244aef3a2cff7e92ede"
+    },
+    "513011530925ED63": {
+      "before": [
+        {
+          "id": "513013A65A9EE7DD",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "e54aa5b26f529acadce9f54ad3c920219cf7a66ea040dd1de47fd4d49b674934"
+    },
+    "5130115736270719": {
+      "before": [
+        {
+          "id": "513013BDB2ABD4A6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "1ae4f479792e5a7bfe61d3e48e6629cb0cd2b3800ada017add77db54e9992e7c"
+    },
+    "51301157FF888779": {
+      "before": [
+        {
+          "id": "5130130B7A24B872",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "c76b920cf5b945b65b1efdea5c414f463841ee56a3b0807ef73ffbd2f624841a"
+    },
+    "513011585394EA3D": {
+      "before": [
+        {
+          "id": "5130133EB86E7FA6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "e0867183d301d4c41caad5a99e32cc65d8727334962c837857e602bce9791ce0"
+    },
+    "5130115D5E2B60E3": {
+      "before": [
+        {
+          "id": "5130133E6786529D",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "6f142a625bc606554142e16bdad49343076d842d5c69a71b0c2b70e51a9c4ee4"
+    },
+    "513011653562C09D": {
+      "before": [
+        {
+          "id": "513013B5945BC89A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "9bae8a1115af279c4f2758855c6b24fa30ad0a01e7a878ef3863a0608592a272"
+    },
+    "5130116538F34234": {
+      "before": [
+        {
+          "id": "51301307B8FC130C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "ebfca4f8abc1f85f446d4e56d43097f7cb5efde8708a577dd4c2364ee02c6a21"
+    },
+    "513011675037BC60": {
+      "before": [
+        {
+          "id": "513013698733D4DC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "c8d703b7acd35cdc203d7c6e392fbcbc9050b294c10c3508f082364a4cf8dbf5"
+    },
+    "5130116789638387": {
+      "before": [
+        {
+          "id": "513013F6F3FEE422",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "fdd26d600879ab3184afb49918a7cd78bea4b576ea2958f14da44fc1388fa238"
+    },
+    "51301167AE8889AA": {
+      "before": [
+        {
+          "id": "5130139A8997083F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "7b2780826e0fda8ecfd8d3ab1e0752a5003da426331f559f726fde55c4d26bd8"
+    },
+    "5130116A0AE0BA27": {
+      "before": [
+        {
+          "id": "513013811E72E43E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "11b6b381ddd3bdf9d7d287df7f6c79d74ca195b59f556b9f34a044ef01df9171"
+    },
+    "5130116C6474BE0E": {
+      "before": [
+        {
+          "id": "513013A74D5EBC62",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "82baa107c5a848c78049c53052c68b46a634be3d9f6d36f9ce5fbc69e18c5542"
+    },
+    "5130116CC5036025": {
+      "before": [
+        {
+          "id": "51301336F4CB08B2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "b56637ac95dfaa484ff7491482dc5f9ef45d048199afd6e3876c37a29a2efd1a"
+    },
+    "513011700E5507DB": {
+      "before": [
+        {
+          "id": "5130131E309CF0C9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "2b4ba6ffb7a896aa27309671d1c24def7af43ffe4e5571e02491bce4648ba7d5"
+    },
+    "513011707B727ED1": {
+      "before": [
+        {
+          "id": "513013B9D4BFB32C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bell",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:settlement"
+          ]
+        }
+      ],
+      "after_sha256": "e43ac7f87cc55fae0b3ed6a6b2d0eeee00d0caea980c75e674d6519f4f6dda44"
+    },
+    "51301171CA29CEF3": {
+      "before": [
+        {
+          "id": "513013FEC9B3E824",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "0a2870bddb305f6f5409c85be7db8cf3ae8a21c9cabbebf7a181e4251b2f68a0"
+    },
+    "513011732D8F780E": {
+      "before": [
+        {
+          "id": "5130138D5DCC7794",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "5975288a2873981585e2ad2dcb9993b87fff4766d00a585d94eb6eec90ec5112"
+    },
+    "51301173D68FCBFF": {
+      "before": [
+        {
+          "id": "513013DEC809B782",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "4174b5e0bfb06b98fd6e06f5e1c952d6e8725d8a1e1c112b93f83d1a72bb5991"
+    },
+    "5130117733452BD7": {
+      "before": [
+        {
+          "id": "513013D6BAC843BE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "0f54a58b6d942c5dbf193a732ac0185e67273b745d9a24a3a6f399187cb60700"
+    },
+    "5130117ABA3F4F64": {
+      "before": [
+        {
+          "id": "5130135811F5DC0A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "01523ab1c2beebdad55c35c5787b46600ae235636d2cb46424dd55f9a0933c7d"
+    },
+    "5130117DE98B12AB": {
+      "before": [
+        {
+          "id": "513013F12CE7088C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "2e5cdc29db5e179dcc5b07ddf0b791c65c1d61a5b567ed0d837adb2dcd376900"
+    },
+    "5130117E7F94CA5C": {
+      "before": [
+        {
+          "id": "5130135A42DD6ADE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "8c33914722ab1e57540e5abc03acee63cf765732a5a526f4a434ddc3f032d901"
+    },
+    "5130118142869DDE": {
+      "before": [
+        {
+          "id": "513013F649D011D0",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "dd7bb5768d72aee027423592483deb562a78a978aa3dcee9c9066d97882ca908"
+    },
+    "51301182A048FC8B": {
+      "before": [
+        {
+          "id": "513013AE4EF54294",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "2bf72782c4f6fe9235ca542ebdb11ed52923f5614858fc46cf71bbc0148909e4"
+    },
+    "5130118757F86955": {
+      "before": [
+        {
+          "id": "5130139118224771",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "da4a5fe6f282be9c48a992e7930389364eba4cc9d701d6eaef35eb14f086ee11"
+    },
+    "5130118A9899A738": {
+      "before": [
+        {
+          "id": "513013A8BA836DAE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "ea1aa565fe26f104a2cff5e4f71091366412b5433f99796a87ba6632aa9a22ab"
+    },
+    "5130118DB31A46A1": {
+      "before": [
+        {
+          "id": "513013AE534AD244",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "af81bc40d4e47bbcb1f6a5c7d0dbfb92a61f0402022815138d23dccd662fdadb"
+    },
+    "5130118F19BC727C": {
+      "before": [
+        {
+          "id": "51301382F0A3B42E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "a7b81841d9c80d4c849d06b5c28b73571093f09d0b0060d697475d884a41f635"
+    },
+    "513011905E9962AB": {
+      "before": [
+        {
+          "id": "513013DAE9D820AB",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "a287a3f7a69defad9dcd327275b4ffc997f65add09e9b54327ce19307229635c"
+    },
+    "5130119418D33F34": {
+      "before": [
+        {
+          "id": "513013E6F7EF675B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bell",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:settlement"
+          ]
+        }
+      ],
+      "after_sha256": "e244116370c5056b496e482901dd88be3fd830414bbb60549c2727d41d2a1e71"
+    },
+    "5130119426F8E5C3": {
+      "before": [
+        {
+          "id": "513013C867A67CEC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "d29cd773053acfe051341a053c0a9cbdc85b135e53e3a9dcb29863890669af27"
+    },
+    "513011965BAF66F4": {
+      "before": [
+        {
+          "id": "513013BBD0480DE0",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "8da48406a116c9b0d9cc924477c60c9f92afb30f0651ec00ac92919b39e509db"
+    },
+    "51301197D92629DB": {
+      "before": [
+        {
+          "id": "513013B794BCA2A4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "a16ec8ab82e4a854140721c68a7d833be9a56a7b354872415cdf9204699e080b"
+    },
+    "5130119992BFAE06": {
+      "before": [
+        {
+          "id": "513013007C1147CA",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "02bfccae95e322e090302fb746ec0c744caa54d304276a05d01c2d3c1cee7e01"
+    },
+    "5130119AFFF720CF": {
+      "before": [
+        {
+          "id": "5130134810DEBB10",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "a713b9ece0d485579d561a8d925e998fe0e8d153e74198d0fd4b92f2d5f0486e"
+    },
+    "5130119B9A6344A6": {
+      "before": [
+        {
+          "id": "513013EA18E2D583",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "4a778249c6b84219da20bac8b84f6dfaecfe12d71168898fcc2ae0935260486b"
+    },
+    "5130119E518C876F": {
+      "before": [
+        {
+          "id": "513013FA256B8826",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "3f3a66d67604aeaad24712b120abd72bf1c6fc9a6191740865fe97f69474d37a"
+    },
+    "5130119EE81754B1": {
+      "before": [
+        {
+          "id": "513013D66F0ACD70",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "3af926eca583e12d3e3eaa647abe9b207163fcf9bafa6f40f669fb8ae553a5e9"
+    },
+    "5130119F6CDCBAEA": {
+      "before": [
+        {
+          "id": "513013DCE15174CC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "6ee3febcf7c6f895cb07c66812eb04c08065ccf337f51b0a430719bd3954f071"
+    },
+    "513011A3AC6C6FB0": {
+      "before": [
+        {
+          "id": "513013AD0EC17D8E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "95cb5c60c2d4a668149c94b25b9f7e516482983f9e383c36acefdb3dad642051"
+    },
+    "513011A7C9201F3C": {
+      "before": [
+        {
+          "id": "513013A3D909D0F3",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "e461304ee7b6eae5ac080cf5c1741e331d6f06933f2e24783725889baf4610d1"
+    },
+    "513011A9F6BAF65C": {
+      "before": [
+        {
+          "id": "513013756F2D87F7",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "d8f9d0c82f7bc0d33c54c2247e100e2b0cc50f5e2280ad1f8e0cf9347aab3e4c"
+    },
+    "513011AAD4652E6F": {
+      "before": [
+        {
+          "id": "513013EF97E1A220",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "eecb0e57cd1e2ba38e5268752557f38ae4cb89ecab0893b93fca472df99e200b"
+    },
+    "513011AB19DDDE4C": {
+      "before": [
+        {
+          "id": "513013916F82A916",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "71996cc1c8aa2f9fd2b2cb1505257e3a2c5b7e75dbdf49e70ef3adba33054bb3"
+    },
+    "513011ABF651041B": {
+      "before": [
+        {
+          "id": "51301352C8FEE577",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "8433ed25864f7d8332320a96cb6f6edd79e2cfdfe9adfe6305c2f5256876e717"
+    },
+    "513011AD19E4FCFC": {
+      "before": [
+        {
+          "id": "5130136C7F01EC1C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "59d1db063cf02062cef04da1f457732170c20bc75abc2326d344e1738904e5a5"
+    },
+    "513011AE9CF26AB0": {
+      "before": [
+        {
+          "id": "5130133F02B3DD53",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "58937ecad1e50d2fd888ce63604d1ee171c4281280b9bfdb6d04fcf80790ef79"
+    },
+    "513011AF7E8D7059": {
+      "before": [
+        {
+          "id": "51301311270A34D4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "f867f78d8e7ddc952b03dbe5a96f8dd8e8b55697cdc96786feab9027489229fc"
+    },
+    "513011AFDB9BDA41": {
+      "before": [
+        {
+          "id": "51301347DC6A02C0",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "605db4547ecfedaaa443cacd6503b4c600c385ae000edbdfebe8d3e951c880c2"
+    },
+    "513011B0809BAB8B": {
+      "before": [
+        {
+          "id": "5130136B64A9EA15",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "927d899da92aa5804c338b447cd374c089b15fdc51f5efb802f1757868f4c4b6"
+    },
+    "513011B12DC6165B": {
+      "before": [
+        {
+          "id": "5130130B246F2867",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "ccb9a4c60960fb3b1d163969e5324f300e5eb4a5341061b3fb9485aefa343feb"
+    },
+    "513011B86476F5E1": {
+      "before": [
+        {
+          "id": "5130138D048E7C46",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "ad_astra:space_helmet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:space"
+          ]
+        }
+      ],
+      "after_sha256": "f8a34de4702d6fc1f66cf6849adee8b396cf91fcec3f250e8e3424088e0b7f4c"
+    },
+    "513011BB6996E76A": {
+      "before": [
+        {
+          "id": "51301391A36FC48F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "9eeb04b9acb2474e95f17f65645e96fd7a17c958381073866742ea20d78139ff"
+    },
+    "513011BD589AF72A": {
+      "before": [
+        {
+          "id": "51301388DD6844A1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "f4922bc6f419a3494348f3d1ddb0aa07db85f47d13a2642488bd9e3ab312af37"
+    },
+    "513011BD65027BE4": {
+      "before": [
+        {
+          "id": "513013AE4C1B7019",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "ea32a14021bd5e317b18bd4430f7f5ffad8222b70eebb4127634caf055ffb8b4"
+    },
+    "513011BD6664E0BF": {
+      "before": [
+        {
+          "id": "51301364C9254D11",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "d35e3b7a6ac79a5413f10b1e8cee6286e8fddcc79f48d1b92d341e6971f591ce"
+    },
+    "513011BE93BB8ADB": {
+      "before": [
+        {
+          "id": "51301312331034AF",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "632680e421ec6d99be8592e77e9c9146864c04eb48a9ad98db15bfdea5d1db60"
+    },
+    "513011BFC9151A29": {
+      "before": [
+        {
+          "id": "513013C1FC67BF2F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "cf2caaca2d478db5d04b16a1f54982e580f3c30e19e742d25d6cc6fede46ceaf"
+    },
+    "513011C06B143334": {
+      "before": [
+        {
+          "id": "513013DCA57347A9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "7d3ee04c99302b8b4ba0b31507d5718e1f2e6660ad5d9bcf8cffa32e5eef9cdc"
+    },
+    "513011C1CC3201F5": {
+      "before": [
+        {
+          "id": "5130134B4E6D6CA4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "d1b7b1d388d344f44f51a614e8b48fd560c773212ba26f4a3a122bfee1f81075"
+    },
+    "513011CA9536C271": {
+      "before": [
+        {
+          "id": "513013A073408713",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "55272d24a6616657fb2633bcd984bb20b9b716a713271ee5921537d51e420124"
+    },
+    "513011CB9674DBF8": {
+      "before": [
+        {
+          "id": "51301309E7B674C2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "kubejs:mythic_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:masterwork"
+          ]
+        }
+      ],
+      "after_sha256": "54c7a72b11c1c2edf3f864d66994a768af2490af715d5a2ee8796dd7ed47047b"
+    },
+    "513011CBBECFC29F": {
+      "before": [
+        {
+          "id": "513013B2BEEDCE36",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "ea63e18cd9d11cbd111208ccbeccf8df1eea089b6c7ce85c5a66c0e6be544e00"
+    },
+    "513011CC15383729": {
+      "before": [
+        {
+          "id": "513013736D0653A4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "786eca4f0167189fa2bc944907b1eb0cdd3f8f6e7986c675be2a558c4270001c"
+    },
+    "513011D0F247BDDA": {
+      "before": [
+        {
+          "id": "513013BF3C651C99",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "9f09eef8fd308a7a0fd0291d9b654c911e0608f8c40960100e825405a74e39af"
+    },
+    "513011D34FFB9C53": {
+      "before": [
+        {
+          "id": "5130135E0A020371",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "62fe4971d7230b376c590b329d61328e259bed720afd8ac0254273c4d7e03976"
+    },
+    "513011D4AD7B73EE": {
+      "before": [
+        {
+          "id": "5130131D34A26F8E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "04920be9b6cb2e0f62f5651e0b5911c727cc670fcf55d169180fea0c70fd8c00"
+    },
+    "513011D9B1021490": {
+      "before": [
+        {
+          "id": "51301313F5EC0CC8",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "301dfd91e7128785d9ae6e35077bd1e136de3f5709f20666db922e76b67bf0e9"
+    },
+    "513011DB110983FB": {
+      "before": [
+        {
+          "id": "5130132D111EDAE1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "0eca88506129c1ef9563697e49782c125762838376b3804af0c0f24d4e10c165"
+    },
+    "513011E12927F035": {
+      "before": [
+        {
+          "id": "513013AAFC274398",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "b67e1e4dc49eb12b07a691ccc90ed199869919342220eddfad7e8f1fe0fe5399"
+    },
+    "513011E6B7A5065D": {
+      "before": [
+        {
+          "id": "513013C6CDCEA689",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "6d5165b0ec4a10e5fb0bf34d650a60f49e470c162828a72048219fce12048ac9"
+    },
+    "513011EAB08A97F7": {
+      "before": [
+        {
+          "id": "5130130B6AA0D8EE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "0b93e09919fe1d8b67a4abbe2fe7a306be262ee9017f97b2e798fe41a65f34b6"
+    },
+    "513011EE444C38AF": {
+      "before": [
+        {
+          "id": "5130136E7AC288E4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "c57db78140f2b9527c9caf2042a0804647ddc3f42b09a59f68133be68288be59"
+    },
+    "513011EF2E948342": {
+      "before": [
+        {
+          "id": "513013C2C2B9C995",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "15a15241fa461faae9e0f2ea4fd96202c6ed1475a5ca1e7caf2c51b291b90f76"
+    },
+    "513011F0630D0738": {
+      "before": [
+        {
+          "id": "5130130033877C2D",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "3bf5f3ce860ebd1f2995c5a723c3fdc673e091f39bb2ab4ce301b8f35c9a72a3"
+    },
+    "513011F5469C1A38": {
+      "before": [
+        {
+          "id": "513013826943F3AF",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "botania:mana_tablet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane"
+          ]
+        }
+      ],
+      "after_sha256": "d6a3766916e9da0c27c9ade9269b97bbe17870cb512bf41d648181f5a2911911"
+    },
+    "513011F638E9FBA0": {
+      "before": [
+        {
+          "id": "513013A3D62640F5",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "d1e6f48e5c4470bcc0babc3288f444f5e14897b9453ac07bec290b24792237df"
+    },
+    "513011F655EF052F": {
+      "before": [
+        {
+          "id": "513013BE041CED57",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "329d100c36d7a6452e453dea850330c4ae0a940e8c33fab3e099652462f5c7cd"
+    },
+    "513011F7A8F75195": {
+      "before": [
+        {
+          "id": "513013ACC0154111",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "243d364f07642860d40585fe7529a131474d8affebb60db8318bf4de8a165370"
+    },
+    "513011FA0A66191D": {
+      "before": [
+        {
+          "id": "513013CF20AFE1E6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bell",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:settlement"
+          ]
+        }
+      ],
+      "after_sha256": "c26eaf9478f54a265cf9d5f2f59ce7f938e72318357b659190fca84e9e3aac81"
+    },
+    "513011FA4C1840FC": {
+      "before": [
+        {
+          "id": "51301326FABEFD1B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "f6a38515977701178a57178ee6ca17e331c6fc3fbb2f0d13fc3d67a450d4d325"
+    },
+    "513011FC22300C21": {
+      "before": [
+        {
+          "id": "513013E96F4A2592",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "c80ac12d67cdfd6260c11065a3c4088bd40f445a3a3c377f40ef1c2e32216838"
+    },
+    "513011FE549D5980": {
+      "before": [
+        {
+          "id": "51301369BC34CB8C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "95d533319c5ea363da9475195e57e7db7b33e3051fd90374271e285bd8ba6590"
+    },
+    "513011FE794AFF67": {
+      "before": [
+        {
+          "id": "5130133C4132A439",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "58023cee072123c85424f42e0d327925bae5ca7fe69c8f9e761fa8a4190179b0"
+    },
+    "513011FE8D522CBB": {
+      "before": [
+        {
+          "id": "513013250FE98D8E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "82633915cd5d792998f8baa4a0777f108c8d436b766ae4d8dba02e93c01964a0"
+    },
+    "513011FFA590DC5D": {
+      "before": [
+        {
+          "id": "513013A5EAFCEEFD",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "05d544d7ec339a374a2a1d03faf399416a788cbf9f971598af190f837cdc762a"
+    },
+    "51401104D4E2DD1D": {
+      "before": [
+        {
+          "id": "514013618239F77F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "f9959bbd5b19a58891568405384d3a82b99ab7909fc85d143ef0bc628592236b"
+    },
+    "51401108F86D0EE4": {
+      "before": [
+        {
+          "id": "51401342B82581A1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bow",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:hunting"
+          ]
+        }
+      ],
+      "after_sha256": "3f6e2cf32127cc68d86a783e1a4e156070c6f5b8929a66f8d0655966f3b554c1"
+    },
+    "5140110BC63EC2F8": {
+      "before": [
+        {
+          "id": "514013EDAAA30575",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bow",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:hunting"
+          ]
+        }
+      ],
+      "after_sha256": "65ec96caa5063930a3ca74b61656f9970e9a2e2f7497168b442ee12eb940ef47"
+    },
+    "5140110D45F1DCC2": {
+      "before": [
+        {
+          "id": "514013E60692DDDD",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bow",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:hunting"
+          ]
+        }
+      ],
+      "after_sha256": "8f6b3e3b1e6b7946457b8db361272f99064c94b15ebc30f2999806d0282aa8d6"
+    },
+    "5140110E19D2CCEA": {
+      "before": [
+        {
+          "id": "514013A69460C391",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "8bb6efd200d28e02ce44830ec0b82078786fabf84d336139fe6bd80e0f82af9e"
+    },
+    "51401111C237D431": {
+      "before": [
+        {
+          "id": "514013DAE6490512",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "0ec93fca8203572f93a4db3ebc1e328e113334fc458859597bf935ff52d8a186"
+    },
+    "51401116FD1D244B": {
+      "before": [
+        {
+          "id": "514013CEBD970D47",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "264234eaec0b0f13a7c2634afd916dc45605c1df7d174f86a2a5f35d4fc181b3"
+    },
+    "51401117A75D3720": {
+      "before": [
+        {
+          "id": "514013166266B601",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "8ab048804332910dbadc542ca45f97cb9e21c89c1ce1ed985f04525e816f92f6"
+    },
+    "5140111E50339358": {
+      "before": [
+        {
+          "id": "514013559B7278F8",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "e1db5bc6309d619741ceff920191a37f9e70c316ff292b3ddedc31fe7781994f"
+    },
+    "51401120C974D031": {
+      "before": [
+        {
+          "id": "5140138D03243658",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "7775cfaaab39011654f7e310abf962fd3165dabc0f72ce23467f7c94d926e4e1"
+    },
+    "5140113D5477C077": {
+      "before": [
+        {
+          "id": "514013936F5AFEE9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bow",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:hunting"
+          ]
+        }
+      ],
+      "after_sha256": "68314f7fd2532a5d21a2806efa7bdd39c311c7457cc30e93cb7d64bf2e840d1d"
+    },
+    "5140113DC7D55324": {
+      "before": [
+        {
+          "id": "5140133FE7C8BB81",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "e56cd268daeabe41a11d87892625b49321100e5ef15f7d50240a1dc490fde993"
+    },
+    "514011487657F862": {
+      "before": [
+        {
+          "id": "51401385C2766AE6",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "8218e7abad7ab7cadef06213ce21d9daa0cb1b3fc3d0d61f011c2174b81eb67e"
+    },
+    "5140114A64A45C5A": {
+      "before": [
+        {
+          "id": "514013B4B7C9B23A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "de273afe223e4734d26bbeab6f2464f07bf36c0351fd543060c1bb637a7212f0"
+    },
+    "5140116A490EBB49": {
+      "before": [
+        {
+          "id": "514013E18877D69B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "e48a0957a0fdc5e31df57d71c83ee60e2596aef6ce959143f152c4c4363068e9"
+    },
+    "5140116F44752FA8": {
+      "before": [
+        {
+          "id": "5140139057B16162",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "06ec6d3edf263de1f58c78b2d446b22eb230f167f83d11eaa1df1fc40a7ba49d"
+    },
+    "5140118233B3CC83": {
+      "before": [
+        {
+          "id": "5140137AD3D91F85",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "e7ac9129807f96f1a552ff8870346de336eb0a907096ca2225fd2214f4d716cf"
+    },
+    "5140118A244326DF": {
+      "before": [
+        {
+          "id": "514013A9DC1B41E9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "6c97fd4fca9a43f2e791ea990f5ba48c5c3d684143ee729cf496393fecc44e6c"
+    },
+    "51401196A35E940E": {
+      "before": [
+        {
+          "id": "51401317D6BAFDED",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "7e091150f3da5595c5523c31ff6511105747a5c01d6c748de0402c5cc1f748fb"
+    },
+    "514011A4BB290307": {
+      "before": [
+        {
+          "id": "514013ED864E755E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "11225b192472d9178cd52f73222c1d15caab530131205ee66f43bf8621e5a4b4"
+    },
+    "514011A71FC3AAC5": {
+      "before": [
+        {
+          "id": "5140138C8C0E491C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "84542fe5fb3be8bacf92d517662cbf706ce135b567f5ab0e20b9b0390c11c077"
+    },
+    "514011AAAA9555C0": {
+      "before": [
+        {
+          "id": "514013F35AB42AD9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "49c2ddb8f1f645b78c755050eba067433767a937e5d83bf51df151f7a43ba3aa"
+    },
+    "514011ADCD0AC819": {
+      "before": [
+        {
+          "id": "5140136A25562C5A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "fd52ae4445d2a6fdfb04de9f0f689a12c58f3f66afef7079a9acacb5fcde6472"
+    },
+    "514011C570BA4F19": {
+      "before": [
+        {
+          "id": "5140132A9492ED8B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:anvil",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop"
+          ]
+        }
+      ],
+      "after_sha256": "bf7df0118c7b3333dd09620e2c4e968fe1b1717c2325c7063f222d19de9deda6"
+    },
+    "514011DBDCE74F12": {
+      "before": [
+        {
+          "id": "514013AD5EF4ABC9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:compass",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:expedition"
+          ]
+        }
+      ],
+      "after_sha256": "d41ba683c8398651a9a0036e121a5356e335614be4d6a89c6739839f9245b5f2"
+    },
+    "514011F45FF8C855": {
+      "before": [
+        {
+          "id": "5140139239EFC10B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "ec3ee95fa63164ab2c4eb52a26a92c788c4860d4e6d6b3585731c0061aa5c762"
+    },
+    "5142421100000005": {
+      "before": [
+        {
+          "id": "5142421300000005",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "4b48b067f25f0d06c5da10115b9295fe6783e5fc01da2070b354fcc2eaddfab9"
+    },
+    "5142421100000007": {
+      "before": [
+        {
+          "id": "5142421300000007",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "e31b6e8ed3643711a798246fecea5cd0f13f7001726a3ee3d03c02837294fce8"
+    },
+    "5142421100000008": {
+      "before": [
+        {
+          "id": "5142421300000008",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "4c3b6fb6eb015bb91c358f7e415effa23ccb079130fdbf909b4381161e0ce178"
+    },
+    "514242110000000C": {
+      "before": [
+        {
+          "id": "514242130000000C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "f1d0abfac5d5820c3f49691c9115570d7267d707d04eb4053c7bceef92e3c0ed"
+    },
+    "5142421100000017": {
+      "before": [
+        {
+          "id": "5142421300000017",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "75be2086f2935ac7fd8561791a724511a76f4e000f557d9c1e1c09c99cfb6c3d"
+    },
+    "5142421100000019": {
+      "before": [
+        {
+          "id": "5142421300000019",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "3769b86c67e2c1f9c0241cf458359386c5b5d4ee41c1ad1ec002cc9a3563a3e2"
+    },
+    "514D010000000006": {
+      "before": [
+        {
+          "id": "51301316409BDA7F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bundle",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:survival"
+          ]
+        }
+      ],
+      "after_sha256": "9335f34db62b0b83383d3163b65a550d5dcc7c1a0995c6e519ba084608f63c7f"
+    },
+    "514D110144C01D44": {
+      "before": [
+        {
+          "id": "5130135C7D41DC36",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "c27ead4b9eb347b9befb6dce52017fb5a8ab3987c872d6ce0710a00091e68a56"
+    },
+    "514D11053C24F796": {
+      "before": [
+        {
+          "id": "5130137D55EB5F14",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "b11dc26a57dad142516c351dac246c03b6d5010acce4a4757e40d99d2b14fa03"
+    },
+    "514D110A613D8197": {
+      "before": [
+        {
+          "id": "513013AA39F2E133",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "5822bbee256ab9294ce19f415bfb16f5fe2341b6a6ea90d61a18fb2a52d18cc8"
+    },
+    "514D111250CFCDBB": {
+      "before": [
+        {
+          "id": "51301317453199B1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "aac00dc552376674e7cd4b7db34069b7bd3a8a72523ccab7b53482220a4bc9c4"
+    },
+    "514D11362B44E731": {
+      "before": [
+        {
+          "id": "513013CCB0334CAC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "5f3266a75ff9716d396be480a12a364da041cba09a6f93c0f21528d99abb8c0c"
+    },
+    "514D113A135370A8": {
+      "before": [
+        {
+          "id": "5130133AEC4DAA16",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "51f6ff0b88333c3de0587449cf6def51d05c2ce3483d19181c417e380af4546d"
+    },
+    "514D114878C1E1BB": {
+      "before": [
+        {
+          "id": "5130133F7542FFFC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "57ffa2509ced040f66879a2b9473ca38ede75cea4391ca59a9f9ac68099dcfbe"
+    },
+    "514D114A28816D5D": {
+      "before": [
+        {
+          "id": "513013A2252D0DFD",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "6f7069f6f32bcb3c8fda5050860ef22f113089df70e6b034d3f63455a9e609c8"
+    },
+    "514D1154FFE3DABB": {
+      "before": [
+        {
+          "id": "513013AB218330EB",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "fc728741664f6f5065fd26b7c8032f3ac63f747d69cd3cb4d0781d56fc40b0f3"
+    },
+    "514D11BF49B78F90": {
+      "before": [
+        {
+          "id": "513013E370F2A11A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "d497cb0525b6b9f2a1eeaa15651ca5e2ee6543d5c5abafa7d929c910f43b6034"
+    },
+    "514D11BFE1742CD9": {
+      "before": [
+        {
+          "id": "51301324167E9AE0",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "893b1aa3b1b6e32103dbda05fe9955cf7e01660b0a110f806eb36aae3b1142bd"
+    },
+    "514D11CCD1AF477E": {
+      "before": [
+        {
+          "id": "513013825761E0D3",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "886707be217e575c59f872ca2f66ff5c33d2072dee31551c515dec8aed1d03b3"
+    },
+    "514D11E562C03F82": {
+      "before": [
+        {
+          "id": "513013A11938B6D8",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "30603f6a2201916dacc0392a94d4c06e29483dedc9f0946ea104a193018937ff"
+    },
+    "514D11E79566207A": {
+      "before": [
+        {
+          "id": "513013E7E630FB45",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "71196bedb8c8629f947c290de64184dc9aac108f81560c70d6e718a8df9f7aa0"
+    },
+    "514D11ECA99D525F": {
+      "before": [
+        {
+          "id": "513013004A550A1B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "after_sha256": "11eef749043216019065c784fd34e37753c01263c29b0366970aabf8fc68c556"
+    },
+    "514D11F90042E7F4": {
+      "before": [
+        {
+          "id": "513013DE4673092F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "418443978a8cfa49907165ceac31609cf6be1284c5ab335364dba36725671af7"
+    }
+  }
+}

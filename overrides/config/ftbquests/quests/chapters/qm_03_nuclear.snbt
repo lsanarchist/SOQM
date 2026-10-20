@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -85,12 +85,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D1138F546A4D2",
-      "x": -9.2,
-      "y": 5.35,
+      "x": -4.6,
+      "y": 4.95,
       "icon": {
         "id": "mekanism:radioactive_waste_barrel",
         "count": 1
@@ -138,12 +138,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11FDEEB7D32B": [
+          -1.79,
+          2.46,
+          -6.39,
+          4.63
+        ]
+      }
     },
     {
       "id": "514D11CD9798EC9F",
       "x": 4.6,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "mekanismgenerators:fission_reactor_casing",
         "count": 1
@@ -154,6 +162,7 @@
         "nuclear_fission",
         "qm_v040",
         "plain_instruction",
+        "multiblock_materials",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -171,7 +180,7 @@
             "id": "mekanismgenerators:fission_reactor_casing",
             "count": 1
           },
-          "count": 32,
+          "count": 30,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -195,7 +204,7 @@
             "id": "mekanismgenerators:fission_fuel_assembly",
             "count": 1
           },
-          "count": 4,
+          "count": 1,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -228,12 +237,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D1144187ECDB7",
-      "x": 0.0,
-      "y": 32.49,
+      "x": 4.6,
+      "y": 29.19,
       "icon": {
         "id": "mekanism:electric_pump",
         "count": 1
@@ -309,12 +318,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11CD9798EC9F": [
+          8.41,
+          26.7,
+          8.41,
+          28.87
+        ]
+      }
     },
     {
       "id": "514D1193C52093DB",
-      "x": 9.2,
-      "y": 13.67,
+      "x": 0.0,
+      "y": 12.42,
       "icon": {
         "id": "mekanism:chemical_oxidizer",
         "count": 1
@@ -388,12 +405,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11FF5A4363E6",
-      "x": 0.0,
-      "y": 35.99,
+      "x": 4.6,
+      "y": 32.29,
       "icon": {
         "id": "mekanism:geiger_counter",
         "count": 1
@@ -437,12 +454,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D111250CFCDBB",
-      "x": 4.6,
-      "y": 44.31,
+      "x": -4.6,
+      "y": 39.76,
       "icon": {
         "id": "mekanismgenerators:turbine_casing",
         "count": 1
@@ -452,6 +469,7 @@
         "stage_4",
         "nuclear_turbine",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -468,10 +486,22 @@
             "id": "mekanismgenerators:turbine_casing",
             "count": 1
           },
-          "count": 32,
+          "count": 44,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:structural_glass",
+            "count": 1
+          },
+          "count": 51,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150127B40B826E0"
         },
         {
           "id": "514D12E69CE54212",
@@ -480,10 +510,22 @@
             "id": "mekanismgenerators:turbine_valve",
             "count": 1
           },
-          "count": 4,
+          "count": 2,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_vent",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012CD142BD3F0"
         },
         {
           "id": "514D120323B4B81B",
@@ -492,10 +534,22 @@
             "id": "mekanismgenerators:turbine_rotor",
             "count": 1
           },
-          "count": 4,
+          "count": 1,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_blade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121596D3034D"
         },
         {
           "id": "514D12C6792999DA",
@@ -510,13 +564,25 @@
           "match_components": "none"
         },
         {
+          "type": "item",
+          "item": {
+            "id": "mekanism:pressure_disperser",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C90D3B9818"
+        },
+        {
           "id": "514D1286E7C55331",
           "type": "item",
           "item": {
             "id": "mekanismgenerators:electromagnetic_coil",
             "count": 1
           },
-          "count": 4,
+          "count": 1,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -527,22 +593,31 @@
           "id": "51301317453199B1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011377FFCE327": [
+          -0.79,
+          37.27,
+          -0.79,
+          39.44
+        ]
+      }
     },
     {
       "id": "514D1127DFAD1A15",
       "x": 4.6,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "mekanism:solar_neutron_activator",
         "count": 1
@@ -614,12 +689,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11E025B689EF",
-      "x": 0.0,
-      "y": 59.63,
+      "x": 4.6,
+      "y": 53.43,
       "icon": {
         "id": "mekanism:pellet_plutonium",
         "count": 1
@@ -666,12 +741,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D1127DFAD1A15": [
+          8.41,
+          50.94,
+          8.41,
+          53.11
+        ]
+      }
     },
     {
       "id": "513011A0BAABFFBE",
-      "x": -4.6,
-      "y": 5.35,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "mekanism:geiger_counter",
         "count": 1
@@ -714,12 +797,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11FDEEB7D32B": [
+          3.6,
+          2.25,
+          3.6,
+          4.42
+        ]
+      }
     },
     {
       "id": "51301124BDF694DA",
       "x": 4.6,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "mekanism:dosimeter",
         "count": 1
@@ -762,12 +853,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11FDEEB7D32B": [
+          3.6,
+          2.25,
+          8.2,
+          4.42
+        ]
+      }
     },
     {
       "id": "51301157139AE054",
       "x": -9.2,
-      "y": 97.27,
+      "y": 86.97,
       "icon": {
         "id": "minecraft:shield",
         "count": 1
@@ -808,12 +907,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011F6F0D21BC6": [
+          -5.6,
+          84.27,
+          -5.6,
+          86.44
+        ]
+      }
     },
     {
       "id": "51301107BADF6BB8",
       "x": -4.6,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "mekanism:fluorite_gem",
         "count": 1
@@ -861,12 +968,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EB896B6EFC",
       "x": 4.6,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "mekanism:dust_sulfur",
         "count": 1
@@ -914,12 +1021,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011490AD4077D",
-      "x": -4.6,
-      "y": 17.17,
+      "x": 0.0,
+      "y": 15.52,
       "icon": {
         "id": "mekanism:uranium_oxide_bucket",
         "count": 1
@@ -967,12 +1074,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D1193C52093DB": [
+          3.6,
+          12.82,
+          3.6,
+          14.99
+        ]
+      }
     },
     {
       "id": "51301153341D377A",
-      "x": -4.6,
-      "y": 24.17,
+      "x": 0.0,
+      "y": 21.72,
       "icon": {
         "id": "mekanism:uranium_hexafluoride_bucket",
         "count": 1
@@ -1021,12 +1136,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130113CC2B78731",
-      "x": 4.6,
-      "y": 20.67,
+      "x": 0.0,
+      "y": 18.62,
       "icon": {
         "id": "mekanism:hydrofluoric_acid_bucket",
         "count": 1
@@ -1075,12 +1190,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118AFFA97B98",
       "x": 4.6,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "mekanism:sulfuric_acid_bucket",
         "count": 1
@@ -1128,12 +1243,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011EB896B6EFC": [
+          9.0,
+          9.72,
+          9.0,
+          14.92
+        ]
+      }
     },
     {
       "id": "513011E76CA4FC3F",
       "x": 0.0,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "mekanism:heavy_water_bucket",
         "count": 1
@@ -1181,12 +1304,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114F36192ADA",
       "x": 9.2,
-      "y": 47.81,
+      "y": 42.86,
       "icon": {
         "id": "mekanism:sodium_bucket",
         "count": 1
@@ -1234,12 +1357,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301151883EDF84",
       "x": 9.2,
-      "y": 51.31,
+      "y": 45.96,
       "icon": {
         "id": "mekanism:superheated_sodium_bucket",
         "count": 1
@@ -1288,12 +1411,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011798878701B",
       "x": 9.2,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "mekanism:lithium_bucket",
         "count": 1
@@ -1341,12 +1464,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117F428479BE",
       "x": 4.6,
-      "y": 40.81,
+      "y": 36.66,
       "icon": {
         "id": "mekanism:superheating_element",
         "count": 1
@@ -1395,12 +1518,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011377FFCE327",
       "x": -4.6,
-      "y": 40.81,
+      "y": 36.66,
       "icon": {
         "id": "mekanismgenerators:turbine_blade",
         "count": 1
@@ -1448,12 +1571,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FBA0F4DD87",
       "x": -9.2,
-      "y": 47.81,
+      "y": 42.86,
       "icon": {
         "id": "mekanismgenerators:turbine_vent",
         "count": 1
@@ -1500,12 +1623,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D111250CFCDBB": [
+          -6.6,
+          40.16,
+          -11.2,
+          42.33
+        ]
+      }
     },
     {
       "id": "51301109189D95BA",
-      "x": 0.0,
-      "y": 47.81,
+      "x": -4.6,
+      "y": 42.86,
       "icon": {
         "id": "mekanismgenerators:saturating_condenser",
         "count": 1
@@ -1554,12 +1685,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D111250CFCDBB": [
+          -1.0,
+          40.16,
+          -1.0,
+          42.33
+        ]
+      }
     },
     {
       "id": "513011C58554CEB8",
-      "x": 4.6,
-      "y": 63.13,
+      "x": 0.0,
+      "y": 56.53,
       "icon": {
         "id": "mekanismgenerators:deuterium_bucket",
         "count": 1
@@ -1607,12 +1746,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130119923220370",
       "x": 9.2,
-      "y": 63.13,
+      "y": 56.53,
       "icon": {
         "id": "mekanismgenerators:tritium_bucket",
         "count": 1
@@ -1661,12 +1800,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301108144F2004",
-      "x": 9.2,
-      "y": 66.63,
+      "x": 4.6,
+      "y": 59.63,
       "icon": {
         "id": "mekanismgenerators:fusion_fuel_bucket",
         "count": 1
@@ -1716,12 +1855,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D114E75256187",
       "x": -4.6,
-      "y": 93.77,
+      "y": 83.87,
       "icon": {
         "id": "mekanism:rotary_condensentrator",
         "count": 1
@@ -1795,12 +1934,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D113E1E8CF8B1",
-      "x": 0.0,
-      "y": 100.77,
+      "x": -4.6,
+      "y": 90.07,
       "icon": {
         "id": "mekanismgenerators:fusion_reactor_controller",
         "count": 1
@@ -1811,6 +1950,7 @@
         "nuclear_fusion",
         "qm_v040",
         "plain_instruction",
+        "multiblock_materials",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -1842,7 +1982,7 @@
             "id": "mekanismgenerators:fusion_reactor_frame",
             "count": 1
           },
-          "count": 16,
+          "count": 36,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -1854,7 +1994,7 @@
             "id": "mekanismgenerators:fusion_reactor_port",
             "count": 1
           },
-          "count": 4,
+          "count": 3,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -1870,6 +2010,18 @@
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:reactor_glass",
+            "count": 1
+          },
+          "count": 25,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012E77D162D6C"
         },
         {
           "id": "514D122185675E38",
@@ -1892,12 +2044,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D114878C1E1BB",
       "x": 4.6,
-      "y": 105.59,
+      "y": 94.44,
       "icon": {
         "id": "mekanism:sps_casing",
         "count": 1
@@ -1907,6 +2059,7 @@
         "stage_5",
         "nuclear_sps",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -1925,7 +2078,7 @@
             "id": "mekanism:sps_casing",
             "count": 1
           },
-          "count": 4,
+          "count": 60,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -1937,7 +2090,7 @@
             "id": "mekanism:sps_port",
             "count": 1
           },
-          "count": 2,
+          "count": 3,
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
@@ -1953,6 +2106,18 @@
           "consume_items": false,
           "only_from_crafting": false,
           "match_components": "none"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:structural_glass",
+            "count": 1
+          },
+          "count": 123,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012190B2C873C"
         }
       ],
       "rewards": [
@@ -1960,22 +2125,23 @@
           "id": "5130133F7542FFFC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130116A61A85895",
       "x": 0.0,
-      "y": 71.45,
+      "y": 64.0,
       "icon": {
         "id": "mekanism:induction_casing",
         "count": 1
@@ -2024,12 +2190,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AE27F5BA38",
-      "x": -4.6,
-      "y": 74.95,
+      "x": 0.0,
+      "y": 67.1,
       "icon": {
         "id": "mekanism:induction_port",
         "count": 1
@@ -2076,12 +2242,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130116A61A85895": [
+          3.65,
+          64.45,
+          3.65,
+          66.62
+        ]
+      }
     },
     {
       "id": "513011E2552BA5EA",
-      "x": 9.2,
-      "y": 78.45,
+      "x": 4.6,
+      "y": 70.2,
       "icon": {
         "id": "mekanism:basic_induction_cell",
         "count": 1
@@ -2131,12 +2305,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011ED63C6B222",
-      "x": 4.6,
-      "y": 78.45,
+      "x": 0.0,
+      "y": 70.2,
       "icon": {
         "id": "mekanism:basic_induction_provider",
         "count": 1
@@ -2146,6 +2320,7 @@
         "stage_5",
         "item_mekanism_basic_induction_provider",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -2168,6 +2343,54 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "5130123BD9C1906D"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_induction_cell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128F80EB342D"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:induction_casing",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012DA4B8FFAA2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:induction_port",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121F1B3CD8C2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:structural_glass",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501252B4E2770B"
         }
       ],
       "rewards": [
@@ -2185,12 +2408,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130116A61A85895": [
+          -4.15,
+          64.45,
+          -4.15,
+          69.65
+        ]
+      }
     },
     {
       "id": "513011EDFD5496EF",
-      "x": -4.6,
-      "y": 81.95,
+      "x": 4.6,
+      "y": 73.3,
       "icon": {
         "id": "mekanism:advanced_induction_cell",
         "count": 1
@@ -2239,12 +2470,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E2552BA5EA": [
+          8.2,
+          70.6,
+          8.2,
+          72.77
+        ]
+      }
     },
     {
       "id": "5130114D0E92FBF2",
-      "x": 4.6,
-      "y": 81.95,
+      "x": 0.0,
+      "y": 73.3,
       "icon": {
         "id": "mekanism:advanced_induction_provider",
         "count": 1
@@ -2292,12 +2531,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011ED63C6B222": [
+          3.6,
+          70.6,
+          3.6,
+          72.77
+        ]
+      }
     },
     {
       "id": "513011B17B84E2DB",
-      "x": -4.6,
-      "y": 85.45,
+      "x": 4.6,
+      "y": 76.4,
       "icon": {
         "id": "mekanism:elite_induction_cell",
         "count": 1
@@ -2346,12 +2593,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011EDFD5496EF": [
+          8.6,
+          73.7,
+          8.6,
+          75.87
+        ]
+      }
     },
     {
       "id": "513011E1F3FBDA00",
-      "x": 4.6,
-      "y": 85.45,
+      "x": 0.0,
+      "y": 76.4,
       "icon": {
         "id": "mekanism:elite_induction_provider",
         "count": 1
@@ -2399,12 +2654,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114D0E92FBF2": [
+          -3.2,
+          73.7,
+          -3.2,
+          75.87
+        ]
+      }
     },
     {
       "id": "513011D934444F8B",
-      "x": -4.6,
-      "y": 88.95,
+      "x": 4.6,
+      "y": 79.5,
       "icon": {
         "id": "mekanism:ultimate_induction_cell",
         "count": 1
@@ -2453,12 +2716,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011B17B84E2DB": [
+          8.6,
+          76.8,
+          8.6,
+          78.97
+        ]
+      }
     },
     {
       "id": "513011BDCE53EB09",
       "x": 0.0,
-      "y": 88.95,
+      "y": 79.5,
       "icon": {
         "id": "mekanism:ultimate_induction_provider",
         "count": 1
@@ -2506,12 +2777,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E1F3FBDA00": [
+          -3.2,
+          76.8,
+          -3.2,
+          78.97
+        ]
+      }
     },
     {
       "id": "513011F6F0D21BC6",
       "x": -9.2,
-      "y": 93.77,
+      "y": 83.87,
       "icon": {
         "id": "mekanism:laser",
         "count": 1
@@ -2560,12 +2839,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CDE1D10A76",
       "x": -9.2,
-      "y": 117.41,
+      "y": 105.01,
       "icon": {
         "id": "mekanism:mekasuit_helmet",
         "count": 1
@@ -2613,12 +2892,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301111493CFC21",
       "x": -4.6,
-      "y": 117.41,
+      "y": 105.01,
       "icon": {
         "id": "mekanism:mekasuit_bodyarmor",
         "count": 1
@@ -2666,12 +2945,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301181BF058BAE",
       "x": 0.0,
-      "y": 117.41,
+      "y": 105.01,
       "icon": {
         "id": "mekanism:mekasuit_pants",
         "count": 1
@@ -2719,12 +2998,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011087C06E9D8",
       "x": 4.6,
-      "y": 117.41,
+      "y": 105.01,
       "icon": {
         "id": "mekanism:mekasuit_boots",
         "count": 1
@@ -2772,12 +3051,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112F15810A47",
       "x": 9.2,
-      "y": 117.41,
+      "y": 105.01,
       "icon": {
         "id": "mekanism:meka_tool",
         "count": 1
@@ -2826,12 +3105,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301138646C9874",
       "x": 0.0,
-      "y": 120.91,
+      "y": 108.11,
       "icon": {
         "id": "mekanism:modification_station",
         "count": 1
@@ -2880,12 +3159,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C521E5B4DD",
       "x": -9.2,
-      "y": 120.91,
+      "y": 108.11,
       "icon": {
         "id": "mekanism:module_base",
         "count": 1
@@ -2933,12 +3212,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301132F9C95555",
       "x": 4.6,
-      "y": 124.41,
+      "y": 111.21,
       "icon": {
         "id": "mekanism:module_energy_unit",
         "count": 1
@@ -2986,12 +3265,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130113FB494C115",
       "x": -9.2,
-      "y": 124.41,
+      "y": 111.21,
       "icon": {
         "id": "mekanism:module_radiation_shielding_unit",
         "count": 1
@@ -3040,12 +3319,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011C521E5B4DD": [
+          -5.2,
+          108.51,
+          -5.2,
+          110.68
+        ]
+      }
     },
     {
       "id": "513011ED1A3D11E0",
       "x": 0.0,
-      "y": 124.41,
+      "y": 111.21,
       "icon": {
         "id": "mekanism:module_jetpack_unit",
         "count": 1
@@ -3093,12 +3380,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301144D5FB95D4",
       "x": -4.6,
-      "y": 124.41,
+      "y": 111.21,
       "icon": {
         "id": "mekanism:module_electrolytic_breathing_unit",
         "count": 1
@@ -3146,12 +3433,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011C521E5B4DD": [
+          -5.2,
+          108.51,
+          -0.6,
+          110.68
+        ]
+      }
     },
     {
       "id": "51301155BDC855A3",
       "x": 9.2,
-      "y": 124.41,
+      "y": 111.21,
       "icon": {
         "id": "mekanism:module_vision_enhancement_unit",
         "count": 1
@@ -3199,12 +3494,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F1FC51AAE1",
-      "x": -4.6,
-      "y": 127.91,
+      "x": -9.2,
+      "y": 114.31,
       "icon": {
         "id": "mekanism:module_magnetic_attraction_unit",
         "count": 1
@@ -3252,12 +3547,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301125CDBD7A23",
-      "x": 4.6,
-      "y": 127.91,
+      "x": -4.6,
+      "y": 114.31,
       "icon": {
         "id": "mekanism:module_silk_touch_unit",
         "count": 1
@@ -3305,12 +3600,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11E562C03F82",
-      "x": 0.0,
-      "y": 109.09,
+      "x": 4.6,
+      "y": 97.54,
       "icon": {
         "id": "mekanism:pellet_antimatter",
         "count": 1
@@ -3347,22 +3642,31 @@
           "id": "513013A11938B6D8",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D114878C1E1BB": [
+          8.41,
+          95.05,
+          8.41,
+          97.22
+        ]
+      }
     },
     {
       "id": "514D1149705848EC",
       "x": 0.0,
-      "y": 112.59,
+      "y": 100.64,
       "icon": {
         "id": "kubejs:emc_core",
         "count": 1
@@ -3409,12 +3713,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11E562C03F82": [
+          2.65,
+          97.99,
+          -1.95,
+          100.16
+        ]
+      }
     },
     {
       "id": "5130114BCD92C503",
       "x": 4.6,
-      "y": 112.59,
+      "y": 100.64,
       "icon": {
         "id": "minecraft:pig_spawn_egg",
         "count": 1
@@ -3456,7 +3768,15 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11E562C03F82": [
+          8.2,
+          97.94,
+          8.2,
+          100.11
+        ]
+      }
     }
   ],
   "images": [
@@ -3527,9 +3847,9 @@
     {
       "id": "51410410000001E6",
       "x": 0.0,
-      "y": 3.8,
+      "y": 3.375,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3543,9 +3863,9 @@
     {
       "id": "51410410000001E7",
       "x": -12.395,
-      "y": 3.8,
+      "y": 3.375,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3590,8 +3910,8 @@
     },
     {
       "id": "51410410000001EA",
-      "x": -9.2,
-      "y": 6.43,
+      "x": -4.6,
+      "y": 6.03,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3606,8 +3926,8 @@
     },
     {
       "id": "51410410000001EB",
-      "x": -4.6,
-      "y": 6.22,
+      "x": 0.0,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3623,7 +3943,7 @@
     {
       "id": "51410410000001EC",
       "x": 4.6,
-      "y": 6.22,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3639,9 +3959,9 @@
     {
       "id": "51410410000001ED",
       "x": 0.0,
-      "y": 17.37,
+      "y": 15.495,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3655,9 +3975,9 @@
     {
       "id": "51410410000001EE",
       "x": -12.395,
-      "y": 17.37,
+      "y": 15.495,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -3671,7 +3991,7 @@
     {
       "id": "51410410000001EF",
       "x": 0.08,
-      "y": 8.78,
+      "y": 7.93,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3687,7 +4007,7 @@
     {
       "id": "51410410000001F0",
       "x": 4.6,
-      "y": 30.07,
+      "y": 27.17,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3702,8 +4022,8 @@
     },
     {
       "id": "51410410000001F1",
-      "x": 9.2,
-      "y": 14.75,
+      "x": 0.0,
+      "y": 13.5,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3718,8 +4038,8 @@
     },
     {
       "id": "51410410000001F2",
-      "x": 0.0,
-      "y": 37.07,
+      "x": 4.6,
+      "y": 33.37,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3735,9 +4055,9 @@
     {
       "id": "51410410000001F3",
       "x": 0.0,
-      "y": 32.69,
+      "y": 29.165,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3751,9 +4071,9 @@
     {
       "id": "51410410000001F4",
       "x": -12.395,
-      "y": 32.69,
+      "y": 29.165,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -3767,7 +4087,7 @@
     {
       "id": "51410410000001F5",
       "x": 0.08,
-      "y": 27.6,
+      "y": 24.7,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3783,7 +4103,7 @@
     {
       "id": "51410410000001F6",
       "x": -4.6,
-      "y": 11.25,
+      "y": 10.4,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3799,7 +4119,7 @@
     {
       "id": "51410410000001F7",
       "x": 4.6,
-      "y": 11.25,
+      "y": 10.4,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3814,8 +4134,8 @@
     },
     {
       "id": "51410410000001F8",
-      "x": -4.6,
-      "y": 18.04,
+      "x": 0.0,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3830,8 +4150,8 @@
     },
     {
       "id": "51410410000001F9",
-      "x": -4.6,
-      "y": 25.04,
+      "x": 0.0,
+      "y": 22.59,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3846,8 +4166,8 @@
     },
     {
       "id": "51410410000001FA",
-      "x": 4.6,
-      "y": 21.54,
+      "x": 0.0,
+      "y": 19.49,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3863,7 +4183,7 @@
     {
       "id": "51410410000001FB",
       "x": 4.6,
-      "y": 18.04,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3879,9 +4199,9 @@
     {
       "id": "51410410000001FC",
       "x": 0.0,
-      "y": 46.26,
+      "y": 41.285,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3895,9 +4215,9 @@
     {
       "id": "51410410000001FD",
       "x": -12.395,
-      "y": 46.26,
+      "y": 41.285,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -3911,7 +4231,7 @@
     {
       "id": "51410410000001FE",
       "x": 0.08,
-      "y": 39.42,
+      "y": 35.27,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3926,8 +4246,8 @@
     },
     {
       "id": "51410410000001FF",
-      "x": 0.0,
-      "y": 33.57,
+      "x": 4.6,
+      "y": 30.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3942,8 +4262,8 @@
     },
     {
       "id": "5141041000000200",
-      "x": 4.6,
-      "y": 45.39,
+      "x": -4.6,
+      "y": 40.84,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3959,7 +4279,7 @@
     {
       "id": "5141041000000201",
       "x": -9.2,
-      "y": 48.68,
+      "y": 43.73,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3975,7 +4295,7 @@
     {
       "id": "5141041000000202",
       "x": 0.0,
-      "y": 57.0,
+      "y": 51.2,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3991,7 +4311,7 @@
     {
       "id": "5141041000000203",
       "x": 9.2,
-      "y": 48.68,
+      "y": 43.73,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4007,7 +4327,7 @@
     {
       "id": "5141041000000204",
       "x": 9.2,
-      "y": 52.18,
+      "y": 46.83,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4023,7 +4343,7 @@
     {
       "id": "5141041000000205",
       "x": 4.6,
-      "y": 41.68,
+      "y": 37.53,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4039,7 +4359,7 @@
     {
       "id": "5141041000000206",
       "x": -4.6,
-      "y": 41.89,
+      "y": 37.74,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4054,8 +4374,8 @@
     },
     {
       "id": "5141041000000207",
-      "x": 0.0,
-      "y": 48.68,
+      "x": -4.6,
+      "y": 43.73,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4071,9 +4391,9 @@
     {
       "id": "5141041000000208",
       "x": 0.0,
-      "y": 61.58,
+      "y": 54.955,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4087,9 +4407,9 @@
     {
       "id": "5141041000000209",
       "x": -12.395,
-      "y": 61.58,
+      "y": 54.955,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -4103,7 +4423,7 @@
     {
       "id": "514104100000020A",
       "x": 0.08,
-      "y": 54.74,
+      "y": 48.94,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4119,7 +4439,7 @@
     {
       "id": "514104100000020B",
       "x": 4.6,
-      "y": 57.21,
+      "y": 51.41,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4134,8 +4454,8 @@
     },
     {
       "id": "514104100000020C",
-      "x": 0.0,
-      "y": 60.71,
+      "x": 4.6,
+      "y": 54.51,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4151,7 +4471,7 @@
     {
       "id": "514104100000020D",
       "x": 4.6,
-      "y": 106.67,
+      "y": 95.52,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4166,8 +4486,8 @@
     },
     {
       "id": "514104100000020E",
-      "x": 0.0,
-      "y": 110.17,
+      "x": 4.6,
+      "y": 98.62,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4183,7 +4503,7 @@
     {
       "id": "514104100000020F",
       "x": 0.0,
-      "y": 113.51,
+      "y": 101.56,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4199,7 +4519,7 @@
     {
       "id": "5141041000000210",
       "x": 4.6,
-      "y": 113.46,
+      "y": 101.51,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4215,9 +4535,9 @@
     {
       "id": "5141041000000211",
       "x": 0.0,
-      "y": 80.4,
+      "y": 71.725,
       "width": 24.9,
-      "height": 21.6,
+      "height": 19.15,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4231,9 +4551,9 @@
     {
       "id": "5141041000000212",
       "x": -12.395,
-      "y": 80.4,
+      "y": 71.725,
       "width": 0.11,
-      "height": 21.6,
+      "height": 19.15,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -4247,7 +4567,7 @@
     {
       "id": "5141041000000213",
       "x": 0.08,
-      "y": 70.06,
+      "y": 62.61,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4263,7 +4583,7 @@
     {
       "id": "5141041000000214",
       "x": 9.2,
-      "y": 57.0,
+      "y": 51.2,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4278,8 +4598,8 @@
     },
     {
       "id": "5141041000000215",
-      "x": 4.6,
-      "y": 64.0,
+      "x": 0.0,
+      "y": 57.4,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4295,7 +4615,7 @@
     {
       "id": "5141041000000216",
       "x": 9.2,
-      "y": 64.0,
+      "y": 57.4,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4310,8 +4630,8 @@
     },
     {
       "id": "5141041000000217",
-      "x": 9.2,
-      "y": 67.5,
+      "x": 4.6,
+      "y": 60.5,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4327,7 +4647,7 @@
     {
       "id": "5141041000000218",
       "x": -4.6,
-      "y": 94.85,
+      "y": 84.95,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4342,8 +4662,8 @@
     },
     {
       "id": "5141041000000219",
-      "x": 0.0,
-      "y": 101.85,
+      "x": -4.6,
+      "y": 91.15,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4359,7 +4679,7 @@
     {
       "id": "514104100000021A",
       "x": -9.2,
-      "y": 94.85,
+      "y": 84.95,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4375,7 +4695,7 @@
     {
       "id": "514104100000021B",
       "x": -9.2,
-      "y": 98.14,
+      "y": 87.84,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4391,9 +4711,9 @@
     {
       "id": "514104100000021C",
       "x": 0.0,
-      "y": 97.47,
+      "y": 86.945,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4407,9 +4727,9 @@
     {
       "id": "514104100000021D",
       "x": -12.395,
-      "y": 97.47,
+      "y": 86.945,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4423,7 +4743,7 @@
     {
       "id": "514104100000021E",
       "x": 0.08,
-      "y": 92.38,
+      "y": 82.48,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4439,7 +4759,7 @@
     {
       "id": "514104100000021F",
       "x": 0.0,
-      "y": 72.37,
+      "y": 64.92,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4454,8 +4774,8 @@
     },
     {
       "id": "5141041000000220",
-      "x": -4.6,
-      "y": 75.87,
+      "x": 0.0,
+      "y": 68.02,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4470,8 +4790,8 @@
     },
     {
       "id": "5141041000000221",
-      "x": 9.2,
-      "y": 79.37,
+      "x": 4.6,
+      "y": 71.12,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4486,8 +4806,8 @@
     },
     {
       "id": "5141041000000222",
-      "x": -4.6,
-      "y": 82.82,
+      "x": 4.6,
+      "y": 74.17,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4502,8 +4822,8 @@
     },
     {
       "id": "5141041000000223",
-      "x": -4.6,
-      "y": 86.32,
+      "x": 4.6,
+      "y": 77.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4518,8 +4838,8 @@
     },
     {
       "id": "5141041000000224",
-      "x": -4.6,
-      "y": 89.82,
+      "x": 4.6,
+      "y": 80.37,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4534,8 +4854,8 @@
     },
     {
       "id": "5141041000000225",
-      "x": 4.6,
-      "y": 79.37,
+      "x": 0.0,
+      "y": 71.12,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4550,8 +4870,8 @@
     },
     {
       "id": "5141041000000226",
-      "x": 4.6,
-      "y": 82.82,
+      "x": 0.0,
+      "y": 74.17,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4566,8 +4886,8 @@
     },
     {
       "id": "5141041000000227",
-      "x": 4.6,
-      "y": 86.32,
+      "x": 0.0,
+      "y": 77.27,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4583,7 +4903,7 @@
     {
       "id": "5141041000000228",
       "x": 0.0,
-      "y": 89.82,
+      "y": 80.37,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4599,9 +4919,9 @@
     {
       "id": "5141041000000229",
       "x": 0.0,
-      "y": 109.29,
+      "y": 97.515,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4615,9 +4935,9 @@
     {
       "id": "514104100000022A",
       "x": -12.395,
-      "y": 109.29,
+      "y": 97.515,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -4631,7 +4951,7 @@
     {
       "id": "514104100000022B",
       "x": 0.08,
-      "y": 104.2,
+      "y": 93.05,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4647,7 +4967,7 @@
     {
       "id": "514104100000022C",
       "x": -9.2,
-      "y": 118.28,
+      "y": 105.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4663,7 +4983,7 @@
     {
       "id": "514104100000022D",
       "x": -4.6,
-      "y": 118.28,
+      "y": 105.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4679,7 +4999,7 @@
     {
       "id": "514104100000022E",
       "x": 0.0,
-      "y": 118.28,
+      "y": 105.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4695,7 +5015,7 @@
     {
       "id": "514104100000022F",
       "x": 4.6,
-      "y": 118.28,
+      "y": 105.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4711,7 +5031,7 @@
     {
       "id": "5141041000000230",
       "x": 9.2,
-      "y": 118.28,
+      "y": 105.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4727,7 +5047,7 @@
     {
       "id": "5141041000000231",
       "x": 0.0,
-      "y": 121.78,
+      "y": 108.98,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4743,9 +5063,9 @@
     {
       "id": "5141041000000232",
       "x": 0.0,
-      "y": 122.86,
+      "y": 109.635,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4759,9 +5079,9 @@
     {
       "id": "5141041000000233",
       "x": -12.395,
-      "y": 122.86,
+      "y": 109.635,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -4775,7 +5095,7 @@
     {
       "id": "5141041000000234",
       "x": 0.08,
-      "y": 116.02,
+      "y": 103.62,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4791,7 +5111,7 @@
     {
       "id": "5141041000000235",
       "x": -9.2,
-      "y": 121.78,
+      "y": 108.98,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4807,7 +5127,7 @@
     {
       "id": "5141041000000236",
       "x": 4.6,
-      "y": 125.28,
+      "y": 112.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4823,7 +5143,7 @@
     {
       "id": "5141041000000237",
       "x": -9.2,
-      "y": 125.28,
+      "y": 112.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4839,7 +5159,7 @@
     {
       "id": "5141041000000238",
       "x": 0.0,
-      "y": 125.28,
+      "y": 112.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4855,7 +5175,7 @@
     {
       "id": "5141041000000239",
       "x": -4.6,
-      "y": 125.28,
+      "y": 112.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4871,7 +5191,7 @@
     {
       "id": "514104100000023A",
       "x": 9.2,
-      "y": 125.28,
+      "y": 112.08,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4886,8 +5206,8 @@
     },
     {
       "id": "514104100000023B",
-      "x": -4.6,
-      "y": 128.78,
+      "x": -9.2,
+      "y": 115.18,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4902,8 +5222,8 @@
     },
     {
       "id": "514104100000023C",
-      "x": 4.6,
-      "y": 128.78,
+      "x": -4.6,
+      "y": 115.18,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

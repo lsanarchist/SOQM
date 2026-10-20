@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "version": "2.0",
+  "version": "2.1",
   "max_items_per_roll": 4,
-  "notes": "Original SOQM progressive personal supplies. Each quest slot gives 2–4 independent draws with replacement. First choose an eligible rarity, then an eligible item by weight. Every manufactured reward requires the team to have really crafted that same item through a supported productive recipe; delivery, pickup, loot, quest detection and inventory are not proof. Expensive rewards have count 1. No plastic or HDPE rewards, including after unlock.",
+  "notes": "Personal themed reward packs draw 3–5 prizes with replacement. The first draw uses eligible uncommon-or-better prizes when available; otherwise it uses ordinary supplies. The remaining draws choose an eligible rarity then an item by weight. Every manufactured reward still requires actual team production of that exact output. Rare/epic, custom components and storage equipment remain single-item draws. Reviewed raw supplies and basic components use useful batch sizes up to 16. Explicit branch-achievement quests award one Mayhem Cube instead of a pack, preserving the original outer claim ID and personal ownership. Plastic and HDPE remain excluded.",
   "sources": {
     "ftb_quests_version": "2101.1.36",
     "ftb_quests_sha256": "6a39982c4b3afc00b1e788041a4f0d394e1659e3b3a6e5d078cd790bc36d0018",
@@ -15,33 +15,15 @@
   "production_scope": "team",
   "selection": "eligible_rarity_then_weighted_entry_with_replacement",
   "draws_by_level": [
-    2,
-    2,
-    3,
     3,
     3,
     4,
-    4
+    4,
+    4,
+    5,
+    5
   ],
   "rarity_weights_by_level": [
-    {
-      "common": 70,
-      "uncommon": 25,
-      "rare": 4,
-      "epic": 1
-    },
-    {
-      "common": 65,
-      "uncommon": 28,
-      "rare": 6,
-      "epic": 1
-    },
-    {
-      "common": 58,
-      "uncommon": 31,
-      "rare": 9,
-      "epic": 2
-    },
     {
       "common": 50,
       "uncommon": 35,
@@ -56,15 +38,33 @@
     },
     {
       "common": 38,
-      "uncommon": 39,
-      "rare": 18,
+      "uncommon": 38,
+      "rare": 19,
       "epic": 5
     },
     {
-      "common": 32,
-      "uncommon": 41,
-      "rare": 21,
-      "epic": 6
+      "common": 30,
+      "uncommon": 40,
+      "rare": 23,
+      "epic": 7
+    },
+    {
+      "common": 24,
+      "uncommon": 40,
+      "rare": 27,
+      "epic": 9
+    },
+    {
+      "common": 18,
+      "uncommon": 40,
+      "rare": 30,
+      "epic": 12
+    },
+    {
+      "common": 12,
+      "uncommon": 40,
+      "rare": 33,
+      "epic": 15
     }
   ],
   "levels": [
@@ -139,7 +139,7 @@
       "entries": [
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -154,7 +154,7 @@
         },
         {
           "item": "minecraft:torch",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -173,7 +173,7 @@
         },
         {
           "item": "minecraft:oak_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -188,7 +188,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -203,7 +203,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -220,7 +220,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -239,7 +239,7 @@
         },
         {
           "item": "ecologics:coconut_slice",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -254,7 +254,7 @@
         },
         {
           "item": "ecologics:walnut",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -269,7 +269,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -288,7 +288,7 @@
         },
         {
           "item": "aether:blue_berry",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -303,7 +303,7 @@
         },
         {
           "item": "ecologics:coconut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -323,7 +323,7 @@
         },
         {
           "item": "ecologics:walnut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -344,7 +344,7 @@
         {
           "item": "exdeorum:crook",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -364,7 +364,7 @@
         {
           "item": "exdeorum:wooden_hammer",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -443,7 +443,7 @@
         },
         {
           "item": "millenaire:masa",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -510,27 +510,23 @@
       "fallback": "survival",
       "entries": [
         {
-          "item": "minecraft:iron_nugget",
-          "count": 4,
+          "item": "minecraft:redstone",
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок заліза",
-            "en_us": "Iron Nugget"
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
           },
           "evidence": {
-            "recipe_ids": [
-              "aether:aether_iron_nugget_from_smelting",
-              "mekanismtools:iron_nugget_from_smelting",
-              "twilightforest:material/smelted_iron_nugget"
-            ],
+            "recipe_ids": [],
             "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -548,7 +544,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -567,7 +563,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -585,27 +581,27 @@
           }
         },
         {
-          "item": "minecraft:gold_nugget",
+          "item": "minecraft:gold_ingot",
           "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок золота",
-            "en_us": "Gold Nugget"
+            "uk_ua": "Золотий зливок",
+            "en_us": "Gold Ingot"
           },
           "evidence": {
             "recipe_ids": [
-              "aether:aether_gold_nugget_from_smelting",
-              "mekanismtools:gold_nugget_from_smelting",
-              "twilightforest:material/smelted_gold_nugget"
+              "ad_astra:smelting/gold_ingot_from_smelting_venus_gold_ore",
+              "immersiveengineering:smelting/gold_ingot_from_dust",
+              "mekanism:processing/gold/ingot/from_dust_smelting"
             ],
             "method": "starter_supply"
           }
         },
         {
           "item": "immersiveengineering:plate_iron",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -625,7 +621,7 @@
         },
         {
           "item": "immersiveengineering:plate_copper",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -645,7 +641,7 @@
         },
         {
           "item": "immersiveengineering:plate_aluminum",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -665,7 +661,7 @@
         },
         {
           "item": "immersiveengineering:plate_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -685,7 +681,7 @@
         },
         {
           "item": "immersiveengineering:stick_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -705,7 +701,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_copper",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -725,7 +721,7 @@
         },
         {
           "item": "immersiveengineering:hemp_fabric",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -745,7 +741,7 @@
         },
         {
           "item": "immersiveengineering:treated_wood_horizontal",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -806,7 +802,7 @@
         {
           "item": "immersiveengineering:hammer",
           "count": 1,
-          "weight": 5,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -826,7 +822,7 @@
         {
           "item": "immersiveengineering:screwdriver",
           "count": 1,
-          "weight": 5,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -996,7 +992,7 @@
       "entries": [
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1011,7 +1007,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1030,7 +1026,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1049,7 +1045,7 @@
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1067,7 +1063,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1082,7 +1078,7 @@
         },
         {
           "item": "mekanism:basic_control_circuit",
-          "count": 1,
+          "count": 4,
           "weight": 16,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1162,7 +1158,7 @@
         },
         {
           "item": "mekanism:alloy_infused",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1282,7 +1278,7 @@
         },
         {
           "item": "enderio:basic_capacitor",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1473,7 +1469,7 @@
       "entries": [
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1491,7 +1487,7 @@
         },
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1506,7 +1502,7 @@
         },
         {
           "item": "minecraft:copper_ingot",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1525,7 +1521,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1544,7 +1540,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1559,7 +1555,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_copper",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1579,7 +1575,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_electrum",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1599,7 +1595,7 @@
         },
         {
           "item": "immersiveengineering:wirecoil_steel",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1619,7 +1615,7 @@
         },
         {
           "item": "immersiveengineering:connector_lv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1659,7 +1655,7 @@
         },
         {
           "item": "immersiveengineering:connector_mv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 1,
@@ -1699,7 +1695,7 @@
         },
         {
           "item": "immersiveengineering:connector_hv",
-          "count": 1,
+          "count": 4,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1839,7 +1835,7 @@
         },
         {
           "item": "mekanism:basic_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 0,
@@ -1859,7 +1855,7 @@
         },
         {
           "item": "mekanism:advanced_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 2,
@@ -1879,7 +1875,7 @@
         },
         {
           "item": "mekanism:elite_universal_cable",
-          "count": 1,
+          "count": 8,
           "weight": 12,
           "rarity": "uncommon",
           "min_level": 3,
@@ -1950,7 +1946,7 @@
       "entries": [
         {
           "item": "minecraft:paper",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1967,7 +1963,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1982,7 +1978,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -1996,27 +1992,27 @@
           }
         },
         {
-          "item": "minecraft:iron_nugget",
-          "count": 4,
+          "item": "minecraft:iron_ingot",
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
           "name": {
-            "uk_ua": "Шматочок заліза",
-            "en_us": "Iron Nugget"
+            "uk_ua": "Залізний злиток",
+            "en_us": "Iron Ingot"
           },
           "evidence": {
             "recipe_ids": [
-              "aether:aether_iron_nugget_from_smelting",
-              "mekanismtools:iron_nugget_from_smelting",
-              "twilightforest:material/smelted_iron_nugget"
+              "ad_astra:smelting/iron_ingot_from_smelting_glacio_iron_ore",
+              "immersiveengineering:smelting/iron_ingot_from_dust",
+              "mekanism:processing/iron/ingot/from_dust_smelting"
             ],
             "method": "starter_supply"
           }
         },
         {
           "item": "minecraft:redstone",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2223,7 +2219,7 @@
         },
         {
           "item": "ae2:fluix_glass_cable",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -2243,7 +2239,7 @@
         },
         {
           "item": "ae2:quartz_fiber",
-          "count": 1,
+          "count": 8,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -2435,7 +2431,7 @@
       "entries": [
         {
           "item": "minecraft:paper",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2452,7 +2448,7 @@
         },
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2469,7 +2465,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2484,7 +2480,7 @@
         },
         {
           "item": "minecraft:amethyst_shard",
-          "count": 1,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2499,7 +2495,7 @@
         },
         {
           "item": "minecraft:sugar",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2515,7 +2511,7 @@
         {
           "item": "ae2:certus_quartz_cutting_knife",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -2535,7 +2531,7 @@
         {
           "item": "ae2:certus_quartz_wrench",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -2825,7 +2821,7 @@
       "entries": [
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2842,7 +2838,7 @@
         },
         {
           "item": "minecraft:amethyst_shard",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2857,7 +2853,7 @@
         },
         {
           "item": "minecraft:glass",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2872,7 +2868,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2889,7 +2885,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2904,7 +2900,7 @@
         },
         {
           "item": "botania:white_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2925,7 +2921,7 @@
         },
         {
           "item": "botania:purple_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2946,7 +2942,7 @@
         },
         {
           "item": "botania:light_blue_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -2967,7 +2963,7 @@
         },
         {
           "item": "botania:pink_petal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3009,7 +3005,7 @@
         {
           "item": "botania:lexicon",
           "count": 1,
-          "weight": 3,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -3300,7 +3296,7 @@
       "entries": [
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3315,7 +3311,7 @@
         },
         {
           "item": "minecraft:torch",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3334,7 +3330,7 @@
         },
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3349,7 +3345,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3364,7 +3360,7 @@
         },
         {
           "item": "minecraft:white_wool",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3381,7 +3377,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3400,7 +3396,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3419,7 +3415,7 @@
         },
         {
           "item": "twilightforest:cooked_meef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3438,7 +3434,7 @@
         },
         {
           "item": "aether:blue_berry",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3453,7 +3449,7 @@
         },
         {
           "item": "ecologics:coconut_slice",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3568,7 +3564,7 @@
         },
         {
           "item": "aether:ambrosium_torch",
-          "count": 2,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3719,7 +3715,7 @@
       "entries": [
         {
           "item": "minecraft:brick",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3734,7 +3730,7 @@
         },
         {
           "item": "minecraft:oak_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3749,7 +3745,7 @@
         },
         {
           "item": "minecraft:white_wool",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3766,7 +3762,7 @@
         },
         {
           "item": "minecraft:paper",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3783,7 +3779,7 @@
         },
         {
           "item": "minecraft:bread",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3798,7 +3794,7 @@
         },
         {
           "item": "ecologics:coconut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3818,7 +3814,7 @@
         },
         {
           "item": "ecologics:walnut_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3838,7 +3834,7 @@
         },
         {
           "item": "ecologics:azalea_planks",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3858,7 +3854,7 @@
         },
         {
           "item": "millenaire:byzantine_stone_tiles",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3878,7 +3874,7 @@
         },
         {
           "item": "millenaire:byzantine_sandstone_tiles",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3898,7 +3894,7 @@
         },
         {
           "item": "millenaire:ice_brick",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3918,7 +3914,7 @@
         },
         {
           "item": "millenaire:masa",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -3955,7 +3951,7 @@
         },
         {
           "item": "immersiveengineering:treated_wood_horizontal",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4198,7 +4194,7 @@
       "entries": [
         {
           "item": "minecraft:glass",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4213,7 +4209,7 @@
         },
         {
           "item": "minecraft:redstone",
-          "count": 3,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4228,7 +4224,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4247,7 +4243,7 @@
         },
         {
           "item": "minecraft:golden_carrot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4262,7 +4258,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4277,7 +4273,7 @@
         },
         {
           "item": "ad_astra:iron_rod",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -4297,7 +4293,7 @@
         },
         {
           "item": "ad_astra:steel_rod",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -4317,7 +4313,7 @@
         },
         {
           "item": "immersiveengineering:plate_iron",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 0,
@@ -4337,7 +4333,7 @@
         },
         {
           "item": "immersiveengineering:plate_steel",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -4437,7 +4433,7 @@
         },
         {
           "item": "ad_astra:steel_cable",
-          "count": 1,
+          "count": 4,
           "weight": 14,
           "rarity": "uncommon",
           "min_level": 1,
@@ -4457,7 +4453,7 @@
         },
         {
           "item": "ad_astra:desh_cable",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 3,
@@ -4637,7 +4633,7 @@
         },
         {
           "item": "ad_astra:cheese",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4665,7 +4661,7 @@
       "entries": [
         {
           "item": "minecraft:sand",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4682,7 +4678,7 @@
         },
         {
           "item": "minecraft:gravel",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4699,7 +4695,7 @@
         },
         {
           "item": "minecraft:cobblestone",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4718,7 +4714,7 @@
         },
         {
           "item": "minecraft:clay_ball",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4733,7 +4729,7 @@
         },
         {
           "item": "minecraft:coal",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -4752,7 +4748,7 @@
         {
           "item": "exdeorum:crook",
           "count": 1,
-          "weight": 6,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -4772,7 +4768,7 @@
         {
           "item": "exdeorum:bone_crook",
           "count": 1,
-          "weight": 6,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -4792,7 +4788,7 @@
         {
           "item": "exdeorum:wooden_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -4812,7 +4808,7 @@
         {
           "item": "exdeorum:iron_hammer",
           "count": 1,
-          "weight": 10,
+          "weight": 2,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
@@ -4832,7 +4828,7 @@
         {
           "item": "exdeorum:diamond_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "rare",
           "min_level": 1,
           "name": {
@@ -5056,7 +5052,7 @@
         {
           "item": "exmachinis:flux_hammer",
           "count": 1,
-          "weight": 8,
+          "weight": 2,
           "rarity": "rare",
           "min_level": 2,
           "name": {
@@ -5146,7 +5142,7 @@
       "entries": [
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5161,7 +5157,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 3,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5176,7 +5172,7 @@
         },
         {
           "item": "minecraft:bone",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5191,7 +5187,7 @@
         },
         {
           "item": "minecraft:cooked_beef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5206,7 +5202,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5221,7 +5217,7 @@
         },
         {
           "item": "ecologics:crab_meat",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5240,7 +5236,7 @@
         },
         {
           "item": "twilightforest:cooked_venison",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5259,7 +5255,7 @@
         },
         {
           "item": "twilightforest:cooked_meef",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5609,7 +5605,7 @@
       "entries": [
         {
           "item": "minecraft:arrow",
-          "count": 4,
+          "count": 16,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5624,7 +5620,7 @@
         },
         {
           "item": "minecraft:leather",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5639,7 +5635,7 @@
         },
         {
           "item": "minecraft:string",
-          "count": 2,
+          "count": 8,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5654,7 +5650,7 @@
         },
         {
           "item": "minecraft:lapis_lazuli",
-          "count": 2,
+          "count": 12,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -5671,7 +5667,7 @@
         },
         {
           "item": "minecraft:iron_ingot",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -6083,7 +6079,7 @@
       "entries": [
         {
           "item": "minecraft:emerald",
-          "count": 1,
+          "count": 3,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -6098,7 +6094,7 @@
         },
         {
           "item": "minecraft:gold_ingot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -6117,7 +6113,7 @@
         },
         {
           "item": "minecraft:golden_carrot",
-          "count": 1,
+          "count": 4,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -6132,7 +6128,7 @@
         },
         {
           "item": "minecraft:experience_bottle",
-          "count": 1,
+          "count": 6,
           "weight": 10,
           "rarity": "common",
           "min_level": 0,
@@ -6583,61 +6579,796 @@
     "qm_42_sophisticated": "logistics"
   },
   "milestones": {
-    "513011E734464E5D": {
-      "tier": 1,
-      "reason": "Industrial Chassis campaign milestone"
-    },
-    "5130115E1ED084F6": {
-      "tier": 2,
-      "reason": "Precision Mechanism campaign milestone"
-    },
-    "513011AA869D0649": {
-      "tier": 3,
-      "reason": "Dimensional Matrix campaign milestone"
-    },
-    "5130117F2402AE8A": {
+    "513011018F3848CA": {
       "tier": 4,
-      "reason": "Stellar Alloy campaign milestone"
+      "reason": "Branch achievement: Observer of the Skies"
     },
-    "513011AEA75E4401": {
+    "51301101E12F76D6": {
+      "tier": 4,
+      "reason": "Branch achievement: Forest Scourge"
+    },
+    "513011027911756D": {
+      "tier": 1,
+      "reason": "Branch achievement: Industrial Potionmaking"
+    },
+    "51301102B4D1DEF4": {
+      "tier": 1,
+      "reason": "Branch achievement: The Mighty Smeltery"
+    },
+    "51301103F035DDAB": {
+      "tier": 1,
+      "reason": "Branch achievement: Water Tower"
+    },
+    "51301104CFA9A015": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Ender Chest"
+    },
+    "5130110526994D7D": {
+      "tier": 3,
+      "reason": "Branch achievement: StoneWork: a single stone-processing station"
+    },
+    "5130110C02719C96": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Tier 4 Storage Module"
+    },
+    "5130110CBEF3D218": {
+      "tier": 1,
+      "reason": "Branch achievement: Steel Mill"
+    },
+    "513011103736AECD": {
+      "tier": 4,
+      "reason": "Branch achievement: Obtain 4 × Desh Plate + Obtain 2 × Eden Chunk + More"
+    },
+    "51301110A6A327AA": {
+      "tier": 3,
+      "reason": "Branch achievement: Sample + Essence → Mob Duplicator"
+    },
+    "5130111375CD52A0": {
+      "tier": 4,
+      "reason": "Branch achievement: Forest Islands"
+    },
+    "513011148D68B3DC": {
+      "tier": 3,
+      "reason": "Branch achievement: Hydra Slayer"
+    },
+    "5130111529940E76": {
+      "tier": 4,
+      "reason": "Branch achievement: Master Distorter"
+    },
+    "51301115487D09F6": {
+      "tier": 4,
+      "reason": "Branch achievement: 1001 Possibilities"
+    },
+    "513011162F45B0CF": {
+      "tier": 4,
+      "reason": "Branch achievement: Infinity Drill after the Supreme Frame"
+    },
+    "5130111631820BC6": {
+      "tier": 2,
+      "reason": "Branch achievement: Subnet: Storage Bus on an Interface"
+    },
+    "5130111A675CD3CC": {
+      "tier": 1,
+      "reason": "Branch achievement: Form the Assembler"
+    },
+    "5130111C5CB00C7E": {
+      "tier": 1,
+      "reason": "Branch achievement: Obtain 1 × Diamond Gear"
+    },
+    "5130111E28B22B76": {
+      "tier": 3,
+      "reason": "Branch achievement: Ender Fluid Conduit"
+    },
+    "5130112091E38E8F": {
+      "tier": 4,
+      "reason": "Branch achievement: Alpha Fur"
+    },
+    "51301121EF0C7608": {
+      "tier": 3,
+      "reason": "Branch achievement: Eternal Flame"
+    },
+    "51301121F7B8F501": {
+      "tier": 3,
+      "reason": "Branch achievement: Challenge: 2048 Active Channels"
+    },
+    "513011227105E2BA": {
       "tier": 5,
-      "reason": "Mythic Circuit campaign milestone"
+      "reason": "Branch achievement: Dark Another Day"
+    },
+    "51301123305026D9": {
+      "tier": 3,
+      "reason": "Branch achievement: Player Devastator"
+    },
+    "513011241BDCE00F": {
+      "tier": 5,
+      "reason": "Branch achievement: At the Mercy of a Dream"
+    },
+    "51301127D84254AF": {
+      "tier": 4,
+      "reason": "Branch achievement: Ether Gas → Supreme Frame"
+    },
+    "5130112935FFF4C2": {
+      "tier": 5,
+      "reason": "Branch achievement: Interstellar"
+    },
+    "5130112B7E67B5BF": {
+      "tier": 3,
+      "reason": "Branch achievement: The Fantastic Foundry"
+    },
+    "5130112C76268D3A": {
+      "tier": 3,
+      "reason": "Branch achievement: The Hottest Topic"
+    },
+    "513011306BCB6E37": {
+      "tier": 1,
+      "reason": "Branch achievement: Sheetmetal Stash"
+    },
+    "51301130F8B93E94": {
+      "tier": 2,
+      "reason": "Branch achievement: ME Workshop Components"
     },
     "5130113398623BDE": {
       "tier": 6,
       "reason": "EMC Core campaign milestone"
     },
-    "514D11FF5A4363E6": {
-      "tier": 4,
-      "reason": "Observed controlled first fission cycle"
+    "5130113654970E2B": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Advanced Crafting Table"
     },
-    "514D113E1E8CF8B1": {
+    "5130113706F7FC90": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Diamond Chest"
+    },
+    "51301138CDC4FC6E": {
+      "tier": 4,
+      "reason": "Branch achievement: The Martian"
+    },
+    "5130113E390D02AA": {
+      "tier": 4,
+      "reason": "Branch achievement: First Landing: Desh and a Return Route"
+    },
+    "5130113F2D7C608A": {
+      "tier": 1,
+      "reason": "Branch achievement: Delightful Decade"
+    },
+    "513011459985A7C5": {
+      "tier": 3,
+      "reason": "Branch achievement: Detoxing the Toxic Lair"
+    },
+    "51301148615D2591": {
+      "tier": 3,
+      "reason": "Branch achievement: Soul Binder: soul, experience and FE"
+    },
+    "5130114AEE1EEE9F": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Infinity Ingot"
+    },
+    "5130114C6BBFCCCD": {
+      "tier": 2,
+      "reason": "Branch achievement: Better Forks"
+    },
+    "51301150A4E4DACB": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Sword of the Cosmos"
+    },
+    "51301150CA097A15": {
       "tier": 5,
-      "reason": "Observed sustained fusion"
+      "reason": "Branch achievement: Legolas"
+    },
+    "51301152CC86C89E": {
+      "tier": 3,
+      "reason": "Branch achievement: Swarm of the Void"
+    },
+    "513011530925ED63": {
+      "tier": 5,
+      "reason": "Branch achievement: Obtain 4 × Mortum Chunk + Obtain 2 × Gaia Spirit Ingot + More"
+    },
+    "5130115736270719": {
+      "tier": 3,
+      "reason": "Branch achievement: An Invulnerable Whale"
+    },
+    "51301157FF888779": {
+      "tier": 0,
+      "reason": "Branch achievement: Concentrated Carbon"
+    },
+    "513011585394EA3D": {
+      "tier": 1,
+      "reason": "Branch achievement: Form the Bottling Machine"
+    },
+    "5130115D5E2B60E3": {
+      "tier": 3,
+      "reason": "Branch achievement: Dethroned"
+    },
+    "5130115E1ED084F6": {
+      "tier": 2,
+      "reason": "Precision Mechanism campaign milestone"
+    },
+    "513011653562C09D": {
+      "tier": 5,
+      "reason": "Branch achievement: Vethea"
+    },
+    "5130116538F34234": {
+      "tier": 5,
+      "reason": "Branch achievement: Unlimited Power"
+    },
+    "513011675037BC60": {
+      "tier": 5,
+      "reason": "Branch achievement: Obtain 1 × Dimension Builder"
+    },
+    "5130116789638387": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Reinforced Drum"
+    },
+    "51301167AE8889AA": {
+      "tier": 3,
+      "reason": "Branch achievement: Powered Spawner: machine and sample"
+    },
+    "5130116A0AE0BA27": {
+      "tier": 5,
+      "reason": "Branch achievement: I am Mad Scientist"
+    },
+    "5130116C6474BE0E": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Neutronium Collector"
+    },
+    "5130116CC5036025": {
+      "tier": 4,
+      "reason": "Branch achievement: Spatial Explorer: Plan Entry and Return"
+    },
+    "513011700E5507DB": {
+      "tier": 4,
+      "reason": "Branch achievement: Archaic Bowman"
+    },
+    "513011707B727ED1": {
+      "tier": 1,
+      "reason": "Branch achievement: A friend indeed"
+    },
+    "51301171CA29CEF3": {
+      "tier": 3,
+      "reason": "Branch achievement: Advanced Frame: the next production tier"
+    },
+    "513011732D8F780E": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Quarry"
+    },
+    "51301173D68FCBFF": {
+      "tier": 1,
+      "reason": "Branch achievement: Pressing Matters"
+    },
+    "5130117733452BD7": {
+      "tier": 2,
+      "reason": "Branch achievement: Mighty Stroganoff"
+    },
+    "5130117ABA3F4F64": {
+      "tier": 5,
+      "reason": "Branch achievement: Invader Girl"
+    },
+    "5130117DE98B12AB": {
+      "tier": 3,
+      "reason": "Branch achievement: Carminite Acclimation"
+    },
+    "5130117E7F94CA5C": {
+      "tier": 3,
+      "reason": "Branch achievement: Abysmally Ancient"
+    },
+    "5130117F2402AE8A": {
+      "tier": 4,
+      "reason": "Stellar Alloy campaign milestone"
+    },
+    "5130118142869DDE": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Terrasteel Ingot"
+    },
+    "51301182A048FC8B": {
+      "tier": 4,
+      "reason": "Branch achievement: Steam → rotor → induction → FE"
+    },
+    "5130118757F86955": {
+      "tier": 4,
+      "reason": "Branch achievement: Evil Disease"
+    },
+    "5130118A9899A738": {
+      "tier": 4,
+      "reason": "Branch achievement: Dungeon Master"
+    },
+    "5130118DB31A46A1": {
+      "tier": 1,
+      "reason": "Branch achievement: Coke Head"
+    },
+    "5130118F19BC727C": {
+      "tier": 3,
+      "reason": "Branch achievement: Like a Bossaru!"
+    },
+    "513011905E9962AB": {
+      "tier": 2,
+      "reason": "Branch achievement: Simple Frame with latex"
+    },
+    "5130119418D33F34": {
+      "tier": 4,
+      "reason": "Branch achievement: Medieval Metropolis"
+    },
+    "5130119426F8E5C3": {
+      "tier": 2,
+      "reason": "Branch achievement: Items between smelter and storage"
+    },
+    "513011965BAF66F4": {
+      "tier": 1,
+      "reason": "Branch achievement: Next Level Blasting"
+    },
+    "51301197D92629DB": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Red Matter"
+    },
+    "5130119992BFAE06": {
+      "tier": 3,
+      "reason": "Branch achievement: World Calling"
+    },
+    "5130119AFFF720CF": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Builder"
+    },
+    "5130119B9A6344A6": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Dimensional Cell (Advanced)"
+    },
+    "5130119E518C876F": {
+      "tier": 5,
+      "reason": "Branch achievement: Swiss Cheese"
+    },
+    "5130119EE81754B1": {
+      "tier": 4,
+      "reason": "Branch achievement: Extinguished"
+    },
+    "5130119F6CDCBAEA": {
+      "tier": 5,
+      "reason": "Branch achievement: Dead and Seek"
+    },
+    "513011A3AC6C6FB0": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × ME Transmutation Module"
+    },
+    "513011A7C9201F3C": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Assembly Table"
+    },
+    "513011A9F6BAF65C": {
+      "tier": 5,
+      "reason": "Branch achievement: Anger Management Problems"
+    },
+    "513011AA869D0649": {
+      "tier": 3,
+      "reason": "Dimensional Matrix campaign milestone"
+    },
+    "513011AAD4652E6F": {
+      "tier": 2,
+      "reason": "Branch achievement: First Craft in a Live ME Terminal"
+    },
+    "513011AB19DDDE4C": {
+      "tier": 4,
+      "reason": "Branch achievement: Basic Controller: assemble before startup"
+    },
+    "513011ABF651041B": {
+      "tier": 4,
+      "reason": "Branch achievement: Arcana"
+    },
+    "513011AD19E4FCFC": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Transmutation Tablet"
+    },
+    "513011AE9CF26AB0": {
+      "tier": 0,
+      "reason": "Branch achievement: Really Hot Topic"
+    },
+    "513011AEA75E4401": {
+      "tier": 5,
+      "reason": "Mythic Circuit campaign milestone"
+    },
+    "513011AF7E8D7059": {
+      "tier": 2,
+      "reason": "Branch achievement: Challenge: 8 Active Channels"
+    },
+    "513011AFDB9BDA41": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Transmutation Table"
+    },
+    "513011B0809BAB8B": {
+      "tier": 5,
+      "reason": "Branch achievement: Arachnophobia"
+    },
+    "513011B12DC6165B": {
+      "tier": 3,
+      "reason": "Branch achievement: Diggy Diggy Hole"
+    },
+    "513011B86476F5E1": {
+      "tier": 5,
+      "reason": "Branch achievement: Venusian"
+    },
+    "513011BB6996E76A": {
+      "tier": 4,
+      "reason": "Branch achievement: Purple Planet"
+    },
+    "513011BD589AF72A": {
+      "tier": 5,
+      "reason": "Branch achievement: Five Heads Are Better Than One"
+    },
+    "513011BD65027BE4": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Infinity Ingot + Obtain 1 × Antimatter Pellet + More"
+    },
+    "513011BD6664E0BF": {
+      "tier": 3,
+      "reason": "Branch achievement: Netherite Tier"
+    },
+    "513011BE93BB8ADB": {
+      "tier": 5,
+      "reason": "Branch achievement: Exorcism"
+    },
+    "513011BFC9151A29": {
+      "tier": 5,
+      "reason": "Branch achievement: Bicorn"
+    },
+    "513011C06B143334": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Energy Condenser MK2"
+    },
+    "513011C1CC3201F5": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Neutronium Compressor"
+    },
+    "513011CA9536C271": {
+      "tier": 1,
+      "reason": "Branch achievement: Form the Sawmill"
+    },
+    "513011CB9674DBF8": {
+      "tier": 6,
+      "reason": "Branch achievement: Obtain 1 × Extreme Crafting Table"
+    },
+    "513011CBBECFC29F": {
+      "tier": 5,
+      "reason": "Branch achievement: Colourless Land"
+    },
+    "513011CC15383729": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Crafter Tier 3"
+    },
+    "513011D0F247BDDA": {
+      "tier": 1,
+      "reason": "Branch achievement: Form the Auto Workbench"
+    },
+    "513011D34FFB9C53": {
+      "tier": 4,
+      "reason": "Branch achievement: Dungeon Master"
+    },
+    "513011D4AD7B73EE": {
+      "tier": 3,
+      "reason": "Branch achievement: Challenge: 128 Active Channels"
+    },
+    "513011D9B1021490": {
+      "tier": 3,
+      "reason": "Branch achievement: Tears of Fire"
+    },
+    "513011DB110983FB": {
+      "tier": 1,
+      "reason": "Branch achievement: Obtain 1 × Mana Pool"
+    },
+    "513011E12927F035": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Drawer Controller"
+    },
+    "513011E6B7A5065D": {
+      "tier": 3,
+      "reason": "Branch achievement: Overseeing Eye"
+    },
+    "513011E734464E5D": {
+      "tier": 1,
+      "reason": "Industrial Chassis campaign milestone"
+    },
+    "513011EAB08A97F7": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Runic Altar"
+    },
+    "513011EE444C38AF": {
+      "tier": 1,
+      "reason": "Branch achievement: Hazardous Machinery"
+    },
+    "513011EF2E948342": {
+      "tier": 5,
+      "reason": "Branch achievement: Lunar Emissary"
+    },
+    "513011F0630D0738": {
+      "tier": 4,
+      "reason": "Branch achievement: Afraid of Heights?"
+    },
+    "513011F5469C1A38": {
+      "tier": 2,
+      "reason": "Branch achievement: Eternal Closure"
+    },
+    "513011F638E9FBA0": {
+      "tier": 2,
+      "reason": "Branch achievement: Time To Even The Scales"
+    },
+    "513011F655EF052F": {
+      "tier": 2,
+      "reason": "Branch achievement: Linking Carts"
+    },
+    "513011F7A8F75195": {
+      "tier": 2,
+      "reason": "Branch achievement: Towering Guardian"
+    },
+    "513011FA0A66191D": {
+      "tier": 2,
+      "reason": "Branch achievement: Marco Polo"
+    },
+    "513011FA4C1840FC": {
+      "tier": 3,
+      "reason": "Branch achievement: Freezing Breeze"
+    },
+    "513011FC22300C21": {
+      "tier": 2,
+      "reason": "Branch achievement: Bring Out Your Dead"
+    },
+    "513011FE549D5980": {
+      "tier": 4,
+      "reason": "Branch achievement: Champion of Light"
+    },
+    "513011FE794AFF67": {
+      "tier": 4,
+      "reason": "Branch achievement: Clear Skies"
+    },
+    "513011FE8D522CBB": {
+      "tier": 4,
+      "reason": "Branch achievement: Reinforced Controller: power or steam"
+    },
+    "513011FFA590DC5D": {
+      "tier": 0,
+      "reason": "Branch achievement: Form the Alloy Smelter"
+    },
+    "51401104D4E2DD1D": {
+      "tier": 0,
+      "reason": "Branch achievement: A Crucible for Lava"
+    },
+    "51401108F86D0EE4": {
+      "tier": 1,
+      "reason": "Branch achievement: Absorption Hopper: items and experience"
+    },
+    "5140110BC63EC2F8": {
+      "tier": 2,
+      "reason": "Branch achievement: Mob Masher: processing with collection ready"
+    },
+    "5140110D45F1DCC2": {
+      "tier": 2,
+      "reason": "Branch achievement: The first solid experience output"
+    },
+    "5140110E19D2CCEA": {
+      "tier": 1,
+      "reason": "Branch achievement: Explore Terralith Monuments"
+    },
+    "51401111C237D431": {
+      "tier": 2,
+      "reason": "Branch achievement: Chunks Become Ore Again"
+    },
+    "51401116FD1D244B": {
+      "tier": 1,
+      "reason": "Branch achievement: Explore Terralith Deep Caves"
+    },
+    "51401117A75D3720": {
+      "tier": 4,
+      "reason": "Branch achievement: Obtain 1 × Netherite Furnace"
     },
     "5140111CF230BACD": {
       "tier": 3,
       "reason": "Defeat Ozgum once"
     },
+    "5140111E50339358": {
+      "tier": 1,
+      "reason": "Branch achievement: Explore Terralith Skylands"
+    },
+    "51401120C974D031": {
+      "tier": 1,
+      "reason": "Branch achievement: Obtain 1 × Warp Plate"
+    },
+    "5140113D5477C077": {
+      "tier": 3,
+      "reason": "Branch achievement: Entity Spawner: complete the farm cycle"
+    },
+    "5140113DC7D55324": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Diving Helmet + Obtain 1 × Diving Suit + More"
+    },
+    "514011487657F862": {
+      "tier": 1,
+      "reason": "Branch achievement: Alloy Smelter: the source of the branches"
+    },
+    "5140114A64A45C5A": {
+      "tier": 4,
+      "reason": "Branch achievement: Maximum Flux Throughput"
+    },
+    "5140116A490EBB49": {
+      "tier": 2,
+      "reason": "Branch achievement: Diamond Mesh"
+    },
+    "5140116F44752FA8": {
+      "tier": 0,
+      "reason": "Branch achievement: Iron Mesh"
+    },
+    "5140118233B3CC83": {
+      "tier": 2,
+      "reason": "Branch achievement: The First FE Sieve"
+    },
+    "5140118A244326DF": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Kiwano Helmet + Obtain 1 × Kiwano Chestplate + More"
+    },
+    "51401196A35E940E": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Netherite Squid Helmet + Obtain 1 × Netherite Squid Chestplate + More"
+    },
+    "514011A4BB290307": {
+      "tier": 0,
+      "reason": "Branch achievement: Obtain 1 × Iron Furnace"
+    },
+    "514011A71FC3AAC5": {
+      "tier": 2,
+      "reason": "Branch achievement: Defeat 1 × Shaman"
+    },
+    "514011AAAA9555C0": {
+      "tier": 3,
+      "reason": "Branch achievement: Diamond Furnace after the Matrix"
+    },
+    "514011ADCD0AC819": {
+      "tier": 3,
+      "reason": "Branch achievement: Sieve Drops Reach ME"
+    },
+    "514011C570BA4F19": {
+      "tier": 5,
+      "reason": "Branch achievement: Obtain 1 × Rainbow Furnace"
+    },
+    "514011DBDCE74F12": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Waystone"
+    },
     "514011F38EA006A4": {
       "tier": 3,
       "reason": "Defeat Rutia once"
     },
-    "514D11B7AEB78396": {
+    "514011F45FF8C855": {
       "tier": 2,
-      "reason": "First Nether expedition"
+      "reason": "Branch achievement: Feed Gravel to the Sieve"
     },
-    "514D11824471BA9B": {
+    "5142421100000005": {
+      "tier": 0,
+      "reason": "Branch achievement: Obtain 1 × Iron Backpack"
+    },
+    "5142421100000007": {
       "tier": 3,
-      "reason": "First End expedition"
+      "reason": "Branch achievement: Obtain 1 × Diamond Backpack"
+    },
+    "5142421100000008": {
+      "tier": 4,
+      "reason": "Branch achievement: Obtain 1 × Netherite Backpack"
+    },
+    "514242110000000C": {
+      "tier": 4,
+      "reason": "Branch achievement: Obtain 1 × Diamond To Netherite Tier Upgrade"
+    },
+    "5142421100000017": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Controller + Obtain 1 × Storage Tool"
+    },
+    "5142421100000019": {
+      "tier": 2,
+      "reason": "Branch achievement: Obtain 1 × Compression Upgrade"
+    },
+    "514D010000000006": {
+      "tier": 1,
+      "reason": "Branch achievement: Production without Hand Transfers"
+    },
+    "514D01000000000C": {
+      "tier": 1,
+      "reason": "Complete expedition readiness"
+    },
+    "514D110144C01D44": {
+      "tier": 3,
+      "reason": "Branch achievement: Obtain 1 × Refined Obsidian Paxel"
+    },
+    "514D11053C24F796": {
+      "tier": 2,
+      "reason": "Branch achievement: World Tier: Ascent"
+    },
+    "514D110A613D8197": {
+      "tier": 3,
+      "reason": "Branch achievement: Hydrogen chloride for injection"
+    },
+    "514D111250CFCDBB": {
+      "tier": 4,
+      "reason": "Branch achievement: Steam → turbine → FE"
+    },
+    "514D11362B44E731": {
+      "tier": 4,
+      "reason": "Branch achievement: World Tier: Summit"
+    },
+    "514D113A135370A8": {
+      "tier": 4,
+      "reason": "Branch achievement: Check the complete output route"
     },
     "514D113D5B1DB1C5": {
       "tier": 2,
       "reason": "Use a leveled, upgraded relic"
     },
-    "514D01000000000C": {
+    "514D113E1E8CF8B1": {
+      "tier": 5,
+      "reason": "Observed sustained fusion"
+    },
+    "514D114878C1E1BB": {
+      "tier": 5,
+      "reason": "Branch achievement: SPS: polonium and a large power supply"
+    },
+    "514D114A28816D5D": {
+      "tier": 2,
+      "reason": "Branch achievement: A factory: parallel processing"
+    },
+    "514D1154FFE3DABB": {
       "tier": 1,
-      "reason": "Complete expedition readiness"
+      "reason": "Branch achievement: Ore → enrichment → smelting"
+    },
+    "514D11824471BA9B": {
+      "tier": 3,
+      "reason": "First End expedition"
+    },
+    "514D11B7AEB78396": {
+      "tier": 2,
+      "reason": "First Nether expedition"
+    },
+    "514D11BF49B78F90": {
+      "tier": 1,
+      "reason": "Branch achievement: Use a Relic's Ability"
+    },
+    "514D11BFE1742CD9": {
+      "tier": 1,
+      "reason": "Branch achievement: Obtain 1 × Steel Paxel + Obtain 1 × Steel Shield"
+    },
+    "514D11CCD1AF477E": {
+      "tier": 2,
+      "reason": "Branch achievement: An Expedition Loadout"
+    },
+    "514D11E562C03F82": {
+      "tier": 6,
+      "reason": "Branch achievement: The first SPS output"
+    },
+    "514D11E79566207A": {
+      "tier": 2,
+      "reason": "Branch achievement: Mastering Hell and Sea"
+    },
+    "514D11ECA99D525F": {
+      "tier": 5,
+      "reason": "Branch achievement: World Tier: Pinnacle"
+    },
+    "514D11F90042E7F4": {
+      "tier": 2,
+      "reason": "Branch achievement: Evaporation: water, brine, lithium"
+    },
+    "514D11FF5A4363E6": {
+      "tier": 4,
+      "reason": "Observed controlled first fission cycle"
     }
-  }
+  },
+  "guaranteed_quality_draws": 1,
+  "design_sources": [
+    {
+      "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/reward_tables/mekanism.snbt",
+      "applied": "Themed basic-circuit and alloy batches instead of tiny generic filler."
+    },
+    {
+      "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/reward_tables/amekanismr_dadvanced_loot_boxr.snbt",
+      "applied": "Progressive pool emphasis on usable factory components, cables and casings; SOQM retains its exact-production gates."
+    },
+    {
+      "url": "https://github.com/TeamAOF/Craftoria/blob/main/config/ftbquests/quests/reward_tables/59C15B9D0F7ED5E1.snbt",
+      "applied": "Practical resource bundles; reference gives 12 metal ingots and 16 common processing materials."
+    },
+    {
+      "url": "https://github.com/TeamAOF/Craftoria/blob/main/config/ftbquests/quests/reward_tables/0414572B7C36F04F.snbt",
+      "applied": "Useful themed crafting supplies mixed with discrete equipment rewards."
+    }
+  ]
 }

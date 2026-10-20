@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -120,7 +120,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130116C9E28AC95",
@@ -226,7 +226,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011CB9674DBF8",
@@ -272,12 +272,13 @@
           "id": "51301309E7B674C2",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -327,12 +328,13 @@
           "id": "513013A74D5EBC62",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -444,7 +446,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130112A1F7D2FE4",
@@ -498,7 +500,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D735C27FBE",
@@ -763,12 +765,13 @@
           "id": "5130134B4E6D6CA4",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -819,12 +822,13 @@
           "id": "513013CB84C703A2",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -1145,12 +1149,13 @@
           "id": "513013EDAEBC7D92",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,

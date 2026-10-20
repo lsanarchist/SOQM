@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -34,6 +34,7 @@
         "51301167DCA596B9",
         "5130117FBB68BE2D",
         "513011D0113472B0",
+        "513011B6D00A0F88",
         "514D010000000002"
       ],
       "can_repeat": false,
@@ -146,7 +147,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011B48AB5BC29",
@@ -280,7 +281,15 @@
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E734464E5D": [
+          -13.96,
+          2.59,
+          -13.96,
+          9.21
+        ]
+      }
     },
     {
       "id": "513011D3D4BFF23C",
@@ -505,7 +514,15 @@
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130115E1ED084F6": [
+          -13.96,
+          9.21,
+          -13.96,
+          15.83
+        ]
+      }
     },
     {
       "id": "513011A9B3660665",
@@ -582,7 +599,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301130F8B93E94",
@@ -661,17 +678,18 @@
           "id": "51301335F4EDECFC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301140CF32D47E",
@@ -817,7 +835,15 @@
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011AA869D0649": [
+          -13.96,
+          15.83,
+          -13.96,
+          22.45
+        ]
+      }
     },
     {
       "id": "513011103736AECD",
@@ -897,17 +923,18 @@
           "id": "51301371236B752E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E73F3F0A17",
@@ -1130,7 +1157,15 @@
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130117F2402AE8A": [
+          -13.96,
+          22.45,
+          -13.96,
+          29.07
+        ]
+      }
     },
     {
       "id": "513011530925ED63",
@@ -1210,17 +1245,18 @@
           "id": "513013A65A9EE7DD",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F01C60EF3B",
@@ -1352,7 +1388,15 @@
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011AEA75E4401": [
+          -13.96,
+          29.07,
+          -13.96,
+          35.69
+        ]
+      }
     },
     {
       "id": "513011404E68C817",
@@ -1512,17 +1556,18 @@
           "id": "513013AE4C1B7019",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "kubejs:mythic_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:masterwork"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t6",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.48,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011621B7C3FEF",

@@ -63,6 +63,33 @@ class ProgressionRepairTests(unittest.TestCase):
         self.assertEqual(chapters, self.chapters)
         self.assertEqual(locale, self.locale)
 
+    def test_first_chassis_is_taught_after_its_own_steel_and_creosote(self):
+        """The first material gate must not hide the machines supplying it."""
+        preparation = (
+            "5130110C9CAE442B",  # Engineer's Manual
+            "51301140C9328072",  # hammer
+            "513011A899EC23A8",  # wire cutters
+            "5130115B313C6A81",  # coke bricks
+            "51301157FF888779",  # formed Coke Oven
+            "5130114F2594B696",  # coke
+            "513011AE9CF26AB0",  # formed Blast Furnace
+            "51301167DCA596B9",  # steel plate
+            "5130117FBB68BE2D",  # treated planks
+            "513011B6D00A0F88",  # copper wire coils
+        )
+        for ident in preparation:
+            with self.subTest(quest=ident):
+                self.assertNotIn(progression.CHASSIS, ancestors(self.quests, ident))
+                self.assertEqual(progression.quest_stage(self.quests[ident]), 0)
+        chassis = ancestors(self.quests, progression.CHASSIS)
+        self.assertTrue(set(preparation) <= chassis)
+        self.assertIn("51301157FF888779", ancestors(self.quests, "5130117FBB68BE2D"))
+        self.assertIn("513011AE9CF26AB0", ancestors(self.quests, "51301167DCA596B9"))
+        # Water and wind remain alternative generation branches, not a demand
+        # to build both machines before wiring the first supply.
+        self.assertNotIn("5130114CEA71331A", ancestors(self.quests, "513011647FD31AF9"))
+        self.assertNotIn("513011647FD31AF9", ancestors(self.quests, "5130114CEA71331A"))
+
     def test_processor_workshop_precedes_precision(self):
         """The ingredients of a campaign gate must be teachable before it."""
         for ident in ("513011CFBA3A9CF5", "5130110AD7EC7A65", "513011E6243A5B01"):

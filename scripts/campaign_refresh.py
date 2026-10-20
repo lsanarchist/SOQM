@@ -16,6 +16,8 @@ from pathlib import Path
 import re
 
 import campaign_layout
+import campaign_guidance
+import campaign_multiblocks
 import campaign_lessons
 import campaign_progression
 import campaign_rewards
@@ -97,14 +99,13 @@ def edit_text(chapters: list[dict], locale: dict) -> dict:
     locale[f"quest.{INTRO}.title"] = "Початок кампанії"
     locale[f"quest.{INTRO}.quest_desc"] = [
         "Почни з «Основи бази», а наступну спільну ціль шукай у першій главі «00 · Головний маршрут». Шість матеріальних рубежів поєднують промисловість, магію й експедиції.",
-        "Перший рубіж — промислове шасі: сталь, оброблене дерево та інженерні компоненти з глави 03. Після нього сплави Mekanism і Ender IO та процесори AE2 ведуть до точного механізму. Компактна ME-мережа й 1k-автокрафт доступні на цьому етапі.",
+        "Перша ціль — промислове шасі. У главі 03 склади коксову піч: кокс потрібен доменній печі для сталі, а крезот — для оброблених дощок. Додай мідні котушки та залізний компонент. Після шасі сплави Mekanism і Ender IO та процесори AE2 ведуть до точного механізму й першого ME-автокрафту.",
         "Далі: Botania, Aether і Сутінковий ліс → вимірна матриця; Місяць та Eden → зоряний композит; Mortum, Gaia й Ultimate-схеми → міфічна схема; антиматерія та Calorite → ядро EMC. Додаткові експедиції й колекції позначено колами.",
-        "Шестикутники показують передумови фіналу в книзі; більші вузли — матеріальні рубежі. Квадрати відкривають практичні уроки й розвиток мода. Відкритий опис квесту показує всі залежності, навіть якщо їхні лінії приховано на загальній карті.",
-        "Предметні задачі перевіряють інвентар без вилучення: потримай потрібні речі до встановлення чи витрати. Досягнення, події та відвідування перевіряють відповідну дію. Три інженерні задачі позначено як ручне підтвердження — їх відмічають після власної перевірки установки.",
+        "Читай виробничі секції зверху вниз. Короткі лінії показують місцеву послідовність; наведи на квест або відкрий його, щоб побачити решту передумов. Великі шестикутники в головному маршруті — матеріальні рубежі, кола — додаткові завдання. Підзаголовок називає конкретну тему або призначення предмета.",
+        "У вкладці «Завдання» мультиблоку перелічені блоки для найменшої описаної конструкції. Потримай їх в інвентарі перед будівництвом: перевірка не забирає предмети. Окрема умова формування чи запуску, якщо вона є, підтверджує готову установку. Три інженерні задачі явно позначено як ручне підтвердження після власної перевірки.",
         "Пам’ятка книги: ПКМ із Quest Book; клавіша Open Quests налаштовується в Керуванні → FTB Quests. Над предметом R відкриває рецепт, U — застосування. У рецептах користуйся JEI поточної збірки; там показано актуальні інгредієнти.",
-        "Кожен учасник особисто забирає нагороду раз за квест. Звичайний пакунок дає 2–4 випадкові призи; кількість і шанси рідкісних речей зростають із виготовленням шести матеріальних рубежів командою. Дорогі предмети з’являються в пулі після справжнього виготовлення саме цього предмета. Підібраний або подарований предмет не є доказом виробництва.",
-        "Команда /soqm rewards показує рівень нагород, а /soqm rewards pool <тема> — доступні призи, їхні поточні шанси за один вибір та умови ще закритих речей. Вибрані рубежі дають кожному по одному Mayhem Cube: для його подій виділи майданчик подалі від бази.",
-        "Особисті нагороди й журнал виробництва працюють із 0.4.8. Оновлення 0.4.9 зберігає вже отримані нагороди й виробничі відкриття. Лише перехід зі старих спільних нагород дає кожному одну нову особисту спробу за виконані квести; старі особисті отримання та вступна книга залишаються використаними. Для предметів, виготовлених до появи журналу, потрібен один новий зразок. Після зміни команди забери й знову встанови власні виробничі машини: так їхні наступні цикли враховуватимуться для нової команди.",
+        "Кожен учасник особисто забирає нагороду раз за квест. Пакунок дає 3–5 призів: кількість зростає з виготовленням матеріальних рубежів командою. Якщо в темі вже відкриті поліпшені призи, один вибір гарантовано припаде на незвичайний або рідкісніший приз. Дорогі компоненти стають доступними лише після справжнього виготовлення саме цього предмета; подарунки й нагороди цього не замінюють.",
+        "Завершення виробничих ланцюгів, важливі конструкції та пригодницькі цілі дають Mayhem Cube. Відкривай їх на окремому майданчику подалі від бази. Команда /soqm rewards показує рівень нагород, а /soqm rewards pool <тема> — доступні призи, шанси звичайного та гарантованого вибору й умови ще закритих предметів.",
     ]
     return dict(report)
 
@@ -112,16 +113,20 @@ def edit_text(chapters: list[dict], locale: dict) -> dict:
 def refresh(chapters: list[dict], locale: dict, groups: list[dict]) -> dict:
     identities = load_json(ROOT / "metadata/campaign_identity.json")
     expected = identities["sha256"]
-    allowed_inputs = {expected, identities.get("previous_claim_scope", {}).get("sha256")}
+    allowed_inputs = {expected, identities.get("previous_claim_scope", {}).get("sha256"),
+                      identities.get("previous_questbook", {}).get("sha256")}
     if persistent_identity(chapters, groups) not in allowed_inputs:
         raise ValueError("Persistent campaign identities changed; review migration before refreshing")
     report = {"editorial": edit_text(chapters, locale)}
+    report["multiblock_materials"] = campaign_multiblocks.apply_structure(chapters)
     report["progression"] = campaign_progression.apply(chapters, locale)
     for ident, translations in load_json(ROOT / "metadata/campaign_route.json")["quests"].items():
         locale[f"quest.{ident}.title"] = translations["uk_ua"]["title"]
         locale[f"quest.{ident}.quest_desc"] = list(translations["uk_ua"]["description"])
     report["expanded_lessons"] = campaign_lessons.apply_locale(locale, "uk_ua")
+    report["multiblock_lessons"] = campaign_multiblocks.apply_locale(chapters, locale, "uk_ua")
     report["layout"] = campaign_layout.apply(chapters, locale)
+    report["guidance"] = campaign_guidance.apply(chapters, locale, "uk_ua")
     report["rewards"] = campaign_rewards.apply(chapters, locale)
     if persistent_identity(chapters, groups) != expected:
         raise ValueError("Refresh changed a saved quest/task/reward identity or team claim setting")

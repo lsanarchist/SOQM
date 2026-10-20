@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -225,7 +225,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011BE85999FCD",
@@ -384,7 +384,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F6BBEDC253",
@@ -439,12 +439,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F5469C1A38",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 10.95,
+      "y": 4.65,
       "icon": {
         "id": "evilcraft:box_of_eternal_closure",
         "count": 1
@@ -476,21 +476,22 @@
           "id": "513013826943F3AF",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BB3FBFDB27",
-      "x": 4.95,
+      "x": 1.95,
       "y": 1.85,
       "icon": {
         "id": "evilcraft:vengeance_essence",
@@ -543,7 +544,7 @@
     },
     {
       "id": "5130117775EC76EE",
-      "x": 7.95,
+      "x": 4.95,
       "y": 1.85,
       "icon": {
         "id": "evilcraft:spectral_glasses",
@@ -596,7 +597,7 @@
     },
     {
       "id": "513011BFD1508F3E",
-      "x": 10.95,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "evilcraft:vengeance_focus",
@@ -650,8 +651,8 @@
     },
     {
       "id": "51301120ED3388D8",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 10.95,
+      "y": 1.85,
       "icon": {
         "id": "evilcraft:box_of_eternal_closure",
         "count": 1
@@ -703,7 +704,7 @@
     },
     {
       "id": "513011A6B4765CC7",
-      "x": 4.95,
+      "x": 1.95,
       "y": 4.65,
       "icon": {
         "id": "evilcraft:spirit_furnace",
@@ -757,7 +758,7 @@
     },
     {
       "id": "513011C4979876E2",
-      "x": 10.95,
+      "x": 4.95,
       "y": 4.65,
       "icon": {
         "id": "evilcraft:spirit_reanimator",
@@ -1160,12 +1161,13 @@
           "id": "5130131E1F509717",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2390,12 +2392,13 @@
           "id": "5130135ABE9CDF03",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "botania:mana_tablet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:arcane"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2694,7 +2697,7 @@
     },
     {
       "id": "5141041000000490",
-      "x": 4.95,
+      "x": 1.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2710,7 +2713,7 @@
     },
     {
       "id": "5141041000000491",
-      "x": 7.95,
+      "x": 4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2726,7 +2729,7 @@
     },
     {
       "id": "5141041000000492",
-      "x": 10.95,
+      "x": 7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2742,6 +2745,22 @@
     },
     {
       "id": "5141041000000493",
+      "x": 10.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000494",
       "x": 1.95,
       "y": 5.57,
       "width": 2.72,
@@ -2757,24 +2776,8 @@
       "order": 5
     },
     {
-      "id": "5141041000000494",
-      "x": 4.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
       "id": "5141041000000495",
-      "x": 10.95,
+      "x": 4.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2806,8 +2809,8 @@
     },
     {
       "id": "5141041000000497",
-      "x": 1.95,
-      "y": 2.85,
+      "x": 10.95,
+      "y": 5.65,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

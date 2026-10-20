@@ -44,6 +44,7 @@ repository; use the **installation ZIP** to create a game profile.
 
 [Installation](docs/INSTALL.en.md) · [Mod list](MODLIST.md) ·
 [Quest routes](docs/QUEST_BRANCHES.md) · [Rewards](docs/REWARDS.md) ·
+[Multiblock checklists](docs/MULTIBLOCK_MATERIALS.md) · [Quest map](docs/QUEST_LAYOUT_READABILITY.md) ·
 [Changelog](CHANGELOG.md) · [Validation reports](reports/README.md) ·
 [Development and release guide](docs/RELEASE.en.md)
 

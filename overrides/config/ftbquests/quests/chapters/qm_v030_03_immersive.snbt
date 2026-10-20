@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "51301140C9328072",
-      "x": -10.95,
+      "x": -4.6,
       "y": 1.85,
       "icon": {
         "id": "immersiveengineering:hammer",
@@ -25,9 +25,9 @@
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_hammer",
         "qm_v040",
+        "stage_0",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -65,25 +65,25 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301167DCA596B9",
-      "x": -7.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 17.35,
       "icon": {
         "id": "immersiveengineering:plate_steel",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_plate_steel",
         "qm_v040",
+        "stage_0",
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AE9CF26AB0",
         "51301140C9328072"
       ],
       "can_repeat": false,
@@ -118,25 +118,25 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117FBB68BE2D",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 11.15,
       "icon": {
         "id": "immersiveengineering:treated_wood_horizontal",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_treated_wood_horizontal",
         "qm_v040",
+        "stage_0",
         "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002"
+        "51301157FF888779"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -170,21 +170,21 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D0113472B0",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 4.6,
+      "y": 4.95,
       "icon": {
         "id": "immersiveengineering:component_iron",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_component_iron",
         "qm_v040",
+        "stage_0",
         "soqm_role_route"
       ],
       "dependencies": [
@@ -222,31 +222,56 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301157FF888779",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 8.05,
       "icon": {
         "id": "immersiveengineering:coke_oven",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "native_immersiveengineering_main_mb_cokeoven",
         "qm_v040",
-        "soqm_role_practice"
+        "multiblock_materials",
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130115B313C6A81",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:cokebrick",
+            "count": 1
+          },
+          "count": 27,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128180ECAB4E"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F7B8775651"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:main/mb_cokeoven",
@@ -259,41 +284,67 @@
           "id": "5130130B7A24B872",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AE9CF26AB0",
-      "x": -10.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 14.25,
       "icon": {
         "id": "immersiveengineering:blast_furnace",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "native_immersiveengineering_main_mb_blastfurnace",
         "qm_v040",
-        "soqm_role_practice"
+        "multiblock_materials",
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130114F2594B696",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:blastbrick",
+            "count": 1
+          },
+          "count": 27,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501288F4365929"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128A9E460C23"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:main/mb_blastfurnace",
@@ -306,36 +357,38 @@
           "id": "5130133F02B3DD53",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
-      "hide_dependency_lines": false
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": true
     },
     {
       "id": "513011518B793203",
-      "x": -10.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 27.92,
       "icon": {
         "id": "immersiveengineering:wirecoil_copper",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "native_immersiveengineering_main_connect_wire",
         "qm_v040",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130112227C31308",
+        "5130116C6548DD6D",
+        "513011B6D00A0F88"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -363,31 +416,56 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FFA590DC5D",
-      "x": 1.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 8.05,
       "icon": {
         "id": "immersiveengineering:alloy_smelter",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "immersive_form_alloy_smelter",
         "qm_v040",
+        "multiblock_materials",
+        "stage_0",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130110C9CAE442B",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:alloybrick",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012EBB01C6F37"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012BE5C957D2C"
+        },
         {
           "type": "advancement",
           "advancement": "qm:campaign/ie_multiblock_alloy_smelter",
@@ -400,36 +478,36 @@
           "id": "513013A5EAFCEEFD",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110C9CAE442B",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -9.2,
+      "y": 1.85,
       "icon": {
         "id": "immersiveengineering:manual",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_manual",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -461,28 +539,27 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
+      "size": 1.22,
+      "shape": "hexagon",
       "hide_dependency_lines": true
     },
     {
       "id": "513011A899EC23A8",
-      "x": -4.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 1.85,
       "icon": {
         "id": "immersiveengineering:wirecutter",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_wirecutter",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -514,28 +591,27 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
+      "size": 1.22,
+      "shape": "hexagon",
       "hide_dependency_lines": true
     },
     {
       "id": "51301113A3154D2A",
-      "x": -1.95,
-      "y": 4.65,
+      "x": 4.6,
+      "y": 1.85,
       "icon": {
         "id": "immersiveengineering:screwdriver",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_screwdriver",
         "qm_v040",
+        "stage_0",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -573,22 +649,21 @@
     },
     {
       "id": "5130115B313C6A81",
-      "x": -10.95,
-      "y": 7.45,
+      "x": -9.2,
+      "y": 4.95,
       "icon": {
         "id": "immersiveengineering:cokebrick",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_cokebrick",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130110C9CAE442B"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -620,28 +695,35 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110C9CAE442B": [
+          -5.39,
+          2.46,
+          -5.39,
+          4.63
+        ]
+      }
     },
     {
       "id": "5130114F2594B696",
-      "x": -7.95,
-      "y": 7.45,
+      "x": -9.2,
+      "y": 11.15,
       "icon": {
         "id": "immersiveengineering:coal_coke",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_coal_coke",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "51301157FF888779"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -673,27 +755,35 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301157FF888779": [
+          -5.39,
+          8.66,
+          -5.39,
+          10.83
+        ]
+      }
     },
     {
       "id": "51301169A78021F0",
-      "x": 4.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 35.39,
       "icon": {
         "id": "immersiveengineering:component_steel",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_component_steel",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
+        "51301167DCA596B9",
         "513011E734464E5D"
       ],
       "can_repeat": false,
@@ -732,23 +822,22 @@
     },
     {
       "id": "5130112227C31308",
-      "x": -7.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 21.72,
       "icon": {
         "id": "immersiveengineering:dynamo",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_dynamo",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011D0113472B0",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "513011D0113472B0"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -786,22 +875,22 @@
     },
     {
       "id": "5130114CEA71331A",
-      "x": -4.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 24.82,
       "icon": {
         "id": "immersiveengineering:watermill",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_watermill",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130112227C31308",
+        "5130117FBB68BE2D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -839,22 +928,22 @@
     },
     {
       "id": "513011647FD31AF9",
-      "x": -1.95,
-      "y": 12.27,
+      "x": -4.6,
+      "y": 24.82,
       "icon": {
         "id": "immersiveengineering:windmill",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_windmill",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130112227C31308",
+        "5130117FBB68BE2D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -892,22 +981,21 @@
     },
     {
       "id": "513011B6D00A0F88",
-      "x": -10.95,
-      "y": 15.07,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "immersiveengineering:wirecoil_copper",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_wirecoil_copper",
         "qm_v040",
-        "soqm_role_reference"
+        "stage_0",
+        "soqm_role_route"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011A899EC23A8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -939,28 +1027,36 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
-      "hide_dependency_lines": true
+      "size": 1.22,
+      "shape": "hexagon",
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011A899EC23A8": [
+          3.81,
+          2.46,
+          3.81,
+          4.63
+        ]
+      }
     },
     {
       "id": "5130116C6548DD6D",
-      "x": -7.95,
-      "y": 15.07,
+      "x": 4.6,
+      "y": 21.72,
       "icon": {
         "id": "immersiveengineering:connector_lv",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_connector_lv",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "513011B6D00A0F88"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -998,22 +1094,21 @@
     },
     {
       "id": "513011F3D9FACD30",
-      "x": -4.95,
-      "y": 15.07,
+      "x": 4.6,
+      "y": 24.82,
       "icon": {
         "id": "immersiveengineering:connector_lv_relay",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_connector_lv_relay",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "5130116C6548DD6D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1047,26 +1142,33 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130116C6548DD6D": [
+          8.25,
+          22.17,
+          8.25,
+          24.34
+        ]
+      }
     },
     {
       "id": "5130113060E2375A",
-      "x": -1.95,
-      "y": 15.07,
+      "x": 0.0,
+      "y": 31.02,
       "icon": {
         "id": "immersiveengineering:capacitor_lv",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_capacitor_lv",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011518B793203"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1100,27 +1202,35 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011518B793203": [
+          3.65,
+          28.37,
+          3.65,
+          30.54
+        ]
+      }
     },
     {
       "id": "5130110029567322",
-      "x": -10.95,
-      "y": 17.87,
+      "x": -9.2,
+      "y": 71.47,
       "icon": {
         "id": "immersiveengineering:wirecoil_electrum",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_wirecoil_electrum",
         "qm_v040",
         "plain_instruction",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "513011B6D00A0F88"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1158,22 +1268,22 @@
     },
     {
       "id": "51301192F84C0562",
-      "x": -7.95,
-      "y": 17.87,
+      "x": -4.6,
+      "y": 71.47,
       "icon": {
         "id": "immersiveengineering:connector_mv",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_1",
         "item_immersiveengineering_connector_mv",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011E734464E5D"
+        "513011E734464E5D",
+        "5130116C6548DD6D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1211,27 +1321,101 @@
     },
     {
       "id": "51301173D68FCBFF",
-      "x": 4.95,
-      "y": 12.27,
+      "x": -9.2,
+      "y": 53.43,
       "icon": {
         "id": "immersiveengineering:metal_press",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_metalpress",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011C37B3FFEB2",
+        "5130113462B5267C",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150126716E5F5D7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:piston",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121453A9ACB7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:heavy_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150127B8FA7807A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501273C1E31FA2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:conveyor_basic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501222CEE28D97"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012186FD0F575"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_metalpress",
@@ -1244,41 +1428,117 @@
           "id": "513013DEC809B782",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EE444C38AF",
-      "x": 7.95,
-      "y": 12.27,
+      "x": 0.0,
+      "y": 53.43,
       "icon": {
         "id": "immersiveengineering:crusher",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_crusher",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "513011C37B3FFEB2",
+        "513011F19F27E6F7",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 10,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012D71550BEDF"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501220AD41CDE3"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 10,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C9D7E35532"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_fence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012B2275A6869"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:hopper",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150124F03D3F417"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123862D8BCB2"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_crusher",
@@ -1291,41 +1551,79 @@
           "id": "5130136E7AC288E4",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011965BAF66F4",
-      "x": 10.95,
-      "y": 12.27,
+      "x": 9.2,
+      "y": 53.43,
       "icon": {
         "id": "immersiveengineering:advanced_blast_furnace",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_improvedblastfurnace",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "5130112DAAA79EEE",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:blastbrick_reinforced",
+            "count": 1
+          },
+          "count": 27,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501280A390D45C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:hopper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122B1024ED76"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150129433F70F2D"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_improvedblastfurnace",
@@ -1338,42 +1636,129 @@
           "id": "513013BBD0480DE0",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011027911756D",
-      "x": -10.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 59.63,
       "icon": {
         "id": "immersiveengineering:mixer",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_mixer",
         "qm_v040",
         "plain_instruction",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "513011F19F27E6F7",
+        "5130117254399ACB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012D289100AB3"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012888884D8E6"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150124927825385"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012CD81DC2414"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_fence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501242CCECE9AD"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:fluid_pipe",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012BF83A149D3"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012A682792880"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_mixer",
@@ -1386,41 +1771,79 @@
           "id": "513013D3B02E8DD1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011306BCB6E37",
-      "x": -7.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 64.0,
       "icon": {
         "id": "immersiveengineering:silo",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_silo",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 50,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012375514EEFE"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:treated_fence",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C431611626"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012161AD02A0D"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_silo",
@@ -1433,42 +1856,80 @@
           "id": "513013574F1D9E34",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301103F035DDAB",
-      "x": -4.95,
-      "y": 22.69,
+      "x": -4.6,
+      "y": 64.0,
       "icon": {
         "id": "immersiveengineering:tank",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_multiblocks_mb_tank",
         "qm_v040",
         "plain_instruction",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 34,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C2155F9A75"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:treated_fence",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128F2FC26C5D"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012FCD29CDC7A"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_tank",
@@ -1481,36 +1942,37 @@
           "id": "513013FB62E6CF82",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F8C15E22E3",
-      "x": -10.95,
-      "y": 28.29,
+      "x": 9.2,
+      "y": 64.0,
       "icon": {
         "id": "minecraft:filled_map",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "native_immersiveengineering_main_buy_oremap",
         "qm_v040",
+        "stage_1",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "5130117254399ACB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1542,27 +2004,114 @@
     },
     {
       "id": "5130111A675CD3CC",
-      "x": -1.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 67.1,
       "icon": {
         "id": "immersiveengineering:assembler",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "immersive_form_assembler",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "513011F19F27E6F7",
+        "5130113462B5267C",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C43204459C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123F59DE1C8A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501250ECF5AB86"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501271AB7E3F44"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:slab_sheetmetal_iron",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012453F926337"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:conveyor_basic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123E85631F6C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150124296C71E0B"
+        },
         {
           "type": "advancement",
           "advancement": "qm:campaign/ie_multiblock_assembler",
@@ -1575,41 +2124,130 @@
           "id": "5130138A12B779D6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011585394EA3D",
-      "x": -10.95,
-      "y": 25.49,
+      "x": 0.0,
+      "y": 67.1,
       "icon": {
         "id": "immersiveengineering:bottling_machine",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "immersive_form_bottling_machine",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "513011F19F27E6F7",
+        "5130113462B5267C",
+        "5130117254399ACB",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150125CA63A55D2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012CEED304F7F"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C3A8F8D7AC"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012D649E272CC"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:conveyor_basic",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012AEAB59DE2F"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:fluid_pump",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012E2DEBAE4A8"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012AD271CC9E7"
+        },
         {
           "type": "advancement",
           "advancement": "qm:campaign/ie_multiblock_bottling_machine",
@@ -1622,41 +2260,129 @@
           "id": "5130133EB86E7FA6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CA9536C271",
-      "x": -7.95,
-      "y": 25.49,
+      "x": 4.6,
+      "y": 67.1,
       "icon": {
         "id": "immersiveengineering:sawmill",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "immersive_form_sawmill",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011C37B3FFEB2",
+        "513011A503096C2F",
+        "5130113462B5267C",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012DC51BEA40B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123B5997F57F"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:heavy_engineering",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F995EBCD82"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F3D808F990"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012430ABBB044"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:conveyor_basic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150120B8F95157C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150124241A40BBD"
+        },
         {
           "type": "advancement",
           "advancement": "qm:campaign/ie_multiblock_sawmill",
@@ -1669,41 +2395,128 @@
           "id": "513013A073408713",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D0F247BDDA",
-      "x": -4.95,
-      "y": 25.49,
+      "x": -4.6,
+      "y": 67.1,
       "icon": {
         "id": "immersiveengineering:auto_workbench",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "immersive_form_auto_workbench",
         "qm_v040",
+        "multiblock_materials",
+        "stage_1",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011A503096C2F",
+        "5130113462B5267C",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501249830478E2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121B9432D166"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:heavy_engineering",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012499EBB2559"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122E21E89E81"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:slab_treated_wood_horizontal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121A146BD19B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:conveyor_basic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123294C06991"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150127720585530"
+        },
         {
           "type": "advancement",
           "advancement": "qm:campaign/ie_multiblock_auto_workbench",
@@ -1716,35 +2529,39 @@
           "id": "513013BF3C651C99",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130115247ECD3E2",
-      "x": -4.95,
-      "y": 17.87,
+      "x": -4.6,
+      "y": 74.57,
       "icon": {
         "id": "immersiveengineering:capacitor_mv",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_capacitor_mv",
         "qm_v040",
+        "stage_2",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011E734464E5D",
+        "5130113060E2375A",
+        "5130110029567322",
+        "51301192F84C0562",
         "5130115E1ED084F6"
       ],
       "can_repeat": false,
@@ -1783,23 +2600,22 @@
     },
     {
       "id": "513011A503096C2F",
-      "x": 7.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 38.49,
       "icon": {
         "id": "immersiveengineering:light_engineering",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_light_engineering",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011D0113472B0",
-        "5130115E1ED084F6"
+        "513011E734464E5D",
+        "513011D0113472B0"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1837,23 +2653,22 @@
     },
     {
       "id": "513011C37B3FFEB2",
-      "x": 10.95,
-      "y": 1.85,
+      "x": -9.2,
+      "y": 38.49,
       "icon": {
         "id": "immersiveengineering:heavy_engineering",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_heavy_engineering",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "51301169A78021F0",
-        "5130115E1ED084F6"
+        "513011E734464E5D",
+        "51301169A78021F0"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1887,26 +2702,33 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301169A78021F0": [
+          -5.55,
+          35.84,
+          -5.55,
+          38.01
+        ]
+      }
     },
     {
       "id": "513011F19F27E6F7",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 0.0,
+      "y": 38.49,
       "icon": {
         "id": "immersiveengineering:rs_engineering",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_rs_engineering",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1944,23 +2766,22 @@
     },
     {
       "id": "513011E25267FD65",
-      "x": 4.95,
-      "y": 15.07,
+      "x": -9.2,
+      "y": 56.53,
       "icon": {
         "id": "immersiveengineering:mold_plate",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_mold_plate",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011A899EC23A8",
-        "5130115E1ED084F6"
+        "51301173D68FCBFF",
+        "513011A899EC23A8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -1998,23 +2819,22 @@
     },
     {
       "id": "513011829B3BAD9A",
-      "x": 7.95,
-      "y": 15.07,
+      "x": -4.6,
+      "y": 56.53,
       "icon": {
         "id": "immersiveengineering:mold_gear",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_mold_gear",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011A899EC23A8",
-        "5130115E1ED084F6"
+        "51301173D68FCBFF",
+        "513011A899EC23A8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2052,23 +2872,22 @@
     },
     {
       "id": "513011B5A6A9EB2A",
-      "x": 10.95,
-      "y": 15.07,
+      "x": 0.0,
+      "y": 56.53,
       "icon": {
         "id": "immersiveengineering:mold_rod",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_mold_rod",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011A899EC23A8",
-        "5130115E1ED084F6"
+        "51301173D68FCBFF",
+        "513011A899EC23A8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2106,23 +2925,22 @@
     },
     {
       "id": "513011E94A1C3709",
-      "x": 1.95,
-      "y": 17.87,
+      "x": 4.6,
+      "y": 56.53,
       "icon": {
         "id": "immersiveengineering:mold_wire",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_mold_wire",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011A899EC23A8",
-        "5130115E1ED084F6"
+        "51301173D68FCBFF",
+        "513011A899EC23A8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2160,22 +2978,23 @@
     },
     {
       "id": "5130112DAAA79EEE",
-      "x": 4.95,
-      "y": 17.87,
+      "x": 4.6,
+      "y": 35.39,
       "icon": {
         "id": "immersiveengineering:blastbrick_reinforced",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_blastbrick_reinforced",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D",
+        "513011AE9CF26AB0",
+        "51301167DCA596B9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2213,22 +3032,21 @@
     },
     {
       "id": "5130117254399ACB",
-      "x": 1.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 42.86,
       "icon": {
         "id": "immersiveengineering:fluid_pipe",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_fluid_pipe",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2266,23 +3084,22 @@
     },
     {
       "id": "513011060A137580",
-      "x": 7.95,
-      "y": 17.87,
+      "x": 9.2,
+      "y": 56.53,
       "icon": {
         "id": "immersiveengineering:blastfurnace_preheater",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_blastfurnace_preheater",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130117254399ACB",
-        "5130115E1ED084F6"
+        "513011965BAF66F4",
+        "5130117254399ACB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2320,22 +3137,21 @@
     },
     {
       "id": "5130113462B5267C",
-      "x": -10.95,
-      "y": 33.11,
+      "x": 0.0,
+      "y": 42.86,
       "icon": {
         "id": "immersiveengineering:conveyor_basic",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_basic",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130115E1ED084F6"
+        "513011E734464E5D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2373,21 +3189,20 @@
     },
     {
       "id": "5130117F8A73721B",
-      "x": -7.95,
-      "y": 33.11,
+      "x": 0.0,
+      "y": 45.96,
       "icon": {
         "id": "immersiveengineering:conveyor_vertical",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_vertical",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C"
       ],
       "can_repeat": false,
@@ -2422,25 +3237,32 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130113462B5267C": [
+          3.65,
+          43.31,
+          3.65,
+          45.48
+        ]
+      }
     },
     {
       "id": "51301133BE177146",
-      "x": -4.95,
-      "y": 33.11,
+      "x": 4.6,
+      "y": 45.96,
       "icon": {
         "id": "immersiveengineering:conveyor_extract",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_extract",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C"
       ],
       "can_repeat": false,
@@ -2475,25 +3297,32 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130113462B5267C": [
+          3.65,
+          43.31,
+          8.25,
+          45.48
+        ]
+      }
     },
     {
       "id": "5130110CAA0B1890",
-      "x": -1.95,
-      "y": 33.11,
+      "x": 9.2,
+      "y": 45.96,
       "icon": {
         "id": "immersiveengineering:conveyor_splitter",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_splitter",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C"
       ],
       "can_repeat": false,
@@ -2532,21 +3361,20 @@
     },
     {
       "id": "513011A784AC24C0",
-      "x": -10.95,
-      "y": 35.91,
+      "x": -4.6,
+      "y": 49.06,
       "icon": {
         "id": "immersiveengineering:conveyor_redstone",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_redstone",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C"
       ],
       "can_repeat": false,
@@ -2585,21 +3413,20 @@
     },
     {
       "id": "513011B10EB819FC",
-      "x": -7.95,
-      "y": 35.91,
+      "x": 0.0,
+      "y": 49.06,
       "icon": {
         "id": "immersiveengineering:conveyor_dropper",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_conveyor_dropper",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C"
       ],
       "can_repeat": false,
@@ -2638,21 +3465,20 @@
     },
     {
       "id": "513011E6BD90E95B",
-      "x": 4.95,
-      "y": 22.69,
+      "x": -9.2,
+      "y": 45.96,
       "icon": {
         "id": "immersiveengineering:fluid_pump",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_fluid_pump",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130117254399ACB",
         "513011D0113472B0"
       ],
@@ -2692,21 +3518,20 @@
     },
     {
       "id": "513011D01FAD3591",
-      "x": 7.95,
-      "y": 22.69,
+      "x": -4.6,
+      "y": 45.96,
       "icon": {
         "id": "immersiveengineering:fluid_sorter",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_fluid_sorter",
         "qm_v040",
+        "stage_1",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130117254399ACB",
         "513011D0113472B0"
       ],
@@ -2746,23 +3571,23 @@
     },
     {
       "id": "513011B5FB049CD1",
-      "x": -4.95,
-      "y": 35.91,
+      "x": 4.6,
+      "y": 49.06,
       "icon": {
         "id": "immersiveengineering:sorter",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_2",
         "item_immersiveengineering_sorter",
         "qm_v040",
+        "stage_2",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130113462B5267C",
-        "513011D0113472B0"
+        "513011D0113472B0",
+        "5130115E1ED084F6"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2800,27 +3625,150 @@
     },
     {
       "id": "5130112C76268D3A",
-      "x": 1.95,
-      "y": 15.07,
+      "x": 9.2,
+      "y": 59.63,
       "icon": {
         "id": "immersiveengineering:arc_furnace",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "native_immersiveengineering_multiblocks_mb_arcfurnace",
         "qm_v040",
+        "multiblock_materials",
+        "stage_3",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011C37B3FFEB2",
+        "513011F19F27E6F7",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012ACB676A40B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:storage_steel",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012D0F76C00F3"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:heavy_engineering",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150125FA9A41FC7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012423E85153A"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 10,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150125369FE32A8"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:blastbrick_reinforced",
+            "count": 1
+          },
+          "count": 27,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F11CCC7F63"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:slab_sheetmetal_steel",
+            "count": 1
+          },
+          "count": 14,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501266B7B2654C"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012DBB1418DF2"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:cauldron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012DF407645B7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501262263C908C"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_arcfurnace",
@@ -2833,41 +3781,142 @@
           "id": "5130139852054EAD",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011B12DC6165B",
-      "x": -1.95,
-      "y": 25.49,
+      "x": 9.2,
+      "y": 67.1,
       "icon": {
         "id": "immersiveengineering:excavator",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "native_immersiveengineering_multiblocks_mb_excavator",
         "qm_v040",
+        "multiblock_materials",
+        "stage_3",
         "soqm_role_practice"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011F8C15E22E3",
+        "513011C37B3FFEB2",
+        "513011F19F27E6F7",
+        "51301140C9328072"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:storage_steel",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150120DF6F35E25"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:sheetmetal_steel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501284A1C4AB29"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:radiator",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128043BEED9B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:light_engineering",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012AFBD3EBCAF"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:rs_engineering",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501264EDAE0B67"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:heavy_engineering",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012AA2D973D33"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 26,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501223F946FD74"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012963FD3E868"
+        },
         {
           "type": "advancement",
           "advancement": "immersiveengineering:multiblocks/mb_excavator",
@@ -2880,36 +3929,37 @@
           "id": "5130130B246F2867",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130113B29A18A2A",
-      "x": 1.95,
-      "y": 33.11,
+      "x": -9.2,
+      "y": 82.04,
       "icon": {
         "id": "immersiveengineering:skyhook",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "native_immersiveengineering_tools_skyhook_distance",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011518B793203"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2941,22 +3991,22 @@
     },
     {
       "id": "51301195D2829429",
-      "x": -1.95,
-      "y": 17.87,
+      "x": -4.6,
+      "y": 77.67,
       "icon": {
         "id": "immersiveengineering:capacitor_hv",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_capacitor_hv",
         "qm_v040",
+        "stage_3",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130115247ECD3E2"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -2990,28 +4040,36 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130115247ECD3E2": [
+          -0.95,
+          75.02,
+          -0.95,
+          77.19
+        ]
+      }
     },
     {
       "id": "5130116938AB4E49",
-      "x": 4.95,
-      "y": 33.11,
+      "x": -4.6,
+      "y": 85.14,
       "icon": {
         "id": "immersiveengineering:drill",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_drill",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
+        "513011AA869D0649",
         "513011C37B3FFEB2",
         "513011D0113472B0",
-        "513011AA869D0649"
+        "513011EA9C91377F"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3049,22 +4107,22 @@
     },
     {
       "id": "513011EA9C91377F",
-      "x": 7.95,
-      "y": 33.11,
+      "x": -4.6,
+      "y": 82.04,
       "icon": {
         "id": "immersiveengineering:drillhead_steel",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_drillhead_steel",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301167DCA596B9"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3102,23 +4160,22 @@
     },
     {
       "id": "513011680472300F",
-      "x": 10.95,
-      "y": 33.11,
+      "x": 0.0,
+      "y": 85.14,
       "icon": {
         "id": "immersiveengineering:buzzsaw",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_buzzsaw",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011C37B3FFEB2",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "513011C37B3FFEB2"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3156,21 +4213,20 @@
     },
     {
       "id": "513011D9F9BB4662",
-      "x": 1.95,
-      "y": 35.91,
+      "x": 9.2,
+      "y": 85.14,
       "icon": {
         "id": "immersiveengineering:railgun",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_railgun",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
         "51301195D2829429"
       ],
       "can_repeat": false,
@@ -3209,23 +4265,22 @@
     },
     {
       "id": "5130110BC9722D12",
-      "x": 4.95,
-      "y": 35.91,
+      "x": 0.0,
+      "y": 82.04,
       "icon": {
         "id": "immersiveengineering:revolver",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_revolver",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "51301169A78021F0",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "51301169A78021F0"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3263,25 +4318,24 @@
     },
     {
       "id": "5130119C81CF64E3",
-      "x": 7.95,
-      "y": 35.91,
+      "x": 4.6,
+      "y": 82.04,
       "icon": {
         "id": "immersiveengineering:chemthrower",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_chemthrower",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "513011183B7E03D8",
+        "513011AA869D0649",
         "5130117254399ACB",
         "513011C37B3FFEB2",
-        "513011AA869D0649"
+        "513011183B7E03D8"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3319,23 +4373,22 @@
     },
     {
       "id": "5130119EFCBAF93F",
-      "x": 10.95,
-      "y": 35.91,
+      "x": 9.2,
+      "y": 82.04,
       "icon": {
         "id": "immersiveengineering:powerpack",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "item_immersiveengineering_powerpack",
         "qm_v040",
+        "stage_3",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130116C6548DD6D",
-        "513011AA869D0649"
+        "513011AA869D0649",
+        "5130116C6548DD6D"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -3439,12 +4492,12 @@
     },
     {
       "id": "514104100000007A",
-      "x": -6.45,
-      "y": 4.85,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 9.575,
+      "width": 24.9,
+      "height": 19.15,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3456,9 +4509,9 @@
     {
       "id": "514104100000007B",
       "x": -12.395,
-      "y": 4.85,
+      "y": 9.575,
       "width": 0.11,
-      "height": 9.7,
+      "height": 19.15,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3471,9 +4524,9 @@
     },
     {
       "id": "514104100000007C",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -3487,12 +4540,12 @@
     },
     {
       "id": "514104100000007D",
-      "x": -7.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 2.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3503,12 +4556,12 @@
     },
     {
       "id": "514104100000007E",
-      "x": -10.95,
+      "x": -4.6,
       "y": 2.93,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3519,12 +4572,12 @@
     },
     {
       "id": "514104100000007F",
-      "x": -7.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 18.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3535,12 +4588,12 @@
     },
     {
       "id": "5141041000000080",
-      "x": -4.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 2.93,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3551,12 +4604,12 @@
     },
     {
       "id": "5141041000000081",
-      "x": -1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 2.77,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3567,12 +4620,12 @@
     },
     {
       "id": "5141041000000082",
-      "x": -4.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 12.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3583,12 +4636,12 @@
     },
     {
       "id": "5141041000000083",
-      "x": -10.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 6.03,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3599,12 +4652,12 @@
     },
     {
       "id": "5141041000000084",
-      "x": -1.95,
-      "y": 2.85,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 9.13,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3615,12 +4668,12 @@
     },
     {
       "id": "5141041000000085",
-      "x": -7.95,
-      "y": 8.37,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 12.23,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3631,12 +4684,12 @@
     },
     {
       "id": "5141041000000086",
-      "x": -10.95,
-      "y": 5.65,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 15.33,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3647,12 +4700,12 @@
     },
     {
       "id": "5141041000000087",
-      "x": 6.45,
-      "y": 3.45,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 36.915,
+      "width": 24.9,
+      "height": 6.75,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3663,12 +4716,12 @@
     },
     {
       "id": "5141041000000088",
-      "x": 0.505,
-      "y": 3.45,
+      "x": -12.395,
+      "y": 36.915,
       "width": 0.11,
-      "height": 6.9,
+      "height": 6.75,
       "rotation": 0.0,
-      "image": "color:#E873C5B6",
+      "image": "color:#E890A8E8",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3679,9 +4732,9 @@
     },
     {
       "id": "5141041000000089",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 34.0,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -3695,12 +4748,12 @@
     },
     {
       "id": "514104100000008A",
-      "x": 1.95,
-      "y": 2.93,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 6.03,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3711,12 +4764,12 @@
     },
     {
       "id": "514104100000008B",
-      "x": 7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 39.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3727,12 +4780,12 @@
     },
     {
       "id": "514104100000008C",
-      "x": 4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 36.31,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3743,12 +4796,12 @@
     },
     {
       "id": "514104100000008D",
-      "x": 10.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 39.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3759,12 +4812,12 @@
     },
     {
       "id": "514104100000008E",
-      "x": 1.95,
-      "y": 5.57,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 39.41,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3775,12 +4828,12 @@
     },
     {
       "id": "514104100000008F",
-      "x": -6.45,
-      "y": 15.27,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 26.345,
+      "width": 24.9,
+      "height": 12.95,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3792,11 +4845,11 @@
     {
       "id": "5141041000000090",
       "x": -12.395,
-      "y": 15.27,
+      "y": 26.345,
       "width": 0.11,
-      "height": 9.7,
+      "height": 12.95,
       "rotation": 0.0,
-      "image": "color:#E890A8E8",
+      "image": "color:#E873C5B6",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3807,9 +4860,9 @@
     },
     {
       "id": "5141041000000091",
-      "x": -6.37,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 20.33,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -3823,12 +4876,12 @@
     },
     {
       "id": "5141041000000092",
-      "x": -7.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 22.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3839,12 +4892,12 @@
     },
     {
       "id": "5141041000000093",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 25.74,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3855,12 +4908,12 @@
     },
     {
       "id": "5141041000000094",
-      "x": -1.95,
-      "y": 13.19,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 25.74,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3871,12 +4924,12 @@
     },
     {
       "id": "5141041000000095",
-      "x": -10.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 6.03,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3887,12 +4940,12 @@
     },
     {
       "id": "5141041000000096",
-      "x": -7.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 22.64,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3903,12 +4956,12 @@
     },
     {
       "id": "5141041000000097",
-      "x": -4.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 25.74,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3919,12 +4972,12 @@
     },
     {
       "id": "5141041000000098",
-      "x": -1.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 31.94,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3935,12 +4988,12 @@
     },
     {
       "id": "5141041000000099",
-      "x": -10.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 72.39,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3951,12 +5004,12 @@
     },
     {
       "id": "514104100000009A",
-      "x": -7.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 72.39,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3967,12 +5020,12 @@
     },
     {
       "id": "514104100000009B",
-      "x": -10.95,
-      "y": 13.27,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 28.92,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3983,12 +5036,12 @@
     },
     {
       "id": "514104100000009C",
-      "x": -4.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 75.49,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -3999,12 +5052,12 @@
     },
     {
       "id": "514104100000009D",
-      "x": -1.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 78.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4015,12 +5068,12 @@
     },
     {
       "id": "514104100000009E",
-      "x": 6.45,
-      "y": 15.27,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 56.505,
+      "width": 24.9,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4031,12 +5084,12 @@
     },
     {
       "id": "514104100000009F",
-      "x": 0.505,
-      "y": 15.27,
+      "x": -12.395,
+      "y": 56.505,
       "width": 0.11,
-      "height": 9.7,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#E8B58CDB",
+      "image": "color:#E8E393A7",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4047,9 +5100,9 @@
     },
     {
       "id": "51410410000000A0",
-      "x": 6.53,
-      "y": 10.88,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 52.04,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4063,12 +5116,12 @@
     },
     {
       "id": "51410410000000A1",
-      "x": 1.95,
-      "y": 13.27,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 9.05,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4079,12 +5132,12 @@
     },
     {
       "id": "51410410000000A2",
-      "x": 4.95,
-      "y": 13.27,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 54.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4095,12 +5148,12 @@
     },
     {
       "id": "51410410000000A3",
-      "x": 7.95,
-      "y": 13.27,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 54.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4111,12 +5164,12 @@
     },
     {
       "id": "51410410000000A4",
-      "x": 10.95,
-      "y": 13.27,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 54.43,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4127,12 +5180,12 @@
     },
     {
       "id": "51410410000000A5",
-      "x": 4.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 57.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4143,12 +5196,12 @@
     },
     {
       "id": "51410410000000A6",
-      "x": 7.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 57.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4159,12 +5212,12 @@
     },
     {
       "id": "51410410000000A7",
-      "x": 10.95,
-      "y": 15.99,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 57.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4175,12 +5228,12 @@
     },
     {
       "id": "51410410000000A8",
-      "x": 1.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 57.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4191,12 +5244,12 @@
     },
     {
       "id": "51410410000000A9",
-      "x": 4.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 36.31,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4207,12 +5260,12 @@
     },
     {
       "id": "51410410000000AA",
-      "x": 7.95,
-      "y": 18.79,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 57.45,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4223,12 +5276,12 @@
     },
     {
       "id": "51410410000000AB",
-      "x": 1.95,
-      "y": 16.07,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 60.63,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4239,12 +5292,12 @@
     },
     {
       "id": "51410410000000AC",
-      "x": -6.45,
-      "y": 25.69,
-      "width": 12.0,
-      "height": 9.7,
+      "x": 0.0,
+      "y": 65.525,
+      "width": 24.9,
+      "height": 6.75,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4256,11 +5309,11 @@
     {
       "id": "51410410000000AD",
       "x": -12.395,
-      "y": 25.69,
+      "y": 65.525,
       "width": 0.11,
-      "height": 9.7,
+      "height": 6.75,
       "rotation": 0.0,
-      "image": "color:#E8E393A7",
+      "image": "color:#E8F1C96B",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4271,9 +5324,9 @@
     },
     {
       "id": "51410410000000AE",
-      "x": -6.37,
-      "y": 21.3,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 62.61,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4287,12 +5340,12 @@
     },
     {
       "id": "51410410000000AF",
-      "x": -10.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 60.63,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4303,12 +5356,12 @@
     },
     {
       "id": "51410410000000B0",
-      "x": -7.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 65.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4319,12 +5372,12 @@
     },
     {
       "id": "51410410000000B1",
-      "x": -4.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 65.0,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4335,12 +5388,12 @@
     },
     {
       "id": "51410410000000B2",
-      "x": -10.95,
-      "y": 29.16,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 64.87,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4351,12 +5404,12 @@
     },
     {
       "id": "51410410000000B3",
-      "x": -1.95,
-      "y": 23.69,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 68.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4367,12 +5420,12 @@
     },
     {
       "id": "51410410000000B4",
-      "x": -10.95,
-      "y": 26.49,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 68.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4383,12 +5436,12 @@
     },
     {
       "id": "51410410000000B5",
-      "x": -7.95,
-      "y": 26.49,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 68.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4399,12 +5452,12 @@
     },
     {
       "id": "51410410000000B6",
-      "x": -4.95,
-      "y": 26.49,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 68.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4415,12 +5468,12 @@
     },
     {
       "id": "51410410000000B7",
-      "x": -1.95,
-      "y": 26.49,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 68.1,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4431,12 +5484,12 @@
     },
     {
       "id": "51410410000000B8",
-      "x": 6.45,
-      "y": 22.89,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 45.935,
+      "width": 24.9,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4447,12 +5500,12 @@
     },
     {
       "id": "51410410000000B9",
-      "x": 0.505,
-      "y": 22.89,
+      "x": -12.395,
+      "y": 45.935,
       "width": 0.11,
-      "height": 4.1,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#E8F1C96B",
+      "image": "color:#E8B58CDB",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4463,9 +5516,9 @@
     },
     {
       "id": "51410410000000BA",
-      "x": 6.53,
-      "y": 21.3,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 41.47,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4479,12 +5532,12 @@
     },
     {
       "id": "51410410000000BB",
-      "x": 1.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 43.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4495,12 +5548,12 @@
     },
     {
       "id": "51410410000000BC",
-      "x": 4.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 46.88,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4511,12 +5564,12 @@
     },
     {
       "id": "51410410000000BD",
-      "x": 7.95,
-      "y": 23.61,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 46.88,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4527,12 +5580,12 @@
     },
     {
       "id": "51410410000000BE",
-      "x": -6.45,
-      "y": 34.71,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 74.545,
+      "width": 24.9,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4544,9 +5597,9 @@
     {
       "id": "51410410000000BF",
       "x": -12.395,
-      "y": 34.71,
+      "y": 74.545,
       "width": 0.11,
-      "height": 6.9,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4559,9 +5612,9 @@
     },
     {
       "id": "51410410000000C0",
-      "x": -6.37,
-      "y": 31.72,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 70.08,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4575,12 +5628,12 @@
     },
     {
       "id": "51410410000000C1",
-      "x": -10.95,
-      "y": 34.03,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 43.78,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4591,12 +5644,12 @@
     },
     {
       "id": "51410410000000C2",
-      "x": -7.95,
-      "y": 34.03,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 46.88,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4607,12 +5660,12 @@
     },
     {
       "id": "51410410000000C3",
-      "x": -4.95,
-      "y": 34.03,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 46.88,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4623,12 +5676,12 @@
     },
     {
       "id": "51410410000000C4",
-      "x": -1.95,
-      "y": 34.03,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 46.88,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4639,12 +5692,12 @@
     },
     {
       "id": "51410410000000C5",
-      "x": -10.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 49.98,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4655,12 +5708,12 @@
     },
     {
       "id": "51410410000000C6",
-      "x": -7.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 49.98,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4671,12 +5724,12 @@
     },
     {
       "id": "51410410000000C7",
-      "x": -4.95,
-      "y": 36.83,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 49.98,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4687,12 +5740,12 @@
     },
     {
       "id": "51410410000000C8",
-      "x": 6.45,
-      "y": 34.71,
-      "width": 12.0,
-      "height": 6.9,
+      "x": 0.0,
+      "y": 83.565,
+      "width": 24.9,
+      "height": 6.75,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4703,10 +5756,10 @@
     },
     {
       "id": "51410410000000C9",
-      "x": 0.505,
-      "y": 34.71,
+      "x": -12.395,
+      "y": 83.565,
       "width": 0.11,
-      "height": 6.9,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -4719,9 +5772,9 @@
     },
     {
       "id": "51410410000000CA",
-      "x": 6.53,
-      "y": 31.72,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 80.65,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -4735,12 +5788,12 @@
     },
     {
       "id": "51410410000000CB",
-      "x": 1.95,
-      "y": 33.98,
-      "width": 2.72,
+      "x": -9.2,
+      "y": 82.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4751,12 +5804,12 @@
     },
     {
       "id": "51410410000000CC",
-      "x": 4.95,
-      "y": 33.98,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 86.01,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4767,12 +5820,12 @@
     },
     {
       "id": "51410410000000CD",
-      "x": 7.95,
-      "y": 33.98,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 82.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4783,12 +5836,12 @@
     },
     {
       "id": "51410410000000CE",
-      "x": 10.95,
-      "y": 33.98,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 86.01,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4799,12 +5852,12 @@
     },
     {
       "id": "51410410000000CF",
-      "x": 1.95,
-      "y": 36.78,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 86.01,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4815,12 +5868,12 @@
     },
     {
       "id": "51410410000000D0",
-      "x": 4.95,
-      "y": 36.78,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 82.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4831,12 +5884,12 @@
     },
     {
       "id": "51410410000000D1",
-      "x": 7.95,
-      "y": 36.78,
-      "width": 2.72,
+      "x": 4.6,
+      "y": 82.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -4847,12 +5900,12 @@
     },
     {
       "id": "51410410000000D2",
-      "x": 10.95,
-      "y": 36.78,
-      "width": 2.72,
+      "x": 9.2,
+      "y": 82.91,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",

@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "513011FDD667DD02",
-      "x": 1.95,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:buffer_stop_track_kit",
@@ -60,12 +60,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118DB31A46A1",
-      "x": -10.95,
-      "y": 1.85,
+      "x": -4.95,
+      "y": 4.65,
       "icon": {
         "id": "railcraft:coke_oven_bricks",
         "count": 1
@@ -75,6 +75,7 @@
         "stage_1",
         "native_railcraft_tracks_coke_oven",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_practice"
       ],
       "dependencies": [
@@ -85,6 +86,18 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "railcraft:coke_oven_bricks",
+            "count": 1
+          },
+          "count": 26,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501234C2EC2FB0"
+        },
         {
           "type": "advancement",
           "advancement": "railcraft:tracks/coke_oven",
@@ -97,22 +110,23 @@
           "id": "513013AE534AD244",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110CBEF3D218",
-      "x": -7.95,
-      "y": 1.85,
+      "x": -1.95,
+      "y": 4.65,
       "icon": {
         "id": "railcraft:blast_furnace_bricks",
         "count": 1
@@ -122,6 +136,7 @@
         "stage_1",
         "native_railcraft_tracks_blast_furnace",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_practice"
       ],
       "dependencies": [
@@ -132,6 +147,18 @@
       "ignore_reward_blocking": true,
       "optional": false,
       "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "railcraft:blast_furnace_bricks",
+            "count": 1
+          },
+          "count": 34,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F777D47651"
+        },
         {
           "type": "advancement",
           "advancement": "railcraft:tracks/blast_furnace",
@@ -144,21 +171,22 @@
           "id": "513013BE01BBB6C1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114354CF7719",
-      "x": -4.95,
+      "x": -10.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:steel_crowbar",
@@ -211,7 +239,7 @@
     },
     {
       "id": "513011E68E6D4690",
-      "x": -1.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:manual_rolling_machine",
@@ -265,8 +293,8 @@
     },
     {
       "id": "513011B3B6161380",
-      "x": -10.95,
-      "y": 4.65,
+      "x": -4.95,
+      "y": 1.85,
       "icon": {
         "id": "railcraft:coke_oven_bricks",
         "count": 1
@@ -318,8 +346,8 @@
     },
     {
       "id": "513011C3CAE2637F",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -1.95,
+      "y": 1.85,
       "icon": {
         "id": "railcraft:blast_furnace_bricks",
         "count": 1
@@ -371,7 +399,7 @@
     },
     {
       "id": "513011D45FA1F900",
-      "x": -4.95,
+      "x": -10.95,
       "y": 4.65,
       "icon": {
         "id": "railcraft:steel_ingot",
@@ -424,7 +452,7 @@
     },
     {
       "id": "513011F78377F278",
-      "x": -1.95,
+      "x": -7.95,
       "y": 4.65,
       "icon": {
         "id": "railcraft:steel_plate",
@@ -477,7 +505,7 @@
     },
     {
       "id": "51301164E3EDD85C",
-      "x": 7.95,
+      "x": 1.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:standard_rail",
@@ -530,7 +558,7 @@
     },
     {
       "id": "51301189A2B4AEAF",
-      "x": 10.95,
+      "x": 4.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:wooden_tie",
@@ -583,7 +611,7 @@
     },
     {
       "id": "513011F655EF052F",
-      "x": 1.95,
+      "x": 7.95,
       "y": 15.07,
       "icon": {
         "id": "railcraft:steel_crowbar",
@@ -616,21 +644,22 @@
           "id": "513013BE041CED57",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114C6BBFCCCD",
-      "x": 4.95,
+      "x": 10.95,
       "y": 1.85,
       "icon": {
         "id": "railcraft:iron_spike_maul",
@@ -663,17 +692,18 @@
           "id": "513013826C383133",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CCFE17F1FB",
@@ -1523,7 +1553,7 @@
     },
     {
       "id": "5130117E9E9098CC",
-      "x": 4.95,
+      "x": 1.95,
       "y": 15.07,
       "icon": {
         "id": "railcraft:steam_locomotive",
@@ -1578,7 +1608,7 @@
     },
     {
       "id": "513011CE9C9EAA15",
-      "x": 7.95,
+      "x": 4.95,
       "y": 15.07,
       "icon": {
         "id": "railcraft:tank_minecart",
@@ -2072,6 +2102,7 @@
         "stage_2",
         "item_railcraft_low_pressure_steam_boiler_tank",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -2093,6 +2124,18 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "5130124DB2CD826E"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "railcraft:solid_fueled_firebox",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501221AF79196B"
         }
       ],
       "rewards": [
@@ -2228,7 +2271,7 @@
     },
     {
       "id": "514104100000011D",
-      "x": -4.95,
+      "x": -10.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2244,7 +2287,7 @@
     },
     {
       "id": "514104100000011E",
-      "x": -1.95,
+      "x": -7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2260,8 +2303,8 @@
     },
     {
       "id": "514104100000011F",
-      "x": -10.95,
-      "y": 5.57,
+      "x": -4.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2276,8 +2319,8 @@
     },
     {
       "id": "5141041000000120",
-      "x": -7.95,
-      "y": 5.57,
+      "x": -1.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2292,7 +2335,7 @@
     },
     {
       "id": "5141041000000121",
-      "x": -4.95,
+      "x": -10.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2308,7 +2351,7 @@
     },
     {
       "id": "5141041000000122",
-      "x": -1.95,
+      "x": -7.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -2324,8 +2367,8 @@
     },
     {
       "id": "5141041000000123",
-      "x": -10.95,
-      "y": 2.85,
+      "x": -4.95,
+      "y": 5.65,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2340,8 +2383,8 @@
     },
     {
       "id": "5141041000000124",
-      "x": -7.95,
-      "y": 2.85,
+      "x": -1.95,
+      "y": 5.65,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2420,7 +2463,7 @@
     },
     {
       "id": "5141041000000129",
-      "x": 7.95,
+      "x": 1.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2436,7 +2479,7 @@
     },
     {
       "id": "514104100000012A",
-      "x": 10.95,
+      "x": 4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2452,7 +2495,7 @@
     },
     {
       "id": "514104100000012B",
-      "x": 1.95,
+      "x": 7.95,
       "y": 2.85,
       "width": 2.72,
       "height": 0.72,
@@ -2468,7 +2511,7 @@
     },
     {
       "id": "514104100000012C",
-      "x": 4.95,
+      "x": 10.95,
       "y": 2.85,
       "width": 2.72,
       "height": 0.72,
@@ -2820,7 +2863,7 @@
     },
     {
       "id": "5141041000000142",
-      "x": 4.95,
+      "x": 1.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -2836,7 +2879,7 @@
     },
     {
       "id": "5141041000000143",
-      "x": 7.95,
+      "x": 4.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -2852,7 +2895,7 @@
     },
     {
       "id": "5141041000000144",
-      "x": 1.95,
+      "x": 7.95,
       "y": 16.07,
       "width": 2.72,
       "height": 0.72,
