@@ -156,14 +156,14 @@
         "qm_village_first_contact",
         "qm_v040",
         "plain_instruction",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "id": "514D02000000000A",
@@ -183,8 +183,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -201,14 +201,14 @@
         "qm_village_nonfarm_delivery",
         "qm_v040",
         "plain_instruction",
-        "soqm_role_practice"
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000007"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "id": "514D02000000000B",
@@ -228,8 +228,8 @@
           ]
         }
       ],
-      "size": 1.06,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
@@ -1784,7 +1784,6 @@
       ],
       "dependencies": [
         "514D010000000006",
-        "514D010000000008",
         "514D01000000000A",
         "514D01000000000B"
       ],
@@ -2348,7 +2347,7 @@
     {
       "id": "5141041000000022",
       "x": 10.95,
-      "y": 10.47,
+      "y": 10.34,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2364,7 +2363,7 @@
     {
       "id": "5141041000000023",
       "x": 1.95,
-      "y": 13.27,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

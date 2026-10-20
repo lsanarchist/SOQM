@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "version": "0.4.11",
+  "entry_format": ["item", "weight", "min", "max"],
+  "notes": "Small weighted supplies plus one optional find. No completed machines, custom progression parts, plastic, renewable food or endgame currencies. Native keys, maps and boss rewards keep their own source tables.",
+  "profiles": {
+    "settlement": {
+      "limits": {"min_slots": 3, "max_slots": 6, "max_units": 16, "stack_cap": 4, "valuable_keep_chance": 0.1, "max_valuables": 1},
+      "utility_chance": 0.65,
+      "find_chance": 0.08,
+      "cube_chance": 0.01,
+      "materials": [
+        ["mekanism:ingot_osmium", 12, 2, 4], ["mekanism:ingot_tin", 10, 2, 4],
+        ["immersiveengineering:ingot_aluminum", 10, 2, 4], ["immersiveengineering:ingot_nickel", 6, 1, 3],
+        ["immersiveengineering:ingot_lead", 8, 2, 4], ["ae2:certus_quartz_crystal", 10, 2, 4],
+        ["minecraft:redstone", 8, 2, 4], ["minecraft:iron_ingot", 10, 1, 3]
+      ],
+      "utility": [
+        ["immersiveengineering:wirecoil_copper", 10, 1, 2], ["enderio:conduit_binder", 10, 2, 3],
+        ["ae2:silicon", 10, 1, 2], ["minecraft:torch", 10, 3, 4],
+        ["minecraft:bread", 10, 2, 3], ["minecraft:paper", 8, 2, 4],
+        ["minecraft:string", 8, 2, 3], ["minecraft:arrow", 6, 2, 4]
+      ],
+      "finds": [
+        ["mekanism:basic_control_circuit", 12, 1, 1], ["immersiveengineering:component_iron", 10, 1, 1],
+        ["enderio:basic_capacitor", 6, 1, 1], ["minecraft:saddle", 4, 1, 1],
+        ["minecraft:golden_apple", 2, 1, 1]
+      ]
+    },
+    "expedition": {
+      "limits": {"min_slots": 4, "max_slots": 7, "max_units": 20, "stack_cap": 4, "valuable_keep_chance": 0.25, "max_valuables": 1},
+      "utility_chance": 0.8,
+      "find_chance": 0.16,
+      "cube_chance": 0.015,
+      "materials": [
+        ["mekanism:ingot_osmium", 12, 2, 4], ["mekanism:ingot_tin", 10, 2, 4],
+        ["immersiveengineering:ingot_aluminum", 10, 2, 4], ["immersiveengineering:ingot_nickel", 6, 1, 3],
+        ["immersiveengineering:ingot_lead", 8, 2, 4], ["ae2:certus_quartz_crystal", 10, 2, 4],
+        ["mekanism:ingot_steel", 8, 1, 3], ["mekanism:alloy_infused", 4, 1, 2],
+        ["evilcraft:dark_gem", 5, 1, 2]
+      ],
+      "utility": [
+        ["mekanism:basic_universal_cable", 10, 2, 4], ["mekanism:basic_mechanical_pipe", 8, 2, 3],
+        ["immersiveengineering:wirecoil_copper", 8, 1, 2], ["enderio:conduit_binder", 8, 2, 3],
+        ["ae2:silicon", 8, 1, 3], ["minecraft:cooked_beef", 10, 2, 3],
+        ["minecraft:torch", 10, 3, 4], ["minecraft:ender_pearl", 4, 1, 1],
+        ["minecraft:experience_bottle", 3, 1, 2]
+      ],
+      "finds": [
+        ["mekanism:basic_control_circuit", 10, 1, 1], ["enderio:basic_capacitor", 8, 1, 1],
+        ["immersiveengineering:component_iron", 8, 1, 1], ["ae2:printed_logic_processor", 6, 1, 1],
+        ["minecraft:golden_apple", 6, 1, 1], ["minecraft:saddle", 4, 1, 1],
+        ["sophisticatedbackpacks:filter_upgrade", 3, 1, 1]
+      ]
+    },
+    "workshop": {
+      "limits": {"min_slots": 3, "max_slots": 6, "max_units": 18, "stack_cap": 4, "valuable_keep_chance": 0.2, "max_valuables": 1},
+      "utility_chance": 0.85,
+      "find_chance": 0.2,
+      "cube_chance": 0.015,
+      "materials": [
+        ["mekanism:ingot_steel", 12, 2, 4], ["mekanism:alloy_infused", 6, 1, 2],
+        ["immersiveengineering:ingot_electrum", 8, 1, 3], ["immersiveengineering:ingot_constantan", 8, 1, 3],
+        ["railcraft:invar_ingot", 8, 1, 3], ["enderio:redstone_alloy_ingot", 8, 1, 3],
+        ["ae2:fluix_crystal", 8, 2, 4], ["botania:manasteel_ingot", 4, 1, 2]
+      ],
+      "utility": [
+        ["mekanism:basic_universal_cable", 10, 2, 4], ["mekanism:basic_mechanical_pipe", 8, 2, 3],
+        ["immersiveengineering:wirecoil_copper", 10, 1, 3], ["enderio:conduit_binder", 8, 2, 4],
+        ["ae2:silicon", 10, 1, 3], ["immersiveengineering:plate_steel", 6, 1, 2],
+        ["minecraft:lapis_lazuli", 6, 2, 4], ["minecraft:quartz", 8, 2, 4]
+      ],
+      "finds": [
+        ["ae2:printed_logic_processor", 10, 1, 1], ["mekanism:basic_control_circuit", 10, 1, 1],
+        ["immersiveengineering:component_iron", 8, 1, 1], ["enderio:basic_capacitor", 8, 1, 1],
+        ["sophisticatedstorage:filter_upgrade", 4, 1, 1], ["mekanism:upgrade_energy", 3, 1, 1]
+      ]
+    },
+    "stronghold": {
+      "limits": {"min_slots": 5, "max_slots": 9, "max_units": 24, "stack_cap": 4, "valuable_keep_chance": 0.4, "max_valuables": 2},
+      "utility_chance": 0.9,
+      "find_chance": 0.28,
+      "cube_chance": 0.025,
+      "materials": [
+        ["enderio:energetic_alloy_ingot", 8, 1, 3], ["enderio:dark_steel_ingot", 8, 1, 3],
+        ["mekanism:alloy_reinforced", 6, 1, 2], ["modernfoundry:cobalt_ingot", 8, 1, 3],
+        ["ae2:fluix_crystal", 12, 2, 4], ["immersiveengineering:plate_steel", 8, 1, 3],
+        ["botania:manasteel_ingot", 6, 1, 3], ["evilcraft:dark_gem", 6, 1, 3]
+      ],
+      "utility": [
+        ["mekanism:advanced_universal_cable", 10, 2, 3], ["immersiveengineering:wirecoil_steel", 8, 1, 3],
+        ["ae2:fluix_glass_cable", 8, 2, 3], ["enderio:conduit_binder", 6, 2, 4],
+        ["ae2:silicon", 6, 2, 3], ["minecraft:cooked_beef", 8, 2, 4],
+        ["minecraft:ender_pearl", 6, 1, 2], ["minecraft:experience_bottle", 6, 1, 3],
+        ["apotheosis:gem_dust", 4, 1, 2]
+      ],
+      "finds": [
+        ["mekanism:advanced_control_circuit", 10, 1, 1], ["ae2:logic_processor", 8, 1, 1],
+        ["ae2:calculation_processor", 6, 1, 1], ["mekanism:upgrade_speed", 6, 1, 1],
+        ["mekanism:upgrade_energy", 6, 1, 1], ["enderio:double_layer_capacitor", 4, 1, 1],
+        ["sophisticatedstorage:filter_upgrade", 4, 1, 1], ["botania:mana_pearl", 4, 1, 1],
+        ["minecraft:golden_apple", 6, 1, 1]
+      ]
+    },
+    "relic_vault": {
+      "limits": {"min_slots": 6, "max_slots": 10, "max_units": 28, "stack_cap": 6, "valuable_keep_chance": 0.55, "max_valuables": 2},
+      "utility_chance": 1.0,
+      "find_chance": 0.36,
+      "cube_chance": 0.04,
+      "materials": [
+        ["enderio:vibrant_alloy_ingot", 8, 1, 3], ["enderio:soularium_ingot", 8, 1, 3],
+        ["mekanism:ingot_refined_obsidian", 8, 1, 3], ["modernfoundry:cobalt_ingot", 8, 2, 4],
+        ["ae2:fluix_crystal", 12, 3, 5], ["apotheosis:gem_dust", 8, 2, 4],
+        ["botania:manasteel_ingot", 6, 2, 4], ["immersiveengineering:ingot_electrum", 6, 2, 4]
+      ],
+      "utility": [
+        ["mekanism:advanced_universal_cable", 10, 3, 5], ["ae2:fluix_glass_cable", 10, 2, 4],
+        ["immersiveengineering:wirecoil_steel", 8, 2, 4], ["enderio:conduit_binder", 6, 3, 5],
+        ["ae2:silicon", 6, 2, 4], ["minecraft:experience_bottle", 8, 2, 4],
+        ["minecraft:ender_pearl", 6, 1, 2], ["minecraft:golden_carrot", 8, 2, 4]
+      ],
+      "finds": [
+        ["ae2:engineering_processor", 10, 1, 1], ["ae2:calculation_processor", 8, 1, 1],
+        ["enderio:double_layer_capacitor", 8, 1, 1], ["mekanism:advanced_control_circuit", 6, 1, 1],
+        ["mekanism:upgrade_speed", 6, 1, 1], ["mekanism:upgrade_energy", 6, 1, 1],
+        ["botania:mana_diamond", 4, 1, 1], ["sophisticatedbackpacks:magnet_upgrade", 3, 1, 1],
+        ["minecraft:golden_apple", 6, 1, 1]
+      ]
+    }
+  }
+}

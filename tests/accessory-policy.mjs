@@ -11,11 +11,13 @@ const itemIds = [
   'artifacts:cross_necklace', 'artifacts:snorkel', 'artifacts:night_vision_goggles',
   'artifacts:whoopee_cushion', 'artifacts:running_shoes', 'aether:golden_ring',
   'sophisticatedbackpacks:backpack', 'example:travel_backpack', 'example:cloak',
+  'industrialforegoing:infinity_backpack', 'sophisticatedbackpacks:netherite_backpack',
   'example:ring', 'example:face_mask', 'minecraft:diamond',
 ];
 const seed = {
   'example:back': ['sophisticatedbackpacks:backpack', 'example:cloak'],
-  'curios:back': ['#example:back', 'example:travel_backpack'],
+  'curios:back': ['#example:back', 'example:travel_backpack',
+    'industrialforegoing:infinity_backpack', 'sophisticatedbackpacks:netherite_backpack'],
   'curios:backpack': ['minecraft:diamond'],
   'curios:face': ['example:face_mask'],
   'curios:ring': ['artifacts:scarf', 'example:ring'],
@@ -73,8 +75,8 @@ function load(mods) {
 
 const full = load(['curios', 'artifacts', 'accessories', 'reliquified_artifacts', 'lootjs']);
 const equals = (tag, expected) => assert.deepEqual(full.resolve(tag).sort(), expected.sort(), tag);
-equals('curios:back', ['example:cloak']);
-equals('curios:backpack', ['minecraft:diamond', 'sophisticatedbackpacks:backpack', 'example:travel_backpack']);
+equals('curios:back', ['example:cloak', 'example:travel_backpack', 'industrialforegoing:infinity_backpack']);
+equals('curios:backpack', ['minecraft:diamond', 'sophisticatedbackpacks:backpack', 'sophisticatedbackpacks:netherite_backpack']);
 equals('curios:face', ['example:face_mask', 'artifacts:scarf', 'artifacts:snorkel', 'artifacts:night_vision_goggles']);
 equals('curios:ring', ['example:ring']);
 equals('curios:necklace', ['artifacts:cross_necklace']);

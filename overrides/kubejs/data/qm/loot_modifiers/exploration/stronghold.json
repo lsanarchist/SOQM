@@ -9,6 +9,70 @@
           "loot_table_id": "ad_astra:chests/dungeon/moon/large_dungeon_chest"
         },
         {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_glacio"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:glacio"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_mercury"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:mercury"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_venus"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:venus"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_moon"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "ad_astra:moon"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "ad_astra_more_structures:chests/rare_other"
+        },
+        {
           "condition": "neoforge:loot_table_id",
           "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_treasure"
         },
@@ -431,6 +495,10 @@
         {
           "condition": "neoforge:loot_table_id",
           "loot_table_id": "twilightforest:troll_garden"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "underground_rooms:chests/undead_dungeon_loot"
         }
       ]
     }

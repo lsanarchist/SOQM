@@ -1766,6 +1766,7 @@
   "image.51410410000007B7.title": "Piglin Mask",
   "chapter.514D101C6F684087.title": "23 · Ruins, Settlements and Surprises",
   "chapter.514D101C6F684087.chapter_subtitle": [
+    "Prepare equipment and a workshop first. Bridges, villages, taverns and other random discoveries are separate rewarded expeditions that do not block later quests.",
     "80 quests · English objective guide (alpha).",
     "Short lines: sequence · hover a quest: other prerequisites",
     "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions."
@@ -1782,26 +1783,28 @@
   "task.514D12B9DA52CDAC.title": "Obtain 1 × Compass",
   "task.514D127036EA7091.title": "Obtain 32 × Torch",
   "task.514D12C47F898EDA.title": "Obtain 1 × Water Bucket",
-  "quest.514D111AFD4E2789.title": "Obtain 1 × Compass + Obtain 32 × Torch + More",
+  "quest.514D111AFD4E2789.title": "A Small Expedition Kit",
   "quest.514D111AFD4E2789.quest_desc": [
-    "Have in your inventory 1 × Compass (minecraft:compass). The items are not consumed by this task.",
-    "Have in your inventory 32 × Torch (minecraft:torch). The items are not consumed by this task.",
-    "Have in your inventory 1 × Water Bucket (minecraft:water_bucket). The items are not consumed by this task."
+    "Prepare a compass, 32 torches and a water bucket. The item tasks check inventory without consuming anything; also bring food, tool durability and a marked return route.",
+    "Then choose any discoveries available around you. The compass points to its vanilla target and does not locate structures automatically. Visiting a particular bridge, village, tavern or biome is not required to continue the quests."
   ],
   "task.514D128D457BEC0E.title": "Visit Bridge",
   "quest.514D11628A7DD0E1.title": "Visit Bridge",
   "quest.514D11628A7DD0E1.quest_desc": [
-    "Visit the generated structure Bridge (abridged:bridge); an item or a replica does not replace the location check."
+    "Optional expedition: find a generated Abridged bridge and enter its structure. A player-built bridge does not satisfy the location check.",
+    "The reward remains available, but this visit unlocks and blocks no later quest. If the bridge is far away, continue preparation, trading and other objectives. In an existing explored world, look for newly added structures in new chunks."
   ],
   "task.514D1204E5B8A0D2.title": "Visit Underground Village",
   "quest.514D11CDA1129F03.title": "Visit Underground Village",
   "quest.514D11CDA1129F03.quest_desc": [
-    "Visit the generated structure Underground Village (underground_villages:underground_village); an item or a replica does not replace the location check."
+    "Optional expedition: enter a real Underground Village. This generated structure is separate from Millénaire settlements.",
+    "Prepare a lit route back to the surface. The visit is detected automatically within the structure. Trading and expedition readiness are available without this visit; dismantling the village or moving its villagers is unnecessary."
   ],
   "task.514D126CD02069A0.title": "Trade",
-  "quest.514D11E0ED42C1FF.title": "Trade",
+  "quest.514D11E0ED42C1FF.title": "Trade with Any Villager",
   "quest.514D11E0ED42C1FF.quest_desc": [
-    "Earn the native advancement Trade (minecraft:adventure/trade). Follow its requirement in the Advancements screen or the mod's guide."
+    "Complete a normal villager trade to earn the vanilla What a Deal! advancement. A trader in a surface village or at your base can satisfy it.",
+    "An Underground Village is not required: this optional branch opens after the expedition kit. Trading does not block the readiness summary or later expeditions."
   ],
   "task.513012C7650C5C6E.title": "'X' Marks the Spot",
   "quest.51301187E13DE6F8.title": "'X' Marks the Spot",
@@ -1835,10 +1838,11 @@
   "quest.513011C2A3830FC2.quest_desc": [
     "Earn the native advancement Fortress of Sanditude (ecologics:husbandry/sandcastle). Follow its requirement in the Advancements screen or the mod's guide."
   ],
-  "task.514D12480266404E.title": "Automatic: A Route between Known Places",
-  "quest.514D11A7ED9AA3BB.title": "A Route between Known Places",
+  "task.514D12480266404E.title": "Automatic: Equipment and Workshop Ready",
+  "quest.514D11A7ED9AA3BB.title": "Equipment and Workshop Ready",
   "quest.514D11A7ED9AA3BB.quest_desc": [
-    "Complete the bridge visit, underground village visit and Industrial Chassis workshop dependencies. This summary completes automatically from those three quests. Mark the route on your map; road construction itself is your optional project."
+    "Complete the expedition kit and Industrial Chassis quests. These are the two conditions for this summary: equipment for a return journey and a prepared workshop.",
+    "The summary completes automatically from those dependencies. No particular bridge, underground village or tavern must be found. Mark your base and chosen direction on the map; building a road remains your own project."
   ],
   "task.514D1275BFA9D311.title": "Obtain 1 × Chance Cube",
   "quest.514D113C4B748351.title": "Obtain 1 × Chance Cube",
@@ -1851,9 +1855,10 @@
     "Reach 1 on the native statistic chancecubes:opened_chance_cube. For Chance Cubes this records actually opened cubes."
   ],
   "task.514D123777356CD5.title": "Obtain 1 × Compass",
-  "quest.514D118E5C7AB43A.title": "Obtain 1 × Compass",
+  "quest.514D118E5C7AB43A.title": "Expedition Checklist",
   "quest.514D118E5C7AB43A.quest_desc": [
-    "Have in your inventory 1 × Compass (minecraft:compass). The items are not consumed by this task."
+    "After the equipment and workshop summary, hold a compass in your inventory. The task does not consume it or require any particular generated location.",
+    "Trading, structure visits and opening a Chance Cube are separate optional activities. Choose them when useful and return to production when you have the materials you need."
   ],
   "task.513012471FFBD2DE.title": "Tunnel Treasures",
   "quest.5130116C5420BD02.title": "Tunnel Treasures",
@@ -2184,9 +2189,9 @@
   ],
   "image.5141041000000713.title": "23 · Ruins, Settlements and Surprises",
   "image.5141041000000714.title": "Short lines: sequence · hover a quest: other prerequisites",
-  "image.5141041000000719.title": "01  Preparation and routes",
+  "image.5141041000000719.title": "01  Equipment and readiness",
   "image.5141041000000723.title": "02  Lootr: personal loot",
-  "image.5141041000000730.title": "03  Random events and expedition milestone",
+  "image.5141041000000730.title": "03  Optional discoveries and surprises",
   "image.5141041000000735.title": "04  Ecologics and kobolds",
   "image.514104100000073E.title": "05  Towers: first expeditions",
   "image.514104100000074B.title": "06  Towers: dangerous sites",
@@ -2196,20 +2201,20 @@
   "image.5141041000000778.title": "10  End expedition",
   "image.5141041000000780.title": "11  Trials and minibosses",
   "image.514104100000071A.title": "Mine a Group\nwith Ultimine",
-  "image.514104100000071B.title": "Compass +\nObtain 32 ×…",
+  "image.514104100000071B.title": "A Small\nExpedition Kit",
   "image.514104100000071C.title": "Visit Bridge",
   "image.514104100000071D.title": "Visit\nUnderground…",
-  "image.514104100000071E.title": "Trade",
+  "image.514104100000071E.title": "Trade with\nAny Villager",
   "image.5141041000000724.title": "'X' Marks the\nSpot",
   "image.5141041000000729.title": "Barrel Booty",
   "image.5141041000000755.title": "Safe Haven",
   "image.5141041000000736.title": "Coconut +\nObtain 1 ×…",
   "image.5141041000000737.title": "Coconut Boat\nwith Chest",
   "image.5141041000000738.title": "Fortress of\nSanditude",
-  "image.5141041000000720.title": "A Route\nbetween Known…",
+  "image.5141041000000720.title": "Equipment and\nWorkshop Ready",
   "image.5141041000000731.title": "Chance Cube",
   "image.5141041000000732.title": "Opened Chance\nCube: 1",
-  "image.514104100000071F.title": "Compass",
+  "image.514104100000071F.title": "Expedition\nChecklist",
   "image.514104100000072A.title": "Tunnel\nTreasures",
   "image.514104100000072B.title": "Woe to the\nPot",
   "image.5141041000000725.title": "Delightful\nDecade",
@@ -2449,6 +2454,7 @@
   "image.514242140000002F.title": "Compression\nUpgrade",
   "chapter.514D000000000001.title": "01 · The Adventure Begins",
   "chapter.514D000000000001.chapter_subtitle": [
+    "The introduction develops production, equipment and first mana. Millénaire contact and supply form an optional branch for when a settlement is available nearby.",
     "35 quests · English objective guide (alpha).",
     "Short lines: sequence · hover a quest: other prerequisites",
     "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions."
@@ -2478,12 +2484,16 @@
   "task.514D02000000000A.title": "Automatic: A Successful Millénaire Trade",
   "quest.514D010000000007.title": "A Successful Millénaire Trade",
   "quest.514D010000000007.quest_desc": [
-    "Find a real Millénaire settlement and complete one accepted sale or purchase through its own trading interface. Opening the window, a failed trade and trading with an ordinary vanilla villager do not count. Right-click its trader without sneaking and choose an available exchange; check Controls for Millénaire's information panel and nearby villages."
+    "Optional branch: find a real Millénaire settlement and complete one successful exchange through its own trading interface.",
+    "Only an accepted sale or purchase counts. Opening the window, a failed request or trading with a vanilla villager does not qualify. Right-click its trader without sneaking and choose an available exchange.",
+    "If the settlement is far away, continue production and the introductory route. This branch and its following supply task do not block the introduction summary. Check Controls → Millénaire for its information panel and village-list bindings."
   ],
   "task.514D02000000000B.title": "Automatic: Supply a Settlement",
   "quest.514D010000000008.title": "Supply a Settlement",
   "quest.514D010000000008.quest_desc": [
-    "Sell or donate a total of 64 accepted building-material units through Millénaire trading. Logs, planks, stone, cobblestone, stone bricks, sand, glass, clay, bricks and corresponding building blocks can qualify. Only the accepted amount counts; returned excess, purchases, food, seeds and money do not. Progress is cumulative for the team between sessions. Check the settlement's actual demand."
+    "After the first exchange, check Millénaire demand and sell or donate a total of 64 accepted building-material units. Logs, planks, stone, cobblestone, stone bricks, sand, glass, clay, bricks and corresponding building blocks can qualify.",
+    "Only accepted units count: returned excess, purchases, food, seeds and money do not advance the counter. Progress accumulates for the team between sessions.",
+    "This is optional settlement support with a personal quest reward. It unlocks and blocks no later quest; the introduction summary can be completed without locating a settlement."
   ],
   "task.5130126E31B96E55.title": "Obtain 1 × Crafting Table",
   "quest.51301166893DC2DA.title": "Obtain 1 × Crafting Table",
@@ -2660,7 +2670,9 @@
   "task.514D02000000000F.title": "Automatic: Ready for Greater Expeditions",
   "quest.514D01000000000C.title": "Ready for Greater Expeditions",
   "quest.514D01000000000C.quest_desc": [
-    "Complete all four introductory routes: automatic production, settlement supply, DivineRPG hunting and first mana. This summary completes from its four dependencies without another manual check. Open Mayhem Cubes away from your base: their pools include dangerous events and structures."
+    "Complete three introductory routes: automatic production, DivineRPG hunting and first mana. Millénaire trading and supply remain a separate optional branch.",
+    "The summary completes automatically from those three quest dependencies. Finding a settlement, a particular structure or a biome is not one of its conditions.",
+    "Every member claims one cube for this quest. Open cubes in a separate area away from the base: their pools include dangerous events and structures. Choose the next chapter according to your production goal."
   ],
   "image.5141041000000001.title": "01 · The Adventure Begins",
   "image.5141041000000002.title": "Short lines: sequence · hover a quest: other prerequisites",
@@ -9259,6 +9271,7 @@
   "image.51410410000006BB.title": "Glacio Osmium\nOre + Obtain 1…",
   "chapter.5130100F0A5A9CAF.title": "22 · Millénaire: Towns and Crafts",
   "chapter.5130100F0A5A9CAF.chapter_subtitle": [
+    "Develop trade and reputation in an available settlement. Finding particular buildings and cultures is optional and is not a prerequisite for other quests.",
     "40 quests · English objective guide (alpha).",
     "Short lines: sequence · hover a quest: other prerequisites",
     "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions."
@@ -9266,7 +9279,8 @@
   "task.513012516E191F23.title": "Millénaire",
   "quest.513011EFC8A2F513.title": "Millénaire",
   "quest.513011EFC8A2F513.quest_desc": [
-    "Earn the native advancement Millénaire (millenaire:firstcontact). Follow its requirement in the Advancements screen or the mod's guide."
+    "Meet a Millénaire villager to earn the native first-contact advancement. This is an optional discovery, not a prerequisite for other quests.",
+    "If you already know a settlement, develop trade and reputation under Millénaire’s own rules. Chapter 01 offers the optional practical pair A Successful Millénaire Trade → Supply a Settlement."
   ],
   "task.5130127729AEC45B.title": "Obtain 1 × Denier",
   "quest.513011E969A0F7CE.title": "Obtain 1 × Denier",
@@ -9286,7 +9300,8 @@
   "task.5130123DAB7E6B67.title": "A friend indeed",
   "quest.513011707B727ED1.title": "A friend indeed",
   "quest.513011707B727ED1.quest_desc": [
-    "Earn the native advancement A friend indeed (millenaire:friendindeed). Follow its requirement in the Advancements screen or the mod's guide."
+    "Reach friend of the village reputation in one settlement. Trade and supply wanted building materials; completion uses the native Millénaire advancement.",
+    "The first-contact quest is not a dependency. This is optional development of an available settlement and does not block the main campaign or technology chapters."
   ],
   "task.513012242CF4472E.title": "Explorer",
   "quest.513011EF844393A4.title": "Explorer",
@@ -10810,6 +10825,7 @@
   "image.51410410000008F9.title": "Expand the area\nafter the cycle works",
   "chapter.514010E6C36ACAC3.title": "32 · Cannibal Villages: Tropics and Depths",
   "chapter.514010E6C36ACAC3.chapter_subtitle": [
+    "Village, temple and sea visits are optional discoveries. Hunting opens from equipment and material milestones; trophy branches still require actual victories.",
     "40 quests · English objective guide (alpha).",
     "Short lines: sequence · hover a quest: other prerequisites",
     "Open a quest to inspect all prerequisites. Its map role does not change its completion conditions."
@@ -10842,17 +10858,20 @@
   "task.514012372DE80012.title": "Defeat 1 × Great White Shark",
   "quest.51401104491634EE.title": "Defeat 1 × Great White Shark",
   "quest.51401104491634EE.quest_desc": [
-    "Defeat 1 × Great White Shark (cannibalvillages:tubarao_branco)."
+    "Defeat one Great White Shark. The target is the Cannibal Villages tubarao_branco entity; other sharks do not count.",
+    "The expedition kit and Precision Mechanism stage are the prerequisites. The Mermaid Sea biome visit is not a quest requirement: an actual victory in another valid location also counts. Hunting remains an optional branch."
   ],
   "task.514012C376A6751B.title": "Defeat 1 × Giant Squid",
   "quest.514011CE797E2CC9.title": "Defeat 1 × Giant Squid",
   "quest.514011CE797E2CC9.quest_desc": [
-    "Defeat 1 × Giant Squid (cannibalvillages:lula_gigante)."
+    "Defeat one Cannibal Villages Giant Squid. Its skin and weapon continue a separate trophy branch.",
+    "This quest opens after the expedition kit and Precision Mechanism. Exploring Mermaid Sea awards its own reward; its visit quest need not be completed before hunting. The actual kill requirement remains."
   ],
   "task.514012ACBA8749B3.title": "Defeat 1 × Shaman",
   "quest.514011A71FC3AAC5.title": "Defeat 1 × Shaman",
   "quest.514011A71FC3AAC5.quest_desc": [
-    "Defeat 1 × Shaman (cannibalvillages:xama)."
+    "Defeat one Cannibal Villages Shaman (xama). The task checks a real kill of that entity; native advancements with impossible triggers are not used.",
+    "Finding a large village is no longer a quest prerequisite. Hunting is available after the expedition kit and Precision Mechanism. Defeating the Shaman is still required for the following Ozgum branch and its associated trophies."
   ],
   "task.5140128974296A23.title": "Defeat 1 × Ozgum",
   "quest.5140111CF230BACD.title": "Defeat 1 × Ozgum",
@@ -10862,7 +10881,8 @@
   "task.5140128154482735.title": "Defeat 1 × Rutia, the Cannibal god",
   "quest.514011F38EA006A4.title": "Defeat 1 × Rutia, the Cannibal god",
   "quest.514011F38EA006A4.quest_desc": [
-    "Defeat 1 × Rutia, the Cannibal god (cannibalvillages:rutia)."
+    "Defeat Rutia under Cannibal Villages’ native rules. Prepare the expedition kit, Dimensional Matrix stage and combat equipment.",
+    "The separate temple-visit quest does not gate this fight. The mod’s temple mechanics and the actual victory requirement remain; the book does not supply a spawn egg, summon the boss or complete the fight automatically."
   ],
   "task.514012E0F7E1A134.title": "Obtain 1 × Snorkel",
   "quest.51401117C37D0880.title": "Obtain 1 × Snorkel",
@@ -11761,12 +11781,10 @@
   "quest.51301157D3132CA1.quest_subtitle": "Mantles",
   "quest.51301125336EEEE0.quest_subtitle": "Mantles",
   "quest.5130116897DBF230.quest_subtitle": "Mantles",
-  "quest.514D1112BAB39A83.quest_subtitle": "Preparation and routes",
-  "quest.514D111AFD4E2789.quest_subtitle": "Preparation and routes",
-  "quest.514D11628A7DD0E1.quest_subtitle": "Preparation and routes",
-  "quest.514D11CDA1129F03.quest_subtitle": "Preparation and routes",
-  "quest.514D11E0ED42C1FF.quest_subtitle": "Preparation and routes",
-  "quest.514D11A7ED9AA3BB.quest_subtitle": "Preparation and routes",
+  "quest.514D1112BAB39A83.quest_subtitle": "Equipment and readiness",
+  "quest.514D111AFD4E2789.quest_subtitle": "Equipment and readiness",
+  "quest.514D11A7ED9AA3BB.quest_subtitle": "Equipment and readiness",
+  "quest.514D118E5C7AB43A.quest_subtitle": "Equipment and readiness",
   "quest.51301187E13DE6F8.quest_subtitle": "Lootr: personal loot",
   "quest.5130113F2D7C608A.quest_subtitle": "Lootr: personal loot",
   "quest.513011486B82A9DC.quest_subtitle": "Lootr: personal loot",
@@ -11777,9 +11795,11 @@
   "quest.51301130E9666817.quest_subtitle": "Lootr: personal loot",
   "quest.51301137773D35DA.quest_subtitle": "Lootr: personal loot",
   "quest.51301143D07AE194.quest_subtitle": "Lootr: personal loot",
-  "quest.514D113C4B748351.quest_subtitle": "Random events and expedition milestone",
-  "quest.514D1118E4523B29.quest_subtitle": "Random events and expedition milestone",
-  "quest.514D118E5C7AB43A.quest_subtitle": "Random events and expedition milestone",
+  "quest.514D11628A7DD0E1.quest_subtitle": "Optional discoveries and surprises",
+  "quest.514D11CDA1129F03.quest_subtitle": "Optional discoveries and surprises",
+  "quest.514D11E0ED42C1FF.quest_subtitle": "Optional discoveries and surprises",
+  "quest.514D113C4B748351.quest_subtitle": "Optional discoveries and surprises",
+  "quest.514D1118E4523B29.quest_subtitle": "Optional discoveries and surprises",
   "quest.513011632A3488C8.quest_subtitle": "Ecologics and kobolds",
   "quest.513011D50C42C34D.quest_subtitle": "Ecologics and kobolds",
   "quest.513011C2A3830FC2.quest_subtitle": "Ecologics and kobolds",

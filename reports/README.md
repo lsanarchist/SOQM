@@ -1,5 +1,24 @@
 # Verification status
 
+## SOQM 0.4.11 — optional exploration, dungeon loot and equipment
+
+The candidate adds three verified NeoForge structure mods (**127 pinned files**),
+preserves all **1,626 quests**, and makes all **67 Overworld visit objectives**
+optional rewarded leaves. It covers **397 exact chest tables** with small,
+varied loot profiles and fixes tool/slot compatibility and structure data.
+
+The local gate covers **128 Python tests**, both Node suites, generation,
+translations and deterministic packaging. All dependency hashes are verified.
+The production chest module rebuilt byte-identically and passed **50,000 native
+mixed-loot cases** plus 50,000 treasure-retention rolls. Native processor,
+chest load/save, placement and loot codecs passed. The equipment probe is
+compiled but has not run in a loaded modpack. No fresh full-server, graphical
+client or terrain-performance test is claimed for this candidate.
+
+[Complete 0.4.11 verification](verification-0.4.11.md) ·
+[Loot policy](../docs/EXPLORATION_LOOT.md) ·
+[Structure compatibility](../docs/EXPLORATION_STRUCTURE_COMPAT.md).
+
 ## SOQM 0.4.10 — recipe refunds, HUD and Sophisticated Storage
 
 Validated on **2026-10-20** against merged main

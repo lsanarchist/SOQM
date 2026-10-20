@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "version": "0.4.6",
+  "schema": 2,
+  "version": "0.4.11",
   "routes": {
     "abandonedtunnels:chests/closet_barrel": "expedition",
     "abandonedtunnels:chests/tunnel_barrel": "expedition",
@@ -11,6 +11,18 @@
     "ad_astra:chests/temple/mars/temple": "relic_vault",
     "ad_astra:chests/village/moon/blacksmith": "workshop",
     "ad_astra:chests/village/moon/house": "workshop",
+    "ad_astra_more_structures:chests/common_glacio": "stronghold",
+    "ad_astra_more_structures:chests/common_mars": "workshop",
+    "ad_astra_more_structures:chests/common_mercury": "stronghold",
+    "ad_astra_more_structures:chests/common_moon": "workshop",
+    "ad_astra_more_structures:chests/common_other": "workshop",
+    "ad_astra_more_structures:chests/common_venus": "stronghold",
+    "ad_astra_more_structures:chests/rare_glacio": "relic_vault",
+    "ad_astra_more_structures:chests/rare_mars": "relic_vault",
+    "ad_astra_more_structures:chests/rare_mercury": "relic_vault",
+    "ad_astra_more_structures:chests/rare_moon": "stronghold",
+    "ad_astra_more_structures:chests/rare_other": "stronghold",
+    "ad_astra_more_structures:chests/rare_venus": "relic_vault",
     "aether:chests/dungeon/bronze/bronze_dungeon": "expedition",
     "aether:chests/dungeon/bronze/bronze_dungeon_disc": "settlement",
     "aether:chests/dungeon/bronze/bronze_dungeon_gummies": "settlement",
@@ -345,6 +357,10 @@
     "terralith:village/fortified/tavern_upstairs": "settlement",
     "terralith:village/fortified/treasure": "expedition",
     "terralith:witch_hut": "expedition",
+    "twilight_treehouses:chests/treehouse_abode/treehouse_abode_normal": "expedition",
+    "twilight_treehouses:chests/treehouse_cabin/treehouse_cabin_normal": "expedition",
+    "twilight_treehouses:chests/treehouse_chalet/treehouse_chalet_normal": "expedition",
+    "twilight_treehouses:chests/treehouse_lodge/treehouse_lodge_normal": "expedition",
     "twilightforest:aurora_cache": "relic_vault",
     "twilightforest:aurora_room": "stronghold",
     "twilightforest:camp_tent": "settlement",
@@ -381,33 +397,49 @@
     "twilightforest:troll_garden": "stronghold",
     "twilightforest:troll_vault": "relic_vault",
     "twilightforest:troll_vault_with_lamp": "relic_vault",
-    "twilightforest:well": "settlement"
+    "twilightforest:well": "settlement",
+    "underground_rooms:chests/undead_dungeon_loot": "stronghold"
   },
   "profiles": {
     "settlement": {
+      "min_slots": 3,
       "max_slots": 6,
       "max_units": 16,
-      "stack_cap": 4
+      "stack_cap": 4,
+      "valuable_keep_chance": 0.1,
+      "max_valuables": 1
     },
     "expedition": {
+      "min_slots": 4,
       "max_slots": 7,
       "max_units": 20,
-      "stack_cap": 4
+      "stack_cap": 4,
+      "valuable_keep_chance": 0.25,
+      "max_valuables": 1
     },
     "workshop": {
+      "min_slots": 3,
       "max_slots": 6,
       "max_units": 18,
-      "stack_cap": 4
+      "stack_cap": 4,
+      "valuable_keep_chance": 0.2,
+      "max_valuables": 1
     },
     "stronghold": {
+      "min_slots": 5,
       "max_slots": 9,
       "max_units": 24,
-      "stack_cap": 4
+      "stack_cap": 4,
+      "valuable_keep_chance": 0.4,
+      "max_valuables": 2
     },
     "relic_vault": {
+      "min_slots": 6,
       "max_slots": 10,
       "max_units": 28,
-      "stack_cap": 6
+      "stack_cap": 6,
+      "valuable_keep_chance": 0.55,
+      "max_valuables": 2
     }
   },
   "plastic": [
@@ -434,7 +466,12 @@
     "ad_astra:tier_1_rocket",
     "ad_astra:tier_2_rocket",
     "ad_astra:tier_3_rocket",
-    "ad_astra:tier_4_rocket"
+    "ad_astra:tier_4_rocket",
+    "minecraft:nether_star",
+    "artifacts:eternal_steak",
+    "artifacts:everlasting_beef",
+    "mekanism:elite_control_circuit",
+    "mekanism:ultimate_control_circuit"
   ],
   "forbidden_prefixes": [
     "kubejs:",
@@ -515,6 +552,7 @@
     "upgrade_"
   ],
   "curated_items": [
+    "ae2:calculation_processor",
     "ae2:certus_quartz_crystal",
     "ae2:engineering_processor",
     "ae2:fluix_crystal",
@@ -523,6 +561,10 @@
     "ae2:printed_logic_processor",
     "ae2:silicon",
     "apotheosis:gem_dust",
+    "botania:mana_diamond",
+    "botania:mana_pearl",
+    "botania:manasteel_ingot",
+    "chancecubes:chance_cube",
     "enderio:basic_capacitor",
     "enderio:conduit_binder",
     "enderio:dark_steel_ingot",
@@ -531,6 +573,7 @@
     "enderio:redstone_alloy_ingot",
     "enderio:soularium_ingot",
     "enderio:vibrant_alloy_ingot",
+    "evilcraft:dark_gem",
     "immersiveengineering:component_iron",
     "immersiveengineering:ingot_aluminum",
     "immersiveengineering:ingot_constantan",
@@ -547,14 +590,32 @@
     "mekanism:basic_control_circuit",
     "mekanism:basic_mechanical_pipe",
     "mekanism:basic_universal_cable",
-    "mekanism:elite_control_circuit",
     "mekanism:ingot_osmium",
     "mekanism:ingot_refined_obsidian",
     "mekanism:ingot_steel",
     "mekanism:ingot_tin",
+    "mekanism:upgrade_energy",
     "mekanism:upgrade_speed",
+    "minecraft:arrow",
+    "minecraft:bread",
+    "minecraft:cooked_beef",
+    "minecraft:ender_pearl",
+    "minecraft:experience_bottle",
+    "minecraft:golden_apple",
+    "minecraft:golden_carrot",
+    "minecraft:iron_ingot",
+    "minecraft:lapis_lazuli",
+    "minecraft:paper",
+    "minecraft:quartz",
+    "minecraft:redstone",
+    "minecraft:saddle",
+    "minecraft:string",
+    "minecraft:torch",
     "modernfoundry:cobalt_ingot",
-    "railcraft:invar_ingot"
+    "railcraft:invar_ingot",
+    "sophisticatedbackpacks:filter_upgrade",
+    "sophisticatedbackpacks:magnet_upgrade",
+    "sophisticatedstorage:filter_upgrade"
   ],
   "native_reward_tables": [
     "aether:chests/dungeon/bronze/bronze_dungeon_treasure",
@@ -566,6 +627,7 @@
       "ae2:certus_quartz_crystal",
       "ae2:silicon",
       "chancecubes:chance_cube",
+      "enderio:basic_capacitor",
       "enderio:conduit_binder",
       "immersiveengineering:component_iron",
       "immersiveengineering:ingot_aluminum",
@@ -573,17 +635,27 @@
       "immersiveengineering:ingot_nickel",
       "immersiveengineering:wirecoil_copper",
       "mekanism:basic_control_circuit",
-      "mekanism:basic_mechanical_pipe",
-      "mekanism:basic_universal_cable",
       "mekanism:ingot_osmium",
-      "mekanism:ingot_tin"
+      "mekanism:ingot_tin",
+      "minecraft:arrow",
+      "minecraft:bread",
+      "minecraft:golden_apple",
+      "minecraft:iron_ingot",
+      "minecraft:paper",
+      "minecraft:redstone",
+      "minecraft:saddle",
+      "minecraft:string",
+      "minecraft:torch"
     ],
     "expedition": [
       "ae2:certus_quartz_crystal",
+      "ae2:printed_logic_processor",
       "ae2:silicon",
       "chancecubes:chance_cube",
       "enderio:basic_capacitor",
       "enderio:conduit_binder",
+      "evilcraft:dark_gem",
+      "immersiveengineering:component_iron",
       "immersiveengineering:ingot_aluminum",
       "immersiveengineering:ingot_lead",
       "immersiveengineering:ingot_nickel",
@@ -594,13 +666,22 @@
       "mekanism:basic_universal_cable",
       "mekanism:ingot_osmium",
       "mekanism:ingot_steel",
-      "mekanism:ingot_tin"
+      "mekanism:ingot_tin",
+      "minecraft:cooked_beef",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:saddle",
+      "minecraft:torch",
+      "sophisticatedbackpacks:filter_upgrade"
     ],
     "workshop": [
       "ae2:fluix_crystal",
       "ae2:printed_logic_processor",
       "ae2:silicon",
+      "botania:manasteel_ingot",
       "chancecubes:chance_cube",
+      "enderio:basic_capacitor",
       "enderio:conduit_binder",
       "enderio:redstone_alloy_ingot",
       "immersiveengineering:component_iron",
@@ -613,45 +694,116 @@
       "mekanism:basic_mechanical_pipe",
       "mekanism:basic_universal_cable",
       "mekanism:ingot_steel",
-      "railcraft:invar_ingot"
+      "mekanism:upgrade_energy",
+      "minecraft:lapis_lazuli",
+      "minecraft:quartz",
+      "railcraft:invar_ingot",
+      "sophisticatedstorage:filter_upgrade"
     ],
     "stronghold": [
+      "ae2:calculation_processor",
       "ae2:fluix_crystal",
+      "ae2:fluix_glass_cable",
       "ae2:logic_processor",
       "ae2:silicon",
+      "apotheosis:gem_dust",
+      "botania:mana_pearl",
+      "botania:manasteel_ingot",
       "chancecubes:chance_cube",
       "enderio:conduit_binder",
       "enderio:dark_steel_ingot",
+      "enderio:double_layer_capacitor",
       "enderio:energetic_alloy_ingot",
+      "evilcraft:dark_gem",
       "immersiveengineering:plate_steel",
-      "immersiveengineering:wirecoil_copper",
       "immersiveengineering:wirecoil_steel",
       "mekanism:advanced_control_circuit",
       "mekanism:advanced_universal_cable",
       "mekanism:alloy_reinforced",
-      "mekanism:basic_mechanical_pipe",
-      "mekanism:basic_universal_cable",
+      "mekanism:upgrade_energy",
       "mekanism:upgrade_speed",
-      "modernfoundry:cobalt_ingot"
+      "minecraft:cooked_beef",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "modernfoundry:cobalt_ingot",
+      "sophisticatedstorage:filter_upgrade"
     ],
     "relic_vault": [
+      "ae2:calculation_processor",
       "ae2:engineering_processor",
       "ae2:fluix_crystal",
       "ae2:fluix_glass_cable",
       "ae2:silicon",
       "apotheosis:gem_dust",
+      "botania:mana_diamond",
+      "botania:manasteel_ingot",
       "chancecubes:chance_cube",
       "enderio:conduit_binder",
       "enderio:double_layer_capacitor",
       "enderio:soularium_ingot",
       "enderio:vibrant_alloy_ingot",
-      "immersiveengineering:wirecoil_copper",
+      "immersiveengineering:ingot_electrum",
+      "immersiveengineering:wirecoil_steel",
+      "mekanism:advanced_control_circuit",
       "mekanism:advanced_universal_cable",
-      "mekanism:basic_mechanical_pipe",
-      "mekanism:basic_universal_cable",
-      "mekanism:elite_control_circuit",
       "mekanism:ingot_refined_obsidian",
-      "modernfoundry:cobalt_ingot"
+      "mekanism:upgrade_energy",
+      "mekanism:upgrade_speed",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "modernfoundry:cobalt_ingot",
+      "sophisticatedbackpacks:magnet_upgrade"
+    ]
+  },
+  "find_items": {
+    "settlement": [
+      "enderio:basic_capacitor",
+      "immersiveengineering:component_iron",
+      "mekanism:basic_control_circuit",
+      "minecraft:golden_apple",
+      "minecraft:saddle"
+    ],
+    "expedition": [
+      "ae2:printed_logic_processor",
+      "enderio:basic_capacitor",
+      "immersiveengineering:component_iron",
+      "mekanism:basic_control_circuit",
+      "minecraft:golden_apple",
+      "minecraft:saddle",
+      "sophisticatedbackpacks:filter_upgrade"
+    ],
+    "workshop": [
+      "ae2:printed_logic_processor",
+      "enderio:basic_capacitor",
+      "immersiveengineering:component_iron",
+      "mekanism:basic_control_circuit",
+      "mekanism:upgrade_energy",
+      "sophisticatedstorage:filter_upgrade"
+    ],
+    "stronghold": [
+      "ae2:calculation_processor",
+      "ae2:logic_processor",
+      "botania:mana_pearl",
+      "enderio:double_layer_capacitor",
+      "mekanism:advanced_control_circuit",
+      "mekanism:upgrade_energy",
+      "mekanism:upgrade_speed",
+      "minecraft:golden_apple",
+      "sophisticatedstorage:filter_upgrade"
+    ],
+    "relic_vault": [
+      "ae2:calculation_processor",
+      "ae2:engineering_processor",
+      "botania:mana_diamond",
+      "enderio:double_layer_capacitor",
+      "mekanism:advanced_control_circuit",
+      "mekanism:upgrade_energy",
+      "mekanism:upgrade_speed",
+      "minecraft:golden_apple",
+      "sophisticatedbackpacks:magnet_upgrade"
     ]
   }
 }

@@ -289,6 +289,66 @@
           "loot_table_id": "terralith:witch_hut"
         },
         {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilight_treehouses:chests/treehouse_abode/treehouse_abode_normal"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilight_treehouses:chests/treehouse_cabin/treehouse_cabin_normal"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilight_treehouses:chests/treehouse_chalet/treehouse_chalet_normal"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "twilight_treehouses:chests/treehouse_lodge/treehouse_lodge_normal"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "twilightforest:twilight_forest"
+              }
+            }
+          ]
+        },
+        {
           "condition": "neoforge:loot_table_id",
           "loot_table_id": "twilightforest:chests/basement"
         },

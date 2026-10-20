@@ -1,0 +1,330 @@
+{
+  "schema": 1,
+  "chapters": {
+    "qm_07_exploration": {
+      "summary": {
+        "uk_ua": "Спочатку підготуй спорядження й майстерню. Мости, села, таверни та інші випадкові знахідки — окремі нагороджувані експедиції, що не блокують наступні квести.",
+        "en_us": "Prepare equipment and a workshop first. Bridges, villages, taverns and other random discoveries are separate rewarded expeditions that do not block later quests."
+      },
+      "quests": {
+        "514D111AFD4E2789": {
+          "title": {
+            "uk_ua": "Невеликий запас у дорогу",
+            "en_us": "A Small Expedition Kit"
+          },
+          "description": {
+            "uk_ua": [
+              "Підготуй компас, 32 смолоскипи та відро води. Предмети перевіряються в інвентарі без вилучення; візьми також їжу, запас міцності інструментів і познач шлях назад.",
+              "Після цього обирай будь-які доступні знахідки. Компас показує свою ванільну ціль і не шукає структури автоматично. Відвідування конкретного моста, села, таверни чи біома не потрібне для продовження квестів."
+            ],
+            "en_us": [
+              "Prepare a compass, 32 torches and a water bucket. The item tasks check inventory without consuming anything; also bring food, tool durability and a marked return route.",
+              "Then choose any discoveries available around you. The compass points to its vanilla target and does not locate structures automatically. Visiting a particular bridge, village, tavern or biome is not required to continue the quests."
+            ]
+          }
+        },
+        "514D11628A7DD0E1": {
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Додаткова експедиція: знайди згенерований міст Abridged і зайди всередину його структури. Саморобний міст зі схожих блоків не виконає завдання.",
+              "Нагорода залишається доступною, але цей візит нічого не відкриває й не блокує. Якщо міст далеко від бази, продовжуй підготовку, торгівлю та інші квести. У вже дослідженому світі нові структури шукай у нових чанках."
+            ],
+            "en_us": [
+              "Optional expedition: find a generated Abridged bridge and enter its structure. A player-built bridge does not satisfy the location check.",
+              "The reward remains available, but this visit unlocks and blocks no later quest. If the bridge is far away, continue preparation, trading and other objectives. In an existing explored world, look for newly added structures in new chunks."
+            ]
+          }
+        },
+        "514D11CDA1129F03": {
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Додаткова експедиція: зайди до справжнього Underground Village. Це окремий тип згенерованої структури, який не замінює поселення Millénaire.",
+              "Підготуй освітлений шлях нагору. Відвідування зараховується автоматично в межах структури. Торгівля й готовність до подорожей доступні без цього візиту; ламати село чи переносити мешканців не потрібно."
+            ],
+            "en_us": [
+              "Optional expedition: enter a real Underground Village. This generated structure is separate from Millénaire settlements.",
+              "Prepare a lit route back to the surface. The visit is detected automatically within the structure. Trading and expedition readiness are available without this visit; dismantling the village or moving its villagers is unnecessary."
+            ]
+          }
+        },
+        "514D11E0ED42C1FF": {
+          "dependencies": [
+            "514D111AFD4E2789"
+          ],
+          "optional": true,
+          "title": {
+            "uk_ua": "Обмін із будь-яким селянином",
+            "en_us": "Trade with Any Villager"
+          },
+          "description": {
+            "uk_ua": [
+              "Здійсни звичайний обмін із селянином, щоб отримати ванільне досягнення What a Deal! Підійде доступний торговець у поверхневому селі або на твоїй базі.",
+              "Підземне село не є умовою: ця додаткова гілка відкривається після дорожнього набору. Торгівля не блокує підсумок підготовки чи подальші експедиції."
+            ],
+            "en_us": [
+              "Complete a normal villager trade to earn the vanilla What a Deal! advancement. A trader in a surface village or at your base can satisfy it.",
+              "An Underground Village is not required: this optional branch opens after the expedition kit. Trading does not block the readiness summary or later expeditions."
+            ]
+          }
+        },
+        "514D11A7ED9AA3BB": {
+          "dependencies": [
+            "514D111AFD4E2789",
+            "513011E734464E5D"
+          ],
+          "title": {
+            "uk_ua": "Спорядження й майстерня готові",
+            "en_us": "Equipment and Workshop Ready"
+          },
+          "description": {
+            "uk_ua": [
+              "Заверши дорожній набір і квест промислового шасі. Це дві умови цього підсумку: спорядження для повернення додому та підготовлена майстерня.",
+              "Підсумок зараховується автоматично за виконаними залежностями. Шукати конкретний міст, підземне село чи таверну не потрібно. Познач власну базу й обраний напрямок на карті; прокладання дороги залишається твоїм проектом."
+            ],
+            "en_us": [
+              "Complete the expedition kit and Industrial Chassis quests. These are the two conditions for this summary: equipment for a return journey and a prepared workshop.",
+              "The summary completes automatically from those dependencies. No particular bridge, underground village or tavern must be found. Mark your base and chosen direction on the map; building a road remains your own project."
+            ]
+          }
+        },
+        "514D118E5C7AB43A": {
+          "dependencies": [
+            "514D11A7ED9AA3BB"
+          ],
+          "title": {
+            "uk_ua": "Дорожній контрольний список",
+            "en_us": "Expedition Checklist"
+          },
+          "description": {
+            "uk_ua": [
+              "Після підсумку спорядження й майстерні потримай компас в інвентарі. Книга не забирає предмет і не вимагає жодної конкретної згенерованої локації.",
+              "Торгівля, відвідування споруд і відкривання Chance Cube — окремі додаткові заняття. Обирай їх за бажанням і повертайся до виробництва, коли є потрібні матеріали."
+            ],
+            "en_us": [
+              "After the equipment and workshop summary, hold a compass in your inventory. The task does not consume it or require any particular generated location.",
+              "Trading, structure visits and opening a Chance Cube are separate optional activities. Choose them when useful and return to production when you have the materials you need."
+            ]
+          }
+        },
+        "513011847267347F": {
+          "optional": true
+        },
+        "513011CD5B806156": {
+          "optional": true
+        },
+        "51301113971C0E7D": {
+          "optional": true
+        }
+      }
+    },
+    "qm_intro": {
+      "summary": {
+        "uk_ua": "Вступ веде через виробництво, спорядження та першу ману. Знайомство й постачання Millénaire — додаткова гілка, доступна за наявності поселення поблизу.",
+        "en_us": "The introduction develops production, equipment and first mana. Millénaire contact and supply form an optional branch for when a settlement is available nearby."
+      },
+      "quests": {
+        "514D010000000007": {
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Додаткова гілка: знайди справжнє поселення Millénaire та здійсни один успішний обмін через його власний торговий інтерфейс.",
+              "Зараховується фактично прийнятий продаж або покупка. Відкрите вікно, невдалий запит і ванільний торговець не підходять. Натисни ПКМ на торговці без присідання й обери доступний обмін.",
+              "Якщо поселення далеко, продовжуй виробництво й вступний маршрут. Ця гілка та наступна поставка не блокують його підсумок. Клавіші інформаційної панелі й пошуку сіл перевір у Керуванні → Millénaire."
+            ],
+            "en_us": [
+              "Optional branch: find a real Millénaire settlement and complete one successful exchange through its own trading interface.",
+              "Only an accepted sale or purchase counts. Opening the window, a failed request or trading with a vanilla villager does not qualify. Right-click its trader without sneaking and choose an available exchange.",
+              "If the settlement is far away, continue production and the introductory route. This branch and its following supply task do not block the introduction summary. Check Controls → Millénaire for its information panel and village-list bindings."
+            ]
+          }
+        },
+        "514D010000000008": {
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Після першого обміну перевір попит Millénaire й продай або пожертвуй сумарно 64 одиниці прийнятого будівельного матеріалу. Підходять колоди, дошки, камінь, кругляк, кам’яні цеглини, пісок, скло, глина, цегла та відповідні будівельні блоки.",
+              "Рахується тільки фактично прийнята кількість: повернений надлишок, покупки, їжа, насіння й гроші не збільшують лічильник. Поставка накопичується для команди між входами у світ.",
+              "Це необов’язкова допомога поселенню з особистою нагородою за квест. Вона не відкриває й не блокує жодного наступного квеста; підсумок вступу можна завершити без пошуку поселення."
+            ],
+            "en_us": [
+              "After the first exchange, check Millénaire demand and sell or donate a total of 64 accepted building-material units. Logs, planks, stone, cobblestone, stone bricks, sand, glass, clay, bricks and corresponding building blocks can qualify.",
+              "Only accepted units count: returned excess, purchases, food, seeds and money do not advance the counter. Progress accumulates for the team between sessions.",
+              "This is optional settlement support with a personal quest reward. It unlocks and blocks no later quest; the introduction summary can be completed without locating a settlement."
+            ]
+          }
+        },
+        "514D01000000000C": {
+          "dependencies": [
+            "514D010000000006",
+            "514D01000000000A",
+            "514D01000000000B"
+          ],
+          "description": {
+            "uk_ua": [
+              "Заверши три напрямки вступу: автоматичне виробництво, полювання DivineRPG і першу ману. Торгівля й поставка Millénaire залишаються окремою додатковою гілкою.",
+              "Підсумок зараховується автоматично після трьох залежних квестів. Пошук поселення, конкретної структури чи біома не є його умовою.",
+              "Кожен учасник забирає один куб за цей квест. Відкривай куби на окремому майданчику подалі від бази: серед результатів є небезпечні події та споруди. Наступну главу обирай за виробничою метою."
+            ],
+            "en_us": [
+              "Complete three introductory routes: automatic production, DivineRPG hunting and first mana. Millénaire trading and supply remain a separate optional branch.",
+              "The summary completes automatically from those three quest dependencies. Finding a settlement, a particular structure or a biome is not one of its conditions.",
+              "Every member claims one cube for this quest. Open cubes in a separate area away from the base: their pools include dangerous events and structures. Choose the next chapter according to your production goal."
+            ]
+          }
+        }
+      }
+    },
+    "qm_v030_22_millenaire": {
+      "summary": {
+        "uk_ua": "Розвивай торгівлю й репутацію у доступному поселенні. Квести на пошук окремих будівель і культур — додаткові цілі, від яких не залежать інші квести.",
+        "en_us": "Develop trade and reputation in an available settlement. Finding particular buildings and cultures is optional and is not a prerequisite for other quests."
+      },
+      "quests": {
+        "513011EFC8A2F513": {
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Познайомся з жителем Millénaire, щоб отримати рідне досягнення першого контакту. Це додаткова знахідка, а не передумова інших квестів.",
+              "Якщо поселення вже відоме, можна одразу розвивати торгівлю й довіру за власними умовами Millénaire. Для короткого практичного маршруту є додаткова пара «Сусіди» → «Корисна поставка» у главі 01."
+            ],
+            "en_us": [
+              "Meet a Millénaire villager to earn the native first-contact advancement. This is an optional discovery, not a prerequisite for other quests.",
+              "If you already know a settlement, develop trade and reputation under Millénaire’s own rules. Chapter 01 offers the optional practical pair A Successful Millénaire Trade → Supply a Settlement."
+            ]
+          }
+        },
+        "513011707B727ED1": {
+          "dependencies": [
+            "514D010000000002",
+            "513011E734464E5D"
+          ],
+          "optional": true,
+          "description": {
+            "uk_ua": [
+              "Доведи репутацію в одному поселенні до «friend of the village». Торгуй і допомагай потрібними будівельними ресурсами; зарахування використовує справжнє досягнення Millénaire.",
+              "Квест першого контакту не є залежністю. Це додатковий розвиток уже доступного поселення; він не блокує основну кампанію чи технологічні глави."
+            ],
+            "en_us": [
+              "Reach friend of the village reputation in one settlement. Trade and supply wanted building materials; completion uses the native Millénaire advancement.",
+              "The first-contact quest is not a dependency. This is optional development of an available settlement and does not block the main campaign or technology chapters."
+            ]
+          }
+        }
+      }
+    },
+    "qm_v040_32_cannibal": {
+      "summary": {
+        "uk_ua": "Відвідування сіл, храму й моря — додаткові знахідки. Полювання відкривається за спорядженням і матеріальним етапом, а трофейні гілки потребують справжніх перемог.",
+        "en_us": "Village, temple and sea visits are optional discoveries. Hunting opens from equipment and material milestones; trophy branches still require actual victories."
+      },
+      "quests": {
+        "51401104491634EE": {
+          "dependencies": [
+            "514D111AFD4E2789",
+            "514D010000000002",
+            "5130115E1ED084F6"
+          ],
+          "description": {
+            "uk_ua": [
+              "Переможи одну Great White Shark. Потрібен саме тип Cannibal Villages tubarao_branco; інші акули не зараховуються.",
+              "Достатньо дорожнього набору й етапу точного механізму. Відвідування біома Mermaid Sea не є квестовою передумовою: якщо зустрінеш акулу в іншому придатному місці, справжня перемога також зарахується. Полювання залишається додатковою гілкою."
+            ],
+            "en_us": [
+              "Defeat one Great White Shark. The target is the Cannibal Villages tubarao_branco entity; other sharks do not count.",
+              "The expedition kit and Precision Mechanism stage are the prerequisites. The Mermaid Sea biome visit is not a quest requirement: an actual victory in another valid location also counts. Hunting remains an optional branch."
+            ]
+          }
+        },
+        "514011CE797E2CC9": {
+          "dependencies": [
+            "514D111AFD4E2789",
+            "514D010000000002",
+            "5130115E1ED084F6"
+          ],
+          "description": {
+            "uk_ua": [
+              "Переможи одного Giant Squid Cannibal Villages. Його шкіра та зброя продовжують окрему трофейну гілку.",
+              "Квест відкривається після дорожнього набору й точного механізму. Біом Mermaid Sea можна дослідити за окрему нагороду; виконувати його квест перед полюванням не потрібно. Перевірка реальної перемоги зберігається."
+            ],
+            "en_us": [
+              "Defeat one Cannibal Villages Giant Squid. Its skin and weapon continue a separate trophy branch.",
+              "This quest opens after the expedition kit and Precision Mechanism. Exploring Mermaid Sea awards its own reward; its visit quest need not be completed before hunting. The actual kill requirement remains."
+            ]
+          }
+        },
+        "514011A71FC3AAC5": {
+          "dependencies": [
+            "514D111AFD4E2789",
+            "514D010000000002",
+            "5130115E1ED084F6"
+          ],
+          "description": {
+            "uk_ua": [
+              "Переможи одного Shaman (xama) Cannibal Villages. Завдання перевіряє справжнє вбивство цієї істоти; рідні досягнення з impossible-trigger не використовуються.",
+              "Пошук великого села більше не є квестовою передумовою. Полювання доступне після дорожнього набору й точного механізму. Перемога над шаманом усе ще потрібна для наступної гілки Ozgum і відповідних трофеїв."
+            ],
+            "en_us": [
+              "Defeat one Cannibal Villages Shaman (xama). The task checks a real kill of that entity; native advancements with impossible triggers are not used.",
+              "Finding a large village is no longer a quest prerequisite. Hunting is available after the expedition kit and Precision Mechanism. Defeating the Shaman is still required for the following Ozgum branch and its associated trophies."
+            ]
+          }
+        },
+        "514011F38EA006A4": {
+          "dependencies": [
+            "514D111AFD4E2789",
+            "514D010000000002",
+            "513011AA869D0649"
+          ],
+          "description": {
+            "uk_ua": [
+              "Переможи Rutia за рідними правилами Cannibal Villages. Підготуй дорожній набір, вимірну матрицю та бойове спорядження.",
+              "Окремий квест відвідування храму не блокує цей бій. Храмова механіка самого мода й вимога справжньої перемоги зберігаються; книга не видає яйце появи, не викликає боса й не завершує бій автоматично."
+            ],
+            "en_us": [
+              "Defeat Rutia under Cannibal Villages’ native rules. Prepare the expedition kit, Dimensional Matrix stage and combat equipment.",
+              "The separate temple-visit quest does not gate this fight. The mod’s temple mechanics and the actual victory requirement remain; the book does not supply a spawn egg, summon the boss or complete the fight automatically."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "key": "expedition_preparation",
+      "title": {
+        "uk_ua": "Підготовка до довільної експедиції",
+        "en_us": "Preparation for an Expedition of Your Choice"
+      },
+      "quests": [
+        "514D111AFD4E2789",
+        "514D11A7ED9AA3BB",
+        "514D118E5C7AB43A"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "source": "ftb-quests-neoforge-2101.1.36.jar :: Quest.checkDependencies / Quest.areDependenciesComplete / TeamData.areDependenciesComplete",
+      "notes": "Verified the pinned SHA-256 from metadata/mods.lock.json. Explicit dependencies test completion (or start state) regardless of the optional quest flag. Removing visit edges is required; changing only optional is insufficient."
+    },
+    {
+      "source": "src/compat/quest-automation/src/qm/questauto/QmQuestAutomation.java :: reconcileObjective / canComplete",
+      "notes": "The two existing summary tasks complete from their live quest dependencies. Rewiring those dependencies needs no new polling, world scan or replacement objective IDs."
+    },
+    {
+      "source": "dungeons-and-taverns-v4.4.4 [NeoForge].jar :: data/nova_structures/advancement/adventure/find_*.json",
+      "notes": "All eight overworld find advancements check player location inside generated structures. Tavern trading and boss objectives are separate task types; their existing optional rewards remain."
+    },
+    {
+      "source": "millenaire-9.0.2.jar :: assets/millenaire/lang/en_us.json and data/millenaire/advancement/{firstcontact,explorer,marcopolo,magellan}.json",
+      "notes": "Pinned native descriptions distinguish villager contact, a lone building, three cultures and all cultures from friendship through reputation. Visit discoveries become terminal side quests."
+    },
+    {
+      "source": "ModernFoundry-1.21.1-4.1.6-NeoForge.jar :: data/modernfoundry/advancement/world/sky_island.json; overrides/kubejs/data/qm/advancement/campaign_v040/biomes/",
+      "notes": "The optional Sky Slime Island and 20 Terralith biome objectives already have no dependents. Mermaid Sea, Large Cannibal Village and Rutia Temple originally blocked four hunts and 14 total descendants. Their visit edges are removed while kill/trophy relationships and material gates remain. Regression coverage includes all 67 Overworld visit objectives."
+    }
+  ]
+}

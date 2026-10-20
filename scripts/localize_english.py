@@ -113,8 +113,8 @@ SPECIAL = {
         "Use an iron pickaxe and FTB Ultimine to successfully break at least two different blocks in one grouped operation. Ordinary mining does not count. The separate item tasks detect the pickaxe and 64 cobblestone without consuming them. Check Controls for FTB Ultimine and preview the selected area before breaking it.",
     ),
     "514D12480266404E": (
-        "A Route between Known Places",
-        "Complete the bridge visit, underground village visit and Industrial Chassis workshop dependencies. This summary completes automatically from those three quests. Mark the route on your map; road construction itself is your optional project.",
+        "Equipment and Workshop Ready",
+        "Complete the expedition kit and Industrial Chassis quests. This summary completes automatically from those two dependencies. Bridge, village and tavern visits remain optional; mark your own return route on the map.",
     ),
     "514D020000000001": (
         "Welcome to Shout Out to Questing Mayhem",
@@ -150,7 +150,7 @@ SPECIAL = {
     ),
     "514D02000000000F": (
         "Ready for Greater Expeditions",
-        "Complete all four introductory routes: automatic production, settlement supply, DivineRPG hunting and first mana. This summary completes from its four dependencies without another manual check. Open Mayhem Cubes away from your base: their pools include dangerous events and structures.",
+        "Complete three introductory routes: automatic production, DivineRPG hunting and first mana. This summary completes from those three dependencies without another manual check. Millénaire trading and supply are optional. Open Mayhem Cubes away from your base: their pools include dangerous events and structures.",
     ),
 }
 

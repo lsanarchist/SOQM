@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild SOQM's runtime optimizations and quest observers against pinned native APIs."""
+"""Rebuild SOQM runtime, quest and chest policies against pinned native APIs."""
 from __future__ import annotations
 
 import argparse
@@ -19,6 +19,7 @@ NEOFORGE = "21.1.262"
 MODULES = {
     "runtime-optimizations": ("qm-runtime-optimizations", "qm.runtime.optimizations"),
     "quest-automation": ("qm-quest-automation", "qm.quest.automation"),
+    "chest-balance": ("qm-chest-balance", "qm.chest.balance"),
 }
 
 
