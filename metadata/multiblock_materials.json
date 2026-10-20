@@ -1,0 +1,3593 @@
+{
+  "schema": 1,
+  "reviewed_against": "mods.lock.json pinned versions on 2026-10-20",
+  "policy": "Minimum construction kits for the reviewed layouts, mandatory inventory checks, no consumption; preserve every pre-existing task and native completion check. Quantities are placed/used components, not raw materials consumed in their recipes. Extreme Reactors turbine uses the smallest reviewed layout with distinct blade and coil layers, not an exhaustive minimum across permissive validator edge cases.",
+  "quests": [
+    {
+      "quest_id": "51301157FF888779",
+      "name": "Coke Oven",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:cokebrick",
+          "count": 27,
+          "name": "Coke Brick",
+          "role": "construction",
+          "task_id": "5150128180ECAB4E"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012F7B8775651"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/coke_oven.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Coke Oven: фіксована схема 3×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Coke Oven дає кокс для сталевого маршруту та крезот для обробленого дерева. Склади суцільний куб 3×3×3 із 27 Cokebrick і натисни молотом інженера на центральний блок бічної грані. Саме формування зараховує це завдання.",
+          "Для першого запуску поклади вугілля, а потім забери обидва продукти. Піч працює повільно й підтримує партії; перед масштабуванням організуй відведення крезоту, який вона не виштовхує самостійно."
+        ],
+        "title": "Склади коксову піч"
+      },
+      "en_us": {
+        "description": [
+          "Coke Oven construction kit: the fixed 3×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Coke Oven supplies coke for steelmaking and creosote for treated wood. Build a solid 3×3×3 cube of 27 Cokebricks, then use the Engineer’s Hammer on the centre block of a side. Forming the multiblock completes this task.",
+          "For the first run, insert coal and collect both products. The oven is slow and supports batches; arrange creosote extraction before scaling up, because it does not push that fluid out by itself."
+        ],
+        "title": "Build a Coke Oven"
+      }
+    },
+    {
+      "quest_id": "513011AE9CF26AB0",
+      "name": "Blast Furnace",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:blastbrick",
+          "count": 27,
+          "name": "Blast Brick",
+          "role": "construction",
+          "task_id": "51501288F4365929"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150128A9E460C23"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/blast_furnace.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Blast Furnace: фіксована схема 3×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Початкова Blast Furnace перетворює залізо на сталь. Склади суцільний куб 3×3×3 із 27 Blast Brick і сформуй його молотом через центральний блок бічної грані; завдання перевіряє формування.",
+          "Для роботи потрібні залізо та сумісне високовуглецеве паливо, наприклад Coal Coke. Забирай і сталь, і шлак: заповнений вихід побічного продукту зупинить процес. Ця початкова піч обслуговується вручну; для автоматизації переходь до Improved Blast Furnace."
+        ],
+        "title": "Доменна піч зібрана"
+      },
+      "en_us": {
+        "description": [
+          "Blast Furnace construction kit: the fixed 3×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Crude Blast Furnace turns iron into steel. Build a solid 3×3×3 cube of 27 Blast Bricks and form it with the hammer on the centre block of a side; the task detects formation.",
+          "Operation needs iron and a supported high-carbon fuel such as Coal Coke. Remove both steel and slag: a full by-product slot stops the process. This early furnace is operated manually; use the Improved Blast Furnace for automated input and output."
+        ],
+        "title": "Form the Blast Furnace"
+      }
+    },
+    {
+      "quest_id": "513011FFA590DC5D",
+      "name": "Alloy Kiln",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        2,
+        2,
+        2
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:alloybrick",
+          "count": 8,
+          "name": "Kiln Brick",
+          "role": "construction",
+          "task_id": "515012EBB01C6F37"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012BE5C957D2C"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/alloy_smelter.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Alloy Kiln: фіксована схема 2×2×2. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Alloy Kiln відкриває раннє змішування металів, зокрема електруму й константану. Склади куб 2×2×2 із восьми Kiln Brick та сформуй його молотом інженера.",
+          "Завдання фіксує формування печі. Окремо перевір роботу: поклади обидва метали одного підтримуваного рецепта та паливо, дочекайся сплаву. Піч для сплавів не є доменною піччю й не замінює сталевий процес."
+        ],
+        "title": "Сформуй піч сплавів"
+      },
+      "en_us": {
+        "description": [
+          "Alloy Kiln construction kit: the fixed 2×2×2 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Alloy Kiln opens early metal mixing, including electrum and constantan. Build a 2×2×2 cube of eight Kiln Bricks and form it with the Engineer’s Hammer.",
+          "The task detects formation. Test operation separately by inserting both metals from one supported recipe and fuel, then collecting the alloy. This kiln is not a blast furnace and does not replace the steelmaking process."
+        ],
+        "title": "Form the Alloy Smelter"
+      }
+    },
+    {
+      "quest_id": "51301173D68FCBFF",
+      "name": "Metal Press",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        1
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "5150126716E5F5D7"
+        },
+        {
+          "item": "minecraft:piston",
+          "count": 1,
+          "name": "Piston",
+          "role": "construction",
+          "task_id": "5150121453A9ACB7"
+        },
+        {
+          "item": "immersiveengineering:heavy_engineering",
+          "count": 1,
+          "name": "Heavy Engineering Block",
+          "role": "construction",
+          "task_id": "5150127B8FA7807A"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 2,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "51501273C1E31FA2"
+        },
+        {
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 2,
+          "name": "Conveyor Belt",
+          "role": "construction",
+          "task_id": "51501222CEE28D97"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012186FD0F575"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/metal_press.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Metal Press: фіксована схема 3×3×1. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Metal Press автоматизує виготовлення листів, стрижнів та інших металевих деталей. Збери конструкцію за інженерною книгою й натисни молотом на поршень; це формування зараховує квест.",
+          "Для роботи встанови потрібний штамп ПКМ, подай енергію на верхній роз’єм і матеріал на вхідний конвеєр. Без штампа готовий мультиблок не оброблятиме злитки. Вихідний конвеєр має вести до місця з вільним простором."
+        ],
+        "title": "Прес із робочим каркасом"
+      },
+      "en_us": {
+        "description": [
+          "Metal Press construction kit: the fixed 3×3×1 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Metal Press automates plates, rods and other metal parts. Build the structure shown in the Engineer’s Manual and use the hammer on its piston; formation completes the quest.",
+          "To operate it, right-click with the required mold, feed power through the top connector and send material onto the input conveyor. A formed press without a mold cannot process ingots. Give the output conveyor somewhere with free storage space to deliver them."
+        ],
+        "title": "Pressing Matters"
+      }
+    },
+    {
+      "quest_id": "513011EE444C38AF",
+      "name": "Crusher",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 10,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "515012D71550BEDF"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "51501220AD41CDE3"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 10,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "515012C9D7E35532"
+        },
+        {
+          "item": "immersiveengineering:steel_fence",
+          "count": 8,
+          "name": "Steel Fence",
+          "role": "construction",
+          "task_id": "515012B2275A6869"
+        },
+        {
+          "item": "minecraft:hopper",
+          "count": 9,
+          "name": "Hopper",
+          "role": "construction",
+          "task_id": "5150124F03D3F417"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150123862D8BCB2"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/crusher.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Crusher: фіксована схема 5×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Crusher переводить придатну тверду сировину в подрібнені продукти. Сформуй мультиблок за інженерною книгою, підведи енергію й заздалегідь постав приймач біля виходу.",
+          "Квест перевіряє складання. Робочий тест — подати одну невелику партію через вхід і забрати основний та можливий побічний продукт. Не стрибай усередину приймального отвору й не подавай туди цінні речі без відповідного рецепта."
+        ],
+        "title": "Дробарка сформована"
+      },
+      "en_us": {
+        "description": [
+          "Crusher construction kit: the fixed 5×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Crusher converts suitable solid ingredients into crushed products. Form the multiblock from the Engineer’s Manual, connect power and place an output receiver before feeding it.",
+          "The quest checks construction. Test operation by feeding one small batch through the input and collecting the main product and any by-product. Keep clear of the intake and do not send valuable items into it without a matching recipe."
+        ],
+        "title": "Hazardous Machinery"
+      }
+    },
+    {
+      "quest_id": "513011965BAF66F4",
+      "name": "Improved Blast Furnace",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:blastbrick_reinforced",
+          "count": 27,
+          "name": "Reinforced Blast Brick",
+          "role": "construction",
+          "task_id": "51501280A390D45C"
+        },
+        {
+          "item": "minecraft:hopper",
+          "count": 1,
+          "name": "Hopper",
+          "role": "construction",
+          "task_id": "5150122B1024ED76"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150129433F70F2D"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/improved_blast_furnace.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Improved Blast Furnace: фіксована схема 3×4×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Improved Blast Furnace переводить сталевий маршрут на автоматичну подачу й відведення. Збери варіант із Reinforced Blast Brick та верхньою лійкою за схемою книги; сформуй його молотом.",
+          "Залізо й кокс подавай згори. Сталь виходить спереду, шлак — ззаду: підготуй обидва приймачі. До бічних портів можна приєднати до двох Preheater, але кожному потрібне окреме електроживлення."
+        ],
+        "title": "Сталь у безперервному потоці"
+      },
+      "en_us": {
+        "description": [
+          "Improved Blast Furnace construction kit: the fixed 3×4×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Improved Blast Furnace adds automated input and output to steelmaking. Build the reinforced-brick structure with its top hopper from the manual and form it with the hammer.",
+          "Feed iron and coke from above. Steel exits at the front and slag at the back, so provide both receivers. Up to two Preheaters attach to its side ports, but each needs an electrical supply."
+        ],
+        "title": "Next Level Blasting"
+      }
+    },
+    {
+      "quest_id": "513011027911756D",
+      "name": "Mixer",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 4,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "515012D289100AB3"
+        },
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 4,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "515012888884D8E6"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "5150124927825385"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 5,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "515012CD81DC2414"
+        },
+        {
+          "item": "immersiveengineering:steel_fence",
+          "count": 1,
+          "name": "Steel Fence",
+          "role": "construction",
+          "task_id": "51501242CCECE9AD"
+        },
+        {
+          "item": "immersiveengineering:fluid_pipe",
+          "count": 3,
+          "name": "Fluid Pipe",
+          "role": "construction",
+          "task_id": "515012BF83A149D3"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012A682792880"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/mixer.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Mixer: фіксована схема 3×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Сформуй Mixer і відокрем його рідинну подачу від готового продукту."
+        ],
+        "title": "Змішування в промисловому масштабі"
+      },
+      "en_us": {
+        "description": [
+          "Mixer construction kit: the fixed 3×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Earn the native advancement Industrial Potionmaking (immersiveengineering:multiblocks/mb_mixer). Follow its requirement in the Advancements screen or the mod's guide."
+        ],
+        "title": "Industrial Potionmaking"
+      }
+    },
+    {
+      "quest_id": "513011306BCB6E37",
+      "name": "Silo",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        7,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 50,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "515012375514EEFE"
+        },
+        {
+          "item": "immersiveengineering:treated_fence",
+          "count": 4,
+          "name": "Treated Wood Fence",
+          "role": "construction",
+          "task_id": "515012C431611626"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012161AD02A0D"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/silo.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Silo: фіксована схема 3×7×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Твоя важка промисловість уже важка. Залишилося навчити її бути промисловістю без твого щохвилинного нагляду.",
+          "Побудуй Silo для великої кількості одного типу предмета й заверши його молотком."
+        ],
+        "title": "Силос сформований"
+      },
+      "en_us": {
+        "description": [
+          "Silo construction kit: the fixed 3×7×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Earn the native advancement Sheetmetal Stash (immersiveengineering:multiblocks/mb_silo). Follow its requirement in the Advancements screen or the mod's guide."
+        ],
+        "title": "Sheetmetal Stash"
+      }
+    },
+    {
+      "quest_id": "51301103F035DDAB",
+      "name": "Sheetmetal Tank",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        5,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 34,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "515012C2155F9A75"
+        },
+        {
+          "item": "immersiveengineering:treated_fence",
+          "count": 4,
+          "name": "Treated Wood Fence",
+          "role": "construction",
+          "task_id": "5150128F2FC26C5D"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012FCD29CDC7A"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/sheetmetal_tank.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Sheetmetal Tank: фіксована схема 3×5×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Побудуй Sheetmetal Tank, сформуй його молотком та підготуй рідинний вхід і вихід."
+        ],
+        "title": "Резервуар сформований"
+      },
+      "en_us": {
+        "description": [
+          "Sheetmetal Tank construction kit: the fixed 3×5×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Earn the native advancement Water Tower (immersiveengineering:multiblocks/mb_tank). Follow its requirement in the Advancements screen or the mod's guide."
+        ],
+        "title": "Water Tower"
+      }
+    },
+    {
+      "quest_id": "5130111A675CD3CC",
+      "name": "Assembler",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 2,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "515012C43204459C"
+        },
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 2,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "5150123F59DE1C8A"
+        },
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 9,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "51501250ECF5AB86"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 6,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "51501271AB7E3F44"
+        },
+        {
+          "item": "immersiveengineering:slab_sheetmetal_iron",
+          "count": 6,
+          "name": "Iron Sheetmetal Slab",
+          "role": "construction",
+          "task_id": "515012453F926337"
+        },
+        {
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 2,
+          "name": "Conveyor Belt",
+          "role": "construction",
+          "task_id": "5150123E85631F6C"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150124296C71E0B"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/assembler.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Assembler: фіксована схема 3×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Assembler виконує до трьох заданих крафтів послідовно й може використати результат попереднього як вхід наступного. Сформуй конструкцію за книгою; це є умовою квесту.",
+          "Для першої перевірки задай один рецепт, поклади матеріали в нижні вхідні слоти й подай живлення згори. Клітинки схем зберігають рецепт, а не забезпечують інгредієнти. Рідинні рецепти потребують заповнених внутрішніх резервуарів."
+        ],
+        "title": "Сформуй автоматичний збирач"
+      },
+      "en_us": {
+        "description": [
+          "Assembler construction kit: the fixed 3×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Assembler performs up to three stored recipes in sequence and can use an earlier result in the next recipe. Form the structure from the manual to satisfy the quest.",
+          "For the first test, configure one recipe, put materials in the lower input slots and supply power from above. The recipe grids describe the craft rather than supply its ingredients. Fluid recipes also need filled internal tanks."
+        ],
+        "title": "Form the Assembler"
+      }
+    },
+    {
+      "quest_id": "513011585394EA3D",
+      "name": "Bottling Machine",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        2
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 2,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "5150125CA63A55D2"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "515012CEED304F7F"
+        },
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 2,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "515012C3A8F8D7AC"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 3,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "515012D649E272CC"
+        },
+        {
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 3,
+          "name": "Conveyor Belt",
+          "role": "construction",
+          "task_id": "515012AEAB59DE2F"
+        },
+        {
+          "item": "immersiveengineering:fluid_pump",
+          "count": 2,
+          "name": "Fluid Pump",
+          "role": "construction",
+          "task_id": "515012E2DEBAE4A8"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012AD271CC9E7"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/bottling_machine.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Bottling Machine: фіксована схема 3×3×2. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Побудуй відповідний мультиблок Immersive Engineering за схемою інженерної книги та заверши його молотком.",
+          "Перевірка використовує нативний тригер multiblock_formed із точним ID споруди. Недоступний у виживанні декоративний блок-контролер не потрібно отримувати в інвентар."
+        ],
+        "title": "Сформуй розливальну машину"
+      },
+      "en_us": {
+        "description": [
+          "Bottling Machine construction kit: the fixed 3×3×2 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Build the Immersive Engineering Bottling Machine using the Engineer's Manual, then form it with the Engineer's Hammer. Possessing its components alone does not count."
+        ],
+        "title": "Form the Bottling Machine"
+      }
+    },
+    {
+      "quest_id": "513011CA9536C271",
+      "name": "Sawmill",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 6,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "515012DC51BEA40B"
+        },
+        {
+          "item": "immersiveengineering:sheetmetal_iron",
+          "count": 4,
+          "name": "Iron Sheetmetal",
+          "role": "construction",
+          "task_id": "5150123B5997F57F"
+        },
+        {
+          "item": "immersiveengineering:heavy_engineering",
+          "count": 2,
+          "name": "Heavy Engineering Block",
+          "role": "construction",
+          "task_id": "515012F995EBCD82"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "515012F3D808F990"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 8,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "515012430ABBB044"
+        },
+        {
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 4,
+          "name": "Conveyor Belt",
+          "role": "construction",
+          "task_id": "5150120B8F95157C"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150124241A40BBD"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/sawmill.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Sawmill: фіксована схема 5×3×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Побудуй відповідний мультиблок Immersive Engineering за схемою інженерної книги та заверши його молотком.",
+          "Перевірка використовує нативний тригер multiblock_formed із точним ID споруди. Недоступний у виживанні декоративний блок-контролер не потрібно отримувати в інвентар."
+        ],
+        "title": "Сформуй промислову пилораму"
+      },
+      "en_us": {
+        "description": [
+          "Sawmill construction kit: the fixed 5×3×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Build the Immersive Engineering Sawmill using the Engineer's Manual, then form it with the Engineer's Hammer. Possessing its components alone does not count."
+        ],
+        "title": "Form the Sawmill"
+      }
+    },
+    {
+      "quest_id": "513011D0F247BDDA",
+      "name": "Automated Workbench",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        2,
+        3
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 4,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "51501249830478E2"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "5150121B9432D166"
+        },
+        {
+          "item": "immersiveengineering:heavy_engineering",
+          "count": 2,
+          "name": "Heavy Engineering Block",
+          "role": "construction",
+          "task_id": "515012499EBB2559"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 5,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "5150122E21E89E81"
+        },
+        {
+          "item": "immersiveengineering:slab_treated_wood_horizontal",
+          "count": 2,
+          "name": "Treated Wood Slab",
+          "role": "construction",
+          "task_id": "5150121A146BD19B"
+        },
+        {
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 4,
+          "name": "Conveyor Belt",
+          "role": "construction",
+          "task_id": "5150123294C06991"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "5150127720585530"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/auto_workbench.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Automated Workbench: фіксована схема 3×2×3. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Automated Workbench автоматизує вироби з інженерних креслень. Після формування постав потрібний Blueprint на стіл і вибери конкретний результат; звичайна довільна сітка 3×3 тут не замінює креслення.",
+          "Матеріали подаються через люки із синіми позначками, живлення — над ними, вироби виходять у кінці конвеєра. Завдання зараховує формування; після нього перевір хоча б один реальний випуск і приймач для готових деталей."
+        ],
+        "title": "Сформуй автоматичний верстак"
+      },
+      "en_us": {
+        "description": [
+          "Automated Workbench construction kit: the fixed 3×2×3 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Automated Workbench automates products from engineering blueprints. After formation, place the required Blueprint on its table and select a result; an arbitrary 3×3 crafting grid does not replace the blueprint.",
+          "Feed materials through the blue-marked hatches and power above them; finished parts leave the conveyor end. The quest detects formation, so follow it with a real production cycle and an output receiver."
+        ],
+        "title": "Form the Auto Workbench"
+      }
+    },
+    {
+      "quest_id": "5130112C76268D3A",
+      "name": "Arc Furnace",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        5,
+        5
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:sheetmetal_steel",
+          "count": 8,
+          "name": "Steel Sheetmetal",
+          "role": "construction",
+          "task_id": "515012ACB676A40B"
+        },
+        {
+          "item": "immersiveengineering:storage_steel",
+          "count": 6,
+          "name": "Block of Steel",
+          "role": "construction",
+          "task_id": "515012D0F76C00F3"
+        },
+        {
+          "item": "immersiveengineering:heavy_engineering",
+          "count": 5,
+          "name": "Heavy Engineering Block",
+          "role": "construction",
+          "task_id": "5150125FA9A41FC7"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "515012423E85153A"
+        },
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 10,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "5150125369FE32A8"
+        },
+        {
+          "item": "immersiveengineering:blastbrick_reinforced",
+          "count": 27,
+          "name": "Reinforced Blast Brick",
+          "role": "construction",
+          "task_id": "515012F11CCC7F63"
+        },
+        {
+          "item": "immersiveengineering:slab_sheetmetal_steel",
+          "count": 14,
+          "name": "Steel Sheetmetal Slab",
+          "role": "construction",
+          "task_id": "51501266B7B2654C"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 5,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "515012DBB1418DF2"
+        },
+        {
+          "item": "minecraft:cauldron",
+          "count": 1,
+          "name": "Cauldron",
+          "role": "construction",
+          "task_id": "515012DF407645B7"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "51501262263C908C"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/arcfurnace.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs.",
+      "uk_ua": {
+        "description": [
+          "Комплект Arc Furnace: фіксована схема 5×5×5. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Збери Arc Furnace. Для реальної роботи підготуй електроди, достатнє живлення та окремий вихід побічного продукту."
+        ],
+        "title": "Електродугова піч сформована"
+      },
+      "en_us": {
+        "description": [
+          "Arc Furnace construction kit: the fixed 5×5×5 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Earn the native advancement The Hottest Topic (immersiveengineering:multiblocks/mb_arcfurnace). Follow its requirement in the Advancements screen or the mod's guide."
+        ],
+        "title": "The Hottest Topic"
+      }
+    },
+    {
+      "quest_id": "513011B12DC6165B",
+      "name": "Excavator and Bucket Wheel",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        7,
+        8
+      ],
+      "materials": [
+        {
+          "item": "immersiveengineering:storage_steel",
+          "count": 9,
+          "name": "Block of Steel",
+          "role": "construction",
+          "task_id": "5150120DF6F35E25"
+        },
+        {
+          "item": "immersiveengineering:sheetmetal_steel",
+          "count": 16,
+          "name": "Steel Sheetmetal",
+          "role": "construction",
+          "task_id": "51501284A1C4AB29"
+        },
+        {
+          "item": "immersiveengineering:radiator",
+          "count": 3,
+          "name": "Radiator Block",
+          "role": "construction",
+          "task_id": "5150128043BEED9B"
+        },
+        {
+          "item": "immersiveengineering:light_engineering",
+          "count": 9,
+          "name": "Light Engineering Block",
+          "role": "construction",
+          "task_id": "515012AFBD3EBCAF"
+        },
+        {
+          "item": "immersiveengineering:rs_engineering",
+          "count": 1,
+          "name": "Redstone Engineering Block",
+          "role": "construction",
+          "task_id": "51501264EDAE0B67"
+        },
+        {
+          "item": "immersiveengineering:heavy_engineering",
+          "count": 4,
+          "name": "Heavy Engineering Block",
+          "role": "construction",
+          "task_id": "515012AA2D973D33"
+        },
+        {
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 26,
+          "name": "Steel Scaffolding",
+          "role": "construction",
+          "task_id": "51501223F946FD74"
+        },
+        {
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "name": "Engineer's Hammer",
+          "role": "tool",
+          "task_id": "515012963FD3E868"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Immersive Engineering",
+          "version": "12.4.2-194",
+          "archive": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+          "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+          "entries": [
+            "data/immersiveengineering/structure/multiblocks/excavator_full.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted every non-air block in the hash-verified structure NBT; all slab states are single slabs. Excavator kit includes its separate bucket wheel.",
+      "uk_ua": {
+        "description": [
+          "Комплект Excavator and Bucket Wheel: фіксована схема 3×7×8. У вкладці «Завдання» перелічено всі будівельні блоки та молот інженера; один молот можна використовувати для всіх споруд.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Побудуй і сформуй екскаватор. Вибір покладу перевіряється бурінням проб; сам квест фіксує збирання конструкції."
+        ],
+        "title": "Екскаватор має робочий контур"
+      },
+      "en_us": {
+        "description": [
+          "Excavator and Bucket Wheel construction kit: the fixed 3×7×8 layout. Tasks list every construction block and one reusable Engineer’s Hammer.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Earn the native advancement Diggy Diggy Hole (immersiveengineering:multiblocks/mb_excavator). Follow its requirement in the Advancements screen or the mod's guide."
+        ],
+        "title": "Diggy Diggy Hole"
+      }
+    },
+    {
+      "quest_id": "5130118347056838",
+      "name": "Seared Melter station",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        2,
+        2,
+        1
+      ],
+      "materials": [
+        {
+          "item": "modernfoundry:seared_melter",
+          "count": 1,
+          "name": "Seared Melter",
+          "role": "construction",
+          "task_id": "5130128C026E4DBD"
+        },
+        {
+          "item": "modernfoundry:seared_heater",
+          "count": 1,
+          "name": "Seared Heater",
+          "role": "construction",
+          "task_id": "51501266BD793D98"
+        },
+        {
+          "item": "modernfoundry:seared_faucet",
+          "count": 1,
+          "name": "Seared Faucet",
+          "role": "construction",
+          "task_id": "51501235EFB762E6"
+        },
+        {
+          "item": "modernfoundry:seared_table",
+          "count": 1,
+          "name": "Seared Casting Table",
+          "role": "construction",
+          "task_id": "5150125B0867B795"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Modern Foundry",
+          "version": "4.1.6",
+          "archive": "ModernFoundry-1.21.1-4.1.6-NeoForge.jar",
+          "sha256": "0b0026db1c27a1d08b1e3d3eba8fd2cc470d4cb534eb08d74633adc5be5691f1",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380",
+          "entries": [
+            "assets/modernfoundry/book/puny_smelting/en_us/melting/meltergui2.json",
+            "assets/modernfoundry/book/puny_smelting/en_us/movingfluids/faucet2.json",
+            "assets/modernfoundry/book/puny_smelting/en_us/casting/sandcast.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "One Melter placed immediately above one Heater gives the minimum solid-fuel station. One side Faucet pours into one Casting Table below; fuel and a chosen cast are process inputs, not structure. The existing tool-making lesson uses the table, so no alternative Basin is required.",
+      "uk_ua": {
+        "title": "Melter: комплект першої плавильні",
+        "description": [
+          "Мінімальна станція: постав 1 Melter над 1 Heater. Прикріпи 1 Faucet збоку Melter, а 1 Casting Table — під носиком. Зовнішній габарит такої схеми — 2×2×1. Heater використовує тверде паливо; пізніше його можна замінити баком із рідким паливом.",
+          "Комплект перевіряється в інвентарі без вилучення. Підготуй паливо та форму потрібної деталі окремо; цей предметний квест не перевіряє процес плавлення.",
+          "Урок: Melter: один метал, три вхідні слоти.",
+          "Обпалений плавильник (Seared Melter) — маленький стартовий агрегат. Постав його безпосередньо на Seared Heater із твердим паливом або на Seared Fuel Tank із рідким паливом. Відкривай верхній блок ПКМ.",
+          "Для першого залізного наконечника поклади 2 залізні злитки в три верхні вхідні слоти. Внизу має бути паливо; дочекайся, поки злитки перетворяться на розплав. Далі цей метал піде через Faucet у форму Pick Head на Casting Table.",
+          "Melter одночасно вміщує тільки ОДИН вид рідини. Перед зміною металу повністю злий попередній. Якщо спочатку плавив золото для форми, не підкладай залізо, поки залишок золота ще займає резервуар.",
+          "Тут немає сплавлення кількох металів. Для Rose Gold та інших сплавів потрібна Smeltery або окремий Alloyer. У Melter ти готуєш перші металеві деталі й мідь для контролера Smeltery.",
+          "Якщо плавлення стоїть: перевір паливо прямо під Melter, порожній залишок попереднього металу та температуру в рецепті JEI. Три слоти для предметів не означають три окремі баки."
+        ]
+      },
+      "en_us": {
+        "title": "Melter: First Melting Station Kit",
+        "description": [
+          "Minimum station: put one Melter above one Heater. Attach one Faucet to the Melter side and put one Casting Table below its spout. This layout occupies 2×2×1. The Heater burns solid fuel; a liquid-fuel tank can replace it later.",
+          "The kit is checked in inventory without consumption. Prepare fuel and a cast for the part separately; this item quest does not verify the melting process.",
+          "Lesson: Melter: one metal, three input slots.",
+          "The Seared Melter is a small starting machine. Place it directly on a solid-fuel Seared Heater or a liquid-fuel Seared Fuel Tank. Right-click the upper block to open it.",
+          "For your first iron head, put 2 iron ingots into the three upper input slots. Supply fuel below and wait for the ingots to melt. The metal will then flow through a Faucet into a Pick Head cast on a Casting Table.",
+          "The Melter can hold only ONE fluid type at a time. Drain the previous fluid completely before changing metals. If you melted gold for a cast first, do not add iron while gold still occupies the tank.",
+          "This machine cannot alloy different metals. Rose Gold and other alloys need a Smeltery or a separate Alloyer. Use the Melter for your first metal parts and the copper needed for a Smeltery Controller.",
+          "If melting stops, check the fuel directly below the Melter, drain any remaining previous metal and check the temperature required by the JEI recipe. Three item slots do not mean three separate fluid tanks."
+        ]
+      }
+    },
+    {
+      "quest_id": "51301102B4D1DEF4",
+      "name": "Smeltery",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        2,
+        3
+      ],
+      "materials": [
+        {
+          "item": "modernfoundry:smeltery_controller",
+          "count": 1,
+          "name": "Smeltery Controller",
+          "role": "construction",
+          "task_id": "515012E150B30577"
+        },
+        {
+          "item": "modernfoundry:seared_bricks",
+          "count": 2,
+          "name": "Seared Bricks",
+          "role": "construction",
+          "task_id": "515012414FB3BD69"
+        },
+        {
+          "item": "modernfoundry:seared_fuel_tank",
+          "count": 1,
+          "name": "Seared Fuel Tank",
+          "role": "construction",
+          "task_id": "5150120E0569881C"
+        },
+        {
+          "item": "modernfoundry:seared_drain",
+          "count": 1,
+          "name": "Seared Drain",
+          "role": "construction",
+          "task_id": "515012527E2289E0"
+        },
+        {
+          "item": "modernfoundry:seared_faucet",
+          "count": 1,
+          "name": "Seared Faucet",
+          "role": "construction",
+          "task_id": "515012126B13DEDB"
+        },
+        {
+          "item": "modernfoundry:seared_basin",
+          "count": 1,
+          "name": "Seared Casting Basin",
+          "role": "construction",
+          "task_id": "5150123813353478"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Modern Foundry",
+          "version": "4.1.6",
+          "archive": "ModernFoundry-1.21.1-4.1.6-NeoForge.jar",
+          "sha256": "0b0026db1c27a1d08b1e3d3eba8fd2cc470d4cb534eb08d74633adc5be5691f1",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380",
+          "entries": [
+            "modernmods/modernfoundry/smeltery/block/entity/multiblock/SmelteryMultiblock.class",
+            "modernmods/modernfoundry/smeltery/block/entity/multiblock/MultiblockCuboid.class"
+          ],
+          "additional_urls": [
+            "https://github.com/Modern-Mods/ModernFoundry/blob/Neo/1.21.1/src/main/java/modernmods/modernfoundry/smeltery/block/entity/multiblock/SmelteryMultiblock.java"
+          ]
+        }
+      ],
+      "derivation": "hasFloor=true, hasFrame=false, hasCeiling=false; one floor plus four side positions, three occupied by controller/tank/drain; two seared bricks remain. Faucet and basin are minimum casting attachments, not structural walls.",
+      "uk_ua": {
+        "description": [
+          "Найменша Smeltery має внутрішню камеру 1×1×1. Під нею постав 1 Seared Bricks; навколо порожнього блока — Controller, Fuel Tank, Drain і ще 1 Seared Bricks. Кути та край дна не потрібні.",
+          "До Drain прикріпи Faucet і постав Basin під ним. Паливо — лава в баку. Це комплект для плавлення й виливання блоків; ливарний стіл і форми можна додати окремо.",
+          "Відкрий працюючий Smeltery Controller: збережена нативна перевірка підтверджує сформовану споруду. Для більшої місткості розширюй прямокутне дно та стінки.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Ливарня справді сформована"
+      },
+      "en_us": {
+        "description": [
+          "The smallest Smeltery has a 1×1×1 interior. Place one Seared Bricks underneath it, then Controller, Fuel Tank, Drain and another Seared Bricks around the empty cell. Corners and the floor perimeter are unnecessary.",
+          "Attach a Faucet to the Drain and place a Basin below it. Supply lava to the tank. This kit melts and casts storage blocks; add a Casting Table and casts separately when needed.",
+          "Open the working Smeltery Controller to satisfy the retained native formation check. Expand the rectangular floor and walls for more capacity.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "The Mighty Smeltery"
+      }
+    },
+    {
+      "quest_id": "5130112B7E67B5BF",
+      "name": "Foundry",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        2,
+        3
+      ],
+      "materials": [
+        {
+          "item": "modernfoundry:foundry_controller",
+          "count": 1,
+          "name": "Foundry Controller",
+          "role": "construction",
+          "task_id": "515012E5429218CC"
+        },
+        {
+          "item": "modernfoundry:scorched_bricks",
+          "count": 14,
+          "name": "Scorched Bricks",
+          "role": "construction",
+          "task_id": "51501258A92CE88B"
+        },
+        {
+          "item": "modernfoundry:scorched_fuel_tank",
+          "count": 1,
+          "name": "Scorched Fuel Tank",
+          "role": "construction",
+          "task_id": "515012D2DE209A36"
+        },
+        {
+          "item": "modernfoundry:scorched_drain",
+          "count": 1,
+          "name": "Scorched Drain",
+          "role": "construction",
+          "task_id": "5150128323DF2F2A"
+        },
+        {
+          "item": "modernfoundry:scorched_faucet",
+          "count": 1,
+          "name": "Scorched Faucet",
+          "role": "construction",
+          "task_id": "51501268BC0348F8"
+        },
+        {
+          "item": "modernfoundry:scorched_basin",
+          "count": 1,
+          "name": "Scorched Casting Basin",
+          "role": "construction",
+          "task_id": "5150122338F9A162"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Modern Foundry",
+          "version": "4.1.6",
+          "archive": "ModernFoundry-1.21.1-4.1.6-NeoForge.jar",
+          "sha256": "0b0026db1c27a1d08b1e3d3eba8fd2cc470d4cb534eb08d74633adc5be5691f1",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/modern-foundry/files/8675380",
+          "entries": [
+            "modernmods/modernfoundry/smeltery/block/entity/multiblock/FoundryMultiblock.class",
+            "assets/modernfoundry/book/fantastic_foundry/en_us/foundry/structurerequirements.json"
+          ],
+          "additional_urls": [
+            "https://github.com/Modern-Mods/ModernFoundry/blob/Neo/1.21.1/src/main/java/modernmods/modernfoundry/smeltery/block/entity/multiblock/FoundryMultiblock.java"
+          ]
+        }
+      ],
+      "derivation": "hasFloor=true, hasFrame=true, hasCeiling=false: 9 floor+8 wall=17; subtract controller, fuel tank and drain ->14 bricks. Faucet/basin are casting attachments.",
+      "uk_ua": {
+        "description": [
+          "Мінімальна Foundry: суцільне дно 3×3 і стінка 3×3 заввишки 1 блок із порожнім центром. Тут кути обов’язкові: 17 позицій корпуса заповнюють 14 Scorched Bricks, Controller, Fuel Tank і Drain.",
+          "Приєднай Scorched Faucet і Basin для виливання, заправ бак та відкрий контролер. Нативна перевірка готової Foundry залишається обов’язковою.",
+          "Foundry відділяє побічні продукти й не сплавляє розплави автоматично. Для змішування використовуй Smeltery або окремий Alloyer.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Foundry готова до роботи"
+      },
+      "en_us": {
+        "description": [
+          "Minimum Foundry: a solid 3×3 floor and a one-block-high 3×3 wall ring with an empty centre. Corners are required: its 17 shell positions are 14 Scorched Bricks, a Controller, a Fuel Tank and a Drain.",
+          "Attach a Scorched Faucet and Basin for casting, fuel the tank and open the controller. The native working-Foundry check remains mandatory.",
+          "The Foundry separates by-products and does not automatically alloy its fluids. Use a Smeltery or separate Alloyer for mixing.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "The Fantastic Foundry"
+      }
+    },
+    {
+      "quest_id": "5130118DB31A46A1",
+      "name": "Railcraft Coke Oven",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "railcraft:coke_oven_bricks",
+          "count": 26,
+          "name": "Coke Oven Bricks",
+          "role": "construction",
+          "task_id": "51501234C2EC2FB0"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Railcraft Reborn",
+          "version": "1.2.12",
+          "archive": "railcraft-reborn-1.21.1-1.2.12.jar",
+          "sha256": "9dc23403c3b8a987ae4a9161bb9495bbf1c27b1ba3b6b558a46c99272c24932e",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020",
+          "entries": [
+            "assets/railcraft/patchouli_books/guide_book/en_us/entries/multiblock/coke_oven.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "",
+      "uk_ua": {
+        "description": [
+          "Railcraft Coke Oven: 26 блоків, зовнішній розмір 3×3×3. Залиш внутрішню камеру порожньою; це інша конструкція, ніж піч Immersive Engineering.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Коксова піч Railcraft — куб 3×3×3 із порожнім центром, тобто 26 Coke Oven Bricks. Використовуй саме блоки Railcraft і залиш проміжок між сусідніми печами; завдання реагує на нативне формування цієї конструкції.",
+          "Після складання завантаж вугілля та забирай кокс і крезот. Не перенось сюди суцільну 27-блокову схему печі Immersive Engineering: у цих модів різні мультиблоки."
+        ],
+        "title": "Залізничний кокс"
+      },
+      "en_us": {
+        "description": [
+          "Railcraft Coke Oven: 26 blocks, external dimensions 3×3×3. Leave the interior hollow; this is a different construction from its Immersive Engineering counterpart.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Railcraft’s Coke Oven is a 3×3×3 cube with a hollow centre, requiring 26 Coke Oven Bricks. Use Railcraft’s own bricks and leave a gap between ovens; the task detects native formation of this structure.",
+          "After construction, load coal and collect coke and creosote. Do not copy Immersive Engineering’s solid 27-block layout here: the two mods use different multiblocks."
+        ],
+        "title": "Coke Head"
+      }
+    },
+    {
+      "quest_id": "5130110CBEF3D218",
+      "name": "Railcraft Blast Furnace",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        3
+      ],
+      "materials": [
+        {
+          "item": "railcraft:blast_furnace_bricks",
+          "count": 34,
+          "name": "Blast Furnace Bricks",
+          "role": "construction",
+          "task_id": "515012F777D47651"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Railcraft Reborn",
+          "version": "1.2.12",
+          "archive": "railcraft-reborn-1.21.1-1.2.12.jar",
+          "sha256": "9dc23403c3b8a987ae4a9161bb9495bbf1c27b1ba3b6b558a46c99272c24932e",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020",
+          "entries": [
+            "assets/railcraft/patchouli_books/guide_book/en_us/entries/multiblock/blast_furnace.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "",
+      "uk_ua": {
+        "description": [
+          "Railcraft Blast Furnace: 34 блоків, зовнішній розмір 3×4×3. Залиш внутрішню камеру порожньою; це інша конструкція, ніж піч Immersive Engineering.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Blast Furnace Railcraft — конструкція 3×3×4 із порожниною всередині, для якої потрібно 34 Blast Furnace Bricks. Звір шари зі схемою Railcraft і не з’єднуй її впритул з іншою такою піччю.",
+          "Квест зараховує формування доменної печі. Далі перевір сталевий рецепт із залізом і придатним паливом у її інтерфейсі; сама наявність цегли чи піч іншого мода не задовольняє цей нативний тригер."
+        ],
+        "title": "Залізнична домна"
+      },
+      "en_us": {
+        "description": [
+          "Railcraft Blast Furnace: 34 blocks, external dimensions 3×4×3. Leave the interior hollow; this is a different construction from its Immersive Engineering counterpart.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Railcraft’s Blast Furnace is a 3×3×4 structure with an internal hollow, using 34 Blast Furnace Bricks. Follow the layers in Railcraft’s diagram and do not build another furnace directly against it.",
+          "The quest detects formation. Then test a steel recipe with iron and a supported fuel in its interface; merely carrying bricks or building another mod’s furnace does not satisfy this native trigger."
+        ],
+        "title": "Steel Mill"
+      }
+    },
+    {
+      "quest_id": "513011C793F4D2F0",
+      "name": "Low-pressure Steam Boiler",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        1,
+        2,
+        1
+      ],
+      "materials": [
+        {
+          "item": "railcraft:low_pressure_steam_boiler_tank",
+          "count": 1,
+          "name": "Low Pressure Steam Boiler Tank",
+          "role": "construction",
+          "task_id": "5130124DB2CD826E"
+        },
+        {
+          "item": "railcraft:solid_fueled_firebox",
+          "count": 1,
+          "name": "Solid Fueled Firebox",
+          "role": "construction",
+          "task_id": "51501221AF79196B"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Railcraft Reborn",
+          "version": "1.2.12",
+          "archive": "railcraft-reborn-1.21.1-1.2.12.jar",
+          "sha256": "9dc23403c3b8a987ae4a9161bb9495bbf1c27b1ba3b6b558a46c99272c24932e",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020",
+          "entries": [
+            "assets/railcraft/patchouli_books/guide_book/en_us/entries/multiblock/steam_boiler.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "",
+      "uk_ua": {
+        "description": [
+          "Мінімальний котел Railcraft: 1 Solid Fueled Firebox і 1 Low Pressure Steam Boiler Tank безпосередньо над ним. Вода та тверде паливо подаються в Firebox.",
+          "Завдання перевіряють комплект із двох блоків, а не температуру чи виробництво пари. Для бази 2×2 або 3×3 знадобиться більше топок і баків.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Паровий котел: мінімальний комплект"
+      },
+      "en_us": {
+        "description": [
+          "Minimum Railcraft boiler: one Solid Fueled Firebox with one Low Pressure Steam Boiler Tank directly above it. Supply water and solid fuel to the Firebox.",
+          "These tasks verify the two-block kit, not temperature or steam production. A 2×2 or 3×3 base requires additional fireboxes and tanks.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Steam Boiler: Minimum Kit"
+      }
+    },
+    {
+      "quest_id": "514D11F90042E7F4",
+      "name": "Thermal Evaporation Plant",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        4,
+        3,
+        4
+      ],
+      "materials": [
+        {
+          "item": "mekanism:thermal_evaporation_controller",
+          "count": 1,
+          "name": "Thermal Evaporation Controller",
+          "role": "construction",
+          "task_id": "514D12DB1BE225B7"
+        },
+        {
+          "item": "mekanism:thermal_evaporation_valve",
+          "count": 2,
+          "name": "Thermal Evaporation Valve",
+          "role": "construction",
+          "task_id": "514D12252C003D7F"
+        },
+        {
+          "item": "mekanism:thermal_evaporation_block",
+          "count": 33,
+          "name": "Thermal Evaporation Block",
+          "role": "construction",
+          "task_id": "514D126A59C9DD80"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism",
+          "version": "10.7.19.85",
+          "archive": "Mekanism-1.21.1-10.7.19.85.jar",
+          "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+          "entries": [
+            "mekanism/common/content/evaporation/EvaporationValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/main/java/mekanism/common/content"
+          ]
+        }
+      ],
+      "derivation": "Minimum bounds 4×3×4. Floor16 + middle12 + top8 =36; one controller and two process valves replace three casings.",
+      "uk_ua": {
+        "description": [
+          "Мінімальна випарювальна установка: 4×3×4. Суцільне дно має 16 блоків; наступне кільце — 12; верхнє — 8, без чотирьох кутів. Дах над центром не закривай.",
+          "Із 36 позицій 1 займає Controller, 2 — Valve для входу та виходу, решту 33 — Thermal Evaporation Blocks. Сонячні генератори й зовнішній нагрівач не потрібні для формування; їх можна додати для швидкості.",
+          "Комплект розраховано на одну установку: вода → розсіл. Для безперервного отримання літію постав другу таку установку та подавай у неї розсіл.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Випарювальна установка: комплект"
+      },
+      "en_us": {
+        "description": [
+          "Minimum evaporation plant: 4×3×4. The solid floor contains 16 blocks, the middle ring 12 and the top ring 8 with its four corners omitted. Leave the top centre open.",
+          "Of these 36 positions, one is the Controller, two are input/output Valves and the remaining 33 are Thermal Evaporation Blocks. Solar generators and an external heater are optional speed upgrades.",
+          "The kit builds one plant for water → brine. For continuous lithium production, add a second plant and feed it brine.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Thermal Evaporation Plant: Complete Kit"
+      }
+    },
+    {
+      "quest_id": "514D11CD9798EC9F",
+      "name": "Fission Reactor",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        3
+      ],
+      "materials": [
+        {
+          "item": "mekanismgenerators:fission_reactor_casing",
+          "count": 30,
+          "name": "Fission Reactor Casing",
+          "role": "construction",
+          "task_id": "514D12993A901080"
+        },
+        {
+          "item": "mekanismgenerators:fission_reactor_port",
+          "count": 4,
+          "name": "Fission Reactor Port",
+          "role": "construction",
+          "task_id": "514D12CC105A6C1B"
+        },
+        {
+          "item": "mekanismgenerators:fission_fuel_assembly",
+          "count": 1,
+          "name": "Fission Fuel Assembly",
+          "role": "construction",
+          "task_id": "514D12DF5AAE9F26"
+        },
+        {
+          "item": "mekanismgenerators:control_rod_assembly",
+          "count": 1,
+          "name": "Control Rod Assembly",
+          "role": "construction",
+          "task_id": "514D129CF4D28851"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism: Generators",
+          "version": "10.7.19",
+          "archive": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+          "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism-generators/files/7904061",
+          "entries": [
+            "mekanism/generators/common/content/fission/FissionReactorValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/generators/java/mekanism/generators/common/content"
+          ]
+        },
+        {
+          "url": "https://wiki.aidancbrady.com/wiki/Fission_Reactor"
+        }
+      ],
+      "derivation": "3×4×3 outer volume36 less two internal positions=34 shell; four separate process ports leave30 casings.",
+      "uk_ua": {
+        "description": [
+          "Мінімальний реактор поділу: 3×4×3. Оболонка має 34 позиції: 30 Fission Reactor Casing і 4 порти. Усередині постав 1 Fuel Assembly та 1 Control Rod Assembly безпосередньо над нею.",
+          "Окремі порти: паливо, вода, пара й відходи. Налаштуй виходи Configurator. У наступному квесті один корпус можна замінити Logic Adapter для керування зупинкою.",
+          "Цей квест збирає будівельний комплект. Робочий цикл зараховується окремо після підготовки охолодження, палива та відведення відходів.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Fission Reactor: корпус і паливна збірка"
+      },
+      "en_us": {
+        "description": [
+          "Minimum fission reactor: 3×4×3. Its 34 shell positions are 30 Fission Reactor Casings and four Ports. Inside, place one Fuel Assembly and a Control Rod Assembly directly above it.",
+          "Use separate ports for fuel, water, steam and waste; configure outputs with a Configurator. The following quest adds a shutdown Logic Adapter in place of one casing.",
+          "This quest gathers the construction kit. The operating cycle is checked separately after coolant, fuel and waste handling are ready.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Fission Reactor: Shell and Fuel Assembly"
+      }
+    },
+    {
+      "quest_id": "514D111250CFCDBB",
+      "name": "Industrial Turbine",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        5,
+        5
+      ],
+      "materials": [
+        {
+          "item": "mekanismgenerators:turbine_casing",
+          "count": 44,
+          "name": "Turbine Casing",
+          "role": "construction",
+          "task_id": "514D12AF3D607032"
+        },
+        {
+          "item": "mekanism:structural_glass",
+          "count": 51,
+          "name": "Structural Glass",
+          "role": "construction",
+          "task_id": "5150127B40B826E0"
+        },
+        {
+          "item": "mekanismgenerators:turbine_valve",
+          "count": 2,
+          "name": "Turbine Valve",
+          "role": "construction",
+          "task_id": "514D12E69CE54212"
+        },
+        {
+          "item": "mekanismgenerators:turbine_vent",
+          "count": 1,
+          "name": "Turbine Vent",
+          "role": "construction",
+          "task_id": "515012CD142BD3F0"
+        },
+        {
+          "item": "mekanismgenerators:turbine_rotor",
+          "count": 1,
+          "name": "Turbine Rotor",
+          "role": "construction",
+          "task_id": "514D120323B4B81B"
+        },
+        {
+          "item": "mekanismgenerators:turbine_blade",
+          "count": 1,
+          "name": "Turbine Blade",
+          "role": "construction",
+          "task_id": "5150121596D3034D"
+        },
+        {
+          "item": "mekanismgenerators:rotational_complex",
+          "count": 1,
+          "name": "Rotational Complex",
+          "role": "construction",
+          "task_id": "514D12C6792999DA"
+        },
+        {
+          "item": "mekanism:pressure_disperser",
+          "count": 8,
+          "name": "Pressure Disperser",
+          "role": "construction",
+          "task_id": "515012C90D3B9818"
+        },
+        {
+          "item": "mekanismgenerators:electromagnetic_coil",
+          "count": 1,
+          "name": "Electromagnetic Coil",
+          "role": "construction",
+          "task_id": "514D1286E7C55331"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism: Generators",
+          "version": "10.7.19",
+          "archive": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+          "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism-generators/files/7904061",
+          "entries": [
+            "mekanism/generators/common/content/turbine/TurbineValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/generators/java/mekanism/generators/common/content"
+          ]
+        },
+        {
+          "url": "https://wiki.aidancbrady.com/wiki/Industrial_Turbine"
+        }
+      ],
+      "derivation": "Outer shell125−27=98; frame8+12×3=44; 98−44−2valves−1vent=51 glass. Three interior heights needed for rotor, complex/dispersers and coil. Validator requires blades>0, not two.",
+      "uk_ua": {
+        "description": [
+          "Найменша працююча турбіна Mekanism: 5×5×5. Ребра корпуса — 44 Turbine Casing; решту оболонки заповнюють 51 Structural Glass, 2 Valve та 1 Vent. Vent має бути на рівні Rotational Complex або вище.",
+          "У центрі над дном: 1 Rotor з 1 Blade; над ним Rotational Complex, навколо якого заповни весь внутрішній шар вісьмома Pressure Disperser. Над Complex постав 1 Electromagnetic Coil.",
+          "Один Valve приймає пару, другий віддає FE. Це малий стартовий стенд; Saturating Condenser для повернення води та додаткові лопаті можна встановити після складання. Не підвищуй виробництво пари, поки вихід турбіни його не приймає.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Турбіна Mekanism: мінімальний комплект"
+      },
+      "en_us": {
+        "description": [
+          "Smallest working Mekanism turbine: 5×5×5. Its frame uses 44 Turbine Casings; the rest of the shell is 51 Structural Glass, two Valves and one Vent. Place the Vent at the Rotational Complex’s height or above.",
+          "Above the floor centre, place one Rotor with one Blade. Put the Rotational Complex above it and fill the surrounding interior layer with eight Pressure Dispersers. Put one Electromagnetic Coil directly above the Complex.",
+          "One Valve accepts steam; the other outputs FE. This is a small starter rig. Add a Saturating Condenser for water recovery and more blades after assembly; match steam input to the turbine’s actual throughput.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Mekanism Turbine: Minimum Kit"
+      }
+    },
+    {
+      "quest_id": "514D113E1E8CF8B1",
+      "name": "Fusion Reactor",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        5,
+        5
+      ],
+      "materials": [
+        {
+          "item": "mekanismgenerators:fusion_reactor_controller",
+          "count": 1,
+          "name": "Fusion Reactor Controller",
+          "role": "construction",
+          "task_id": "514D12400E1E7B56"
+        },
+        {
+          "item": "mekanismgenerators:fusion_reactor_frame",
+          "count": 36,
+          "name": "Fusion Reactor Frame",
+          "role": "construction",
+          "task_id": "514D1287B291997E"
+        },
+        {
+          "item": "mekanismgenerators:fusion_reactor_port",
+          "count": 3,
+          "name": "Fusion Reactor Port",
+          "role": "construction",
+          "task_id": "514D12BAD610257C"
+        },
+        {
+          "item": "mekanismgenerators:laser_focus_matrix",
+          "count": 1,
+          "name": "Laser Focus Matrix",
+          "role": "construction",
+          "task_id": "514D126FF91F6686"
+        },
+        {
+          "item": "mekanismgenerators:reactor_glass",
+          "count": 25,
+          "name": "Reactor Glass",
+          "role": "construction",
+          "task_id": "515012E77D162D6C"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism: Generators",
+          "version": "10.7.19",
+          "archive": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+          "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism-generators/files/7904061",
+          "entries": [
+            "mekanism/generators/common/content/fusion/FusionReactorValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/generators/java/mekanism/generators/common/content"
+          ]
+        }
+      ],
+      "derivation": "Enumerating six ALLOWED_GRID faces and deduplicating edges gives36 mandatory-frame+30 replaceable positions. Controller1+laser1+ports3 leave25 reactor glass. Native burn-cycle task retained.",
+      "uk_ua": {
+        "description": [
+          "Реактор синтезу має фіксовану округлену схему 5×5×5: 36 Frame, Controller, Laser Focus Matrix, 3 Port і 25 Reactor Glass. Не заповнюй кути як у звичайного куба; орієнтуйся на ромбоподібні грані схеми Mekanism.",
+          "Controller стоїть у центрі верхньої грані. Два порти приймають окремо дейтерій і тритій; третій віддає FE. Спрямуй лазер через Laser Focus Matrix.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Збери Fusion Reactor, підведи підготовлене паливо та систему лазерного запалювання до Laser Focus Matrix. Для запуску автоматичної перевірки натисни ПКМ основною рукою без Shift по Fusion Reactor Controller сформованого реактора.",
+          "Залишайся в тому самому вимірі не далі 16 блоків від контролера, по якому натиснув. Підтримуй щонайменше 10 секунд роботи (200 серверних тиків): паливна реакція триває, а поточна генерація енергії більша за нуль. Енергію можна одразу віддавати споживачам.",
+          "Квест зараховується під час роботи після повного інтервалу спостереження. Відхід за межі 16 блоків, зміна виміру, вихід зі світу або розбирання реактора переривають спостереження; після повернення знову натисни ПКМ по контролеру. Комплект деталей перевіряється окремими предметними завданнями."
+        ],
+        "title": "Синтез: паливо, лазер, робочий цикл"
+      },
+      "en_us": {
+        "description": [
+          "The fusion reactor has a fixed rounded 5×5×5 layout: 36 Frames, a Controller, a Laser Focus Matrix, three Ports and 25 Reactor Glass. Follow Mekanism’s diamond-shaped faces rather than filling the corners of a normal cube.",
+          "Place the Controller in the centre of the top face. Two ports accept deuterium and tritium separately; the third exports FE. Aim the ignition laser through the Laser Focus Matrix.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Assemble the Fusion Reactor and connect the prepared fuel and laser ignition system to its Laser Focus Matrix. To start the automatic observation, right-click the Fusion Reactor Controller on the formed reactor with your main hand without holding Shift.",
+          "Remain in the same dimension within 16 blocks of the controller you clicked. Maintain at least 10 seconds of operation (200 server ticks): the fueled reaction continues and current energy generation is positive. Energy may be sent directly to consumers.",
+          "The quest completes while the reactor is running after the full observation interval. Moving beyond 16 blocks, changing dimension, leaving the world or dismantling the reactor interrupts observation; after returning, right-click the controller again. The component kit is checked by the separate item objectives."
+        ],
+        "title": "Fusion: fuel, laser, operating cycle"
+      }
+    },
+    {
+      "quest_id": "514D114878C1E1BB",
+      "name": "Supercritical Phase Shifter",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        7,
+        7,
+        7
+      ],
+      "materials": [
+        {
+          "item": "mekanism:sps_casing",
+          "count": 60,
+          "name": "SPS Casing",
+          "role": "construction",
+          "task_id": "514D126EA5AE4763"
+        },
+        {
+          "item": "mekanism:sps_port",
+          "count": 3,
+          "name": "SPS Port",
+          "role": "construction",
+          "task_id": "514D123CCCB66CA5"
+        },
+        {
+          "item": "mekanism:supercharged_coil",
+          "count": 1,
+          "name": "Supercharged Coil",
+          "role": "construction",
+          "task_id": "514D120AC974EEB7"
+        },
+        {
+          "item": "mekanism:structural_glass",
+          "count": 123,
+          "name": "Structural Glass",
+          "role": "construction",
+          "task_id": "515012190B2C873C"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism",
+          "version": "10.7.19.85",
+          "archive": "Mekanism-1.21.1-10.7.19.85.jar",
+          "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+          "entries": [
+            "mekanism/common/content/sps/SPSValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/main/java/mekanism/common/content"
+          ]
+        },
+        {
+          "url": "https://wiki.aidancbrady.com/wiki/Supercritical_Phase_Shifter"
+        }
+      ],
+      "derivation": "Union of six pinned ALLOWED_GRID faces:60 frame positions +126 other positions. Three other positions are ports, leaving123 structural glass.",
+      "uk_ua": {
+        "description": [
+          "SPS має фіксовану округлену схему 7×7×7: 60 установлених SPS Casing, 123 Structural Glass, 3 SPS Port і 1 Supercharged Coil. Це кількості готових будівельних блоків; корпуси, витрачені на крафт портів, сюди повторно не додаються.",
+          "Порти обслуговують вхід полонію, вихід антиматерії та живлення. Coil ставиться всередині безпосередньо за портом живлення. Залиш решту внутрішнього простору порожньою.",
+          "Предметні завдання підтверджують комплект. Після формування подай полоній і достатньо FE; фактичний результат перевіряється наступним квестом на Antimatter Pellet.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "SPS: комплект для антиматерії"
+      },
+      "en_us": {
+        "description": [
+          "The SPS uses a fixed rounded 7×7×7 layout: 60 placed SPS Casings, 123 Structural Glass, three SPS Ports and one Supercharged Coil. These are finished construction blocks; casings consumed while crafting the ports are not counted again.",
+          "The ports serve polonium input, antimatter output and power. Place the Coil inside, directly behind the power port, and leave the rest of the interior empty.",
+          "Inventory tasks verify the kit. Once formed, supply polonium and sufficient FE; the following Antimatter Pellet quest checks the resulting product.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "SPS: Complete Construction Kit"
+      }
+    },
+    {
+      "quest_id": "513011ED63C6B222",
+      "name": "Induction Matrix",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        3
+      ],
+      "materials": [
+        {
+          "item": "mekanism:basic_induction_provider",
+          "count": 1,
+          "name": "Basic Induction Provider",
+          "role": "construction",
+          "task_id": "5130123BD9C1906D"
+        },
+        {
+          "item": "mekanism:basic_induction_cell",
+          "count": 1,
+          "name": "Basic Induction Cell",
+          "role": "construction",
+          "task_id": "5150128F80EB342D"
+        },
+        {
+          "item": "mekanism:induction_casing",
+          "count": 24,
+          "name": "Induction Casing",
+          "role": "construction",
+          "task_id": "515012DA4B8FFAA2"
+        },
+        {
+          "item": "mekanism:induction_port",
+          "count": 2,
+          "name": "Induction Port",
+          "role": "construction",
+          "task_id": "5150121F1B3CD8C2"
+        },
+        {
+          "item": "mekanism:structural_glass",
+          "count": 8,
+          "name": "Structural Glass",
+          "role": "construction",
+          "task_id": "51501252B4E2770B"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism",
+          "version": "10.7.19.85",
+          "archive": "Mekanism-1.21.1-10.7.19.85.jar",
+          "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+          "entries": [
+            "mekanism/common/content/matrix/MatrixValidator.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/main/java/mekanism/common/content"
+          ]
+        }
+      ],
+      "derivation": "Minimum two internal positions for cell/provider: outer3×4×3 shell34, frame24, two ports and8 glass.",
+      "uk_ua": {
+        "description": [
+          "Мінімальний корисний Induction Matrix має розмір 3×4×3: усередині потрібні і Cell, і Provider, тому камери 1×1×1 недостатньо. Каркас — 24 Induction Casing, грані — 8 Structural Glass і 2 Port.",
+          "Постав 1 Basic Induction Cell і 1 Basic Induction Provider усередині, налаштуй один порт на вхід, другий на вихід. Cell визначає місткість, Provider — швидкість передачі.",
+          "Квест перевіряє комплект, а роботу перевір зарядами: під’єднай джерело до входу та споживача до виходу, відкрий інтерфейс і переконайся, що запас FE змінюється.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Induction Matrix: зібрати буфер"
+      },
+      "en_us": {
+        "description": [
+          "The smallest useful Induction Matrix is 3×4×3: it needs both a Cell and a Provider, so a 1×1×1 interior is insufficient. Use 24 Induction Casings for the frame, eight Structural Glass and two Ports for the remaining faces.",
+          "Place one Basic Induction Cell and one Basic Induction Provider inside. Set one port to input and the other to output. The Cell determines capacity; the Provider determines throughput.",
+          "The quest verifies the kit. Test operation by connecting a source and consumer, then checking the stored energy in its interface.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Induction Matrix: Assemble the Buffer"
+      }
+    },
+    {
+      "quest_id": "513011C1277D6FAE",
+      "name": "Teleporter Portal",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        1
+      ],
+      "materials": [
+        {
+          "item": "mekanism:teleporter",
+          "count": 1,
+          "name": "Teleporter",
+          "role": "construction",
+          "task_id": "515012A1B31EFB87"
+        },
+        {
+          "item": "mekanism:teleporter_frame",
+          "count": 9,
+          "name": "Teleporter Frame",
+          "role": "construction",
+          "task_id": "5150128C0968F2B9"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Mekanism",
+          "version": "10.7.19.85",
+          "archive": "Mekanism-1.21.1-10.7.19.85.jar",
+          "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058",
+          "entries": [
+            "mekanism/common/tile/TileEntityTeleporter.class"
+          ],
+          "additional_urls": [
+            "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9/src/main/java/mekanism/common/content"
+          ]
+        }
+      ],
+      "derivation": "One-block-wide, two-block-high portal outline3×4 has10 positions; the teleporter replaces bottom-centre frame, leaving9 frames. Corners are validated by frame scan.",
+      "uk_ua": {
+        "description": [
+          "Один телепорт: Teleporter унизу по центру та 9 Teleporter Frame навколо вертикального отвору 1×2. Зовнішній розмір рамки — 3×4.",
+          "Це комплект для одного кінця. Для переходу між двома стаціонарними точками потрібна друга така рамка, живлення та спільна частота; переносний телепорт може бути альтернативним другим кінцем. Нативна перевірка використання телепорту збережена.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Працюючий телепорт"
+      },
+      "en_us": {
+        "description": [
+          "One portal uses a Teleporter at the bottom centre and nine Teleporter Frames around a vertical 1×2 opening, forming a 3×4 outline.",
+          "This kit builds one endpoint. Two fixed endpoints require a second frame, power and the same frequency; a Portable Teleporter can serve as the other endpoint. The native teleport-use check is retained.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "A working teleporter"
+      }
+    },
+    {
+      "quest_id": "513011AB19DDDE4C",
+      "name": "Basic Reactor",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "bigreactors:basic_reactorcontroller",
+          "count": 1,
+          "name": "Reactor Controller (Basic)",
+          "role": "construction",
+          "task_id": "513012EB5434F4AA"
+        },
+        {
+          "item": "bigreactors:basic_reactorcasing",
+          "count": 22,
+          "name": "Reactor Casing (Basic)",
+          "role": "construction",
+          "task_id": "515012C4ADFE4953"
+        },
+        {
+          "item": "bigreactors:basic_reactorfuelrod",
+          "count": 1,
+          "name": "Reactor Fuel Rod (Basic)",
+          "role": "construction",
+          "task_id": "515012253AB5F9C7"
+        },
+        {
+          "item": "bigreactors:basic_reactorcontrolrod",
+          "count": 1,
+          "name": "Reactor Control Rod (Basic)",
+          "role": "construction",
+          "task_id": "515012400004D266"
+        },
+        {
+          "item": "bigreactors:basic_reactorsolidaccessport",
+          "count": 1,
+          "name": "Reactor Solid Access Port (Basic)",
+          "role": "construction",
+          "task_id": "51501217872F1735"
+        },
+        {
+          "item": "bigreactors:basic_reactorpowertapfe_active",
+          "count": 1,
+          "name": "Reactor Active Forge Energy Power Tap (Basic)",
+          "role": "construction",
+          "task_id": "515012F628EC62D5"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Big Reactors / Extreme Reactors",
+          "version": "2.4.28",
+          "archive": "ExtremeReactors2-1.21.1-2.4.28.jar",
+          "sha256": "74fdfdfc91c3c8e5a439d411e6f081d12193635fffe2c55142f2f28f75b9d621",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/extreme-reactors/files/7344744",
+          "entries": [
+            "assets/bigreactors/patchouli_books/erguide/en_us/entries/intro/first.json",
+            "assets/bigreactors/patchouli_books/erguide/en_us/entries/reactor/part-controlrod.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Official pinned guide lists22 casing+controller+controlrod+fuelrod+accessport+FEtap. The same3×3×3 passive layout uses reinforced counterparts.",
+      "uk_ua": {
+        "description": [
+          "Мінімальний реактор 3×3×3: 22 Casing, Controller, Fuel Rod, Control Rod, Solid Access Port і Active FE Power Tap. Fuel Rod стоїть у єдиному внутрішньому блоці, Control Rod — у даху над ним.",
+          "Це схема прямого виробництва FE. Через Access Port завантаж паливо; за потреби перемикай той самий порт для вилучення відходів. Скло — необов’язкова заміна корпусів на гранях.",
+          "Після складання відкрий контролер і перевір формування. Завдання перевіряють матеріали, тому самі по собі не засвідчують справність або виробництво енергії.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Basic Reactor: комплект 3×3×3"
+      },
+      "en_us": {
+        "description": [
+          "Minimum 3×3×3 reactor: 22 Casings, a Controller, Fuel Rod, Control Rod, Solid Access Port and Active FE Power Tap. Put the Fuel Rod in the only interior block and the Control Rod in the roof above it.",
+          "This layout produces FE directly. Load fuel through the Access Port and switch that same port to extract waste when needed. Glass can optionally replace casing on the faces.",
+          "Open the controller after assembly to check formation. These inventory tasks alone do not verify a valid or operating reactor.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Basic Reactor: 3×3×3 Kit"
+      }
+    },
+    {
+      "quest_id": "513011FE8D522CBB",
+      "name": "Reinforced Reactor",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        3
+      ],
+      "materials": [
+        {
+          "item": "bigreactors:reinforced_reactorcontroller",
+          "count": 1,
+          "name": "Reactor Controller (Reinforced)",
+          "role": "construction",
+          "task_id": "51301262D9124DDE"
+        },
+        {
+          "item": "bigreactors:reinforced_reactorcasing",
+          "count": 22,
+          "name": "Reactor Casing (Reinforced)",
+          "role": "construction",
+          "task_id": "515012E1A1153CB3"
+        },
+        {
+          "item": "bigreactors:reinforced_reactorfuelrod",
+          "count": 1,
+          "name": "Reactor Fuel Rod (Reinforced)",
+          "role": "construction",
+          "task_id": "515012283DA13539"
+        },
+        {
+          "item": "bigreactors:reinforced_reactorcontrolrod",
+          "count": 1,
+          "name": "Reactor Control Rod (Reinforced)",
+          "role": "construction",
+          "task_id": "515012AAF3EB19F6"
+        },
+        {
+          "item": "bigreactors:reinforced_reactorsolidaccessport",
+          "count": 1,
+          "name": "Reactor Solid Access Port (Reinforced)",
+          "role": "construction",
+          "task_id": "5150121C7BF5FEBF"
+        },
+        {
+          "item": "bigreactors:reinforced_reactorpowertapfe_active",
+          "count": 1,
+          "name": "Reactor Active Forge Energy Power Tap (Reinforced)",
+          "role": "construction",
+          "task_id": "515012A0BFFBD22F"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Big Reactors / Extreme Reactors",
+          "version": "2.4.28",
+          "archive": "ExtremeReactors2-1.21.1-2.4.28.jar",
+          "sha256": "74fdfdfc91c3c8e5a439d411e6f081d12193635fffe2c55142f2f28f75b9d621",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/extreme-reactors/files/7344744",
+          "entries": [
+            "assets/bigreactors/patchouli_books/erguide/en_us/entries/intro/first.json",
+            "assets/bigreactors/patchouli_books/erguide/en_us/entries/reactor/part-controlrod.json"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Official pinned guide lists22 casing+controller+controlrod+fuelrod+accessport+FEtap. The same3×3×3 passive layout uses reinforced counterparts.",
+      "uk_ua": {
+        "description": [
+          "Мінімальний реактор 3×3×3: 22 Casing, Controller, Fuel Rod, Control Rod, Solid Access Port і Active FE Power Tap. Fuel Rod стоїть у єдиному внутрішньому блоці, Control Rod — у даху над ним.",
+          "Це схема прямого виробництва FE. Через Access Port завантаж паливо; за потреби перемикай той самий порт для вилучення відходів. Скло — необов’язкова заміна корпусів на гранях.",
+          "Після складання відкрий контролер і перевір формування. Завдання перевіряють матеріали, тому самі по собі не засвідчують справність або виробництво енергії.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Reinforced Reactor: комплект 3×3×3"
+      },
+      "en_us": {
+        "description": [
+          "Minimum 3×3×3 reactor: 22 Casings, a Controller, Fuel Rod, Control Rod, Solid Access Port and Active FE Power Tap. Put the Fuel Rod in the only interior block and the Control Rod in the roof above it.",
+          "This layout produces FE directly. Load fuel through the Access Port and switch that same port to extract waste when needed. Glass can optionally replace casing on the faces.",
+          "Open the controller after assembly to check formation. These inventory tasks alone do not verify a valid or operating reactor.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Reinforced Reactor: 3×3×3 Kit"
+      }
+    },
+    {
+      "quest_id": "51301182A048FC8B",
+      "name": "Reinforced Turbine",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        4,
+        4
+      ],
+      "materials": [
+        {
+          "item": "bigreactors:reinforced_turbinecontroller",
+          "count": 1,
+          "name": "Turbine Controller (Reinforced)",
+          "role": "construction",
+          "task_id": "5130128B78D56FBD"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinecasing",
+          "count": 39,
+          "name": "Turbine Housing (Reinforced)",
+          "role": "construction",
+          "task_id": "5150128C9615553E"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinerotorbearing",
+          "count": 1,
+          "name": "Turbine Rotor Bearing (Reinforced)",
+          "role": "construction",
+          "task_id": "5150129B0B6BA27B"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinefluidport_forge_active",
+          "count": 2,
+          "name": "Turbine Active Forge Fluid Port (Reinforced)",
+          "role": "construction",
+          "task_id": "515012150EDB31C1"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinepowertapfe_active",
+          "count": 1,
+          "name": "Turbine Active Forge Energy Power Tap (Reinforced)",
+          "role": "construction",
+          "task_id": "51501254E9076178"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinerotorshaft",
+          "count": 2,
+          "name": "Turbine Rotor Shaft (Reinforced)",
+          "role": "construction",
+          "task_id": "5150122231D8ABE7"
+        },
+        {
+          "item": "bigreactors:reinforced_turbinerotorblade",
+          "count": 1,
+          "name": "Turbine Rotor Blade (Reinforced)",
+          "role": "construction",
+          "task_id": "5150123151CA3AC5"
+        },
+        {
+          "item": "minecraft:iron_block",
+          "count": 1,
+          "name": "Block of Iron",
+          "role": "construction",
+          "task_id": "5150127AE9328889"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Big Reactors / Extreme Reactors",
+          "version": "2.4.28",
+          "archive": "ExtremeReactors2-1.21.1-2.4.28.jar",
+          "sha256": "74fdfdfc91c3c8e5a439d411e6f081d12193635fffe2c55142f2f28f75b9d621",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/extreme-reactors/files/7344744",
+          "entries": [
+            "it/zerono/mods/extremereactors/gamecontent/multiblock/turbine/MultiblockTurbine.class",
+            "it/zerono/mods/extremereactors/gamecontent/TurbineGameData.class",
+            "assets/bigreactors/patchouli_books/erguide/en_us/entries/turbine/rotor.json",
+            "it/zerono/mods/extremereactors/gamecontent/multiblock/turbine/variant/TurbineVariant.class"
+          ],
+          "additional_urls": [
+            "https://github.com/ZeroNoRyouki/ExtremeReactors2/blob/1.21/src/main/java/it/zerono/mods/extremereactors/gamecontent/multiblock/turbine/MultiblockTurbine.java"
+          ]
+        },
+        {
+          "mod": "ZeroCore 2",
+          "version": "2.4.21",
+          "archive": "ZeroCore2-1.21.1-2.4.21.jar",
+          "sha256": "54ac755031b05c3a5b6ddfa22dabc45fb3775481041503dcecd75e5e86627779",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/zerocore/files/7344742",
+          "entries": [
+            "it/zerono/mods/zerocore/lib/multiblock/variant/IMultiblockDimensionVariant.class"
+          ]
+        }
+      ],
+      "derivation": "The reviewed layout uses a continuous two-block shaft, one blade next to its first segment and one iron coil next to its second segment. The interior is1×2×2; the3×4×4 shell has44 blocks. Five devices replace casings, leaving39. The rotor ends at a casing. The exact2.4.28 validateRotor accepts off-centre bearings and asymmetric rectangles; TurbineGameData registers iron as a coil. Its coil-set clearing means this review does not claim an exhaustive absolute minimum across permissive edge cases. Not runtime-tested in Minecraft.",
+      "uk_ua": {
+        "description": [
+          "Найменша перевірена схема з окремими рівнями лопаті й котушки — асиметричний корпус 3×4×4 (X×Y×Z). У ньому 44 блоки оболонки: 39 Casing, Controller, Rotor Bearing, 2 Fluid Port і FE Power Tap.",
+          "Від нижнього кута (0,0,0): Bearing постав у (1,3,1) спрямованим униз. Shaft — у (1,2,1) і (1,1,1). Єдина Blade — у (1,2,2), залізний блок котушки — у (1,1,2); у (1,0,1) залишається Casing. Так лопать і котушка займають різні рівні вздовж осі.",
+          "Контролер і порти розмісти на інших гранях без заміни ребер. Один Fluid Port приймає пару, другий повертає воду. Увімкни котушку в контролері та подай малий потік пари. Цей компактний стенд придатний для першого виробництва; для промислової потужності потрібне розширення.",
+          "Квест перевіряє повний комплект. Перевір формування та приріст FE у контролері після складання.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Турбіна Extreme Reactors: комплект"
+      },
+      "en_us": {
+        "description": [
+          "The smallest reviewed layout with separate blade and coil layers is an asymmetric 3×4×4 shell (X×Y×Z). Its 44 shell blocks are 39 Casings, a Controller, a Rotor Bearing, two Fluid Ports and an FE Power Tap.",
+          "From the lower corner (0,0,0), place the Bearing at (1,3,1) facing down. Put Shafts at (1,2,1) and (1,1,1), one Blade at (1,2,2), and the iron-block coil at (1,1,2). Keep a Casing at (1,0,1). The blade and coil occupy separate levels along the shaft.",
+          "Put the controller and ports on other faces without replacing frame edges. One Fluid Port accepts steam; the other returns water. Engage the coil in the controller and supply a small steam flow. This compact rig introduces generation; expand it for industrial throughput.",
+          "The quest verifies the full kit. Check formation and an increasing FE counter in the controller after assembly.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Extreme Reactors Turbine: Complete Kit"
+      },
+      "minimum_scope": "Smallest reviewed layout with separate blade and coil layers; not an exhaustive proof over validator edge cases.",
+      "layout": {
+        "bearing": [
+          1,
+          3,
+          1
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "shafts": [
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "blades": [
+          [
+            1,
+            2,
+            2
+          ]
+        ],
+        "coils": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "rotor_end_casing": [
+          1,
+          0,
+          1
+        ],
+        "controller": [
+          0,
+          1,
+          1
+        ],
+        "steam_input": [
+          0,
+          2,
+          1
+        ],
+        "water_output": [
+          2,
+          1,
+          1
+        ],
+        "power_output": [
+          2,
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "quest_id": "51301173A1581288",
+      "name": "Terra Plate",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        2,
+        3
+      ],
+      "materials": [
+        {
+          "item": "botania:livingrock",
+          "count": 5,
+          "name": "Livingrock",
+          "role": "construction",
+          "task_id": "515012DBAF17739F"
+        },
+        {
+          "item": "minecraft:lapis_block",
+          "count": 4,
+          "name": "Block of Lapis Lazuli",
+          "role": "construction",
+          "task_id": "5150121C78C2FA57"
+        },
+        {
+          "item": "botania:terra_plate",
+          "count": 1,
+          "name": "Terrestrial Agglomeration Plate",
+          "role": "construction",
+          "task_id": "513012DCB3FCD521"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Botania Revived",
+          "version": "1.0.2",
+          "archive": "Botania Revived-1.21.1-1.0.2-NeoForge.jar",
+          "sha256": "223b84dd9b052ae0e273bec967fec3f23ef70e392d9e34ce9d0b5a52373929d7",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/botania-revived/files/9144042",
+          "entries": [
+            "data/botania/structure/terra_plate.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted fixed structure NBT. Book preview creative pools replaced by two normal survival Mana Pools for Alfheim.",
+      "uk_ua": {
+        "description": [
+          "Плита Terra: підготуй основу 3×3 з 5 Livingrock і 4 Lapis Blocks; Terra Plate ставиться над центральним Livingrock. Ману підведи окремо через сумісний Spreader або Sparks.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Terrestrial Agglomeration Plate — пристрій для Terrasteel. Її рецепт у SOQM поєднує Rune of Water, Fire, Earth, Air і Mana, блок Manasteel, лазурит та Precision Mechanism.",
+          "Після крафту побудуй під плитою основу зі схеми Lexica й підведи ману. Окремий блок плити у світі ще не є готовою установкою для сплаву."
+        ],
+        "title": "Плита агломерації: повний майданчик"
+      },
+      "en_us": {
+        "description": [
+          "Terra Plate: build the 3×3 base from five Livingrock and four Lapis Blocks, with the plate above the centre Livingrock. Supply mana separately through a compatible Spreader or Sparks.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "The Terrestrial Agglomeration Plate produces Terrasteel. Its SOQM recipe combines the Water, Fire, Earth, Air and Mana runes with a Manasteel Block, lapis blocks and a Precision Mechanism.",
+          "After crafting it, construct the base shown in the Lexica and supply mana. A plate placed on its own is not yet a working alloy-production setup."
+        ],
+        "title": "Terra Plate: Complete Platform Kit"
+      }
+    },
+    {
+      "quest_id": "5130119992BFAE06",
+      "name": "Alfheim Portal",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        5,
+        5,
+        3
+      ],
+      "materials": [
+        {
+          "item": "botania:livingwood",
+          "count": 8,
+          "name": "Livingwood",
+          "role": "construction",
+          "task_id": "5150126492B3BE04"
+        },
+        {
+          "item": "botania:glimmering_livingwood",
+          "count": 3,
+          "name": "Glimmering Livingwood",
+          "role": "construction",
+          "task_id": "5150122E3128A191"
+        },
+        {
+          "item": "botania:alfheim_portal",
+          "count": 1,
+          "name": "Elven Gateway Core",
+          "role": "construction",
+          "task_id": "5150121ADB8D3694"
+        },
+        {
+          "item": "botania:natura_pylon",
+          "count": 2,
+          "name": "Natura Pylon",
+          "role": "construction",
+          "task_id": "515012A83780752F"
+        },
+        {
+          "item": "botania:mana_pool",
+          "count": 2,
+          "name": "Mana Pool",
+          "role": "construction",
+          "task_id": "515012029B70FCD8"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Botania Revived",
+          "version": "1.0.2",
+          "archive": "Botania Revived-1.21.1-1.0.2-NeoForge.jar",
+          "sha256": "223b84dd9b052ae0e273bec967fec3f23ef70e392d9e34ce9d0b5a52373929d7",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/botania-revived/files/9144042",
+          "entries": [
+            "data/botania/structure/alfheim_portal.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted fixed structure NBT. Book preview creative pools replaced by two normal survival Mana Pools for Alfheim.",
+      "uk_ua": {
+        "description": [
+          "Портал Alfheim: 8 Livingwood, 3 Glimmering Livingwood та Portal Core утворюють рамку; поруч постав 2 Mana Pool з Natura Pylon над кожним. Наповни обидва басейни маною й активуй ядро Wand of the Forest.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Наповни обидва басейни ельфійського порталу й активуй його ядро Wand of the Forest. Natura Pylons мають стояти безпосередньо над басейнами поблизу ядра; мана витрачається на відкриття та обмін.",
+          "Нативне досягнення перевіряє відкриття порталу. Після цього кинь у нього Lexica Botania, щоб отримати доповнені ельфійські знання, або випробуй один відомий рецепт обміну. Якщо один із потрібних басейнів спорожніє, зв’язок закриється."
+        ],
+        "title": "Портал ельфів відкрито"
+      },
+      "en_us": {
+        "description": [
+          "Alfheim portal: eight Livingwood, three Glimmering Livingwood and a Portal Core form the frame. Add two Mana Pools with a Natura Pylon above each, fill both with mana, then activate the core with a Wand of the Forest.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Charge both elven-portal pools and activate the core with the Wand of the Forest. Natura Pylons must sit directly above nearby pools; opening the gateway and trading consume mana.",
+          "The native advancement checks that the portal opens. Afterwards, throw in the Lexica Botania to obtain elven knowledge, or test one known exchange recipe. If a required pool runs dry, the connection closes."
+        ],
+        "title": "World Calling"
+      }
+    },
+    {
+      "quest_id": "513011EC3D07F9A3",
+      "name": "Gaia Ritual",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        9,
+        3,
+        9
+      ],
+      "materials": [
+        {
+          "item": "minecraft:iron_block",
+          "count": 9,
+          "name": "Block of Iron",
+          "role": "construction",
+          "task_id": "515012496DFF28E1"
+        },
+        {
+          "item": "minecraft:beacon",
+          "count": 1,
+          "name": "Beacon",
+          "role": "construction",
+          "task_id": "515012548A26FEE1"
+        },
+        {
+          "item": "botania:gaia_pylon",
+          "count": 4,
+          "name": "Gaia Pylon",
+          "role": "construction",
+          "task_id": "51301235AF147D14"
+        }
+      ],
+      "sources": [
+        {
+          "mod": "Botania Revived",
+          "version": "1.0.2",
+          "archive": "Botania Revived-1.21.1-1.0.2-NeoForge.jar",
+          "sha256": "223b84dd9b052ae0e273bec967fec3f23ef70e392d9e34ce9d0b5a52373929d7",
+          "url": "https://www.curseforge.com/minecraft/mc-mods/botania-revived/files/9144042",
+          "entries": [
+            "data/botania/structure/gaia_ritual.nbt"
+          ],
+          "additional_urls": []
+        }
+      ],
+      "derivation": "Counted fixed structure NBT. Book preview creative pools replaced by two normal survival Mana Pools for Alfheim.",
+      "uk_ua": {
+        "description": [
+          "Майданчик ритуалу Gaia: 9 залізних блоків утворюють основу маяка 3×3; Beacon стоїть у центрі над ними. Розстав 4 Gaia Pylon за схемою Lexica Botania та очисть місце для бою. Це будівельний комплект; потрібну жертву для виклику готуй окремо.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті.",
+          "Gaia Pylons належать до арени Ritual of Gaia. Побудуй конструкцію з активним Beacon за схемою Lexica та залиш навколо достатньо вільного місця для бою.",
+          "Для звичайного виклику потрібен Terrasteel Ingot як жертва. Пілон у рецепті та готова арена — різні кроки; спочатку склади всі частини й підготуй спорядження."
+        ],
+        "title": "Ритуал Ґаї: комплект майданчика"
+      },
+      "en_us": {
+        "description": [
+          "Gaia ritual platform: nine iron blocks form a 3×3 beacon base. Put the Beacon above its centre and position four Gaia Pylons as shown in the Lexica Botania. Clear the arena and prepare the summoning sacrifice separately.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one.",
+          "Gaia Pylons form part of the Ritual of Gaia arena. Build the active-Beacon arrangement shown in the Lexica and leave the surrounding fighting area clear.",
+          "The normal summon consumes a Terrasteel Ingot as its offering. Crafting a pylon and completing the arena are separate steps; assemble everything and prepare your equipment first."
+        ],
+        "title": "Gaia Ritual: Platform Kit"
+      }
+    },
+    {
+      "quest_id": "513011C1618FC593",
+      "name": "Quantum Network Bridge pair",
+      "kind": "assembly",
+      "dimensions_xyz": [
+        3,
+        3,
+        1
+      ],
+      "materials": [
+        {
+          "item": "ae2:quantum_entangled_singularity",
+          "count": 2,
+          "name": "Quantum Entangled Singularity",
+          "role": "construction",
+          "task_id": "5130126E97134AF5"
+        },
+        {
+          "item": "ae2:quantum_ring",
+          "count": 16,
+          "name": "Quantum Ring",
+          "role": "construction",
+          "task_id": "5150122A9762207A"
+        },
+        {
+          "item": "ae2:quantum_link",
+          "count": 2,
+          "name": "Quantum Link Chamber",
+          "role": "construction",
+          "task_id": "5150129D450EDC85"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://guide.appliedenergistics.org/1.21.1/items-blocks-machines/quantum_bridge"
+        }
+      ],
+      "derivation": "Two3×3 single-layer endpoints:16 rings+2 chambers; paired singularities count2. Inventory matching deliberately ignores pair components and does not claim proof of working connection.",
+      "uk_ua": {
+        "description": [
+          "Повний квантовий міст складається з двох однакових кінців: 8 Quantum Ring навколо 1 Quantum Link Chamber на кожному. Разом потрібно 16 кілець, 2 камери та 2 Quantum Entangled Singularity з однієї пари.",
+          "Встав по одній сингулярності в кожну камеру, підведи живлення до обох кінців і забезпеч завантаження їхніх чанків. Завдання перевіряє кількості; те, що дві сингулярності справді утворюють одну пару, перевіряй за їхніми даними та роботою з’єднання.",
+          "Завдання перевіряють кожен блок і його кількість без вилучення. Потримай комплект в інвентарі до встановлення; після цього виконай окрему перевірку складання або роботи, якщо вона є в цьому квесті."
+        ],
+        "title": "Квантовий міст: комплект двох кінців"
+      },
+      "en_us": {
+        "description": [
+          "A complete quantum bridge has two endpoints, each with eight Quantum Rings around one Quantum Link Chamber. The complete kit is 16 Rings, two Chambers and two Quantum Entangled Singularities from the same pair.",
+          "Insert one singularity into each chamber, power both endpoints and keep their chunks loaded. The tasks verify counts; matching pair data and a functioning connection must be checked after assembly.",
+          "The tasks check each material and quantity without consuming it. Hold the kit before placing it, then complete the separate formation or operation check where this quest has one."
+        ],
+        "title": "Quantum Bridge: Both Endpoints"
+      }
+    }
+  ],
+  "migration": {
+    "base_commit": "b77b8586e13902fa7c7b61aa6425bccff13b8ce4",
+    "added_task_ids": [
+      "515012029B70FCD8",
+      "5150120B8F95157C",
+      "5150120DF6F35E25",
+      "5150120E0569881C",
+      "515012126B13DEDB",
+      "5150121453A9ACB7",
+      "515012150EDB31C1",
+      "5150121596D3034D",
+      "515012161AD02A0D",
+      "51501217872F1735",
+      "515012186FD0F575",
+      "515012190B2C873C",
+      "5150121A146BD19B",
+      "5150121ADB8D3694",
+      "5150121B9432D166",
+      "5150121C78C2FA57",
+      "5150121C7BF5FEBF",
+      "5150121F1B3CD8C2",
+      "51501220AD41CDE3",
+      "51501221AF79196B",
+      "5150122231D8ABE7",
+      "51501222CEE28D97",
+      "5150122338F9A162",
+      "51501223F946FD74",
+      "515012253AB5F9C7",
+      "515012283DA13539",
+      "5150122A9762207A",
+      "5150122B1024ED76",
+      "5150122E21E89E81",
+      "5150122E3128A191",
+      "5150123151CA3AC5",
+      "5150123294C06991",
+      "51501234C2EC2FB0",
+      "51501235EFB762E6",
+      "515012375514EEFE",
+      "5150123813353478",
+      "5150123862D8BCB2",
+      "5150123B5997F57F",
+      "5150123E85631F6C",
+      "5150123F59DE1C8A",
+      "515012400004D266",
+      "515012414FB3BD69",
+      "515012423E85153A",
+      "5150124241A40BBD",
+      "5150124296C71E0B",
+      "51501242CCECE9AD",
+      "515012430ABBB044",
+      "515012453F926337",
+      "5150124927825385",
+      "515012496DFF28E1",
+      "51501249830478E2",
+      "515012499EBB2559",
+      "5150124F03D3F417",
+      "51501250ECF5AB86",
+      "515012527E2289E0",
+      "51501252B4E2770B",
+      "5150125369FE32A8",
+      "515012548A26FEE1",
+      "51501254E9076178",
+      "51501258A92CE88B",
+      "5150125B0867B795",
+      "5150125CA63A55D2",
+      "5150125FA9A41FC7",
+      "51501262263C908C",
+      "5150126492B3BE04",
+      "51501264EDAE0B67",
+      "51501266B7B2654C",
+      "51501266BD793D98",
+      "5150126716E5F5D7",
+      "51501268BC0348F8",
+      "51501271AB7E3F44",
+      "51501273C1E31FA2",
+      "5150127720585530",
+      "5150127AE9328889",
+      "5150127B40B826E0",
+      "5150127B8FA7807A",
+      "5150128043BEED9B",
+      "51501280A390D45C",
+      "5150128180ECAB4E",
+      "5150128323DF2F2A",
+      "51501284A1C4AB29",
+      "515012888884D8E6",
+      "51501288F4365929",
+      "5150128A9E460C23",
+      "5150128C0968F2B9",
+      "5150128C9615553E",
+      "5150128F2FC26C5D",
+      "5150128F80EB342D",
+      "5150129433F70F2D",
+      "515012963FD3E868",
+      "5150129B0B6BA27B",
+      "5150129D450EDC85",
+      "515012A0BFFBD22F",
+      "515012A1B31EFB87",
+      "515012A682792880",
+      "515012A83780752F",
+      "515012AA2D973D33",
+      "515012AAF3EB19F6",
+      "515012ACB676A40B",
+      "515012AD271CC9E7",
+      "515012AEAB59DE2F",
+      "515012AFBD3EBCAF",
+      "515012B2275A6869",
+      "515012BE5C957D2C",
+      "515012BF83A149D3",
+      "515012C2155F9A75",
+      "515012C3A8F8D7AC",
+      "515012C431611626",
+      "515012C43204459C",
+      "515012C4ADFE4953",
+      "515012C90D3B9818",
+      "515012C9D7E35532",
+      "515012CD142BD3F0",
+      "515012CD81DC2414",
+      "515012CEED304F7F",
+      "515012D0F76C00F3",
+      "515012D289100AB3",
+      "515012D2DE209A36",
+      "515012D649E272CC",
+      "515012D71550BEDF",
+      "515012DA4B8FFAA2",
+      "515012DBAF17739F",
+      "515012DBB1418DF2",
+      "515012DC51BEA40B",
+      "515012DF407645B7",
+      "515012E150B30577",
+      "515012E1A1153CB3",
+      "515012E2DEBAE4A8",
+      "515012E5429218CC",
+      "515012E77D162D6C",
+      "515012EBB01C6F37",
+      "515012F11CCC7F63",
+      "515012F3D808F990",
+      "515012F628EC62D5",
+      "515012F777D47651",
+      "515012F7B8775651",
+      "515012F995EBCD82",
+      "515012FCD29CDC7A"
+    ],
+    "changed_counts": [
+      {
+        "quest_id": "514D11F90042E7F4",
+        "task_id": "514D12252C003D7F",
+        "item": "mekanism:thermal_evaporation_valve",
+        "before_count": 4,
+        "after_count": 2
+      },
+      {
+        "quest_id": "514D11F90042E7F4",
+        "task_id": "514D126A59C9DD80",
+        "item": "mekanism:thermal_evaporation_block",
+        "before_count": 32,
+        "after_count": 33
+      },
+      {
+        "quest_id": "514D11CD9798EC9F",
+        "task_id": "514D12993A901080",
+        "item": "mekanismgenerators:fission_reactor_casing",
+        "before_count": 32,
+        "after_count": 30
+      },
+      {
+        "quest_id": "514D11CD9798EC9F",
+        "task_id": "514D12DF5AAE9F26",
+        "item": "mekanismgenerators:fission_fuel_assembly",
+        "before_count": 4,
+        "after_count": 1
+      },
+      {
+        "quest_id": "514D111250CFCDBB",
+        "task_id": "514D12AF3D607032",
+        "item": "mekanismgenerators:turbine_casing",
+        "before_count": 32,
+        "after_count": 44
+      },
+      {
+        "quest_id": "514D111250CFCDBB",
+        "task_id": "514D12E69CE54212",
+        "item": "mekanismgenerators:turbine_valve",
+        "before_count": 4,
+        "after_count": 2
+      },
+      {
+        "quest_id": "514D111250CFCDBB",
+        "task_id": "514D120323B4B81B",
+        "item": "mekanismgenerators:turbine_rotor",
+        "before_count": 4,
+        "after_count": 1
+      },
+      {
+        "quest_id": "514D111250CFCDBB",
+        "task_id": "514D1286E7C55331",
+        "item": "mekanismgenerators:electromagnetic_coil",
+        "before_count": 4,
+        "after_count": 1
+      },
+      {
+        "quest_id": "514D113E1E8CF8B1",
+        "task_id": "514D1287B291997E",
+        "item": "mekanismgenerators:fusion_reactor_frame",
+        "before_count": 16,
+        "after_count": 36
+      },
+      {
+        "quest_id": "514D113E1E8CF8B1",
+        "task_id": "514D12BAD610257C",
+        "item": "mekanismgenerators:fusion_reactor_port",
+        "before_count": 4,
+        "after_count": 3
+      },
+      {
+        "quest_id": "514D114878C1E1BB",
+        "task_id": "514D126EA5AE4763",
+        "item": "mekanism:sps_casing",
+        "before_count": 4,
+        "after_count": 60
+      },
+      {
+        "quest_id": "514D114878C1E1BB",
+        "task_id": "514D123CCCB66CA5",
+        "item": "mekanism:sps_port",
+        "before_count": 2,
+        "after_count": 3
+      },
+      {
+        "quest_id": "513011EC3D07F9A3",
+        "task_id": "51301235AF147D14",
+        "item": "botania:gaia_pylon",
+        "before_count": 1,
+        "after_count": 4
+      },
+      {
+        "quest_id": "513011C1618FC593",
+        "task_id": "5130126E97134AF5",
+        "item": "ae2:quantum_entangled_singularity",
+        "before_count": 1,
+        "after_count": 2
+      }
+    ],
+    "original_tasks": {
+      "51301157FF888779": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:main/mb_cokeoven",
+          "criterion": "",
+          "id": "5130120D07D7C274"
+        }
+      ],
+      "513011AE9CF26AB0": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:main/mb_blastfurnace",
+          "criterion": "",
+          "id": "513012C0487968AE"
+        }
+      ],
+      "513011FFA590DC5D": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/ie_multiblock_alloy_smelter",
+          "criterion": "",
+          "id": "513012A360ACAF64"
+        }
+      ],
+      "51301173D68FCBFF": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_metalpress",
+          "criterion": "",
+          "id": "513012F20639C243"
+        }
+      ],
+      "513011EE444C38AF": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_crusher",
+          "criterion": "",
+          "id": "513012128B6F112B"
+        }
+      ],
+      "513011965BAF66F4": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_improvedblastfurnace",
+          "criterion": "",
+          "id": "5130120E1B154BF5"
+        }
+      ],
+      "513011027911756D": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_mixer",
+          "criterion": "",
+          "id": "513012E23F6264C8"
+        }
+      ],
+      "513011306BCB6E37": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_silo",
+          "criterion": "",
+          "id": "513012579FFB2F5F"
+        }
+      ],
+      "51301103F035DDAB": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_tank",
+          "criterion": "",
+          "id": "5130128E444F0E77"
+        }
+      ],
+      "5130111A675CD3CC": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/ie_multiblock_assembler",
+          "criterion": "",
+          "id": "513012851ED39119"
+        }
+      ],
+      "513011585394EA3D": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/ie_multiblock_bottling_machine",
+          "criterion": "",
+          "id": "513012B9ADCF9871"
+        }
+      ],
+      "513011CA9536C271": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/ie_multiblock_sawmill",
+          "criterion": "",
+          "id": "513012FF49270C51"
+        }
+      ],
+      "513011D0F247BDDA": [
+        {
+          "type": "advancement",
+          "advancement": "qm:campaign/ie_multiblock_auto_workbench",
+          "criterion": "",
+          "id": "513012BAB0B461A4"
+        }
+      ],
+      "5130112C76268D3A": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_arcfurnace",
+          "criterion": "",
+          "id": "513012C23FE69566"
+        }
+      ],
+      "513011B12DC6165B": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_excavator",
+          "criterion": "",
+          "id": "513012BB428C9A83"
+        }
+      ],
+      "51301102B4D1DEF4": [
+        {
+          "type": "advancement",
+          "advancement": "modernfoundry:smeltery/structure",
+          "criterion": "",
+          "id": "513012AD07B275ED"
+        }
+      ],
+      "5130112B7E67B5BF": [
+        {
+          "type": "advancement",
+          "advancement": "modernfoundry:foundry/structure",
+          "criterion": "",
+          "id": "513012081041651A"
+        }
+      ],
+      "5130118DB31A46A1": [
+        {
+          "type": "advancement",
+          "advancement": "railcraft:tracks/coke_oven",
+          "criterion": "",
+          "id": "513012DD904815FD"
+        }
+      ],
+      "5130110CBEF3D218": [
+        {
+          "type": "advancement",
+          "advancement": "railcraft:tracks/blast_furnace",
+          "criterion": "",
+          "id": "51301250FF7786A4"
+        }
+      ],
+      "513011C793F4D2F0": [
+        {
+          "type": "item",
+          "item": {
+            "id": "railcraft:low_pressure_steam_boiler_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124DB2CD826E"
+        }
+      ],
+      "514D11F90042E7F4": [
+        {
+          "id": "514D12DB1BE225B7",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12252C003D7F",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_valve",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D126A59C9DD80",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_block",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "514D11CD9798EC9F": [
+        {
+          "id": "514D12993A901080",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_casing",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12CC105A6C1B",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_port",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12DF5AAE9F26",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_fuel_assembly",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D129CF4D28851",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:control_rod_assembly",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "514D111250CFCDBB": [
+        {
+          "id": "514D12AF3D607032",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_casing",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12E69CE54212",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_valve",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D120323B4B81B",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_rotor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12C6792999DA",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:rotational_complex",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D1286E7C55331",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:electromagnetic_coil",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "514D113E1E8CF8B1": [
+        {
+          "id": "514D12400E1E7B56",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D1287B291997E",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_frame",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D12BAD610257C",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_port",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D126FF91F6686",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:laser_focus_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D122185675E38",
+          "type": "custom"
+        }
+      ],
+      "514D114878C1E1BB": [
+        {
+          "id": "514D126EA5AE4763",
+          "type": "item",
+          "item": {
+            "id": "mekanism:sps_casing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D123CCCB66CA5",
+          "type": "item",
+          "item": {
+            "id": "mekanism:sps_port",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        },
+        {
+          "id": "514D120AC974EEB7",
+          "type": "item",
+          "item": {
+            "id": "mekanism:supercharged_coil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "513011ED63C6B222": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_induction_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123BD9C1906D"
+        }
+      ],
+      "513011C1277D6FAE": [
+        {
+          "type": "advancement",
+          "advancement": "mekanism:teleporter",
+          "criterion": "",
+          "id": "51301212E190FDF4"
+        }
+      ],
+      "513011AB19DDDE4C": [
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcontroller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012EB5434F4AA"
+        }
+      ],
+      "513011FE8D522CBB": [
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorcontroller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301262D9124DDE"
+        }
+      ],
+      "51301182A048FC8B": [
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinecontroller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128B78D56FBD"
+        }
+      ],
+      "51301173A1581288": [
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:terra_plate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012DCB3FCD521"
+        }
+      ],
+      "5130119992BFAE06": [
+        {
+          "type": "advancement",
+          "advancement": "botania:main/elf_portal_open",
+          "criterion": "",
+          "id": "51301293F80F9722"
+        }
+      ],
+      "513011EC3D07F9A3": [
+        {
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_pylon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301235AF147D14"
+        }
+      ],
+      "513011C1618FC593": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ae2:quantum_entangled_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130126E97134AF5"
+        }
+      ],
+      "5130118347056838": [
+        {
+          "type": "item",
+          "item": {
+            "id": "modernfoundry:seared_melter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128C026E4DBD"
+        }
+      ]
+    },
+    "completion_behavior": "FTB Quests2101.1.36 persists completed quest timestamps separately. Already completed quests stay completed unless explicitly reset; unfinished quests require all new material tasks. Existing item/reward IDs and claim settings remain intact.",
+    "source": "https://github.com/FTBTeam/FTB-Quests/blob/v2101.1.36/common/src/main/java/dev/ftb/mods/ftbquests/quest/TeamData.java"
+  }
+}

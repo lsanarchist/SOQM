@@ -62,8 +62,10 @@ def validate_policy(policy: dict) -> None:
         raise ValueError('Unknown progressive reward policy schema')
     if [r['level'] for r in policy['levels']] != list(range(1, 7)) or [r['item'] for r in policy['levels']] != list(GATES):
         raise ValueError('Production levels must be the six ordered campaign milestones')
-    if policy['draws_by_level'] != [2, 2, 3, 3, 3, 4, 4]:
+    if policy['draws_by_level'] != [3, 3, 4, 4, 4, 5, 5]:
         raise ValueError('Review changed personal reward quantities')
+    if policy.get('guaranteed_quality_draws') != 1:
+        raise ValueError('Every pack reserves one draw for an unlocked uncommon-or-better prize')
     weights = policy['rarity_weights_by_level']
     if len(weights) != 7:
         raise ValueError('Every production level needs rarity weights')
@@ -93,8 +95,8 @@ def validate_policy(policy: dict) -> None:
                 raise ValueError('Invalid reward item ID')
             if any(word in item for word in ('plastic', 'hdpe', 'mayhem_cube')):
                 raise ValueError(f'Plastic and nested cubes remain excluded: {item}')
-            if type(entry['count']) is not int or not 1 <= entry['count'] <= 4:
-                raise ValueError('Each draw awards one small stack of 1–4 items')
+            if type(entry['count']) is not int or not 1 <= entry['count'] <= 16:
+                raise ValueError('Each draw awards one reviewed stack of 1–16 items')
             if type(entry['weight']) is not int or entry['weight'] <= 0:
                 raise ValueError('Entry weights must be positive integers')
             if entry['rarity'] not in RARITIES:
@@ -161,6 +163,16 @@ def probabilities(pool: dict, level: int, produced: set[str], policy: dict) -> d
             for group, entries in groups.items() for entry in entries}
 
 
+def quality_probabilities(pool: dict, level: int, produced: set[str], policy: dict) -> dict[str, Fraction]:
+    """Odds for the reserved draw; unavailable premium prizes stay locked.
+
+    With no eligible uncommon-or-better prize, the draw uses the normal pool.
+    It never substitutes a locked item to satisfy the quality floor.
+    """
+    premium = {**pool, 'entries': [e for e in pool['entries'] if e['rarity'] != 'common']}
+    return probabilities(premium, level, produced, policy) or probabilities(pool, level, produced, policy)
+
+
 def persistent_ids(chapters: list[dict]) -> list[str]:
     ids = []
     for chapter in chapters:
@@ -205,13 +217,20 @@ def runtime_policy(chapters: list[dict], policy: dict | None = None) -> dict:
     pools = [{'key': p['key'], 'title': p['title'], 'fallback': p.get('fallback', 'survival'),
               'entries': [{k: v for k, v in e.items() if k != 'evidence'} for e in p['entries']]} for p in policy['pools']]
     return {'schema': 2, 'version': policy.get('version', '2.0'), 'levels': policy['levels'],
-            'draws_by_level': policy['draws_by_level'], 'rarity_weights_by_level': policy['rarity_weights_by_level'],
+            'draws_by_level': policy['draws_by_level'], 'guaranteed_quality_draws': policy['guaranteed_quality_draws'],
+            'rarity_weights_by_level': policy['rarity_weights_by_level'],
             'pools': pools, 'production_items': sorted(produced), 'reward_mappings': dict(sorted(mappings.items()))}
 
 
 def apply(chapters: list[dict], locale: dict) -> dict:
     policy = load_policy()
     before = persistent_ids(chapters)
+    by_id = {quest['id']: quest for chapter in chapters for quest in chapter['quests']}
+    if set(policy['milestones']) - set(by_id):
+        raise ValueError('Lucky-cube milestone points to an unknown quest')
+    for ident, milestone in policy['milestones'].items():
+        if milestone['tier'] > quest_stage(by_id[ident]):
+            raise ValueError(f'Lucky-cube tier exceeds its quest progression: {ident}')
     usage = Counter()
     books = cubes = 0
     for chapter in chapters:
@@ -233,6 +252,9 @@ def apply(chapters: list[dict], locale: dict) -> dict:
                 milestone = policy['milestones'].get(quest['id'])
                 if milestone:
                     reward.update({'type': 'item', 'item': {'id': f"kubejs:mayhem_cube_t{milestone['tier']}", 'count': 1}, 'count': 1, 'random_bonus': 0})
+                    # The old custom pack's localized title must not mask the
+                    # cube's real item name after changing this existing slot.
+                    locale.pop(f"reward.{reward['id']}.title", None)
                     if tags:
                         reward['tags'] = tags
                     cubes += 1

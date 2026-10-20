@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -66,7 +66,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BFCD6008D7",
@@ -119,7 +119,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110704EB117A",
@@ -172,12 +172,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114528E50D7E",
       "x": 0.0,
-      "y": 6.67,
+      "y": 6.22,
       "icon": {
         "id": "bigreactors:basic_reactorcasing",
         "count": 1
@@ -227,12 +227,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011862E2A45CA",
       "x": -4.6,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "bigreactors:basic_reactorfuelrod",
         "count": 1
@@ -282,12 +282,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114528E50D7E": [
+          -1.95,
+          6.67,
+          -6.55,
+          8.84
+        ]
+      }
     },
     {
       "id": "5130118ED1242B42",
-      "x": 0.0,
-      "y": 13.67,
+      "x": -4.6,
+      "y": 12.42,
       "icon": {
         "id": "bigreactors:basic_reactorcontrolrod",
         "count": 1
@@ -334,12 +342,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011862E2A45CA": [
+          -0.95,
+          9.77,
+          -0.95,
+          11.94
+        ]
+      }
     },
     {
       "id": "51301145D1657839",
-      "x": 4.6,
-      "y": 10.17,
+      "x": 0.0,
+      "y": 9.32,
       "icon": {
         "id": "bigreactors:basic_reactorsolidaccessport",
         "count": 1
@@ -387,12 +403,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114528E50D7E": [
+          3.65,
+          6.67,
+          3.65,
+          8.84
+        ]
+      }
     },
     {
       "id": "5130114F4058570C",
       "x": -4.6,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "bigreactors:basic_reactorpowertapfe_active",
         "count": 1
@@ -439,12 +463,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011AB19DDDE4C": [
+          -1.0,
+          15.92,
+          -1.0,
+          18.09
+        ]
+      }
     },
     {
       "id": "51301145F95C79CF",
-      "x": 4.6,
-      "y": 20.67,
+      "x": 0.0,
+      "y": 18.62,
       "icon": {
         "id": "bigreactors:basic_reactorpowertapfe_passive",
         "count": 1
@@ -491,12 +523,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011AB19DDDE4C": [
+          -1.0,
+          15.92,
+          3.6,
+          18.09
+        ]
+      }
     },
     {
       "id": "513011AB19DDDE4C",
-      "x": 4.6,
-      "y": 17.17,
+      "x": -4.6,
+      "y": 15.52,
       "icon": {
         "id": "bigreactors:basic_reactorcontroller",
         "count": 1
@@ -506,6 +546,7 @@
         "item_bigreactors_basic_reactorcontroller",
         "qm_v040",
         "stage_4",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -528,6 +569,66 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "513012EB5434F4AA"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcasing",
+            "count": 1
+          },
+          "count": 22,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012C4ADFE4953"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorfuelrod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012253AB5F9C7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcontrolrod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012400004D266"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorsolidaccessport",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501217872F1735"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorpowertapfe_active",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012F628EC62D5"
         }
       ],
       "rewards": [
@@ -535,22 +636,23 @@
           "id": "513013916F82A916",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130116F060F9DEC",
       "x": 0.0,
-      "y": 25.49,
+      "y": 22.99,
       "icon": {
         "id": "bigreactors:reinforced_reactorcasing",
         "count": 1
@@ -599,12 +701,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301107E386EFB8",
       "x": -4.6,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "bigreactors:reinforced_reactorfuelrod",
         "count": 1
@@ -653,12 +755,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130116F060F9DEC": [
+          -1.95,
+          23.44,
+          -6.55,
+          25.61
+        ]
+      }
     },
     {
       "id": "513011FE729B76A7",
-      "x": 0.0,
-      "y": 32.49,
+      "x": -4.6,
+      "y": 29.19,
       "icon": {
         "id": "bigreactors:reinforced_reactorcontrolrod",
         "count": 1
@@ -705,12 +815,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301107E386EFB8": [
+          -0.95,
+          26.54,
+          -0.95,
+          28.71
+        ]
+      }
     },
     {
       "id": "5130119494D319D8",
       "x": -9.2,
-      "y": 39.49,
+      "y": 35.39,
       "icon": {
         "id": "bigreactors:reinforced_reactorfluidport_forge_active",
         "count": 1
@@ -758,12 +876,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011FE8D522CBB": [
+          -6.6,
+          32.69,
+          -11.2,
+          34.86
+        ]
+      }
     },
     {
       "id": "513011E66B511C8A",
       "x": -4.6,
-      "y": 39.49,
+      "y": 35.39,
       "icon": {
         "id": "bigreactors:reinforced_reactorfluidport_forge_passive",
         "count": 1
@@ -811,12 +937,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011FE8D522CBB": [
+          -1.0,
+          32.69,
+          -1.0,
+          34.86
+        ]
+      }
     },
     {
       "id": "51301107B8137F21",
-      "x": 4.6,
-      "y": 28.99,
+      "x": 0.0,
+      "y": 26.09,
       "icon": {
         "id": "bigreactors:reinforced_reactorsolidaccessport",
         "count": 1
@@ -864,12 +998,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130116F060F9DEC": [
+          3.65,
+          23.44,
+          3.65,
+          25.61
+        ]
+      }
     },
     {
       "id": "5130110C4EA8DEFA",
-      "x": 4.6,
-      "y": 39.49,
+      "x": 0.0,
+      "y": 35.39,
       "icon": {
         "id": "bigreactors:reinforced_reactorpowertapfe_active",
         "count": 1
@@ -916,12 +1058,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011FE8D522CBB": [
+          -1.0,
+          32.69,
+          3.6,
+          34.86
+        ]
+      }
     },
     {
       "id": "51301193487DECA3",
       "x": 0.0,
-      "y": 44.31,
+      "y": 39.76,
       "icon": {
         "id": "bigreactors:reinforced_turbinecasing",
         "count": 1
@@ -969,12 +1119,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301182A048FC8B",
       "x": 0.0,
-      "y": 54.81,
+      "y": 49.06,
       "icon": {
         "id": "bigreactors:reinforced_turbinecontroller",
         "count": 1
@@ -984,6 +1134,7 @@
         "item_bigreactors_reinforced_turbinecontroller",
         "qm_v040",
         "stage_4",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -1006,6 +1157,90 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "5130128B78D56FBD"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinecasing",
+            "count": 1
+          },
+          "count": 39,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150128C9615553E"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorbearing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150129B0B6BA27B"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinefluidport_forge_active",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012150EDB31C1"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinepowertapfe_active",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51501254E9076178"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorshaft",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150122231D8ABE7"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorblade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150123151CA3AC5"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150127AE9328889"
         }
       ],
       "rewards": [
@@ -1013,22 +1248,23 @@
           "id": "513013AE4EF54294",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117DD8F75308",
       "x": 0.0,
-      "y": 47.81,
+      "y": 42.86,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorshaft",
         "count": 1
@@ -1076,12 +1312,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301193487DECA3": [
+          3.65,
+          40.21,
+          3.65,
+          42.38
+        ]
+      }
     },
     {
       "id": "5130112AA6480CE8",
       "x": -4.6,
-      "y": 51.31,
+      "y": 45.96,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorblade",
         "count": 1
@@ -1129,12 +1373,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130117DD8F75308": [
+          -1.95,
+          43.31,
+          -6.55,
+          45.48
+        ]
+      }
     },
     {
       "id": "513011EA1BEE4329",
-      "x": 4.6,
-      "y": 51.31,
+      "x": 0.0,
+      "y": 45.96,
       "icon": {
         "id": "bigreactors:reinforced_turbinerotorbearing",
         "count": 1
@@ -1182,12 +1434,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130117DD8F75308": [
+          3.65,
+          43.31,
+          3.65,
+          45.48
+        ]
+      }
     },
     {
       "id": "5130116A01924E20",
       "x": -4.6,
-      "y": 58.31,
+      "y": 52.16,
       "icon": {
         "id": "bigreactors:reinforced_turbinefluidport_forge_active",
         "count": 1
@@ -1235,12 +1495,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301182A048FC8B": [
+          -2.0,
+          49.46,
+          -6.6,
+          51.63
+        ]
+      }
     },
     {
       "id": "5130110D2A82691E",
-      "x": 4.6,
-      "y": 58.31,
+      "x": 0.0,
+      "y": 52.16,
       "icon": {
         "id": "bigreactors:reinforced_turbinepowertapfe_active",
         "count": 1
@@ -1287,12 +1555,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301182A048FC8B": [
+          3.6,
+          49.46,
+          3.6,
+          51.63
+        ]
+      }
     },
     {
       "id": "513011FE8D522CBB",
-      "x": 0.0,
-      "y": 35.99,
+      "x": -4.6,
+      "y": 32.29,
       "icon": {
         "id": "bigreactors:reinforced_reactorcontroller",
         "count": 1
@@ -1302,6 +1578,7 @@
         "stage_4",
         "item_bigreactors_reinforced_reactorcontroller",
         "qm_v040",
+        "multiblock_materials",
         "soqm_role_reference"
       ],
       "dependencies": [
@@ -1324,6 +1601,66 @@
           "only_from_crafting": false,
           "match_components": "none",
           "id": "51301262D9124DDE"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorcasing",
+            "count": 1
+          },
+          "count": 22,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012E1A1153CB3"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorfuelrod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012283DA13539"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorcontrolrod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012AAF3EB19F6"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorsolidaccessport",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5150121C7BF5FEBF"
+        },
+        {
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_reactorpowertapfe_active",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "515012A0BFFBD22F"
         }
       ],
       "rewards": [
@@ -1331,17 +1668,18 @@
           "id": "513013250FE98D8E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:redstone",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:power"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -1412,9 +1750,9 @@
     {
       "id": "51410410000003EC",
       "x": 0.0,
-      "y": 2.05,
+      "y": 1.825,
       "width": 24.9,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1428,9 +1766,9 @@
     {
       "id": "51410410000003ED",
       "x": -12.395,
-      "y": 2.05,
+      "y": 1.825,
       "width": 0.11,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -1508,9 +1846,9 @@
     {
       "id": "51410410000003F2",
       "x": 0.0,
-      "y": 13.87,
+      "y": 12.395,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1524,9 +1862,9 @@
     {
       "id": "51410410000003F3",
       "x": -12.395,
-      "y": 13.87,
+      "y": 12.395,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -1540,7 +1878,7 @@
     {
       "id": "51410410000003F4",
       "x": 0.08,
-      "y": 5.28,
+      "y": 4.83,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1556,7 +1894,7 @@
     {
       "id": "51410410000003F5",
       "x": 0.0,
-      "y": 7.59,
+      "y": 7.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1571,8 +1909,8 @@
     },
     {
       "id": "51410410000003F6",
-      "x": 0.0,
-      "y": 14.59,
+      "x": -4.6,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1588,7 +1926,7 @@
     {
       "id": "51410410000003F7",
       "x": -4.6,
-      "y": 11.09,
+      "y": 10.24,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1603,8 +1941,8 @@
     },
     {
       "id": "51410410000003F8",
-      "x": 4.6,
-      "y": 11.09,
+      "x": 0.0,
+      "y": 10.24,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1620,7 +1958,7 @@
     {
       "id": "51410410000003F9",
       "x": -4.6,
-      "y": 21.54,
+      "y": 19.49,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1635,8 +1973,8 @@
     },
     {
       "id": "51410410000003FA",
-      "x": 4.6,
-      "y": 21.54,
+      "x": 0.0,
+      "y": 19.49,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1651,8 +1989,8 @@
     },
     {
       "id": "51410410000003FB",
-      "x": 4.6,
-      "y": 18.09,
+      "x": -4.6,
+      "y": 16.44,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1668,9 +2006,9 @@
     {
       "id": "51410410000003FC",
       "x": 0.0,
-      "y": 32.69,
+      "y": 29.165,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1684,9 +2022,9 @@
     {
       "id": "51410410000003FD",
       "x": -12.395,
-      "y": 32.69,
+      "y": 29.165,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -1700,7 +2038,7 @@
     {
       "id": "51410410000003FE",
       "x": 0.08,
-      "y": 24.1,
+      "y": 21.6,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1716,7 +2054,7 @@
     {
       "id": "51410410000003FF",
       "x": 0.0,
-      "y": 26.41,
+      "y": 23.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1731,8 +2069,8 @@
     },
     {
       "id": "5141041000000400",
-      "x": 0.0,
-      "y": 33.41,
+      "x": -4.6,
+      "y": 30.11,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1748,7 +2086,7 @@
     {
       "id": "5141041000000401",
       "x": -4.6,
-      "y": 29.91,
+      "y": 27.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1764,7 +2102,7 @@
     {
       "id": "5141041000000402",
       "x": -9.2,
-      "y": 40.36,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1780,7 +2118,7 @@
     {
       "id": "5141041000000403",
       "x": -4.6,
-      "y": 40.36,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1795,8 +2133,8 @@
     },
     {
       "id": "5141041000000404",
-      "x": 4.6,
-      "y": 29.91,
+      "x": 0.0,
+      "y": 27.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1811,8 +2149,8 @@
     },
     {
       "id": "5141041000000405",
-      "x": 4.6,
-      "y": 40.36,
+      "x": 0.0,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1827,8 +2165,8 @@
     },
     {
       "id": "5141041000000406",
-      "x": 0.0,
-      "y": 36.91,
+      "x": -4.6,
+      "y": 33.21,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1844,9 +2182,9 @@
     {
       "id": "5141041000000407",
       "x": 0.0,
-      "y": 51.51,
+      "y": 45.935,
       "width": 24.9,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1860,9 +2198,9 @@
     {
       "id": "5141041000000408",
       "x": -12.395,
-      "y": 51.51,
+      "y": 45.935,
       "width": 0.11,
-      "height": 18.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -1876,7 +2214,7 @@
     {
       "id": "5141041000000409",
       "x": 0.08,
-      "y": 42.92,
+      "y": 38.37,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1892,7 +2230,7 @@
     {
       "id": "514104100000040A",
       "x": 0.0,
-      "y": 45.23,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1908,7 +2246,7 @@
     {
       "id": "514104100000040B",
       "x": 0.0,
-      "y": 55.73,
+      "y": 49.98,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1924,7 +2262,7 @@
     {
       "id": "514104100000040C",
       "x": 0.0,
-      "y": 48.73,
+      "y": 43.78,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1940,7 +2278,7 @@
     {
       "id": "514104100000040D",
       "x": -4.6,
-      "y": 52.23,
+      "y": 46.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1955,8 +2293,8 @@
     },
     {
       "id": "514104100000040E",
-      "x": 4.6,
-      "y": 52.23,
+      "x": 0.0,
+      "y": 46.88,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1972,7 +2310,7 @@
     {
       "id": "514104100000040F",
       "x": -4.6,
-      "y": 59.18,
+      "y": 53.03,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1987,8 +2325,8 @@
     },
     {
       "id": "5141041000000410",
-      "x": 4.6,
-      "y": 59.18,
+      "x": 0.0,
+      "y": 53.03,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

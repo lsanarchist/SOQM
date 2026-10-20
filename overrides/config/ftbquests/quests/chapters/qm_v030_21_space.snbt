@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,8 +17,8 @@
   "quests": [
     {
       "id": "513011CAEFCC265B",
-      "x": -7.95,
-      "y": 1.85,
+      "x": -10.95,
+      "y": 4.65,
       "icon": {
         "id": "ad_astra:steel_rod",
         "count": 1
@@ -66,12 +66,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011B6548D0312",
       "x": -4.95,
-      "y": 1.85,
+      "y": 4.65,
       "icon": {
         "id": "ad_astra:engine_frame",
         "count": 1
@@ -119,12 +119,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110A4743ECB0",
-      "x": 1.95,
-      "y": 1.85,
+      "x": -7.95,
+      "y": 4.65,
       "icon": {
         "id": "ad_astra:fan",
         "count": 1
@@ -177,7 +177,7 @@
     {
       "id": "5130119A494692FD",
       "x": -1.95,
-      "y": 1.85,
+      "y": 4.65,
       "icon": {
         "id": "ad_astra:steel_engine",
         "count": 1
@@ -227,12 +227,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011ABD424EA8F",
       "x": -10.95,
-      "y": 4.65,
+      "y": 7.45,
       "icon": {
         "id": "ad_astra:tier_1_rocket",
         "count": 1
@@ -280,12 +280,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301123D24102F2",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -10.95,
+      "y": 1.85,
       "icon": {
         "id": "ad_astra:wrench",
         "count": 1
@@ -337,8 +337,8 @@
     },
     {
       "id": "51301101FA8B13AD",
-      "x": -4.95,
-      "y": 4.65,
+      "x": -7.95,
+      "y": 1.85,
       "icon": {
         "id": "ad_astra:steel_ingot",
         "count": 1
@@ -391,7 +391,7 @@
     },
     {
       "id": "51301154264E3947",
-      "x": -10.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "ad_astra:steel_plate",
@@ -440,12 +440,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CEB2DA43F7",
       "x": -1.95,
-      "y": 4.65,
+      "y": 1.85,
       "icon": {
         "id": "ad_astra:iron_plate",
         "count": 1
@@ -546,7 +546,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301102879BA857",
@@ -600,7 +600,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112D843FED07",
@@ -654,12 +654,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BEB9C533E8",
-      "x": 7.95,
-      "y": 4.65,
+      "x": 1.95,
+      "y": 1.85,
       "icon": {
         "id": "ad_astra:oxygen_sensor",
         "count": 1
@@ -711,7 +711,7 @@
     },
     {
       "id": "51301100AAEE96B5",
-      "x": -10.95,
+      "x": -7.95,
       "y": 7.45,
       "icon": {
         "id": "ad_astra:compressor",
@@ -767,7 +767,7 @@
     },
     {
       "id": "51301125F300B5D5",
-      "x": -7.95,
+      "x": -4.95,
       "y": 7.45,
       "icon": {
         "id": "ad_astra:nasa_workbench",
@@ -856,21 +856,22 @@
           "id": "5130130FC5272E07",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "ad_astra:space_helmet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:space"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D45DD1A1E7",
-      "x": -7.95,
+      "x": -1.95,
       "y": 12.27,
       "icon": {
         "id": "ad_astra:desh_plate",
@@ -919,12 +920,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112238B982DA",
-      "x": -1.95,
-      "y": 12.27,
+      "x": -10.95,
+      "y": 15.07,
       "icon": {
         "id": "ad_astra:desh_engine",
         "count": 1
@@ -979,7 +980,7 @@
     },
     {
       "id": "51301102AE9BB373",
-      "x": -10.95,
+      "x": -7.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:desh_tank",
@@ -1035,7 +1036,7 @@
     },
     {
       "id": "51301179BA55079F",
-      "x": -7.95,
+      "x": -4.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:tier_2_rocket",
@@ -1124,22 +1125,23 @@
           "id": "5130134CD21F4AD2",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "ad_astra:space_helmet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:space"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301152E78DE39E",
-      "x": 10.95,
-      "y": 12.27,
+      "x": 1.95,
+      "y": 15.07,
       "icon": {
         "id": "ad_astra:ostrum_engine",
         "count": 1
@@ -1195,7 +1197,7 @@
     },
     {
       "id": "513011AC257CA77E",
-      "x": 1.95,
+      "x": 4.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:ostrum_tank",
@@ -1251,7 +1253,7 @@
     },
     {
       "id": "513011F70694CD2B",
-      "x": 4.95,
+      "x": 7.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:tier_3_rocket",
@@ -1306,7 +1308,7 @@
     },
     {
       "id": "513011AA7F850AD0",
-      "x": -10.95,
+      "x": -7.95,
       "y": 25.49,
       "icon": {
         "id": "ad_astra:calorite_tank",
@@ -1362,7 +1364,7 @@
     },
     {
       "id": "5130111C890D830A",
-      "x": -7.95,
+      "x": -4.95,
       "y": 25.49,
       "icon": {
         "id": "ad_astra:tier_4_rocket",
@@ -1416,7 +1418,7 @@
     },
     {
       "id": "5130114FE09DA6CE",
-      "x": 1.95,
+      "x": 4.95,
       "y": 4.65,
       "icon": {
         "id": "ad_astra:space_helmet",
@@ -1490,11 +1492,11 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130115956283BA9",
-      "x": 4.95,
+      "x": 1.95,
       "y": 4.65,
       "icon": {
         "id": "ad_astra:space_suit",
@@ -1546,12 +1548,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011635A57E77B",
-      "x": 4.95,
-      "y": 7.45,
+      "x": -7.95,
+      "y": 12.27,
       "icon": {
         "id": "ad_astra:oxygen_distributor",
         "count": 1
@@ -1607,7 +1609,7 @@
     },
     {
       "id": "513011984F5B40C8",
-      "x": 10.95,
+      "x": 7.95,
       "y": 4.65,
       "icon": {
         "id": "ad_astra:oxygen_bucket",
@@ -1661,8 +1663,8 @@
     },
     {
       "id": "513011A99D6EA3A8",
-      "x": 1.95,
-      "y": 7.45,
+      "x": 10.95,
+      "y": 4.65,
       "icon": {
         "id": "ad_astra:fuel_bucket",
         "count": 1
@@ -1767,7 +1769,7 @@
     },
     {
       "id": "513011028FE78243",
-      "x": -4.95,
+      "x": -1.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:desh_cable",
@@ -1822,8 +1824,8 @@
     },
     {
       "id": "513011AC5E9A34D4",
-      "x": -1.95,
-      "y": 15.07,
+      "x": -10.95,
+      "y": 17.87,
       "icon": {
         "id": "ad_astra:desh_fluid_pipe",
         "count": 1
@@ -1876,7 +1878,7 @@
     },
     {
       "id": "5130116AA9FFE833",
-      "x": -10.95,
+      "x": -7.95,
       "y": 17.87,
       "icon": {
         "id": "ad_astra:solar_panel",
@@ -1930,7 +1932,7 @@
     },
     {
       "id": "513011FBDEB88C4F",
-      "x": 4.95,
+      "x": 7.95,
       "y": 12.27,
       "icon": {
         "id": "ad_astra:ostrum_ingot",
@@ -1985,7 +1987,7 @@
     },
     {
       "id": "5130111A30152678",
-      "x": 7.95,
+      "x": 10.95,
       "y": 12.27,
       "icon": {
         "id": "ad_astra:ostrum_plate",
@@ -2040,7 +2042,7 @@
     },
     {
       "id": "51301107EA34F802",
-      "x": 7.95,
+      "x": 10.95,
       "y": 15.07,
       "icon": {
         "id": "ad_astra:ostrum_fluid_pipe",
@@ -2094,7 +2096,7 @@
     },
     {
       "id": "5130117C7AD68848",
-      "x": -7.95,
+      "x": -4.95,
       "y": 22.69,
       "icon": {
         "id": "ad_astra:calorite_ingot",
@@ -2149,7 +2151,7 @@
     },
     {
       "id": "513011956693E047",
-      "x": -4.95,
+      "x": -1.95,
       "y": 22.69,
       "icon": {
         "id": "ad_astra:calorite_plate",
@@ -2204,8 +2206,8 @@
     },
     {
       "id": "51301148648A5155",
-      "x": 4.95,
-      "y": 22.69,
+      "x": 1.95,
+      "y": 25.49,
       "icon": {
         "id": "ad_astra:etrium_ingot",
         "count": 1
@@ -2293,21 +2295,22 @@
           "id": "5130138D048E7C46",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "ad_astra:space_helmet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:space"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011CDEACD7F3A",
-      "x": 7.95,
+      "x": 1.95,
       "y": 22.69,
       "icon": {
         "id": "ad_astra:mercury_globe",
@@ -2355,7 +2358,7 @@
     },
     {
       "id": "5130112935FFF4C2",
-      "x": 1.95,
+      "x": 7.95,
       "y": 22.69,
       "icon": {
         "id": "ad_astra:glacio_globe",
@@ -2389,17 +2392,18 @@
           "id": "513013318FC95F5F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "ad_astra:space_helmet",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:space"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301162F20C9431",
@@ -2450,8 +2454,8 @@
     },
     {
       "id": "51301144D2BF0879",
-      "x": -1.95,
-      "y": 22.69,
+      "x": -10.95,
+      "y": 25.49,
       "icon": {
         "id": "ad_astra:calorite_engine",
         "count": 1
@@ -3042,7 +3046,7 @@
     },
     {
       "id": "514011B95E770D27",
-      "x": -7.95,
+      "x": -4.95,
       "y": 17.87,
       "icon": {
         "id": "mekanismaaa:moon_osmium_ore",
@@ -3095,7 +3099,7 @@
     },
     {
       "id": "514011E8EC89FFC7",
-      "x": -4.95,
+      "x": -1.95,
       "y": 17.87,
       "icon": {
         "id": "mekanismaaa:moon_tin_ore",
@@ -3148,8 +3152,8 @@
     },
     {
       "id": "514011A46C66DAA9",
-      "x": 10.95,
-      "y": 15.07,
+      "x": 4.95,
+      "y": 12.27,
       "icon": {
         "id": "mekanismaaa:mars_fluorite_ore",
         "count": 1
@@ -3197,7 +3201,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401116CDEA7FC4",
@@ -3307,8 +3311,8 @@
     },
     {
       "id": "5140111948A40B68",
-      "x": -4.95,
-      "y": 25.49,
+      "x": -7.95,
+      "y": 22.69,
       "icon": {
         "id": "mekanismaaa:venus_lead_ore",
         "count": 1
@@ -3368,7 +3372,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011332A823FB7",
@@ -3425,8 +3429,8 @@
     },
     {
       "id": "514011676C5FD3C1",
-      "x": 1.95,
-      "y": 25.49,
+      "x": 4.95,
+      "y": 22.69,
       "icon": {
         "id": "mekanismaaa:mercury_osmium_ore",
         "count": 1
@@ -3474,7 +3478,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140117C0F7B94F5",
@@ -3640,7 +3644,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -3758,8 +3762,8 @@
     },
     {
       "id": "5141041000000679",
-      "x": -7.95,
-      "y": 5.57,
+      "x": -10.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3774,8 +3778,8 @@
     },
     {
       "id": "514104100000067A",
-      "x": -4.95,
-      "y": 5.57,
+      "x": -7.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3790,7 +3794,7 @@
     },
     {
       "id": "514104100000067B",
-      "x": -10.95,
+      "x": -4.95,
       "y": 2.93,
       "width": 2.72,
       "height": 0.72,
@@ -3807,7 +3811,7 @@
     {
       "id": "514104100000067C",
       "x": -1.95,
-      "y": 5.57,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3822,54 +3826,6 @@
     },
     {
       "id": "514104100000067D",
-      "x": -7.95,
-      "y": 2.93,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000067E",
-      "x": -4.95,
-      "y": 2.93,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000067F",
-      "x": -1.95,
-      "y": 2.93,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000680",
       "x": -10.95,
       "y": 5.73,
       "width": 2.72,
@@ -3885,8 +3841,56 @@
       "order": 5
     },
     {
-      "id": "5141041000000681",
+      "id": "514104100000067E",
+      "x": -4.95,
+      "y": 5.73,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000067F",
+      "x": -1.95,
+      "y": 5.73,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000680",
       "x": -10.95,
+      "y": 8.53,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000681",
+      "x": -7.95,
       "y": 8.37,
       "width": 2.72,
       "height": 0.72,
@@ -3902,7 +3906,7 @@
     },
     {
       "id": "5141041000000682",
-      "x": -7.95,
+      "x": -4.95,
       "y": 8.37,
       "width": 2.72,
       "height": 0.72,
@@ -3919,9 +3923,9 @@
     {
       "id": "5141041000000683",
       "x": 6.45,
-      "y": 4.85,
+      "y": 3.45,
       "width": 12.0,
-      "height": 9.7,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -3935,9 +3939,9 @@
     {
       "id": "5141041000000684",
       "x": 0.505,
-      "y": 4.85,
+      "y": 3.45,
       "width": 0.11,
-      "height": 9.7,
+      "height": 6.9,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -3966,8 +3970,8 @@
     },
     {
       "id": "5141041000000686",
-      "x": 1.95,
-      "y": 2.93,
+      "x": -7.95,
+      "y": 5.73,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -3982,8 +3986,8 @@
     },
     {
       "id": "5141041000000687",
-      "x": 7.95,
-      "y": 5.57,
+      "x": 1.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4046,8 +4050,8 @@
     },
     {
       "id": "514104100000068B",
-      "x": 4.95,
-      "y": 8.37,
+      "x": -7.95,
+      "y": 13.19,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4062,7 +4066,7 @@
     },
     {
       "id": "514104100000068C",
-      "x": 1.95,
+      "x": 4.95,
       "y": 5.73,
       "width": 2.72,
       "height": 0.72,
@@ -4078,7 +4082,7 @@
     },
     {
       "id": "514104100000068D",
-      "x": 4.95,
+      "x": 1.95,
       "y": 5.73,
       "width": 2.72,
       "height": 0.72,
@@ -4094,7 +4098,7 @@
     },
     {
       "id": "514104100000068E",
-      "x": 10.95,
+      "x": 7.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -4110,8 +4114,8 @@
     },
     {
       "id": "514104100000068F",
-      "x": 1.95,
-      "y": 8.37,
+      "x": 10.95,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4206,7 +4210,7 @@
     },
     {
       "id": "5141041000000695",
-      "x": -7.95,
+      "x": -1.95,
       "y": 13.35,
       "width": 2.72,
       "height": 0.72,
@@ -4222,8 +4226,8 @@
     },
     {
       "id": "5141041000000696",
-      "x": -1.95,
-      "y": 13.19,
+      "x": -10.95,
+      "y": 15.99,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4238,7 +4242,7 @@
     },
     {
       "id": "5141041000000697",
-      "x": -10.95,
+      "x": -7.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -4254,7 +4258,7 @@
     },
     {
       "id": "5141041000000698",
-      "x": -7.95,
+      "x": -4.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -4270,22 +4274,6 @@
     },
     {
       "id": "5141041000000699",
-      "x": -4.95,
-      "y": 15.99,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000069A",
       "x": -1.95,
       "y": 15.99,
       "width": 2.72,
@@ -4301,7 +4289,7 @@
       "order": 5
     },
     {
-      "id": "514104100000069B",
+      "id": "514104100000069A",
       "x": -10.95,
       "y": 18.79,
       "width": 2.72,
@@ -4317,8 +4305,24 @@
       "order": 5
     },
     {
-      "id": "514104100000069C",
+      "id": "514104100000069B",
       "x": -7.95,
+      "y": 18.79,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000069C",
+      "x": -4.95,
       "y": 18.74,
       "width": 2.72,
       "height": 0.72,
@@ -4334,7 +4338,7 @@
     },
     {
       "id": "514104100000069D",
-      "x": -4.95,
+      "x": -1.95,
       "y": 18.74,
       "width": 2.72,
       "height": 0.72,
@@ -4414,8 +4418,8 @@
     },
     {
       "id": "51410410000006A2",
-      "x": 10.95,
-      "y": 15.94,
+      "x": 4.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4430,7 +4434,7 @@
     },
     {
       "id": "51410410000006A3",
-      "x": 4.95,
+      "x": 7.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,
@@ -4446,22 +4450,6 @@
     },
     {
       "id": "51410410000006A4",
-      "x": 7.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000006A5",
       "x": 10.95,
       "y": 13.19,
       "width": 2.72,
@@ -4477,7 +4465,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006A6",
+      "id": "51410410000006A5",
       "x": 1.95,
       "y": 15.99,
       "width": 2.72,
@@ -4493,7 +4481,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006A7",
+      "id": "51410410000006A6",
       "x": 4.95,
       "y": 15.99,
       "width": 2.72,
@@ -4509,8 +4497,24 @@
       "order": 5
     },
     {
-      "id": "51410410000006A8",
+      "id": "51410410000006A7",
       "x": 7.95,
+      "y": 15.99,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000006A8",
+      "x": 10.95,
       "y": 15.99,
       "width": 2.72,
       "height": 0.72,
@@ -4622,8 +4626,8 @@
     },
     {
       "id": "51410410000006AF",
-      "x": -4.95,
-      "y": 26.36,
+      "x": -7.95,
+      "y": 23.56,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4638,7 +4642,7 @@
     },
     {
       "id": "51410410000006B0",
-      "x": -7.95,
+      "x": -4.95,
       "y": 23.61,
       "width": 2.72,
       "height": 0.72,
@@ -4654,22 +4658,6 @@
     },
     {
       "id": "51410410000006B1",
-      "x": -4.95,
-      "y": 23.61,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000006B2",
       "x": -1.95,
       "y": 23.61,
       "width": 2.72,
@@ -4685,7 +4673,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006B3",
+      "id": "51410410000006B2",
       "x": -10.95,
       "y": 26.41,
       "width": 2.72,
@@ -4701,8 +4689,24 @@
       "order": 5
     },
     {
-      "id": "51410410000006B4",
+      "id": "51410410000006B3",
       "x": -7.95,
+      "y": 26.41,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000006B4",
+      "x": -4.95,
       "y": 26.41,
       "width": 2.72,
       "height": 0.72,
@@ -4782,7 +4786,7 @@
     },
     {
       "id": "51410410000006B9",
-      "x": 7.95,
+      "x": 1.95,
       "y": 23.56,
       "width": 2.72,
       "height": 0.72,
@@ -4798,7 +4802,7 @@
     },
     {
       "id": "51410410000006BA",
-      "x": 1.95,
+      "x": 7.95,
       "y": 23.69,
       "width": 2.72,
       "height": 0.72,
@@ -4830,8 +4834,8 @@
     },
     {
       "id": "51410410000006BC",
-      "x": 4.95,
-      "y": 23.61,
+      "x": 1.95,
+      "y": 26.41,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -4846,8 +4850,8 @@
     },
     {
       "id": "51410410000006BD",
-      "x": 1.95,
-      "y": 26.36,
+      "x": 4.95,
+      "y": 23.56,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

@@ -8,10 +8,10 @@ var SOQMProgressiveRewards = (function () {
   var ProductionEvidence = null;
   var warnings = {};
   var rarities = ['common', 'uncommon', 'rare', 'epic'];
-  var defaultDraws = [2, 2, 3, 3, 3, 4, 4];
+  var defaultDraws = [3, 3, 4, 4, 4, 5, 5];
   var defaultRarityWeights = [
-    [70, 25, 4, 1], [65, 28, 6, 1], [58, 31, 9, 2], [50, 35, 12, 3],
-    [45, 36, 15, 4], [38, 39, 18, 5], [32, 41, 21, 6]
+    [50, 35, 12, 3], [45, 36, 15, 4], [38, 38, 19, 5], [30, 40, 23, 7],
+    [24, 40, 27, 9], [18, 40, 30, 12], [12, 40, 33, 15]
   ];
   var itemPattern = /^[a-z0-9_.-]+:[a-z0-9_./-]+$/;
   var poolPattern = /^[a-z0-9_]+$/;
@@ -56,9 +56,9 @@ var SOQMProgressiveRewards = (function () {
   // registered vanilla supplies; no manufactured prize is an emergency fallback.
   function emergencyPool() {
     var supplies = [
-      ['minecraft:bread', 4, 'Хліб', 'Bread'],
-      ['minecraft:iron_ingot', 2, 'Залізний злиток', 'Iron Ingot'],
-      ['minecraft:torch', 4, 'Смолоскип', 'Torch']
+      ['minecraft:bread', 8, 'Хліб', 'Bread'],
+      ['minecraft:iron_ingot', 6, 'Залізний злиток', 'Iron Ingot'],
+      ['minecraft:torch', 16, 'Смолоскип', 'Torch']
     ];
     return {
       key: 'survival', title: names({uk_ua: 'Базові припаси', en_us: 'Basic supplies'}, 'survival'),
@@ -72,7 +72,11 @@ var SOQMProgressiveRewards = (function () {
   function compile(raw) {
     if (!raw || raw.schema !== 2 || !Array.isArray(raw.pools)) throw new Error('Expected reward policy schema 2');
     var result = {pools: Object.create(null), mappings: Object.create(null), itemNames: Object.create(null),
-      levels: [], draws: [], weights: []};
+      levels: [], draws: [], weights: [], qualityDraws: 0};
+    // Older schema-2 policy files can still load without the reserved draw.
+    var qualityDraws = raw.guaranteed_quality_draws === undefined ? 0 : raw.guaranteed_quality_draws;
+    if (!integer(qualityDraws, 0, 1)) throw new Error('Invalid reserved quality draw count');
+    result.qualityDraws = qualityDraws;
     if (!Array.isArray(raw.production_items) || !raw.production_items.every(validItem)) {
       throw new Error('Missing or invalid production item allowlist');
     }
@@ -85,7 +89,7 @@ var SOQMProgressiveRewards = (function () {
     for (var level = 0; level <= 6; level++) {
       var draws = raw.draws_by_level[level];
       var weights = raw.rarity_weights_by_level[level];
-      if (!integer(draws, 2, 4) || !weights) throw new Error('Invalid draw count or rarity weights');
+      if (!integer(draws, 2, 5) || !weights) throw new Error('Invalid draw count or rarity weights');
       var total = 0, row = {};
       rarities.forEach(function (rarity) {
         var weight = weights[rarity];
@@ -119,7 +123,7 @@ var SOQMProgressiveRewards = (function () {
         // A damaged condition is rejected, never interpreted as ungated. The
         // allowlist also protects cheap crafted supplies; independent family
         // guards protect expensive parts if both the gate and list were edited.
-        if (!entry || !validItem(entry.item) || !integer(entry.count, 1, 4) ||
+        if (!entry || !validItem(entry.item) || !integer(entry.count, 1, 16) ||
             /plastic|hdpe|mayhem_cube/.test(entry.item) ||
             !finite(entry.weight) || entry.weight <= 0 || entry.weight > 1000000 ||
             rarities.indexOf(entry.rarity) < 0 || !integer(minLevel, 0, 6) ||
@@ -153,7 +157,7 @@ var SOQMProgressiveRewards = (function () {
     var pool = emergencyPool();
     var itemNames = {};
     pool.entries.forEach(function (entry) { itemNames[entry.item] = entry.name; });
-    return {pools: {survival: pool}, mappings: {}, itemNames: itemNames, levels: [], draws: defaultDraws.slice(),
+    return {pools: {survival: pool}, mappings: {}, itemNames: itemNames, levels: [], draws: defaultDraws.slice(), qualityDraws: 0,
       weights: defaultRarityWeights.map(function (row) {
         var value = {}; rarities.forEach(function (rarity, index) { value[rarity] = row[index]; }); return value;
       })};
@@ -182,11 +186,11 @@ var SOQMProgressiveRewards = (function () {
     policy.levels.forEach(function (milestone) {
       if (produced[milestone.item]) level = Math.max(level, milestone.level);
     });
-    return {produced: produced, level: level, draws: policy.draws[level]};
+    return {produced: produced, level: level, draws: policy.draws[level], qualityDraws: policy.qualityDraws};
   }
 
   function inspectPool(state, pool) {
-    var available = [], locked = [], groups = {}, groupTotal = 0;
+    var available = [], locked = [], groups = {}, groupTotal = 0, qualityTotal = 0;
     rarities.forEach(function (rarity) { groups[rarity] = {rarity: rarity, entries: [], total: 0, weight: 0}; });
     pool.entries.forEach(function (entry) {
       var missing = entry.requires_craft.filter(function (id) { return !state.produced[id]; });
@@ -199,16 +203,23 @@ var SOQMProgressiveRewards = (function () {
     });
     rarities.forEach(function (rarity) {
       var group = groups[rarity];
-      if (group.entries.length) { group.weight = policy.weights[state.level][rarity]; groupTotal += group.weight; }
+      if (group.entries.length) {
+        group.weight = policy.weights[state.level][rarity]; groupTotal += group.weight;
+        if (rarity !== 'common') qualityTotal += group.weight;
+      }
     });
     rarities.forEach(function (rarity) {
       var group = groups[rarity];
       if (!(group.weight > 0) || !(groupTotal > 0)) return;
       group.entries.forEach(function (entry) {
-        available.push({entry: entry, probability: group.weight / groupTotal * entry.weight / group.total});
+        var probability = group.weight / groupTotal * entry.weight / group.total;
+        var qualityProbability = qualityTotal > 0 ?
+          (rarity === 'common' ? 0 : group.weight / qualityTotal * entry.weight / group.total) : probability;
+        available.push({entry: entry, probability: probability, quality_probability: qualityProbability});
       });
     });
-    return {pool: pool, available: available, locked: locked, groups: groups, groupTotal: groupTotal};
+    return {pool: pool, available: available, locked: locked, groups: groups, groupTotal: groupTotal,
+      qualityTotal: qualityTotal};
   }
 
   function view(state, key) {
@@ -245,8 +256,10 @@ var SOQMProgressiveRewards = (function () {
       if (group.weight > 0 && group.entries.length) groups.push(group);
     });
     var combined = Object.create(null), random = player.getRandom();
+    var qualityGroups = groups.filter(function (group) { return group.rarity !== 'common'; });
     for (var draw = 0; draw < current.state.draws; draw++) {
-      var group = weighted(groups, function (value) { return value.weight; }, random);
+      var drawGroups = draw < current.state.qualityDraws && qualityGroups.length ? qualityGroups : groups;
+      var group = weighted(drawGroups, function (value) { return value.weight; }, random);
       var entry = weighted(group.entries, function (value) { return value.weight; }, random);
       combined[entry.item] = (combined[entry.item] || 0) + entry.count;
     }
@@ -290,6 +303,9 @@ var SOQMProgressiveRewards = (function () {
       'Reward level: ' + state.level + '/6; prizes per quest: ' + state.draws + '.');
     say(player, 'Особисте отримання раз за квест. Кожен приз розігрується окремо; повтори додаються.',
       'One personal claim per quest. Each prize is rolled independently; duplicate items are combined.');
+    if (state.qualityDraws) say(player,
+      'Один приз — щонайменше незвичайний, якщо такий уже відкрито в темі. Решта — звичайні жеребкування.',
+      'One prize is uncommon or better when this theme has an eligible prize of that quality. The remaining draws use the full pool.');
     say(player, 'Колишні спільні нагороди мають одне нове особисте отримання. Старі особисті отримання збережено.',
       'Previously shared rewards allow one new personal claim. Earlier personal claims remain claimed.');
     policy.levels.forEach(function (milestone) {
@@ -313,11 +329,15 @@ var SOQMProgressiveRewards = (function () {
       title + ' — level ' + current.state.level + ', ' + current.state.draws + ' prizes per quest.');
     say(player, 'Шанс вказано за одне жеребкування. Предмет може випасти повторно.',
       'Chances are for one draw. The same item can be rolled again.');
+    if (current.state.qualityDraws) say(player,
+      'Перше жеребкування: лише відкриті незвичайні або кращі призи. Без них діє звичайний пул.',
+      'First draw: eligible uncommon-or-better prizes only. Without one, the normal pool is used.');
     if (current.fallback) say(player, 'Резервний пул: ' + current.selected.pool.title[locale] + '.',
       'Fallback pool: ' + current.selected.pool.title[locale] + '.');
     current.selected.available.forEach(function (available) {
       var entry = available.entry;
       var line = entry.count + ' × ' + entry.name[locale] + ' [' + rarityNames[locale][entry.rarity] + '] — ' + percent(available.probability);
+      if (current.state.qualityDraws) line += (locale === 'uk_ua' ? '; перше: ' : '; first: ') + percent(available.quality_probability);
       say(player, line, line);
     });
     current.locked.forEach(function (locked) {

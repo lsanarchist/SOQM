@@ -1,0 +1,770 @@
+{
+  "schema": 1,
+  "evidence": [
+    {
+      "source": "Pinned Immersive Engineering 12.4.2-194 JAR",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+      "details": "Native coke brick, blast brick, hammer, wire coil and alloy brick recipes do not require Industrial Chassis. The pack chassis recipe consumes steel plates, creosote-treated wood, copper wire coils and an iron component."
+    },
+    {
+      "source": "SOQM custom recipes",
+      "path": "overrides/kubejs/server_scripts/qm_expert_progression.js",
+      "details": "kubejs:expert/kubejs/industrial_chassis: 4 steel plates + 2 treated wood + 2 copper coils + 1 iron component → 2 chassis. The complete preparation line must be available before its own output."
+    },
+    {
+      "source": "Pinned native recipes and custom engineering-block recipes",
+      "path": "overrides/kubejs/server_scripts/qm_expert_v042.js",
+      "details": "Native redstone engineering, fluid pipes, conveyors and reinforced blast bricks do not use Precision Mechanism. Custom light/heavy engineering blocks use Industrial Chassis and Electromechanical Drive; the drive itself uses iron plates, copper coils, steel rods and a piston. Basic IE production therefore does not require the later AE2/Mekanism precision milestone."
+    }
+  ],
+  "chapters": {
+    "qm_v030_03_immersive": {
+      "summary": {
+        "uk_ua": "Почни з молота й коксової печі. Кокс веде до сталі, крезот — до оброблених дощок; разом із дротом і компонентом вони дають перше шасі. Далі обери воду або вітер для живлення, підготуй логістику й збирай потрібні виробничі машини.",
+        "en_us": "Start with a hammer and Coke Oven. Coke leads to steel, creosote to treated planks; combine them with wire and a component for the first chassis. Then choose water or wind power, prepare transport and build the production machines you need."
+      },
+      "quests": {
+        "5130110C9CAE442B": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0
+        },
+        "51301140C9328072": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0
+        },
+        "513011A899EC23A8": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0
+        },
+        "51301113A3154D2A": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0
+        },
+        "5130115B313C6A81": {
+          "dependencies": [
+            "5130110C9CAE442B"
+          ],
+          "stage": 0
+        },
+        "51301157FF888779": {
+          "dependencies": [
+            "5130115B313C6A81",
+            "51301140C9328072"
+          ],
+          "stage": 0,
+          "title": {
+            "uk_ua": "Склади коксову піч",
+            "en_us": "Build a Coke Oven"
+          }
+        },
+        "5130114F2594B696": {
+          "dependencies": [
+            "51301157FF888779"
+          ],
+          "stage": 0
+        },
+        "5130117FBB68BE2D": {
+          "dependencies": [
+            "51301157FF888779"
+          ],
+          "stage": 0
+        },
+        "513011AE9CF26AB0": {
+          "dependencies": [
+            "5130114F2594B696",
+            "51301140C9328072"
+          ],
+          "stage": 0
+        },
+        "51301167DCA596B9": {
+          "dependencies": [
+            "513011AE9CF26AB0",
+            "51301140C9328072"
+          ],
+          "stage": 0
+        },
+        "513011D0113472B0": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0
+        },
+        "513011B6D00A0F88": {
+          "dependencies": [
+            "513011A899EC23A8"
+          ],
+          "stage": 0
+        },
+        "513011FFA590DC5D": {
+          "dependencies": [
+            "5130110C9CAE442B",
+            "51301140C9328072"
+          ],
+          "stage": 0
+        },
+        "51301169A78021F0": {
+          "dependencies": [
+            "51301167DCA596B9",
+            "513011E734464E5D"
+          ],
+          "stage": 1
+        },
+        "5130112227C31308": {
+          "dependencies": [
+            "513011E734464E5D",
+            "513011D0113472B0"
+          ],
+          "stage": 1
+        },
+        "5130114CEA71331A": {
+          "dependencies": [
+            "5130112227C31308",
+            "5130117FBB68BE2D"
+          ],
+          "stage": 1
+        },
+        "513011647FD31AF9": {
+          "dependencies": [
+            "5130112227C31308",
+            "5130117FBB68BE2D"
+          ],
+          "stage": 1
+        },
+        "5130116C6548DD6D": {
+          "dependencies": [
+            "513011E734464E5D",
+            "513011B6D00A0F88"
+          ],
+          "stage": 1
+        },
+        "513011F3D9FACD30": {
+          "dependencies": [
+            "5130116C6548DD6D"
+          ],
+          "stage": 1
+        },
+        "513011518B793203": {
+          "dependencies": [
+            "5130112227C31308",
+            "5130116C6548DD6D",
+            "513011B6D00A0F88"
+          ],
+          "stage": 1
+        },
+        "5130113060E2375A": {
+          "dependencies": [
+            "513011518B793203"
+          ],
+          "stage": 1
+        },
+        "513011A503096C2F": {
+          "dependencies": [
+            "513011E734464E5D",
+            "513011D0113472B0"
+          ],
+          "stage": 1
+        },
+        "513011C37B3FFEB2": {
+          "dependencies": [
+            "513011E734464E5D",
+            "51301169A78021F0"
+          ],
+          "stage": 1
+        },
+        "513011F19F27E6F7": {
+          "dependencies": [
+            "513011E734464E5D"
+          ],
+          "stage": 1
+        },
+        "5130112DAAA79EEE": {
+          "dependencies": [
+            "513011E734464E5D",
+            "513011AE9CF26AB0",
+            "51301167DCA596B9"
+          ],
+          "stage": 1
+        },
+        "5130117254399ACB": {
+          "dependencies": [
+            "513011E734464E5D"
+          ],
+          "stage": 1
+        },
+        "513011E6BD90E95B": {
+          "dependencies": [
+            "5130117254399ACB",
+            "513011D0113472B0"
+          ],
+          "stage": 1
+        },
+        "513011D01FAD3591": {
+          "dependencies": [
+            "5130117254399ACB",
+            "513011D0113472B0"
+          ],
+          "stage": 1
+        },
+        "5130113462B5267C": {
+          "dependencies": [
+            "513011E734464E5D"
+          ],
+          "stage": 1
+        },
+        "5130117F8A73721B": {
+          "dependencies": [
+            "5130113462B5267C"
+          ],
+          "stage": 1
+        },
+        "51301133BE177146": {
+          "dependencies": [
+            "5130113462B5267C"
+          ],
+          "stage": 1
+        },
+        "5130110CAA0B1890": {
+          "dependencies": [
+            "5130113462B5267C"
+          ],
+          "stage": 1
+        },
+        "513011A784AC24C0": {
+          "dependencies": [
+            "5130113462B5267C"
+          ],
+          "stage": 1
+        },
+        "513011B10EB819FC": {
+          "dependencies": [
+            "5130113462B5267C"
+          ],
+          "stage": 1
+        },
+        "513011B5FB049CD1": {
+          "dependencies": [
+            "5130113462B5267C",
+            "513011D0113472B0"
+          ],
+          "stage": 1
+        },
+        "51301173D68FCBFF": {
+          "dependencies": [
+            "513011C37B3FFEB2",
+            "5130113462B5267C",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011E25267FD65": {
+          "dependencies": [
+            "51301173D68FCBFF",
+            "513011A899EC23A8"
+          ],
+          "stage": 1
+        },
+        "513011829B3BAD9A": {
+          "dependencies": [
+            "51301173D68FCBFF",
+            "513011A899EC23A8"
+          ],
+          "stage": 1
+        },
+        "513011B5A6A9EB2A": {
+          "dependencies": [
+            "51301173D68FCBFF",
+            "513011A899EC23A8"
+          ],
+          "stage": 1
+        },
+        "513011E94A1C3709": {
+          "dependencies": [
+            "51301173D68FCBFF",
+            "513011A899EC23A8"
+          ],
+          "stage": 1
+        },
+        "513011EE444C38AF": {
+          "dependencies": [
+            "513011A503096C2F",
+            "513011C37B3FFEB2",
+            "513011F19F27E6F7",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011965BAF66F4": {
+          "dependencies": [
+            "5130112DAAA79EEE",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011060A137580": {
+          "dependencies": [
+            "513011965BAF66F4",
+            "5130117254399ACB"
+          ],
+          "stage": 1
+        },
+        "513011027911756D": {
+          "dependencies": [
+            "513011A503096C2F",
+            "513011F19F27E6F7",
+            "5130117254399ACB"
+          ],
+          "stage": 1
+        },
+        "5130112C76268D3A": {
+          "dependencies": [
+            "513011AA869D0649",
+            "513011C37B3FFEB2",
+            "513011F19F27E6F7",
+            "51301140C9328072"
+          ],
+          "stage": 3
+        },
+        "513011306BCB6E37": {
+          "dependencies": [
+            "513011E734464E5D",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "51301103F035DDAB": {
+          "dependencies": [
+            "513011E734464E5D",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011F8C15E22E3": {
+          "dependencies": [
+            "513011A503096C2F",
+            "5130117254399ACB"
+          ],
+          "stage": 1
+        },
+        "5130111A675CD3CC": {
+          "dependencies": [
+            "513011A503096C2F",
+            "513011F19F27E6F7",
+            "5130113462B5267C",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011D0F247BDDA": {
+          "dependencies": [
+            "513011A503096C2F",
+            "5130113462B5267C",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011585394EA3D": {
+          "dependencies": [
+            "513011A503096C2F",
+            "513011F19F27E6F7",
+            "5130113462B5267C",
+            "5130117254399ACB",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011CA9536C271": {
+          "dependencies": [
+            "513011C37B3FFEB2",
+            "513011A503096C2F",
+            "5130113462B5267C",
+            "51301140C9328072"
+          ],
+          "stage": 1
+        },
+        "513011B12DC6165B": {
+          "dependencies": [
+            "513011AA869D0649",
+            "513011F8C15E22E3",
+            "513011C37B3FFEB2",
+            "513011F19F27E6F7",
+            "51301140C9328072"
+          ],
+          "stage": 3
+        },
+        "5130110029567322": {
+          "dependencies": [
+            "513011E734464E5D",
+            "513011B6D00A0F88"
+          ],
+          "stage": 1,
+          "title": {
+            "uk_ua": "Котушка середньовольтного дроту",
+            "en_us": "Medium-voltage wire coil"
+          }
+        },
+        "51301192F84C0562": {
+          "dependencies": [
+            "513011E734464E5D",
+            "5130116C6548DD6D"
+          ],
+          "stage": 1
+        },
+        "5130115247ECD3E2": {
+          "dependencies": [
+            "513011E734464E5D",
+            "5130113060E2375A",
+            "5130110029567322",
+            "51301192F84C0562"
+          ],
+          "stage": 1
+        },
+        "51301195D2829429": {
+          "dependencies": [
+            "513011AA869D0649",
+            "5130115247ECD3E2"
+          ],
+          "stage": 3
+        },
+        "5130113B29A18A2A": {
+          "dependencies": [
+            "513011AA869D0649",
+            "513011518B793203"
+          ],
+          "stage": 3
+        },
+        "513011EA9C91377F": {
+          "dependencies": [
+            "513011AA869D0649",
+            "51301167DCA596B9"
+          ],
+          "stage": 3
+        },
+        "5130116938AB4E49": {
+          "dependencies": [
+            "513011AA869D0649",
+            "513011C37B3FFEB2",
+            "513011D0113472B0",
+            "513011EA9C91377F"
+          ],
+          "stage": 3
+        },
+        "513011680472300F": {
+          "dependencies": [
+            "513011AA869D0649",
+            "513011C37B3FFEB2"
+          ],
+          "stage": 3
+        },
+        "513011D9F9BB4662": {
+          "dependencies": [
+            "51301195D2829429"
+          ],
+          "stage": 3
+        },
+        "5130110BC9722D12": {
+          "dependencies": [
+            "513011AA869D0649",
+            "51301169A78021F0"
+          ],
+          "stage": 3
+        },
+        "5130119C81CF64E3": {
+          "dependencies": [
+            "513011AA869D0649",
+            "5130117254399ACB",
+            "513011C37B3FFEB2",
+            "513011183B7E03D8"
+          ],
+          "stage": 3
+        },
+        "5130119EFCBAF93F": {
+          "dependencies": [
+            "513011AA869D0649",
+            "5130116C6548DD6D"
+          ],
+          "stage": 3
+        }
+      },
+      "sections": [
+        {
+          "slot": 0,
+          "title": {
+            "uk_ua": "Кокс, крезот і сталь для першого шасі",
+            "en_us": "Coke, creosote and steel for the first chassis"
+          },
+          "rows": [
+            [
+              "5130110C9CAE442B",
+              "51301140C9328072",
+              "513011A899EC23A8",
+              "51301113A3154D2A"
+            ],
+            [
+              "5130115B313C6A81",
+              null,
+              null,
+              "513011D0113472B0",
+              "513011B6D00A0F88"
+            ],
+            [
+              "51301157FF888779",
+              null,
+              "513011FFA590DC5D"
+            ],
+            [
+              "5130114F2594B696",
+              "5130117FBB68BE2D"
+            ],
+            [
+              "513011AE9CF26AB0"
+            ],
+            [
+              "51301167DCA596B9"
+            ]
+          ]
+        },
+        {
+          "slot": 2,
+          "title": {
+            "uk_ua": "Перша електрика: вода або вітер",
+            "en_us": "First power: water or wind"
+          },
+          "rows": [
+            [
+              "5130112227C31308",
+              null,
+              null,
+              "5130116C6548DD6D"
+            ],
+            [
+              "5130114CEA71331A",
+              "513011647FD31AF9",
+              null,
+              "513011F3D9FACD30"
+            ],
+            [
+              null,
+              null,
+              "513011518B793203"
+            ],
+            [
+              null,
+              null,
+              "5130113060E2375A"
+            ]
+          ]
+        },
+        {
+          "slot": 1,
+          "title": {
+            "uk_ua": "Деталі для промислових машин",
+            "en_us": "Parts for industrial machines"
+          },
+          "rows": [
+            [
+              "51301169A78021F0",
+              null,
+              null,
+              "5130112DAAA79EEE"
+            ],
+            [
+              "513011A503096C2F",
+              "513011C37B3FFEB2",
+              "513011F19F27E6F7"
+            ]
+          ]
+        },
+        {
+          "slot": 5,
+          "title": {
+            "uk_ua": "Подача рідин і транспортування предметів",
+            "en_us": "Fluid supply and item transport"
+          },
+          "rows": [
+            [
+              "5130117254399ACB",
+              null,
+              "5130113462B5267C"
+            ],
+            [
+              "513011E6BD90E95B",
+              "513011D01FAD3591",
+              "5130117F8A73721B",
+              "51301133BE177146",
+              "5130110CAA0B1890"
+            ],
+            [
+              null,
+              null,
+              "513011A784AC24C0",
+              "513011B10EB819FC",
+              "513011B5FB049CD1"
+            ]
+          ]
+        },
+        {
+          "slot": 3,
+          "title": {
+            "uk_ua": "Прес, дробарка та автоматична сталь",
+            "en_us": "Press, crusher and automated steel"
+          },
+          "rows": [
+            [
+              "51301173D68FCBFF",
+              null,
+              "513011EE444C38AF",
+              null,
+              "513011965BAF66F4"
+            ],
+            [
+              "513011E25267FD65",
+              "513011829B3BAD9A",
+              "513011B5A6A9EB2A",
+              "513011E94A1C3709",
+              "513011060A137580"
+            ],
+            [
+              "513011027911756D",
+              null,
+              null,
+              null,
+              "5130112C76268D3A"
+            ]
+          ]
+        },
+        {
+          "slot": 4,
+          "title": {
+            "uk_ua": "Сховища, автоматичний крафт і видобуток",
+            "en_us": "Storage, automated crafting and excavation"
+          },
+          "rows": [
+            [
+              "513011306BCB6E37",
+              "51301103F035DDAB",
+              null,
+              null,
+              "513011F8C15E22E3"
+            ],
+            [
+              "5130111A675CD3CC",
+              "513011D0F247BDDA",
+              "513011585394EA3D",
+              "513011CA9536C271",
+              "513011B12DC6165B"
+            ]
+          ]
+        },
+        {
+          "slot": 6,
+          "title": {
+            "uk_ua": "Розширення електромережі",
+            "en_us": "Expanding the power grid"
+          },
+          "rows": [
+            [
+              "5130110029567322",
+              "51301192F84C0562"
+            ],
+            [
+              null,
+              "5130115247ECD3E2"
+            ],
+            [
+              null,
+              "51301195D2829429"
+            ]
+          ]
+        },
+        {
+          "slot": 7,
+          "title": {
+            "uk_ua": "Інструменти для роботи й експедицій",
+            "en_us": "Tools for work and expeditions"
+          },
+          "rows": [
+            [
+              "5130113B29A18A2A",
+              "513011EA9C91377F",
+              "5130110BC9722D12",
+              "5130119C81CF64E3",
+              "5130119EFCBAF93F"
+            ],
+            [
+              null,
+              "5130116938AB4E49",
+              "513011680472300F",
+              null,
+              "513011D9F9BB4662"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "key": "ie-first-steel",
+      "title": {
+        "uk_ua": "Коксова піч → сталь → шасі",
+        "en_us": "Coke Oven → steel → chassis"
+      },
+      "quests": [
+        "5130110C9CAE442B",
+        "5130115B313C6A81",
+        "51301157FF888779",
+        "5130114F2594B696",
+        "513011AE9CF26AB0",
+        "51301167DCA596B9",
+        "513011E734464E5D"
+      ]
+    },
+    {
+      "key": "ie-creosote",
+      "title": {
+        "uk_ua": "Крезот → оброблене дерево → шасі",
+        "en_us": "Creosote → treated wood → chassis"
+      },
+      "quests": [
+        "51301157FF888779",
+        "5130117FBB68BE2D",
+        "513011E734464E5D"
+      ]
+    },
+    {
+      "key": "ie-first-electricity",
+      "title": {
+        "uk_ua": "Динамо → дроти → накопичення",
+        "en_us": "Dynamo → wiring → storage"
+      },
+      "quests": [
+        "5130112227C31308",
+        "513011518B793203",
+        "5130113060E2375A",
+        "5130115247ECD3E2",
+        "51301195D2829429"
+      ]
+    },
+    {
+      "key": "ie-steel-automation",
+      "title": {
+        "uk_ua": "Початкова домна → автоматична домна → підігрів",
+        "en_us": "First blast furnace → automated furnace → preheating"
+      },
+      "quests": [
+        "513011AE9CF26AB0",
+        "5130112DAAA79EEE",
+        "513011965BAF66F4",
+        "513011060A137580"
+      ]
+    }
+  ]
+}

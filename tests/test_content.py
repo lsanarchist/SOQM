@@ -33,7 +33,10 @@ class CampaignContentTests(unittest.TestCase):
         """A release cannot silently lose chapters, quests, tasks or rewards."""
         self.assertEqual(len(self.chapters), 37)
         self.assertEqual(len(self.quest_list), 1626)
-        self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), 1773)
+        additions = read_json(ROOT / 'metadata/multiblock_materials.json')['migration']['added_task_ids']
+        expected = read_json(ROOT / 'metadata/campaign_identity.json')['tasks']
+        self.assertEqual(expected, 1773 + len(additions))
+        self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), expected)
         self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1627)
 
     def test_all_persistent_ids_are_unique(self):

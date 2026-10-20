@@ -11,6 +11,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_branches as branches
+import campaign_compatibility as compatibility
+import campaign_multiblocks as multiblocks
 import campaign_layout as layout
 import campaign_progression as progression
 
@@ -34,8 +36,9 @@ class ProductionQuestBranchTests(unittest.TestCase):
         # One additive quest must not replace the original 0.4.9 save contract.
         additions = read(ROOT / "metadata/campaign_identity.json")["previous_content"]["added_quests"]
         self.assertEqual(additions, ["514A110000000001"])
+        previous = compatibility.previous_questbook(self.chapters)
         contract = {q["id"]: {"tasks": q["tasks"], "rewards": q["rewards"], "can_repeat": q.get("can_repeat", False)}
-                    for q in self.quests.values() if q["id"] not in additions}
+                    for chapter in previous for q in chapter['quests'] if q["id"] not in additions}
         expected = read(ROOT / "metadata/quest_branch_identity.json")
         self.assertEqual(len(contract), expected["quests"])
         actual = hashlib.sha256(json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
@@ -128,23 +131,31 @@ class ProductionQuestBranchTests(unittest.TestCase):
                 panel = images[section["panel"]]
                 self.assertGreater(panel["y"] - panel["height"] / 2, last_bottom)
                 last_bottom = panel["y"] + panel["height"] / 2
+                previous_row_y = float('-inf')
                 for row in section["rows"]:
-                    for column, ident in enumerate(row):
-                        if not ident:
-                            continue
-                        self.assertEqual(qmap[ident]["x"], layout.FLOW_COLUMNS[column])
-                        self.assertFalse(qmap[ident]["hide_dependency_lines"], ident)
+                    members = [ident for ident in row if ident]
+                    row_y = {qmap[ident]["y"] for ident in members}
+                    self.assertEqual(len(row_y), 1, "Related row members stay together")
+                    self.assertGreater(next(iter(row_y)), previous_row_y)
+                    previous_row_y = next(iter(row_y))
+                    self.assertEqual(len({qmap[ident]["x"] for ident in members}), len(members))
+                    self.assertTrue(all(qmap[ident]["x"] in layout.FLOW_COLUMNS for ident in members))
 
     def test_both_languages_explain_the_actual_branch_and_detection_scope(self):
+        materials = {entry['quest_id']: entry for entry in multiblocks.load()['quests']}
         for filename, spec in self.source["chapters"].items():
             chapter = self.by_filename[filename]
             for language, locale in self.locales.items():
                 self.assertIn(spec["summary"][language], locale[f"chapter.{chapter['id']}.chapter_subtitle"])
                 for ident, patch in spec["quests"].items():
                     if "description" in patch:
-                        self.assertEqual(locale[f"quest.{ident}.quest_desc"], patch["description"][language])
+                        expected = (materials[ident][language]['description'] if ident in materials
+                                    else patch['description'][language])
+                        self.assertEqual(locale[f"quest.{ident}.quest_desc"], expected)
                     if "title" in patch:
-                        self.assertEqual(locale[f"quest.{ident}.title"], patch["title"][language])
+                        expected = (materials[ident][language].get('title', patch['title'][language])
+                                    if ident in materials else patch['title'][language])
+                        self.assertEqual(locale[f"quest.{ident}.title"], expected)
 
     def test_reactor_lessons_expose_the_custom_detector_requirements(self):
         """Operating a reactor must not depend on undisclosed observer setup."""

@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -72,7 +72,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11784324BCC0",
@@ -119,11 +119,11 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11649778EA6D",
-      "x": 1.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "apotheosis:salvaging_table",
@@ -184,7 +184,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514D11E79566207A",
@@ -221,12 +221,13 @@
           "id": "513013E7E630FB45",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -300,7 +301,7 @@
     },
     {
       "id": "514D11268DEDBF9A",
-      "x": -7.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "minecraft:iron_sword",
@@ -343,11 +344,11 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11053C24F796",
-      "x": -4.95,
+      "x": -1.95,
       "y": 1.85,
       "icon": {
         "id": "minecraft:blaze_powder",
@@ -380,21 +381,22 @@
           "id": "5130137D55EB5F14",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11E8DD1AE2CE",
-      "x": 7.95,
+      "x": 4.95,
       "y": 4.65,
       "icon": {
         "id": "apotheosis:reforging_table",
@@ -447,7 +449,7 @@
     },
     {
       "id": "513011F4018BF0E3",
-      "x": 4.95,
+      "x": 1.95,
       "y": 1.85,
       "icon": {
         "id": "apotheosis:mysterious_scrap_metal",
@@ -500,7 +502,7 @@
     },
     {
       "id": "513011E1CCD81700",
-      "x": 7.95,
+      "x": 4.95,
       "y": 1.85,
       "icon": {
         "id": "apotheosis:timeworn_fabric",
@@ -553,7 +555,7 @@
     },
     {
       "id": "5130115B35EE7BCB",
-      "x": 10.95,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "apotheosis:luminous_crystal_shard",
@@ -606,8 +608,8 @@
     },
     {
       "id": "513011B18FB3384D",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 10.95,
+      "y": 1.85,
       "icon": {
         "id": "apotheosis:arcane_sands",
         "count": 1
@@ -659,7 +661,7 @@
     },
     {
       "id": "51301175D0C8E4CE",
-      "x": 4.95,
+      "x": 1.95,
       "y": 4.65,
       "icon": {
         "id": "apotheosis:godforged_pearl",
@@ -920,7 +922,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130115CF6BAE4BC",
@@ -973,7 +975,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011E4C1593023",
@@ -1133,7 +1135,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F75AC66274",
@@ -1186,7 +1188,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011DC67FC0BDA",
@@ -1345,7 +1347,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A3D94B7550",
@@ -1612,7 +1614,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011758EB23EF2",
@@ -2518,8 +2520,8 @@
     },
     {
       "id": "514D11362B44E731",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -10.95,
+      "y": 4.65,
       "icon": {
         "id": "minecraft:netherite_sword",
         "count": 1
@@ -2551,21 +2553,22 @@
           "id": "513013CCB0334CAC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514D11ECA99D525F",
-      "x": -10.95,
+      "x": -7.95,
       "y": 4.65,
       "icon": {
         "id": "minecraft:end_crystal",
@@ -2598,12 +2601,13 @@
           "id": "513013004A550A1B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:iron_chestplate",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:equipment"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -2612,7 +2616,7 @@
     },
     {
       "id": "514D118B985ECC64",
-      "x": 10.95,
+      "x": 7.95,
       "y": 4.65,
       "icon": {
         "id": "apotheosis:augmenting_table",
@@ -2796,22 +2800,6 @@
     },
     {
       "id": "51410410000004CC",
-      "x": -7.95,
-      "y": 2.85,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000004CD",
       "x": -4.95,
       "y": 2.85,
       "width": 2.72,
@@ -2827,7 +2815,7 @@
       "order": 5
     },
     {
-      "id": "51410410000004CE",
+      "id": "51410410000004CD",
       "x": -1.95,
       "y": 2.85,
       "width": 2.72,
@@ -2843,8 +2831,24 @@
       "order": 5
     },
     {
-      "id": "51410410000004CF",
+      "id": "51410410000004CE",
       "x": -10.95,
+      "y": 5.65,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000004CF",
+      "x": -7.95,
       "y": 5.65,
       "width": 2.72,
       "height": 0.72,
@@ -2908,7 +2912,7 @@
     },
     {
       "id": "51410410000004D3",
-      "x": 1.95,
+      "x": -7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2924,7 +2928,7 @@
     },
     {
       "id": "51410410000004D4",
-      "x": 4.95,
+      "x": 1.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2940,7 +2944,7 @@
     },
     {
       "id": "51410410000004D5",
-      "x": 7.95,
+      "x": 4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2956,7 +2960,7 @@
     },
     {
       "id": "51410410000004D6",
-      "x": 10.95,
+      "x": 7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2972,6 +2976,22 @@
     },
     {
       "id": "51410410000004D7",
+      "x": 10.95,
+      "y": 2.77,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000004D8",
       "x": 1.95,
       "y": 5.57,
       "width": 2.72,
@@ -2987,7 +3007,7 @@
       "order": 5
     },
     {
-      "id": "51410410000004D8",
+      "id": "51410410000004D9",
       "x": 4.95,
       "y": 5.57,
       "width": 2.72,
@@ -3003,24 +3023,8 @@
       "order": 5
     },
     {
-      "id": "51410410000004D9",
-      "x": 7.95,
-      "y": 5.57,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
       "id": "51410410000004DA",
-      "x": 10.95,
+      "x": 7.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,

@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -64,12 +64,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011597C161302",
       "x": 0.0,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "exdeorum:string_mesh",
         "count": 1
@@ -116,12 +116,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011324616A9B3",
       "x": -9.2,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "exdeorum:flint_mesh",
         "count": 1
@@ -167,12 +167,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140116F44752FA8",
       "x": -4.6,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "exdeorum:iron_mesh",
         "count": 1
@@ -208,22 +208,23 @@
           "id": "5140139057B16162",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140112A4F316BD0",
       "x": 9.2,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "exdeorum:golden_mesh",
         "count": 1
@@ -270,12 +271,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140116A490EBB49",
       "x": 9.2,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "exdeorum:diamond_mesh",
         "count": 1
@@ -312,22 +313,23 @@
           "id": "514013E18877D69B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140118A7959CF14",
       "x": 9.2,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "exdeorum:netherite_mesh",
         "count": 1
@@ -373,7 +375,15 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140116A490EBB49": [
+          13.2,
+          15.92,
+          13.2,
+          18.09
+        ]
+      }
     },
     {
       "id": "514011B17B9019ED",
@@ -424,12 +434,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401119D2BD7331",
       "x": -4.6,
-      "y": 33.81,
+      "y": 30.46,
       "icon": {
         "id": "exdeorum:iron_hammer",
         "count": 1
@@ -475,12 +485,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140117CFCDA03E8",
       "x": 0.0,
-      "y": 33.81,
+      "y": 30.46,
       "icon": {
         "id": "exdeorum:diamond_hammer",
         "count": 1
@@ -526,12 +536,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401177F073D0BA",
       "x": -4.6,
-      "y": 38.63,
+      "y": 34.83,
       "icon": {
         "id": "exdeorum:oak_barrel",
         "count": 1
@@ -577,12 +587,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011A427A0E346",
-      "x": 9.2,
-      "y": 45.63,
+      "x": 0.0,
+      "y": 41.03,
       "icon": {
         "id": "exdeorum:stone_barrel",
         "count": 1
@@ -628,12 +638,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011876B475765",
       "x": -9.2,
-      "y": 38.63,
+      "y": 34.83,
       "icon": {
         "id": "exdeorum:oak_crucible",
         "count": 1
@@ -679,12 +689,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140117D1731679A",
-      "x": 0.0,
-      "y": 42.13,
+      "x": -4.6,
+      "y": 37.93,
       "icon": {
         "id": "exdeorum:porcelain_clay_ball",
         "count": 1
@@ -730,12 +740,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51401177F073D0BA": [
+          -0.6,
+          35.23,
+          -0.6,
+          37.4
+        ]
+      }
     },
     {
       "id": "51401172E09FFCF3",
-      "x": 0.0,
-      "y": 45.63,
+      "x": -9.2,
+      "y": 41.03,
       "icon": {
         "id": "exdeorum:unfired_porcelain_crucible",
         "count": 1
@@ -781,12 +799,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140117D1731679A": [
+          -6.6,
+          38.33,
+          -11.2,
+          40.5
+        ]
+      }
     },
     {
       "id": "51401104D4E2DD1D",
-      "x": 0.0,
-      "y": 49.13,
+      "x": -9.2,
+      "y": 44.13,
       "icon": {
         "id": "exdeorum:porcelain_crucible",
         "count": 1
@@ -823,22 +849,31 @@
           "id": "514013618239F77F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51401172E09FFCF3": [
+          -12.4,
+          41.43,
+          -12.4,
+          43.6
+        ]
+      }
     },
     {
       "id": "514011B76E41FE36",
-      "x": 4.6,
-      "y": 45.63,
+      "x": -4.6,
+      "y": 41.03,
       "icon": {
         "id": "exdeorum:porcelain_bucket",
         "count": 1
@@ -884,12 +919,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140117D1731679A": [
+          -0.6,
+          38.33,
+          -0.6,
+          40.5
+        ]
+      }
     },
     {
       "id": "5140111F9A9D12AA",
-      "x": -9.2,
-      "y": 5.35,
+      "x": 4.6,
+      "y": 4.95,
       "icon": {
         "id": "exdeorum:dust",
         "count": 1
@@ -935,12 +978,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011B17B9019ED": [
+          8.25,
+          2.3,
+          8.25,
+          4.47
+        ]
+      }
     },
     {
       "id": "5140118C20D4ED91",
-      "x": -4.6,
-      "y": 5.35,
+      "x": 9.2,
+      "y": 4.95,
       "icon": {
         "id": "exdeorum:crushed_deepslate",
         "count": 1
@@ -986,12 +1037,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011B17B9019ED": [
+          8.2,
+          2.25,
+          12.8,
+          4.42
+        ]
+      }
     },
     {
       "id": "514011BEF463278A",
       "x": 4.6,
-      "y": 33.81,
+      "y": 30.46,
       "icon": {
         "id": "exdeorum:crushed_netherrack",
         "count": 1
@@ -1038,12 +1097,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401135F07C9A85",
       "x": 9.2,
-      "y": 33.81,
+      "y": 30.46,
       "icon": {
         "id": "exdeorum:crushed_end_stone",
         "count": 1
@@ -1090,12 +1149,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011DC6D0EDF31",
       "x": -9.2,
-      "y": 33.81,
+      "y": 30.46,
       "icon": {
         "id": "exdeorum:wood_chippings",
         "count": 1
@@ -1141,12 +1200,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011692B337611",
       "x": 9.2,
-      "y": 25.49,
+      "y": 22.99,
       "icon": {
         "id": "exdeorum:compressed_cobblestone",
         "count": 1
@@ -1192,12 +1251,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011297F1E5A33",
       "x": 9.2,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "exdeorum:compressed_gravel",
         "count": 1
@@ -1243,12 +1302,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011692B337611": [
+          13.2,
+          23.39,
+          13.2,
+          25.56
+        ]
+      }
     },
     {
       "id": "514011CA86FD67E8",
       "x": -4.6,
-      "y": 25.49,
+      "y": 22.99,
       "icon": {
         "id": "exdeorum:mechanical_hammer",
         "count": 1
@@ -1297,12 +1364,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140118233B3CC83",
       "x": 0.0,
-      "y": 25.49,
+      "y": 22.99,
       "icon": {
         "id": "exdeorum:mechanical_sieve",
         "count": 1
@@ -1340,22 +1407,23 @@
           "id": "5140137AD3D91F85",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:furnace",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:processing"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011D7E21C7052",
       "x": 0.0,
-      "y": 8.85,
+      "y": 8.05,
       "icon": {
         "id": "exdeorum:iron_ore_chunk",
         "count": 1
@@ -1401,12 +1469,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011597C161302": [
+          3.65,
+          5.4,
+          3.65,
+          7.57
+        ]
+      }
     },
     {
       "id": "514011C77F670381",
-      "x": 9.2,
-      "y": 8.85,
+      "x": 4.6,
+      "y": 8.05,
       "icon": {
         "id": "exdeorum:osmium_ore_chunk",
         "count": 1
@@ -1452,7 +1528,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -1523,9 +1599,9 @@
     {
       "id": "5141041000000887",
       "x": 0.0,
-      "y": 5.55,
+      "y": 4.925,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1539,9 +1615,9 @@
     {
       "id": "5141041000000888",
       "x": -12.395,
-      "y": 5.55,
+      "y": 4.925,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -1587,7 +1663,7 @@
     {
       "id": "514104100000088B",
       "x": 0.0,
-      "y": 6.27,
+      "y": 5.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1603,7 +1679,7 @@
     {
       "id": "514104100000088C",
       "x": -9.2,
-      "y": 14.54,
+      "y": 13.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1619,7 +1695,7 @@
     {
       "id": "514104100000088D",
       "x": -4.6,
-      "y": 14.54,
+      "y": 13.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1635,7 +1711,7 @@
     {
       "id": "514104100000088E",
       "x": 9.2,
-      "y": 14.54,
+      "y": 13.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1651,7 +1727,7 @@
     {
       "id": "514104100000088F",
       "x": 9.2,
-      "y": 18.04,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1667,7 +1743,7 @@
     {
       "id": "5141041000000890",
       "x": 9.2,
-      "y": 21.54,
+      "y": 19.49,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1683,9 +1759,9 @@
     {
       "id": "5141041000000891",
       "x": 0.0,
-      "y": 34.01,
+      "y": 30.435,
       "width": 24.9,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1699,9 +1775,9 @@
     {
       "id": "5141041000000892",
       "x": -12.395,
-      "y": 34.01,
+      "y": 30.435,
       "width": 0.11,
-      "height": 4.1,
+      "height": 3.65,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -1715,7 +1791,7 @@
     {
       "id": "5141041000000893",
       "x": 0.08,
-      "y": 32.42,
+      "y": 29.07,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1747,7 +1823,7 @@
     {
       "id": "5141041000000895",
       "x": -4.6,
-      "y": 34.68,
+      "y": 31.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1763,7 +1839,7 @@
     {
       "id": "5141041000000896",
       "x": 0.0,
-      "y": 34.68,
+      "y": 31.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1779,7 +1855,7 @@
     {
       "id": "5141041000000897",
       "x": 9.2,
-      "y": 34.68,
+      "y": 31.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1794,8 +1870,8 @@
     },
     {
       "id": "5141041000000898",
-      "x": -9.2,
-      "y": 6.27,
+      "x": 4.6,
+      "y": 5.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1810,8 +1886,8 @@
     },
     {
       "id": "5141041000000899",
-      "x": -4.6,
-      "y": 6.22,
+      "x": 9.2,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1827,7 +1903,7 @@
     {
       "id": "514104100000089A",
       "x": 4.6,
-      "y": 34.68,
+      "y": 31.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1843,7 +1919,7 @@
     {
       "id": "514104100000089B",
       "x": -9.2,
-      "y": 34.68,
+      "y": 31.33,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1859,9 +1935,9 @@
     {
       "id": "514104100000089C",
       "x": 0.0,
-      "y": 44.08,
+      "y": 39.455,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1875,9 +1951,9 @@
     {
       "id": "514104100000089D",
       "x": -12.395,
-      "y": 44.08,
+      "y": 39.455,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -1891,7 +1967,7 @@
     {
       "id": "514104100000089E",
       "x": 0.08,
-      "y": 37.24,
+      "y": 33.44,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1907,7 +1983,7 @@
     {
       "id": "514104100000089F",
       "x": -4.6,
-      "y": 39.5,
+      "y": 35.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1922,8 +1998,8 @@
     },
     {
       "id": "51410410000008A0",
-      "x": 9.2,
-      "y": 46.5,
+      "x": 0.0,
+      "y": 41.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1939,7 +2015,7 @@
     {
       "id": "51410410000008A1",
       "x": -9.2,
-      "y": 39.5,
+      "y": 35.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1954,8 +2030,8 @@
     },
     {
       "id": "51410410000008A2",
-      "x": 0.0,
-      "y": 43.0,
+      "x": -4.6,
+      "y": 38.8,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1970,8 +2046,8 @@
     },
     {
       "id": "51410410000008A3",
-      "x": 0.0,
-      "y": 46.5,
+      "x": -9.2,
+      "y": 41.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1986,8 +2062,8 @@
     },
     {
       "id": "51410410000008A4",
-      "x": 0.0,
-      "y": 50.0,
+      "x": -9.2,
+      "y": 45.0,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2002,8 +2078,8 @@
     },
     {
       "id": "51410410000008A5",
-      "x": 4.6,
-      "y": 46.5,
+      "x": -4.6,
+      "y": 41.9,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2019,9 +2095,9 @@
     {
       "id": "51410410000008A6",
       "x": 0.0,
-      "y": 27.44,
+      "y": 24.515,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2035,9 +2111,9 @@
     {
       "id": "51410410000008A7",
       "x": -12.395,
-      "y": 27.44,
+      "y": 24.515,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -2051,7 +2127,7 @@
     {
       "id": "51410410000008A8",
       "x": 0.08,
-      "y": 24.1,
+      "y": 21.6,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2067,7 +2143,7 @@
     {
       "id": "51410410000008A9",
       "x": 9.2,
-      "y": 26.36,
+      "y": 23.86,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2083,7 +2159,7 @@
     {
       "id": "51410410000008AA",
       "x": 9.2,
-      "y": 29.86,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2099,7 +2175,7 @@
     {
       "id": "51410410000008AB",
       "x": -4.6,
-      "y": 26.41,
+      "y": 23.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2115,7 +2191,7 @@
     {
       "id": "51410410000008AC",
       "x": 0.0,
-      "y": 26.41,
+      "y": 23.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2131,9 +2207,9 @@
     {
       "id": "51410410000008AD",
       "x": 0.0,
-      "y": 17.37,
+      "y": 15.495,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2147,9 +2223,9 @@
     {
       "id": "51410410000008AE",
       "x": -12.395,
-      "y": 17.37,
+      "y": 15.495,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -2163,7 +2239,7 @@
     {
       "id": "51410410000008AF",
       "x": 0.08,
-      "y": 12.28,
+      "y": 11.03,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2179,7 +2255,7 @@
     {
       "id": "51410410000008B0",
       "x": 0.0,
-      "y": 9.77,
+      "y": 8.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2194,8 +2270,8 @@
     },
     {
       "id": "51410410000008B1",
-      "x": 9.2,
-      "y": 9.72,
+      "x": 4.6,
+      "y": 8.92,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

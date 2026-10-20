@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -377,12 +377,13 @@
           "id": "5140138C8C0E491C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -591,8 +592,8 @@
     },
     {
       "id": "514011AFA54E5162",
-      "x": 4.95,
-      "y": 4.65,
+      "x": 7.95,
+      "y": 12.27,
       "icon": {
         "id": "cannibalvillages:escafandro_chestplate_tanque1",
         "count": 1
@@ -645,8 +646,8 @@
     },
     {
       "id": "514011020A9F4A5F",
-      "x": 7.95,
-      "y": 4.65,
+      "x": 10.95,
+      "y": 12.27,
       "icon": {
         "id": "cannibalvillages:escafandro_chestplate_tanque2",
         "count": 1
@@ -695,12 +696,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011F9BDE023CA",
-      "x": 10.95,
-      "y": 4.65,
+      "x": 1.95,
+      "y": 15.07,
       "icon": {
         "id": "cannibalvillages:escafandro_helmet_light",
         "count": 1
@@ -752,7 +753,7 @@
     },
     {
       "id": "5140110FCC50F733",
-      "x": 10.95,
+      "x": 7.95,
       "y": 1.85,
       "icon": {
         "id": "cannibalvillages:bomba_ar",
@@ -801,11 +802,11 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011CDA9BD101E",
-      "x": 7.95,
+      "x": 10.95,
       "y": 1.85,
       "icon": {
         "id": "cannibalvillages:tampoes_ouvido",
@@ -906,7 +907,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011A699306C39",
@@ -1011,7 +1012,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140115DED7553C7",
@@ -1273,12 +1274,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011B958197A79",
-      "x": -1.95,
-      "y": 19.89,
+      "x": -10.95,
+      "y": 22.69,
       "icon": {
         "id": "cannibalvillages:totem_canibal",
         "count": 1
@@ -1329,7 +1330,7 @@
     },
     {
       "id": "51401189834860BA",
-      "x": -10.95,
+      "x": -7.95,
       "y": 22.69,
       "icon": {
         "id": "cannibalvillages:cesto_oferenda",
@@ -1381,7 +1382,7 @@
     },
     {
       "id": "5140117074E3D0EB",
-      "x": -7.95,
+      "x": -4.95,
       "y": 22.69,
       "icon": {
         "id": "cannibalvillages:tambor",
@@ -1482,7 +1483,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011306E133D35",
@@ -1538,8 +1539,8 @@
     },
     {
       "id": "5140113DC7D55324",
-      "x": 1.95,
-      "y": 4.65,
+      "x": 4.95,
+      "y": 12.27,
       "icon": {
         "id": "cannibalvillages:escafandro_helmet",
         "count": 1
@@ -1614,12 +1615,13 @@
           "id": "5140133FE7C8BB81",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -1946,12 +1948,13 @@
           "id": "51401317D6BAFDED",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2049,8 +2052,8 @@
     },
     {
       "id": "514011AB09405BD2",
-      "x": -4.95,
-      "y": 22.69,
+      "x": -1.95,
+      "y": 19.89,
       "icon": {
         "id": "cannibalvillages:dardo_verde",
         "count": 1
@@ -2175,7 +2178,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401140B9B7339C",
@@ -2228,7 +2231,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011CBC2B285DD",
@@ -2281,7 +2284,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     }
   ],
   "images": [
@@ -2480,9 +2483,9 @@
     {
       "id": "5141041000000906",
       "x": 6.45,
-      "y": 3.45,
+      "y": 2.05,
       "width": 12.0,
-      "height": 6.9,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -2496,9 +2499,9 @@
     {
       "id": "5141041000000907",
       "x": 0.505,
-      "y": 3.45,
+      "y": 2.05,
       "width": 0.11,
-      "height": 6.9,
+      "height": 4.1,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -2559,7 +2562,7 @@
     },
     {
       "id": "514104100000090B",
-      "x": 10.95,
+      "x": 7.95,
       "y": 2.72,
       "width": 2.72,
       "height": 0.72,
@@ -2575,8 +2578,8 @@
     },
     {
       "id": "514104100000090C",
-      "x": 1.95,
-      "y": 5.52,
+      "x": 4.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2591,8 +2594,8 @@
     },
     {
       "id": "514104100000090D",
-      "x": 4.95,
-      "y": 5.52,
+      "x": 7.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2607,8 +2610,8 @@
     },
     {
       "id": "514104100000090E",
-      "x": 7.95,
-      "y": 5.52,
+      "x": 10.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2623,8 +2626,8 @@
     },
     {
       "id": "514104100000090F",
-      "x": 10.95,
-      "y": 5.52,
+      "x": 1.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2639,7 +2642,7 @@
     },
     {
       "id": "5141041000000910",
-      "x": 7.95,
+      "x": 10.95,
       "y": 2.72,
       "width": 2.72,
       "height": 0.72,
@@ -2848,9 +2851,9 @@
     {
       "id": "514104100000091D",
       "x": 6.45,
-      "y": 11.07,
+      "y": 12.47,
       "width": 12.0,
-      "height": 6.9,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#F01D2A3A",
       "text_on_image": false,
@@ -2864,9 +2867,9 @@
     {
       "id": "514104100000091E",
       "x": 0.505,
-      "y": 11.07,
+      "y": 12.47,
       "width": 0.11,
-      "height": 6.9,
+      "height": 9.7,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -3071,22 +3074,6 @@
     },
     {
       "id": "514104100000092B",
-      "x": -4.95,
-      "y": 23.56,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000092C",
       "x": -1.95,
       "y": 20.76,
       "width": 2.72,
@@ -3102,7 +3089,7 @@
       "order": 5
     },
     {
-      "id": "514104100000092D",
+      "id": "514104100000092C",
       "x": -10.95,
       "y": 23.56,
       "width": 2.72,
@@ -3118,8 +3105,24 @@
       "order": 5
     },
     {
-      "id": "514104100000092E",
+      "id": "514104100000092D",
       "x": -7.95,
+      "y": 23.56,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000092E",
+      "x": -4.95,
       "y": 23.56,
       "width": 2.72,
       "height": 0.72,

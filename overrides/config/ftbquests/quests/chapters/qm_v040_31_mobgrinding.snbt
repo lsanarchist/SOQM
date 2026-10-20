@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -65,12 +65,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401143F82415D6",
-      "x": -9.2,
-      "y": 5.35,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "mob_grinding_utils:fan_upgrade_height",
         "count": 1
@@ -117,12 +117,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140113A498D848C": [
+          2.6,
+          2.25,
+          -2.0,
+          4.42
+        ]
+      }
     },
     {
       "id": "514011B902E6E31F",
-      "x": 0.0,
-      "y": 5.35,
+      "x": 4.6,
+      "y": 4.95,
       "icon": {
         "id": "mob_grinding_utils:fan_upgrade_width",
         "count": 1
@@ -169,12 +177,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140113A498D848C": [
+          8.2,
+          2.25,
+          8.2,
+          4.42
+        ]
+      }
     },
     {
       "id": "51401177E93E6028",
-      "x": 4.6,
-      "y": 5.35,
+      "x": 9.2,
+      "y": 4.95,
       "icon": {
         "id": "mob_grinding_utils:fan_upgrade_speed",
         "count": 1
@@ -221,7 +237,15 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140113A498D848C": [
+          8.2,
+          2.25,
+          12.8,
+          4.42
+        ]
+      }
     },
     {
       "id": "5140114A40B0278C",
@@ -273,12 +297,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140119DBA41022E",
       "x": 0.0,
-      "y": 21.99,
+      "y": 19.89,
       "icon": {
         "id": "mob_grinding_utils:spikes",
         "count": 1
@@ -325,7 +349,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140115AD58E20D1",
@@ -377,12 +401,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401108F86D0EE4",
       "x": 0.0,
-      "y": 10.17,
+      "y": 9.32,
       "icon": {
         "id": "mob_grinding_utils:absorption_hopper",
         "count": 1
@@ -419,22 +443,23 @@
           "id": "51401342B82581A1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bow",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:hunting"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011A05286EB62",
       "x": -4.6,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "mob_grinding_utils:absorption_upgrade",
         "count": 1
@@ -481,12 +506,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51401108F86D0EE4": [
+          -2.0,
+          9.72,
+          -6.6,
+          11.89
+        ]
+      }
     },
     {
       "id": "5140117D8C128BA2",
-      "x": 9.2,
-      "y": 13.67,
+      "x": 0.0,
+      "y": 12.42,
       "icon": {
         "id": "mob_grinding_utils:tank",
         "count": 1
@@ -533,12 +566,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51401108F86D0EE4": [
+          3.65,
+          9.77,
+          3.65,
+          11.94
+        ]
+      }
     },
     {
       "id": "51401167B654E27A",
-      "x": -9.2,
-      "y": 17.17,
+      "x": -4.6,
+      "y": 15.52,
       "icon": {
         "id": "mob_grinding_utils:jumbo_tank",
         "count": 1
@@ -585,12 +626,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140110A47674144",
-      "x": -4.6,
-      "y": 17.17,
+      "x": 0.0,
+      "y": 15.52,
       "icon": {
         "id": "mob_grinding_utils:tank_sink",
         "count": 1
@@ -637,12 +678,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140117D8C128BA2": [
+          3.6,
+          12.82,
+          3.6,
+          14.99
+        ]
+      }
     },
     {
       "id": "514011C487B33462",
       "x": 4.6,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "mob_grinding_utils:xp_tap",
         "count": 1
@@ -689,12 +738,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140117D8C128BA2": [
+          3.6,
+          12.82,
+          8.2,
+          14.99
+        ]
+      }
     },
     {
       "id": "51401119C8D41866",
       "x": 0.0,
-      "y": 37.31,
+      "y": 33.56,
       "icon": {
         "id": "mob_grinding_utils:xpsolidifier",
         "count": 1
@@ -743,12 +800,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011BFC827D439",
       "x": -4.6,
-      "y": 37.31,
+      "y": 33.56,
       "icon": {
         "id": "mob_grinding_utils:solid_xp_mould_blank",
         "count": 1
@@ -795,12 +852,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51401126DAE556AD",
       "x": -4.6,
-      "y": 40.81,
+      "y": 36.66,
       "icon": {
         "id": "mob_grinding_utils:solid_xp_mould_baby",
         "count": 1
@@ -847,12 +904,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514011BFC827D439": [
+          -0.95,
+          34.01,
+          -0.95,
+          36.18
+        ]
+      }
     },
     {
       "id": "5140110D45F1DCC2",
-      "x": 0.0,
-      "y": 44.31,
+      "x": -4.6,
+      "y": 39.76,
       "icon": {
         "id": "mob_grinding_utils:solid_xp_baby",
         "count": 1
@@ -890,22 +955,23 @@
           "id": "514013E60692DDDD",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bow",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:hunting"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140110FD5420835",
-      "x": 4.6,
-      "y": 47.81,
+      "x": -4.6,
+      "y": 42.86,
       "icon": {
         "id": "mob_grinding_utils:solid_xp_block",
         "count": 1
@@ -952,12 +1018,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140110D45F1DCC2": [
+          -0.95,
+          40.21,
+          -0.95,
+          42.38
+        ]
+      }
     },
     {
       "id": "514011E75CFEB0A5",
-      "x": 4.6,
-      "y": 40.81,
+      "x": 0.0,
+      "y": 36.66,
       "icon": {
         "id": "mob_grinding_utils:xp_solidifier_upgrade",
         "count": 1
@@ -1004,12 +1078,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51401119C8D41866": [
+          3.6,
+          33.96,
+          3.6,
+          36.13
+        ]
+      }
     },
     {
       "id": "5140110BC63EC2F8",
-      "x": -4.6,
-      "y": 25.49,
+      "x": 0.0,
+      "y": 22.99,
       "icon": {
         "id": "mob_grinding_utils:saw",
         "count": 1
@@ -1047,22 +1129,23 @@
           "id": "514013EDAAA30575",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bow",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:hunting"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011EA278CD919",
       "x": -9.2,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "mob_grinding_utils:saw_upgrade_sharpness",
         "count": 1
@@ -1109,12 +1192,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011DADE40C3C5",
       "x": -4.6,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "mob_grinding_utils:saw_upgrade_beheading",
         "count": 1
@@ -1161,12 +1244,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140110BC63EC2F8": [
+          -2.0,
+          23.39,
+          -6.6,
+          25.56
+        ]
+      }
     },
     {
       "id": "514011F5E3962B3C",
-      "x": 4.6,
-      "y": 28.99,
+      "x": 0.0,
+      "y": 26.09,
       "icon": {
         "id": "mob_grinding_utils:saw_upgrade_looting",
         "count": 1
@@ -1213,12 +1304,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140110BC63EC2F8": [
+          3.6,
+          23.39,
+          3.6,
+          25.56
+        ]
+      }
     },
     {
       "id": "5140117BEC911CE9",
-      "x": 9.2,
-      "y": 28.99,
+      "x": 4.6,
+      "y": 26.09,
       "icon": {
         "id": "mob_grinding_utils:saw_upgrade_fire",
         "count": 1
@@ -1265,12 +1364,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140110BC63EC2F8": [
+          3.6,
+          23.39,
+          8.2,
+          25.56
+        ]
+      }
     },
     {
       "id": "51401183581A7EA5",
-      "x": 9.2,
-      "y": 32.49,
+      "x": 4.6,
+      "y": 29.19,
       "icon": {
         "id": "mob_grinding_utils:ender_inhibitor_on",
         "count": 1
@@ -1317,12 +1424,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140113D5477C077",
       "x": 0.0,
-      "y": 59.63,
+      "y": 53.43,
       "icon": {
         "id": "mob_grinding_utils:entity_spawner",
         "count": 1
@@ -1360,22 +1467,23 @@
           "id": "514013936F5AFEE9",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bow",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:hunting"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011311770DA6F",
       "x": 0.0,
-      "y": 52.63,
+      "y": 47.23,
       "icon": {
         "id": "mob_grinding_utils:mob_swab",
         "count": 1
@@ -1422,12 +1530,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011A899D0F63A",
       "x": 0.0,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "mob_grinding_utils:gm_chicken_feed",
         "count": 1
@@ -1475,12 +1583,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140118011E4720B",
       "x": 0.0,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "mob_grinding_utils:saw_upgrade_arthropod",
         "count": 1
@@ -1539,12 +1647,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011C36B07CA43",
       "x": 0.0,
-      "y": 63.13,
+      "y": 56.53,
       "icon": {
         "id": "mob_grinding_utils:spawner_upgrade_height",
         "count": 1
@@ -1603,7 +1711,15 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5140113D5477C077": [
+          3.6,
+          53.83,
+          3.6,
+          56.0
+        ]
+      }
     }
   ],
   "images": [
@@ -1674,9 +1790,9 @@
     {
       "id": "51410410000008CD",
       "x": 0.0,
-      "y": 3.8,
+      "y": 3.375,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1690,9 +1806,9 @@
     {
       "id": "51410410000008CE",
       "x": -12.395,
-      "y": 3.8,
+      "y": 3.375,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -1737,8 +1853,8 @@
     },
     {
       "id": "51410410000008D1",
-      "x": -9.2,
-      "y": 6.22,
+      "x": 0.0,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1753,8 +1869,8 @@
     },
     {
       "id": "51410410000008D2",
-      "x": 0.0,
-      "y": 6.22,
+      "x": 4.6,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1769,8 +1885,8 @@
     },
     {
       "id": "51410410000008D3",
-      "x": 4.6,
-      "y": 6.22,
+      "x": 9.2,
+      "y": 5.82,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1802,7 +1918,7 @@
     {
       "id": "51410410000008D5",
       "x": 0.0,
-      "y": 22.91,
+      "y": 20.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1833,8 +1949,8 @@
     },
     {
       "id": "51410410000008D7",
-      "x": 9.2,
-      "y": 33.36,
+      "x": 4.6,
+      "y": 30.06,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1850,9 +1966,9 @@
     {
       "id": "51410410000008D8",
       "x": 0.0,
-      "y": 13.87,
+      "y": 12.395,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -1866,9 +1982,9 @@
     {
       "id": "51410410000008D9",
       "x": -12.395,
-      "y": 13.87,
+      "y": 12.395,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -1882,7 +1998,7 @@
     {
       "id": "51410410000008DA",
       "x": 0.08,
-      "y": 8.78,
+      "y": 7.93,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -1898,7 +2014,7 @@
     {
       "id": "51410410000008DB",
       "x": 0.0,
-      "y": 11.09,
+      "y": 10.24,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1914,7 +2030,7 @@
     {
       "id": "51410410000008DC",
       "x": -4.6,
-      "y": 14.54,
+      "y": 13.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1929,8 +2045,8 @@
     },
     {
       "id": "51410410000008DD",
-      "x": 9.2,
-      "y": 14.59,
+      "x": 0.0,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1945,8 +2061,8 @@
     },
     {
       "id": "51410410000008DE",
-      "x": -9.2,
-      "y": 18.04,
+      "x": -4.6,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1961,8 +2077,8 @@
     },
     {
       "id": "51410410000008DF",
-      "x": -4.6,
-      "y": 18.04,
+      "x": 0.0,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1978,7 +2094,7 @@
     {
       "id": "51410410000008E0",
       "x": 4.6,
-      "y": 18.04,
+      "y": 16.39,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -1994,9 +2110,9 @@
     {
       "id": "51410410000008E1",
       "x": 0.0,
-      "y": 27.44,
+      "y": 24.515,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2010,9 +2126,9 @@
     {
       "id": "51410410000008E2",
       "x": -12.395,
-      "y": 27.44,
+      "y": 24.515,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -2026,7 +2142,7 @@
     {
       "id": "51410410000008E3",
       "x": 0.08,
-      "y": 20.6,
+      "y": 18.5,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2042,7 +2158,7 @@
     {
       "id": "51410410000008E4",
       "x": 0.0,
-      "y": 38.23,
+      "y": 34.48,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2057,8 +2173,8 @@
     },
     {
       "id": "51410410000008E5",
-      "x": 4.6,
-      "y": 41.68,
+      "x": 0.0,
+      "y": 37.53,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2074,7 +2190,7 @@
     {
       "id": "51410410000008E6",
       "x": -4.6,
-      "y": 38.23,
+      "y": 34.48,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2090,7 +2206,7 @@
     {
       "id": "51410410000008E7",
       "x": -4.6,
-      "y": 41.73,
+      "y": 37.58,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2105,8 +2221,8 @@
     },
     {
       "id": "51410410000008E8",
-      "x": 0.0,
-      "y": 45.23,
+      "x": -4.6,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2121,8 +2237,8 @@
     },
     {
       "id": "51410410000008E9",
-      "x": 4.6,
-      "y": 48.73,
+      "x": -4.6,
+      "y": 43.78,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2138,9 +2254,9 @@
     {
       "id": "51410410000008EA",
       "x": 0.0,
-      "y": 42.76,
+      "y": 38.185,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2154,9 +2270,9 @@
     {
       "id": "51410410000008EB",
       "x": -12.395,
-      "y": 42.76,
+      "y": 38.185,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -2170,7 +2286,7 @@
     {
       "id": "51410410000008EC",
       "x": 0.08,
-      "y": 35.92,
+      "y": 32.17,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2185,8 +2301,8 @@
     },
     {
       "id": "51410410000008ED",
-      "x": -4.6,
-      "y": 26.41,
+      "x": 0.0,
+      "y": 23.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2202,7 +2318,7 @@
     {
       "id": "51410410000008EE",
       "x": -9.2,
-      "y": 29.86,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2218,7 +2334,7 @@
     {
       "id": "51410410000008EF",
       "x": -4.6,
-      "y": 29.86,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2233,8 +2349,8 @@
     },
     {
       "id": "51410410000008F0",
-      "x": 4.6,
-      "y": 29.86,
+      "x": 0.0,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2249,8 +2365,8 @@
     },
     {
       "id": "51410410000008F1",
-      "x": 9.2,
-      "y": 29.86,
+      "x": 4.6,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2266,7 +2382,7 @@
     {
       "id": "51410410000008F2",
       "x": 0.0,
-      "y": 33.36,
+      "y": 30.06,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2282,9 +2398,9 @@
     {
       "id": "51410410000008F3",
       "x": 0.0,
-      "y": 58.08,
+      "y": 51.855,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2298,9 +2414,9 @@
     {
       "id": "51410410000008F4",
       "x": -12.395,
-      "y": 58.08,
+      "y": 51.855,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -2314,7 +2430,7 @@
     {
       "id": "51410410000008F5",
       "x": 0.08,
-      "y": 51.24,
+      "y": 45.84,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2330,7 +2446,7 @@
     {
       "id": "51410410000008F6",
       "x": 0.0,
-      "y": 53.55,
+      "y": 48.15,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2346,7 +2462,7 @@
     {
       "id": "51410410000008F7",
       "x": 0.0,
-      "y": 57.05,
+      "y": 51.25,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2362,7 +2478,7 @@
     {
       "id": "51410410000008F8",
       "x": 0.0,
-      "y": 60.55,
+      "y": 54.35,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2378,7 +2494,7 @@
     {
       "id": "51410410000008F9",
       "x": 0.0,
-      "y": 64.0,
+      "y": 57.4,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

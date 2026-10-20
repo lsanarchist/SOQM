@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -59,7 +59,7 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E969A0F7CE",
@@ -248,12 +248,13 @@
           "id": "513013B9D4BFB32C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bell",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:settlement"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
@@ -309,7 +310,7 @@
     },
     {
       "id": "51301126901318E8",
-      "x": -10.95,
+      "x": -7.95,
       "y": 9.47,
       "icon": {
         "id": "millenaire:norman_pickaxe",
@@ -362,7 +363,7 @@
     },
     {
       "id": "5130117294CB2337",
-      "x": -7.95,
+      "x": -4.95,
       "y": 9.47,
       "icon": {
         "id": "millenaire:norman_axe",
@@ -415,7 +416,7 @@
     },
     {
       "id": "5130112801E93EE8",
-      "x": -4.95,
+      "x": -1.95,
       "y": 9.47,
       "icon": {
         "id": "millenaire:norman_shovel",
@@ -468,8 +469,8 @@
     },
     {
       "id": "5130110665721692",
-      "x": -1.95,
-      "y": 9.47,
+      "x": -10.95,
+      "y": 12.27,
       "icon": {
         "id": "millenaire:norman_sword",
         "count": 1
@@ -601,12 +602,13 @@
           "id": "513013CF20AFE1E6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bell",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:settlement"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -663,7 +665,7 @@
     {
       "id": "513011EA691F5488",
       "x": -10.95,
-      "y": 12.27,
+      "y": 9.47,
       "icon": {
         "id": "millenaire:norman_helmet",
         "count": 1
@@ -1854,12 +1856,13 @@
           "id": "513013E6F7EF675B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:bell",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:settlement"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2380,22 +2383,6 @@
     {
       "id": "51410410000006E6",
       "x": -10.95,
-      "y": 13.14,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000006E7",
-      "x": -10.95,
       "y": 10.34,
       "width": 2.72,
       "height": 0.72,
@@ -2410,7 +2397,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006E8",
+      "id": "51410410000006E7",
       "x": -7.95,
       "y": 10.34,
       "width": 2.72,
@@ -2426,7 +2413,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006E9",
+      "id": "51410410000006E8",
       "x": -4.95,
       "y": 10.34,
       "width": 2.72,
@@ -2442,9 +2429,25 @@
       "order": 5
     },
     {
-      "id": "51410410000006EA",
+      "id": "51410410000006E9",
       "x": -1.95,
       "y": 10.34,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000006EA",
+      "x": -10.95,
+      "y": 13.14,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

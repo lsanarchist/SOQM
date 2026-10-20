@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_layout as layout
+import campaign_compatibility as compatibility
 import campaign_refresh as refresh
 import localize_english
 
@@ -35,12 +36,15 @@ class CampaignPresentationTests(unittest.TestCase):
         expected = load(ROOT / "metadata/campaign_identity.json")
         self.assertEqual(expected['base_commit'], 'e71db8398ddc9f07e85981fac942f52dd23f447d')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), expected['sha256'])
+        before_update = compatibility.previous_questbook(self.chapters)
+        self.assertEqual(refresh.persistent_identity(before_update, self.groups),
+                         expected['previous_questbook']['sha256'])
         # Check the historical hash as well: accepting a new full-campaign hash
         # alone could hide an accidental ID, owner or claim-scope change.
         previous = expected['previous_content']
         self.assertEqual(previous['added_quests'], ['514A110000000001'])
         self.assertEqual(previous['added_images'], ['514A140000000001'])
-        old = copy.deepcopy(self.chapters)
+        old = copy.deepcopy(before_update)
         for chapter in old:
             chapter['quests'] = [q for q in chapter['quests'] if q['id'] not in previous['added_quests']]
             chapter['images'] = [i for i in chapter['images'] if i['id'] not in previous['added_images']]
@@ -82,14 +86,36 @@ class CampaignPresentationTests(unittest.TestCase):
                 role = layout.role(quest)
                 if ident in critical:
                     self.assertEqual(role, 'route')
-                    self.assertFalse(quest['hide_dependency_lines'])
                 elif quest.get('optional'):
                     self.assertEqual(role, 'optional')
                     self.assertEqual(quest['shape'], 'circle')
                 elif any(t['type'] != 'item' for t in quest['tasks']):
                     self.assertEqual(role, 'practice')
-                self.assertIn(layout.ROLE_NAMES['uk_ua'][role], self.uk[f"quest.{ident}.quest_subtitle"])
-                self.assertIn(layout.ROLE_NAMES['en_us'][role], self.en[f"quest.{ident}.quest_subtitle"])
+                for locale in (self.uk, self.en):
+                    subtitle = locale[f"quest.{ident}.quest_subtitle"]
+                    self.assertTrue(subtitle.strip())
+                    self.assertNotRegex(subtitle, r'(?i)(?:Етап|Stage)\s+\d')
+                    self.assertNotRegex(subtitle, r'(?i)(?:Розвиток мода|Mod development)')
+
+    def test_reported_tooltips_explain_the_actual_device(self):
+        self.assertIn('Rainbow Furnace', self.uk['quest.514011907290DE48.quest_subtitle'])
+        self.assertIn('динамо', self.uk['quest.5130114CEA71331A.quest_subtitle'])
+        for locale in (self.uk, self.en):
+            self.assertIn('27', locale['quest.513011AE9CF26AB0.quest_subtitle'])
+
+    def test_last_skill_bonus_names_its_actual_antimatter_requirement(self):
+        # The skill tree's sixth material is antimatter, while the campaign's
+        # sixth main material is EMC Core. They must not share a guessed label.
+        quest = self.quests['51401114099D7F18']
+        task = next(t for t in quest['tasks'] if t['id'] == '5140126DEF5CDC49')
+        advancement = load(ROOT / 'overrides/kubejs/data/qm/advancement/skills/points_stage_6.json')
+        self.assertEqual(task['advancement'], 'qm:skills/points_stage_6')
+        self.assertEqual(advancement['criteria']['stage_component']['conditions']['items'][0]['items'],
+                         ['mekanism:pellet_antimatter'])
+        self.assertIn('Antimatter', self.en['quest.51401114099D7F18.title'])
+        self.assertIn('Antimatter Pellet', self.en['task.5140126DEF5CDC49.title'])
+        self.assertIn('антиматері', self.uk['quest.51401114099D7F18.title'])
+        self.assertNotIn('EMC', self.uk['task.5140126DEF5CDC49.title'])
 
     def test_every_caption_stays_below_its_node_inside_its_panel(self):
         for chapter in self.chapters:
@@ -133,31 +159,19 @@ class CampaignPresentationTests(unittest.TestCase):
         self.assertEqual(set(self.uk), set(self.en))
 
     def test_first_processor_and_main_workshop_edges_do_not_cross_other_icons(self):
-        def crosses(a, b, node):
-            # Segment vs expanded icon rectangle. Merely grazing an unrelated
-            # icon is insufficient clearance at ordinary questbook zoom levels.
-            low, high = 0.0, 1.0
-            radius = node['size'] / 2 + .03
-            for axis in ('x', 'y'):
-                delta = b[axis] - a[axis]
-                minimum, maximum = node[axis] - radius, node[axis] + radius
-                if abs(delta) < 1e-12:
-                    if not minimum < a[axis] < maximum:
-                        return False
-                else:
-                    enter, leave = sorted(((minimum - a[axis]) / delta, (maximum - a[axis]) / delta))
-                    low, high = max(low, enter), min(high, leave)
-            return low < high
-
         examples = (
             (layout.ROUTE_CHAPTER, '5130115E1ED084F6', '51301130F8B93E94'),
             ('qm_v030_12_ae2', '5130114314B68D20', '513011E6243A5B01'),
         )
         for filename, parent, child in examples:
             self.assertIn(parent, self.quests[child]['dependencies'])
+            if self.quests[child]['hide_dependency_lines']:
+                continue
+            points = layout.connection_points(self.quests[parent], self.quests[child])
             for node in self.by_filename[filename]['quests']:
                 if node['id'] not in (parent, child):
-                    self.assertFalse(crosses(self.quests[parent], self.quests[child], node), node['id'])
+                    icon = dict(x=node['x'], y=node['y'], width=node['size'], height=node['size'])
+                    self.assertFalse(layout.path_hits_box(points, icon), node['id'])
 
 
 if __name__ == '__main__':

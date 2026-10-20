@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -1074,7 +1074,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011363DFA013E",
@@ -1286,7 +1286,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011F40E94BA45",
@@ -1343,8 +1343,8 @@
     },
     {
       "id": "513011F7A8F75195",
-      "x": -7.95,
-      "y": 20.67,
+      "x": -10.95,
+      "y": 15.07,
       "icon": {
         "id": "divinerpg:ancient_entity_statue",
         "count": 1
@@ -1376,12 +1376,13 @@
           "id": "513013ACC0154111",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -1533,7 +1534,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301158AF0AE72E",
@@ -1961,8 +1962,8 @@
     },
     {
       "id": "51301121EF0C7608",
-      "x": -4.95,
-      "y": 20.67,
+      "x": -7.95,
+      "y": 15.07,
       "icon": {
         "id": "divinerpg:king_of_scorchers_statue",
         "count": 1
@@ -1994,12 +1995,13 @@
           "id": "5130135358B729D5",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2008,8 +2010,8 @@
     },
     {
       "id": "513011E6B7A5065D",
-      "x": -1.95,
-      "y": 20.67,
+      "x": -4.95,
+      "y": 15.07,
       "icon": {
         "id": "divinerpg:the_watcher_statue",
         "count": 1
@@ -2041,12 +2043,13 @@
           "id": "513013C6CDCEA689",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2055,8 +2058,8 @@
     },
     {
       "id": "51301152CC86C89E",
-      "x": -10.95,
-      "y": 23.47,
+      "x": -1.95,
+      "y": 15.07,
       "icon": {
         "id": "divinerpg:ayeraco_statue",
         "count": 1
@@ -2088,12 +2091,13 @@
           "id": "513013C11F0D04B2",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2135,12 +2139,13 @@
           "id": "513013BDB2ABD4A6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -2150,7 +2155,7 @@
     {
       "id": "5130112BF3B7F080",
       "x": -10.95,
-      "y": 15.07,
+      "y": 17.87,
       "icon": {
         "id": "divinerpg:divine_shards",
         "count": 1
@@ -2203,7 +2208,7 @@
     {
       "id": "513011B318B08FA9",
       "x": -7.95,
-      "y": 15.07,
+      "y": 17.87,
       "icon": {
         "id": "divinerpg:divine_stone",
         "count": 1
@@ -2251,12 +2256,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011B7CC484A3A",
       "x": -4.95,
-      "y": 15.07,
+      "y": 17.87,
       "icon": {
         "id": "divinerpg:divine_rock",
         "count": 1
@@ -2309,7 +2314,7 @@
     {
       "id": "5130118E36E8203B",
       "x": -1.95,
-      "y": 15.07,
+      "y": 17.87,
       "icon": {
         "id": "divinerpg:divine_sword",
         "count": 1
@@ -2362,7 +2367,7 @@
     {
       "id": "51301139E1A83AD8",
       "x": -10.95,
-      "y": 17.87,
+      "y": 20.67,
       "icon": {
         "id": "divinerpg:divine_pickaxe",
         "count": 1
@@ -2415,7 +2420,7 @@
     {
       "id": "513011887A90EDC4",
       "x": -7.95,
-      "y": 17.87,
+      "y": 20.67,
       "icon": {
         "id": "divinerpg:divine_shickaxe",
         "count": 1
@@ -2463,12 +2468,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011BD8895BA0C",
       "x": -4.95,
-      "y": 17.87,
+      "y": 20.67,
       "icon": {
         "id": "divinerpg:call_of_the_watcher",
         "count": 1
@@ -2521,7 +2526,7 @@
     {
       "id": "513011DED0E27719",
       "x": -1.95,
-      "y": 17.87,
+      "y": 20.67,
       "icon": {
         "id": "divinerpg:ancient_key",
         "count": 1
@@ -2574,7 +2579,7 @@
     {
       "id": "513011847FA6B1CB",
       "x": -10.95,
-      "y": 20.67,
+      "y": 23.47,
       "icon": {
         "id": "divinerpg:base_spawn_crystal",
         "count": 1
@@ -2659,17 +2664,18 @@
           "id": "51301318002830F1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301129236C7E9E",
@@ -2776,7 +2782,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301162D2C3B8F7",
@@ -2830,7 +2836,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111375CD52A0",
@@ -2868,17 +2874,18 @@
           "id": "5130135ACD5C3CDC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BB6996E76A",
@@ -2915,17 +2922,18 @@
           "id": "51301391A36FC48F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301101E12F76D6",
@@ -2963,12 +2971,13 @@
           "id": "513013D76A9EAE5A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3011,12 +3020,13 @@
           "id": "5130134291EF9EBA",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3058,12 +3068,13 @@
           "id": "5130131E309CF0C9",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3105,12 +3116,13 @@
           "id": "51301369BC34CB8C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3152,12 +3164,13 @@
           "id": "51301352C8FEE577",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3199,12 +3212,13 @@
           "id": "5130135E0A020371",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3246,12 +3260,13 @@
           "id": "5130139118224771",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -3634,7 +3649,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51301190FD028558",
@@ -4115,7 +4130,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011145410DB85",
@@ -4596,7 +4611,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011A96AABC497",
@@ -5163,17 +5178,18 @@
           "id": "513013B2BEEDCE36",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011227105E2BA",
@@ -5210,17 +5226,18 @@
           "id": "513013B19307F8A9",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118495441F94",
@@ -5327,7 +5344,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011A46F929BA0",
@@ -5381,7 +5398,7 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011A9F6BAF65C",
@@ -5418,12 +5435,13 @@
           "id": "513013756F2D87F7",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5465,12 +5483,13 @@
           "id": "513013105B811497",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5512,12 +5531,13 @@
           "id": "5130136B64A9EA15",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5559,12 +5579,13 @@
           "id": "51301388DD6844A1",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5606,12 +5627,13 @@
           "id": "51301312331034AF",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5653,12 +5675,13 @@
           "id": "513013C1FC67BF2F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5700,12 +5723,13 @@
           "id": "513013B5945BC89A",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5747,12 +5771,13 @@
           "id": "513013FA256B8826",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5794,12 +5819,13 @@
           "id": "513013811E72E43E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5841,12 +5867,13 @@
           "id": "513013C2C2B9C995",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5888,12 +5915,13 @@
           "id": "51301307B8FC130C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:compass",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:expedition"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
@@ -5952,7 +5980,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011672F8F80CE",
@@ -6763,7 +6791,7 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "513011D0BA7F36DC",
@@ -8148,8 +8176,8 @@
     },
     {
       "id": "5141041000000544",
-      "x": -7.95,
-      "y": 21.54,
+      "x": -10.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8164,8 +8192,8 @@
     },
     {
       "id": "5141041000000545",
-      "x": -4.95,
-      "y": 21.54,
+      "x": -7.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8180,8 +8208,8 @@
     },
     {
       "id": "5141041000000546",
-      "x": -1.95,
-      "y": 21.54,
+      "x": -4.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8196,8 +8224,8 @@
     },
     {
       "id": "5141041000000547",
-      "x": -10.95,
-      "y": 24.34,
+      "x": -1.95,
+      "y": 15.94,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8213,7 +8241,7 @@
     {
       "id": "5141041000000548",
       "x": -10.95,
-      "y": 15.99,
+      "y": 18.79,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8229,7 +8257,7 @@
     {
       "id": "5141041000000549",
       "x": -7.95,
-      "y": 15.99,
+      "y": 18.79,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8245,7 +8273,7 @@
     {
       "id": "514104100000054A",
       "x": -4.95,
-      "y": 15.99,
+      "y": 18.79,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8261,7 +8289,7 @@
     {
       "id": "514104100000054B",
       "x": -1.95,
-      "y": 15.99,
+      "y": 18.79,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8277,7 +8305,7 @@
     {
       "id": "514104100000054C",
       "x": -10.95,
-      "y": 18.79,
+      "y": 21.59,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8293,7 +8321,7 @@
     {
       "id": "514104100000054D",
       "x": -7.95,
-      "y": 18.79,
+      "y": 21.59,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8309,7 +8337,7 @@
     {
       "id": "514104100000054E",
       "x": -4.95,
-      "y": 18.79,
+      "y": 21.59,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8325,7 +8353,7 @@
     {
       "id": "514104100000054F",
       "x": -1.95,
-      "y": 18.79,
+      "y": 21.59,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -8341,7 +8369,7 @@
     {
       "id": "5141041000000550",
       "x": -10.95,
-      "y": 21.59,
+      "y": 24.39,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -67,12 +67,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EEAB3DF77B",
-      "x": -4.6,
-      "y": 5.35,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "industrialforegoing:fluid_extractor",
         "count": 1
@@ -120,12 +120,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111BE9BBE0D5": [
+          3.65,
+          2.3,
+          3.65,
+          4.47
+        ]
+      }
     },
     {
       "id": "5130111B4AB75BE7",
-      "x": -4.6,
-      "y": 8.85,
+      "x": 0.0,
+      "y": 8.05,
       "icon": {
         "id": "industrialforegoing:latex_processing_unit",
         "count": 1
@@ -175,12 +183,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011EEAB3DF77B": [
+          3.65,
+          5.4,
+          3.65,
+          7.57
+        ]
+      }
     },
     {
       "id": "51301137DA4E3B80",
-      "x": -4.6,
-      "y": 12.35,
+      "x": 0.0,
+      "y": 11.15,
       "icon": {
         "id": "industrialforegoing:dryrubber",
         "count": 1
@@ -228,12 +244,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111B4AB75BE7": [
+          3.65,
+          8.5,
+          3.65,
+          10.67
+        ]
+      }
     },
     {
       "id": "513011DB5BB9FB5B",
-      "x": 0.0,
-      "y": 12.35,
+      "x": -4.6,
+      "y": 11.15,
       "icon": {
         "id": "industrialforegoing:plastic",
         "count": 1
@@ -281,12 +305,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011905E9962AB",
-      "x": 9.2,
-      "y": 20.67,
+      "x": 4.6,
+      "y": 18.62,
       "icon": {
         "id": "industrialforegoing:machine_frame_simple",
         "count": 1
@@ -325,22 +349,23 @@
           "id": "513013DAE9D820AB",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301150CDD6664E",
       "x": 4.6,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "industrialforegoing:dissolution_chamber",
         "count": 1
@@ -389,12 +414,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301171CA29CEF3",
-      "x": -9.2,
-      "y": 24.17,
+      "x": -4.6,
+      "y": 21.72,
       "icon": {
         "id": "industrialforegoing:machine_frame_advanced",
         "count": 1
@@ -433,22 +458,23 @@
           "id": "513013FEC9B3E824",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F5C6B3A1A7",
       "x": 4.6,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "industrialforegoing:resourceful_furnace",
         "count": 1
@@ -498,12 +524,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110526994D7D",
       "x": 4.6,
-      "y": 35.99,
+      "y": 32.29,
       "icon": {
         "id": "industrialforegoing:material_stonework_factory",
         "count": 1
@@ -546,22 +572,23 @@
           "id": "513013B57BBAF92B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C5391BB59D",
       "x": 0.0,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "industrialforegoing:block_breaker",
         "count": 1
@@ -610,12 +637,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011EBEFDD9D81",
       "x": 9.2,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "industrialforegoing:block_placer",
         "count": 1
@@ -664,12 +691,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C62D389346",
       "x": -9.2,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "industrialforegoing:fluid_placer",
         "count": 1
@@ -718,12 +745,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011ECEDA27FBB",
       "x": 9.2,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "industrialforegoing:fluid_collector",
         "count": 1
@@ -772,12 +799,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D00529ECCA",
       "x": -4.6,
-      "y": 32.49,
+      "y": 29.19,
       "icon": {
         "id": "industrialforegoing:water_condensator",
         "count": 1
@@ -826,12 +853,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D4E145FBE3",
-      "x": -4.6,
-      "y": 44.31,
+      "x": 0.0,
+      "y": 39.76,
       "icon": {
         "id": "industrialforegoing:ore_laser_base",
         "count": 1
@@ -880,12 +907,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110CBA356673",
-      "x": 9.2,
-      "y": 44.31,
+      "x": 4.6,
+      "y": 39.76,
       "icon": {
         "id": "industrialforegoing:fluid_laser_base",
         "count": 1
@@ -935,12 +962,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301145D74317DD",
       "x": 4.6,
-      "y": 40.81,
+      "y": 36.66,
       "icon": {
         "id": "industrialforegoing:laser_drill",
         "count": 1
@@ -988,12 +1015,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D0D111A20A",
       "x": -4.6,
-      "y": 49.13,
+      "y": 44.13,
       "icon": {
         "id": "industrialforegoing:washing_factory",
         "count": 1
@@ -1042,12 +1069,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011151DE90C52",
-      "x": 0.0,
-      "y": 52.63,
+      "x": -4.6,
+      "y": 47.23,
       "icon": {
         "id": "industrialforegoing:fermentation_station",
         "count": 1
@@ -1095,12 +1122,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011D0D111A20A": [
+          -0.6,
+          44.53,
+          -0.6,
+          46.7
+        ]
+      }
     },
     {
       "id": "513011C168D23426",
-      "x": 0.0,
-      "y": 56.13,
+      "x": -4.6,
+      "y": 50.33,
       "icon": {
         "id": "industrialforegoing:fluid_sieving_machine",
         "count": 1
@@ -1148,12 +1183,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011151DE90C52": [
+          -0.6,
+          47.63,
+          -0.6,
+          49.8
+        ]
+      }
     },
     {
       "id": "51301154F33E4BE9",
       "x": -9.2,
-      "y": 60.95,
+      "y": 54.7,
       "icon": {
         "id": "industrialforegoing:mob_imprisonment_tool",
         "count": 1
@@ -1201,12 +1244,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011652C2C4B48",
       "x": -9.2,
-      "y": 20.67,
+      "y": 18.62,
       "icon": {
         "id": "industrialforegoing:mob_slaughter_factory",
         "count": 1
@@ -1256,12 +1299,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130116264236136",
       "x": -4.6,
-      "y": 60.95,
+      "y": 54.7,
       "icon": {
         "id": "industrialforegoing:mob_crusher",
         "count": 1
@@ -1312,12 +1355,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301110A6A327AA",
       "x": -4.6,
-      "y": 64.45,
+      "y": 57.8,
       "icon": {
         "id": "industrialforegoing:mob_duplicator",
         "count": 1
@@ -1357,22 +1400,23 @@
           "id": "5130136D5DF488FE",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118E4A798482",
       "x": -9.2,
-      "y": 64.45,
+      "y": 57.8,
       "icon": {
         "id": "industrialforegoing:mob_detector",
         "count": 1
@@ -1420,12 +1464,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301154F33E4BE9": [
+          -5.6,
+          55.1,
+          -5.6,
+          57.27
+        ]
+      }
     },
     {
       "id": "5130117AB9046CD2",
       "x": 4.6,
-      "y": 60.95,
+      "y": 54.7,
       "icon": {
         "id": "industrialforegoing:enchantment_extractor",
         "count": 1
@@ -1473,12 +1525,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011ED4F8D85C3",
-      "x": 4.6,
-      "y": 64.45,
+      "x": 0.0,
+      "y": 57.8,
       "icon": {
         "id": "industrialforegoing:enchantment_applicator",
         "count": 1
@@ -1528,12 +1580,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301127D84254AF",
       "x": 4.6,
-      "y": 69.27,
+      "y": 62.17,
       "icon": {
         "id": "industrialforegoing:machine_frame_supreme",
         "count": 1
@@ -1571,22 +1623,23 @@
           "id": "513013F7D7D88F19",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011A2D8626B22",
       "x": -9.2,
-      "y": 69.27,
+      "y": 62.17,
       "icon": {
         "id": "industrialforegoing:speed_addon_tier_1",
         "count": 1
@@ -1634,12 +1687,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011268D442A18",
       "x": -9.2,
-      "y": 72.77,
+      "y": 65.27,
       "icon": {
         "id": "industrialforegoing:speed_addon_tier_2",
         "count": 1
@@ -1687,12 +1740,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011A2D8626B22": [
+          -12.4,
+          62.57,
+          -12.4,
+          64.74
+        ]
+      }
     },
     {
       "id": "513011A48F738CFF",
       "x": -4.6,
-      "y": 69.27,
+      "y": 62.17,
       "icon": {
         "id": "industrialforegoing:efficiency_addon_tier_1",
         "count": 1
@@ -1740,12 +1801,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130116DDA11F4EE",
       "x": -4.6,
-      "y": 72.77,
+      "y": 65.27,
       "icon": {
         "id": "industrialforegoing:efficiency_addon_tier_2",
         "count": 1
@@ -1793,12 +1854,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111A5BD14B53",
       "x": 9.2,
-      "y": 69.27,
+      "y": 62.17,
       "icon": {
         "id": "industrialforegoing:processing_addon_tier_1",
         "count": 1
@@ -1848,12 +1909,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301109BDC10F3A",
       "x": 9.2,
-      "y": 72.77,
+      "y": 65.27,
       "icon": {
         "id": "industrialforegoing:processing_addon_tier_2",
         "count": 1
@@ -1903,12 +1964,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111A5BD14B53": [
+          13.2,
+          62.57,
+          13.2,
+          64.74
+        ]
+      }
     },
     {
       "id": "5130118C29E5449C",
       "x": 0.0,
-      "y": 69.27,
+      "y": 62.17,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_2",
         "count": 1
@@ -1956,12 +2025,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111D6C11FBB1",
-      "x": 4.6,
-      "y": 72.77,
+      "x": 0.0,
+      "y": 65.27,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_5",
         "count": 1
@@ -2009,12 +2078,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011A514A41277",
-      "x": 4.6,
-      "y": 76.27,
+      "x": 0.0,
+      "y": 68.37,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_8",
         "count": 1
@@ -2062,12 +2131,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011B20346E7E1",
-      "x": 4.6,
-      "y": 79.77,
+      "x": 0.0,
+      "y": 71.47,
       "icon": {
         "id": "industrialforegoing:range_addon_tier_11",
         "count": 1
@@ -2115,12 +2184,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011A514A41277": [
+          4.0,
+          68.77,
+          4.0,
+          70.94
+        ]
+      }
     },
     {
       "id": "513011162F45B0CF",
-      "x": 0.0,
-      "y": 72.77,
+      "x": 4.6,
+      "y": 65.27,
       "icon": {
         "id": "industrialforegoing:infinity_drill",
         "count": 1
@@ -2158,17 +2235,26 @@
           "id": "51301313DB0749B8",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301127D84254AF": [
+          8.2,
+          62.57,
+          8.2,
+          64.74
+        ]
+      }
     }
   ],
   "images": [
@@ -2239,9 +2325,9 @@
     {
       "id": "5141041000000295",
       "x": 0.0,
-      "y": 7.3,
+      "y": 6.475,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2255,9 +2341,9 @@
     {
       "id": "5141041000000296",
       "x": -12.395,
-      "y": 7.3,
+      "y": 6.475,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -2302,8 +2388,8 @@
     },
     {
       "id": "5141041000000299",
-      "x": -4.6,
-      "y": 6.27,
+      "x": 0.0,
+      "y": 5.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2318,8 +2404,8 @@
     },
     {
       "id": "514104100000029A",
-      "x": -4.6,
-      "y": 9.77,
+      "x": 0.0,
+      "y": 8.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2334,8 +2420,8 @@
     },
     {
       "id": "514104100000029B",
-      "x": -4.6,
-      "y": 13.27,
+      "x": 0.0,
+      "y": 12.07,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2350,8 +2436,8 @@
     },
     {
       "id": "514104100000029C",
-      "x": 0.0,
-      "y": 13.27,
+      "x": -4.6,
+      "y": 12.07,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2366,8 +2452,8 @@
     },
     {
       "id": "514104100000029D",
-      "x": 9.2,
-      "y": 21.59,
+      "x": 4.6,
+      "y": 19.54,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2383,7 +2469,7 @@
     {
       "id": "514104100000029E",
       "x": 4.6,
-      "y": 18.09,
+      "y": 16.44,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2398,8 +2484,8 @@
     },
     {
       "id": "514104100000029F",
-      "x": -9.2,
-      "y": 25.09,
+      "x": -4.6,
+      "y": 22.64,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2415,7 +2501,7 @@
     {
       "id": "51410410000002A0",
       "x": 4.6,
-      "y": 70.19,
+      "y": 63.09,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2431,9 +2517,9 @@
     {
       "id": "51410410000002A1",
       "x": 0.0,
-      "y": 20.87,
+      "y": 18.595,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2447,9 +2533,9 @@
     {
       "id": "51410410000002A2",
       "x": -12.395,
-      "y": 20.87,
+      "y": 18.595,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -2463,7 +2549,7 @@
     {
       "id": "51410410000002A3",
       "x": 0.08,
-      "y": 15.78,
+      "y": 14.13,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2479,7 +2565,7 @@
     {
       "id": "51410410000002A4",
       "x": 4.6,
-      "y": 29.91,
+      "y": 27.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2495,7 +2581,7 @@
     {
       "id": "51410410000002A5",
       "x": 4.6,
-      "y": 36.91,
+      "y": 33.21,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2511,7 +2597,7 @@
     {
       "id": "51410410000002A6",
       "x": -4.6,
-      "y": 50.0,
+      "y": 45.0,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2526,8 +2612,8 @@
     },
     {
       "id": "51410410000002A7",
-      "x": 0.0,
-      "y": 53.5,
+      "x": -4.6,
+      "y": 48.1,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2542,8 +2628,8 @@
     },
     {
       "id": "51410410000002A8",
-      "x": 0.0,
-      "y": 57.0,
+      "x": -4.6,
+      "y": 51.2,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2559,9 +2645,9 @@
     {
       "id": "51410410000002A9",
       "x": 0.0,
-      "y": 32.69,
+      "y": 29.165,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2575,9 +2661,9 @@
     {
       "id": "51410410000002AA",
       "x": -12.395,
-      "y": 32.69,
+      "y": 29.165,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -2591,7 +2677,7 @@
     {
       "id": "51410410000002AB",
       "x": 0.08,
-      "y": 27.6,
+      "y": 24.7,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2607,7 +2693,7 @@
     {
       "id": "51410410000002AC",
       "x": 0.0,
-      "y": 29.91,
+      "y": 27.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2623,7 +2709,7 @@
     {
       "id": "51410410000002AD",
       "x": 9.2,
-      "y": 29.86,
+      "y": 26.96,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2639,7 +2725,7 @@
     {
       "id": "51410410000002AE",
       "x": -9.2,
-      "y": 33.36,
+      "y": 30.06,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2655,7 +2741,7 @@
     {
       "id": "51410410000002AF",
       "x": 9.2,
-      "y": 33.36,
+      "y": 30.06,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2671,7 +2757,7 @@
     {
       "id": "51410410000002B0",
       "x": -4.6,
-      "y": 33.36,
+      "y": 30.06,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2687,9 +2773,9 @@
     {
       "id": "51410410000002B1",
       "x": 0.0,
-      "y": 42.76,
+      "y": 38.185,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2703,9 +2789,9 @@
     {
       "id": "51410410000002B2",
       "x": -12.395,
-      "y": 42.76,
+      "y": 38.185,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -2719,7 +2805,7 @@
     {
       "id": "51410410000002B3",
       "x": 0.08,
-      "y": 39.42,
+      "y": 35.27,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2734,8 +2820,8 @@
     },
     {
       "id": "51410410000002B4",
-      "x": -4.6,
-      "y": 45.23,
+      "x": 0.0,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2750,8 +2836,8 @@
     },
     {
       "id": "51410410000002B5",
-      "x": 9.2,
-      "y": 45.23,
+      "x": 4.6,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2767,7 +2853,7 @@
     {
       "id": "51410410000002B6",
       "x": 4.6,
-      "y": 41.73,
+      "y": 37.58,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2783,9 +2869,9 @@
     {
       "id": "51410410000002B7",
       "x": 0.0,
-      "y": 52.83,
+      "y": 47.205,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2799,9 +2885,9 @@
     {
       "id": "51410410000002B8",
       "x": -12.395,
-      "y": 52.83,
+      "y": 47.205,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -2815,7 +2901,7 @@
     {
       "id": "51410410000002B9",
       "x": 0.08,
-      "y": 47.74,
+      "y": 42.74,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2831,7 +2917,7 @@
     {
       "id": "51410410000002BA",
       "x": -9.2,
-      "y": 61.87,
+      "y": 55.62,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2847,7 +2933,7 @@
     {
       "id": "51410410000002BB",
       "x": -9.2,
-      "y": 21.59,
+      "y": 19.54,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2863,7 +2949,7 @@
     {
       "id": "51410410000002BC",
       "x": -4.6,
-      "y": 61.87,
+      "y": 55.62,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2879,7 +2965,7 @@
     {
       "id": "51410410000002BD",
       "x": -4.6,
-      "y": 65.37,
+      "y": 58.72,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2895,7 +2981,7 @@
     {
       "id": "51410410000002BE",
       "x": -9.2,
-      "y": 65.32,
+      "y": 58.67,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2911,7 +2997,7 @@
     {
       "id": "51410410000002BF",
       "x": 4.6,
-      "y": 61.82,
+      "y": 55.57,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2926,8 +3012,8 @@
     },
     {
       "id": "51410410000002C0",
-      "x": 4.6,
-      "y": 65.32,
+      "x": 0.0,
+      "y": 58.67,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -2943,9 +3029,9 @@
     {
       "id": "51410410000002C1",
       "x": 0.0,
-      "y": 62.9,
+      "y": 56.225,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -2959,9 +3045,9 @@
     {
       "id": "51410410000002C2",
       "x": -12.395,
-      "y": 62.9,
+      "y": 56.225,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -2975,7 +3061,7 @@
     {
       "id": "51410410000002C3",
       "x": 0.08,
-      "y": 59.56,
+      "y": 53.31,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -2991,7 +3077,7 @@
     {
       "id": "51410410000002C4",
       "x": -9.2,
-      "y": 70.14,
+      "y": 63.04,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3007,7 +3093,7 @@
     {
       "id": "51410410000002C5",
       "x": -9.2,
-      "y": 73.64,
+      "y": 66.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3023,7 +3109,7 @@
     {
       "id": "51410410000002C6",
       "x": -4.6,
-      "y": 70.14,
+      "y": 63.04,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3039,7 +3125,7 @@
     {
       "id": "51410410000002C7",
       "x": -4.6,
-      "y": 73.64,
+      "y": 66.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3055,7 +3141,7 @@
     {
       "id": "51410410000002C8",
       "x": 9.2,
-      "y": 70.14,
+      "y": 63.04,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3071,7 +3157,7 @@
     {
       "id": "51410410000002C9",
       "x": 9.2,
-      "y": 73.64,
+      "y": 66.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3087,9 +3173,9 @@
     {
       "id": "51410410000002CA",
       "x": 0.0,
-      "y": 74.72,
+      "y": 66.795,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3103,9 +3189,9 @@
     {
       "id": "51410410000002CB",
       "x": -12.395,
-      "y": 74.72,
+      "y": 66.795,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3119,7 +3205,7 @@
     {
       "id": "51410410000002CC",
       "x": 0.08,
-      "y": 67.88,
+      "y": 60.78,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3135,7 +3221,7 @@
     {
       "id": "51410410000002CD",
       "x": 0.0,
-      "y": 70.14,
+      "y": 63.04,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3150,8 +3236,8 @@
     },
     {
       "id": "51410410000002CE",
-      "x": 4.6,
-      "y": 73.64,
+      "x": 0.0,
+      "y": 66.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3166,8 +3252,8 @@
     },
     {
       "id": "51410410000002CF",
-      "x": 4.6,
-      "y": 77.14,
+      "x": 0.0,
+      "y": 69.24,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3182,8 +3268,8 @@
     },
     {
       "id": "51410410000002D0",
-      "x": 4.6,
-      "y": 80.64,
+      "x": 0.0,
+      "y": 72.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3198,8 +3284,8 @@
     },
     {
       "id": "51410410000002D1",
-      "x": 0.0,
-      "y": 73.64,
+      "x": 4.6,
+      "y": 66.14,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

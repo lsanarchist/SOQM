@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,8 +17,8 @@
   "quests": [
     {
       "id": "51301183B8CF29F5",
-      "x": 4.6,
-      "y": 20.67,
+      "x": -9.2,
+      "y": 18.62,
       "icon": {
         "id": "enderio:vibrant_alloy_ingot",
         "count": 1
@@ -66,7 +66,15 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011AC2178359B": [
+          -5.39,
+          16.13,
+          -5.39,
+          18.3
+        ]
+      }
     },
     {
       "id": "513011B5F4763E7A",
@@ -119,12 +127,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AC2178359B",
-      "x": 0.0,
-      "y": 17.17,
+      "x": -9.2,
+      "y": 15.52,
       "icon": {
         "id": "enderio:energetic_alloy_ingot",
         "count": 1
@@ -172,12 +180,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011725F799C0A": [
+          -5.39,
+          13.03,
+          -5.39,
+          15.2
+        ]
+      }
     },
     {
       "id": "513011C98821DCE8",
       "x": 0.0,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "enderio:redstone_alloy_ingot",
         "count": 1
@@ -225,12 +241,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011725F799C0A",
       "x": -9.2,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "enderio:conductive_alloy_ingot",
         "count": 1
@@ -278,12 +294,12 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301102C5F5EF51",
       "x": -4.6,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "enderio:pulsating_alloy_ingot",
         "count": 1
@@ -332,12 +348,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111DBA46A20B",
       "x": 4.6,
-      "y": 13.67,
+      "y": 12.42,
       "icon": {
         "id": "enderio:dark_steel_ingot",
         "count": 1
@@ -385,12 +401,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BBFAA4813B",
       "x": 4.6,
-      "y": 17.17,
+      "y": 15.52,
       "icon": {
         "id": "enderio:end_steel_ingot",
         "count": 1
@@ -438,7 +454,15 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111DBA46A20B": [
+          8.25,
+          12.87,
+          8.25,
+          15.04
+        ]
+      }
     },
     {
       "id": "513011D9AD5BA43B",
@@ -491,12 +515,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E8D057E271",
       "x": 0.0,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "enderio:basic_capacitor",
         "count": 1
@@ -544,12 +568,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011B5F4763E7A": [
+          3.81,
+          2.46,
+          3.81,
+          4.63
+        ]
+      }
     },
     {
       "id": "513011841D3B76CA",
       "x": -9.2,
-      "y": 44.31,
+      "y": 39.76,
       "icon": {
         "id": "enderio:double_layer_capacitor",
         "count": 1
@@ -597,12 +629,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118049B3B5BA",
       "x": 4.6,
-      "y": 5.35,
+      "y": 4.95,
       "icon": {
         "id": "enderio:void_chassis",
         "count": 1
@@ -650,12 +682,20 @@
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011B5F4763E7A": [
+          3.81,
+          2.46,
+          8.41,
+          4.63
+        ]
+      }
     },
     {
       "id": "5130116AAAF4B959",
-      "x": 0.0,
-      "y": 35.99,
+      "x": -4.6,
+      "y": 32.29,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -701,12 +741,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114AE9005E27",
       "x": 9.2,
-      "y": 79.77,
+      "y": 71.47,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -752,12 +792,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130119426F8E5C3",
-      "x": -4.6,
-      "y": 35.99,
+      "x": -9.2,
+      "y": 32.29,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -794,22 +834,23 @@
           "id": "513013C867A67CEC",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011B05E2E9113",
       "x": 4.6,
-      "y": 79.77,
+      "y": 71.47,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -855,12 +896,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011E370A685E5",
-      "x": 4.6,
-      "y": 35.99,
+      "x": 0.0,
+      "y": 32.29,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -906,12 +947,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130110FC0DFEDC3",
       "x": -9.2,
-      "y": 79.77,
+      "y": 71.47,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -957,12 +998,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130115B49AE7E7C",
-      "x": 9.2,
-      "y": 35.99,
+      "x": 4.6,
+      "y": 32.29,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -1008,12 +1049,12 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301189AE52B1F5",
       "x": 9.2,
-      "y": 44.31,
+      "y": 39.76,
       "icon": {
         "id": "enderio:sag_mill",
         "count": 1
@@ -1062,12 +1103,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111869DF4496",
       "x": -9.2,
-      "y": 28.99,
+      "y": 26.09,
       "icon": {
         "id": "enderio:conduit_binder_composite",
         "count": 1
@@ -1115,12 +1156,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FD63F841AE",
-      "x": 9.2,
-      "y": 32.49,
+      "x": -9.2,
+      "y": 29.19,
       "icon": {
         "id": "enderio:conduit_binder",
         "count": 1
@@ -1168,12 +1209,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130111869DF4496": [
+          -5.55,
+          26.54,
+          -5.55,
+          28.71
+        ]
+      }
     },
     {
       "id": "5130118E25820DD5",
-      "x": -9.2,
-      "y": 17.17,
+      "x": -4.6,
+      "y": 15.52,
       "icon": {
         "id": "enderio:pulsating_crystal",
         "count": 1
@@ -1221,12 +1270,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301102C5F5EF51": [
+          -0.95,
+          12.87,
+          -0.95,
+          15.04
+        ]
+      }
     },
     {
       "id": "513011FF94962AA3",
-      "x": 9.2,
-      "y": 24.17,
+      "x": -9.2,
+      "y": 21.72,
       "icon": {
         "id": "enderio:vibrant_crystal",
         "count": 1
@@ -1274,12 +1331,20 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "51301183B8CF29F5": [
+          -5.55,
+          19.07,
+          -5.55,
+          21.24
+        ]
+      }
     },
     {
       "id": "51301138C137BDAD",
-      "x": 4.6,
-      "y": 66.63,
+      "x": 0.0,
+      "y": 59.63,
       "icon": {
         "id": "enderio:ender_crystal",
         "count": 1
@@ -1328,12 +1393,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011C540A7B224",
-      "x": 0.0,
-      "y": 39.49,
+      "x": -9.2,
+      "y": 35.39,
       "icon": {
         "id": "enderio:basic_item_filter",
         "count": 1
@@ -1382,12 +1447,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130119426F8E5C3": [
+          -5.6,
+          32.69,
+          -5.6,
+          34.86
+        ]
+      }
     },
     {
       "id": "513011FDA169E434",
       "x": -9.2,
-      "y": 71.45,
+      "y": 64.0,
       "icon": {
         "id": "enderio:advanced_item_filter",
         "count": 1
@@ -1435,12 +1508,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130112CBAC535EA",
       "x": -9.2,
-      "y": 74.95,
+      "y": 67.1,
       "icon": {
         "id": "enderio:limited_item_filter",
         "count": 1
@@ -1487,12 +1560,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011FDA169E434": [
+          -12.4,
+          64.4,
+          -12.4,
+          66.57
+        ]
+      }
     },
     {
       "id": "513011F31A34A8F8",
-      "x": -9.2,
-      "y": 39.49,
+      "x": -4.6,
+      "y": 35.39,
       "icon": {
         "id": "enderio:conduit_probe",
         "count": 1
@@ -1541,12 +1622,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011734EE3175F",
-      "x": 4.6,
-      "y": 39.49,
+      "x": 0.0,
+      "y": 35.39,
       "icon": {
         "id": "enderio:basic_fluid_filter",
         "count": 1
@@ -1595,12 +1676,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011E370A685E5": [
+          3.6,
+          32.69,
+          3.6,
+          34.86
+        ]
+      }
     },
     {
       "id": "5130118E40386623",
       "x": 9.2,
-      "y": 39.49,
+      "y": 35.39,
       "icon": {
         "id": "enderio:basic_chemical_filter",
         "count": 1
@@ -1648,12 +1737,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301146B3D81FD6",
-      "x": -9.2,
-      "y": 83.27,
+      "x": 9.2,
+      "y": 74.57,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -1698,12 +1787,20 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130114AE9005E27": [
+          12.93,
+          72.0,
+          12.93,
+          74.17
+        ]
+      }
     },
     {
       "id": "513011107F0255F3",
-      "x": 0.0,
-      "y": 83.27,
+      "x": 4.6,
+      "y": 74.57,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -1748,12 +1845,20 @@
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "513011B05E2E9113": [
+          8.33,
+          72.0,
+          8.33,
+          74.17
+        ]
+      }
     },
     {
       "id": "5130111E28B22B76",
-      "x": 9.2,
-      "y": 83.27,
+      "x": -9.2,
+      "y": 74.57,
       "icon": {
         "id": "enderio:conduit",
         "count": 1,
@@ -1788,22 +1893,31 @@
           "id": "5130130443ADE4C4",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.06,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130110FC0DFEDC3": [
+          -5.47,
+          72.0,
+          -5.47,
+          74.17
+        ]
+      }
     },
     {
       "id": "5130114938E63897",
       "x": -4.6,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "enderio:soularium_ingot",
         "count": 1
@@ -1850,12 +1964,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301110F3A4858C",
-      "x": 9.2,
-      "y": 56.13,
+      "x": 0.0,
+      "y": 50.33,
       "icon": {
         "id": "enderio:soul_vial",
         "count": 1
@@ -1907,8 +2021,8 @@
     },
     {
       "id": "51301148615D2591",
-      "x": 0.0,
-      "y": 63.13,
+      "x": -4.6,
+      "y": 56.53,
       "icon": {
         "id": "enderio:soul_binder",
         "count": 1
@@ -1948,22 +2062,23 @@
           "id": "513013AF260BDB13",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301167AE8889AA",
-      "x": 0.0,
-      "y": 66.63,
+      "x": -4.6,
+      "y": 59.63,
       "icon": {
         "id": "enderio:powered_spawner",
         "count": 1
@@ -2002,22 +2117,23 @@
           "id": "5130139A8997083F",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130114A639B43DA",
-      "x": 9.2,
-      "y": 59.63,
+      "x": -4.6,
+      "y": 53.43,
       "icon": {
         "id": "enderio:slice_and_splice",
         "count": 1
@@ -2066,12 +2182,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "51301140FB4C14AE",
       "x": 9.2,
-      "y": 71.45,
+      "y": 64.0,
       "icon": {
         "id": "enderio:vacuum_chest",
         "count": 1
@@ -2120,12 +2236,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AF7BCC8C7E",
       "x": -4.6,
-      "y": 44.31,
+      "y": 39.76,
       "icon": {
         "id": "enderio:impulse_hopper",
         "count": 1
@@ -2173,12 +2289,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130119DF4466A66",
       "x": 0.0,
-      "y": 44.31,
+      "y": 39.76,
       "icon": {
         "id": "enderio:crafter",
         "count": 1
@@ -2227,12 +2343,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118BFEDE7D48",
       "x": 0.0,
-      "y": 74.95,
+      "y": 67.1,
       "icon": {
         "id": "enderio:aversion_obelisk",
         "count": 1
@@ -2280,12 +2396,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011F0F034B9F6",
       "x": 9.2,
-      "y": 74.95,
+      "y": 67.1,
       "icon": {
         "id": "enderio:inhibitor_obelisk",
         "count": 1
@@ -2333,12 +2449,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130117801127762",
       "x": -4.6,
-      "y": 71.45,
+      "y": 64.0,
       "icon": {
         "id": "enderio:vat",
         "count": 1
@@ -2386,12 +2502,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111D0F34D9B7",
       "x": -9.2,
-      "y": 56.13,
+      "y": 50.33,
       "icon": {
         "id": "enderio:enchanter",
         "count": 1
@@ -2439,12 +2555,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011AA9C81A28D",
       "x": -4.6,
-      "y": 88.09,
+      "y": 78.94,
       "icon": {
         "id": "enderio:travel_anchor",
         "count": 1
@@ -2493,12 +2609,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130113D7D320C50",
-      "x": 4.6,
-      "y": 91.59,
+      "x": -4.6,
+      "y": 82.04,
       "icon": {
         "id": "enderio:staff_of_travelling",
         "count": 1
@@ -2546,12 +2662,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130111D94D99E2B",
       "x": 9.2,
-      "y": 47.81,
+      "y": 42.86,
       "icon": {
         "id": "enderio:basic_capacitor_bank",
         "count": 1
@@ -2600,12 +2716,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011FDD244B182",
-      "x": 9.2,
-      "y": 51.31,
+      "x": 4.6,
+      "y": 45.96,
       "icon": {
         "id": "enderio:advanced_capacitor_bank",
         "count": 1
@@ -2654,12 +2770,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011BF7BA29A4B",
       "x": -9.2,
-      "y": 88.09,
+      "y": 78.94,
       "icon": {
         "id": "enderio:vibrant_capacitor_bank",
         "count": 1
@@ -2707,12 +2823,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D09E534066",
       "x": 0.0,
-      "y": 88.09,
+      "y": 78.94,
       "icon": {
         "id": "enderio:energetic_photovoltaic_module",
         "count": 1
@@ -2759,12 +2875,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5130118ED672EF1E",
       "x": 0.0,
-      "y": 91.59,
+      "y": 82.04,
       "icon": {
         "id": "enderio:pulsating_photovoltaic_module",
         "count": 1
@@ -2813,12 +2929,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "513011D5BDA26046",
-      "x": -9.2,
-      "y": 95.09,
+      "x": 0.0,
+      "y": 85.14,
       "icon": {
         "id": "enderio:vibrant_photovoltaic_module",
         "count": 1
@@ -2866,12 +2982,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "5130118ED672EF1E": [
+          4.0,
+          82.44,
+          4.0,
+          84.61
+        ]
+      }
     },
     {
       "id": "513011403518CC36",
       "x": 4.6,
-      "y": 71.45,
+      "y": 64.0,
       "icon": {
         "id": "enderio:wireless_charger",
         "count": 1
@@ -2919,12 +3043,12 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "514011487657F862",
-      "x": -4.6,
-      "y": 8.85,
+      "x": 0.0,
+      "y": 8.05,
       "icon": {
         "id": "enderio:alloy_smelter",
         "count": 1
@@ -2963,17 +3087,18 @@
           "id": "51401385C2766AE6",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "mekanism:basic_control_circuit",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:engineering"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t1",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -3044,9 +3169,9 @@
     {
       "id": "5141041000000241",
       "x": 0.0,
-      "y": 5.55,
+      "y": 4.925,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3060,9 +3185,9 @@
     {
       "id": "5141041000000242",
       "x": -12.395,
-      "y": 5.55,
+      "y": 4.925,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -3124,7 +3249,7 @@
     {
       "id": "5141041000000246",
       "x": 4.6,
-      "y": 6.43,
+      "y": 6.03,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3139,8 +3264,8 @@
     },
     {
       "id": "5141041000000247",
-      "x": -4.6,
-      "y": 9.93,
+      "x": 0.0,
+      "y": 9.13,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3156,7 +3281,7 @@
     {
       "id": "5141041000000248",
       "x": 0.0,
-      "y": 14.59,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3172,7 +3297,7 @@
     {
       "id": "5141041000000249",
       "x": -9.2,
-      "y": 14.75,
+      "y": 13.5,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3187,8 +3312,8 @@
     },
     {
       "id": "514104100000024A",
-      "x": 0.0,
-      "y": 18.25,
+      "x": -9.2,
+      "y": 16.6,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3204,7 +3329,7 @@
     {
       "id": "514104100000024B",
       "x": -4.6,
-      "y": 14.59,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3219,8 +3344,8 @@
     },
     {
       "id": "514104100000024C",
-      "x": 4.6,
-      "y": 21.75,
+      "x": -9.2,
+      "y": 19.7,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3236,7 +3361,7 @@
     {
       "id": "514104100000024D",
       "x": 4.6,
-      "y": 14.59,
+      "y": 13.34,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3252,7 +3377,7 @@
     {
       "id": "514104100000024E",
       "x": 4.6,
-      "y": 18.09,
+      "y": 16.44,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3268,7 +3393,7 @@
     {
       "id": "514104100000024F",
       "x": -4.6,
-      "y": 57.05,
+      "y": 51.25,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3284,9 +3409,9 @@
     {
       "id": "5141041000000250",
       "x": 0.0,
-      "y": 19.12,
+      "y": 17.045,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3300,9 +3425,9 @@
     {
       "id": "5141041000000251",
       "x": -12.395,
-      "y": 19.12,
+      "y": 17.045,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -3316,7 +3441,7 @@
     {
       "id": "5141041000000252",
       "x": 0.08,
-      "y": 12.28,
+      "y": 11.03,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3332,7 +3457,7 @@
     {
       "id": "5141041000000253",
       "x": 0.0,
-      "y": 6.43,
+      "y": 6.03,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3348,7 +3473,7 @@
     {
       "id": "5141041000000254",
       "x": -9.2,
-      "y": 45.23,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3363,8 +3488,8 @@
     },
     {
       "id": "5141041000000255",
-      "x": -9.2,
-      "y": 18.09,
+      "x": -4.6,
+      "y": 16.44,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3379,8 +3504,8 @@
     },
     {
       "id": "5141041000000256",
-      "x": 9.2,
-      "y": 25.09,
+      "x": -9.2,
+      "y": 22.64,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3395,8 +3520,8 @@
     },
     {
       "id": "5141041000000257",
-      "x": 4.6,
-      "y": 67.55,
+      "x": 0.0,
+      "y": 60.55,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3412,9 +3537,9 @@
     {
       "id": "5141041000000258",
       "x": 0.0,
-      "y": 34.44,
+      "y": 30.715,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3428,9 +3553,9 @@
     {
       "id": "5141041000000259",
       "x": -12.395,
-      "y": 34.44,
+      "y": 30.715,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -3444,7 +3569,7 @@
     {
       "id": "514104100000025A",
       "x": 0.08,
-      "y": 27.6,
+      "y": 24.7,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3460,7 +3585,7 @@
     {
       "id": "514104100000025B",
       "x": -9.2,
-      "y": 29.91,
+      "y": 27.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3475,8 +3600,8 @@
     },
     {
       "id": "514104100000025C",
-      "x": 9.2,
-      "y": 33.41,
+      "x": -9.2,
+      "y": 30.11,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3491,8 +3616,8 @@
     },
     {
       "id": "514104100000025D",
-      "x": 0.0,
-      "y": 36.99,
+      "x": -4.6,
+      "y": 33.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3508,7 +3633,7 @@
     {
       "id": "514104100000025E",
       "x": 9.2,
-      "y": 80.77,
+      "y": 72.47,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3523,8 +3648,8 @@
     },
     {
       "id": "514104100000025F",
-      "x": -9.2,
-      "y": 84.27,
+      "x": 9.2,
+      "y": 75.57,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3540,9 +3665,9 @@
     {
       "id": "5141041000000260",
       "x": 0.0,
-      "y": 48.01,
+      "y": 42.835,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3556,9 +3681,9 @@
     {
       "id": "5141041000000261",
       "x": -12.395,
-      "y": 48.01,
+      "y": 42.835,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8B58CDB",
       "text_on_image": false,
@@ -3572,7 +3697,7 @@
     {
       "id": "5141041000000262",
       "x": 0.08,
-      "y": 42.92,
+      "y": 38.37,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3587,8 +3712,8 @@
     },
     {
       "id": "5141041000000263",
-      "x": -4.6,
-      "y": 36.99,
+      "x": -9.2,
+      "y": 33.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3604,7 +3729,7 @@
     {
       "id": "5141041000000264",
       "x": 4.6,
-      "y": 80.77,
+      "y": 72.47,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3619,8 +3744,8 @@
     },
     {
       "id": "5141041000000265",
-      "x": 4.6,
-      "y": 36.99,
+      "x": 0.0,
+      "y": 33.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3636,7 +3761,7 @@
     {
       "id": "5141041000000266",
       "x": -9.2,
-      "y": 80.77,
+      "y": 72.47,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3651,8 +3776,8 @@
     },
     {
       "id": "5141041000000267",
-      "x": 9.2,
-      "y": 36.99,
+      "x": 4.6,
+      "y": 33.29,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3667,8 +3792,8 @@
     },
     {
       "id": "5141041000000268",
-      "x": 0.0,
-      "y": 40.36,
+      "x": -9.2,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3684,7 +3809,7 @@
     {
       "id": "5141041000000269",
       "x": -9.2,
-      "y": 72.32,
+      "y": 64.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3700,7 +3825,7 @@
     {
       "id": "514104100000026A",
       "x": -9.2,
-      "y": 75.82,
+      "y": 67.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3715,8 +3840,8 @@
     },
     {
       "id": "514104100000026B",
-      "x": -9.2,
-      "y": 40.36,
+      "x": -4.6,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3731,8 +3856,8 @@
     },
     {
       "id": "514104100000026C",
-      "x": 4.6,
-      "y": 40.36,
+      "x": 0.0,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3748,7 +3873,7 @@
     {
       "id": "514104100000026D",
       "x": 9.2,
-      "y": 40.36,
+      "y": 36.26,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3763,8 +3888,8 @@
     },
     {
       "id": "514104100000026E",
-      "x": 0.0,
-      "y": 84.27,
+      "x": 4.6,
+      "y": 75.57,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3779,8 +3904,8 @@
     },
     {
       "id": "514104100000026F",
-      "x": 9.2,
-      "y": 84.27,
+      "x": -9.2,
+      "y": 75.57,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3796,9 +3921,9 @@
     {
       "id": "5141041000000270",
       "x": 0.0,
-      "y": 61.58,
+      "y": 54.955,
       "width": 24.9,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3812,9 +3937,9 @@
     {
       "id": "5141041000000271",
       "x": -12.395,
-      "y": 61.58,
+      "y": 54.955,
       "width": 0.11,
-      "height": 14.6,
+      "height": 12.95,
       "rotation": 0.0,
       "image": "color:#E8E393A7",
       "text_on_image": false,
@@ -3828,7 +3953,7 @@
     {
       "id": "5141041000000272",
       "x": 0.08,
-      "y": 54.74,
+      "y": 48.94,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -3844,7 +3969,7 @@
     {
       "id": "5141041000000273",
       "x": 9.2,
-      "y": 45.23,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3859,8 +3984,8 @@
     },
     {
       "id": "5141041000000274",
-      "x": 9.2,
-      "y": 60.55,
+      "x": -4.6,
+      "y": 54.35,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3876,7 +4001,7 @@
     {
       "id": "5141041000000275",
       "x": 9.2,
-      "y": 72.37,
+      "y": 64.92,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3892,7 +4017,7 @@
     {
       "id": "5141041000000276",
       "x": -4.6,
-      "y": 45.18,
+      "y": 40.63,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3908,7 +4033,7 @@
     {
       "id": "5141041000000277",
       "x": 0.0,
-      "y": 45.23,
+      "y": 40.68,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3924,7 +4049,7 @@
     {
       "id": "5141041000000278",
       "x": -4.6,
-      "y": 72.32,
+      "y": 64.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3940,7 +4065,7 @@
     {
       "id": "5141041000000279",
       "x": -9.2,
-      "y": 57.05,
+      "y": 51.25,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -3956,9 +4081,9 @@
     {
       "id": "514104100000027A",
       "x": 0.0,
-      "y": 73.4,
+      "y": 65.525,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -3972,9 +4097,9 @@
     {
       "id": "514104100000027B",
       "x": -12.395,
-      "y": 73.4,
+      "y": 65.525,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8F1C96B",
       "text_on_image": false,
@@ -3988,7 +4113,7 @@
     {
       "id": "514104100000027C",
       "x": 0.08,
-      "y": 70.06,
+      "y": 62.61,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4003,8 +4128,8 @@
     },
     {
       "id": "514104100000027D",
-      "x": 9.2,
-      "y": 57.05,
+      "x": 0.0,
+      "y": 51.25,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4019,8 +4144,8 @@
     },
     {
       "id": "514104100000027E",
-      "x": 0.0,
-      "y": 64.05,
+      "x": -4.6,
+      "y": 57.45,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4035,8 +4160,8 @@
     },
     {
       "id": "514104100000027F",
-      "x": 0.0,
-      "y": 67.55,
+      "x": -4.6,
+      "y": 60.55,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4052,7 +4177,7 @@
     {
       "id": "5141041000000280",
       "x": 0.0,
-      "y": 75.82,
+      "y": 67.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4068,7 +4193,7 @@
     {
       "id": "5141041000000281",
       "x": 9.2,
-      "y": 75.82,
+      "y": 67.97,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4084,9 +4209,9 @@
     {
       "id": "5141041000000282",
       "x": 0.0,
-      "y": 81.72,
+      "y": 72.995,
       "width": 24.9,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4100,9 +4225,9 @@
     {
       "id": "5141041000000283",
       "x": -12.395,
-      "y": 81.72,
+      "y": 72.995,
       "width": 0.11,
-      "height": 7.6,
+      "height": 6.75,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -4116,7 +4241,7 @@
     {
       "id": "5141041000000284",
       "x": 0.08,
-      "y": 78.38,
+      "y": 70.08,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4132,7 +4257,7 @@
     {
       "id": "5141041000000285",
       "x": -4.6,
-      "y": 88.96,
+      "y": 79.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4147,8 +4272,8 @@
     },
     {
       "id": "5141041000000286",
-      "x": 4.6,
-      "y": 92.46,
+      "x": -4.6,
+      "y": 82.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4164,9 +4289,9 @@
     {
       "id": "5141041000000287",
       "x": 0.0,
-      "y": 91.79,
+      "y": 82.015,
       "width": 24.9,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#FF1D2A3A",
       "text_on_image": false,
@@ -4180,9 +4305,9 @@
     {
       "id": "5141041000000288",
       "x": -12.395,
-      "y": 91.79,
+      "y": 82.015,
       "width": 0.11,
-      "height": 11.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -4196,7 +4321,7 @@
     {
       "id": "5141041000000289",
       "x": 0.08,
-      "y": 86.7,
+      "y": 77.55,
       "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
@@ -4212,7 +4337,7 @@
     {
       "id": "514104100000028A",
       "x": 9.2,
-      "y": 48.68,
+      "y": 43.73,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4227,8 +4352,8 @@
     },
     {
       "id": "514104100000028B",
-      "x": 9.2,
-      "y": 52.18,
+      "x": 4.6,
+      "y": 46.83,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4244,7 +4369,7 @@
     {
       "id": "514104100000028C",
       "x": -9.2,
-      "y": 88.96,
+      "y": 79.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4260,7 +4385,7 @@
     {
       "id": "514104100000028D",
       "x": 0.0,
-      "y": 88.96,
+      "y": 79.81,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4276,7 +4401,7 @@
     {
       "id": "514104100000028E",
       "x": 0.0,
-      "y": 92.46,
+      "y": 82.91,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4291,8 +4416,8 @@
     },
     {
       "id": "514104100000028F",
-      "x": -9.2,
-      "y": 95.96,
+      "x": 0.0,
+      "y": 86.01,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
@@ -4308,7 +4433,7 @@
     {
       "id": "5141041000000290",
       "x": 4.6,
-      "y": 72.32,
+      "y": 64.87,
       "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,

@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -221,7 +221,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5142421100000005",
@@ -263,12 +263,13 @@
           "id": "5142421300000005",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -326,7 +327,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5142421100000007",
@@ -369,12 +370,13 @@
           "id": "5142421300000007",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -422,17 +424,18 @@
           "id": "5142421300000008",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5142421100000009",
@@ -537,7 +540,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514242110000000B",
@@ -633,17 +636,18 @@
           "id": "514242130000000C",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514242110000000D",
@@ -700,7 +704,7 @@
     },
     {
       "id": "514242110000000E",
-      "x": -4.95,
+      "x": -7.95,
       "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:advanced_pickup_upgrade",
@@ -749,11 +753,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514242110000000F",
-      "x": -1.95,
+      "x": -4.95,
       "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:magnet_upgrade",
@@ -908,7 +912,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5142421100000012",
@@ -1120,11 +1124,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5142421100000016",
-      "x": -7.95,
+      "x": -1.95,
       "y": 9.47,
       "icon": {
         "id": "sophisticatedbackpacks:deposit_upgrade",
@@ -1228,12 +1232,13 @@
           "id": "5142421300000017",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -1332,12 +1337,13 @@
           "id": "5142421300000019",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:barrel",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:logistics"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
@@ -1908,7 +1914,7 @@
     },
     {
       "id": "5142421400000024",
-      "x": -4.95,
+      "x": -7.95,
       "y": 10.39,
       "width": 2.72,
       "height": 0.72,
@@ -1924,7 +1930,7 @@
     },
     {
       "id": "5142421400000025",
-      "x": -1.95,
+      "x": -4.95,
       "y": 10.39,
       "width": 2.72,
       "height": 0.72,
@@ -2036,7 +2042,7 @@
     },
     {
       "id": "514242140000002C",
-      "x": -7.95,
+      "x": -1.95,
       "y": 10.39,
       "width": 2.72,
       "height": 0.72,

@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+- Add explicit, non-consuming construction checklists to 35 multiblock and
+  assembly quests: 138 additive item tasks and 14 corrected quantities, checked
+  against pinned structure templates and validators. Retain native formation
+  and operation objectives and all existing saved object IDs.
+- Put Coke Oven, creosote, Blast Furnace, steel and copper coils before the
+  Industrial Chassis they supply. Rebuild the Immersive Engineering teaching
+  sequence and remove artificial Precision Mechanism prerequisites from its
+  basic production machines while retaining real recipe gates.
+- Replace all 1,626 generic stage/role subtitles with actual section topics or
+  specific device hints in Ukrainian and English. Name the six skill bonuses
+  after their real materials, including antimatter for the last bonus.
+- Keep short readable quest links, reveal distant requirements on hover, and
+  route native curves around captions. Fix topological reading order in ordinary
+  sections and repair misplaced Apotheosis, exploration, space, Botania and
+  diving-equipment nodes. Coordinate previews follow FTB's real draw order.
+- Increase personal Mayhem Cube milestones from 14 to 193. Ordinary packs now
+  draw 3–5 prizes with one eligible uncommon-or-better draw, larger basic supply
+  bundles and stronger rare/epic weights. Exact manufacture requirements,
+  personal claim keys and plastic/HDPE exclusions remain enforced.
+- Record the reviewed additive questbook changes separately from immutable
+  historical save contracts; existing claimed rewards are not issued again.
+  See [construction kits](docs/MULTIBLOCK_MATERIALS.md),
+  [map readability](docs/QUEST_LAYOUT_READABILITY.md),
+  [rewards](docs/REWARDS.md) and
+  [verification](reports/verification-questbook.md).
+
 - Replace the long bilingual repository landing page with a concise English
   introduction, gameplay highlights and installation/documentation links.
 - Add Inventory Profiles Next 2.2.5 for inventory sorting, item transfers and

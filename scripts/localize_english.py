@@ -16,6 +16,8 @@ import zipfile
 from pathlib import Path
 
 import campaign_branches
+import campaign_guidance
+import campaign_multiblocks
 import campaign_layout
 import campaign_lessons
 import campaign_rewards
@@ -318,7 +320,7 @@ def qm_advancement(advancement: str, names: dict) -> tuple[str, str] | None:
     if path.startswith("skills/"):
         if short.startswith("points_stage_"):
             item = data["criteria"]["stage_component"]["conditions"]["items"][0]["items"][0]
-            return "Skill Points: Stage " + short[-1], "Obtain " + registry_name(item, names) + " for this stage's one-time two-point Pufferfish's Skills bonus. It is tied to the player and material: moving it repeatedly, relogging or farming normal XP does not grant extra bonuses."
+            return "Skill Points for " + registry_name(item, names), "Obtain " + registry_name(item, names) + " for its one-time two-point Pufferfish's Skills bonus. It is tied to the player and material: moving it repeatedly, relogging or farming normal XP does not grant extra bonuses."
         detail = {
             "root": "Open the Mayhem category in Pufferfish's Skills and unlock its starting node. The four branches share a maximum budget of 14 spendable points.",
             "capstone": "Unlock the sixth skill in any ONE of the four Mayhem branches. This is an OR condition; all four final skills are not required.",
@@ -451,20 +453,16 @@ def generate() -> tuple[str, dict]:
                 title = "Start the Campaign"
             quest_titles[qid] = title
             result[f"quest.{qid}.title"] = title
-            stage = campaign_layout.stage(quest)
-            visual_role = campaign_layout.ROLE_NAMES["en_us"][campaign_layout.role(quest)]
-            result[f"quest.{qid}.quest_subtitle"] = f"Stage {stage} · {visual_role}"
             if qid == "514D010000000001":
                 descriptions = [
                     "Start with the Base Foundation, then use the first chapter, 00 · Main Route, to find your next shared goal. Six material milestones connect industry, magic and expeditions.",
-                    "Industrial Chassis needs steel, treated wood and engineering components from chapter 03. Mekanism and Ender IO alloys plus AE2 processors then lead to Precision Mechanism. A compact ME network with a 1k crafting CPU becomes available at this stage.",
+                    "Your first goal is Industrial Chassis. In chapter 03, build a Coke Oven: its coke fuels the Blast Furnace for steel, and its creosote makes treated planks. Add copper wire coils and an iron component. After the chassis, Mekanism and Ender IO alloys plus AE2 processors lead to Precision Mechanism and the first ME autocrafting setup.",
                     "Botania, Aether and Twilight Forest lead to Dimensional Matrix; the Moon and Eden to Stellar Alloy; Mortum, Gaia and Ultimate circuits to Mythic Circuit; antimatter and Calorite to EMC Core. Optional expeditions and collections use circles.",
-                    "Hexagons mark the quest prerequisites of the finale; larger nodes are material milestones. Squares cover practical lessons and mod development. Open any quest to inspect its full prerequisites, including lines hidden on the overview.",
-                    "Item tasks detect inventory without consumption: hold the required items before placing or spending them. Advancements, events and locations check the described action. Three engineering tasks are explicitly manual confirmations after your own system test.",
+                    "Read production sections from top to bottom. Short lines show local sequences; hover or open a quest to inspect its other prerequisites. Large hexagons on Main Route are material milestones, while circles mark optional objectives. Subtitles name the actual topic or the item's purpose.",
+                    "A multiblock's Tasks tab lists the blocks for its smallest described construction. Hold them before building: detection does not consume items. A separate formation or operation condition, where present, verifies the finished machine. Three engineering tasks are explicitly manual confirmations after your own system test.",
                     "Book controls: right-click the Quest Book, or bind Open Quests under Controls → FTB Quests. Hover an item and press R for recipes or U for uses. JEI in the installed pack contains the current recipes.",
-                    "Every member claims each quest reward personally once. An ordinary pack draws 2–4 prizes; the draw count and rare-prize weights improve as your team manufactures the six material milestones. Expensive items enter their pools only after actual production of that same item. Picking up a gift or a reward is not manufacturing evidence.",
-                    "Use /soqm rewards to see your reward level, and /soqm rewards pool <theme> for eligible prizes, current per-draw chances and the conditions on locked items. Selected milestones give each member one Mayhem Cube; open it in a separate test area away from the base.",
-                    "Personal rewards and production evidence have applied since 0.4.8. The quest-branch update in 0.4.9 preserves existing claims and unlocked production rewards. Only an upgrade from the old shared rewards gives every member one new personal claim; existing personal claims and the introductory book stay claimed. For items manufactured before the production ledger existed, make one new sample. After changing teams, pick up and place your production machines again so their next completed recipes count for the new team.",
+                    "Every member claims each quest reward personally once. A pack draws 3–5 prizes, increasing as the team produces its material milestones. When the theme has unlocked better prizes, one draw guarantees an uncommon-or-better prize. Expensive components enter their pools only after actual production of that same item; gifts and rewards do not count as manufacturing evidence.",
+                    "Completed production chains, important structures and adventure goals award Mayhem Cubes. Open them in a separate test area away from the base. Use /soqm rewards to see your reward level, and /soqm rewards pool <theme> for eligible prizes, normal and guaranteed-draw odds, and conditions on locked items.",
                 ]
             result[f"quest.{qid}.quest_desc"] = descriptions
             counts["quests"] += 1
@@ -474,6 +472,9 @@ def generate() -> tuple[str, dict]:
         counts["named_sections"] += len(layout[path.stem]["sections"])
     lessons = campaign_lessons.load_lessons()
     counts["expanded_lessons"] = campaign_lessons.apply_locale(result, "en_us", lessons)
+    chapters = [load_json(path) for path in chapter_files]
+    counts["multiblock_lessons"] = campaign_multiblocks.apply_locale(chapters, result, "en_us")
+    counts["guidance"] = campaign_guidance.apply(chapters, result, "en_us")
     already_authored = set(tutorials) | {ident for ident, patch in branch_patches.items() if "description" in patch}
     counts["authored_tutorials"] += len(set(lessons) - already_authored)
     result.update(campaign_rewards.locale_entries("en_us"))

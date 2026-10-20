@@ -4,7 +4,9 @@
 This is a coordinate preview, not a Minecraft screenshot. Native image positions,
 ARGB colors, localized captions, quest positions, shapes and sizes are retained.
 Numbered neutral markers replace item icons. Only explicit dependencies between
-shown quests whose dependency lines are enabled are drawn. No assets are copied.
+shown quests whose dependency lines are enabled are drawn. Native Bézier controls
+and the background-images -> connections -> quest-icons draw order are retained.
+No assets are copied.
 
 The renderer needs only Python's standard library. It writes SVGs under assets;
 --check verifies them without writing. For visual review, rasterize a temporary
@@ -100,12 +102,19 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
         raise ValueError("Preview has no quests or duplicate persistent IDs")
     if section_limit is None and len(shown) != len(chapter["quests"]):
         raise ValueError("A quest lies outside the actual route panels")
+    edges = [(parent, quest) for parent, quest in campaign_layout.visible_edges(chapter)
+             if parent["id"] in qmap and quest["id"] in qmap]
+    paths = {(parent["id"], quest["id"]): campaign_layout.connection_points(parent, quest)
+             for parent, quest in edges}
 
     selected_ids = {spec[key] for key in ("header", "subtitle", "divider")}
     selected_ids.update(section[key] for section in sections for key in ("panel", "accent", "heading"))
     selected_ids.update(spec["captions"][quest["id"]] for quest in shown)
     selected = [images[ident] for ident in sorted(selected_ids)]
     rects = [bounds(image) for image in selected]
+    # Main Route curves use a gutter outside the cards. Include the actual path
+    # extent, just as the native quest panel has generous scrollable margins.
+    rects.extend(bounds(campaign_layout.path_bounds(points)) for points in paths.values())
     left = min(rect[0] for rect in rects)
     top = min(rect[1] for rect in rects)
     right = max(rect[2] for rect in rects)
@@ -137,13 +146,8 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
     title = plain(locale[f"chapter.{chapter['id']}.title"])
     heading_ids = {section["heading"] for section in sections}
     caption_ids = {spec["captions"][quest["id"]] for quest in shown}
-    edges = [(qmap[parent], quest) for quest in shown
-             if not quest.get("hide_dependency_lines", chapter.get("default_hide_dependency_lines", False))
-             for parent in quest.get("dependencies", []) if parent in qmap]
     off_canvas = sum(parent not in qmap for quest in shown for parent in quest.get("dependencies", []))
-    hidden = sum(parent in qmap for quest in shown
-                 if quest.get("hide_dependency_lines", chapter.get("default_hide_dependency_lines", False))
-                 for parent in quest.get("dependencies", []))
+    hidden = sum(parent in qmap for quest in shown for parent in quest.get("dependencies", [])) - len(edges)
     section_for = {}
     for quest in shown:
         containers = [s for s in sections if inside(quest, images[s["panel"]])]
@@ -156,9 +160,12 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
         "chapter": chapter["filename"], "language": "uk_ua", "units_to_pixels": SCALE,
         "section_count": len(sections), "shown_quests": [q["id"] for q in shown],
         "shown_images": sorted(selected_ids), "visible_local_dependencies": [[p["id"], q["id"]] for p, q in edges],
+        "native_dependency_control_points": {q["id"]: q["dep_control_pts"] for q in shown if q.get("dep_control_pts")},
         "hidden_local_dependency_count": hidden, "off_canvas_dependency_count": off_canvas,
-        "native_fields": "quest x/y/shape/size; image x/y/width/height/rotation/ARGB; localized image captions",
-        "preview_only": "font, neutral numbered markers, header/footer; dependency segments stay straight",
+        "hidden_dependencies": "Retained unlock requirements; native FTB Quests reveals incoming lines on hover",
+        "native_fields": "quest x/y/shape/size/dep_control_pts; image x/y/width/height/rotation/ARGB; localized image captions",
+        "draw_order": "all chapter images and captions, then native connection paths, then quest icons",
+        "preview_only": "font, neutral numbered markers, header/footer, neutral line color without animated texture",
     }
     svg = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -168,13 +175,11 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
         'Фігури й панелі відповідають даним глави; числа замінюють предметні іконки. '
         'Лінії показують лише ввімкнені залежності між показаними вузлами.</desc>',
         f'<metadata>{esc(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(",", ":")))}</metadata>',
-        '<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">'
-        '<path d="M0 0 L6 3 L0 6 Z" fill="#8294AA"/></marker></defs>',
         f'<rect width="100%" height="100%" fill="{BACKGROUND}"/>',
         f'<g font-family="{FONT}" dominant-baseline="middle">',
         text(MARGIN, 27, "SOQM  /  ОГЛЯД РОЗКЛАДКИ", 14, color=MUTED, weight="700"),
         text(MARGIN, 51, "Координати з квестбука · нейтральні номери замість іконок", 13, color=MUTED),
-        text(MARGIN, 73, "Це не скриншот Minecraft. Позиції збережено; лінії між вузлами прямі.", 12, color=MUTED),
+        text(MARGIN, 73, "Це не скриншот Minecraft. Позиції та вигини зв’язків відповідають даним глави.", 12, color=MUTED),
     ]
 
     def image_rect(image):
@@ -189,31 +194,10 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
                 f'width="{num(image["width"] * SCALE)}" height="{num(image["height"] * SCALE)}" '
                 f'rx="{radius}" fill="{color}" fill-opacity="{num(opacity)}"{transform}/>')
 
+    # ChapterImageButton uses DrawLayer.BACKGROUND regardless of image order.
+    # Labels cannot mask a badly routed line: the native game paints them first.
     for image in sorted(selected, key=lambda image: (image.get("order", 0), image["id"])):
-        if image.get("order", 0) < 0:
-            svg.append(image_rect(image))
-
-    # Straight segments preserve the layout's real crossings and readability
-    # problems. Never reroute them to make the data look cleaner in the preview.
-    for parent, quest in edges:
-        ax, ay, bx, by = px(parent["x"]), py(parent["y"]), px(quest["x"]), py(quest["y"])
-        dx, dy = bx - ax, by - ay
-        length = math.hypot(dx, dy)
-        if not length:
-            raise ValueError("Connected quests occupy the same coordinate")
-        start_radius = parent.get("size", 1) * SCALE / 2 + 2
-        end_radius = quest.get("size", 1) * SCALE / 2 + 5
-        ax += dx / length * start_radius
-        ay += dy / length * start_radius
-        bx -= dx / length * end_radius
-        by -= dy / length * end_radius
-        path = f'M {num(ax)} {num(ay)} L {num(bx)} {num(by)}'
-        svg.append(f'<path data-from="{parent["id"]}" data-to="{quest["id"]}" d="{path}" '
-                   'fill="none" stroke="#8294AA" stroke-width="1.3" stroke-opacity="0.62" marker-end="url(#arrow)"/>')
-
-    for image in sorted(selected, key=lambda image: (image.get("order", 0), image["id"])):
-        if image.get("order", 0) >= 0:
-            svg.append(image_rect(image))
+        svg.append(image_rect(image))
         if not image.get("text_on_image", False):
             continue
         key = f"image.{image['id']}.title"
@@ -237,6 +221,16 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
         if rotation:
             rendered = f'<g transform="rotate({num(rotation)} {num(px(image["x"]))} {num(py(image["y"]))})">{rendered}</g>'
         svg.append(rendered)
+
+    # QuestButton.getConnectionPoints() draws from icon center to icon center.
+    # Its cubic curves have at least 20 segments. Icons cover the ends below;
+    # no preview-only route, clipping or caption overpainting hides collisions.
+    for parent, quest in edges:
+        points = paths[(parent["id"], quest["id"])]
+        path = " ".join(("M" if index == 0 else "L") + f' {num(px(point["x"]))} {num(py(point["y"]))}'
+                        for index, point in enumerate(points))
+        svg.append(f'<path data-from="{parent["id"]}" data-to="{quest["id"]}" d="{path}" '
+                   f'fill="none" stroke="#8294AA" stroke-width="{num(SCALE * .08)}" stroke-opacity="0.62"/>')
 
     for index, quest in enumerate(shown, 1):
         x, y = px(quest["x"]), py(quest["y"])
@@ -272,7 +266,7 @@ def build_svg(chapter: dict, locale: dict, spec: dict, all_quests: dict,
     svg.extend([
         text(MARGIN, footer, scope, 13, weight="600"),
         text(MARGIN, footer + 23, f"Лінії: {len(edges)} наявних видимих зв’язків. Приховано у главі: {hidden}; передумов поза оглядом: {off_canvas}.", 12, color=MUTED),
-        text(MARGIN, footer + 45, "Повні назви, ID та всі передумови — у підказках SVG. Номери додано лише для цього огляду.", 12, color=MUTED),
+        text(MARGIN, footer + 45, "У грі приховані зв’язки з’являються при наведенні. У SVG всі передумови — у підказці вузла.", 12, color=MUTED),
         text(MARGIN, footer + 67, "Джерело: " + chapter["filename"] + ".snbt · lang/uk_ua.snbt", 11, color=MUTED),
         '</g>', '</svg>', '',
     ])

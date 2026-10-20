@@ -8,7 +8,7 @@
     "count": 1
   },
   "default_quest_shape": "rsquare",
-  "default_hide_dependency_lines": false,
+  "default_hide_dependency_lines": true,
   "consume_items": false,
   "hide_quest_details_until_startable": false,
   "hide_quest_until_deps_visible": false,
@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "514011FF04BD1E60",
-      "x": -7.95,
+      "x": -10.95,
       "y": 1.85,
       "icon": {
         "id": "ironfurnaces:copper_furnace",
@@ -68,7 +68,7 @@
     },
     {
       "id": "514011A4BB290307",
-      "x": -10.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "ironfurnaces:iron_furnace",
@@ -105,22 +105,23 @@
           "id": "514013ED864E755E",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t0",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 1.22,
       "shape": "hexagon",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": true
     },
     {
       "id": "5140113C977B9BE0",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -1.95,
+      "y": 4.65,
       "icon": {
         "id": "ironfurnaces:silver_furnace",
         "count": 1
@@ -170,7 +171,7 @@
     },
     {
       "id": "514011DDB6B69693",
-      "x": -1.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "ironfurnaces:gold_furnace",
@@ -220,12 +221,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011AAAA9555C0",
-      "x": -10.95,
-      "y": 4.65,
+      "x": -1.95,
+      "y": 1.85,
       "icon": {
         "id": "ironfurnaces:diamond_furnace",
         "count": 1
@@ -264,21 +265,22 @@
           "id": "514013F35AB42AD9",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011F9E7C41342",
-      "x": -7.95,
+      "x": -10.95,
       "y": 4.65,
       "icon": {
         "id": "ironfurnaces:emerald_furnace",
@@ -331,8 +333,8 @@
     },
     {
       "id": "51401118B1E42386",
-      "x": -1.95,
-      "y": 4.65,
+      "x": -10.95,
+      "y": 7.45,
       "icon": {
         "id": "ironfurnaces:crystal_furnace",
         "count": 1
@@ -385,7 +387,7 @@
     },
     {
       "id": "514011FC7A729043",
-      "x": -4.95,
+      "x": -7.95,
       "y": 4.65,
       "icon": {
         "id": "ironfurnaces:obsidian_furnace",
@@ -434,12 +436,12 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401117A75D3720",
-      "x": -10.95,
-      "y": 7.45,
+      "x": -4.95,
+      "y": 4.65,
       "icon": {
         "id": "ironfurnaces:netherite_furnace",
         "count": 1
@@ -477,17 +479,18 @@
           "id": "514013166266B601",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5140114B0DC80A94",
@@ -594,7 +597,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011C570BA4F19",
@@ -637,21 +640,22 @@
           "id": "5140132A9492ED8B",
           "team_reward": false,
           "auto": "disabled",
-          "type": "custom",
-          "icon": "minecraft:anvil",
-          "tags": [
-            "soqm:progressive_reward",
-            "soqm:reward_pool:workshop"
-          ]
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "51401172C148C31C",
-      "x": -4.95,
+      "x": -10.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_speed",
@@ -705,7 +709,7 @@
     },
     {
       "id": "514011C0231A0A1C",
-      "x": -1.95,
+      "x": -7.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_fuel",
@@ -759,7 +763,7 @@
     },
     {
       "id": "514011BAFD0BA1DB",
-      "x": -10.95,
+      "x": -4.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_blasting",
@@ -812,7 +816,7 @@
     },
     {
       "id": "514011153A0580F2",
-      "x": -7.95,
+      "x": -1.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_smoking",
@@ -865,7 +869,7 @@
     },
     {
       "id": "5140112AC3C39CA4",
-      "x": 4.95,
+      "x": 1.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_generator",
@@ -919,7 +923,7 @@
     },
     {
       "id": "5140117351ED54D2",
-      "x": 7.95,
+      "x": 4.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:augment_factory",
@@ -972,7 +976,7 @@
     },
     {
       "id": "514011420ECB3AB6",
-      "x": 10.95,
+      "x": 7.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:heater",
@@ -1033,11 +1037,11 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "514011BB117FEF8D",
-      "x": 1.95,
+      "x": 10.95,
       "y": 12.27,
       "icon": {
         "id": "ironfurnaces:item_copy",
@@ -1204,7 +1208,7 @@
     },
     {
       "id": "5141041000000866",
-      "x": -7.95,
+      "x": -10.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -1220,7 +1224,7 @@
     },
     {
       "id": "5141041000000867",
-      "x": -10.95,
+      "x": -7.95,
       "y": 2.93,
       "width": 2.72,
       "height": 0.72,
@@ -1236,7 +1240,7 @@
     },
     {
       "id": "5141041000000868",
-      "x": -1.95,
+      "x": -4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -1252,8 +1256,8 @@
     },
     {
       "id": "5141041000000869",
-      "x": -10.95,
-      "y": 5.57,
+      "x": -1.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -1268,7 +1272,7 @@
     },
     {
       "id": "514104100000086A",
-      "x": -7.95,
+      "x": -10.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -1284,7 +1288,7 @@
     },
     {
       "id": "514104100000086B",
-      "x": -4.95,
+      "x": -7.95,
       "y": 5.57,
       "width": 2.72,
       "height": 0.72,
@@ -1300,8 +1304,8 @@
     },
     {
       "id": "514104100000086C",
-      "x": -10.95,
-      "y": 8.37,
+      "x": -4.95,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -1316,8 +1320,8 @@
     },
     {
       "id": "514104100000086D",
-      "x": -4.95,
-      "y": 2.77,
+      "x": -1.95,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -1332,8 +1336,8 @@
     },
     {
       "id": "514104100000086E",
-      "x": -1.95,
-      "y": 5.57,
+      "x": -10.95,
+      "y": 8.37,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -1492,38 +1496,6 @@
     },
     {
       "id": "5141041000000878",
-      "x": -4.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "5141041000000879",
-      "x": -1.95,
-      "y": 13.19,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "514104100000087A",
       "x": -10.95,
       "y": 13.19,
       "width": 2.72,
@@ -1539,8 +1511,40 @@
       "order": 5
     },
     {
-      "id": "514104100000087B",
+      "id": "5141041000000879",
       "x": -7.95,
+      "y": 13.19,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000087A",
+      "x": -4.95,
+      "y": 13.19,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000087B",
+      "x": -1.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,
@@ -1604,7 +1608,7 @@
     },
     {
       "id": "514104100000087F",
-      "x": 4.95,
+      "x": 1.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,
@@ -1620,7 +1624,7 @@
     },
     {
       "id": "5141041000000880",
-      "x": 7.95,
+      "x": 4.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,
@@ -1636,7 +1640,7 @@
     },
     {
       "id": "5141041000000881",
-      "x": 10.95,
+      "x": 7.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,
@@ -1652,7 +1656,7 @@
     },
     {
       "id": "5141041000000882",
-      "x": 1.95,
+      "x": 10.95,
       "y": 13.19,
       "width": 2.72,
       "height": 0.72,

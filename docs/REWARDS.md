@@ -1,8 +1,8 @@
-# SOQM 0.4.8: особисті прогресивні нагороди / Progressive personal rewards
+# SOQM: особисті прогресивні нагороди / Progressive personal rewards
 
-**Кожен учасник отримує власний пакунок за завершений звичайний квест. Пакунок містить 2–4 незалежні тематичні призи; дорогий предмет стає доступним лише після фактичного виготовлення цього самого предмета командою.** Кількість призів і ваги рідкостей зростають із виробничими відкриттями. Отримання ручне, одноразове й особисте.
+**Кожен учасник отримує власний пакунок за завершений звичайний квест. Пакунок містить 3–5 незалежних тематичних призів; дорогий предмет стає доступним лише після фактичного виготовлення цього самого предмета командою.** Кількість призів і ваги рідкостей зростають із виробничими відкриттями. Отримання ручне, одноразове й особисте.
 
-**Every member can claim a personal pack for a completed ordinary quest. A pack contains 2–4 independently drawn themed prizes; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
+**Every member can claim a personal pack for a completed ordinary quest. A pack contains 3–5 independently drawn themed prizes; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
 
 Каталог і правила задає [`metadata/reward_pools.json`](../metadata/reward_pools.json). Підтвердження предметів і продуктивних рецептів із закріплених версій модів містить [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Компілятор створює [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json); обробник нагород і спостерігач виробництва читають цей спільний runtime-файл.
 
@@ -11,27 +11,27 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
 | Зовнішні ID нагород загалом / Total outer reward IDs | 1627 |
-| Зовнішні ID нагород, збережені з 0.4.9 / Outer reward IDs preserved from 0.4.9 | 1626 |
-| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1612 |
-| Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 14 |
+| Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1627 |
+| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1433 |
+| Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 193 |
 | Особиста вступна книга / Personal introductory book | 1 |
 | Тематичні пули / Themes | 14 |
 | Позиції повного каталогу / Catalogue entries | 326 |
-| Унікальні предмети, з них модові / Distinct items, including modded items | 240 / 210 |
+| Унікальні предмети, з них модові / Distinct items, including modded items | 238 / 210 |
 | Модові позиції з повтореннями між темами / Modded entries across themes | 256 |
 | Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 240 |
 | Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 202 |
 
-У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. Чотирнадцять фіксованих рубежів перелічено нижче; вони видають один куб замість пакунка. Числа походять із каталогу та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до наявної книги.
+У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають один куб замість пакунка; повний список задає `milestones` у каталозі. Числа походять із каталогу та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до наявної книги.
 
-Each ordinary quest has one pack. The introductory quest also retains its personal book. The fourteen fixed milestones listed below award one cube in place of a pack. These counts come from the catalogue and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the existing book.
+Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award one cube in place of a pack; the catalogue’s `milestones` map is the complete list. These counts come from the catalogue and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the existing book.
 
 ## Як це працює
 
 1. **Тему задає глава.** Майстерня, логістика, магія, експедиції та інші гілки мають власні набори. Колишній статичний перехід на інший пул через тег `stage_N` прибрано: тема залишається темою глави, а доступність і якість залежать від поточного виробництва команди.
 2. **Рівень визначається виробництвом.** Система бере найвищий рівень із шести рубежів, для якого записано справжнє виготовлення відповідного KubeJS-компонента. До першого такого запису діє рівень 0. Це окрема шкала нагород; завершення предметного завдання в квестбуці саме собою не створює виробничий запис.
 3. **Кожен виріб має власне відкриття.** Для позиції з `requires_craft` потрібні всі зазначені item ID у виробничих фактах команди та рівень не нижчий за `min_level`. Виготовлена залізна бочка відкриває саме залізну бочку; золоту й незеритову потрібно реально виготовити окремо. Рівень 6 також не відкриває ще не виготовлені процесори, шасі чи поліпшення.
-4. **Пакунок розігрується під час отримання.** Враховується стан команди в момент натискання «отримати», а не стан під час завершення квесту. Для кожного з 2–4 призів спочатку обирається доступна рідкість, потім предмет усередині неї. Повтори дозволені; однакові результати складаються. Видача предметів не створює виробничих відкриттів.
+4. **Пакунок розігрується під час отримання.** Враховується стан команди в момент натискання «отримати», а не стан під час завершення квесту. Перший із 3–5 призів обирається серед відкритих незвичайних або кращих позицій. Якщо таких позицій ще немає, використовується звичайний пул. Решта жеребкувань обирає доступну рідкість, потім предмет усередині неї. Повтори дозволені; однакові результати складаються. Видача предметів не створює виробничих відкриттів.
 
 Доказом служить завершена підтримувана операція виробництва з фактичним результатом. Підбирання, передавання, відкривання скрині, видача нагороди, наявність предмета в інвентарі, JEI, ME-склад і завершена заявка CPU без підтвердженої виробничої операції не є таким доказом. Перейменування, скидання чи зміна оформлення з тим самим item ID серед входів і виходу відсікаються. Для нового дорогого типу виробництва потрібен окремий надійний observer; замінювати його перевіркою інвентарю не можна.
 
@@ -41,14 +41,14 @@ Each ordinary quest has one pack. The introductory quest also retains its person
 
 **Старі інвентарі автоматично не індексуються.** Після оновлення старий запас, пройдені квести й уже готові машини не вважаються доказом минулого виробництва. Потрібно виконати нову підтримувану операцію. Раніше встановлена машина з придатним native-власником може записати наступний справжній завершений результат; це не зарахування старого вмісту. Без придатного власника або виробничого observer дорогі позиції залишаються закритими.
 
-Кожна тема має 5–11 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Невелика їжа, деревина, папір та звичайні матеріали служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
+Кожна тема має 5–11 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Корисні партії їжі, деревини, паперу та звичайних матеріалів служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
 
 ## How it works
 
 1. **The chapter determines the theme.** Workshop, logistics, magic, expedition and the other branches have their own contents. The old static `stage_N` fallback is removed: the chapter keeps its theme while the team's current production facts determine eligibility and quality.
 2. **Manufacture determines the level.** The system uses the highest of the six milestone levels whose exact KubeJS component has a recorded real manufacture. Before the first such fact, the level is 0. This is a separate reward scale; completing an item-detection quest does not create a production fact.
 3. **Every manufactured prize has its own unlock.** An entry requires every exact ID in `requires_craft` and a level at least as high as `min_level`. Producing an iron barrel unlocks the iron barrel itself; gold and netherite barrels must each be manufactured separately. Level 6 alone does not unlock an unmade processor, chassis or upgrade.
-4. **The pack is rolled when claimed.** Eligibility uses team state at the moment of claiming, not at quest completion. Each of the 2–4 draws first chooses an eligible rarity and then an item within that rarity. Draws are with replacement, so duplicate results can occur and their quantities are combined. Reward delivery never creates production facts.
+4. **The pack is rolled when claimed.** Eligibility uses team state at the moment of claiming, not at quest completion. The first of 3–5 draws uses eligible uncommon-or-better prizes. With no eligible premium prize, it uses the ordinary pool. The remaining draws choose an eligible rarity and then an item within that rarity. Draws are with replacement, so duplicate results can occur and their quantities are combined. Reward delivery never creates production facts.
 
 Evidence comes from a completed supported production operation with a real output. Pickup, transfers, chest loot, reward delivery, inventory possession, JEI, ME storage and CPU job completion without an observed production operation are insufficient. Rename, reset or cosmetic operations with the same item ID in an input and the output are rejected. Adding a new expensive production family requires a trustworthy observer rather than an inventory check.
 
@@ -58,23 +58,23 @@ The observer keeps the player's own production facts and a separate union for th
 
 **Existing inventories are not automatically backfilled.** Old stock, completed quests and already-built machines do not prove earlier production after upgrading. A new supported operation is required. An existing machine with a valid native owner can record its next real completed output; this does not credit its old contents. Missing valid ownership or an unsupported production observer leaves manufactured prizes locked.
 
-Every theme contains 5–11 eligible starter supplies, so a pack has contents even without discoveries. Small food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
+Every theme contains 5–11 eligible starter supplies, so a pack has contents even without discoveries. Useful batches of food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
 
 ## Рівні та кількість призів / Levels and draw counts
 
-Рівень — найвищий реально виготовлений рубіж у таблиці. Ваги рідкостей у чотирьох останніх стовпцях дорівнюють їхнім відсоткам **лише коли всі чотири рідкості мають доступні предмети**. За відсутності доступних предметів певної рідкості решта ваг нормалізуються; формула наведена нижче.
+Рівень — найвищий реально виготовлений рубіж у таблиці. Ваги рідкостей у чотирьох останніх стовпцях дорівнюють їхнім відсоткам **лише коли всі чотири рідкості мають доступні предмети**. За відсутності доступних предметів певної рідкості решта ваг нормалізуються; формула наведена нижче. Таблиця описує звичайні жеребкування; перше не включає common, якщо вже є відкриті кращі призи.
 
-The level is the highest actually manufactured milestone in this table. The last four columns become rarity percentages **only when all four rarities have eligible items**. Empty rarity groups are omitted and the remaining weights are normalized, as described below.
+The level is the highest actually manufactured milestone in this table. The last four columns become rarity percentages **only when all four rarities have eligible items**. Empty rarity groups are omitted and the remaining weights are normalized, as described below. These weights describe ordinary draws; the first draw excludes common prizes when a higher-quality eligible prize exists.
 
 | Рівень / Level | Рубіж / Milestone | Призів / Draws | Common | Uncommon | Rare | Epic |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: |
-| 0 | До першого виробничого рубежу / Before the first production milestone | 2 | 70 | 25 | 4 | 1 |
-| 1 | `kubejs:industrial_chassis` — Промислове шасі / Industrial Chassis | 2 | 65 | 28 | 6 | 1 |
-| 2 | `kubejs:precision_mechanism` — Точний механізм / Precision Mechanism | 3 | 58 | 31 | 9 | 2 |
-| 3 | `kubejs:dimensional_matrix` — Вимірна матриця / Dimensional Matrix | 3 | 50 | 35 | 12 | 3 |
-| 4 | `kubejs:stellar_alloy` — Зоряний композит / Stellar Alloy | 3 | 45 | 36 | 15 | 4 |
-| 5 | `kubejs:mythic_circuit` — Міфічна схема / Mythic Circuit | 4 | 38 | 39 | 18 | 5 |
-| 6 | `kubejs:emc_core` — Ядро EMC / EMC Core | 4 | 32 | 41 | 21 | 6 |
+| 0 | До першого виробничого рубежу / Before the first production milestone | 3 | 50 | 35 | 12 | 3 |
+| 1 | `kubejs:industrial_chassis` — Промислове шасі / Industrial Chassis | 3 | 45 | 36 | 15 | 4 |
+| 2 | `kubejs:precision_mechanism` — Точний механізм / Precision Mechanism | 4 | 38 | 38 | 19 | 5 |
+| 3 | `kubejs:dimensional_matrix` — Вимірна матриця / Dimensional Matrix | 4 | 30 | 40 | 23 | 7 |
+| 4 | `kubejs:stellar_alloy` — Зоряний композит / Stellar Alloy | 4 | 24 | 40 | 27 | 9 |
+| 5 | `kubejs:mythic_circuit` — Міфічна схема / Mythic Circuit | 5 | 18 | 40 | 30 | 12 |
+| 6 | `kubejs:emc_core` — Ядро EMC / EMC Core | 5 | 12 | 40 | 33 | 15 |
 
 ## Як подивитися поточні шанси / Viewing current chances
 
@@ -89,9 +89,9 @@ These player commands are read-only. They do not claim rewards, draw prizes, or 
 /soqm rewards pool arcane
 ```
 
-`/soqm rewards status` показує рівень, кількість жеребкувань, шість рубежів та список тем із доступними й закритими позиціями. `/soqm rewards pool <key>` показує кількість, рідкість і поточний нормалізований шанс **за одне жеребкування**; закриті предмети перелічують потрібний рівень і відсутні виробничі факти. Ключі всіх тем є у наступному розділі. Інтерфейс використовує українську для української мови клієнта, англійську — для інших мов.
+`/soqm rewards status` показує рівень, кількість жеребкувань, шість рубежів та список тем із доступними й закритими позиціями. `/soqm rewards pool <key>` показує кількість, рідкість і поточний нормалізований шанс **за звичайне жеребкування** та окремий шанс для першого; закриті предмети перелічують потрібний рівень і відсутні виробничі факти. Ключі всіх тем є у наступному розділі. Інтерфейс використовує українську для української мови клієнта, англійську — для інших мов.
 
-`/soqm rewards status` shows the level, draw count, six milestones and theme availability counts. `/soqm rewards pool <key>` shows quantities, rarities and the current normalized chance **per draw**, followed by locked items and their missing level/production requirements. All theme keys appear below. The interface uses Ukrainian for Ukrainian client language and English for other languages.
+`/soqm rewards status` shows the level, draw count, six milestones and theme availability counts. `/soqm rewards pool <key>` shows quantities, rarities and the current normalized chance **per ordinary draw** and a separate first-draw chance, followed by locked items and their missing level/production requirements. All theme keys appear below. The interface uses Ukrainian for Ukrainian client language and English for other languages.
 
 Джерело команд і розрахунку: [`soqm_progressive_rewards.js`](../overrides/kubejs/server_scripts/soqm_progressive_rewards.js). Підрахунок у команді та розіграш використовують той самий відбір доступних позицій.
 
@@ -133,36 +133,36 @@ P(i\mid L,D)=
 \frac{w_i}{\sum_{j\in S_{g(i)}}w_j}
 $$
 
-Повторні жеребкування незалежні й допускають той самий результат. Середня кількість одиниць предмета `i` та шанс отримати його хоча б раз у пакунку:
+Перший приз має окремий розподіл `Q(i)`: та сама формула лише для доступних uncommon, rare та epic. Якщо жодна така група не доступна, `Q(i)=P(i)`. Решта `d−1` призів використовує `P(i)`. Повтори дозволені.
 
-Draws are independent and with replacement. Expected units of item `i` and the chance of receiving it at least once in a pack are:
+The first prize has distribution `Q(i)`: the same formula restricted to eligible uncommon, rare and epic entries. If all three are empty, `Q(i)=P(i)`. The other `d−1` prizes use `P(i)`, with replacement.
 
 $$
-E[N_i]=d\,c_i\,P(i),\qquad
-P(N_i>0)=1-(1-P(i))^d
+E[N_i]=c_i\bigl(Q(i)+(d-1)P(i)\bigr),\qquad
+P(N_i>0)=1-(1-Q(i))(1-P(i))^{d-1}
 $$
 
 Внутрішня вага в каталозі **не є готовим відсотком**. Відкриття ще одного предмета тієї самої рідкості ділить вагу цієї рідкості між більшою кількістю результатів. Саме тому інтерфейс показує актуальний розрахунок, а каталог зберігає ваги та умови.
 
 An entry's catalogue weight **is not its final percentage**. Unlocking another entry in the same rarity distributes that rarity's weight across more eligible results. The interface therefore shows the current calculation while the catalogue records weights and conditions.
 
-| Приклад / Example | Шанс за одне жеребкування / Per-draw chance | Хоча б один за пакунок / At least one per pack |
-| --- | ---: | ---: |
-| Logistics, рівень 2: серед його manufactured-позицій виготовлено лише золоту бочку; активні common і rare / Level 2: only the gold barrel among this pool's manufactured entries is produced; only common and rare are available | Gold barrel: `9 / (58 + 9)` = 13.4328% | 35.1277% за 3 / over 3 draws |
-| Logistics, рівень 6, виготовлено всі позиції пулу / Level 6, every entry in the pool is produced | Netherite barrel: `6/100 × 4/16` = 1.5% | 5.8663% за 4 / over 4 draws |
-| Рівень 6, усі чотири рідкості доступні / Level 6, all four rarities are available | Any rare or epic: 27% | 71.6018% за 4 / over 4 draws |
+| Приклад / Example | Звичайне / Ordinary draw | Перше / Reserved draw | Хоча б один за пакунок / At least one per pack |
+| --- | ---: | ---: | ---: |
+| Logistics, рівень 2, виготовлена лише золота бочка з manufactured-позицій / Only the gold barrel manufactured | 19 / (38 + 19) = 33.3333% | 100% | 100% за 4 / over 4 draws |
+| Logistics, рівень 6, усе відкрито: незеритова бочка / Level 6, everything unlocked: netherite barrel | 3.7500% | 4.2614% | 17.8344% за 5 / over 5 draws |
+| Рівень 6, усі рідкості доступні: rare або epic / Level 6, all rarities available: rare or epic | 48% | 48 / 88 = 54.5455% | 96.6765% за 5 / over 5 draws |
 
-Кількість за одне жеребкування — 1–4 одиниці. Усі `rare`/`epic`, усі KubeJS-компоненти, бочки, наплічники та їхні поліпшення видаються по одному. Невеликі винятки для дешевих виготовлених припасів — дошки, декоративні блоки, тканина, пелюстки та смолоскипи — явно мають кількість 2–4 у каталозі. Повтори дорогого результату можуть дати кілька одиниць за пакунок, але кожне окреме жеребкування дає одну. Загальна жорстка межа звичайного пакунка — 16 предметів із чотирьох жеребкувань по 4; це не гарантована кількість і не оцінка цінності.
+Кількість за одне жеребкування — 1–16 одиниць. Усі rare/epic, KubeJS-компоненти, бочки, наплічники та їхні поліпшення даються по одному. Звичайні ресурси мають практичні партії: наприклад, 6 заліза, 8 міді, 16 редстоуну; базові схеми та сплави — по 4, кабелі — по 8. Кожен виготовлений компонент усе ще вимагає власного виробничого запису. Максимум для суто звичайних припасів — 80 предметів за п'ять жеребкувань; це межа, а не гарантована кількість чи вартість.
 
-A draw contains 1–4 units. All rare/epic entries, KubeJS components, barrels, backpacks and their upgrades award one unit. Cheap manufactured-supply exceptions such as planks, decorative blocks, fabric, petals and torches explicitly use 2–4 units in the catalogue. Repeated expensive results can give multiple units in one pack, but each individual draw awards one. The absolute ordinary-pack bound is 16 items from four draws of four; this is neither a guaranteed quantity nor a value estimate.
+A draw contains 1–16 units. Rare/epic prizes, KubeJS components, barrels, backpacks and upgrades remain single-item draws. Ordinary supplies have practical batch sizes: for example, 6 iron, 8 copper or 16 redstone; basic circuits/alloys give 4 and cables give 8. Every manufactured component still needs its own production fact. Five ordinary supply draws have a hard upper bound of 80 items; this is neither guaranteed quantity nor value.
 
 | Пул / Pool | Середня кількість за пакунок на рівні 6, усе відкрито / Expected units per level-6 pack, everything unlocked |
 | --- | ---: |
-| engineering | 5.536 |
-| logistics | 6.304 |
-| arcane | 5.280 |
-| space | 5.067 |
-| masterwork | 4.000 |
+| engineering | 14.327 |
+| logistics | 15.635 |
+| arcane | 9.320 |
+| space | 13.931 |
+| masterwork | 6.248 |
 
 Ці значення — умовні математичні сподівання, не результати ігрового проходження. Фіксованої суми ресурсів «за всю кампанію» більше немає: її визначають момент отримання, відкриті вироби та кількість гравців. Особистий режим множить загальну командну видачу на кількість учасників, які отримають власні нагороди. Більша нагорода не стає повторюваним квестом; потрібний для першого виготовлення дорогий предмет не може випасти до відповідного виробничого факту.
 
@@ -173,6 +173,10 @@ These are conditional mathematical expectations, not playthrough results. There 
 **Plastic and HDPE are excluded from prizes, including after unlock.** A finished radiation shield can be rewarded after its actual manufacture; HDPE used in its recipe is not itself a prize. Containers, energy cubes, mana tablets and other items are created fresh with empty/default state. Their contents, storage UUIDs, energy, mana, upgrades and affixes are never copied from the manufactured specimen.
 
 ## Особисті отримання та оновлення старого світу / Personal claims and existing-world upgrades
+
+**Поточне перебалансування не дає повторного отримання.** Усі 1627 зовнішніх ID та особисті області збережено. Уже забраний пакунок залишається забраним навіть там, де тепер показано куб. Нова нагорода застосовується до ще не отриманих призів.
+
+**This rebalance does not create another claim.** All 1627 outer IDs and personal scopes are retained. An already claimed pack stays claimed even where the slot now displays a cube. The new contents apply to unclaimed rewards.
 
 FTB Quests зберігає позначку отримання за **зовнішнім ID нагороди та областю власника**. У 0.4.8 для наявних нагород установлено `team_reward: false`, `auto: "disabled"`; звичайний пакунок має `type: "custom"`. Об’єкти квестів, задач і нагород зберігають свої ID. Зміна типу не змінює ID, але навмисна зміна командної області на особисту створює інше право отримання.
 
@@ -186,9 +190,9 @@ FTB Quests keys a claim by the **outer reward ID and owner scope**. Version 0.4.
 | Особиста вступна книга вже отримана / Personal introductory book already claimed | Її старе особисте отримання зберігається. / Its existing personal claim remains recorded. |
 | Старі припаси, машини чи компоненти вже є в інвентарі / Old supplies, machines or components already exist in inventory | Залишаються у світі, але автоматичних виробничих відкриттів із них немає. / Remain in the world, without automatic production-fact backfill. |
 
-Це навмисна міграція від спільного подарунка до особистого. Вона стосується і 14 фіксованих кубів. Власні уже отримані нагороди не скидаються; старі спільні отримання не копіюються у всі UUID. Повторне натискання після нового особистого claim не дає ще один пакунок. Очікувана поведінка при вході/виході з партії, збереженні та перезапуску входить до native-перевірки, описаної нижче.
+Це навмисна міграція від спільного подарунка до особистого. Правило поширюється на всі фіксовані куби. Власні уже отримані нагороди не скидаються; старі спільні отримання не копіюються у всі UUID. Повторне натискання після нового особистого claim не дає ще один пакунок. Очікувана поведінка при вході/виході з партії, збереженні та перезапуску входить до native-перевірки, описаної нижче.
 
-This is an intentional migration from one shared gift to a personal gift. It also applies to the fourteen fixed cubes. Existing personal claims are not cleared, and previous shared claims are not copied to every UUID. Clicking again after the new personal claim cannot award another pack. Expected party join/leave, save and restart behavior belongs to the native validation coverage described below.
+This is an intentional migration from one shared gift to a personal gift. The same claim rule applies to all fixed cubes. Existing personal claims are not cleared, and previous shared claims are not copied to every UUID. Clicking again after the new personal claim cannot award another pack. Expected party join/leave, save and restart behavior belongs to the native validation coverage described below.
 
 Стан виробництва й стан отримання — окремі записи. Видача використовує native `ItemReward` для нових порожніх/default стеків, а FTB Quests зберігає справжній зовнішній claim ID. Тимчасові об’єкти видачі не створюють нових постійних нагород. Джерела: [`campaign_rewards.py`](../scripts/campaign_rewards.py), [`soqm_progressive_rewards.js`](../overrides/kubejs/server_scripts/soqm_progressive_rewards.js) та закріплені FTB Quests/Teams у [`mods.lock.json`](../metadata/mods.lock.json).
 
@@ -196,7 +200,15 @@ Production facts and claim state are separate records. Delivery uses native `Ite
 
 ## Фіксовані рубежі / Fixed milestones
 
-Кожен наведений квест дає особисто один Mayhem Cube відповідного рівня. Він не виконує 2–4 жеребкування звичайного пакунка. Власні події кубів не включено в наведені очікування припасів. / Each listed quest gives one personal Mayhem Cube of the indicated tier. It does not perform the ordinary pack's 2–4 draws. Cube events are outside the supply expectations above.
+Куби тепер є у 193 квестах, порівняно з 14 раніше: приблизно 11,9% квестів. Окрім початкових прикладів нижче, це зібрані установки IE, ключові кроки Mekanism та AE2, автоматизація Ex Deorum/Ex Machinis, розвиток сховищ, боси й нові виміри. Рівень куба не перевищує внутрішнього рівня квесту. У главі навичок кубів немає: вона повторює вже винагороджені матеріальні рубежі.
+
+Cubes now appear in 193 quests, up from 14, covering about 11.9% of quests. Beyond the original examples below, they reward IE structures, major Mekanism/AE2 steps, Ex Deorum/Ex Machinis automation, storage progress, bosses and new dimensions. A cube's tier never exceeds the quest's internal progression level. The skills chapter has no extra cubes because it repeats already rewarded material milestones.
+
+Рівні IE узгоджено з потрібними рецептами: коксова піч, початкова домна й піч сплавів дають T0; базові промислові мультиблоки після шасі — T1. Від них не вимагається точний механізм лише заради нагороди. Пізні установки з вимірною матрицею зберігають відповідний вищий рівень.
+
+IE cube tiers follow the required recipes: the coke oven, initial blast furnace and alloy kiln award T0; basic industrial multiblocks after Industrial Chassis award T1. Precision Mechanism is not added as a requirement merely to justify a reward tier. Later structures that require Dimensional Matrix retain their higher tiers.
+
+Кожен наведений квест дає особисто один Mayhem Cube відповідного рівня. Він не виконує 3–5 жеребкування звичайного пакунка. Власні події кубів не включено в наведені очікування припасів. / Each listed quest gives one personal Mayhem Cube of the indicated tier. It does not perform the ordinary pack's 3–5 draws. Cube events are outside the supply expectations above.
 
 | Рубіж / Milestone | Cube |
 | --- | ---: |
@@ -241,9 +253,9 @@ Validation must cover real completion for every supported channel, blocked outpu
 
 ## Редагування й відтворення / Editing and regeneration
 
-Змінювати склад потрібно в [`metadata/reward_pools.json`](../metadata/reward_pools.json), а підтвердження — у [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Зберігайте позитивні ваги, 1–4 одиниці за жеребкування, одноштучні дорогі призи, двомовні назви, точний own-item gate і щонайменше п’ять безпечних стартових результатів у кожній темі. Новий machine-only приз потребує підтримуваного й перевіреного observer. Інвентар, квестова детекція чи JEI не є заміною.
+Змінювати склад потрібно в [`metadata/reward_pools.json`](../metadata/reward_pools.json), а підтвердження — у [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Зберігайте позитивні ваги, 1–16 одиниці за жеребкування, одноштучні дорогі призи, двомовні назви, точний own-item gate і щонайменше п’ять безпечних стартових результатів у кожній темі. Новий machine-only приз потребує підтримуваного й перевіреного observer. Інвентар, квестова детекція чи JEI не є заміною.
 
-Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) and evidence in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Preserve positive weights, 1–4 units per draw, single-unit expensive prizes, bilingual names, exact own-item gates and at least five safe starter results per theme. A new machine-only prize requires a supported and validated observer. Inventory, quest detection and JEI are not substitutes.
+Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) and evidence in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Preserve positive weights, 1–16 units per draw, single-unit expensive prizes, bilingual names, exact own-item gates and at least five safe starter results per theme. A new machine-only prize requires a supported and validated observer. Inventory, quest detection and JEI are not substitutes.
 
 `campaign_rewards.apply(chapters, locale)` перетворює наявні ordinary reward objects на особисті custom rewards зі збереженими ID, лишає milestone-куби фіксованими й зберігає особисту книгу. Runtime-політика містить mapping зовнішнього reward ID до quest ID і теми. Старі 14 статичних random-таблиць попередньої політики прибираються під час генерації; нова система не використовує їхні незмінні відсотки.
 
@@ -290,24 +302,24 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:bread` | Хліб / Bread | 2 | common | 10 | 0 | — |
-| `minecraft:torch` | Смолоскип / Torch | 4 | common | 10 | 0 | — |
-| `minecraft:oak_planks` | Дубові дошки / Oak Planks | 4 | common | 10 | 0 | — |
-| `minecraft:leather` | Шкіра / Leather | 1 | common | 10 | 0 | — |
-| `minecraft:paper` | Папір / Paper | 2 | common | 10 | 0 | — |
-| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 2 | common | 10 | 0 | — |
-| `ecologics:coconut_slice` | Скибка кокоса / Coconut Slice | 3 | common | 10 | 0 | — |
-| `ecologics:walnut` | Волоський горіх / Walnut | 3 | common | 10 | 0 | — |
-| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 2 | common | 10 | 0 | — |
-| `aether:blue_berry` | Синя ягода / Blue Berry | 3 | common | 10 | 0 | — |
-| `ecologics:coconut_planks` | Кокосові дошки / Coconut Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `ecologics:walnut_planks` | Горіхові дошки / Walnut Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `exdeorum:crook` | Палиця з гаком / Crook | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
-| `exdeorum:wooden_hammer` | Дерев’яний молот / Wooden Hammer | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
+| `minecraft:bread` | Хліб / Bread | 8 | common | 10 | 0 | — |
+| `minecraft:torch` | Смолоскип / Torch | 16 | common | 10 | 0 | — |
+| `minecraft:oak_planks` | Дубові дошки / Oak Planks | 16 | common | 10 | 0 | — |
+| `minecraft:leather` | Шкіра / Leather | 4 | common | 10 | 0 | — |
+| `minecraft:paper` | Папір / Paper | 16 | common | 10 | 0 | — |
+| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 8 | common | 10 | 0 | — |
+| `ecologics:coconut_slice` | Скибка кокоса / Coconut Slice | 8 | common | 10 | 0 | — |
+| `ecologics:walnut` | Волоський горіх / Walnut | 8 | common | 10 | 0 | — |
+| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 8 | common | 10 | 0 | — |
+| `aether:blue_berry` | Синя ягода / Blue Berry | 8 | common | 10 | 0 | — |
+| `ecologics:coconut_planks` | Кокосові дошки / Coconut Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `ecologics:walnut_planks` | Горіхові дошки / Walnut Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `exdeorum:crook` | Палиця з гаком / Crook | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `exdeorum:wooden_hammer` | Дерев’яний молот / Wooden Hammer | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
 | `exdeorum:string_mesh` | Нитяна сітка / String Mesh | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:hemp_fabric` | Міцна тканина / Tough Fabric | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | rare | 8 | 0 | Цей ID / Same ID |
-| `millenaire:masa` | Маса з кукурудзи / Masa | 2 | common | 10 | 0 | — |
+| `millenaire:masa` | Маса з кукурудзи / Masa | 8 | common | 10 | 0 | — |
 | `aether:cold_parachute` | Холодний парашут / Cold Parachute | 1 | rare | 8 | 0 | Цей ID / Same ID |
 | `botania:travel_belt` | Пояс мандрівника / Sojourner's Sash | 1 | epic | 4 | 1 | Цей ID / Same ID |
 
@@ -317,23 +329,23 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:iron_nugget` | Шматочок заліза / Iron Nugget | 4 | common | 10 | 0 | — |
-| `minecraft:coal` | Вугілля / Coal | 2 | common | 10 | 0 | — |
-| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 2 | common | 10 | 0 | — |
-| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 1 | common | 10 | 0 | — |
-| `minecraft:gold_nugget` | Шматочок золота / Gold Nugget | 4 | common | 10 | 0 | — |
-| `immersiveengineering:plate_iron` | Залізна пластина / Iron Plate | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:plate_copper` | Мідна пластина / Copper Plate | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:plate_aluminum` | Алюмінієва пластина / Aluminium Plate | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:plate_steel` | Сталева пластина / Steel Plate | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:stick_steel` | Сталевий стрижень / Steel Rod | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:wirecoil_copper` | Котушка дроту низької напруги / LV Wire Coil | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:hemp_fabric` | Міцна тканина / Tough Fabric | 2 | common | 10 | 0 | Цей ID / Same ID |
-| `immersiveengineering:treated_wood_horizontal` | Просочені дошки / Treated Wood Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | common | 10 | 0 | — |
+| `minecraft:coal` | Вугілля / Coal | 8 | common | 10 | 0 | — |
+| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 8 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
+| `minecraft:gold_ingot` | Золотий зливок / Gold Ingot | 4 | common | 10 | 0 | — |
+| `immersiveengineering:plate_iron` | Залізна пластина / Iron Plate | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:plate_copper` | Мідна пластина / Copper Plate | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:plate_aluminum` | Алюмінієва пластина / Aluminium Plate | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:plate_steel` | Сталева пластина / Steel Plate | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:stick_steel` | Сталевий стрижень / Steel Rod | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:wirecoil_copper` | Котушка дроту низької напруги / LV Wire Coil | 8 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:hemp_fabric` | Міцна тканина / Tough Fabric | 8 | common | 10 | 0 | Цей ID / Same ID |
+| `immersiveengineering:treated_wood_horizontal` | Просочені дошки / Treated Wood Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:component_iron` | Залізний механічний компонент / Iron Mechanical Component | 1 | rare | 12 | 0 | Цей ID / Same ID |
 | `immersiveengineering:component_steel` | Сталевий механічний компонент / Steel Mechanical Component | 1 | rare | 8 | 1 | Цей ID / Same ID |
-| `immersiveengineering:hammer` | Молот інженера / Engineer's Hammer | 1 | uncommon | 5 | 0 | Цей ID / Same ID |
-| `immersiveengineering:screwdriver` | Викрутка інженера / Engineer's Screwdriver | 1 | uncommon | 5 | 0 | Цей ID / Same ID |
+| `immersiveengineering:hammer` | Молот інженера / Engineer's Hammer | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `immersiveengineering:screwdriver` | Викрутка інженера / Engineer's Screwdriver | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
 | `kubejs:industrial_chassis` | Промислове шасі / Industrial Chassis | 1 | rare | 12 | 1 | Цей ID / Same ID |
 | `kubejs:electromechanical_drive` | Електромеханічний привід / Electromechanical Drive | 1 | rare | 12 | 1 | Цей ID / Same ID |
 | `kubejs:sealed_process_chamber` | Герметична камера / Sealed Process Chamber | 1 | epic | 6 | 2 | Цей ID / Same ID |
@@ -348,22 +360,22 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:redstone` | Редстоун / Redstone Dust | 3 | common | 10 | 0 | — |
-| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 2 | common | 10 | 0 | — |
-| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 1 | common | 10 | 0 | — |
-| `minecraft:coal` | Вугілля / Coal | 2 | common | 10 | 0 | — |
-| `minecraft:glass` | Скло / Glass | 3 | common | 10 | 0 | — |
-| `mekanism:basic_control_circuit` | Базова керувальна схема / Basic Control Circuit | 1 | uncommon | 16 | 0 | Цей ID / Same ID |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | common | 10 | 0 | — |
+| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 8 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
+| `minecraft:coal` | Вугілля / Coal | 8 | common | 10 | 0 | — |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `mekanism:basic_control_circuit` | Базова керувальна схема / Basic Control Circuit | 4 | uncommon | 16 | 0 | Цей ID / Same ID |
 | `mekanism:advanced_control_circuit` | Поліпшена керувальна схема / Advanced Control Circuit | 1 | rare | 14 | 2 | Цей ID / Same ID |
 | `mekanism:elite_control_circuit` | Елітна керувальна схема / Elite Control Circuit | 1 | rare | 8 | 3 | Цей ID / Same ID |
 | `mekanism:ultimate_control_circuit` | Найвища керувальна схема / Ultimate Control Circuit | 1 | epic | 8 | 4 | Цей ID / Same ID |
-| `mekanism:alloy_infused` | Збагачений сплав / Infused Alloy | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
+| `mekanism:alloy_infused` | Збагачений сплав / Infused Alloy | 4 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `mekanism:alloy_reinforced` | Зміцнений сплав / Reinforced Alloy | 1 | rare | 10 | 2 | Цей ID / Same ID |
 | `mekanism:alloy_atomic` | Атомний сплав / Atomic Alloy | 1 | epic | 10 | 3 | Цей ID / Same ID |
 | `ae2:logic_processor` | Логічний процесор / Logic Processor | 1 | rare | 14 | 1 | Цей ID / Same ID |
 | `ae2:calculation_processor` | Обчислювальний процесор / Calculation Processor | 1 | rare | 14 | 1 | Цей ID / Same ID |
 | `ae2:engineering_processor` | Інженерний процесор / Engineering Processor | 1 | rare | 14 | 1 | Цей ID / Same ID |
-| `enderio:basic_capacitor` | Базовий конденсатор / Basic Capacitor | 1 | uncommon | 10 | 1 | Цей ID / Same ID |
+| `enderio:basic_capacitor` | Базовий конденсатор / Basic Capacitor | 4 | uncommon | 10 | 1 | Цей ID / Same ID |
 | `enderio:double_layer_capacitor` | Двошаровий конденсатор / Double-Layer Capacitor | 1 | rare | 10 | 2 | Цей ID / Same ID |
 | `enderio:octadic_capacitor` | Восьмишаровий конденсатор / Octadic Capacitor | 1 | epic | 10 | 3 | Цей ID / Same ID |
 | `buildcraftcore:gears/gear_iron` | Залізна шестерня / Iron Gear | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
@@ -379,28 +391,28 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:coal` | Вугілля / Coal | 2 | common | 10 | 0 | — |
-| `minecraft:redstone` | Редстоун / Redstone Dust | 3 | common | 10 | 0 | — |
-| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 2 | common | 10 | 0 | — |
-| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 1 | common | 10 | 0 | — |
-| `minecraft:glass` | Скло / Glass | 3 | common | 10 | 0 | — |
-| `immersiveengineering:wirecoil_copper` | Котушка дроту низької напруги / LV Wire Coil | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:wirecoil_electrum` | Котушка дроту середньої напруги / MV Wire Coil | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
-| `immersiveengineering:wirecoil_steel` | Котушка дроту високої напруги / HV Wire Coil | 1 | uncommon | 14 | 2 | Цей ID / Same ID |
-| `immersiveengineering:connector_lv` | Роз’єм низької напруги / LV Wire Connector | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
+| `minecraft:coal` | Вугілля / Coal | 8 | common | 10 | 0 | — |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | common | 10 | 0 | — |
+| `minecraft:copper_ingot` | Мідний зливок / Copper Ingot | 8 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `immersiveengineering:wirecoil_copper` | Котушка дроту низької напруги / LV Wire Coil | 8 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:wirecoil_electrum` | Котушка дроту середньої напруги / MV Wire Coil | 8 | uncommon | 14 | 1 | Цей ID / Same ID |
+| `immersiveengineering:wirecoil_steel` | Котушка дроту високої напруги / HV Wire Coil | 8 | uncommon | 14 | 2 | Цей ID / Same ID |
+| `immersiveengineering:connector_lv` | Роз’єм низької напруги / LV Wire Connector | 4 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `immersiveengineering:capacitor_lv` | Накопичувач низької напруги / LV Accumulator | 1 | rare | 8 | 1 | Цей ID / Same ID |
-| `immersiveengineering:connector_mv` | Роз’єм середньої напруги / MV Wire Connector | 1 | uncommon | 12 | 1 | Цей ID / Same ID |
+| `immersiveengineering:connector_mv` | Роз’єм середньої напруги / MV Wire Connector | 4 | uncommon | 12 | 1 | Цей ID / Same ID |
 | `immersiveengineering:capacitor_mv` | Накопичувач середньої напруги / MV Accumulator | 1 | rare | 8 | 1 | Цей ID / Same ID |
-| `immersiveengineering:connector_hv` | Роз’єм високої напруги / HV Wire Connector | 1 | uncommon | 12 | 2 | Цей ID / Same ID |
+| `immersiveengineering:connector_hv` | Роз’єм високої напруги / HV Wire Connector | 4 | uncommon | 12 | 2 | Цей ID / Same ID |
 | `immersiveengineering:capacitor_hv` | Накопичувач високої напруги / HV Accumulator | 1 | epic | 8 | 2 | Цей ID / Same ID |
 | `mekanism:energy_tablet` | Енергетична пластина / Energy Tablet | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
 | `mekanism:basic_energy_cube` | Базовий енергетичний куб / Basic Energy Cube | 1 | rare | 6 | 1 | Цей ID / Same ID |
 | `mekanism:advanced_energy_cube` | Поліпшений енергетичний куб / Advanced Energy Cube | 1 | rare | 6 | 2 | Цей ID / Same ID |
 | `mekanism:elite_energy_cube` | Елітний енергетичний куб / Elite Energy Cube | 1 | epic | 6 | 3 | Цей ID / Same ID |
 | `mekanism:ultimate_energy_cube` | Найвищий енергетичний куб / Ultimate Energy Cube | 1 | epic | 6 | 4 | Цей ID / Same ID |
-| `mekanism:basic_universal_cable` | Базовий універсальний кабель / Basic Universal Cable | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
-| `mekanism:advanced_universal_cable` | Поліпшений універсальний кабель / Advanced Universal Cable | 1 | uncommon | 12 | 2 | Цей ID / Same ID |
-| `mekanism:elite_universal_cable` | Елітний універсальний кабель / Elite Universal Cable | 1 | uncommon | 12 | 3 | Цей ID / Same ID |
+| `mekanism:basic_universal_cable` | Базовий універсальний кабель / Basic Universal Cable | 8 | uncommon | 12 | 0 | Цей ID / Same ID |
+| `mekanism:advanced_universal_cable` | Поліпшений універсальний кабель / Advanced Universal Cable | 8 | uncommon | 12 | 2 | Цей ID / Same ID |
+| `mekanism:elite_universal_cable` | Елітний універсальний кабель / Elite Universal Cable | 8 | uncommon | 12 | 3 | Цей ID / Same ID |
 | `enderio:double_layer_capacitor` | Двошаровий конденсатор / Double-Layer Capacitor | 1 | rare | 10 | 2 | Цей ID / Same ID |
 | `enderio:octadic_capacitor` | Восьмишаровий конденсатор / Octadic Capacitor | 1 | epic | 8 | 3 | Цей ID / Same ID |
 
@@ -410,11 +422,11 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:paper` | Папір / Paper | 4 | common | 10 | 0 | — |
-| `minecraft:glass` | Скло / Glass | 2 | common | 10 | 0 | — |
-| `minecraft:string` | Нитка / String | 2 | common | 10 | 0 | — |
-| `minecraft:iron_nugget` | Шматочок заліза / Iron Nugget | 4 | common | 10 | 0 | — |
-| `minecraft:redstone` | Редстоун / Redstone Dust | 2 | common | 10 | 0 | — |
+| `minecraft:paper` | Папір / Paper | 16 | common | 10 | 0 | — |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `minecraft:string` | Нитка / String | 8 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | common | 10 | 0 | — |
 | `sophisticatedstorage:barrel` | Дерев’яна бочка / Barrel | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
 | `sophisticatedstorage:copper_barrel` | Мідна бочка / Copper Barrel | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `sophisticatedstorage:iron_barrel` | Залізна бочка / Iron Barrel | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
@@ -424,8 +436,8 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `ae2:logic_processor` | Логічний процесор / Logic Processor | 1 | rare | 12 | 1 | Цей ID / Same ID |
 | `ae2:calculation_processor` | Обчислювальний процесор / Calculation Processor | 1 | rare | 12 | 1 | Цей ID / Same ID |
 | `ae2:engineering_processor` | Інженерний процесор / Engineering Processor | 1 | rare | 12 | 1 | Цей ID / Same ID |
-| `ae2:fluix_glass_cable` | Скляний флюїксовий ME-кабель / Fluix ME Glass Cable | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `ae2:quartz_fiber` | Кварцове волокно / Quartz Fiber | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `ae2:fluix_glass_cable` | Скляний флюїксовий ME-кабель / Fluix ME Glass Cable | 8 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `ae2:quartz_fiber` | Кварцове волокно / Quartz Fiber | 8 | uncommon | 14 | 0 | Цей ID / Same ID |
 | `ae2:cell_component_1k` | Компонент ME-комірки на 1k / 1k ME Storage Component | 1 | rare | 10 | 1 | Цей ID / Same ID |
 | `sophisticatedstorage:filter_upgrade` | Поліпшення фільтра / Filter Upgrade | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `sophisticatedstorage:hopper_upgrade` | Поліпшення лійки / Hopper Upgrade | 1 | rare | 10 | 1 | Цей ID / Same ID |
@@ -441,13 +453,13 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:paper` | Папір / Paper | 4 | common | 10 | 0 | — |
-| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 2 | common | 10 | 0 | — |
-| `minecraft:glass` | Скло / Glass | 2 | common | 10 | 0 | — |
-| `minecraft:amethyst_shard` | Уламок аметисту / Amethyst Shard | 1 | common | 10 | 0 | — |
-| `minecraft:sugar` | Цукор / Sugar | 3 | common | 10 | 0 | — |
-| `ae2:certus_quartz_cutting_knife` | Ніж із сертус-кварцу / Certus Quartz Cutting Knife | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
-| `ae2:certus_quartz_wrench` | Ключ із сертус-кварцу / Certus Quartz Wrench | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
+| `minecraft:paper` | Папір / Paper | 16 | common | 10 | 0 | — |
+| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 12 | common | 10 | 0 | — |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `minecraft:amethyst_shard` | Уламок аметисту / Amethyst Shard | 8 | common | 10 | 0 | — |
+| `minecraft:sugar` | Цукор / Sugar | 8 | common | 10 | 0 | — |
+| `ae2:certus_quartz_cutting_knife` | Ніж із сертус-кварцу / Certus Quartz Cutting Knife | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `ae2:certus_quartz_wrench` | Ключ із сертус-кварцу / Certus Quartz Wrench | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
 | `ae2:memory_card` | Картка пам’яті / Memory Card | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
 | `ae2:basic_card` | Базова картка / Basic Card | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
 | `ae2:advanced_card` | Поліпшена картка / Advanced Card | 1 | rare | 12 | 1 | Цей ID / Same ID |
@@ -468,17 +480,17 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 2 | common | 10 | 0 | — |
-| `minecraft:amethyst_shard` | Уламок аметисту / Amethyst Shard | 2 | common | 10 | 0 | — |
-| `minecraft:glass` | Скло / Glass | 2 | common | 10 | 0 | — |
-| `minecraft:paper` | Папір / Paper | 3 | common | 10 | 0 | — |
-| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 1 | common | 10 | 0 | — |
-| `botania:white_petal` | Біла містична пелюстка / Mystical White Petal | 2 | common | 10 | 0 | Цей ID / Same ID |
-| `botania:purple_petal` | Фіолетова містична пелюстка / Mystical Purple Petal | 2 | common | 10 | 0 | Цей ID / Same ID |
-| `botania:light_blue_petal` | Блакитна містична пелюстка / Mystical Light Blue Petal | 2 | common | 10 | 0 | Цей ID / Same ID |
-| `botania:pink_petal` | Рожева містична пелюстка / Mystical Pink Petal | 2 | common | 10 | 0 | Цей ID / Same ID |
+| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 12 | common | 10 | 0 | — |
+| `minecraft:amethyst_shard` | Уламок аметисту / Amethyst Shard | 8 | common | 10 | 0 | — |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `minecraft:paper` | Папір / Paper | 16 | common | 10 | 0 | — |
+| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 6 | common | 10 | 0 | — |
+| `botania:white_petal` | Біла містична пелюстка / Mystical White Petal | 8 | common | 10 | 0 | Цей ID / Same ID |
+| `botania:purple_petal` | Фіолетова містична пелюстка / Mystical Purple Petal | 8 | common | 10 | 0 | Цей ID / Same ID |
+| `botania:light_blue_petal` | Блакитна містична пелюстка / Mystical Light Blue Petal | 8 | common | 10 | 0 | Цей ID / Same ID |
+| `botania:pink_petal` | Рожева містична пелюстка / Mystical Pink Petal | 8 | common | 10 | 0 | Цей ID / Same ID |
 | `botania:vine_ball` | Куля з ліан / Vine Ball | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `botania:lexicon` | Лексика Botania / Lexica Botania | 1 | uncommon | 3 | 0 | Цей ID / Same ID |
+| `botania:lexicon` | Лексика Botania / Lexica Botania | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
 | `botania:incense_plate` | Підставка для пахощів / Incense Plate | 1 | uncommon | 6 | 0 | Цей ID / Same ID |
 | `botania:incense_stick` | Паличка пахощів / Incense Stick | 1 | uncommon | 12 | 1 | Цей ID / Same ID |
 | `botania:lens_normal` | Лінза мани / Mana Lens | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
@@ -499,22 +511,22 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:bread` | Хліб / Bread | 2 | common | 10 | 0 | — |
-| `minecraft:torch` | Смолоскип / Torch | 4 | common | 10 | 0 | — |
-| `minecraft:arrow` | Стріла / Arrow | 4 | common | 10 | 0 | — |
-| `minecraft:leather` | Шкіра / Leather | 1 | common | 10 | 0 | — |
-| `minecraft:white_wool` | Біла вовна / White Wool | 2 | common | 10 | 0 | — |
-| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 2 | common | 10 | 0 | — |
-| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 2 | common | 10 | 0 | — |
-| `twilightforest:cooked_meef` | Стейк із мінотавра / Meef Steak | 2 | common | 10 | 0 | — |
-| `aether:blue_berry` | Синя ягода / Blue Berry | 3 | common | 10 | 0 | — |
-| `ecologics:coconut_slice` | Скибка кокоса / Coconut Slice | 3 | common | 10 | 0 | — |
+| `minecraft:bread` | Хліб / Bread | 8 | common | 10 | 0 | — |
+| `minecraft:torch` | Смолоскип / Torch | 16 | common | 10 | 0 | — |
+| `minecraft:arrow` | Стріла / Arrow | 16 | common | 10 | 0 | — |
+| `minecraft:leather` | Шкіра / Leather | 4 | common | 10 | 0 | — |
+| `minecraft:white_wool` | Біла вовна / White Wool | 8 | common | 10 | 0 | — |
+| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 8 | common | 10 | 0 | — |
+| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 8 | common | 10 | 0 | — |
+| `twilightforest:cooked_meef` | Стейк із мінотавра / Meef Steak | 8 | common | 10 | 0 | — |
+| `aether:blue_berry` | Синя ягода / Blue Berry | 8 | common | 10 | 0 | — |
+| `ecologics:coconut_slice` | Скибка кокоса / Coconut Slice | 8 | common | 10 | 0 | — |
 | `waystones:blank_scroll` | Порожній сувій / Blank Scroll | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
 | `waystones:warp_dust` | Пил переміщення / Warp Dust | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
 | `waystones:return_scroll` | Сувій повернення / Return Scroll | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `waystones:warp_scroll` | Сувій переміщення / Warp Scroll | 1 | rare | 10 | 1 | Цей ID / Same ID |
 | `waystones:portal_scroll` | Портальний сувій / Portal Scroll | 1 | rare | 8 | 2 | Цей ID / Same ID |
-| `aether:ambrosium_torch` | Амброзієвий смолоскип / Ambrosium Torch | 2 | common | 10 | 0 | Цей ID / Same ID |
+| `aether:ambrosium_torch` | Амброзієвий смолоскип / Ambrosium Torch | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `aether:cold_parachute` | Холодний парашут / Cold Parachute | 1 | rare | 8 | 0 | Цей ID / Same ID |
 | `aether:golden_parachute` | Золотий парашут / Golden Parachute | 1 | rare | 6 | 1 | Цей ID / Same ID |
 | `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | rare | 8 | 0 | Цей ID / Same ID |
@@ -528,20 +540,20 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:brick` | Цеглина / Brick | 4 | common | 10 | 0 | — |
-| `minecraft:oak_planks` | Дубові дошки / Oak Planks | 4 | common | 10 | 0 | — |
-| `minecraft:white_wool` | Біла вовна / White Wool | 2 | common | 10 | 0 | — |
-| `minecraft:paper` | Папір / Paper | 3 | common | 10 | 0 | — |
-| `minecraft:bread` | Хліб / Bread | 2 | common | 10 | 0 | — |
-| `ecologics:coconut_planks` | Кокосові дошки / Coconut Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `ecologics:walnut_planks` | Горіхові дошки / Walnut Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `ecologics:azalea_planks` | Азалієві дошки / Azalea Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `millenaire:byzantine_stone_tiles` | Візантійська кам’яна плитка / Byzantine Stone Tiles | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `millenaire:byzantine_sandstone_tiles` | Візантійська пісковикова плитка / Byzantine Sandstone Tiles | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `millenaire:ice_brick` | Крижана цегла / Ice Brick | 4 | common | 10 | 0 | Цей ID / Same ID |
-| `millenaire:masa` | Маса з кукурудзи / Masa | 2 | common | 10 | 0 | — |
+| `minecraft:brick` | Цеглина / Brick | 16 | common | 10 | 0 | — |
+| `minecraft:oak_planks` | Дубові дошки / Oak Planks | 16 | common | 10 | 0 | — |
+| `minecraft:white_wool` | Біла вовна / White Wool | 8 | common | 10 | 0 | — |
+| `minecraft:paper` | Папір / Paper | 16 | common | 10 | 0 | — |
+| `minecraft:bread` | Хліб / Bread | 8 | common | 10 | 0 | — |
+| `ecologics:coconut_planks` | Кокосові дошки / Coconut Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `ecologics:walnut_planks` | Горіхові дошки / Walnut Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `ecologics:azalea_planks` | Азалієві дошки / Azalea Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `millenaire:byzantine_stone_tiles` | Візантійська кам’яна плитка / Byzantine Stone Tiles | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `millenaire:byzantine_sandstone_tiles` | Візантійська пісковикова плитка / Byzantine Sandstone Tiles | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `millenaire:ice_brick` | Крижана цегла / Ice Brick | 16 | common | 10 | 0 | Цей ID / Same ID |
+| `millenaire:masa` | Маса з кукурудзи / Masa | 8 | common | 10 | 0 | — |
 | `millenaire:cider` | Сидр / Cider | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
-| `immersiveengineering:treated_wood_horizontal` | Просочені дошки / Treated Wood Planks | 4 | common | 10 | 0 | Цей ID / Same ID |
+| `immersiveengineering:treated_wood_horizontal` | Просочені дошки / Treated Wood Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:cushion` | Подушка для приземлення / Jump Cushion | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
 | `immersiveengineering:lantern` | Інженерський ліхтар / Lantern | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `immersiveengineering:crate` | Дерев’яний ящик / Wooden Storage Crate | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
@@ -559,21 +571,21 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:glass` | Скло / Glass | 3 | common | 10 | 0 | — |
-| `minecraft:redstone` | Редстоун / Redstone Dust | 3 | common | 10 | 0 | — |
-| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 1 | common | 10 | 0 | — |
-| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 1 | common | 10 | 0 | — |
-| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 1 | common | 10 | 0 | — |
-| `ad_astra:iron_rod` | Залізний стрижень / Iron Rod | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `ad_astra:steel_rod` | Сталевий стрижень / Steel Rod | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
-| `immersiveengineering:plate_iron` | Залізна пластина / Iron Plate | 1 | uncommon | 14 | 0 | Цей ID / Same ID |
-| `immersiveengineering:plate_steel` | Сталева пластина / Steel Plate | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
+| `minecraft:glass` | Скло / Glass | 16 | common | 10 | 0 | — |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
+| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 4 | common | 10 | 0 | — |
+| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 6 | common | 10 | 0 | — |
+| `ad_astra:iron_rod` | Залізний стрижень / Iron Rod | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `ad_astra:steel_rod` | Сталевий стрижень / Steel Rod | 4 | uncommon | 14 | 1 | Цей ID / Same ID |
+| `immersiveengineering:plate_iron` | Залізна пластина / Iron Plate | 4 | uncommon | 14 | 0 | Цей ID / Same ID |
+| `immersiveengineering:plate_steel` | Сталева пластина / Steel Plate | 4 | uncommon | 14 | 1 | Цей ID / Same ID |
 | `ad_astra:fan` | Вентилятор двигуна / Fan | 1 | uncommon | 12 | 1 | Цей ID / Same ID |
 | `ad_astra:engine_frame` | Рама двигуна / Engine Frame | 1 | rare | 12 | 2 | Цей ID / Same ID |
 | `ad_astra:oxygen_gear` | Кисневий комплект / Oxygen Gear | 1 | rare | 8 | 2 | Цей ID / Same ID |
 | `ad_astra:oxygen_sensor` | Кисневий датчик / Oxygen Sensor | 1 | uncommon | 8 | 2 | Цей ID / Same ID |
-| `ad_astra:steel_cable` | Сталевий кабель / Steel Cable | 1 | uncommon | 14 | 1 | Цей ID / Same ID |
-| `ad_astra:desh_cable` | Кабель із дешу / Desh Cable | 1 | uncommon | 10 | 3 | Цей ID / Same ID |
+| `ad_astra:steel_cable` | Сталевий кабель / Steel Cable | 4 | uncommon | 14 | 1 | Цей ID / Same ID |
+| `ad_astra:desh_cable` | Кабель із дешу / Desh Cable | 4 | uncommon | 10 | 3 | Цей ID / Same ID |
 | `ad_astra:desh_plate` | Пластина з дешу / Desh Plate | 1 | rare | 12 | 3 | Цей ID / Same ID |
 | `ad_astra:ostrum_plate` | Острумова пластина / Ostrum Plate | 1 | rare | 12 | 4 | Цей ID / Same ID |
 | `ad_astra:calorite_plate` | Калоритова пластина / Calorite Plate | 1 | rare | 12 | 4 | Цей ID / Same ID |
@@ -582,7 +594,7 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `kubejs:radiation_shield` | Радіаційний захист / Radiation Shield | 1 | rare | 8 | 4 | Цей ID / Same ID |
 | `kubejs:reinforced_netherite_plate` | Посилена незеритова пластина / Reinforced Netherite Plate | 1 | epic | 6 | 4 | Цей ID / Same ID |
 | `ad_astra:coal_generator` | Вугільний генератор / Coal Generator | 1 | rare | 6 | 1 | Цей ID / Same ID |
-| `ad_astra:cheese` | Сир / Cheese | 2 | common | 10 | 0 | — |
+| `ad_astra:cheese` | Сир / Cheese | 8 | common | 10 | 0 | — |
 
 ### processing
 
@@ -590,16 +602,16 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:sand` | Пісок / Sand | 4 | common | 10 | 0 | — |
-| `minecraft:gravel` | Гравій / Gravel | 4 | common | 10 | 0 | — |
-| `minecraft:cobblestone` | Бруківка / Cobblestone | 4 | common | 10 | 0 | — |
-| `minecraft:clay_ball` | Грудка глини / Clay Ball | 4 | common | 10 | 0 | — |
-| `minecraft:coal` | Вугілля / Coal | 2 | common | 10 | 0 | — |
-| `exdeorum:crook` | Палиця з гаком / Crook | 1 | uncommon | 6 | 0 | Цей ID / Same ID |
-| `exdeorum:bone_crook` | Кістяна палиця з гаком / Bone Crook | 1 | uncommon | 6 | 0 | Цей ID / Same ID |
-| `exdeorum:wooden_hammer` | Дерев’яний молот / Wooden Hammer | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
-| `exdeorum:iron_hammer` | Залізний молот / Iron Hammer | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
-| `exdeorum:diamond_hammer` | Діамантовий молот / Diamond Hammer | 1 | rare | 8 | 1 | Цей ID / Same ID |
+| `minecraft:sand` | Пісок / Sand | 16 | common | 10 | 0 | — |
+| `minecraft:gravel` | Гравій / Gravel | 16 | common | 10 | 0 | — |
+| `minecraft:cobblestone` | Бруківка / Cobblestone | 16 | common | 10 | 0 | — |
+| `minecraft:clay_ball` | Грудка глини / Clay Ball | 16 | common | 10 | 0 | — |
+| `minecraft:coal` | Вугілля / Coal | 8 | common | 10 | 0 | — |
+| `exdeorum:crook` | Палиця з гаком / Crook | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `exdeorum:bone_crook` | Кістяна палиця з гаком / Bone Crook | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `exdeorum:wooden_hammer` | Дерев’яний молот / Wooden Hammer | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `exdeorum:iron_hammer` | Залізний молот / Iron Hammer | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
+| `exdeorum:diamond_hammer` | Діамантовий молот / Diamond Hammer | 1 | rare | 2 | 1 | Цей ID / Same ID |
 | `exdeorum:string_mesh` | Нитяна сітка / String Mesh | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `exdeorum:flint_mesh` | Кременева сітка / Flint Mesh | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `exdeorum:iron_mesh` | Залізна сітка / Iron Mesh | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
@@ -610,7 +622,7 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `exmachinis:diamond_upgrade` | Діамантове поліпшення / Diamond Upgrade | 1 | rare | 8 | 2 | Цей ID / Same ID |
 | `exmachinis:netherite_upgrade` | Незеритове поліпшення / Netherite Upgrade | 1 | epic | 6 | 4 | Цей ID / Same ID |
 | `exmachinis:item_buffer` | Буфер предметів / Item Buffer | 1 | uncommon | 10 | 1 | Цей ID / Same ID |
-| `exmachinis:flux_hammer` | Енергетичний молот / Flux Hammer | 1 | rare | 8 | 2 | Цей ID / Same ID |
+| `exmachinis:flux_hammer` | Енергетичний молот / Flux Hammer | 1 | rare | 2 | 2 | Цей ID / Same ID |
 | `exmachinis:flux_sieve` | Енергетичне сито / Flux Sieve | 1 | epic | 6 | 2 | Цей ID / Same ID |
 | `ironfurnaces:augment_blasting` | Модуль плавлення руд / Augment: Blasting | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `ironfurnaces:augment_smoking` | Модуль копчення / Augment: Smoking | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
@@ -621,14 +633,14 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:arrow` | Стріла / Arrow | 4 | common | 10 | 0 | — |
-| `minecraft:string` | Нитка / String | 3 | common | 10 | 0 | — |
-| `minecraft:bone` | Кістка / Bone | 2 | common | 10 | 0 | — |
-| `minecraft:cooked_beef` | Стейк / Steak | 2 | common | 10 | 0 | — |
-| `minecraft:leather` | Шкіра / Leather | 1 | common | 10 | 0 | — |
-| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 2 | common | 10 | 0 | — |
-| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 2 | common | 10 | 0 | — |
-| `twilightforest:cooked_meef` | Стейк із мінотавра / Meef Steak | 2 | common | 10 | 0 | — |
+| `minecraft:arrow` | Стріла / Arrow | 16 | common | 10 | 0 | — |
+| `minecraft:string` | Нитка / String | 8 | common | 10 | 0 | — |
+| `minecraft:bone` | Кістка / Bone | 8 | common | 10 | 0 | — |
+| `minecraft:cooked_beef` | Стейк / Steak | 8 | common | 10 | 0 | — |
+| `minecraft:leather` | Шкіра / Leather | 4 | common | 10 | 0 | — |
+| `ecologics:crab_meat` | Крабове м’ясо / Crab Meat | 8 | common | 10 | 0 | — |
+| `twilightforest:cooked_venison` | Стейк з оленини / Venison Steak | 8 | common | 10 | 0 | — |
+| `twilightforest:cooked_meef` | Стейк із мінотавра / Meef Steak | 8 | common | 10 | 0 | — |
 | `mob_grinding_utils:mob_swab` | Мазок моба / Mob Swab | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `mob_grinding_utils:absorption_upgrade` | Поліпшення поглинання / Absorption Radius Upgrade | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `mob_grinding_utils:fan_upgrade_speed` | Поліпшення швидкості вентилятора / Mob Fan Distance Upgrade | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
@@ -652,11 +664,11 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:arrow` | Стріла / Arrow | 4 | common | 10 | 0 | — |
-| `minecraft:leather` | Шкіра / Leather | 1 | common | 10 | 0 | — |
-| `minecraft:string` | Нитка / String | 2 | common | 10 | 0 | — |
-| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 2 | common | 10 | 0 | — |
-| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 1 | common | 10 | 0 | — |
+| `minecraft:arrow` | Стріла / Arrow | 16 | common | 10 | 0 | — |
+| `minecraft:leather` | Шкіра / Leather | 4 | common | 10 | 0 | — |
+| `minecraft:string` | Нитка / String | 8 | common | 10 | 0 | — |
+| `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 12 | common | 10 | 0 | — |
+| `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
 | `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:copper_backpack` | Мідний наплічник / Copper Backpack | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:iron_backpack` | Залізний наплічник / Iron Backpack | 1 | rare | 10 | 0 | Цей ID / Same ID |
@@ -683,10 +695,10 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| `minecraft:emerald` | Смарагд / Emerald | 1 | common | 10 | 0 | — |
-| `minecraft:gold_ingot` | Золотий зливок / Gold Ingot | 1 | common | 10 | 0 | — |
-| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 1 | common | 10 | 0 | — |
-| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 1 | common | 10 | 0 | — |
+| `minecraft:emerald` | Смарагд / Emerald | 3 | common | 10 | 0 | — |
+| `minecraft:gold_ingot` | Золотий зливок / Gold Ingot | 4 | common | 10 | 0 | — |
+| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 4 | common | 10 | 0 | — |
+| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 6 | common | 10 | 0 | — |
 | `minecraft:name_tag` | Бирка / Name Tag | 1 | common | 10 | 0 | — |
 | `kubejs:industrial_chassis` | Промислове шасі / Industrial Chassis | 1 | uncommon | 6 | 1 | Цей ID / Same ID |
 | `kubejs:precision_mechanism` | Точний механізм / Precision Mechanism | 1 | uncommon | 8 | 2 | Цей ID / Same ID |
@@ -707,3 +719,16 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `avaritia:diamond_lattice` | Діамантова решітка / Diamond Lattice | 1 | rare | 8 | 5 | Цей ID / Same ID |
 | `avaritia:crystal_matrix_ingot` | Злиток кристалічної матриці / Crystal Matrix Ingot | 1 | epic | 6 | 5 | Цей ID / Same ID |
 | `avaritia:neutron_nugget` | Нейтронієвий самородок / Neutronium Nugget | 1 | rare | 8 | 5 | Цей ID / Same ID |
+
+## Порівняння з іншими збірками / Pack references
+
+Переглянуто прямі конфігурації ATM10 та Craftoria. ATM10 розділяє нагороди за темами та дає партії схем, сплавів, кабелів і матеріалів. У Craftoria ресурсна таблиця містить по 12 металевих злитків, по 16 вугілля/редстоуну/лазуриту; тематичний Powah-пул поєднує витратні матеріали й окреме обладнання. Звідси запозичено принцип корисної партії та відповідності гілці. Особиста видача, точні виробничі відкриття та гарантоване перше uncommon-or-better жеребкування — правила SOQM, а не твердження про ці збірки.
+
+Direct ATM10 and Craftoria configurations informed the useful-batch sizes and themed contents. ATM10 separates themed component pools; Craftoria's resource table includes 12 metal ingots and 16 coal/redstone/lapis per selected prize, while its Powah pool mixes crafting supplies with equipment. SOQM's personal claims, exact production gates and reserved uncommon-or-better first draw remain SOQM-specific rules.
+
+- [ATM10 Mekanism rewards](https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/reward_tables/mekanism.snbt)
+- [ATM10 advanced Mekanism rewards](https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/reward_tables/amekanismr_dadvanced_loot_boxr.snbt)
+- [Craftoria resource rewards](https://github.com/TeamAOF/Craftoria/blob/main/config/ftbquests/quests/reward_tables/59C15B9D0F7ED5E1.snbt)
+- [Craftoria Powah rewards](https://github.com/TeamAOF/Craftoria/blob/main/config/ftbquests/quests/reward_tables/0414572B7C36F04F.snbt)
+
+These are balance references, not evidence of a completed SOQM survival playthrough. In-game pacing remains a playtest question.
