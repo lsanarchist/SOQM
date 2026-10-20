@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.13
+# Installing SOQM 0.4.14
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.13-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.14-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.13-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.13 asset is not claimed. The
+The current output is `dist/SOQM-0.4.14-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.14 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.13 ZIP and wait for every download. See the
+   select the built 0.4.14 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -154,6 +154,13 @@ For **0.4.12 → 0.4.13**, update the client profile to the new package so the
 launcher downloads the pinned LambDynamicLights JAR. With a manual installation,
 add the exact file linked above to the client's `mods/` directory and restart
 the client. This update adds no server dependency or world migration step.
+
+For **0.4.13 → 0.4.14**, update the pack and fully restart both client and server.
+For a manual update, remove `mods/qm-village-guard-0.4.2.jar` and install
+`qm-village-guard-0.4.3.jar` from the new package; keep only one version.
+Village protection now updates from target and settlement changes. Existing
+settlements are indexed when needed, with no world conversion or new chunks
+required for the optimization.
 
 Report problems with the SOQM version/commit, launcher, OS, Java, RAM allocation,
 reproduction steps, `logs/latest.log` and any crash report. Remove tokens,

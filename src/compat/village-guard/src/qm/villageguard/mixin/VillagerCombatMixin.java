@@ -1,5 +1,6 @@
 package qm.villageguard.mixin;
 
+import net.minecraft.world.entity.LivingEntity;
 import org.millenaire.entity.MillVillager;
 import org.millenaire.entity.VillagerCombat;
 import org.spongepowered.asm.mixin.Final;
@@ -17,5 +18,12 @@ public abstract class VillagerCombatMixin {
     @Inject(method="triggerMobAttacks",at=@At("HEAD"),cancellable=true,require=1,remap=false)
     private void qm$preventForcedVillageAggro(CallbackInfo ci) {
         if(QmVillageGuard.isProtectedVillager(villager))ci.cancel();
+    }
+
+    // Millenaire writes its private attackTarget before delegating to Mob.setTarget.
+    // Reject before either write; vanilla event cancellation alone is too late.
+    @Inject(method="setAttackTarget",at=@At("HEAD"),cancellable=true,require=1,remap=false)
+    private void qm$guardDirectCombatTarget(LivingEntity target, CallbackInfo ci) {
+        if(QmVillageGuard.rejectTarget(villager,target))ci.cancel();
     }
 }

@@ -16,7 +16,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
 | `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
 | `quest-ui` | `qm-quest-ui-0.4.4.jar` | 0.4.2, then coordinated HUD, mapped client API build and automatic minimap crash fix |
-| `village-guard` | `qm-village-guard-0.4.2.jar` | 0.4.2 |
+| `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
 | `chest-balance` | `qm-chest-balance-0.4.11.jar` | Recovered 0.4.6 source; bounded varied exploration update |

@@ -131,7 +131,9 @@ evidence that either ran. The isolated server harness requires the operator's
 explicit Minecraft EULA acceptance as documented in
 [runtime validation](RUNTIME_VALIDATION.md).
 
-No overall TPS/FPS improvement is claimed. Useful next profiling targets are
-the village-guard global mob-tick observer and index rebuilds, and the electric
-quest observer's player scans at recipe completion. Measure their actual share
-of server tick time before changing scheduling or adding stateful caches.
+No overall TPS/FPS improvement is claimed. The Village Guard global mob-tick
+observer and periodic index rebuilds identified here were replaced in SOQM
+0.4.14; see the [module design and reproduction](../src/compat/village-guard/README.md).
+The electric quest observer's player scans at recipe completion remain a
+profiling candidate. Measure their actual share of server tick time before
+changing scheduling or adding stateful caches.

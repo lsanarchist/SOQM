@@ -136,6 +136,29 @@ their exact payload/source hashes are recorded in [reports](../reports/README.md
 
 ## Exploration performance remains a separate experiment
 
+### Focused Village Guard gate
+
+The Village Guard optimization has a separate fixture so changes to targeting
+or settlement geometry can be exercised without rerunning the campaign and
+machine-manufacture scenarios. It uses the same hash-checked full-pack staging,
+localhost server, data reload and normal shutdown as the general harness:
+
+```sh
+python3 scripts/village_guard_probe.py \
+  --accept-eula \
+  --java /absolute/path/to/jdk-21/bin/java \
+  --runtime /path/to/native-runtime
+```
+
+The test-only `tests/runtime/villageguard/VillageGuardProbe.java` runs in a fresh world.
+Results go to `reports/village-guard-probe.json`, including the exact production
+payload and fixture hashes. Its work counters distinguish active village-target
+encounters from unrelated loaded mobs, and geometry mutations from unchanged
+lookups. These checks establish behavior and avoided work; they do not measure
+whole-server TPS or graphical client FPS.
+
+### Travel and generation profiling
+
 The Cannibal 0.4.1 compatibility hotfix redirects its discovery lookup to
 `getChunkNow`; retain that targeted behavior. Passing native interaction or
 startup tests does not measure a travel speedup.

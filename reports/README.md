@@ -1,5 +1,28 @@
 # Verification status
 
+## SOQM 0.4.14 — Village Guard
+
+Village Guard 0.4.3 replaces all-mob tick polling with target hooks and checks of
+ongoing village-target encounters. Settlement geometry updates after mutations
+instead of rebuilding all villages every 200 ticks.
+
+The final locked full-pack server run passed **8,939 assertions** in
+**74.89 seconds**, with **20,056 → 20,056 recipes**, no KubeJS/fatal gate errors
+and normal shutdown. Tests covered exact rotated geometry, real melee,
+Brain/direct combat targets, boundary crossings, explosions, visibility,
+listener teardown and both vanilla and native culture reloads. There were
+**0 guard checks across 2,048 unrelated native mob/Brain fixture iterations**
+and **0 rebuilds across 4,096 unchanged geometry queries**. These are operation
+counts, not measured TPS/FPS gains.
+
+The module rebuilt byte-identically twice. The repository gate passed
+**162 Python tests without skips**, both Node suites, all **12 coordinate
+previews** and deterministic packaging.
+
+[Complete Village Guard verification](verification-village-guard.md) ·
+[Module design and build](../src/compat/village-guard/README.md) ·
+[Native reproduction](../docs/RUNTIME_VALIDATION.md#focused-village-guard-gate).
+
 ## SOQM 0.4.12 — hardcore workshop, MekaSuit and visible rewards
 
 The local candidate adapts **63 recipe variants**, removes **80 old recipe IDs**,
