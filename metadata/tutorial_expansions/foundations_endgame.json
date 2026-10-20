@@ -19,16 +19,19 @@
     "513011EC69FFD72C": {
       "description": {
         "uk_ua": [
+          "У цій збірці звичайна піч потребує 8 блоків бруківки або іншого дозволеного кам’яного матеріалу навколо 1 звичайної дерев’яної скрині. Підготуй скриню перед крафтом печі.",
           "Поклади сировину у верхній слот печі, паливо — у нижній, а готовий результат забери праворуч. Почни із заліза для відра, щита та наступної кирки.",
           "Виділи окремий запас палива для металургії. Звичайна піч готує базові матеріали; сталь, інфузійні сплави й рідини далі потребують своїх машин із промислових глав."
         ],
         "en_us": [
+          "In this pack, the ordinary furnace needs 8 cobblestone or other accepted stone crafting blocks around 1 ordinary wooden chest. Prepare the chest before crafting the furnace.",
           "Put raw material in the upper furnace slot, fuel below it, and collect the result on the right. Start with iron for a bucket, shield and your next pickaxe.",
           "Keep a separate fuel supply for metallurgy. The ordinary furnace prepares basic materials; steel, infused alloys and molten fluids later need the machines taught in the industry chapters."
         ]
       },
       "sources": [
-        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "513011F253F82E4C": {
@@ -259,16 +262,19 @@
     "51301176F3997CB9": {
       "description": {
         "uk_ua": [
+          "Рецепт лійки: 5 залізних злитків, 1 звичайна дерев’яна скриня та 1 невикористаний Basic to Iron Tier Upgrade із Sophisticated Storage. Комплект покращення вже містить мідний і залізний рівні; його виготовлення пояснює глава 37. У крафт іде окремий комплект, тому вміст установленої скрині переносити не потрібно.",
           "Лійка забирає предмети з інвентаря над нею й передає їх у напрямку свого носика. Щоб поставити її в бік скрині чи машини, присідай під час встановлення на потрібну грань.",
           "Почни з короткого тесту: подай одну річ і перевір вихід. Якщо потік стоїть, оглянь напрямок, сумісність боку машини, вільне місце та сигнал редстоуну, який може блокувати лійку."
         ],
         "en_us": [
+          "The hopper recipe uses 5 iron ingots, 1 ordinary wooden chest and 1 unused Sophisticated Storage Basic to Iron Tier Upgrade. That upgrade includes the copper and iron tiers; chapter 37 explains its crafting. The recipe consumes a separate upgrade item, so you do not need to empty an installed storage chest.",
           "A hopper pulls items from the inventory above it and sends them towards its spout. Sneak while placing it against the target face of a chest or machine.",
           "Start with a one-item test and inspect the output. If transfer stops, check orientation, the machine’s side rules, free space and any redstone signal locking the hopper."
         ]
       },
       "sources": [
-        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt"
+        "overrides/config/ftbquests/quests/chapters/qm_intro.snbt",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "513011B28366CA37": {

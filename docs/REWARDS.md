@@ -14,15 +14,18 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
-| Зовнішні ID нагород загалом / Total outer reward IDs | 1627 |
-| Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1627 |
-| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1433 |
+| Зовнішні ID нагород загалом / Total outer reward IDs | 1643 |
+| Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1628 |
+| Нові особисті нагороди квестів спорядження / New personal equipment quest rewards | 15 |
+| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1449 |
 | Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 193 |
+| Гарантовані куби загалом на гравця / Total guaranteed cube units per player | 222 |
+| Наявні нагороди, збільшені з одного до двох кубів / Existing claims increased from one to two cubes | 29 |
 | Особиста вступна книга / Personal introductory book | 1 |
 | Квести з гарантованою компенсацією / Quests with guaranteed crafting refunds | 41 |
 | Компенсація разом із пакунком / Refund plus the original pack | 32 |
 | Компенсація разом із кубом / Refund plus the original cube | 9 |
-| Нативні custom reward objects / Native custom reward objects | 1442 |
+| Нативні custom reward objects / Native custom reward objects | 1458 |
 | Окремі фіксовані cube item reward objects / Standalone fixed cube item reward objects | 184 |
 | Тематичні пули / Themes | 14 |
 | Позиції повного каталогу / Catalogue entries | 326 |
@@ -31,9 +34,9 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 | Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 240 |
 | Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 242 |
 
-У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають один куб замість пакунка; повний список задає `milestones` у каталозі. Числа походять із каталогу та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до наявної книги.
+У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають фіксовані куби замість пакунка; повний список задає `milestones` у каталозі. У 29 наявних прямих нагородах кількість збільшено з одного до двох: загальний бюджет зріс із 193 до **222 кубів на гравця, на 15,0259%**. Решта 164 рубежів зберігає по одному кубу, зокрема дев’ять наборів із компенсацією. 15 нових квестів спорядження дають звичайні особисті пакунки. Числа походять із каталогу, фіксованої вибірки [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до книги.
 
-Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award one cube in place of a pack; the catalogue’s `milestones` map is the complete list. These counts come from the catalogue and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the existing book.
+Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award fixed cubes in place of a pack; the catalogue’s `milestones` map is the complete list. Twenty-nine existing direct rewards increase from one to two cubes, raising the total budget from 193 to **222 cubes per player, a 15.0259% increase**. The remaining 164 milestones retain one cube each, including the nine refund bundles. The 15 new equipment quests award ordinary personal packs. These counts come from the catalogue, the fixed selection in [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json), and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the book.
 
 ## Гарантовані компенсації крафту / Guaranteed crafting refunds
 
@@ -61,13 +64,13 @@ Upgrading a placed Obsidian Furnace to Netherite is also supported. The pinned I
 
 ### Оновлення існуючих світів / Existing worlds
 
-Усі 1627 зовнішніх ID і персональні claim keys збережені. **Уже отримана нагорода не видається повторно й не отримує автоматичної доплати.** Дев’ять кубів тепер доставляються разом із компенсацією через custom reward, але з тим самим ID, кількістю й tier. Збережені отримання переживають цю зміну типу.
+Усі 1628 наявних зовнішніх ID і персональні claim keys збережені; 15 нових квестів спорядження додають власні нагороди з новими ID. **Уже отримана нагорода не видається повторно й не отримує автоматичної доплати.** Два куби у 29 вибраних слотах доступні лише за ще не отриманими нагородами. Дев’ять кубів, об’єднаних із компенсацією в історичному оновленні 0.4.10, і далі видаються через custom reward з тим самим ID, кількістю й tier.
 
-All 1627 outer IDs and personal claim keys are retained. **Already claimed rewards remain claimed and receive no automatic top-up.** Nine cubes now travel with a refund through a custom reward, retaining the same ID, count and tier. Existing claims survive that type change.
+All 1628 existing outer IDs and personal claim keys are retained; the 15 new equipment quests add their own rewards with new IDs. **Already claimed rewards remain claimed and receive no automatic top-up.** The doubled cube quantities in 29 selected slots apply only to unclaimed rewards. The nine cubes bundled with refunds in the historical 0.4.10 update continue to use custom rewards with the same ID, count and tier.
 
-Для старого завершеного, але ще не отриманого квесту діє нова умова виробництва. 40 із 41 потрібного output ID раніше не відстежувалися; їхній минулий крафт відновити з інвентарю чи прогресу неможливо. Для таких квестів після оновлення потрібне нове справжнє виготовлення або підтримуваний апгрейд. Раніше записаний факт `mekanism:ultimate_energy_cube` уже придатний для відповідної компенсації. Зміна команди не скидає отриманих персональних нагород і не копіює чужі виробничі факти у власний запис.
+Історична умова переходу з версій до запровадження компенсацій у 0.4.10: для завершеного, але ще не отриманого квесту потрібен виробничий факт. До того оновлення 40 із 41 потрібного output ID не відстежувалися; минулий крафт неможливо відновити з інвентарю чи прогресу. Для таких старих світів потрібне нове справжнє виготовлення або підтримуваний апгрейд. Уже записані виробничі факти, зокрема `mekanism:ultimate_energy_cube`, залишаються придатними; поточне оновлення їх не скидає. Зміна команди не скидає отриманих персональних нагород і не копіює чужі виробничі факти у власний запис.
 
-An old completed but unclaimed refund quest uses the new manufacture condition. Forty of the 41 required outputs were not previously observed; inventory or quest progress cannot reconstruct their past crafting. Those quests require a new real manufacture or supported upgrade after updating. An already recorded `mekanism:ultimate_energy_cube` fact can satisfy its refund immediately. Team changes do not reset personal claims or copy other players' production facts into the player's own record.
+Historical migration condition for versions predating the refunds introduced in 0.4.10: a completed but unclaimed refund quest needs manufacture evidence. Before that update, forty of the 41 required outputs were not observed; inventory or quest progress cannot reconstruct their past crafting. Those older worlds need a new real manufacture or supported upgrade. Already recorded production facts, including `mekanism:ultimate_energy_cube`, remain valid; the current update does not reset them. Team changes do not reset personal claims or copy other players' production facts into the player's own record.
 
 ### Первинні приклади / Primary-source precedents
 
@@ -105,7 +108,7 @@ These primary questbooks establish fixed material rewards alongside other prizes
 | `51401117A75D3720` | Netherite Furnace — `ironfurnaces:netherite_furnace` | `minecraft:netherite_ingot` | 2 → 1 | Mayhem Cube T4 |
 | `513011E2552BA5EA` | Basic Induction Cell — `mekanism:basic_induction_cell` | `mekanism:energy_tablet` | 3 → 1 | Пакунок / Pack |
 | `514D115314DFB698` | Chemical Crystallizer — `mekanism:chemical_crystallizer` | `kubejs:sealed_process_chamber` | 1 → 1 * | Пакунок / Pack |
-| `514D110A613D8197` | Chemical Infuser — `mekanism:chemical_infuser` | `mekanism:basic_chemical_tank` | 2 → 1 | Mayhem Cube T3 |
+| `514D110A613D8197` | Chemical Infuser — `mekanism:chemical_infuser` | `mekanism:advanced_chemical_tank` | 2 → 1 | Mayhem Cube T3 |
 | `514D11AB5959BBF5` | Digital Miner — `mekanism:digital_miner` | `mekanism:teleportation_core` | 2 → 1 | Пакунок / Pack |
 | `513011F6F0D21BC6` | Mekanism Laser — `mekanism:laser` | `mekanism:energy_tablet` | 2 → 1 | Пакунок / Pack |
 | `513011156F29CC4E` | Pressurized Reaction Chamber — `mekanism:pressurized_reaction_chamber` | `mekanism:basic_chemical_tank` | 2 → 1 | Пакунок / Pack |
@@ -177,11 +180,29 @@ The level is the highest actually manufactured milestone in this table. The last
 | 5 | `kubejs:mythic_circuit` — Міфічна схема / Mythic Circuit | 5 | 18 | 40 | 30 | 12 |
 | 6 | `kubejs:emc_core` — Ядро EMC / EMC Core | 5 | 12 | 40 | 33 | 15 |
 
+## Усі нагороди видно в книзі / Visible reward contents in the questbook
+
+Гарантовані компоненти повернення показуються **окремими іконками з точною кількістю в секції нагород квесту**, поруч з основною кнопкою отримання. Звичайні куби та вступна книга зберігають нативні item-іконки; у 29 збільшених нагородах видно кількість 2. У наборі «куб + компенсація» основна іконка показує куб, а додаткові — кожен гарантований стек компонентів. Куб не дублюється другою іконкою.
+
+Guaranteed refund components appear as **separate item icons with exact counts in the quest's reward section**, beside the main claim button. Standalone cubes and the introductory book retain native item icons; the 29 increased cube rewards show a count of 2. In a cube-and-refund bundle, the original icon shows the cube and the additional icons show each guaranteed component stack. The cube icon is not duplicated.
+
+Натисніть **«Переглянути нагороди»** над описом відкритого квесту або **Ctrl+Shift+V**. У книзі відкриється прокручуваний каталог: усі гарантовані стеки та всі можливі позиції відповідного тематичного пулу, включно з ще недоступними. Для кожного предмета показано назву, кількість, рідкість, мінімальний виробничий рівень і конкретні умови виготовлення; повний текст умов є в підказці. Клавіші рецептів і застосувань JEI працюють при наведенні на предмет. Клавіша відкриття каталогу не перехоплює введення у сфокусованому текстовому полі чи іншому модальному вікні.
+
+Click **View rewards** above the open quest's description, or press **Ctrl+Shift+V**. The book opens a scrollable catalogue containing every guaranteed stack and every possible entry in that quest's themed pool, including locked entries. Each item shows its name, quantity, rarity, minimum production level and exact manufacturing conditions; its tooltip contains the complete conditions. JEI recipe and use keys work while hovering over an item. The catalogue shortcut does not intercept a focused text field or another modal window.
+
+Список можливостей **не означає видачу всіх предметів**. Звичайний пакунок дає 3–5 випадкових призів відповідно до виробничого розвитку; один із цих призів обирається серед доступних незвичайних або кращих предметів, якщо такі є. Каталог пояснює ці правила й показує статичні умови доступу. Поточні відкриття та нормалізовані відсотки перевіряються командами з наступного розділу; фактичну доступність і видачу визначає сервер при отриманні.
+
+The list of possibilities **does not grant every displayed item**. An ordinary pack gives 3–5 random prizes according to production progress; one of those draws uses eligible uncommon-or-better items when any exist. The catalogue explains those rules and displays the eligibility conditions. The commands in the next section show current discoveries and normalized percentages; the server determines actual eligibility and delivery when claiming.
+
+Додаткові іконки та кнопка каталогу лише відкривають перегляд. Основна кнопка FTB Quests і далі отримує весь набір за тим самим персональним reward ID, один раз для кожного учасника. Вони не створюють окремих нагород, не змінюють позначку отримання та не записують виробничі факти. Компілятор створює [`reward_catalog.json`](../src/compat/quest-ui/resources/assets/qm_quest_ui/reward_catalog.json) з тих самих глав, runtime-пулів і metadata компенсацій. Реалізація перегляду: [`QuestRewardPreview`](../src/compat/quest-ui/src/qm/questui/client/QuestRewardPreview.java), [`RewardCataloguePanel`](../src/compat/quest-ui/src/qm/questui/client/RewardCataloguePanel.java).
+
+The extra icons and catalogue button only open a preview. The original FTB Quests button still claims the entire bundle under the same personal reward ID, once for each member. Preview controls do not create separate rewards, change claim records or record manufacture. The compiler generates [`reward_catalog.json`](../src/compat/quest-ui/resources/assets/qm_quest_ui/reward_catalog.json) from the same chapters, runtime pools and refund metadata. The view is implemented by [`QuestRewardPreview`](../src/compat/quest-ui/src/qm/questui/client/QuestRewardPreview.java) and [`RewardCataloguePanel`](../src/compat/quest-ui/src/qm/questui/client/RewardCataloguePanel.java).
+
 ## Як подивитися поточні шанси / Viewing current chances
 
-Команди доступні гравцеві й лише читають стан. Вони не отримують нагород, не виконують жеребкування та не змінюють відкриття чи позначки отримання. Назва нагороди в квестбуці показує тему; фактичний персональний перегляд доступності та відсотків забезпечують ці команди:
+Команди доступні гравцеві й лише читають стан. Вони не отримують нагород, не виконують жеребкування та не змінюють відкриття чи позначки отримання. Каталог у книзі показує гарантований і можливий вміст та його умови; фактичну поточну доступність і відсотки показують ці команди:
 
-These player commands are read-only. They do not claim rewards, draw prizes, or change production facts or claim records. The quest reward title identifies its theme; these commands provide the current availability and percentage view:
+These player commands are read-only. They do not claim rewards, draw prizes, or change production facts or claim records. The in-book catalogue shows guaranteed and possible contents with their conditions; these commands provide actual current availability and percentages:
 
 ```text
 /soqm rewards status
@@ -275,13 +296,15 @@ These are conditional mathematical expectations for random packs, not playthroug
 
 ## Особисті отримання та оновлення старого світу / Personal claims and existing-world upgrades
 
-**Поточне перебалансування не дає повторного отримання.** Усі 1627 зовнішніх ID та особисті області збережено. Уже забраний пакунок залишається забраним навіть там, де тепер показано куб. Нова нагорода застосовується до ще не отриманих призів.
+**Поточне перебалансування не дає повторного отримання наявних нагород.** Усі 1628 наявних зовнішніх ID та особисті області збережено. Уже забраний пакунок або куб залишається забраним; додатковий куб у 29 вибраних слотах застосовується лише до ще не отриманих призів. 15 нових квестів спорядження мають нові ID власних нагород; каталог не додає нових claim slots.
 
-**This rebalance does not create another claim.** All 1627 outer IDs and personal scopes are retained. An already claimed pack stays claimed even where the slot now displays a cube. The new contents apply to unclaimed rewards.
+**This rebalance does not reopen existing rewards.** All 1628 existing outer IDs and personal scopes are retained. An already claimed pack or cube stays claimed; the additional cube in 29 selected slots applies only to unclaimed rewards. The 15 new equipment quests have new IDs for their own rewards; the catalogue adds no claim slots.
 
-FTB Quests зберігає позначку отримання за **зовнішнім ID нагороди та областю власника**. У 0.4.8 для наявних нагород установлено `team_reward: false`, `auto: "disabled"`; звичайний пакунок має `type: "custom"`. Об’єкти квестів, задач і нагород зберігають свої ID. Зміна типу не змінює ID, але навмисна зміна командної області на особисту створює інше право отримання.
+### Історична міграція 0.4.8 / Historical 0.4.8 migration
 
-FTB Quests keys a claim by the **outer reward ID and owner scope**. Version 0.4.8 sets existing rewards to `team_reward: false`, `auto: "disabled"`; an ordinary pack uses `type: "custom"`. Quest, task and reward IDs remain unchanged. The type change preserves identity, while the deliberate change from team scope to personal scope creates a different claim entitlement.
+FTB Quests зберігає позначку отримання за **зовнішнім ID нагороди та областю власника**. Історичне оновлення 0.4.8 установило для наявних нагород `team_reward: false`, `auto: "disabled"`, а для звичайного пакунка — `type: "custom"`, зі збереженням ID квестів, задач і нагород. Та навмисна зміна командної області на особисту створила інше право отримання. Поточне оновлення вже особисті області не змінює; таблиця нижче описує саме перехід 0.4.8.
+
+FTB Quests keys a claim by the **outer reward ID and owner scope**. The historical 0.4.8 update set existing rewards to `team_reward: false`, `auto: "disabled"`, and ordinary packs to `type: "custom"`, retaining quest, task and reward IDs. That deliberate move from team scope to personal scope created a different claim entitlement. The current update preserves the already personal scopes; the following table describes the 0.4.8 transition specifically.
 
 | Старий стан / Previous state | Поведінка 0.4.8 / Version 0.4.8 behavior |
 | --- | --- |
@@ -291,9 +314,9 @@ FTB Quests keys a claim by the **outer reward ID and owner scope**. Version 0.4.
 | Особиста вступна книга вже отримана / Personal introductory book already claimed | Її старе особисте отримання зберігається. / Its existing personal claim remains recorded. |
 | Старі припаси, машини чи компоненти вже є в інвентарі / Old supplies, machines or components already exist in inventory | Залишаються у світі, але автоматичних виробничих відкриттів із них немає. / Remain in the world, without automatic production-fact backfill. |
 
-Це навмисна міграція від спільного подарунка до особистого. Правило поширюється на всі фіксовані куби. Власні уже отримані нагороди не скидаються; старі спільні отримання не копіюються у всі UUID. Повторне натискання після нового особистого claim не дає ще один пакунок. Очікувана поведінка при вході/виході з партії, збереженні та перезапуску входить до native-перевірки, описаної нижче.
+У 0.4.8 ця міграція від спільного подарунка до особистого охопила і фіксовані куби. Власні вже отримані нагороди не скидалися; старі спільні отримання не копіювалися у всі UUID. Повторне натискання після особистого claim не дає ще один пакунок. Збереження особистих отримань при вході/виході з партії, збереженні та перезапуску залишається вимогою native-перевірки, описаної нижче.
 
-This is an intentional migration from one shared gift to a personal gift. The same claim rule applies to all fixed cubes. Existing personal claims are not cleared, and previous shared claims are not copied to every UUID. Clicking again after the new personal claim cannot award another pack. Expected party join/leave, save and restart behavior belongs to the native validation coverage described below.
+That 0.4.8 migration from a shared gift to personal gifts also covered fixed cubes. Existing personal claims were not cleared, and previous shared claims were not copied to every UUID. Clicking again after a personal claim cannot award another pack. Preserving personal claims through party changes, saves and restarts remains part of the native validation contract described below.
 
 Стан виробництва й стан отримання — окремі записи. Видача використовує native `ItemReward` для нових порожніх/default стеків, а FTB Quests зберігає справжній зовнішній claim ID. Тимчасові об’єкти видачі не створюють нових постійних нагород. Джерела: [`campaign_rewards.py`](../scripts/campaign_rewards.py), [`soqm_progressive_rewards.js`](../overrides/kubejs/server_scripts/soqm_progressive_rewards.js) та закріплені FTB Quests/Teams у [`mods.lock.json`](../metadata/mods.lock.json).
 
@@ -301,15 +324,19 @@ Production facts and claim state are separate records. Delivery uses native `Ite
 
 ## Фіксовані рубежі / Fixed milestones
 
-Куби тепер є у 193 квестах, порівняно з 14 раніше: приблизно 11,9% квестів. Окрім початкових прикладів нижче, це зібрані установки IE, ключові кроки Mekanism та AE2, автоматизація Ex Deorum/Ex Machinis, розвиток сховищ, боси й нові виміри. Рівень куба не перевищує внутрішнього рівня квесту. У главі навичок кубів немає: вона повторює вже винагороджені матеріальні рубежі.
+Куби є у **193 із 1642 квестів: 11,75%, або приблизно 11,8%**. Ці рубежі охоплюють зібрані установки IE, ключові кроки Mekanism та AE2, автоматизацію Ex Deorum/Ex Machinis, розвиток сховищ, босів і нові виміри. Рівень куба не перевищує внутрішнього рівня квесту. У главі навичок кубів немає: вона повторює вже винагороджені матеріальні рубежі.
 
-Cubes now appear in 193 quests, up from 14, covering about 11.9% of quests. Beyond the original examples below, they reward IE structures, major Mekanism/AE2 steps, Ex Deorum/Ex Machinis automation, storage progress, bosses and new dimensions. A cube's tier never exceeds the quest's internal progression level. The skills chapter has no extra cubes because it repeats already rewarded material milestones.
+Cubes appear in **193 of 1642 quests: 11.75%, or approximately 11.8%**. These milestones cover IE structures, major Mekanism/AE2 steps, Ex Deorum/Ex Machinis automation, storage progress, bosses and new dimensions. A cube's tier never exceeds the quest's internal progression level. The skills chapter has no extra cubes because it repeats already rewarded material milestones.
+
+Поточне збільшення стосується кількості кубів, а не кількості рубежів: **193 → 222**, тобто **29 / 193 × 100 = 15,0259%**. [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) фіксує базовий commit, усі 193 початкові рубежі та 29 вибраних quest ID. За рівнями T0–T6 додано відповідно **1, 4, 6, 7, 5, 4, 2** куби. У 184 прямих item reward objects тепер міститься 213 кубів; дев’ять custom-наборів із компенсацією зберігають ще дев’ять. Кількість і вибір не залежать від випадкового роллу та не перераховуються через додавання нових квестів. Внутрішні події, вибухи й випадковий вміст кубів не змінено.
+
+The current increase changes cube quantities, not the number of milestones: **193 → 222**, or **29 / 193 × 100 = 15.0259%**. [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) records the baseline commit, all 193 original milestones and the 29 selected quest IDs. Tiers T0–T6 receive **1, 4, 6, 7, 5, 4, 2** additional cubes respectively. The 184 direct item reward objects now contain 213 cubes; the nine custom refund bundles retain another nine. Quantities and selection do not depend on a random roll or recalculate when new quests are added. Internal cube events, explosions and random contents are unchanged.
 
 Рівні IE узгоджено з потрібними рецептами: коксова піч, початкова домна й піч сплавів дають T0; базові промислові мультиблоки після шасі — T1. Від них не вимагається точний механізм лише заради нагороди. Пізні установки з вимірною матрицею зберігають відповідний вищий рівень.
 
 IE cube tiers follow the required recipes: the coke oven, initial blast furnace and alloy kiln award T0; basic industrial multiblocks after Industrial Chassis award T1. Precision Mechanism is not added as a requirement merely to justify a reward tier. Later structures that require Dimensional Matrix retain their higher tiers.
 
-Кожен наведений квест дає особисто один Mayhem Cube відповідного рівня. Він не виконує 3–5 жеребкування звичайного пакунка. Власні події кубів не включено в наведені очікування припасів. / Each listed quest gives one personal Mayhem Cube of the indicated tier. It does not perform the ordinary pack's 3–5 draws. Cube events are outside the supply expectations above.
+Нижче наведено рівні кубів для початкових 14 прикладів; повний список має 193 рубежі. Кількість у конкретній нагороді — один куб, або два для 29 вибраних прямих слотів. Кубовий рубіж не виконує 3–5 жеребкувань звичайного пакунка. Власні події кубів не включено в наведені очікування припасів. / The table shows cube tiers for the original 14 examples; the complete list contains 193 milestones. A specific reward contains one cube, or two in the 29 selected direct slots. A cube milestone does not perform the ordinary pack's 3–5 draws. Cube events are outside the supply expectations above.
 
 | Рубіж / Milestone | Cube |
 | --- | ---: |
@@ -330,9 +357,9 @@ IE cube tiers follow the required recipes: the coke oven, initial blast furnace 
 
 ## Виробничі hooks і межі перевірки / Production hooks and validation scope
 
-Нижче наведено реалізовані шляхи спостерігача **0.4.10**. Native dedicated-server перевірка пройшла: 43 активні рецепти витрат, персональні компенсації, відмови без витрати claim, відсутність повторної видачі, апгрейд печі та збереження після reload підтверджені у [звіті 0.4.10](../reports/verification-0.4.10.md) і локальному машинному звіті `reports/runtime-probe.json`. Це серверна перевірка; графічний клієнт і повне survival-проходження до її обсягу не входять.
+**Історичний результат 0.4.10:** архівний [звіт перевірки 0.4.10](../reports/verification-0.4.10.md) зафіксував успішний native dedicated-server запуск для 43 активних рецептів витрат, персональних компенсацій, відмов без витрати claim, відсутності повторної видачі, апгрейду печі та збереження після reload. Цей результат стосується саме того релізу й не підтверджує поточне робоче дерево. Нижче наведено контракт реалізованих шляхів спостерігача; актуальні серверні результати потрібно отримувати окремим запуском перевірки. Графічний клієнт і повне survival-проходження не входили до історичного серверного звіту.
 
-The rows below describe the implemented **0.4.10** observer routes. Native dedicated-server validation passed: 43 active cost recipes, personal refunds, refusals without consuming claims, duplicate rejection, furnace upgrades and post-reload persistence are recorded in the [0.4.10 verification report](../reports/verification-0.4.10.md) and the locally generated `reports/runtime-probe.json`. Its scope covers server behavior; it does not include a graphical client or complete survival playthrough.
+**Historical 0.4.10 result:** the archived [0.4.10 verification report](../reports/verification-0.4.10.md) recorded a successful native dedicated-server run covering 43 active cost recipes, personal refunds, refusals without consuming claims, duplicate rejection, furnace upgrades and post-reload persistence. That result applies to that release and does not validate the current working tree. The rows below describe the implemented observer contract; current server results require a separate validation run. The historical server report did not include a graphical client or complete survival playthrough.
 
 | Шлях / Path | Очікувана умова запису / Intended recorded event | Приклади / Examples |
 | --- | --- | --- |
@@ -367,9 +394,9 @@ Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) a
 
 Edit refunds in [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json). For each output, record one primary quest, every active authored recipe and its SHA256, a direct expensive ingredient and the minimum consumption across alternatives. `partial_ingredient` returns at most half a repeated ingredient; `one_component` permits one indivisible component when at least two other distinct authored components remain consumed. A new manufacture route requires a native observer and verification of its actual costs. Keep one refund slot, and do not record manufacture during payout or substitute possession for manufacture.
 
-`campaign_rewards.apply(chapters, locale)` перетворює наявні ordinary reward objects на особисті custom rewards зі збереженими ID та зберігає особисту книгу. Усі milestone-куби лишаються фіксованими: дев’ять видаються через custom reward разом із компенсацією, решта — як ItemReward. Runtime-політика містить mapping зовнішнього reward ID до quest ID, теми та, за наявності, `refund` і `cube`. `campaign_refunds.apply_locale` замінює старі абзаци компенсації в українських та англійських описах, включно з видаленими записами політики. Старі 14 статичних random-таблиць попередньої політики прибираються під час генерації; нова система не використовує їхні незмінні відсотки.
+`campaign_rewards.apply(chapters, locale)` формує особисті ordinary custom rewards зі збереженими наявними ID та зберігає особисту книгу. Усі milestone-куби лишаються фіксованими: дев’ять видаються через custom reward разом із компенсацією, решта — як ItemReward; для 29 вибраних прямих слотів установлюється точна кількість 2 з `random_bonus: 0`. Фіксований бюджет і вибір задає [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json). Runtime-політика містить mapping зовнішнього reward ID до quest ID, теми та, за наявності, `refund` і `cube`. Із тих самих даних генерується клієнтський `reward_catalog.json` із гарантованими стеками й усіма можливими позиціями пулів. `campaign_refunds.apply_locale` замінює старі абзаци компенсації в українських та англійських описах, включно з видаленими записами політики. Старі 14 статичних random-таблиць попередньої політики прибираються під час генерації; нова система не використовує їхні незмінні відсотки.
 
-`campaign_rewards.apply(chapters, locale)` converts existing ordinary reward objects into personal custom rewards while retaining IDs and preserves the personal book. All milestone cubes remain fixed: nine use custom rewards alongside their refund, while the rest remain ItemRewards. Runtime policy maps each outer reward ID to its quest ID, theme and optional `refund` and `cube`. `campaign_refunds.apply_locale` replaces old refund paragraphs in Ukrainian and English descriptions, including entries removed from the policy. Regeneration removes the previous policy's fourteen static random tables; the new system does not use their fixed percentages.
+`campaign_rewards.apply(chapters, locale)` generates personal ordinary custom rewards while retaining existing IDs and preserves the personal book. All milestone cubes remain fixed: nine use custom rewards alongside their refund, while the rest remain ItemRewards; the 29 selected direct slots receive an exact count of 2 with `random_bonus: 0`. [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) defines the fixed budget and selection. Runtime policy maps each outer reward ID to its quest ID, theme and optional `refund` and `cube`. The same data generates the client `reward_catalog.json`, including guaranteed stacks and every possible pool entry. `campaign_refunds.apply_locale` replaces old refund paragraphs in Ukrainian and English descriptions, including entries removed from the policy. Regeneration removes the previous policy's fourteen static random tables; the new system does not use their fixed percentages.
 
 Відтворення після редагування / Regenerate after editing:
 
@@ -396,9 +423,9 @@ node tests/progressive-rewards.mjs
 python3 scripts/runtime_probe.py
 ```
 
-`campaign_rewards.py --write` відтворює runtime-політику з уже згенерованих глав і прибирає відомі застарілі таблиці; самі глави потрібно оновлювати через `campaign_refresh.py`. Python і Node перевірки мають узгоджувати schema, точні шанси, власне виготовлення, fallback і межі кількості. Native-перевірка має підтвердити фактичні класові hooks, видачу, дублікати й непорожню міграцію. Команди вище описують процедуру й не є твердженням, що її вже виконано для конкретного commit.
+`campaign_rewards.py --write` відтворює runtime-політику та клієнтський каталог із уже згенерованих глав і прибирає відомі застарілі таблиці; самі глави потрібно оновлювати через `campaign_refresh.py`. Python і Node перевірки мають узгоджувати schema, точні шанси, власне виготовлення, fallback, кількість кубів і відповідність preview фактичним гарантованим стекам та пулам. Native-перевірка має підтвердити фактичні класові hooks, видачу, дублікати й непорожню міграцію. `quest-ui/build.py --verify` включає окремий `RewardCatalogueProbe` для згенерованого ресурсу; графічну читабельність це не перевіряє. Команди вище описують процедуру й не є твердженням, що її вже виконано для конкретного commit.
 
-`campaign_rewards.py --write` rebuilds runtime policy from already-generated chapters and removes the known obsolete tables; use `campaign_refresh.py` to update chapters themselves. Python and Node checks must agree on schema, exact probabilities, manufacture gates, fallbacks and quantity bounds. Native validation must establish real class hooks, delivery, duplicate rejection and nonempty migration. The commands above describe the procedure rather than asserting it has already run for a particular commit.
+`campaign_rewards.py --write` rebuilds the runtime policy and client catalogue from already-generated chapters and removes the known obsolete tables; use `campaign_refresh.py` to update chapters themselves. Python and Node checks must agree on schema, exact probabilities, manufacture gates, fallbacks, cube quantities and preview equality with actual guaranteed stacks and pools. Native validation must establish real class hooks, delivery, duplicate rejection and nonempty migration. `quest-ui/build.py --verify` includes a separate `RewardCatalogueProbe` for the generated resource; it does not check graphical readability. The commands above describe the procedure rather than asserting it has already run for a particular commit.
 
 ## Повний каталог / Full catalogue
 

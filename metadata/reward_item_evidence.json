@@ -2367,26 +2367,28 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "buildcraftcore:gears/gear_gold",
+          "id": "kubejs:hardcore_workshop/gears/buildcraft_gold",
           "type": "minecraft:crafting_shaped",
-          "source": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar!/data/buildcraftcore/recipe/gears/gear_gold.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shaped",
+            "category": "misc",
+            "pattern": [
+              " O ",
+              "OIO",
+              " O "
+            ],
             "key": {
-              "i": {
-                "item": "buildcraftcore:gears/gear_stone"
+              "O": {
+                "tag": "c:plates/gold"
               },
-              "o": {
-                "item": "minecraft:gold_ingot"
+              "I": {
+                "item": "buildcraftcore:gears/gear_iron"
               }
             },
-            "pattern": [
-              " o ",
-              "oio",
-              " o "
-            ],
             "result": {
-              "id": "buildcraftcore:gears/gear_gold"
+              "id": "buildcraftcore:gears/gear_gold",
+              "count": 1
             }
           }
         }
@@ -2404,26 +2406,28 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "buildcraftcore:gears/gear_iron",
+          "id": "kubejs:hardcore_workshop/gears/buildcraft_iron",
           "type": "minecraft:crafting_shaped",
-          "source": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar!/data/buildcraftcore/recipe/gears/gear_iron.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shaped",
+            "category": "misc",
             "pattern": [
-              " o ",
-              "oio",
-              " o "
+              " O ",
+              "OIO",
+              " O "
             ],
             "key": {
-              "o": {
-                "item": "minecraft:iron_ingot"
+              "O": {
+                "tag": "c:plates/iron"
               },
-              "i": {
+              "I": {
                 "item": "buildcraftcore:gears/gear_stone"
               }
             },
             "result": {
-              "id": "buildcraftcore:gears/gear_iron"
+              "id": "buildcraftcore:gears/gear_iron",
+              "count": 1
             }
           }
         }
@@ -4446,13 +4450,16 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "immersiveengineering:crafting/plate_copper_hammering",
+          "id": "kubejs:hardcore_workshop/manual/plate_copper",
           "type": "minecraft:crafting_shapeless",
-          "source": "ImmersiveEngineering-1.21.1-12.4.2-194.jar!/data/immersiveengineering/recipe/crafting/plate_copper_hammering.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
             "ingredients": [
+              {
+                "tag": "c:ingots/copper"
+              },
               {
                 "tag": "c:ingots/copper"
               },
@@ -4480,13 +4487,16 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "immersiveengineering:crafting/plate_iron_hammering",
+          "id": "kubejs:hardcore_workshop/manual/plate_iron",
           "type": "minecraft:crafting_shapeless",
-          "source": "ImmersiveEngineering-1.21.1-12.4.2-194.jar!/data/immersiveengineering/recipe/crafting/plate_iron_hammering.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
             "ingredients": [
+              {
+                "tag": "c:ingots/iron"
+              },
               {
                 "tag": "c:ingots/iron"
               },
@@ -4514,13 +4524,16 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "immersiveengineering:crafting/plate_steel_hammering",
+          "id": "kubejs:hardcore_workshop/manual/plate_steel",
           "type": "minecraft:crafting_shapeless",
-          "source": "ImmersiveEngineering-1.21.1-12.4.2-194.jar!/data/immersiveengineering/recipe/crafting/plate_steel_hammering.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
             "ingredients": [
+              {
+                "tag": "c:ingots/steel"
+              },
               {
                 "tag": "c:ingots/steel"
               },
@@ -5651,9 +5664,9 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "kubejs:expert/mekanism/control_circuit/advanced",
+          "id": "kubejs:hardcore_workshop/mekanism/control_circuit/advanced",
           "type": "minecraft:crafting_shapeless",
-          "source": "overrides/kubejs/server_scripts/qm_expert_progression.js",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
@@ -5681,11 +5694,14 @@
               },
               {
                 "item": "kubejs:control_assembly"
+              },
+              {
+                "item": "minecraft:redstone_block"
               }
             ],
             "result": {
               "id": "mekanism:advanced_control_circuit",
-              "count": 2
+              "count": 1
             }
           }
         }
@@ -6023,9 +6039,9 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "kubejs:expert/mekanism/control_circuit/elite",
+          "id": "kubejs:hardcore_workshop/mekanism/control_circuit/elite",
           "type": "minecraft:crafting_shapeless",
-          "source": "overrides/kubejs/server_scripts/qm_expert_progression.js",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
@@ -6053,11 +6069,14 @@
               },
               {
                 "item": "kubejs:quantum_processor"
+              },
+              {
+                "item": "minecraft:diamond_block"
               }
             ],
             "result": {
               "id": "mekanism:elite_control_circuit",
-              "count": 2
+              "count": 1
             }
           }
         }
@@ -6210,34 +6229,37 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "kubejs:expert/mekanism/steel_casing",
+          "id": "kubejs:hardcore_workshop/mekanism/steel_casing",
           "type": "minecraft:crafting_shaped",
-          "source": "overrides/kubejs/server_scripts/qm_expert_progression.js",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shaped",
             "category": "misc",
+            "pattern": [
+              "SGS",
+              "PCP",
+              "SOS"
+            ],
             "key": {
+              "S": {
+                "tag": "c:storage_blocks/steel"
+              },
               "G": {
                 "tag": "c:glass_blocks/cheap"
               },
-              "O": {
-                "tag": "c:ingots/osmium"
+              "P": {
+                "item": "immersiveengineering:plate_steel"
               },
-              "S": {
-                "tag": "c:ingots/steel"
-              },
-              "!": {
+              "C": {
                 "item": "kubejs:industrial_chassis"
+              },
+              "O": {
+                "tag": "c:storage_blocks/osmium"
               }
             },
-            "pattern": [
-              "S!S",
-              "GOG",
-              "SGS"
-            ],
             "result": {
-              "count": 1,
-              "id": "mekanism:steel_casing"
+              "id": "mekanism:steel_casing",
+              "count": 1
             }
           }
         }
@@ -6255,9 +6277,9 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "kubejs:expert/mekanism/control_circuit/ultimate",
+          "id": "kubejs:hardcore_workshop/mekanism/control_circuit/ultimate",
           "type": "minecraft:crafting_shapeless",
-          "source": "overrides/kubejs/server_scripts/qm_expert_progression.js",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "type": "minecraft:crafting_shapeless",
             "category": "misc",
@@ -6292,7 +6314,7 @@
             ],
             "result": {
               "id": "mekanism:ultimate_control_circuit",
-              "count": 2
+              "count": 1
             }
           }
         }
@@ -9711,9 +9733,9 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "sophisticatedstorage:copper_barrel",
+          "id": "kubejs:hardcore_workshop/storage/copper_barrel",
           "type": "sophisticatedstorage:storage_tier_upgrade",
-          "source": "sophisticatedstorage-1.21.1-1.6.7.2184.jar!/data/sophisticatedstorage/recipe/copper_barrel.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "neoforge:conditions": [
               {
@@ -9724,17 +9746,17 @@
             "type": "sophisticatedstorage:storage_tier_upgrade",
             "category": "misc",
             "key": {
-              "C": {
-                "tag": "c:ingots/copper"
+              "B": {
+                "tag": "c:storage_blocks/copper"
               },
               "S": {
                 "item": "sophisticatedstorage:barrel"
               }
             },
             "pattern": [
-              "CCC",
-              "CSC",
-              "CCC"
+              "BBB",
+              "BSB",
+              "BBB"
             ],
             "result": {
               "count": 1,
@@ -9963,9 +9985,9 @@
       "starter_supply": false,
       "production_recipes": [
         {
-          "id": "sophisticatedstorage:iron_barrel",
+          "id": "kubejs:hardcore_workshop/storage/iron_barrel",
           "type": "sophisticatedstorage:storage_tier_upgrade",
-          "source": "sophisticatedstorage-1.21.1-1.6.7.2184.jar!/data/sophisticatedstorage/recipe/iron_barrel.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "neoforge:conditions": [
               {
@@ -9976,17 +9998,15 @@
             "type": "sophisticatedstorage:storage_tier_upgrade",
             "category": "misc",
             "key": {
-              "I": {
-                "tag": "c:ingots/iron"
+              "U": {
+                "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
               },
               "S": {
                 "item": "sophisticatedstorage:barrel"
               }
             },
             "pattern": [
-              "III",
-              "ISI",
-              "III"
+              "US"
             ],
             "result": {
               "count": 1,
@@ -9995,9 +10015,9 @@
           }
         },
         {
-          "id": "sophisticatedstorage:iron_barrel_from_copper_barrel",
+          "id": "kubejs:hardcore_workshop/storage/iron_barrel_from_copper_barrel",
           "type": "sophisticatedstorage:storage_tier_upgrade",
-          "source": "sophisticatedstorage-1.21.1-1.6.7.2184.jar!/data/sophisticatedstorage/recipe/iron_barrel_from_copper_barrel.json",
+          "source": "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
           "recipe": {
             "neoforge:conditions": [
               {
@@ -10008,17 +10028,17 @@
             "type": "sophisticatedstorage:storage_tier_upgrade",
             "category": "misc",
             "key": {
-              "I": {
-                "tag": "c:ingots/iron"
+              "B": {
+                "tag": "c:storage_blocks/iron"
               },
               "S": {
                 "item": "sophisticatedstorage:copper_barrel"
               }
             },
             "pattern": [
-              " I ",
-              "ISI",
-              " I "
+              "BBB",
+              "BSB",
+              "BBB"
             ],
             "result": {
               "count": 1,

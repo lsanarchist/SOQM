@@ -10,10 +10,10 @@
   "image.5141041000000292.title": "Read top to bottom · hover a quest to see all its connections",
   "image.5141041000000297.title": "01  Latex or HDPE → plastic",
   "image.5141041000000298.title": "Pity Frame",
-  "image.5141041000000299.title": "Log → latex",
-  "image.514104100000029A.title": "Latex + water + FE",
-  "image.514104100000029B.title": "Rubber pieces →\nsmelted plastic",
-  "image.514104100000029C.title": "Plastic: latex or\nHDPE",
+  "image.5141041000000299.title": "Plastic 1: extract\nlatex",
+  "image.514104100000029A.title": "Plastic 2: latex +\nwater + FE",
+  "image.514104100000029B.title": "Plastic 3",
+  "image.514104100000029C.title": "Make Plastic:\nlatex or HDPE",
   "image.514104100000029D.title": "Simple Frame with\nlatex",
   "image.514104100000029E.title": "Dissolution\nChamber before the…",
   "image.514104100000029F.title": "Advanced Frame",
@@ -91,10 +91,11 @@
   "quest.5130111A5BD14B53.quest_subtitle": "Ether Gas and scaling",
   "quest.5130111A5BD14B53.title": "Obtain 1 × Processing Addon Tier 1",
   "quest.5130111B4AB75BE7.quest_desc": [
-    "The Latex Processing Unit consumes latex, water and energy to produce Tiny Dry Rubber. Feed both fluids separately and extract the solid output. Use its interface to identify which input is limiting production."
+    "The installed Industrial Foregoing Latex Processing Unit produces Dry Rubber directly. Each cycle uses 750 mB latex and 500 mB water plus FE. Supply the two fluids to their proper tanks and leave space for the solid output.",
+    "No Tiny Dry Rubber combining step is needed here. If the machine stops, check both fluid supplies, power, redstone control and its output slot."
   ],
   "quest.5130111B4AB75BE7.quest_subtitle": "Latex or HDPE → plastic",
-  "quest.5130111B4AB75BE7.title": "Latex + water + FE",
+  "quest.5130111B4AB75BE7.title": "Plastic 2: latex + water + FE",
   "quest.5130111BE9BBE0D5.quest_desc": [
     "The Pity Machine Frame starts latex extraction and basic utility machines. The central route goes through plastic and the Dissolution Chamber to higher frames; side stations supply fluids, blocks and by-products."
   ],
@@ -116,10 +117,11 @@
   "quest.51301127D84254AF.quest_subtitle": "Ether Gas and scaling",
   "quest.51301127D84254AF.title": "Ether Gas → Supreme Frame",
   "quest.51301137DA4E3B80.quest_desc": [
-    "Combine Tiny Dry Rubber into Dry Rubber and smelt it into Plastic. This completes the latex branch. The pack also has a direct Plastic recipe from Mekanism HDPE Sheets, so this rubber node does not block the shared plastic line."
+    "Collect Dry Rubber directly from the Latex Processing Unit. Smelt one rubber in a furnace to produce one Industrial Foregoing Plastic. Tiny Dry Rubber is deprecated in this version and is not needed for the line.",
+    "The existing task detects Dry Rubber without consuming it. The Plastic quest accepts the finished plastic from either this latex route or HDPE."
   ],
   "quest.51301137DA4E3B80.quest_subtitle": "Latex or HDPE → plastic",
-  "quest.51301137DA4E3B80.title": "Rubber pieces → smelted plastic",
+  "quest.51301137DA4E3B80.title": "Plastic 3: Dry Rubber for smelting",
   "quest.51301145D74317DD.quest_desc": [
     "The Laser Drill uses a Simple Frame and powers the operation of a separate Laser Base. Position the drill as the native guide specifies, connect FE and check that the base receives charge. The drill alone is not a complete production system."
   ],
@@ -228,10 +230,11 @@
   "quest.513011D4E145FBE3.quest_subtitle": "The drill and two laser bases",
   "quest.513011D4E145FBE3.title": "Ore Laser Base: choosing resources",
   "quest.513011DB5BB9FB5B.quest_desc": [
-    "Choose the available source: smelt Dry Rubber from the latex line, or use the recipe for 1 HDPE Sheet → 3 Plastic. Both paths feed the same machines and frames, and the item objective accepts either source."
+    "Produce Industrial Foregoing Plastic using either route. Latex: Fluid Extractor → Latex Processing Unit → Dry Rubber → furnace → Plastic. Polymer: chapter 07, HDPE Sheet → SOQM recipe → 3 Plastic from one sheet.",
+    "Choose one available production route; this quest does not require both. Hold the finished plastic before crafting a Dissolution Chamber and later frames. The item check neither consumes it nor determines which production method you used."
   ],
   "quest.513011DB5BB9FB5B.quest_subtitle": "Latex or HDPE → plastic",
-  "quest.513011DB5BB9FB5B.title": "Plastic: latex or HDPE",
+  "quest.513011DB5BB9FB5B.title": "Make Plastic: latex or HDPE",
   "quest.513011EBEFDD9D81.quest_desc": [
     "Have in your inventory 1 × Block Placer (industrialforegoing:block_placer). The items are not consumed by this task."
   ],
@@ -251,7 +254,7 @@
     "Place the Fluid Extractor beside a suitable log and route latex to a tank or Latex Processing Unit. Replenish the wood as it is consumed; without material on the working side, the rubber line stops."
   ],
   "quest.513011EEAB3DF77B.quest_subtitle": "Latex or HDPE → plastic",
-  "quest.513011EEAB3DF77B.title": "Log → latex",
+  "quest.513011EEAB3DF77B.title": "Plastic 1: extract latex",
   "quest.513011F5C6B3A1A7.quest_desc": [
     "The Resourceful Furnace processes supported smelting recipes. Configure its item input, FE and output, and reserve another copy for the Material StoneWork Factory recipe."
   ],

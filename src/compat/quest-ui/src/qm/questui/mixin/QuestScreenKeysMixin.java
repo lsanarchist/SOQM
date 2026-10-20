@@ -7,9 +7,18 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import qm.questui.client.QuestIngredientKeys;
+import qm.questui.client.QuestRewardPreview;
 
 @Mixin(value = QuestScreen.class, remap = false)
 public abstract class QuestScreenKeysMixin {
+    @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
+    private void qm$rewardPreviewShortcut(Key key, CallbackInfoReturnable<Boolean> callback) {
+        // Native editor paste also matches Ctrl+Shift+V. Consume the preview
+        // shortcut before that side effect, only inside its guarded modals.
+        if (QuestRewardPreview.handle((QuestScreen)(Object)this, key))
+            callback.setReturnValue(true);
+    }
+
     @Inject(method = "keyPressed", at = @At("RETURN"), cancellable = true)
     private void qm$recipeFallback(Key key, CallbackInfoReturnable<Boolean> callback) {
         if (!callback.getReturnValueZ() && QuestIngredientKeys.handle((QuestScreen)(Object)this, key))

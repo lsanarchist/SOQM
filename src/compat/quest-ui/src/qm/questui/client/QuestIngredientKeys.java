@@ -32,7 +32,7 @@ public final class QuestIngredientKeys {
         ModalPanel top = access.qm$getModalPanels().peekFirst();
         // The quest details are themselves a modal panel, separate from the main widgets.
         // Other modals (editors, confirmations and context menus) retain exclusive input.
-        if (top != null && top != screen.viewQuestPanel) return Optional.empty();
+        if (top != null && top != screen.viewQuestPanel && !(top instanceof RewardCataloguePanel)) return Optional.empty();
         Optional<PositionedIngredient> ingredient = top == null
                 ? screen.getIngredientUnderMouse() : top.getIngredientUnderMouse();
         return ingredient.map(PositionedIngredient::ingredient)

@@ -19,6 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / 'overrides/config/ftbquests/quests'
 POLICY_PATH = ROOT / 'metadata/reward_pools.json'
 RUNTIME_PATH = ROOT / 'overrides/kubejs/config/soqm_rewards.json'
+BONUS_PATH = ROOT / 'metadata/cube_reward_bonus.json'
+PREVIEW_PATH = ROOT / 'src/compat/quest-ui/resources/assets/qm_quest_ui/reward_catalog.json'
 TABLES_PATH = QUESTS / 'reward_tables'
 BOOK_QUEST = '514D010000000001'
 ID_PATTERN = re.compile(r'[0-9A-F]{16}\Z')
@@ -51,7 +53,36 @@ def chapters_from_disk() -> list[dict]:
 def load_policy() -> dict:
     policy = json.loads(POLICY_PATH.read_text(encoding='utf-8'))
     validate_policy(policy)
+    cube_bonus(policy)
     return policy
+
+
+def cube_bonus(policy: dict) -> dict:
+    """A fixed increase over the reviewed release, independent of future quests."""
+    bonus = json.loads(BONUS_PATH.read_text(encoding='utf-8'))
+    baseline = bonus.get('baseline_milestones', {})
+    awarded = bonus.get('bonus_quests', [])
+    if (bonus.get('schema') != 1 or bonus.get('baseline_awards') != len(baseline)
+            or len(baseline) != 193 or bonus.get('bonus_awards') != 29
+            or len(awarded) != 29 or len(set(awarded)) != 29
+            or bonus.get('target_percent') != 15):
+        raise ValueError('Review the fixed 193 + 29 lucky-cube budget')
+    if any(qid not in policy['milestones'] or policy['milestones'][qid]['tier'] != tier
+           for qid, tier in baseline.items()):
+        raise ValueError('The original lucky-cube milestones must retain their tiers')
+    if set(awarded) - set(baseline):
+        raise ValueError('Cube bonuses must retain existing milestone claim IDs')
+    refunds = json.loads(campaign_refunds.POLICY_PATH.read_text(encoding='utf-8'))['refunds']
+    if set(awarded) & {r['quest_id'] for r in refunds}:
+        raise ValueError('The reviewed cube bonus applies only to direct item rewards')
+    actual = Counter(str(baseline[qid]) for qid in awarded)
+    if dict(actual) != bonus.get('bonus_by_tier'):
+        raise ValueError('Cube bonus tier allocation does not match its fixed budget')
+    return bonus
+
+
+def cube_quantity(quest_id: str, bonus: dict) -> int:
+    return 2 if quest_id in bonus['bonus_quests'] else 1
 
 
 def eligible_entries(pool: dict, level: int, produced: set[str]) -> list[dict]:
@@ -245,6 +276,7 @@ def runtime_policy(chapters: list[dict], policy: dict | None = None) -> dict:
 
 def apply(chapters: list[dict], locale: dict) -> dict:
     policy = load_policy()
+    bonus = cube_bonus(policy)
     refunds = campaign_refunds.load(chapters)
     before = persistent_ids(chapters)
     by_id = {quest['id']: quest for chapter in chapters for quest in chapter['quests']}
@@ -275,13 +307,14 @@ def apply(chapters: list[dict], locale: dict) -> dict:
                 milestone = policy['milestones'].get(quest['id'])
                 refund = refunds.get(quest['id'])
                 if milestone and not refund:
-                    reward.update({'type': 'item', 'item': {'id': f"kubejs:mayhem_cube_t{milestone['tier']}", 'count': 1}, 'count': 1, 'random_bonus': 0})
+                    quantity = cube_quantity(quest['id'], bonus)
+                    reward.update({'type': 'item', 'item': {'id': f"kubejs:mayhem_cube_t{milestone['tier']}", 'count': quantity}, 'count': quantity, 'random_bonus': 0})
                     # The old custom pack's localized title must not mask the
                     # cube's real item name after changing this existing slot.
                     locale.pop(f"reward.{reward['id']}.title", None)
                     if tags:
                         reward['tags'] = tags
-                    cubes += 1
+                    cubes += quantity
                 else:
                     icon = f"kubejs:mayhem_cube_t{milestone['tier']}" if milestone else pool.get('icon', DEFAULT_ICONS[pool['key']])
                     reward.update({'type': 'custom', 'icon': icon,
@@ -301,6 +334,8 @@ def apply(chapters: list[dict], locale: dict) -> dict:
     entries = [e for p in policy['pools'] for e in p['entries']]
     return {'personal_rewards': sum(len(q['rewards']) for c in chapters for q in c['quests']),
             'progressive_rewards': sum(usage.values()), 'milestone_cubes': cubes, 'personal_books': books,
+            'milestone_quests': len(policy['milestones']), 'cube_baseline_awards': bonus['baseline_awards'],
+            'cube_bonus_awards': bonus['bonus_awards'],
             'recipe_refunds': len(refunds), 'refund_cube_bundles': refund_cubes,
             'custom_rewards': sum(usage.values()) + refund_cubes,
             'pools': len(policy['pools']), 'catalogue_entries': len(entries), 'distinct_items': len({e['item'] for e in entries}),
@@ -314,7 +349,44 @@ def obsolete_tables() -> list[Path]:
 
 
 def expected_outputs(chapters: list[dict]) -> dict[Path, str]:
-    return {RUNTIME_PATH: serialize(runtime_policy(chapters))}
+    runtime = runtime_policy(chapters)
+    return {RUNTIME_PATH: serialize(runtime), PREVIEW_PATH: serialize(preview_catalogue(chapters, runtime))}
+
+
+def preview_catalogue(chapters: list[dict], runtime: dict | None = None) -> dict:
+    """Read-only client views of the same claims; catalogue rows never grant items."""
+    runtime = runtime_policy(chapters) if runtime is None else runtime
+    claims = {}
+    quests = {}
+    for chapter in chapters:
+        for quest in chapter['quests']:
+            ids = []
+            for reward in quest['rewards']:
+                ident = reward['id']
+                binding = runtime['reward_mappings'].get(ident)
+                guaranteed = []
+                view = {'quest_id': quest['id'], 'random_pool': None,
+                        'guaranteed': guaranteed, 'requires_manufacture': None}
+                if binding:
+                    if binding.get('cube'):
+                        guaranteed.append({'item': binding['cube'], 'count': 1, 'kind': 'cube'})
+                    else:
+                        view['random_pool'] = binding['pool']
+                    if binding.get('refund'):
+                        view['requires_manufacture'] = binding['refund']['output']
+                        guaranteed.extend({**item, 'kind': 'refund'} for item in binding['refund']['items'])
+                elif reward.get('type') == 'item':
+                    guaranteed.append({'item': reward['item']['id'],
+                                       'count': reward.get('count', reward['item'].get('count', 1)), 'kind': 'item'})
+                else:
+                    raise ValueError(f'Unreviewed reward has no visible catalogue representation: {ident}')
+                claims[ident] = view
+                ids.append(ident)
+            quests[quest['id']] = ids
+    return {'schema': 1, 'version': '1.0', 'draws_by_level': runtime['draws_by_level'],
+            'guaranteed_quality_draws': runtime['guaranteed_quality_draws'],
+            'levels': runtime['levels'], 'pools': runtime['pools'],
+            'rewards': dict(sorted(claims.items())), 'quests': dict(sorted(quests.items()))}
 
 
 def main() -> int:

@@ -42,7 +42,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
         self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
         self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
-        self.assertEqual(len(self.runtime['reward_mappings']), 1443)
+        self.assertEqual(len(self.runtime['reward_mappings']), 1458)
         owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
         for ident, mapping in self.runtime['reward_mappings'].items():
             self.assertRegex(ident, rewards.ID_PATTERN)
@@ -90,10 +90,11 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertNotIn('item', reward)
                 for locale in (uk, en):
                     self.assertTrue(locale[f"reward.{reward['id']}.title"])
-        self.assertEqual(count, 1443)
+        self.assertEqual(count, 1458)
 
     def test_fixed_milestones_and_original_personal_book_are_retained(self):
         cubes = books = 0
+        bonus = rewards.cube_bonus(self.policy)
         for quest in quests(self.chapters):
             for reward in quest['rewards']:
                 if reward['type'] == 'custom':
@@ -105,14 +106,61 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                         self.assertEqual(reward['icon'], binding['cube'])
                     continue
                 self.assertEqual(reward['type'], 'item')
-                self.assertEqual(reward.get('count', 1), 1)
                 if reward['item']['id'] == 'ftbquests:book':
+                    self.assertEqual(reward.get('count', 1), 1)
                     books += 1
                     self.assertEqual(quest['id'], rewards.BOOK_QUEST)
                 else:
-                    cubes += 1
+                    expected = rewards.cube_quantity(quest['id'], bonus)
+                    self.assertEqual(reward.get('count', 1), expected)
+                    self.assertEqual(reward['item'].get('count', 1), expected)
+                    self.assertEqual(reward.get('random_bonus', 0), 0)
+                    cubes += expected
                     self.assertEqual(reward['item']['id'], f"kubejs:mayhem_cube_t{self.policy['milestones'][quest['id']]['tier']}")
-        self.assertEqual((cubes, books), (193, 1))
+        self.assertEqual((cubes, books), (222, 1))
+        self.assertEqual(len(self.policy['milestones']), 193)
+
+    def test_cube_increase_is_fixed_fifteen_percent_without_new_claim_ids(self):
+        bonus = rewards.cube_bonus(self.policy)
+        self.assertEqual((bonus['baseline_awards'], bonus['bonus_awards']), (193, 29))
+        self.assertTrue(Fraction(10, 100) <= Fraction(29, 193) <= Fraction(17, 100))
+        before = rewards.persistent_ids(self.chapters)
+        copy = deepcopy(self.chapters)
+        rewards.apply(copy, {})
+        self.assertEqual(rewards.persistent_ids(copy), before)
+        selected = {q['id'] for q in quests(copy) if any(r.get('type') == 'item'
+                    and r.get('item', {}).get('id', '').startswith('kubejs:mayhem_cube_t')
+                    and r.get('count') == 2 for r in q['rewards'])}
+        self.assertEqual(selected, set(bonus['bonus_quests']))
+        self.assertFalse(selected & set(self.refunds))
+
+    def test_book_preview_lists_every_actual_guarantee_and_possible_pool_item(self):
+        preview = rewards.preview_catalogue(self.chapters, self.runtime)
+        self.assertEqual(load(rewards.PREVIEW_PATH), preview)
+        expected_ids = {r['id'] for r in outer_rewards(self.chapters)}
+        self.assertEqual(set(preview['rewards']), expected_ids)
+        self.assertEqual({rid for ids in preview['quests'].values() for rid in ids}, expected_ids)
+        self.assertEqual(preview['pools'], self.runtime['pools'])
+        self.assertEqual(preview['draws_by_level'], self.runtime['draws_by_level'])
+        for q in quests(self.chapters):
+            for reward in q['rewards']:
+                shown = preview['rewards'][reward['id']]
+                binding = self.runtime['reward_mappings'].get(reward['id'])
+                if binding:
+                    expected = []
+                    if 'cube' in binding:
+                        expected.append({'item': binding['cube'], 'count': 1, 'kind': 'cube'})
+                        self.assertIsNone(shown['random_pool'])
+                    else:
+                        self.assertEqual(shown['random_pool'], binding['pool'])
+                    if 'refund' in binding:
+                        expected.extend({**entry, 'kind': 'refund'} for entry in binding['refund']['items'])
+                        self.assertEqual(shown['requires_manufacture'], binding['refund']['output'])
+                    self.assertEqual(shown['guaranteed'], expected)
+                else:
+                    self.assertEqual(shown['guaranteed'], [{'item': reward['item']['id'],
+                                     'count': reward.get('count', 1), 'kind': 'item'}])
+                    self.assertIsNone(shown['random_pool'])
 
     def test_player_guidance_matches_personal_claims_and_real_reward_types(self):
         uk = campaign_locales.load('uk_ua')
@@ -258,11 +306,12 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         locale = {'unrelated.key': 'untouched'}
         report = rewards.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
-        self.assertEqual(report['personal_rewards'], 1628)
-        self.assertEqual(report['progressive_rewards'], 1434)
+        self.assertEqual(report['personal_rewards'], 1643)
+        self.assertEqual(report['progressive_rewards'], 1449)
         self.assertEqual(report['recipe_refunds'], 41)
         self.assertEqual(report['refund_cube_bundles'], 9)
-        self.assertEqual(report['custom_rewards'], 1443)
+        self.assertEqual(report['custom_rewards'], 1458)
+        self.assertEqual(report['milestone_cubes'], 222)
         self.assertEqual(locale['unrelated.key'], 'untouched')
         again = deepcopy(locale)
         self.assertEqual(rewards.apply(chapters, again), report)

@@ -10,7 +10,10 @@ import java.util.HashMap;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.FieldInsnNode;
+import org.objectweb.asm.tree.MethodInsnNode;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.launch.platform.container.IContainerHandle;
 import org.spongepowered.asm.launch.platform.container.ContainerHandleVirtual;
@@ -21,6 +24,23 @@ import org.spongepowered.asm.service.*;
 
 /** Real pinned Sponge transformer, with a bytecode-only host instead of an OpenGL game. */
 public final class HudMixinProbe {
+    private static void verifyRewardShortcutOrder(ClassNode node) {
+        var method = node.methods.stream().filter(m -> m.name.equals("keyPressed")
+                && m.desc.equals("(Ldev/ftb/mods/ftblibrary/ui/input/Key;)Z")).findFirst().orElseThrow();
+        int shortcut = -1, paste = -1, cancelled = -1, earlyReturn = -1, index = 0;
+        for (var instruction : method.instructions) {
+            if (instruction instanceof MethodInsnNode call && call.name.contains("qm$rewardPreviewShortcut")) shortcut = index;
+            if (shortcut >= 0 && cancelled < 0 && instruction instanceof MethodInsnNode call && call.name.equals("isCancelled")) cancelled = index;
+            if (cancelled >= 0 && earlyReturn < 0 && instruction.getOpcode() == Opcodes.IRETURN) earlyReturn = index;
+            if (instruction instanceof FieldInsnNode field && field.name.equals("KEY_GUI_PASTE") && paste < 0) paste = index;
+            index++;
+        }
+        if (!(shortcut >= 0 && shortcut < cancelled && cancelled < earlyReturn && earlyReturn < paste))
+            throw new AssertionError("Reward preview shortcut must cancel before native editor paste can send CopyQuestMessage");
+        System.out.println("REWARD_SHORTCUT_ORDER_OK preview=" + shortcut + " cancelled=" + cancelled
+                + " return=" + earlyReturn + " native_paste=" + paste);
+    }
+
     public static final class Service extends MixinServiceAbstract implements IClassProvider, IClassBytecodeProvider {
         public String getName() { return "SOQM-HUD-bytecode-probe"; }
         public boolean isValid() { return true; }
@@ -75,7 +95,9 @@ public final class HudMixinProbe {
             "net.minecraft.client.gui.components.toasts.ToastComponent",
             "mcjty.rftoolsutility.client.RenderGameOverlayEventHandler",
             "dev.ftb.mods.ftblibrary.ui.BaseScreen", "dev.ftb.mods.ftbquests.client.gui.quests.QuestScreen",
-            "dev.ftb.mods.ftbquests.quest.task.ItemTask"
+            "dev.ftb.mods.ftbquests.quest.task.ItemTask",
+            "dev.ftb.mods.ftbquests.client.gui.quests.ViewQuestPanel",
+            "dev.ftb.mods.ftbquests.client.gui.quests.RewardButton"
         };
         int transformed = 0;
         for (String target : targets) {
@@ -89,6 +111,7 @@ public final class HudMixinProbe {
             var node = new ClassNode(); new ClassReader(changed).accept(node, 0);
             if (node.methods.stream().noneMatch(method -> method.name.contains("qm$")))
                 throw new AssertionError("No injected/accessor method in " + target);
+            if (target.equals("dev.ftb.mods.ftbquests.client.gui.quests.QuestScreen")) verifyRewardShortcutOrder(node);
             if (args.length > 0) {
                 Path output = Path.of(args[0], target.replace('.', '/') + ".class");
                 Files.createDirectories(output.getParent()); Files.write(output, changed);

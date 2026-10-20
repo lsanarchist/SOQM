@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.11
+# Installing SOQM 0.4.12
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.11-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.12-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.11-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.11 asset is not claimed. The
+The current output is `dist/SOQM-0.4.12-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.12 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.11 ZIP and wait for every download. See the
+   select the built 0.4.12 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -82,9 +82,9 @@ Empty and remove Iron Chests in a backup of the old instance while its mod is
 still installed. Check placed containers, carried items, other dimensions and
 offline players. Removing the mod does not transfer the stored items.
 
-The original quest, task and reward IDs are retained. The optional Cardboard Box
-lesson and additive construction checklists bring the totals to **1626 quests,
-1911 tasks and 1627 outer rewards**. The six former Iron Chests objectives now
+The original quest, task and reward IDs are retained. The additional HDPE and
+Mekanism equipment lessons bring the totals to **1642 quests,
+1927 tasks and 1643 outer rewards**. The six former Iron Chests objectives now
 detect Sophisticated Storage items under the same IDs. Claimed rewards stay claimed.
 Previously claimed rewards are not issued again. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
@@ -124,6 +124,19 @@ chunks. Aether gloves go in Aether's cloud-button inventory (default key `I`),
 not Curios Hands; the new tooltips show the configured key. See
 [optional exploration](OPTIONAL_EXPLORATION.md), [loot](EXPLORATION_LOOT.md)
 and [equipment](ACCESSORY_POLICY.md).
+
+For **0.4.11 → 0.4.12**, replace the complete payload in a copy of the profile
+and restart both client and server. New recipes affect future crafts; existing
+machines and containers remain. Fourteen MekaSuit, MekaTool and module quests
+move to chapter 07 with their original IDs. Fifteen new lessons have separate
+IDs. Twenty-nine existing milestones give two cubes for still-unclaimed rewards,
+bringing the full campaign from 193 to 222 cubes. Previously claimed personal
+rewards stay claimed and receive no automatic top-up. The updated Quest UI
+client module shows separate refund icons and the possible-prize catalogue.
+Opening a preview does not claim a reward.
+For a manual update, remove `mods/qm-quest-ui-0.4.4.jar` from the copied profile;
+keep only the new `qm-quest-ui-0.4.5.jar` from the package. Copying files into an
+existing directory does not remove the differently named previous version.
 
 Report problems with the SOQM version/commit, launcher, OS, Java, RAM allocation,
 reproduction steps, `logs/latest.log` and any crash report. Remove tokens,

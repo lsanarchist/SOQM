@@ -1,5 +1,31 @@
 # Verification status
 
+## SOQM 0.4.12 — hardcore workshop, MekaSuit and visible rewards
+
+The local candidate adapts **63 recipe variants**, removes **80 old recipe IDs**,
+adds **15 quests** and moves **14 existing equipment quests** with saved IDs
+intact. The book contains **1,642 quests / 1,927 tasks / 1,643 personal rewards**.
+Its 193 cube milestones now award **222 cubes (+15.0259%)**. Quest UI 0.4.5
+shows guaranteed stacks and the complete possible-prize catalogue in the book.
+
+The final gate passes **162 Python tests without skips**, both Node suites,
+all **12 coordinate previews** and deterministic packaging. The client module
+rebuilds byte-identically and passes **18 native Mixin targets**, **394 geometry
+assertions**, **1,920 minimap cases**, tooltip layering and shortcut-state gates.
+
+A fresh full-pack server run passes in **119.17 seconds**, with
+**20,056 → 20,056 recipes**, zero KubeJS/fatal gate errors and normal shutdown.
+It checks all 63 recipe assemblies, all 24 storage carryover variants, true
+machine manufacture, personal rewards and nonempty progress across reload.
+All **1,628 baseline personal claims**, **57 task values** and **14 moved
+completed equipment quests** survive. Graphical client rendering, a full
+survival playthrough and long-term economy remain outside these checks.
+
+[Complete 0.4.12 verification](verification-0.4.12.md) ·
+[Hardcore workshop](../docs/HARDCORE_WORKSHOP.md) ·
+[MekaSuit and plastic quests](../docs/MEKASUIT_PLASTIC_QUESTS.md) ·
+[Rewards](../docs/REWARDS.md).
+
 ## SOQM 0.4.11 — optional exploration, dungeon loot and equipment
 
 The candidate adds three verified NeoForge structure mods (**127 pinned files**),

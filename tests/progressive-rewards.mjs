@@ -366,15 +366,34 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1443, 'Every campaign custom reward and cube/refund bundle is mapped');
+assert.equal(Object.keys(actual.reward_mappings).length, 1458, 'Every campaign custom reward and cube/refund bundle is mapped');
+assert.equal(Object.values(actual.reward_mappings).filter(row => !row.cube).length, 1449,
+  'The 15 new equipment quests add ordinary packs, not extra cube bundles');
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.refund).length, 41);
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.cube).length, 9);
+// The 193 -> 222 fixed cube increase belongs to existing direct ItemRewards.
+// This callback retains the nine native cube/refund bundles and the original
+// random-pack draw budget; cube quantities are checked by Python/native gates.
+assert.deepEqual(actual.draws_by_level, [3, 3, 4, 4, 4, 5, 5], 'Extra fixed cubes must not increase random-pack draws');
+assert(actual.pools.every(pool => pool.entries.every(prize => !prize.item.startsWith('kubejs:mayhem_cube_t'))),
+  'Fixed milestone cubes must not become random-pool prizes');
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
 for (const output of actual.production_items) actualRegistry.add(output);
 for (const pool of actual.pools) for (const prize of pool.entries) actualRegistry.add(prize.item);
 const committed = load(actual, {registry: actualRegistry});
 assert.deepEqual(committed.warnings, [], 'The reviewed policy cannot silently use emergency fallback');
+for (let number = 1; number <= 15; number++) {
+  const suffix = number.toString(16).toUpperCase().padStart(10, '0');
+  const id = `514C13${suffix}`, quest = `514C11${suffix}`;
+  assert.deepEqual(actual.reward_mappings[id], {pool: 'equipment', quest_id: quest},
+    'Each new equipment reward must keep its exact quest owner and ordinary themed pack');
+  const player = new Player({random: [0, 0]});
+  committed.claim(player, {id, quest});
+  assert(player.deliveries.length > 0, `${id} reaches the real custom callback`);
+  assert.equal(player.randomIndex, 6, `${id} uses three starter draws without a hidden extra roll`);
+  assert.equal(player.produced.size, 0, `${id} does not create manufacture evidence`);
+}
 const statusVisitor = new Player();
 committed.runCommand(statusVisitor, '/soqm rewards status');
 for (const milestone of actual.levels) assert(statusVisitor.messages.some(line => line.endsWith(`${milestone.level}: ${milestone.name.en_us}`)),
@@ -410,4 +429,4 @@ for (const pool of actual.pools) {
   assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1443-custom-reward policy, 41 native refund bundles, native-only cube delivery, once-per-context random pack, production gates, normalized odds, 3/4/5 draws, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');

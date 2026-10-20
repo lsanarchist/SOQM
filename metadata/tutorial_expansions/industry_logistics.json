@@ -5,17 +5,18 @@
       "description": {
         "uk_ua": [
           "Сталеві пластини потрібні для Industrial Chassis і будівельних деталей цеху. Виготовляй їх із готової сталі; звичайний залізний лист не замінює сталевий у цьому маршруті.",
-          "Для перших пластин підійде ручний рецепт із молотом. Коли попит стане постійним, перенеси цю операцію на Metal Press зі штампом для листів: так одна лінія постачатиме матеріал для наступних машин."
+          "Перші пластини виготов вручну: 2 сталеві злитки та Engineer’s Hammer дають 1 пластину. Ручні залізні, мідні й золоті пластини також коштують по 2 злитки. Працюючий Metal Press зі штампом витрачає лише 1 злиток на пластину, тому автоматизація вдвічі зменшує витрату металу на цій операції."
         ],
         "en_us": [
           "Steel plates feed the Industrial Chassis recipe and workshop construction. Make them from finished steel; an iron plate does not replace a steel plate in this route.",
-          "Use the hammer recipe for the first batch. Once demand becomes steady, move the operation to a Metal Press with a plate mold so one line supplies subsequent machines."
+          "Make the first plates by hand: 2 steel ingots and the Engineer’s Hammer produce 1 plate. Manually hammered iron, copper and gold plates also cost 2 ingots each. A powered Metal Press with its mold uses only 1 ingot per plate, halving the metal consumed by this operation."
         ]
       },
       "sources": [
         "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
         "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
-        "overrides/kubejs/server_scripts/qm_expert_progression.js"
+        "overrides/kubejs/server_scripts/qm_expert_progression.js",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "5130117FBB68BE2D": {
@@ -232,48 +233,57 @@
       "description": {
         "uk_ua": [
           "Metal Press автоматизує виготовлення листів, стрижнів та інших металевих деталей. Збери конструкцію за інженерною книгою й натисни молотом на поршень; це формування зараховує квест.",
-          "Для роботи встанови потрібний штамп ПКМ, подай енергію на верхній роз’єм і матеріал на вхідний конвеєр. Без штампа готовий мультиблок не оброблятиме злитки. Вихідний конвеєр має вести до місця з вільним простором."
+          "Для роботи встанови потрібний штамп ПКМ, подай енергію на верхній роз’єм і матеріал на вхідний конвеєр. Без штампа готовий мультиблок не оброблятиме злитки. Вихідний конвеєр має вести до місця з вільним простором.",
+          "Поршень для преса тепер потребує 3 дерев’яні плити, 4 блоки кам’яного матеріалу, залізний стрижень Immersive Engineering і мідну шестерню Railcraft. Ці перші деталі можна зробити вручну. Після запуску преса пластини з заліза, міді, золота й сталі коштують по 1 злитку замість 2 у ручному рецепті."
         ],
         "en_us": [
           "The Metal Press automates plates, rods and other metal parts. Build the structure shown in the Engineer’s Manual and use the hammer on its piston; formation completes the quest.",
-          "To operate it, right-click with the required mold, feed power through the top connector and send material onto the input conveyor. A formed press without a mold cannot process ingots. Give the output conveyor somewhere with free storage space to deliver them."
+          "To operate it, right-click with the required mold, feed power through the top connector and send material onto the input conveyor. A formed press without a mold cannot process ingots. Give the output conveyor somewhere with free storage space to deliver them.",
+          "The press piston now needs 3 wooden slabs, 4 stone crafting blocks, an Immersive Engineering iron rod and a Railcraft copper gear. These first components can be made by hand. Once the press runs, iron, copper, gold and steel plates cost 1 ingot each instead of 2 in the hammer recipe."
         ]
       },
       "sources": [
         "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
-        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "513011EE444C38AF": {
       "description": {
         "uk_ua": [
           "Crusher переводить придатну тверду сировину в подрібнені продукти. Сформуй мультиблок за інженерною книгою, підведи енергію й заздалегідь постав приймач біля виходу.",
-          "Квест перевіряє складання. Робочий тест — подати одну невелику партію через вхід і забрати основний та можливий побічний продукт. Не стрибай усередину приймального отвору й не подавай туди цінні речі без відповідного рецепта."
+          "Квест перевіряє складання. Робочий тест — подати одну невелику партію через вхід і забрати основний та можливий побічний продукт. Не стрибай усередину приймального отвору й не подавай туди цінні речі без відповідного рецепта.",
+          "На кожну лійку з комплекту будівництва заклади 5 залізних злитків, звичайну дерев’яну скриню та окремий Basic to Iron Tier Upgrade. Зроби потрібну кількість комплектів покращення заздалегідь; квест рахує готові лійки, а не матеріали всередині їхнього рецепта."
         ],
         "en_us": [
           "The Crusher converts suitable solid ingredients into crushed products. Form the multiblock from the Engineer’s Manual, connect power and place an output receiver before feeding it.",
-          "The quest checks construction. Test operation by feeding one small batch through the input and collecting the main product and any by-product. Keep clear of the intake and do not send valuable items into it without a matching recipe."
+          "The quest checks construction. Test operation by feeding one small batch through the input and collecting the main product and any by-product. Keep clear of the intake and do not send valuable items into it without a matching recipe.",
+          "Budget 5 iron ingots, an ordinary wooden chest and a separate Basic to Iron Tier Upgrade for every hopper in the construction kit. Prepare enough upgrade items beforehand; the quest counts finished hoppers, not the ingredients nested in their recipe."
         ]
       },
       "sources": [
         "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
-        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "513011965BAF66F4": {
       "description": {
         "uk_ua": [
           "Improved Blast Furnace переводить сталевий маршрут на автоматичну подачу й відведення. Збери варіант із Reinforced Blast Brick та верхньою лійкою за схемою книги; сформуй його молотом.",
-          "Залізо й кокс подавай згори. Сталь виходить спереду, шлак — ззаду: підготуй обидва приймачі. До бічних портів можна приєднати до двох Preheater, але кожному потрібне окреме електроживлення."
+          "Залізо й кокс подавай згори. Сталь виходить спереду, шлак — ззаду: підготуй обидва приймачі. До бічних портів можна приєднати до двох Preheater, але кожному потрібне окреме електроживлення.",
+          "На кожну лійку з комплекту будівництва заклади 5 залізних злитків, звичайну дерев’яну скриню та окремий Basic to Iron Tier Upgrade. Зроби потрібну кількість комплектів покращення заздалегідь; квест рахує готові лійки, а не матеріали всередині їхнього рецепта."
         ],
         "en_us": [
           "The Improved Blast Furnace adds automated input and output to steelmaking. Build the reinforced-brick structure with its top hopper from the manual and form it with the hammer.",
-          "Feed iron and coke from above. Steel exits at the front and slag at the back, so provide both receivers. Up to two Preheaters attach to its side ports, but each needs an electrical supply."
+          "Feed iron and coke from above. Steel exits at the front and slag at the back, so provide both receivers. Up to two Preheaters attach to its side ports, but each needs an electrical supply.",
+          "Budget 5 iron ingots, an ordinary wooden chest and a separate Basic to Iron Tier Upgrade for every hopper in the construction kit. Prepare enough upgrade items beforehand; the quest counts finished hoppers, not the ingredients nested in their recipe."
         ]
       },
       "sources": [
         "overrides/config/ftbquests/quests/chapters/qm_v030_03_immersive.snbt",
-        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+        "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "513011E25267FD65": {
@@ -476,16 +486,19 @@
       "description": {
         "uk_ua": [
           "Дерев’яна шестерня — початок драбини деталей BuildCraft. Наступні шестерні використовують попередній рівень, тому плануй матеріали для всього ланцюжка потрібної машини.",
+          "Дерев’яна шестерня: 4 палиці навколо дерев’яної кнопки. Далі йдуть 4 переплавлені камені, 4 залізні пластини, 4 золоті пластини та 4 алмази — кожен рівень обгортає одну шестерню попереднього. Кам’яний рівень використовує Stone, тому спочатку переплав бруківку.",
           "Зроби кілька базових шестерень, але не перетворюй їх усі на найдорожчі: прості механізми все ще потребують нижчих рівнів. Наявність шестерні завершує цей предметний квест; встановлювати її як блок не потрібно."
         ],
         "en_us": [
           "The Wooden Gear begins BuildCraft’s component ladder. Higher gears consume the previous tier, so plan materials for the entire chain required by your next machine.",
+          "The Wooden Gear uses 4 sticks around a wooden button. The next tiers add 4 smelted stone blocks, 4 iron plates, 4 gold plates and 4 diamonds respectively, each surrounding one gear of the previous tier. The stone tier uses Stone, so smelt cobblestone first.",
           "Make a few basic gears, but do not upgrade every one to the highest tier: simple devices still need lower tiers. Obtaining the gear completes this item quest; it is not a block to install."
         ]
       },
       "sources": [
         "overrides/config/ftbquests/quests/chapters/qm_v030_04_buildcraft.snbt",
-        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+        "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819",
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js"
       ]
     },
     "5130115FD8A3F016": {

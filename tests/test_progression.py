@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,6 +64,28 @@ class ProgressionRepairTests(unittest.TestCase):
         progression.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
         self.assertEqual(locale, self.locale)
+
+    def test_late_replacement_does_not_leave_a_false_cheap_alternative(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            scripts = root / 'overrides/kubejs/server_scripts'
+            scripts.mkdir(parents=True)
+            old = {'id': 'kubejs:old', 'recipe': {'type': 'minecraft:crafting_shapeless',
+                   'ingredients': [{'item': 'kubejs:industrial_chassis'}],
+                   'result': {'id': 'example:machine'}}}
+            new = {'id': 'kubejs:new', 'recipe': {'type': 'minecraft:crafting_shapeless',
+                   'ingredients': [{'item': 'kubejs:dimensional_matrix'}],
+                   'result': {'id': 'example:machine'}}}
+            (scripts / 'qm_expert_z_baseline.js').write_text('var recipes = ' + json.dumps([old]) + ';')
+            late = scripts / 'qm_expert_a_late.js'
+            late.write_text('// priority: -100\nvar removeIds = ["kubejs:old"];\nvar recipes = ' + json.dumps([new]) + ';')
+            # Native KubeJS keeps queued authored additions outside the
+            # originalRecipes map traversed by event.remove({id: ...}).
+            self.assertEqual({row['id'] for row in progression.recipe_rows(root)}, {'kubejs:old', 'kubejs:new'})
+            late.write_text('// priority: -100\nvar removeIds = ["kubejs:old"];\nvar removeAddedIds = ["kubejs:old"];\nvar recipes = ' + json.dumps([new]) + ';')
+            rows = progression.recipe_rows(root)
+            self.assertEqual([row['id'] for row in rows], ['kubejs:new'])
+            self.assertEqual(progression.mandatory_recipe_gates(rows)['example:machine'], {progression.MATRIX})
 
     def test_first_chassis_is_taught_after_its_own_steel_and_creosote(self):
         """The first material gate must not hide the machines supplying it."""

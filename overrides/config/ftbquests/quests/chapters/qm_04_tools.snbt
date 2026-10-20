@@ -4,7 +4,7 @@
   "order_index": 1,
   "filename": "qm_04_tools",
   "icon": {
-    "id": "mekanismtools:steel_pickaxe",
+    "id": "mekanism:mekasuit_bodyarmor",
     "count": 1
   },
   "default_quest_shape": "rsquare",
@@ -17,7 +17,7 @@
   "quests": [
     {
       "id": "514D11ABE082674B",
-      "x": -10.95,
+      "x": 0.0,
       "y": 1.85,
       "icon": {
         "id": "mekanismtools:osmium_paxel",
@@ -69,8 +69,8 @@
     },
     {
       "id": "514D11BFE1742CD9",
-      "x": -7.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 4.95,
       "icon": {
         "id": "mekanismtools:steel_paxel",
         "count": 1
@@ -123,20 +123,28 @@
           "type": "item",
           "item": {
             "id": "kubejs:mayhem_cube_t1",
-            "count": 1
+            "count": 2
           },
-          "count": 1,
+          "count": 2,
           "random_bonus": 0
         }
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11ABE082674B": [
+          3.65,
+          2.3,
+          3.65,
+          4.47
+        ]
+      }
     },
     {
       "id": "514D11D6D44E1120",
-      "x": -10.95,
-      "y": 6.67,
+      "x": 0.0,
+      "y": 8.05,
       "icon": {
         "id": "mekanismadditions:walkie_talkie",
         "count": 1
@@ -183,12 +191,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11BFE1742CD9": [
+          3.6,
+          5.35,
+          3.6,
+          7.52
+        ]
+      }
     },
     {
       "id": "514D110144C01D44",
-      "x": -4.95,
-      "y": 1.85,
+      "x": -4.6,
+      "y": 8.05,
       "icon": {
         "id": "mekanismtools:refined_obsidian_paxel",
         "count": 1
@@ -239,26 +255,34 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11BFE1742CD9": [
+          -1.95,
+          5.4,
+          -6.55,
+          7.57
+        ]
+      }
     },
     {
       "id": "514D11E17AB94DF9",
-      "x": 1.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 18.62,
       "icon": {
         "id": "mekanism:hdpe_sheet",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_3",
         "tools_plastic",
         "qm_v040",
+        "stage_2",
         "soqm_role_optional"
       ],
       "dependencies": [
-        "514D118CA784C98D",
-        "513011AA869D0649"
+        "514C110000000002",
+        "514D1154FFE3DABB"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -292,12 +316,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514C110000000002": [
+          4.0,
+          15.92,
+          4.0,
+          18.09
+        ]
+      }
     },
     {
       "id": "514D11197CE0EDFE",
-      "x": 4.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 21.72,
       "icon": {
         "id": "mekanismadditions:orange_glow_panel",
         "count": 1
@@ -338,12 +370,20 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11E17AB94DF9": [
+          4.0,
+          19.02,
+          4.0,
+          21.19
+        ]
+      }
     },
     {
       "id": "514D11517133D536",
-      "x": 7.95,
-      "y": 1.85,
+      "x": 0.0,
+      "y": 24.82,
       "icon": {
         "id": "mekanismadditions:aqua_balloon",
         "count": 1
@@ -384,7 +424,1567 @@
       ],
       "size": 0.8,
       "shape": "circle",
-      "hide_dependency_lines": false
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514D11197CE0EDFE": [
+          4.0,
+          22.12,
+          4.0,
+          24.29
+        ]
+      }
+    },
+    {
+      "id": "513011CDE1D10A76",
+      "x": -9.2,
+      "y": 29.19,
+      "icon": {
+        "id": "mekanism:mekasuit_helmet",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_mekasuit_helmet",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011AEA75E4401",
+        "513011E2552BA5EA",
+        "514D1127DFAD1A15",
+        "514D11E17AB94DF9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:mekasuit_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130121517369569"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013643CC7FBCC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301111493CFC21",
+      "x": -4.6,
+      "y": 29.19,
+      "icon": {
+        "id": "mekanism:mekasuit_bodyarmor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_mekasuit_bodyarmor",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011AEA75E4401",
+        "513011E2552BA5EA",
+        "514D1127DFAD1A15",
+        "514D11E17AB94DF9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:mekasuit_bodyarmor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012CDA8C4C1FC"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130136332DA1785",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301181BF058BAE",
+      "x": 0.0,
+      "y": 29.19,
+      "icon": {
+        "id": "mekanism:mekasuit_pants",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_mekasuit_pants",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011AEA75E4401",
+        "513011E2552BA5EA",
+        "514D1127DFAD1A15",
+        "514D11E17AB94DF9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:mekasuit_pants",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301226262F06A5"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130133ED3B7EB50",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011087C06E9D8",
+      "x": 4.6,
+      "y": 29.19,
+      "icon": {
+        "id": "mekanism:mekasuit_boots",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_mekasuit_boots",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011AEA75E4401",
+        "513011E2552BA5EA",
+        "514D1127DFAD1A15",
+        "514D11E17AB94DF9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:mekasuit_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012FE10C79112"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013A9E8D421DC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130112F15810A47",
+      "x": 0.0,
+      "y": 32.29,
+      "icon": {
+        "id": "mekanism:meka_tool",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_meka_tool",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011AEA75E4401",
+        "513011E2552BA5EA",
+        "514D1147E2CB985B",
+        "514D1127DFAD1A15"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:meka_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012D0ADAF8A31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013B8F967BC5E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301138646C9874",
+      "x": 0.0,
+      "y": 42.86,
+      "icon": {
+        "id": "mekanism:modification_station",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_modification_station",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "514D1127DFAD1A15",
+        "514D11E17AB94DF9",
+        "514D11EFB7B6F506"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:modification_station",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301240D3158D72"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130133B70611332",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011C521E5B4DD",
+      "x": 0.0,
+      "y": 39.76,
+      "icon": {
+        "id": "mekanism:module_base",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_base",
+        "qm_v040",
+        "stage_3",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "514D11E17AB94DF9",
+        "5130113316FAEC33"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130124F8610318F"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D7A5F9AD62",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301132F9C95555",
+      "x": -4.6,
+      "y": 45.96,
+      "icon": {
+        "id": "mekanism:module_energy_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_energy_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_energy_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301273FCC1DC96"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130131409AD80CB",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "5130113FB494C115",
+      "x": 4.6,
+      "y": 45.96,
+      "icon": {
+        "id": "mekanism:module_radiation_shielding_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_radiation_shielding_unit",
+        "qm_v040",
+        "plain_instruction",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_radiation_shielding_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012DCB2E562D8"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013FDB3D90A4E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011ED1A3D11E0",
+      "x": -9.2,
+      "y": 60.9,
+      "icon": {
+        "id": "mekanism:module_jetpack_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_jetpack_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_jetpack_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130129DDC8C1D99"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "51301365005AABA1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301144D5FB95D4",
+      "x": -9.2,
+      "y": 53.43,
+      "icon": {
+        "id": "mekanism:module_electrolytic_breathing_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_electrolytic_breathing_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "513011CDE1D10A76"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_electrolytic_breathing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301210ABFC9F3E"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013E7838DDFEB",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301155BDC855A3",
+      "x": -4.6,
+      "y": 53.43,
+      "icon": {
+        "id": "mekanism:module_vision_enhancement_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_vision_enhancement_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "513011CDE1D10A76"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_vision_enhancement_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012BB9CD609C1"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130131AB4653B18",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011F1FC51AAE1",
+      "x": 0.0,
+      "y": 57.8,
+      "icon": {
+        "id": "mekanism:module_magnetic_attraction_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_magnetic_attraction_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "513011087C06E9D8"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_magnetic_attraction_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012B19C70BA6A"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "513013D9BBC3ADEE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "51301125CDBD7A23",
+      "x": -9.2,
+      "y": 68.37,
+      "icon": {
+        "id": "mekanism:module_silk_touch_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_silk_touch_unit",
+        "qm_v040",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "5130112F15810A47"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_silk_touch_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130123AEB546622"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "5130138570B94451",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000001",
+      "x": 0.0,
+      "y": 12.42,
+      "icon": {
+        "id": "mekanism:substrate",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_substrate",
+        "stage_2",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011156F29CC4E"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000001",
+          "type": "item",
+          "item": {
+            "id": "mekanism:substrate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000001",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000002",
+      "x": 0.0,
+      "y": 15.52,
+      "icon": {
+        "id": "mekanism:hdpe_pellet",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_hdpe_pellet",
+        "stage_2",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "514C110000000001",
+        "5130113C675F054B"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000002",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hdpe_pellet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000002",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": false,
+      "dep_control_pts": {
+        "514C110000000001": [
+          4.0,
+          12.82,
+          4.0,
+          14.99
+        ]
+      }
+    },
+    {
+      "id": "514C110000000003",
+      "x": 0.0,
+      "y": 35.39,
+      "icon": {
+        "id": "mekanism:mekasuit_bodyarmor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "native_mekanism_mekasuit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "513011CDE1D10A76",
+        "51301111493CFC21",
+        "51301181BF058BAE",
+        "513011087C06E9D8",
+        "5130112F15810A47"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000003",
+          "type": "advancement",
+          "advancement": "mekanism:mekasuit",
+          "criterion": ""
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000003",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000004",
+      "x": 0.0,
+      "y": 45.96,
+      "icon": {
+        "id": "mekanism:module_charge_distribution_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_charge_distribution_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000004",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_charge_distribution_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000004",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000005",
+      "x": -4.6,
+      "y": 49.06,
+      "icon": {
+        "id": "mekanism:module_dosimeter_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_dosimeter_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000005",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_dosimeter_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000005",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000006",
+      "x": 0.0,
+      "y": 49.06,
+      "icon": {
+        "id": "mekanism:module_geiger_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_geiger_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000006",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_geiger_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000006",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000007",
+      "x": 0.0,
+      "y": 53.43,
+      "icon": {
+        "id": "mekanism:module_inhalation_purification_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_inhalation_purification_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "513011CDE1D10A76"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000007",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_inhalation_purification_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000007",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000008",
+      "x": -9.2,
+      "y": 57.8,
+      "icon": {
+        "id": "mekanism:module_locomotive_boosting_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_locomotive_boosting_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301181BF058BAE"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000008",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_locomotive_boosting_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000008",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C110000000009",
+      "x": -4.6,
+      "y": 57.8,
+      "icon": {
+        "id": "mekanism:module_hydraulic_propulsion_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_hydraulic_propulsion_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "513011087C06E9D8"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C120000000009",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_hydraulic_propulsion_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C130000000009",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000A",
+      "x": -4.6,
+      "y": 60.9,
+      "icon": {
+        "id": "mekanism:module_elytra_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_elytra_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21",
+        "514D11E17AB94DF9"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000A",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_elytra_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000B",
+      "x": 0.0,
+      "y": 64.0,
+      "icon": {
+        "id": "mekanism:module_gravitational_modulating_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_gravitational_modulating_unit",
+        "stage_6",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "51301111493CFC21",
+        "514D11E562C03F82",
+        "513011BDCE53EB09"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000B",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_gravitational_modulating_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000C",
+      "x": -4.6,
+      "y": 68.37,
+      "icon": {
+        "id": "mekanism:module_fortune_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_fortune_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "5130112F15810A47"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_fortune_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000D",
+      "x": 0.0,
+      "y": 68.37,
+      "icon": {
+        "id": "mekanism:module_excavation_escalation_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_excavation_escalation_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "5130112F15810A47"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000D",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_excavation_escalation_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000D",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000E",
+      "x": 4.6,
+      "y": 68.37,
+      "icon": {
+        "id": "mekanism:module_vein_mining_unit",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "item_mekanism_module_vein_mining_unit",
+        "stage_5",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "51301138646C9874",
+        "513011C521E5B4DD",
+        "5130112F15810A47"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:module_vein_mining_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "514C11000000000F",
+      "x": 0.0,
+      "y": 71.47,
+      "icon": {
+        "id": "mekanism:mekasuit_bodyarmor",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "native_mekanism_upgraded_mekasuit",
+        "stage_6",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "514C110000000003",
+        "51301138646C9874",
+        "514C11000000000B"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "id": "514C12000000000F",
+          "type": "advancement",
+          "advancement": "mekanism:upgraded_mekasuit",
+          "criterion": ""
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514C13000000000F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:iron_chestplate",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:equipment"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
     }
   ],
   "images": [
@@ -454,12 +2054,12 @@
     },
     {
       "id": "51410410000001D2",
-      "x": -6.45,
-      "y": 2.05,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 4.925,
+      "width": 24.9,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -471,9 +2071,9 @@
     {
       "id": "51410410000001D3",
       "x": -12.395,
-      "y": 2.05,
+      "y": 4.925,
       "width": 0.11,
-      "height": 4.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E8E5B85C",
       "text_on_image": false,
@@ -486,9 +2086,9 @@
     },
     {
       "id": "51410410000001D4",
-      "x": -6.37,
+      "x": 0.08,
       "y": 0.46,
-      "width": 11.62,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -502,12 +2102,12 @@
     },
     {
       "id": "51410410000001D5",
-      "x": -10.95,
+      "x": 0.0,
       "y": 2.77,
-      "width": 2.72,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -518,12 +2118,12 @@
     },
     {
       "id": "51410410000001D6",
-      "x": -7.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 5.87,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -534,12 +2134,12 @@
     },
     {
       "id": "51410410000001D7",
-      "x": -4.95,
-      "y": 2.77,
-      "width": 2.72,
+      "x": -4.6,
+      "y": 8.97,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -550,12 +2150,12 @@
     },
     {
       "id": "51410410000001D8",
-      "x": 6.45,
-      "y": 2.05,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 18.595,
+      "width": 24.9,
+      "height": 16.05,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -566,10 +2166,10 @@
     },
     {
       "id": "51410410000001D9",
-      "x": 0.505,
-      "y": 2.05,
+      "x": -12.395,
+      "y": 18.595,
       "width": 0.11,
-      "height": 4.1,
+      "height": 16.05,
       "rotation": 0.0,
       "image": "color:#E873C5B6",
       "text_on_image": false,
@@ -582,9 +2182,9 @@
     },
     {
       "id": "51410410000001DA",
-      "x": 6.53,
-      "y": 0.46,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 11.03,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -598,12 +2198,12 @@
     },
     {
       "id": "51410410000001DB",
-      "x": 1.95,
-      "y": 2.72,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 19.49,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -614,12 +2214,12 @@
     },
     {
       "id": "51410410000001DC",
-      "x": 4.95,
-      "y": 2.72,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 22.59,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -630,12 +2230,12 @@
     },
     {
       "id": "51410410000001DD",
-      "x": 7.95,
-      "y": 2.72,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 25.69,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -646,12 +2246,12 @@
     },
     {
       "id": "51410410000001DE",
-      "x": -6.45,
-      "y": 6.87,
-      "width": 12.0,
-      "height": 4.1,
+      "x": 0.0,
+      "y": 32.265,
+      "width": 24.9,
+      "height": 9.85,
       "rotation": 0.0,
-      "image": "color:#F01D2A3A",
+      "image": "color:#FF1D2A3A",
       "text_on_image": false,
       "text_h_align": "middle",
       "text_v_align": "middle",
@@ -663,9 +2263,9 @@
     {
       "id": "51410410000001DF",
       "x": -12.395,
-      "y": 6.87,
+      "y": 32.265,
       "width": 0.11,
-      "height": 4.1,
+      "height": 9.85,
       "rotation": 0.0,
       "image": "color:#E890A8E8",
       "text_on_image": false,
@@ -678,9 +2278,9 @@
     },
     {
       "id": "51410410000001E0",
-      "x": -6.37,
-      "y": 5.28,
-      "width": 11.62,
+      "x": 0.08,
+      "y": 27.8,
+      "width": 24.52,
       "height": 0.66,
       "rotation": 0.0,
       "image": "color:#FF293B51",
@@ -694,12 +2294,668 @@
     },
     {
       "id": "51410410000001E1",
-      "x": -10.95,
-      "y": 7.54,
-      "width": 2.72,
+      "x": 0.0,
+      "y": 8.92,
+      "width": 3.7,
       "height": 0.72,
       "rotation": 0.0,
-      "image": "color:#0017202B",
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000022C",
+      "x": -9.2,
+      "y": 30.06,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000022D",
+      "x": -4.6,
+      "y": 30.06,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000022E",
+      "x": 0.0,
+      "y": 30.06,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000022F",
+      "x": 4.6,
+      "y": 30.06,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000230",
+      "x": 0.0,
+      "y": 33.16,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000231",
+      "x": 0.0,
+      "y": 43.73,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000232",
+      "x": 0.0,
+      "y": 44.385,
+      "width": 24.9,
+      "height": 12.95,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "5141041000000233",
+      "x": -12.395,
+      "y": 44.385,
+      "width": 0.11,
+      "height": 12.95,
+      "rotation": 0.0,
+      "image": "color:#E8B58CDB",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "5141041000000234",
+      "x": 0.08,
+      "y": 38.37,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "5141041000000235",
+      "x": 0.0,
+      "y": 40.63,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000236",
+      "x": -4.6,
+      "y": 46.83,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000237",
+      "x": 4.6,
+      "y": 46.83,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000238",
+      "x": -9.2,
+      "y": 61.77,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "5141041000000239",
+      "x": -9.2,
+      "y": 54.3,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000023A",
+      "x": -4.6,
+      "y": 54.3,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000023B",
+      "x": 0.0,
+      "y": 58.67,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514104100000023C",
+      "x": -9.2,
+      "y": 69.24,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C150000000001",
+      "x": 0.0,
+      "y": 53.405,
+      "width": 24.9,
+      "height": 3.65,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514C150000000002",
+      "x": -12.395,
+      "y": 53.405,
+      "width": 0.11,
+      "height": 3.65,
+      "rotation": 0.0,
+      "image": "color:#E8E393A7",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514C150000000003",
+      "x": 0.08,
+      "y": 52.04,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514C150000000004",
+      "x": 0.0,
+      "y": 60.875,
+      "width": 24.9,
+      "height": 9.85,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514C150000000005",
+      "x": -12.395,
+      "y": 60.875,
+      "width": 0.11,
+      "height": 9.85,
+      "rotation": 0.0,
+      "image": "color:#E8F1C96B",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514C150000000006",
+      "x": 0.08,
+      "y": 56.41,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514C150000000007",
+      "x": 0.0,
+      "y": 69.895,
+      "width": 24.9,
+      "height": 6.75,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -10
+    },
+    {
+      "id": "514C150000000008",
+      "x": -12.395,
+      "y": 69.895,
+      "width": 0.11,
+      "height": 6.75,
+      "rotation": 0.0,
+      "image": "color:#E8E5B85C",
+      "text_on_image": false,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": -9
+    },
+    {
+      "id": "514C150000000009",
+      "x": 0.08,
+      "y": 66.98,
+      "width": 24.52,
+      "height": 0.66,
+      "rotation": 0.0,
+      "image": "color:#FF293B51",
+      "text_on_image": true,
+      "text_h_align": "start",
+      "text_v_align": "middle",
+      "text_inset": 3,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 0
+    },
+    {
+      "id": "514C140000000001",
+      "x": 0.0,
+      "y": 13.29,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000002",
+      "x": 0.0,
+      "y": 16.39,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000003",
+      "x": 0.0,
+      "y": 36.26,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000004",
+      "x": 0.0,
+      "y": 46.83,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000005",
+      "x": -4.6,
+      "y": 49.93,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000006",
+      "x": 0.0,
+      "y": 49.93,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000007",
+      "x": 0.0,
+      "y": 54.3,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000008",
+      "x": -9.2,
+      "y": 58.67,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C140000000009",
+      "x": -4.6,
+      "y": 58.67,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000A",
+      "x": -4.6,
+      "y": 61.77,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000B",
+      "x": 0.0,
+      "y": 64.87,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000C",
+      "x": -4.6,
+      "y": 69.24,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000D",
+      "x": 0.0,
+      "y": 69.24,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000E",
+      "x": 4.6,
+      "y": 69.24,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514C14000000000F",
+      "x": 0.0,
+      "y": 72.34,
+      "width": 3.7,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#FF1D2A3A",
       "text_on_image": true,
       "text_h_align": "middle",
       "text_v_align": "middle",

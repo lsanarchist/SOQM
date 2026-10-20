@@ -101,6 +101,10 @@
       "uk_ua": "Герметична камера",
       "en_us": "Sealed Process Chamber"
     },
+    "mekanism:advanced_chemical_tank": {
+      "uk_ua": "Розширений хімічний резервуар",
+      "en_us": "Advanced Chemical Tank"
+    },
     "mekanism:basic_chemical_tank": {
       "uk_ua": "Базовий хімічний бак",
       "en_us": "Basic Chemical Tank"
@@ -997,7 +1001,7 @@
       },
       "items": [
         {
-          "item": "mekanism:basic_chemical_tank",
+          "item": "mekanism:advanced_chemical_tank",
           "count": 1,
           "minimum_consumed": 2,
           "basis": "partial_ingredient"
@@ -1005,9 +1009,9 @@
       ],
       "recipes": [
         {
-          "id": "kubejs:expert_v042/mekanism/chemical_infuser",
-          "source": "qm_expert_v042.js",
-          "sha256": "d9c844a93979e408243d32e64b561e08f2e4f1fd5760bb40db486f8497ba13d2"
+          "id": "kubejs:hardcore_workshop/mekanism/chemical_infuser",
+          "source": "qm_expert_hardcore_workshop.js",
+          "sha256": "f352bae4e9a046a5a86745c48539afa5c9364a570ff86f629bb799e048853ed8"
         }
       ]
     },

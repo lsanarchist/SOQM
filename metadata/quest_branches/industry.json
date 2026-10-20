@@ -98,8 +98,8 @@
         {
           "slot": 2,
           "title": {
-            "uk_ua": "Паралельні операції",
-            "en_us": "Parallel operations"
+            "uk_ua": "Фабрики, лісопилка й картонна коробка",
+            "en_us": "Factories, a sawmill and the Cardboard Box"
           },
           "rows": [
             [
@@ -122,6 +122,16 @@
               null,
               "51301167B744DDDA",
               null
+            ],
+            [
+              null,
+              null,
+              "513011B3BB1DF1D9"
+            ],
+            [
+              null,
+              null,
+              "514A110000000001"
             ]
           ]
         },
@@ -170,14 +180,14 @@
           },
           "rows": [
             [
-              "513011B3BB1DF1D9",
+              null,
               "5130113C675F054B",
               null,
               null,
               "5130112244309BDE"
             ],
             [
-              "514A110000000001",
+              null,
               "513011156F29CC4E",
               "513011F2453E9C69",
               null,
@@ -421,10 +431,14 @@
           },
           "description": {
             "uk_ua": [
-              "Steel Casing та Basic Control Circuit — повторювані компоненти більшості ранніх машин. Після них розділи майстерню на переробку руди, живлення й транспортування: кожну лінію можна нарощувати окремо."
+              "Один Steel Casing потребує 4 блоки сталі, 1 блок осмію, 2 сталеві пластини Immersive Engineering, 1 скло та 1 Industrial Chassis. Першу сталь зроби в Blast Furnace Immersive Engineering, а пластини — молотом або вже запущеним Metal Press.",
+              "Корпус не потребує Basic Control Circuit чи Infused Alloy, тому перший Metallurgic Infuser доступний після сталевої майстерні. Після його запуску виготов Basic Control Circuit із осмію та редстоуну за JEI.",
+              "Корпуси та схеми регулярно потрібні наступним машинам. Розділи майстерню на переробку руди, живлення й транспортування, щоб нарощувати кожну лінію окремо."
             ],
             "en_us": [
-              "Steel Casings and Basic Control Circuits recur in the early machines. From here, split the workshop into ore processing, power and transport so each line can grow independently."
+              "One Steel Casing needs 4 steel blocks, 1 osmium block, 2 Immersive Engineering steel plates, 1 glass and 1 Industrial Chassis. Make the first steel in Immersive Engineering’s Blast Furnace and the plates with a hammer or an already running Metal Press.",
+              "The casing does not require a Basic Control Circuit or Infused Alloy, so the first Metallurgic Infuser is accessible after the steel workshop. Once it runs, make the Basic Control Circuit from osmium and redstone using JEI.",
+              "Casings and circuits recur throughout the next machines. Separate ore processing, power and transport so each line can grow independently."
             ]
           }
         },
@@ -657,7 +671,17 @@
           "dependencies": [
             "5130115E1ED084F6",
             "514D11EFB7B6F506"
-          ]
+          ],
+          "description": {
+            "uk_ua": [
+              "Один Advanced Control Circuit потребує 2 Basic Control Circuit, 4 Infused Alloy, 1 Precision Mechanism, 1 Control Assembly та 1 блок редстоуну. За рецепт виходить 1 схема, тому для двох схем у наступному рівні потрібні дві повні партії.",
+              "Підготуй запас попередніх схем і сплавів як окремі виробничі лінії. JEI показує точний рецепт поточного рівня; замовлення великих машин краще починати після перевірки цих запасів."
+            ],
+            "en_us": [
+              "One Advanced Control Circuit needs 2 Basic Control Circuits, 4 Infused Alloys, 1 Precision Mechanism, 1 Control Assembly and 1 redstone block. The recipe produces 1 circuit, so the two circuits consumed by the next tier require two complete batches.",
+              "Maintain separate production supplies of the previous circuits and alloys. JEI shows the exact current-tier recipe; check those supplies before ordering a large machine."
+            ]
+          }
         },
         "513011D8991C51E1": {
           "dependencies": [
@@ -996,7 +1020,17 @@
           "dependencies": [
             "513011AA869D0649",
             "513011936DDEBB0E"
-          ]
+          ],
+          "description": {
+            "uk_ua": [
+              "Один Elite Control Circuit потребує 2 Advanced Control Circuit, 4 Reinforced Alloy, 1 Dimensional Matrix, 1 Quantum Processor та 1 алмазний блок. За рецепт виходить 1 схема, тому для двох схем у наступному рівні потрібні дві повні партії.",
+              "Підготуй запас попередніх схем і сплавів як окремі виробничі лінії. JEI показує точний рецепт поточного рівня; замовлення великих машин краще починати після перевірки цих запасів."
+            ],
+            "en_us": [
+              "One Elite Control Circuit needs 2 Advanced Control Circuits, 4 Reinforced Alloys, 1 Dimensional Matrix, 1 Quantum Processor and 1 diamond block. The recipe produces 1 circuit, so the two circuits consumed by the next tier require two complete batches.",
+              "Maintain separate production supplies of the previous circuits and alloys. JEI shows the exact current-tier recipe; check those supplies before ordering a large machine."
+            ]
+          }
         },
         "514D11AB5959BBF5": {
           "dependencies": [
@@ -1257,7 +1291,17 @@
         "513011F824400CB9": {
           "dependencies": [
             "5130117F2402AE8A"
-          ]
+          ],
+          "description": {
+            "uk_ua": [
+              "Один Ultimate Control Circuit потребує 2 Elite Control Circuit, 4 Atomic Alloy, 1 Stellar Alloy, 1 Radiation Shield та 1 Quantum Processor. За рецепт виходить 1 схема; для замовлення двох схем потрібні дві повні партії.",
+              "Підготуй запас попередніх схем і сплавів як окремі виробничі лінії. JEI показує точний рецепт поточного рівня; замовлення великих машин краще починати після перевірки цих запасів."
+            ],
+            "en_us": [
+              "One Ultimate Control Circuit needs 2 Elite Control Circuits, 4 Atomic Alloys, 1 Stellar Alloy, 1 Radiation Shield and 1 Quantum Processor. The recipe produces 1 circuit; an order of two circuits requires two complete batches.",
+              "Maintain separate production supplies of the previous circuits and alloys. JEI shows the exact current-tier recipe; check those supplies before ordering a large machine."
+            ]
+          }
         },
         "513011FD8F59F801": {
           "dependencies": [
@@ -1374,10 +1418,14 @@
           },
           "description": {
             "uk_ua": [
-              "Metallurgic Infuser має окремі входи для предмета й інфузійного матеріалу. Залізо з вуглецем веде до сталі; залізо з редстоуном — до Infused Alloy. Для різних інфузій зручно тримати окремі машини, щоб не втрачати залишок матеріалу при перемиканні."
+              "Перший Metallurgic Infuser коштує 2 Iron Furnace, 2 блоки заліза, 2 блоки редстоуну, 1 блок осмію, 1 Industrial Chassis та 1 Steel Casing. Підготуй сталеву майстерню Immersive Engineering й запас заліза для обох печей. У рецепті першої машини немає її власних сплавів або схем.",
+              "Для Infused Alloy подай мідь та редстоун: у цій версії рецепта потрібна саме мідь. Залізо з вуглецем починає окрему сталеву лінію через Enriched Iron; звір обидва етапи в JEI.",
+              "У Side Config розділи звичайний предметний вхід, Extra для реагенту та вихід. Для різних інфузій зручно тримати окремі машини: реагент зберігається у внутрішньому буфері, і при перемиканні його доведеться свідомо очищати."
             ],
             "en_us": [
-              "The Metallurgic Infuser separates the item input from its infusion material. Iron with carbon starts the steel route; iron with redstone produces Infused Alloy. Separate machines for different infusions avoid discarding the remaining material when switching."
+              "The first Metallurgic Infuser costs 2 Iron Furnaces, 2 iron blocks, 2 redstone blocks, 1 osmium block, 1 Industrial Chassis and 1 Steel Casing. Prepare the Immersive Engineering steel workshop and enough iron for both furnaces. The first machine recipe uses none of its own alloys or circuits.",
+              "Feed copper and redstone for Infused Alloy: this version specifically uses copper. Iron with carbon starts a separate steel route through Enriched Iron; inspect both steps in JEI.",
+              "In Side Config, separate the ordinary item input, the Extra reagent input and the output. Separate machines are useful for different infusion types: material remains in the internal buffer and must be deliberately cleared when switching."
             ]
           }
         },
@@ -1388,8 +1436,8 @@
           "stage": 2,
           "optional": true,
           "title": {
-            "uk_ua": "Картонна коробка: перенесення блоків",
-            "en_us": "Cardboard Box: move a block with its contents"
+            "uk_ua": "Mekanism: Картонна коробка",
+            "en_us": "Mekanism: Cardboard Box"
           },
           "description": {
             "uk_ua": [
@@ -1692,43 +1740,6 @@
               null,
               "514D1149705848EC",
               "5130114BCD92C503",
-              null
-            ]
-          ]
-        },
-        {
-          "slot": 8,
-          "title": {
-            "uk_ua": "Meka-комплект і модулі",
-            "en_us": "Meka equipment and modules"
-          },
-          "rows": [
-            [
-              "513011CDE1D10A76",
-              "51301111493CFC21",
-              "51301181BF058BAE",
-              "513011087C06E9D8",
-              "5130112F15810A47"
-            ],
-            [
-              "513011C521E5B4DD",
-              null,
-              "51301138646C9874",
-              null,
-              null
-            ],
-            [
-              "5130113FB494C115",
-              "51301144D5FB95D4",
-              "513011ED1A3D11E0",
-              "51301132F9C95555",
-              "51301155BDC855A3"
-            ],
-            [
-              null,
-              "513011F1FC51AAE1",
-              null,
-              "51301125CDBD7A23",
               null
             ]
           ]
@@ -2128,106 +2139,6 @@
           },
           "stage": 3
         },
-        "513011CDE1D10A76": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "51301111493CFC21": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "51301181BF058BAE": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "513011087C06E9D8": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "5130112F15810A47": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "514D1147E2CB985B",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "51301138646C9874": {
-          "dependencies": [
-            "514D11EFB7B6F506",
-            "513011AEA75E4401",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "513011C521E5B4DD": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "514D1127DFAD1A15"
-          ],
-          "optional": true
-        },
-        "51301132F9C95555": {
-          "dependencies": [
-            "513011C521E5B4DD",
-            "513011E2552BA5EA"
-          ],
-          "optional": true
-        },
-        "5130113FB494C115": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
-        "513011ED1A3D11E0": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
-        "51301144D5FB95D4": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
-        "51301155BDC855A3": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
-        "513011F1FC51AAE1": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
-        "51301125CDBD7A23": {
-          "dependencies": [
-            "513011AEA75E4401",
-            "513011C521E5B4DD"
-          ],
-          "optional": true
-        },
         "5130114BCD92C503": {
           "optional": true
         },
@@ -2314,10 +2225,12 @@
           },
           "description": {
             "uk_ua": [
-              "Solar Neutron Activator переробляє ядерні відходи на полоній, а Pressurized Reaction Chamber завершує рецепт гранули з потрібними додатковими входами. Збережи окремі лінії та буфери для радіоактивних речовин; цей матеріал веде до пізніх систем."
+              "Solar Neutron Activator переробляє ядерні відходи на полоній, а Pressurized Reaction Chamber завершує рецепт гранули з потрібними додатковими входами. Збережи окремі лінії та буфери для радіоактивних речовин; цей матеріал веде до пізніх систем.",
+              "Гранули полонію також відкривають спорядження: у главі 07 «MekaSuit, модулі та оснащення» зібрано чотири бронедеталі, Meka-Tool і майстерню поліпшень."
             ],
             "en_us": [
-              "The Solar Neutron Activator converts nuclear waste into polonium, and the Pressurized Reaction Chamber completes the pellet recipe with its additional inputs. Keep separate lines and buffers for radioactive chemicals; this material leads to later systems."
+              "The Solar Neutron Activator converts nuclear waste into polonium, and the Pressurized Reaction Chamber completes the pellet recipe with its additional inputs. Keep separate lines and buffers for radioactive chemicals; this material leads to later systems.",
+              "Polonium pellets also lead to equipment: chapter 07, MekaSuit, Modules and Equipment, contains the four armor pieces, Meka-Tool and the upgrade workshop."
             ]
           }
         },
@@ -3672,8 +3585,8 @@
             "5130111BE9BBE0D5"
           ],
           "title": {
-            "uk_ua": "Колода → латекс",
-            "en_us": "Log → latex"
+            "uk_ua": "Пластик 1: витягування латексу",
+            "en_us": "Plastic 1: extract latex"
           },
           "description": {
             "uk_ua": [
@@ -3692,15 +3605,17 @@
             "513011EEAB3DF77B"
           ],
           "title": {
-            "uk_ua": "Латекс + вода + FE",
-            "en_us": "Latex + water + FE"
+            "uk_ua": "Пластик 2: латекс + вода + FE",
+            "en_us": "Plastic 2: latex + water + FE"
           },
           "description": {
             "uk_ua": [
-              "Latex Processing Unit споживає латекс, воду та енергію й видає Tiny Dry Rubber. Підведи обидві рідини окремо та виводь твердий результат. Перевір у вікні машини, який саме вхід обмежує роботу."
+              "Latex Processing Unit у встановленій версії Industrial Foregoing видає Dry Rubber одразу. Один цикл споживає 750 mB латексу й 500 mB води та потребує FE. Підведи дві рідини до правильних баків і залиш місце для твердого результату.",
+              "Проміжне збирання Tiny Dry Rubber тут не потрібне. Якщо машина не працює, перевір запас обох рідин, живлення, червоний сигнал і вихідний слот."
             ],
             "en_us": [
-              "The Latex Processing Unit consumes latex, water and energy to produce Tiny Dry Rubber. Feed both fluids separately and extract the solid output. Use its interface to identify which input is limiting production."
+              "The installed Industrial Foregoing Latex Processing Unit produces Dry Rubber directly. Each cycle uses 750 mB latex and 500 mB water plus FE. Supply the two fluids to their proper tanks and leave space for the solid output.",
+              "No Tiny Dry Rubber combining step is needed here. If the machine stops, check both fluid supplies, power, redstone control and its output slot."
             ]
           }
         },
@@ -3710,15 +3625,17 @@
             "5130111B4AB75BE7"
           ],
           "title": {
-            "uk_ua": "Крихти гуми → випал пластика",
-            "en_us": "Rubber pieces → smelted plastic"
+            "uk_ua": "Пластик 3: Dry Rubber для переплавлення",
+            "en_us": "Plastic 3: Dry Rubber for smelting"
           },
           "description": {
             "uk_ua": [
-              "Збери Tiny Dry Rubber у Dry Rubber та переплав її на Plastic. Це завершення латексної гілки. У збірці також є прямий рецепт пластику з Mekanism HDPE Sheet, тому цей гумовий вузол не блокує спільну пластикову лінію."
+              "Забери Dry Rubber безпосередньо з Latex Processing Unit. Переплав одну гуму в печі, щоб отримати одну Industrial Foregoing Plastic. У цій версії проміжна Tiny Dry Rubber позначена застарілою й для лінії не потрібна.",
+              "Наявне завдання перевіряє Dry Rubber без вилучення. Наступний квест Plastic приймає готовий пластик як із цієї латексної лінії, так і з HDPE."
             ],
             "en_us": [
-              "Combine Tiny Dry Rubber into Dry Rubber and smelt it into Plastic. This completes the latex branch. The pack also has a direct Plastic recipe from Mekanism HDPE Sheets, so this rubber node does not block the shared plastic line."
+              "Collect Dry Rubber directly from the Latex Processing Unit. Smelt one rubber in a furnace to produce one Industrial Foregoing Plastic. Tiny Dry Rubber is deprecated in this version and is not needed for the line.",
+              "The existing task detects Dry Rubber without consuming it. The Plastic quest accepts the finished plastic from either this latex route or HDPE."
             ]
           }
         },
@@ -3728,15 +3645,17 @@
             "5130111BE9BBE0D5"
           ],
           "title": {
-            "uk_ua": "Пластик: латекс або HDPE",
-            "en_us": "Plastic: latex or HDPE"
+            "uk_ua": "Виготов пластик: латекс або HDPE",
+            "en_us": "Make Plastic: latex or HDPE"
           },
           "description": {
             "uk_ua": [
-              "Обери доступне джерело: випал Dry Rubber з латексної лінії або рецепт 1 HDPE Sheet → 3 Plastic. Обидва шляхи живлять ті самі машини та рамки. Предметне завдання приймає пластик незалежно від обраного способу."
+              "Отримай Industrial Foregoing Plastic одним із двох маршрутів. Латексний: Fluid Extractor → Latex Processing Unit → Dry Rubber → піч → Plastic. Полімерний: глава 07, HDPE Sheet → рецепт SOQM → 3 Plastic з одного листа.",
+              "Вибери одну доступну виробничу лінію; завершувати обидві для цього квеста не потрібно. Потримай готовий пластик в інвентарі перед крафтом Dissolution Chamber та наступних рамок. Предметна перевірка не забирає його й не визначає спосіб виробництва."
             ],
             "en_us": [
-              "Choose the available source: smelt Dry Rubber from the latex line, or use the recipe for 1 HDPE Sheet → 3 Plastic. Both paths feed the same machines and frames, and the item objective accepts either source."
+              "Produce Industrial Foregoing Plastic using either route. Latex: Fluid Extractor → Latex Processing Unit → Dry Rubber → furnace → Plastic. Polymer: chapter 07, HDPE Sheet → SOQM recipe → 3 Plastic from one sheet.",
+              "Choose one available production route; this quest does not require both. Hold the finished plastic before crafting a Dissolution Chamber and later frames. The item check neither consumes it nor determines which production method you used."
             ]
           }
         },
@@ -5327,7 +5246,8 @@
     {
       "source": "Mekanism-1.21.1-10.7.19.85.jar!/data/mekanism/recipe/{cardboard_box,sawing/stick,sawing/log/oak,reaction/substrate/water_hydrogen}.json; data/c/tags/item/{dusts/wood,fuels/bio}.json",
       "notes": "Pinned SHA-256: 004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43. The box uses four #c:dusts/wood; sawing a stick guarantees one sawdust. The PRC needs two #c:fuels/bio, 10 mB water and 100 mB hydrogen, not sawdust. Keep the box as an optional sawmill child and remove the unrelated sawmill prerequisite from the PRC."
-    }
+    },
+    "industrialforegoing-1.21-3.6.39.jar: LatexProcessingUnitTile.onFinish/static fields (750 mB latex + 500 mB water -> Dry Rubber); data/industrialforegoing/recipe/plastic.json"
   ],
   "routes": [
     {
