@@ -37,7 +37,22 @@ class CampaignPresentationTests(unittest.TestCase):
         expected = load(ROOT / "metadata/campaign_identity.json")
         self.assertEqual(expected['base_commit'], 'e71db8398ddc9f07e85981fac942f52dd23f447d')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), expected['sha256'])
-        before_torchmaster = compatibility.previous_torchmaster(self.chapters)
+        before_hardcore = compatibility.previous_hardcore_workshop(self.chapters)
+        hardcore = expected['previous_hardcore_workshop']
+        self.assertEqual(hardcore['base_commit'], '95421eeda09f2e3447e6e9d3189a1e43d9c41381')
+        self.assertEqual(hardcore['sha256'],
+                         'b883503b48a5d90e32085663878d7097d371b96478a2a0143bc266036e0dd0ca')
+        self.assertEqual(refresh.persistent_identity(before_hardcore, self.groups), hardcore['sha256'])
+        snapshot = load(compatibility.HARDCORE_UPGRADE)
+        self.assertEqual(snapshot['contract_sha256'],
+                         'aff57cadd6bb9fa66d0b1069efec03fae55be20ff19280f3b8af5f075c57ebde')
+        self.assertEqual(len(snapshot['added_quests']), 15)
+        self.assertEqual(len(snapshot['moved_quests']), 14)
+        self.assertEqual(snapshot['tasks'], {}, 'Original objectives retain their saved task definitions')
+        bonus = set(load(ROOT / 'metadata/cube_reward_bonus.json')['bonus_quests'])
+        self.assertEqual(set(snapshot['rewards']), bonus | set(snapshot['moved_quests']))
+        self.assertEqual(len(snapshot['rewards']), 43)  #29 counts and14 equipment reward themes.
+        before_torchmaster = compatibility.previous_torchmaster(before_hardcore)
         torchmaster = expected['previous_torchmaster']
         self.assertEqual(torchmaster['sha256'],
                          '17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d')
@@ -61,6 +76,22 @@ class CampaignPresentationTests(unittest.TestCase):
         first, second = moved[0]['quests'][:2]
         first['tasks'][0]['id'], second['tasks'][0]['id'] = second['tasks'][0]['id'], first['tasks'][0]['id']
         self.assertNotEqual(refresh.persistent_identity(moved, self.groups), expected['sha256'])
+
+    def test_hardcore_snapshot_rejects_an_unreviewed_reward_or_owner(self):
+        snapshot = load(compatibility.HARDCORE_UPGRADE)
+        changed = copy.deepcopy(self.chapters)
+        quest = next(q for chapter in changed for q in chapter['quests']
+                     if q['id'] in snapshot['rewards'])
+        quest['rewards'][0]['team_reward'] = True
+        with self.assertRaisesRegex(ValueError, 'Unreviewed hardcore rewards'):
+            compatibility.previous_hardcore_workshop(changed)
+        changed = copy.deepcopy(self.chapters)
+        source, destination = changed[:2]
+        quest = next(q for q in source['quests'] if q['id'] not in snapshot['moved_quests'])
+        source['quests'].remove(quest)
+        destination['quests'].append(quest)
+        with self.assertRaisesRegex(ValueError, 'unreviewed original'):
+            compatibility.previous_hardcore_workshop(changed)
 
     def test_campaign_regeneration_is_stable(self):
         chapters, locale = copy.deepcopy(self.chapters), copy.deepcopy(self.uk)

@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+### 0.4.12 — hardcore workshop, MekaSuit progression and visible rewards
+
+- Adapt the early Questing Mayhem workshop into 63 explicit recipe replacements:
+  chest-core furnaces, eight-block Iron Furnaces, full copper/iron storage tiers,
+  costly hoppers, rod-and-gear pistons and a chained gear workshop. Keep manual
+  plates and steel available before powered machinery; the metal press rewards
+  automation with better material efficiency. Food recipes are unchanged.
+- Raise Mekanism casing and machine costs, require two previous-tier circuits
+  for one upgraded circuit, and make Module Base an HDPE/Elite Circuit assembly.
+  Remove 80 exact old recipe IDs, including alternative cheap piston, gear and
+  upgrade paths. Preserve native storage and Mekanism data-transfer serializers.
+- Move 14 existing MekaSuit/MekaTool lessons to the visible equipment chapter
+  while retaining their saved IDs. Add 15 HDPE, module and equipment milestones,
+  including native full-set and maximum-installed-upgrade advancements. Explain
+  the current Industrial Foregoing rubber route and reveal the existing Cardboard
+  Box lesson beside Precision Sawmill. The equipment branch remains optional.
+- Increase guaranteed Mayhem Cube units from 193 to 222 (+15.0259%) by adding one
+  cube to 29 existing personal claims. Retain all 193 cube milestones and all
+  1,628 previous reward IDs; already claimed rewards receive no second payout.
+  The new book contains 1,642 quests, 1,927 tasks and 1,643 personal rewards.
+- Show guaranteed refund stacks as separate counted icons in the reward section.
+  Add a View Rewards button and Ctrl+Shift+V catalogue with every possible pool
+  prize, quantities, rarity and manufacture conditions. Keep native claim clicks
+  and server entitlement checks. Build Quest UI 0.4.5 with the existing Xaero
+  automatic-size crash fix intact.
+- Keep recipe evidence aligned with active late overrides. Chemical Infuser now
+  consumes two Advanced Chemical Tanks and returns one; the other 40 fixed refund
+  payloads are unchanged. Validate historical quest ownership/content, native
+  storage contents and components, removed cheap routes and catalogue coverage.
+
 ### Xaero automatic minimap crash hotfix
 
 - Fix the first-world-render `StackOverflowError` in Quest and HUD Help 0.4.3

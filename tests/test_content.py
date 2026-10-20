@@ -36,12 +36,13 @@ class CampaignContentTests(unittest.TestCase):
     def test_campaign_not_truncated(self):
         """A release cannot silently lose chapters, quests, tasks or rewards."""
         self.assertEqual(len(self.chapters), 37)
-        self.assertEqual(len(self.quest_list), 1627)
+        self.assertEqual(len(self.quest_list), 1642)
         additions = read_json(ROOT / 'metadata/multiblock_materials.json')['migration']['added_task_ids']
         expected = read_json(ROOT / 'metadata/campaign_identity.json')['tasks']
-        self.assertEqual(expected, 1773 + len(additions) + 1)  # Additive torch item task.
+        # The torch and15 new Mekanism lessons add one task each; existing tasks keep their IDs.
+        self.assertEqual(expected, 1773 + len(additions) + 1 + 15)
         self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), expected)
-        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1628)
+        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1643)
 
     def test_all_persistent_ids_are_unique(self):
         objects = [("group", group["id"]) for group in self.groups]
@@ -108,6 +109,7 @@ class CampaignContentTests(unittest.TestCase):
 
     def test_progress_and_reward_safety(self):
         defaults = read_json(QUESTS / "data.snbt")
+        bonus = set(read_json(ROOT / 'metadata/cube_reward_bonus.json')['bonus_quests'])
         self.assertFalse(defaults["default_consume_items"])
         self.assertEqual(defaults["default_autoclaim_rewards"], "disabled")
         for quest in self.quest_list:
@@ -128,7 +130,7 @@ class CampaignContentTests(unittest.TestCase):
                         self.assertNotIn("count", reward)
                     else:
                         self.assertIs(type(reward.get("count", 1)), int)
-                        self.assertEqual(reward.get("count", 1), 1)
+                        self.assertEqual(reward.get("count", 1), 2 if quest['id'] in bonus else 1)
                         self.assertRegex(reward["item"]["id"], r"^(?:ftbquests:book|kubejs:mayhem_cube_t[0-6])$")
 
     def test_no_craftoria_runtime_adapters(self):

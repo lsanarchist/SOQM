@@ -47,20 +47,32 @@ def quest_stage(quest: dict) -> int:
 
 
 def recipe_rows(root: Path = ROOT) -> list[dict]:
-    """Read declarative recipe arrays without executing JavaScript.
+    """Read active declarative recipe arrays without executing JavaScript.
 
     Runtime-only recipes are deliberately not guessed. Only the mandatory gates
-    shared by all authored alternatives for an output are used below.
+    shared by all authored alternatives for an output are used below. Honor the
+    explicit priority and removeAddedIds arrays so a replaced cheap recipe
+    cannot hide a new gate or appear as a live crafting-refund alternative.
+    Pinned KubeJS removeIds/event.remove filters original recipes only; queued
+    authored additions need their own explicit KubeRecipe.remove operation.
     """
-    rows = []
+    rows = {}
     decoder = json.JSONDecoder()
-    for path in sorted((root / "overrides/kubejs/server_scripts").glob("qm_expert*.js")):
+    sources = []
+    for path in (root / "overrides/kubejs/server_scripts").glob("qm_expert*.js"):
         source = path.read_text(encoding="utf-8")
+        priority = re.search(r"^\s*//\s*priority:\s*(-?\d+)\s*$", source, re.M)
+        sources.append((-int(priority.group(1)) if priority else 0, path.name, source))
+    for _, name, source in sorted(sources):
+        for match in re.finditer(r"\bvar\s+removeAddedIds\s*=\s*", source):
+            removed, _ = decoder.raw_decode(source[match.end():])
+            for ident in removed:
+                rows.pop(ident, None)
         for match in re.finditer(r"\bvar\s+recipes\s*=\s*", source):
             entries, _ = decoder.raw_decode(source[match.end():])
             for entry in entries:
-                rows.append({"source": path.name, **entry})
-    return rows
+                rows[entry["id"]] = {"source": name, **entry}
+    return list(rows.values())
 
 
 def recipe_output(recipe: dict) -> str | None:

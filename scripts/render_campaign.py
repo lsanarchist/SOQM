@@ -36,6 +36,7 @@ OUTPUTS = (
     ("qm_v040_29_exdeorum", None, "campaign-ex-deorum.svg"),
     ("qm_v040_30_exmachinis", None, "campaign-ex-machinis.svg"),
     ("qm_02_mek", None, "campaign-mekanism.svg"),
+    ("qm_04_tools", None, "campaign-mekasuit.svg"),
     ("qm_03_nuclear", None, "campaign-nuclear.svg"),
     ("qm_v030_09_enderio", None, "campaign-ender-io.svg"),
     ("qm_v030_10_industrial", None, "campaign-industrial.svg"),

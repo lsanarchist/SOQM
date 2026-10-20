@@ -110,7 +110,10 @@ def compile_probe(java, runtime, workspace, deadline):
                 continue
             for entry in json.loads(archive.read("META-INF/jarjar/metadata.json")).get("jars", []):
                 name = entry["path"]
-                require(name.startswith("META-INF/jarjar/") and name.endswith(".jar"),
+                require(isinstance(name, str)
+                        and name.startswith(("META-INF/jarjar/", "META-INF/jars/"))
+                        and name.endswith(".jar") and ".." not in Path(name).parts
+                        and "\\" not in name and name in archive.namelist(),
                         "Unexpected embedded dependency path")
                 target = embedded / (sha(parent)[:12] + "-" + Path(name).name)
                 target.write_bytes(archive.read(name))

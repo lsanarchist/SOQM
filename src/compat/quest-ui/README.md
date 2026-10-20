@@ -1,4 +1,4 @@
-# Quest and HUD Help 0.4.4
+# Quest and HUD Help 0.4.5
 
 Pack-owned client adapter for the exact SOQM Minecraft 1.21.1 / NeoForge
 21.1.262 dependency set. Existing quest-item names, mod names and JEI recipe/use
@@ -8,6 +8,41 @@ the first-world-render stack overflow with Xaero's automatic minimap size.
 
 See [HUD_LAYOUT.md](../../../docs/HUD_LAYOUT.md) for player controls, automatic
 existing-instance behavior, audited overlays, pinned sources and limitations.
+
+## Visible quest rewards
+
+The quest reward section now shows the exact guaranteed refund stacks beside
+the existing claim icon, with item counts. A bundled cube keeps its original
+native icon; its refund ingredients receive separate display icons. Clicking a
+display icon opens the catalogue. The original reward button still performs the
+normal FTB claim, using the same reward ID and personal claim history.
+
+The labelled **View rewards / Переглянути нагороди** button appears above the
+quest description. **Ctrl+Shift+V** opens the same view while that quest is open;
+the shortcut does not intercept focused text fields or other modal panels. The
+scrollable catalogue shows every guaranteed stack and every possible entry in
+the quest's random pool, including count, rarity, production level and exact
+manufacturing conditions. It explains that a random pack draws 3–5 prizes,
+reserves one of those draws for an eligible uncommon-or-better prize, and
+does not grant every displayed possibility. The visible conditions describe
+eligibility; the server remains responsible for the actual unlock state and
+claim. JEI recipe/use keys work on catalogue items.
+
+`scripts/campaign_rewards.py` generates the shipped
+`assets/qm_quest_ui/reward_catalog.json` from the same chapter rewards, random
+pools and refund metadata as the server policy. The Java parser has no claim,
+team or inventory API. Catalogue loading is cached and invalidated by resource
+reload; a bad display resource leaves native claiming available. All catalogue
+hooks are client mixins.
+
+The fixed cube award adjustment is recorded in
+`metadata/cube_reward_bonus.json`: 29 existing direct cube rewards increase
+from one to two, raising the original 193 guaranteed cubes to 222 (+15.03%).
+The number of milestone quests remains 193. The allocation uses stable quest
+IDs, excludes bundled recipe refunds, and does not change cube contents or
+random rolls. Existing claims keep their IDs, so already claimed rewards are
+not issued again. The 15 added equipment quests use ordinary personal packs
+and do not alter this fixed baseline.
 
 ## Design
 
@@ -48,7 +83,7 @@ python3 src/compat/quest-ui/build.py \
   --runtime /path/to/neoforge-client-instance \
   --javac /path/to/jdk-21/bin/javac \
   --verify \
-  --output /tmp/qm-quest-ui-0.4.4.jar
+  --output /tmp/qm-quest-ui-0.4.5.jar
 ```
 
 The builder checks Java 21, every `metadata/mods.lock.json` mod artifact, and the
@@ -65,10 +100,12 @@ classes precede other libraries; a mapped server JAR is never used as a client
 API substitute. JAR entry order, timestamps and modes are normalized. The
 builder prints output SHA-256, byte size, compiler version and client hash.
 
-`--verify` runs three separate gates before writing the artifact:
+Generate campaign outputs with `python3 scripts/campaign_refresh.py` before building;
+the preview catalogue is one of those generated resources. `--verify` runs four
+separate gates before writing the artifact:
 
 1. `HudMixinProbe` hosts the real installed Sponge Mixin service and transforms
-   the 16 pinned target classes using the production JSON. This verifies the
+   the 18 pinned target classes using the production JSON. This verifies the
    exact method/field signatures, required injection sites and successful
    transformations, including the pre-existing quest UI hooks. It does not
    launch Minecraft or render OpenGL frames.
@@ -81,6 +118,12 @@ builder prints output SHA-256, byte size, compiler version and client hash.
    missing sessions, enlarged maps and disabled coordination. It checks stable
    source dimensions and the final rendered width, without creating an OpenGL
    client. The old 0.4.3 adapter fails the automatic-size scenario.
+4. `RewardCatalogueProbe` parses the exact generated resource and verifies all
+   1,643 real reward IDs, 14 possible-item pools, 222 guaranteed cube units,
+   29 doubled cube claims and 41 guarded recipe refunds. It rejects malformed
+   catalogue references and checks that exact production requirements remain
+   attached to KubeJS reward entries, without launching a client or claiming an
+   item.
 
 The verification host and fixtures stay outside the published JAR. The default
 Python suite also compiles/runs the same geometry with Java 17+ and checks

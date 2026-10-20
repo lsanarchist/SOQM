@@ -100,13 +100,18 @@ final class EquipmentCompatibilityProbe {
                 {"artifacts:lucky_scarf", "face"},
                 {"artifacts:onion_ring", "bracelet"}
         };
-        for (var route : routes) checkCurios(player, route[0], route[1]);
+        Map<String, String> routeValidation = new LinkedHashMap<>();
+        for (var route : routes) {
+            routeValidation.put(route[0], checkCurios(player, route[0], route[1]));
+        }
         for (String tier : new String[]{"", "copper_", "iron_", "gold_", "diamond_", "netherite_"}) {
-            checkCurios(player, "sophisticatedbackpacks:" + tier + "backpack", "backpack");
+            String id = "sophisticatedbackpacks:" + tier + "backpack";
+            routeValidation.put(id, checkCurios(player, id, "backpack"));
         }
         check(!CuriosApi.isStackValid(context(player, "backpack"), item("industrialforegoing:infinity_backpack")),
                 "Infinity Backpack is not rerouted to the incompatible backpack slot");
         results.put("equipment_curios_native_routes", routes.length + 6);
+        results.put("equipment_curios_native_insert_lookup_extract", routeValidation);
     }
 
     private static boolean validTool(ServerPlayer player) {
@@ -119,13 +124,41 @@ final class EquipmentCompatibilityProbe {
         return new SlotContext(slot, player, 0, false, true);
     }
 
-    private static void checkCurios(ServerPlayer player, String id, String slot) {
+    private static String checkCurios(ServerPlayer player, String id, String slot) {
         var type = CuriosApi.getPlayerSlots(player).get(slot);
         check(type != null && type.getSize() > 0 && !type.isLocked(), "An active player slot exists: " + slot);
         ItemStack stack = item(id);
         check(CuriosApi.isStackValid(context(player, slot), stack), "Native Curios accepts " + id + " in " + slot);
-        check(CuriosApi.getCurio(stack).orElseThrow().canEquip(context(player, slot)),
-                "The item's own canEquip check permits " + id + " in " + slot);
+        var inventory = CuriosApi.getCuriosInventory(player)
+                .orElseThrow(() -> new AssertionError("The native Curios inventory is attached for " + id));
+        var slots = inventory.getStacksHandler(slot)
+                .orElseThrow(() -> new AssertionError("The native Curios inventory allocates slot " + slot));
+        var stacks = slots.getStacks();
+        check(stacks.getSlots() > 0 && inventory.isSlotActive(slot, 0), "The actual Curios slot is active: " + slot);
+        ItemStack previous = stacks.getStackInSlot(0).copy();
+        try {
+            stacks.setStackInSlot(0, ItemStack.EMPTY);
+            // Pinned Curios 9.5.1 DynamicStackHandler validates slot predicates,
+            // then optional ICurio.canEquip (orElse(true)), then CurioCanEquipEvent.
+            // Tag-based routes need no item capability. Use that native route
+            // instead of imposing the fixture's former Optional.orElseThrow().
+            check(stacks.isItemValid(0, stack), "Native predicates, item hook and equip event permit " + id);
+            ItemStack remaining = stacks.insertItem(0, stack.copy(), false);
+            check(remaining.isEmpty() && stacks.getStackInSlot(0).getCount() == 1
+                            && ItemStack.isSameItemSameComponents(stacks.getStackInSlot(0), stack),
+                    "Native Curios insertion equips the complete stack: " + id);
+            var equipped = inventory.findCurio(slot, 0)
+                    .orElseThrow(() -> new AssertionError("Native inventory lookup sees equipped " + id));
+            check(ItemStack.isSameItemSameComponents(equipped.stack(), stack),
+                    "Native equipped-item lookup preserves " + id);
+            ItemStack removed = stacks.extractItem(0, 1, false);
+            check(removed.getCount() == 1 && ItemStack.isSameItemSameComponents(removed, stack)
+                            && stacks.getStackInSlot(0).isEmpty(),
+                    "Native canUnequip and unequip-event route removes " + id);
+        } finally {
+            stacks.setStackInSlot(0, previous);
+        }
+        return CuriosApi.getCurio(stack).isPresent() ? "slot_predicates_and_item_capability" : "slot_predicates";
     }
 
     private static ItemStack item(String id) {

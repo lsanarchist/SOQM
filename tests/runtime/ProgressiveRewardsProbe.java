@@ -229,7 +229,7 @@ public final class ProgressiveRewardsProbe {
                 } finally { buffer.release(); }
             }
         }));
-        check(total[0] == 1628 && custom.size() == 1443, "All actual outer rewards and custom callbacks are covered");
+        check(total[0] == 1643 && custom.size() == 1458, "All actual outer rewards and custom callbacks are covered");
         results.put("native_personal_outer_rewards", total[0]);
         results.put("native_custom_rewards_nbt_and_packet_roundtripped", custom.size());
         return custom;
@@ -288,7 +288,8 @@ public final class ProgressiveRewardsProbe {
             }
         }
         check((legacyShared.size() == 1625 && oldPersonal.equals(List.of(BOOK_ID)))
-                        || (legacyShared.isEmpty() && (oldPersonal.size() == 1626 || oldPersonal.size() == 1627) && oldPersonal.contains(BOOK_ID)),
+                        || (legacyShared.isEmpty() && (oldPersonal.size() == 1626 || oldPersonal.size() == 1627
+                            || oldPersonal.size() == 1628) && oldPersonal.contains(BOOK_ID)),
                 "Both a legacy shared baseline and an already personal baseline retain every reward");
         after.saveIfChanged();
         migratedSnapshot = readTeam(server, MIGRATION).serializeNBT();

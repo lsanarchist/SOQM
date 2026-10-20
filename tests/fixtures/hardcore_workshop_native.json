@@ -1,0 +1,834 @@
+{
+  "scope": "Pinned native witnesses for manual workshop/first Mekanism bootstrap; not an exhaustive survival/resource simulation.",
+  "recipes": [
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/hammer.json",
+      "id": "immersiveengineering:crafting/hammer",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "f": {
+            "tag": "c:strings"
+          },
+          "i": {
+            "tag": "c:ingots/iron"
+          },
+          "s": {
+            "tag": "c:rods/wooden"
+          }
+        },
+        "pattern": [
+          " if",
+          " si",
+          "s  "
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:hammer"
+        }
+      },
+      "sha256": "5072cbabbf2933dca5c8f661af28cd92536a544bb8f62326ac975fc348aff56c"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/stick_iron.json",
+      "id": "immersiveengineering:crafting/stick_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "sticks",
+        "key": {
+          "i": {
+            "tag": "c:ingots/iron"
+          }
+        },
+        "pattern": [
+          "i",
+          "i"
+        ],
+        "result": {
+          "count": 4,
+          "id": "immersiveengineering:stick_iron"
+        }
+      },
+      "sha256": "d43a20ab8b58c15a1906c92b77d9fff081903ac76f5b7419bd791166188bae59"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/stick_steel.json",
+      "id": "immersiveengineering:crafting/stick_steel",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "sticks",
+        "key": {
+          "i": {
+            "tag": "c:ingots/steel"
+          }
+        },
+        "pattern": [
+          "i",
+          "i"
+        ],
+        "result": {
+          "count": 4,
+          "id": "immersiveengineering:stick_steel"
+        }
+      },
+      "sha256": "f77c5caf4df55d72564a050e478d79a2669cd32cafc4a8bd68de841cc0430631"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/wirecutter.json",
+      "id": "immersiveengineering:crafting/wirecutter",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "i": {
+            "tag": "c:ingots/iron"
+          },
+          "s": {
+            "tag": "c:rods/wooden"
+          }
+        },
+        "pattern": [
+          "si",
+          " s"
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:wirecutter"
+        }
+      },
+      "sha256": "3658da3c18ad790fd2c73554f66e33251d89ac577f9e528f410637e5a6ede627"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/component_iron.json",
+      "id": "immersiveengineering:crafting/component_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "c": {
+            "tag": "c:ingots/copper"
+          },
+          "i": {
+            "tag": "c:plates/iron"
+          }
+        },
+        "pattern": [
+          "i i",
+          " c ",
+          "i i"
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:component_iron"
+        }
+      },
+      "sha256": "da5385f647449e9b8ad847364947d743daa160298dde571c6c9236cda6c0826e"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/wire_copper.json",
+      "id": "immersiveengineering:crafting/wire_copper",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "c:plates/copper"
+          },
+          {
+            "item": "immersiveengineering:wirecutter"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:wire_copper"
+        }
+      },
+      "sha256": "41d4b5b16eb9a9271bf35358a15543bae96f1d20f0538e0da660cdff79d2398f"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/wirecoil_copper.json",
+      "id": "immersiveengineering:crafting/wirecoil_copper",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "s": {
+            "tag": "c:rods/wooden"
+          },
+          "w": {
+            "tag": "c:wires/copper"
+          }
+        },
+        "pattern": [
+          " w ",
+          "wsw",
+          " w "
+        ],
+        "result": {
+          "count": 4,
+          "id": "immersiveengineering:wirecoil_copper"
+        }
+      },
+      "sha256": "6fc77c503b082b54344815e6afaf8054de4fe3f24cca1481247926a84564ae66"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/treated_wood_horizontal.json",
+      "id": "immersiveengineering:crafting/treated_wood_horizontal",
+      "recipe": {
+        "type": "immersiveengineering:shaped_fluid",
+        "category": "misc",
+        "key": {
+          "b": {
+            "type": "immersiveengineering:fluid_stack",
+            "amount": 1000,
+            "tag": "c:creosote"
+          },
+          "w": {
+            "tag": "minecraft:planks"
+          }
+        },
+        "pattern": [
+          "www",
+          "wbw",
+          "www"
+        ],
+        "result": {
+          "count": 8,
+          "id": "immersiveengineering:treated_wood_horizontal"
+        }
+      },
+      "sha256": "a7208340504aefe387b9e6c5a7856e7479af3f62037b159658c586029605b45e"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/cokebrick.json",
+      "id": "immersiveengineering:crafting/cokebrick",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "c": {
+            "tag": "c:clay"
+          },
+          "m": {
+            "tag": "c:sandstone/blocks"
+          },
+          "s": {
+            "tag": "c:bricks"
+          }
+        },
+        "pattern": [
+          "csc",
+          "sms",
+          "csc"
+        ],
+        "result": {
+          "count": 3,
+          "id": "immersiveengineering:cokebrick"
+        }
+      },
+      "sha256": "592db524adc30f91e52e9b915e1c91c627c172b0b6eac588af4d513979e7152f"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/blastbrick.json",
+      "id": "immersiveengineering:crafting/blastbrick",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "c": {
+            "tag": "c:bricks/nether"
+          },
+          "m": {
+            "item": "minecraft:magma_block"
+          },
+          "s": {
+            "tag": "c:bricks"
+          }
+        },
+        "pattern": [
+          "csc",
+          "sms",
+          "csc"
+        ],
+        "result": {
+          "count": 3,
+          "id": "immersiveengineering:blastbrick"
+        }
+      },
+      "sha256": "d969b7a7700314e00b7b02bd2dc12f5c70bba9e458789c1510eed5888094f0b9"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/crafting/ingot_steel_to_storage_steel.json",
+      "id": "immersiveengineering:crafting/ingot_steel_to_storage_steel",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "i": {
+            "item": "immersiveengineering:ingot_steel"
+          },
+          "s": {
+            "tag": "c:ingots/steel"
+          }
+        },
+        "pattern": [
+          "sss",
+          "sis",
+          "sss"
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:storage_steel"
+        }
+      },
+      "sha256": "c0e9c108ea34de300161b596698ced73a283752728cbd2d3ae5bb49288d50c00"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/cokeoven/coke.json",
+      "id": "immersiveengineering:cokeoven/coke",
+      "recipe": {
+        "type": "immersiveengineering:coke_oven",
+        "creosote": 500,
+        "input": {
+          "basePredicate": {
+            "item": "minecraft:coal"
+          },
+          "count": 16
+        },
+        "result": {
+          "tag": "c:coal_coke"
+        },
+        "time": 6000
+      },
+      "sha256": "2f81697bede8a2b45bb24fbfbc0ff547ac5e1adea028887701a6c2e177993cdd"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/blastfurnace/steel.json",
+      "id": "immersiveengineering:blastfurnace/steel",
+      "recipe": {
+        "type": "immersiveengineering:blast_furnace",
+        "input": {
+          "tag": "c:ingots/iron"
+        },
+        "result": {
+          "tag": "c:ingots/steel"
+        },
+        "slag": {
+          "tag": "c:slag"
+        },
+        "time": 1200
+      },
+      "sha256": "f9e8dab084427c7cb2110daac17f1556030bffcdb2bd72123156d42e80ba826c"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/processing/osmium/storage_blocks/from_ingots.json",
+      "id": "mekanism:processing/osmium/storage_blocks/from_ingots",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "tag": "c:ingots/osmium"
+          },
+          "P": {
+            "item": "mekanism:ingot_osmium"
+          }
+        },
+        "pattern": [
+          "###",
+          "#P#",
+          "###"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:block_osmium"
+        }
+      },
+      "sha256": "f0472563ebe7be806a8f7192cfaf522f429919cf7819874fc2c737e53d9bfd94"
+    },
+    {
+      "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+      "path": "data/sophisticatedstorage/recipe/oak_chest.json",
+      "id": "sophisticatedstorage:oak_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:chest"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "L": {
+            "item": "minecraft:lever"
+          },
+          "P": {
+            "item": "minecraft:oak_planks"
+          }
+        },
+        "pattern": [
+          "PPP",
+          "PLP",
+          "PPP"
+        ],
+        "result": {
+          "components": {
+            "sophisticatedstorage:wood_type": "oak"
+          },
+          "count": 1,
+          "id": "sophisticatedstorage:chest"
+        }
+      },
+      "sha256": "abddd1a0ce212a2925601f7aa4d45daf01ec710de4931a27bcc7ee6323d162da"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/control_circuit/basic.json",
+      "id": "mekanism:control_circuit/basic",
+      "recipe": {
+        "type": "mekanism:metallurgic_infusing",
+        "chemical_input": {
+          "amount": 20,
+          "tag": "mekanism:redstone"
+        },
+        "item_input": {
+          "count": 1,
+          "tag": "c:ingots/osmium"
+        },
+        "output": {
+          "count": 1,
+          "id": "mekanism:basic_control_circuit"
+        },
+        "per_tick_usage": false
+      },
+      "sha256": "03bb55dcc0e769d4ae59df33eda2a507810bd805431e5ef57fe1c480a81fef5f"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/metallurgic_infusing/alloy/infused.json",
+      "id": "mekanism:metallurgic_infusing/alloy/infused",
+      "recipe": {
+        "type": "mekanism:metallurgic_infusing",
+        "chemical_input": {
+          "amount": 10,
+          "tag": "mekanism:redstone"
+        },
+        "item_input": {
+          "count": 1,
+          "tag": "c:ingots/copper"
+        },
+        "output": {
+          "count": 1,
+          "id": "mekanism:alloy_infused"
+        },
+        "per_tick_usage": false
+      },
+      "sha256": "6ffc78bda0de1c567dcdde29926f63a2f978dc586530df01e28bcd3dee7a23dd"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/chemical_conversion/redstone/from_dust.json",
+      "id": "mekanism:chemical_conversion/redstone/from_dust",
+      "recipe": {
+        "type": "mekanism:chemical_conversion",
+        "input": {
+          "count": 1,
+          "tag": "c:dusts/redstone"
+        },
+        "output": {
+          "amount": 10,
+          "id": "mekanism:redstone"
+        }
+      },
+      "sha256": "01b37baadd250bbb7b93b0031c20bad39e5082f57bb93c242c2f2325b759516c"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/chemical_tank/basic.json",
+      "id": "mekanism:chemical_tank/basic",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/basic"
+          },
+          "O": {
+            "tag": "c:ingots/osmium"
+          }
+        },
+        "pattern": [
+          "AOA",
+          "O O",
+          "AOA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:basic_chemical_tank"
+        }
+      },
+      "sha256": "ae81e4db29fdbd5629d9cb573607651490764e802276b9366074b8e067f07c90"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/chemical_tank/advanced.json",
+      "id": "mekanism:chemical_tank/advanced",
+      "recipe": {
+        "type": "mekanism:mek_data",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/infused"
+          },
+          "O": {
+            "tag": "c:ingots/osmium"
+          },
+          "P": {
+            "item": "mekanism:basic_chemical_tank"
+          }
+        },
+        "pattern": [
+          "AOA",
+          "OPO",
+          "AOA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:advanced_chemical_tank"
+        }
+      },
+      "sha256": "f2090b4c7f56b98dfcad3b6a94f10e39e9ed41c1bd2f635a3bbd2f461a7860d6"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/fluid_tank/basic.json",
+      "id": "mekanism:fluid_tank/basic",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/basic"
+          },
+          "I": {
+            "tag": "c:ingots/iron"
+          }
+        },
+        "pattern": [
+          "AIA",
+          "I I",
+          "AIA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:basic_fluid_tank"
+        }
+      },
+      "sha256": "67227fe9e4659a919cddac50d945592b5365d17d44e7c5a9643429c580c63394"
+    },
+    {
+      "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+      "path": "data/mekanism/recipe/fluid_tank/advanced.json",
+      "id": "mekanism:fluid_tank/advanced",
+      "recipe": {
+        "type": "mekanism:mek_data",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/infused"
+          },
+          "I": {
+            "tag": "c:ingots/iron"
+          },
+          "P": {
+            "item": "mekanism:basic_fluid_tank"
+          }
+        },
+        "pattern": [
+          "AIA",
+          "IPI",
+          "AIA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:advanced_fluid_tank"
+        }
+      },
+      "sha256": "2dc9858bdd6ad5e0db3fa6708bc2be31d29a642aedc882cd1ea0fdac6f70da1b"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/metalpress/plate_iron.json",
+      "id": "immersiveengineering:metalpress/plate_iron",
+      "recipe": {
+        "type": "immersiveengineering:metal_press",
+        "energy": 2400,
+        "input": {
+          "tag": "c:ingots/iron"
+        },
+        "mold": "immersiveengineering:mold_plate",
+        "result": {
+          "tag": "c:plates/iron"
+        }
+      },
+      "sha256": "795fb6d263bce32c646e84fa43326ca2f281a781ba145c6c10cb3d18589d4565"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/metalpress/plate_copper.json",
+      "id": "immersiveengineering:metalpress/plate_copper",
+      "recipe": {
+        "type": "immersiveengineering:metal_press",
+        "energy": 2400,
+        "input": {
+          "tag": "c:ingots/copper"
+        },
+        "mold": "immersiveengineering:mold_plate",
+        "result": {
+          "tag": "c:plates/copper"
+        }
+      },
+      "sha256": "f6ea8d266c3a0adeb4c678c85fefc9d86b6f0841a0af6500ded66a866a69415b"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/metalpress/plate_gold.json",
+      "id": "immersiveengineering:metalpress/plate_gold",
+      "recipe": {
+        "type": "immersiveengineering:metal_press",
+        "energy": 2400,
+        "input": {
+          "tag": "c:ingots/gold"
+        },
+        "mold": "immersiveengineering:mold_plate",
+        "result": {
+          "tag": "c:plates/gold"
+        }
+      },
+      "sha256": "8c85c1c3e51fc56d1e91ae00a48c1d7c1ae46afa33b03adb3f54a5dc12d1baa0"
+    },
+    {
+      "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "path": "data/immersiveengineering/recipe/metalpress/plate_steel.json",
+      "id": "immersiveengineering:metalpress/plate_steel",
+      "recipe": {
+        "type": "immersiveengineering:metal_press",
+        "energy": 2400,
+        "input": {
+          "tag": "c:ingots/steel"
+        },
+        "mold": "immersiveengineering:mold_plate",
+        "result": {
+          "tag": "c:plates/steel"
+        }
+      },
+      "sha256": "17661f4428ecd8a3ebdad591b00098caac0df810e77afce7c626dd5d03e1a6d7"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/chest.json",
+      "id": "minecraft:chest",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "tag": "minecraft:planks"
+          }
+        },
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:chest"
+        }
+      },
+      "sha256": "a27566ddde0ae578d1bfe910567eb01dd3711557d2cdc2cbd8ebb22f2f9b6d54"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/lever.json",
+      "id": "minecraft:lever",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "redstone",
+        "key": {
+          "#": {
+            "item": "minecraft:cobblestone"
+          },
+          "X": {
+            "item": "minecraft:stick"
+          }
+        },
+        "pattern": [
+          "X",
+          "#"
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:lever"
+        }
+      },
+      "sha256": "fd4ed9024e1b3c5e950fcdbe20b1d95d58f5aea6f527f675eec3fae105361245"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/oak_button.json",
+      "id": "minecraft:oak_button",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "redstone",
+        "group": "wooden_button",
+        "ingredients": [
+          {
+            "item": "minecraft:oak_planks"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:oak_button"
+        }
+      },
+      "sha256": "6327ed0a60718d9256a3de2bdb3a1a1f905f3289e6206c5d0bdde8efa085a337"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/oak_slab.json",
+      "id": "minecraft:oak_slab",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "group": "wooden_slab",
+        "key": {
+          "#": {
+            "item": "minecraft:oak_planks"
+          }
+        },
+        "pattern": [
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "id": "minecraft:oak_slab"
+        }
+      },
+      "sha256": "ac08aecbd22258d4ccd79043564b0f6d2d53a39203d99bc20296345d3d919fac"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/bucket.json",
+      "id": "minecraft:bucket",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "minecraft:iron_ingot"
+          }
+        },
+        "pattern": [
+          "# #",
+          " # "
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:bucket"
+        }
+      },
+      "sha256": "88edb2f4c8061d7eacd13d8feea79fc5578d28ce3e291ea50281f0bebbc5f83d"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/iron_block.json",
+      "id": "minecraft:iron_block",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "minecraft:iron_ingot"
+          }
+        },
+        "pattern": [
+          "###",
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:iron_block"
+        }
+      },
+      "sha256": "3ee46e05a504f81d678e0d3576c1bc54435fd7ee0e279de3f6e6a324fc7313d1"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/copper_block.json",
+      "id": "minecraft:copper_block",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "minecraft:copper_ingot"
+          }
+        },
+        "pattern": [
+          "###",
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:copper_block"
+        }
+      },
+      "sha256": "11cf9d611138d673dbec3e9e7fe597f4b424a2d6c1dc5e7d1fd959fbe9031a8a"
+    },
+    {
+      "jar": "Minecraft 1.21.1",
+      "path": "data/minecraft/recipe/redstone_block.json",
+      "id": "minecraft:redstone_block",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "redstone",
+        "key": {
+          "#": {
+            "item": "minecraft:redstone"
+          }
+        },
+        "pattern": [
+          "###",
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 1,
+          "id": "minecraft:redstone_block"
+        }
+      },
+      "sha256": "8f0409dffb37711f5fd90005dd5925a4727e108aaa8ebd3603676dff9d8b5031"
+    }
+  ]
+}

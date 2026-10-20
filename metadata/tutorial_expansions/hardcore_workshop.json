@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "lessons": {
+    "514011A4BB290307": {
+      "description": {
+        "uk_ua": [
+          "Iron Furnace тепер коштує 8 блоків заліза та 1 звичайну піч: це 72 залізні злитки для одного оновлення. Варіант через Copper Furnace і комплекти покращення встановленої печі також витрачають 8 блоків заліза.",
+          "Це великий споживач раннього заліза. Заклади окремі печі для наступних рецептів машин: перший Metallurgic Infuser поглинає 2 Iron Furnace. Плавлення у звичайній печі й початкове виробництво сталі Immersive Engineering залишаються доступними до цього вкладення.",
+          "Якщо покращуєш уже встановлену піч, використай відповідний Upgrade правою кнопкою. Предметний квест перевіряє Iron Furnace в інвентарі, тому зарахуй потрібний блок перед установленням."
+        ],
+        "en_us": [
+          "An Iron Furnace now costs 8 iron blocks and 1 ordinary furnace: 72 iron ingots for one upgrade. The Copper Furnace route and upgrade items for a placed furnace also consume 8 iron blocks.",
+          "This is a major early iron expense. Reserve additional furnaces for machine recipes: the first Metallurgic Infuser consumes 2 Iron Furnaces. Ordinary furnace smelting and Immersive Engineering’s initial steel route remain available before this investment.",
+          "To improve a placed furnace, apply the corresponding Upgrade with a right-click. This item quest detects an Iron Furnace in your inventory, so register the required block before placing it."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    },
+    "5142421100000009": {
+      "description": {
+        "uk_ua": [
+          "Basic to Iron Tier Upgrade містить повну драбину покращення: спочатку 8 блоків міді навколо важеля дають Basic to Copper, потім 8 блоків заліза навколо цього комплекту дають Basic to Iron. Разом це 72 мідні та 72 залізні злитки плюс важіль.",
+          "З дерев’яного сховища можна одразу перейти на залізне цим повним комплектом. Якщо мідний рівень уже встановлено, застосуй Copper to Iron: 8 блоків заліза навколо важеля. Подвійна скриня потребує 2 відповідні комплекти, бо покращуються обидві половини.",
+          "Лійка також поглинає 1 невикористаний Basic to Iron Tier Upgrade разом зі звичайною скринею та 5 залізними злитками. Відклади комплекти окремо для сховищ і для механізмів. Зарахування цього квесту перевіряє сам комплект в інвентарі; застосування до блока — наступний крок."
+        ],
+        "en_us": [
+          "The Basic to Iron Tier Upgrade includes the full upgrade ladder: 8 copper blocks around a lever make Basic to Copper, then 8 iron blocks around that upgrade make Basic to Iron. The total is 72 copper ingots, 72 iron ingots and a lever.",
+          "Use the full kit to take wooden storage directly to iron. If copper is already installed, use Copper to Iron: 8 iron blocks around a lever. A double chest needs 2 corresponding upgrades because both halves are upgraded.",
+          "A hopper also consumes 1 unused Basic to Iron Tier Upgrade together with an ordinary chest and 5 iron ingots. Reserve separate kits for storage and machinery. This quest detects the upgrade item in your inventory; applying it to a block is the next step."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    },
+    "513011FB776B4942": {
+      "description": {
+        "uk_ua": [
+          "Stone Gear виготовляється з 1 Wooden Gear та 4 блоки переплавленого Stone. Кожен наступний рівень поглинає готову шестерню попереднього, тому враховуй увесь ланцюг перед крафтом машини.",
+          "Перші пластини доступні через молот за 2 злитки на пластину. Після запуску Metal Press та сама пластина коштує 1 злиток; це знижує витрату металу на залізні й золоті шестерні."
+        ],
+        "en_us": [
+          "Stone Gear uses 1 Wooden Gear and 4 smelted Stone blocks. Each tier consumes the finished gear below it, so budget the complete chain before crafting a machine.",
+          "The first plates can be hammered for 2 ingots each. After the Metal Press starts, the same plate costs 1 ingot, reducing the metal needed for iron and gold gears."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    },
+    "513011A98374EB5C": {
+      "description": {
+        "uk_ua": [
+          "Iron Gear виготовляється з 1 Stone Gear та 4 залізні пластини. Кожен наступний рівень поглинає готову шестерню попереднього, тому враховуй увесь ланцюг перед крафтом машини.",
+          "Перші пластини доступні через молот за 2 злитки на пластину. Після запуску Metal Press та сама пластина коштує 1 злиток; це знижує витрату металу на залізні й золоті шестерні."
+        ],
+        "en_us": [
+          "Iron Gear uses 1 Stone Gear and 4 iron plates. Each tier consumes the finished gear below it, so budget the complete chain before crafting a machine.",
+          "The first plates can be hammered for 2 ingots each. After the Metal Press starts, the same plate costs 1 ingot, reducing the metal needed for iron and gold gears."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    },
+    "5130116038067DBB": {
+      "description": {
+        "uk_ua": [
+          "Gold Gear виготовляється з 1 Iron Gear та 4 золоті пластини. Кожен наступний рівень поглинає готову шестерню попереднього, тому враховуй увесь ланцюг перед крафтом машини.",
+          "Перші пластини доступні через молот за 2 злитки на пластину. Після запуску Metal Press та сама пластина коштує 1 злиток; це знижує витрату металу на залізні й золоті шестерні."
+        ],
+        "en_us": [
+          "Gold Gear uses 1 Iron Gear and 4 gold plates. Each tier consumes the finished gear below it, so budget the complete chain before crafting a machine.",
+          "The first plates can be hammered for 2 ingots each. After the Metal Press starts, the same plate costs 1 ingot, reducing the metal needed for iron and gold gears."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    },
+    "5130111C5CB00C7E": {
+      "description": {
+        "uk_ua": [
+          "Diamond Gear виготовляється з 1 Gold Gear та 4 алмази. Кожен наступний рівень поглинає готову шестерню попереднього, тому враховуй увесь ланцюг перед крафтом машини.",
+          "Перші пластини доступні через молот за 2 злитки на пластину. Після запуску Metal Press та сама пластина коштує 1 злиток; це знижує витрату металу на залізні й золоті шестерні."
+        ],
+        "en_us": [
+          "Diamond Gear uses 1 Gold Gear and 4 diamonds. Each tier consumes the finished gear below it, so budget the complete chain before crafting a machine.",
+          "The first plates can be hammered for 2 ingots each. After the Metal Press starts, the same plate costs 1 ingot, reducing the metal needed for iron and gold gears."
+        ]
+      },
+      "sources": [
+        "overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js",
+        "metadata/hardcore_workshop.json"
+      ]
+    }
+  }
+}

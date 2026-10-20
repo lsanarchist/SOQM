@@ -17,10 +17,76 @@ import campaign_multiblocks
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "metadata/questbook_compatibility.json"
 CONTENT_UPGRADE = ROOT / "metadata/storage_refund_compatibility.json"
+HARDCORE_UPGRADE = ROOT / "metadata/hardcore_workshop_compatibility.json"
+HARDCORE_BASE = "95421eeda09f2e3447e6e9d3189a1e43d9c41381"
+HARDCORE_IDENTITY = "b883503b48a5d90e32085663878d7097d371b96478a2a0143bc266036e0dd0ca"
 
 
 def digest(value) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def previous_hardcore_workshop(chapters: list[dict]) -> list[dict]:
+    """Check the additive lessons, chapter moves and 29 extra cube units.
+
+    This reconstructs the immutable 0.4.11 definitions only for validation.
+    Player saves are never rewritten and a changed reward count keeps its old
+    personal claim key. The exact reviewed lists prevent a new whole-book hash
+    from hiding an accidental removal, task replacement or reward reissue.
+    """
+    snapshot = json.loads(HARDCORE_UPGRADE.read_text(encoding="utf-8"))
+    if (snapshot.get("schema") != 1 or snapshot.get("base_commit") != HARDCORE_BASE
+            or snapshot.get("identity_sha256") != HARDCORE_IDENTITY):
+        raise ValueError("Unknown hardcore workshop compatibility snapshot")
+    result = deepcopy(chapters)
+    owners = {chapter["filename"]: chapter for chapter in result}
+
+    def owner(ident, field):
+        found = [chapter for chapter in result
+                 if any(obj["id"] == ident for obj in chapter.get(field, []))]
+        if len(found) != 1:
+            raise ValueError(f"A reviewed {field} ID is missing or duplicated: {ident}")
+        return found[0]
+
+    for ident, addition in snapshot["added_quests"].items():
+        chapter = owner(ident, "quests")
+        quest = next(q for q in chapter["quests"] if q["id"] == ident)
+        if (chapter["filename"] != addition["chapter"]
+                or digest(quest["tasks"]) != addition["tasks_sha256"]
+                or digest(quest["rewards"]) != addition["rewards_sha256"]
+                or quest.get("can_repeat", False)):
+            raise ValueError(f"Unreviewed additive hardcore quest: {ident}")
+        chapter["quests"].remove(quest)
+    for ident, filename in snapshot["added_images"].items():
+        chapter = owner(ident, "images")
+        if chapter["filename"] != filename:
+            raise ValueError(f"An additive hardcore image moved: {ident}")
+        chapter["images"] = [image for image in chapter["images"] if image["id"] != ident]
+    for field in ("quests", "images"):
+        for ident, move in snapshot["moved_" + field].items():
+            chapter = owner(ident, field)
+            if (chapter["filename"] != move["after"] or move["before"] not in owners
+                    or move["before"] == move["after"]):
+                raise ValueError(f"Unreviewed hardcore {field} ownership change: {ident}")
+            obj = next(obj for obj in chapter[field] if obj["id"] == ident)
+            chapter[field].remove(obj)
+            owners[move["before"]][field].append(obj)
+    quests = {q["id"]: q for chapter in result for q in chapter["quests"]}
+    for field in ("tasks", "rewards"):
+        for ident, change in snapshot[field].items():
+            if ident not in quests or digest(quests[ident][field]) != change["after_sha256"]:
+                raise ValueError(f"Unreviewed hardcore {field} change: {ident}")
+            current, before = quests[ident][field], change["before"]
+            key = (lambda obj: (obj["id"], obj.get("team_reward", True))) if field == "rewards" else (lambda obj: obj["id"])
+            if [key(obj) for obj in current] != [key(obj) for obj in before]:
+                raise ValueError(f"A saved hardcore {field} ID or claim scope changed: {ident}")
+            quests[ident][field] = deepcopy(before)
+    contract = {q["id"]: {"chapter": chapter["filename"], "tasks": q["tasks"],
+                           "rewards": q["rewards"], "can_repeat": q.get("can_repeat", False)}
+                for chapter in result for q in chapter["quests"]}
+    if digest(contract) != snapshot["contract_sha256"]:
+        raise ValueError("Hardcore update changed an unreviewed original objective, owner or reward")
+    return result
 
 
 def previous_torchmaster(chapters: list[dict]) -> list[dict]:
@@ -72,7 +138,7 @@ def previous_questbook(chapters: list[dict]) -> list[dict]:
     if snapshot.get("schema") != 1:
         raise ValueError("Unknown questbook compatibility snapshot")
     originals = campaign_multiblocks.load()["migration"]["original_tasks"]
-    result = previous_storage_refunds(previous_torchmaster(chapters))
+    result = previous_storage_refunds(previous_torchmaster(previous_hardcore_workshop(chapters)))
     quests = {q["id"]: q for chapter in result for q in chapter["quests"]}
     if not (set(snapshot["tasks_after"]) | set(snapshot["rewards"])) <= set(quests):
         raise ValueError("A migrated quest was removed or moved to a different ID")

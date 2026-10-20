@@ -36,7 +36,7 @@ CHAPTERS = {
     "qm_v030_04_buildcraft": "04 · Pipes, Oil and Construction Machines",
     "qm_v030_05_railcraft": "05 · Railways for the Factory",
     "qm_02_mek": "06 · The Mekanism Factory",
-    "qm_04_tools": "07 · Mekanism Equipment",
+    "qm_04_tools": "07 · MekaSuit, Modules and Equipment",
     "qm_03_nuclear": "08 · Fission, Fusion and High Energy",
     "qm_v030_09_enderio": "09 · Ender IO: Alloys, Souls and Conduits",
     "qm_v030_10_industrial": "10 · Industrial Foregoing without Crop Grinding",
@@ -465,7 +465,7 @@ def generate() -> tuple[str, dict]:
                     "A multiblock's Tasks tab lists the blocks for its smallest described construction. Hold them before building: detection does not consume items. A separate formation or operation condition, where present, verifies the finished machine. Three engineering tasks are explicitly manual confirmations after your own system test.",
                     "Book controls: right-click the Quest Book, or bind Open Quests under Controls → FTB Quests. Hover an item and press R for recipes or U for uses. JEI in the installed pack contains the current recipes.",
                     "Every member claims each quest reward personally once. A pack draws 3–5 prizes, increasing as the team produces its material milestones. When the theme has unlocked better prizes, one draw guarantees an uncommon-or-better prize. Expensive components enter their pools only after actual production of that same item; gifts and rewards do not count as manufacturing evidence.",
-                    "Selected expensive crafts also return part of their consumed components. The quest and reward descriptions list exact guaranteed items and quantities in addition to the pack or cube. Claim them after you or your current team actually manufacture the output; an early claim attempt does not consume your entitlement.",
+                    "Selected expensive crafts also return part of their consumed components. Guaranteed items appear as separate counted icons beside the pack or cube. The View Rewards button and Ctrl+Shift+V show every possible pack prize, its rarity and unlock conditions. A preview does not claim a reward: use the original pack or cube button to receive the complete bundle. The refund requires actual manufacture of the output by you or your current team; an early claim attempt does not consume your entitlement.",
                     "Completed production chains, important structures and adventure goals award Mayhem Cubes. Open them in a separate test area away from the base. Use /soqm rewards to see your reward level, and /soqm rewards pool <theme> for eligible prizes, normal and guaranteed-draw odds, and conditions on locked items.",
                 ]
             result[f"quest.{qid}.quest_desc"] = descriptions

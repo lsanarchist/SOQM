@@ -1,0 +1,912 @@
+{
+  "schema": 1,
+  "chapters": {
+    "qm_04_tools": {
+      "summary": {
+        "uk_ua": "Зроби HDPE, виготов MekaSuit і Meka-Tool, а потім установи обрані модулі. Окремий фінал перевіряє справжній максимальний апгрейд усіх п’яти предметів.",
+        "en_us": "Produce HDPE, craft MekaSuit and a Meka-Tool, then install your chosen modules. A separate finale checks actual maximum upgrades in all five items."
+      },
+      "sections": [
+        {
+          "slot": 0,
+          "title": {
+            "uk_ua": "Інструменти та зв’язок",
+            "en_us": "Tools and communication"
+          },
+          "rows": [
+            [
+              null,
+              null,
+              "514D11ABE082674B"
+            ],
+            [
+              null,
+              null,
+              "514D11BFE1742CD9"
+            ],
+            [
+              "514D110144C01D44",
+              "514D11D6D44E1120"
+            ]
+          ]
+        },
+        {
+          "slot": 1,
+          "title": {
+            "uk_ua": "HDPE: субстрат → гранули → листи",
+            "en_us": "HDPE: substrate → pellets → sheets"
+          },
+          "rows": [
+            [
+              null,
+              null,
+              "514C110000000001"
+            ],
+            [
+              null,
+              null,
+              "514C110000000002"
+            ],
+            [
+              null,
+              null,
+              "514D11E17AB94DF9"
+            ],
+            [
+              null,
+              null,
+              "514D11197CE0EDFE"
+            ],
+            [
+              null,
+              null,
+              "514D11517133D536"
+            ]
+          ]
+        },
+        {
+          "slot": 2,
+          "title": {
+            "uk_ua": "MekaSuit: чотири частини та інструмент",
+            "en_us": "MekaSuit: four pieces and the tool"
+          },
+          "rows": [
+            [
+              "513011CDE1D10A76",
+              "51301111493CFC21",
+              "51301181BF058BAE",
+              "513011087C06E9D8"
+            ],
+            [
+              null,
+              null,
+              "5130112F15810A47"
+            ],
+            [
+              null,
+              null,
+              "514C110000000003"
+            ]
+          ]
+        },
+        {
+          "slot": 3,
+          "title": {
+            "uk_ua": "Майстерня, заряд і захист",
+            "en_us": "Workshop, charging and protection"
+          },
+          "rows": [
+            [
+              null,
+              null,
+              "513011C521E5B4DD"
+            ],
+            [
+              null,
+              null,
+              "51301138646C9874"
+            ],
+            [
+              "51301132F9C95555",
+              "514C110000000004",
+              "5130113FB494C115"
+            ],
+            [
+              "514C110000000005",
+              "514C110000000006"
+            ]
+          ]
+        },
+        {
+          "slot": 4,
+          "title": {
+            "uk_ua": "Модулі шолома",
+            "en_us": "Helmet modules"
+          },
+          "rows": [
+            [
+              "51301144D5FB95D4",
+              "51301155BDC855A3",
+              "514C110000000007"
+            ]
+          ]
+        },
+        {
+          "slot": 5,
+          "title": {
+            "uk_ua": "Пересування та підбирання",
+            "en_us": "Movement and item collection"
+          },
+          "rows": [
+            [
+              "514C110000000008",
+              "514C110000000009",
+              "513011F1FC51AAE1"
+            ],
+            [
+              "513011ED1A3D11E0",
+              "514C11000000000A"
+            ],
+            [
+              null,
+              null,
+              "514C11000000000B"
+            ]
+          ]
+        },
+        {
+          "slot": 6,
+          "title": {
+            "uk_ua": "Модулі Meka-Tool та максимальний комплект",
+            "en_us": "Meka-Tool modules and the maximum loadout"
+          },
+          "rows": [
+            [
+              "51301125CDBD7A23",
+              "514C11000000000C",
+              "514C11000000000D",
+              "514C11000000000E"
+            ],
+            [
+              null,
+              null,
+              "514C11000000000F"
+            ]
+          ]
+        }
+      ],
+      "quests": {
+        "514C110000000001": {
+          "title": {
+            "uk_ua": "HDPE 1: субстрат і етилен",
+            "en_us": "HDPE 1: substrate and ethylene"
+          },
+          "description": {
+            "uk_ua": [
+              "Почни полімерну лінію з Pressurized Reaction Chamber. Подай 2 Bio Fuel, 10 mB води та 100 mB водню: рецепт дає 1 Substrate і 100 mB етилену. Bio Fuel отримуй у Crusher із придатної рослинної сировини.",
+              "Виводь і твердий Substrate, і хімічний етилен. Збережи етилен для наступного кроку, а не спалюй увесь у генераторі. Завдання приймає один субстрат в інвентарі без вилучення; побудову лінії воно не перевіряє."
+            ],
+            "en_us": [
+              "Start the polymer line in a Pressurized Reaction Chamber. Supply 2 Bio Fuel, 10 mB water and 100 mB hydrogen to make 1 Substrate and 100 mB ethylene. A Crusher turns suitable plant material into Bio Fuel.",
+              "Extract both the solid Substrate and chemical ethylene. Reserve ethylene for the next step instead of burning the entire supply in a generator. The task detects one substrate in inventory without consumption; it does not inspect the processing line."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011156F29CC4E"
+          ],
+          "stage": 2
+        },
+        "514C110000000002": {
+          "title": {
+            "uk_ua": "HDPE 2: гранула полімеру",
+            "en_us": "HDPE 2: a polymer pellet"
+          },
+          "description": {
+            "uk_ua": [
+              "Переведи етилен у рідку форму в Rotary Condensentrator. Друга реакція PRC споживає 1 Substrate, 50 mB рідкого етилену та 10 mB кисню й видає 1 HDPE Pellet.",
+              "Етилен тут має бути рідиною, а кисень — хімічним входом. Використай відповідні труби й перевір режими Rotary та сторони PRC. Продовжуй виробництво: на один HDPE Sheet потрібно три гранули."
+            ],
+            "en_us": [
+              "Condense ethylene into its fluid form in a Rotary Condensentrator. The next PRC reaction consumes 1 Substrate, 50 mB liquid ethylene and 10 mB oxygen to produce 1 HDPE Pellet.",
+              "Ethylene must use the fluid input here, while oxygen uses the chemical input. Match the pipes, Rotary mode and PRC sides to those resources. Keep producing: one HDPE Sheet needs three pellets."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "514C110000000001",
+            "5130113C675F054B"
+          ],
+          "stage": 2
+        },
+        "514D11E17AB94DF9": {
+          "title": {
+            "uk_ua": "HDPE 3: листи",
+            "en_us": "HDPE 3: sheets"
+          },
+          "description": {
+            "uk_ua": [
+              "Enrichment Chamber переробляє 3 HDPE Pellets на 1 HDPE Sheet. Для наявного завдання на 8 листів підготуй 24 гранули та стабільне живлення.",
+              "Листи потрібні для MekaSuit, Module Base й Modification Station. Окремий рецепт SOQM також перетворює 1 HDPE Sheet на 3 Industrial Foregoing Plastic: продовження пластикової гілки розташоване у главі 10. Завдання перевіряє листи в інвентарі без вилучення."
+            ],
+            "en_us": [
+              "An Enrichment Chamber processes 3 HDPE Pellets into 1 HDPE Sheet. The existing objective requires 8 sheets, so prepare 24 pellets and steady power.",
+              "Sheets supply MekaSuit, Module Bases and the Modification Station. A separate SOQM recipe also converts 1 HDPE Sheet into 3 Industrial Foregoing Plastic; chapter 10 continues that plastic route. This task detects sheets in inventory without consuming them."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "514C110000000002",
+            "514D1154FFE3DABB"
+          ],
+          "stage": 2
+        },
+        "513011CDE1D10A76": {
+          "title": {
+            "uk_ua": "MekaSuit: шолом",
+            "en_us": "MekaSuit: helmet"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов шолом MekaSuit за рецептом SOQM у JEI. Підготуй полонієві гранули, HDPE, індукційну комірку та матеріали міфічного рівня. Це окрема частина комплекту: виготовляти інші три для цього завдання не потрібно.",
+              "Заряди готову частину перед використанням. У Modification Station встановлюються сумісні модулі; звичайний Module Base не дає здібності сам по собі. Предметне завдання перевіряє наявність шолома без вилучення, а не надягання чи встановлені модулі."
+            ],
+            "en_us": [
+              "Craft the MekaSuit helmet using SOQM's JEI recipe. Prepare polonium pellets, HDPE, an induction cell and mythic-tier materials. This is a separate armor piece; its task does not require crafting the other three.",
+              "Charge the finished piece before using it. Install supported modules through a Modification Station; a plain Module Base has no ability of its own. The item task detects the helmet without consuming it, rather than checking worn armor or installed modules."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011AEA75E4401",
+            "513011E2552BA5EA",
+            "514D1127DFAD1A15",
+            "514D11E17AB94DF9"
+          ],
+          "stage": 5
+        },
+        "51301111493CFC21": {
+          "title": {
+            "uk_ua": "MekaSuit: нагрудник",
+            "en_us": "MekaSuit: bodyarmor"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов нагрудник MekaSuit за рецептом SOQM у JEI. Підготуй полонієві гранули, HDPE, індукційну комірку та матеріали міфічного рівня. Це окрема частина комплекту: виготовляти інші три для цього завдання не потрібно.",
+              "Заряди готову частину перед використанням. У Modification Station встановлюються сумісні модулі; звичайний Module Base не дає здібності сам по собі. Предметне завдання перевіряє наявність нагрудника без вилучення, а не надягання чи встановлені модулі."
+            ],
+            "en_us": [
+              "Craft the MekaSuit bodyarmor using SOQM's JEI recipe. Prepare polonium pellets, HDPE, an induction cell and mythic-tier materials. This is a separate armor piece; its task does not require crafting the other three.",
+              "Charge the finished piece before using it. Install supported modules through a Modification Station; a plain Module Base has no ability of its own. The item task detects the bodyarmor without consuming it, rather than checking worn armor or installed modules."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011AEA75E4401",
+            "513011E2552BA5EA",
+            "514D1127DFAD1A15",
+            "514D11E17AB94DF9"
+          ],
+          "stage": 5
+        },
+        "51301181BF058BAE": {
+          "title": {
+            "uk_ua": "MekaSuit: поножі",
+            "en_us": "MekaSuit: pants"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов поножі MekaSuit за рецептом SOQM у JEI. Підготуй полонієві гранули, HDPE, індукційну комірку та матеріали міфічного рівня. Це окрема частина комплекту: виготовляти інші три для цього завдання не потрібно.",
+              "Заряди готову частину перед використанням. У Modification Station встановлюються сумісні модулі; звичайний Module Base не дає здібності сам по собі. Предметне завдання перевіряє наявність поножів без вилучення, а не надягання чи встановлені модулі."
+            ],
+            "en_us": [
+              "Craft the MekaSuit pants using SOQM's JEI recipe. Prepare polonium pellets, HDPE, an induction cell and mythic-tier materials. This is a separate armor piece; its task does not require crafting the other three.",
+              "Charge the finished piece before using it. Install supported modules through a Modification Station; a plain Module Base has no ability of its own. The item task detects the pants without consuming it, rather than checking worn armor or installed modules."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011AEA75E4401",
+            "513011E2552BA5EA",
+            "514D1127DFAD1A15",
+            "514D11E17AB94DF9"
+          ],
+          "stage": 5
+        },
+        "513011087C06E9D8": {
+          "title": {
+            "uk_ua": "MekaSuit: черевики",
+            "en_us": "MekaSuit: boots"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов черевики MekaSuit за рецептом SOQM у JEI. Підготуй полонієві гранули, HDPE, індукційну комірку та матеріали міфічного рівня. Це окрема частина комплекту: виготовляти інші три для цього завдання не потрібно.",
+              "Заряди готову частину перед використанням. У Modification Station встановлюються сумісні модулі; звичайний Module Base не дає здібності сам по собі. Предметне завдання перевіряє наявність черевиків без вилучення, а не надягання чи встановлені модулі."
+            ],
+            "en_us": [
+              "Craft the MekaSuit boots using SOQM's JEI recipe. Prepare polonium pellets, HDPE, an induction cell and mythic-tier materials. This is a separate armor piece; its task does not require crafting the other three.",
+              "Charge the finished piece before using it. Install supported modules through a Modification Station; a plain Module Base has no ability of its own. The item task detects the boots without consuming it, rather than checking worn armor or installed modules."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011AEA75E4401",
+            "513011E2552BA5EA",
+            "514D1127DFAD1A15",
+            "514D11E17AB94DF9"
+          ],
+          "stage": 5
+        },
+        "5130112F15810A47": {
+          "title": {
+            "uk_ua": "Meka-Tool: основа модульного інструмента",
+            "en_us": "Meka-Tool: the modular tool"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов Meka-Tool і заряди його. Це окремий інструмент, а не п’ята бронедеталь MekaSuit. Його базовий крафт не означає автоматичної наявності Silk Touch, Fortune чи групового видобутку.",
+              "Після Modification Station переходь до секції модулів інструмента нижче. Ціль перевіряє один Meka-Tool в інвентарі без вилучення; реальний повний апгрейд перевіряє фінальне нативне досягнення."
+            ],
+            "en_us": [
+              "Craft and charge a Meka-Tool. It is a separate tool, not a fifth MekaSuit armor piece. Crafting the base tool does not automatically add Silk Touch, Fortune or vein mining.",
+              "After building the Modification Station, follow the tool-module section below. This objective detects one Meka-Tool in inventory without consumption; the final native advancement checks actual maximum upgrades."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011AEA75E4401",
+            "513011E2552BA5EA",
+            "514D1147E2CB985B",
+            "514D1127DFAD1A15"
+          ],
+          "stage": 5
+        },
+        "514C110000000003": {
+          "title": {
+            "uk_ua": "Комплект MekaSuit і Meka-Tool",
+            "en_us": "Full MekaSuit and Meka-Tool"
+          },
+          "description": {
+            "uk_ua": [
+              "Збери в одному інвентарі шолом, нагрудник, поножі й черевики MekaSuit разом із Meka-Tool. Саме ці п’ять предметів перевіряє нативне досягнення Mekanism «MekaSuit».",
+              "Це перевірка повного набору предметів, а не надягнутого костюма й не модулів. Заряджання та добір поліпшень продовжуються в наступних секціях; цей додатковий комплект не блокує реактори чи головний маршрут."
+            ],
+            "en_us": [
+              "Place the MekaSuit helmet, bodyarmor, pants and boots together with a Meka-Tool in one inventory. Mekanism's native MekaSuit advancement checks exactly those five items.",
+              "This verifies possession of the complete item set, not worn armor or modules. Continue charging and choosing upgrades in the following sections; this optional loadout does not block reactors or the main route."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "513011CDE1D10A76",
+            "51301111493CFC21",
+            "51301181BF058BAE",
+            "513011087C06E9D8",
+            "5130112F15810A47"
+          ],
+          "stage": 5
+        },
+        "513011C521E5B4DD": {
+          "title": {
+            "uk_ua": "Module Base: заготовка поліпшення",
+            "en_us": "Module Base: the upgrade blank"
+          },
+          "description": {
+            "uk_ua": [
+              "Один Module Base потребує 2 HDPE Sheet, 2 блоки олова, 2 бронзові злитки, 2 сталеві пластини Immersive Engineering та 1 Elite Control Circuit. За рецепт виходить 1 заготовка, тому для кількох установлених копій модулів підготуй відповідну кількість основ.",
+              "Основа — проміжна деталь для конкретного Unit. Обери потрібну здібність і сумісну частину спорядження, виготов готовий модуль, а потім установи його через Modification Station. Ліміт копій залежить від модуля: одна копія не завжди дає максимальний рівень."
+            ],
+            "en_us": [
+              "One Module Base requires 2 HDPE Sheets, 2 tin blocks, 2 bronze ingots, 2 Immersive Engineering steel plates and 1 Elite Control Circuit. Each recipe yields 1 blank, so multiple installed module copies need the corresponding number of bases.",
+              "The base is an intermediate part for a specific Unit. Choose the ability and a supported equipment piece, craft the finished module, then install it through the Modification Station. Limits vary by module: one copy is not always the maximum level."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "514D11E17AB94DF9",
+            "5130113316FAEC33"
+          ],
+          "stage": 3
+        },
+        "51301138646C9874": {
+          "title": {
+            "uk_ua": "Modification Station: установлення модулів",
+            "en_us": "Modification Station: install modules"
+          },
+          "description": {
+            "uk_ua": [
+              "Постав Modification Station і підведи FE. Помісти сумісний MekaSuit або Meka-Tool у слот спорядження, а готовий модуль — у слот поліпшення. Дочекайся завершення встановлення; модуль у кишені ще не встановлено.",
+              "Після цього відкрий Module Tweaker через призначення клавіш Mekanism у Керуванні. Вибери частину спорядження, увімкни модуль та налаштуй доступні параметри. Перевір ліміт встановлених копій і сумісність у вікні станції.",
+              "Завдання тут перевіряє саму станцію в інвентарі, тому потримай її перед установленням на базі. Квести готових Unit також перевіряють предмети; справжній максимальний апгрейд має окрему автоматичну умову в кінці глави."
+            ],
+            "en_us": [
+              "Place a Modification Station and supply FE. Put a supported MekaSuit piece or Meka-Tool in the equipment slot and a finished module in the upgrade slot. Wait for installation to finish; a module in your backpack is not installed.",
+              "Then open Module Tweaker using its Mekanism key binding in Controls. Select the equipment piece, enable the module and adjust its available settings. Check the station for supported modules and installed-copy limits.",
+              "This objective detects the station itself in inventory, so hold it before placing it at the base. Finished Unit quests also check items; the final objective separately verifies actual maximum upgrades."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "514D1127DFAD1A15",
+            "514D11E17AB94DF9",
+            "514D11EFB7B6F506"
+          ],
+          "stage": 5
+        },
+        "51301132F9C95555": {
+          "title": {
+            "uk_ua": "Energy Unit: місткість заряду",
+            "en_us": "Energy Unit: energy capacity"
+          },
+          "description": {
+            "uk_ua": [
+              "Energy Unit збільшує запас енергії, але не генерує її. Заряджай кожен предмет і додавай наступні копії лише до дозволеного ліміту. Установи готовий модуль у сумісну частину MekaSuit або Meka-Tool через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "An Energy Unit increases storage capacity, but generates no power. Charge each item and add further copies only up to its supported limit. Install the finished module in a supported MekaSuit piece or Meka-Tool through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD"
+          ],
+          "stage": 5
+        },
+        "5130113FB494C115": {
+          "title": {
+            "uk_ua": "Radiation Shielding: захист комплекту",
+            "en_us": "Radiation Shielding: armor protection"
+          },
+          "description": {
+            "uk_ua": [
+              "Radiation Shielding Unit додає захист від радіації до конкретної бронедеталі. Для повного захищеного комплекту підготуй модуль для кожної частини; одна копія не захищає автоматично весь костюм. Установи готовий модуль у кожну з чотирьох частин MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Radiation Shielding Unit adds radiation protection to its particular armor piece. Prepare a module for every piece of a protected full set; one copy does not automatically protect the whole suit. Install the finished module in each of the four MekaSuit armor pieces through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD"
+          ],
+          "stage": 5
+        },
+        "513011ED1A3D11E0": {
+          "title": {
+            "uk_ua": "Jetpack Unit: політ на водні",
+            "en_us": "Jetpack Unit: hydrogen flight"
+          },
+          "description": {
+            "uk_ua": [
+              "Jetpack Unit додає водневий реактивний ранець. Підготуй водень і вибери режим польоту; самого електричного заряду костюма для цього палива недостатньо. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Jetpack Unit adds a hydrogen-powered jetpack. Supply hydrogen and select its flight mode; the armor's electric charge does not replace that fuel. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21"
+          ],
+          "stage": 5
+        },
+        "51301144D5FB95D4": {
+          "title": {
+            "uk_ua": "Breathing Unit: дихання під водою",
+            "en_us": "Breathing Unit: underwater breathing"
+          },
+          "description": {
+            "uk_ua": [
+              "Electrolytic Breathing Unit добуває придатний для дихання кисень із води; за потреби він також може поповнювати водень Jetpack Unit. Перевір роботу на мілководді із зарядженим комплектом. Установи готовий модуль у шолом MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "An Electrolytic Breathing Unit extracts breathable oxygen from water and can replenish a Jetpack Unit's hydrogen when needed. Test it in shallow water with charged equipment. Install the finished module in a MekaSuit helmet through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "513011CDE1D10A76"
+          ],
+          "stage": 5
+        },
+        "51301155BDC855A3": {
+          "title": {
+            "uk_ua": "Vision Unit: нічне бачення",
+            "en_us": "Vision Unit: night vision"
+          },
+          "description": {
+            "uk_ua": [
+              "Vision Enhancement Unit покращує видимість у темряві. Кілька встановлених копій відкривають вищу ефективність у межах ліміту; потужність обирається у налаштуваннях. Установи готовий модуль у шолом MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Vision Enhancement Unit improves visibility in darkness. Additional installed copies allow greater effectiveness within its limit; choose the operating setting explicitly. Install the finished module in a MekaSuit helmet through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "513011CDE1D10A76"
+          ],
+          "stage": 5
+        },
+        "513011F1FC51AAE1": {
+          "title": {
+            "uk_ua": "Magnetic Unit: підбирання предметів",
+            "en_us": "Magnetic Unit: collect dropped items"
+          },
+          "description": {
+            "uk_ua": [
+              "Magnetic Attraction Unit притягує предмети, що лежать поруч. Це модуль черевиків; додаткові копії збільшують доступний радіус. Вимикай його біля ліній, які навмисно кидають предмети у світ. Установи готовий модуль у черевики MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Magnetic Attraction Unit pulls nearby dropped items towards you. It belongs in the boots, and extra copies increase its available range. Disable it near production lines that intentionally drop items into the world. Install the finished module in MekaSuit boots through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "513011087C06E9D8"
+          ],
+          "stage": 5
+        },
+        "51301125CDBD7A23": {
+          "title": {
+            "uk_ua": "Silk Touch: модуль для Meka-Tool",
+            "en_us": "Silk Touch: the Meka-Tool module"
+          },
+          "description": {
+            "uk_ua": [
+              "Silk Touch Unit дає видобуток самого блока. Перемикай його відповідно до завдання; режими Silk Touch та Ore Refinement не слід вважати одночасним бонусом до одного дропу. Установи готовий модуль у Meka-Tool через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Silk Touch Unit makes supported blocks drop as themselves. Select the mode for the job; Silk Touch and Ore Refinement are not simultaneous bonuses to the same drop. Install the finished module in a Meka-Tool through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "5130112F15810A47"
+          ],
+          "stage": 5
+        },
+        "514C110000000004": {
+          "title": {
+            "uk_ua": "Charge Distribution: заряд між частинами",
+            "en_us": "Charge Distribution: shared armor charge"
+          },
+          "description": {
+            "uk_ua": [
+              "Розподіляє заряд між надягнутими частинами MekaSuit. Спочатку підведи енергію до комплекту: модуль переносить її між предметами, а не створює. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Distributes charge between worn MekaSuit pieces. Supply power to the suit first: this module transfers energy between items rather than creating it. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21"
+          ],
+          "stage": 5
+        },
+        "514C110000000005": {
+          "title": {
+            "uk_ua": "Dosimeter Unit: власна доза",
+            "en_us": "Dosimeter Unit: personal dose"
+          },
+          "description": {
+            "uk_ua": [
+              "Показує власну накопичену дозу радіації у HUD. Це вимірювальний модуль нагрудника; він не замінює Radiation Shielding. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Displays your accumulated radiation dose in the HUD. This bodyarmor module measures exposure; it does not replace Radiation Shielding. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21"
+          ],
+          "stage": 5
+        },
+        "514C110000000006": {
+          "title": {
+            "uk_ua": "Geiger Unit: радіація довкола",
+            "en_us": "Geiger Unit: ambient radiation"
+          },
+          "description": {
+            "uk_ua": [
+              "Показує рівень радіації навколо у HUD. Порівнюй його з власною дозою Dosimeter Unit: це різні показники, і сам вимірювач не дає захисту. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Displays ambient radiation in the HUD. Compare it with the personal dose from a Dosimeter Unit: they measure different things, and measurement itself provides no shielding. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21"
+          ],
+          "stage": 5
+        },
+        "514C110000000007": {
+          "title": {
+            "uk_ua": "Purification Unit: фільтр ефектів",
+            "en_us": "Purification Unit: effect filtering"
+          },
+          "description": {
+            "uk_ua": [
+              "Фільтрує вибрані типи ефектів зілля через дихальний апарат. Перевір категорії у налаштуваннях, щоб не прибрати потрібні позитивні ефекти. Установи готовий модуль у шолом MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Filters selected potion-effect categories through the breathing apparatus. Review its settings so useful beneficial effects are not removed. Install the finished module in a MekaSuit helmet through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "513011CDE1D10A76"
+          ],
+          "stage": 5
+        },
+        "514C110000000008": {
+          "title": {
+            "uk_ua": "Locomotive Unit: швидкість бігу",
+            "en_us": "Locomotive Unit: sprint speed"
+          },
+          "description": {
+            "uk_ua": [
+              "Збільшує швидкість спринту та відстань стрибка. Почни з невисокого значення, перевір керування й витрату заряду, а потім додавай наступні копії. Установи готовий модуль у поножі MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Increases sprint speed and jumping distance. Start with a low setting, check handling and power consumption, then install further copies. Install the finished module in MekaSuit pants through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301181BF058BAE"
+          ],
+          "stage": 5
+        },
+        "514C110000000009": {
+          "title": {
+            "uk_ua": "Hydraulic Unit: крок і стрибок",
+            "en_us": "Hydraulic Unit: stepping and jumping"
+          },
+          "description": {
+            "uk_ua": [
+              "Дозволяє вище крокувати й стрибати. Відрегулюй висоту для проходів бази; кількість встановлених копій визначає доступні рівні. Установи готовий модуль у черевики MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Allows higher stepping and jumping. Adjust the height to suit the passages in your base; installed copies determine the available levels. Install the finished module in MekaSuit boots through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "513011087C06E9D8"
+          ],
+          "stage": 5
+        },
+        "514C11000000000A": {
+          "title": {
+            "uk_ua": "Elytra Unit: планерування в костюмі",
+            "en_us": "Elytra Unit: armored gliding"
+          },
+          "description": {
+            "uk_ua": [
+              "Додає до костюма HDPE Reinforced Elytra. Це планерування, тому підготуй місце для старту й перевір його окремо від реактивного та гравітаційного режимів. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Adds an HDPE Reinforced Elytra to the suit. It provides gliding, so prepare a launch area and test it separately from jetpack and gravitational flight modes. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21",
+            "514D11E17AB94DF9"
+          ],
+          "stage": 5
+        },
+        "514C11000000000B": {
+          "title": {
+            "uk_ua": "Gravitational Unit: антиматерія для польоту",
+            "en_us": "Gravitational Unit: antimatter flight"
+          },
+          "description": {
+            "uk_ua": [
+              "Gravitational Modulating Unit відкриває вільний політ за енергію. Його крафт потребує антиматерії та розвиненої індукційної інфраструктури: спочатку заверши відповідну лінію у главі 08. Установи готовий модуль у нагрудник MekaSuit через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "A Gravitational Modulating Unit enables free flight using energy. Its recipe requires antimatter and advanced induction infrastructure; complete the corresponding production line in chapter 08 first. Install the finished module in MekaSuit bodyarmor through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "51301111493CFC21",
+            "514D11E562C03F82",
+            "513011BDCE53EB09"
+          ],
+          "stage": 6
+        },
+        "514C11000000000C": {
+          "title": {
+            "uk_ua": "Ore Refinement: Fortune для Meka-Tool",
+            "en_us": "Ore Refinement: Meka-Tool Fortune"
+          },
+          "description": {
+            "uk_ua": [
+              "Ore Refinement Unit збільшує вихід придатної руди. Налаштуй його окремо від Silk Touch та перевір дроп на невеликій партії. Установи готовий модуль у Meka-Tool через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "An Ore Refinement Unit increases yields from suitable ores. Configure it separately from Silk Touch and check drops on a small batch. Install the finished module in a Meka-Tool through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "5130112F15810A47"
+          ],
+          "stage": 5
+        },
+        "514C11000000000D": {
+          "title": {
+            "uk_ua": "Excavation Unit: швидкість Meka-Tool",
+            "en_us": "Excavation Unit: Meka-Tool speed"
+          },
+          "description": {
+            "uk_ua": [
+              "Прискорює руйнування блоків Meka-Tool. Піднімай налаштування поступово й стеж за енергією: максимальна швидкість не завжди потрібна для роботи біля механізмів. Установи готовий модуль у Meka-Tool через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Speeds up block breaking with the Meka-Tool. Raise the setting gradually and monitor power: maximum speed is not always useful when working beside machinery. Install the finished module in a Meka-Tool through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "5130112F15810A47"
+          ],
+          "stage": 5
+        },
+        "514C11000000000E": {
+          "title": {
+            "uk_ua": "Vein Mining: груповий видобуток",
+            "en_us": "Vein Mining: grouped mining"
+          },
+          "description": {
+            "uk_ua": [
+              "Додає груповий видобуток руди й рубання дерев засобами Meka-Tool. Вибери режим та допустимий обсяг перед пробою; перевіряй його окремо від FTB Ultimine. Установи готовий модуль у Meka-Tool через Modification Station; після цього перевір увімкнення й доступні параметри у Module Tweaker.",
+              "Для цього завдання потрібен один готовий Unit в інвентарі без вилучення. Завершення не доводить встановлення чи максимального рівня: для них потрібні дії зі спорядженням."
+            ],
+            "en_us": [
+              "Adds grouped ore mining and tree felling through the Meka-Tool. Choose the mode and range before testing it, separately from FTB Ultimine. Install the finished module in a Meka-Tool through a Modification Station, then check its enabled state and available settings in Module Tweaker.",
+              "This task requires one finished Unit in inventory without consumption. Completion does not prove installation or maximum level; those require modifying the equipment."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "51301138646C9874",
+            "513011C521E5B4DD",
+            "5130112F15810A47"
+          ],
+          "stage": 5
+        },
+        "514C11000000000F": {
+          "title": {
+            "uk_ua": "Повний апгрейд MekaSuit і Meka-Tool",
+            "en_us": "Maximum MekaSuit and Meka-Tool upgrades"
+          },
+          "description": {
+            "uk_ua": [
+              "Це додаткова колекційна мета «True Dedication». Установи максимальну кількість усіх підтримуваних модулів у кожну з чотирьох частин MekaSuit та Meka-Tool. Перелік вище навчає основних поліпшень, але не замінює повного списку сумісності у Modification Station.",
+              "Нативне досягнення перевіряє модулі всередині предметів і кількість встановлених копій, а не стопки Unit у скрині. Тримай готові п’ять предметів в інвентарі; якщо досягнення не з’явилося, перевір кожну частину й її ліміти окремо.",
+              "Цей фінальний апгрейд не потрібен для запуску реакторів, виготовлення EMC чи проходження головного маршруту. Спочатку обери практичний набір модулів, а максимальний комплект збирай як окремий проєкт."
+            ],
+            "en_us": [
+              "This is the optional True Dedication collection goal. Install the maximum number of every supported module in each of the four MekaSuit pieces and the Meka-Tool. The lessons above introduce key upgrades, but do not replace the complete supported-module list in the Modification Station.",
+              "The native advancement checks modules inside the items and their installed-copy counts, not loose Unit stacks in storage. Keep all five finished items in your inventory; if the advancement does not appear, inspect each piece and every limit separately.",
+              "This maximum upgrade is not required to start reactors, manufacture EMC or finish Main Route. Choose a practical module loadout first and treat the fully upgraded set as a separate project."
+            ]
+          },
+          "optional": true,
+          "dependencies": [
+            "514C110000000003",
+            "51301138646C9874",
+            "514C11000000000B"
+          ],
+          "stage": 6
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "key": "equipment_hdpe",
+      "title": {
+        "uk_ua": "HDPE: від PRC до листа",
+        "en_us": "HDPE: from the PRC to a sheet"
+      },
+      "quests": [
+        "513011156F29CC4E",
+        "514C110000000001",
+        "514C110000000002",
+        "514D11E17AB94DF9"
+      ]
+    },
+    {
+      "key": "equipment_meka_gravity",
+      "title": {
+        "uk_ua": "MekaSuit: нагрудник → політ → максимальний апгрейд",
+        "en_us": "MekaSuit: bodyarmor → flight → maximum upgrades"
+      },
+      "quests": [
+        "51301111493CFC21",
+        "514C11000000000B",
+        "514C11000000000F"
+      ]
+    }
+  ],
+  "evidence": [
+    "Mekanism-1.21.1-10.7.19.85.jar: data/mekanism/recipe/reaction/substrate/{water_hydrogen,ethene_oxygen}.json; data/mekanism/recipe/enriching/hdpe_sheet.json",
+    "Mekanism-1.21.1-10.7.19.85.jar: data/mekanism/advancement/{mekasuit,upgraded_mekasuit}.json",
+    "Mekanism-1.21.1-10.7.19.85.jar: mekanism.common.Mekanism.imcQueue; MaxedModuleContainerItemPredicate.matches; assets/mekanism/lang/en_us.json",
+    "overrides/kubejs/server_scripts/qm_expert_progression.js; qm_expert_v042.js: installed SOQM armor, station, gravity and plastic recipes"
+  ]
+}

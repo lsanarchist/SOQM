@@ -1,0 +1,2748 @@
+{
+  "schema_version": 1,
+  "name": "QM hardcore workshop and Mekanism material progression",
+  "base_commit": "95421eeda09f2e3447e6e9d3189a1e43d9c41381",
+  "script_priority": -100,
+  "legacy_reference": {
+    "file": "FULL_CONTEXT_FOR_ASTRA.txt",
+    "recipes": [
+      "Recipe 1.zs:286-289",
+      "Recipe 1.zs:312",
+      "Recipe 1.zs:317",
+      "Recipe 1.zs:372",
+      "Recipe 1.zs:381-382",
+      "Recipe 4.zs:327"
+    ],
+    "scope": "Adapted workshop/industry recipes only; no food or hunger changes."
+  },
+  "native_mods": [
+    {
+      "name": "BuildCraft Community Edition",
+      "version": "8.0.23+1.21.1+neoforge",
+      "filename": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+      "sha256": "ce56520a9c364917dbcfe4c7b767d5195b7240d1dcbcf653cdcfc962681db550",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/buildcraft-community-edition/files/9035819"
+    },
+    {
+      "name": "Ender IO",
+      "version": "8.2.12-beta",
+      "filename": "enderio-8.2.12-beta.jar",
+      "sha256": "5fe098153dddc2e7ccd9d38b0341dbc61f3072150958c916e5ef63f395e4eab1",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/ender-io/files/8832691"
+    },
+    {
+      "name": "Immersive Engineering",
+      "version": "12.4.2-194",
+      "filename": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "sha256": "45942985a4a4aebf265b8e22a0c54a96208637471f36f2532ff5d4911322debc",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering/files/6733669"
+    },
+    {
+      "name": "Industrial Foregoing",
+      "version": "3.6.39",
+      "filename": "industrialforegoing-1.21-3.6.39.jar",
+      "sha256": "abeb644675398e7729eb5f3637e1dfbe080e0dbdfcced1b19bd4ab595ccdd4bb",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing/files/8370717"
+    },
+    {
+      "name": "Iron Furnaces",
+      "version": "4.3.2",
+      "filename": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+      "sha256": "97c0d7c323fda4aa852fdce69bf1250a40323bb9d34ef6c87790e07334d1c2de",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/iron-furnaces/files/7034259"
+    },
+    {
+      "name": "KubeJS",
+      "version": "2101.7.2-build.377",
+      "filename": "kubejs-neoforge-2101.7.2-build.377.jar",
+      "sha256": "43b656bc2d4ce867141abb828c9481f080a38585b99bcfa07e54732a4976a601",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/kubejs/files/8843626"
+    },
+    {
+      "name": "Mekanism",
+      "version": "10.7.19.85",
+      "filename": "Mekanism-1.21.1-10.7.19.85.jar",
+      "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/mekanism/files/7904058"
+    },
+    {
+      "name": "Railcraft Reborn",
+      "version": "1.2.12",
+      "filename": "railcraft-reborn-1.21.1-1.2.12.jar",
+      "sha256": "9dc23403c3b8a987ae4a9161bb9495bbf1c27b1ba3b6b558a46c99272c24932e",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/railcraft-reborn/files/9175020"
+    },
+    {
+      "name": "Sophisticated Storage",
+      "version": "1.6.7.2184",
+      "filename": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+      "sha256": "377f733da3c155d82cfad2f7e546a216ed331bdaeb1b74f1eee55aac2e460af6",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage/files/9201424"
+    },
+    {
+      "name": "Terralith",
+      "version": "2.6.2",
+      "filename": "Terralith_1.21.x_v2.6.2.jar",
+      "sha256": "d38bd304897731b42f6c013cdc07e082e74411e80c74aabcee385251beb3b546",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/terralith/files/8222737"
+    },
+    {
+      "name": "The Aether",
+      "version": "1.5.10",
+      "filename": "aether-1.21.1-1.5.10-neoforge.jar",
+      "sha256": "b19386301560a017a458e9790a7b59999e270f93010def0b61e7cbe4c8630dbf",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/aether/files/7043502"
+    }
+  ],
+  "remove_ids": [
+    "aether:skyroot_piston",
+    "buildcraftcore:gears/gear_diamond",
+    "buildcraftcore:gears/gear_gold",
+    "buildcraftcore:gears/gear_iron",
+    "buildcraftcore:gears/gear_stone",
+    "buildcraftcore:gears/gear_wood",
+    "enderio:iron_gear",
+    "immersiveengineering:crafting/plate_copper_hammering",
+    "immersiveengineering:crafting/plate_gold_hammering",
+    "immersiveengineering:crafting/plate_iron_hammering",
+    "immersiveengineering:crafting/plate_steel_hammering",
+    "industrialforegoing:gold_gear",
+    "industrialforegoing:iron_gear",
+    "ironfurnaces:furnaces/copper_furnace",
+    "ironfurnaces:furnaces/iron_furnace",
+    "ironfurnaces:furnaces/iron_furnace2",
+    "ironfurnaces:upgrades/upgrade_copper",
+    "ironfurnaces:upgrades/upgrade_iron",
+    "ironfurnaces:upgrades/upgrade_iron2",
+    "kubejs:expert/mekanism/control_circuit/advanced",
+    "kubejs:expert/mekanism/control_circuit/elite",
+    "kubejs:expert/mekanism/control_circuit/ultimate",
+    "kubejs:expert/mekanism/metallurgic_infuser",
+    "kubejs:expert/mekanism/steel_casing",
+    "kubejs:expert_v042/mekanism/chemical_infuser",
+    "kubejs:expert_v042/mekanism/crusher",
+    "kubejs:expert_v042/mekanism/electrolytic_separator",
+    "kubejs:expert_v042/mekanism/enrichment_chamber",
+    "kubejs:expert_v042/mekanism/precision_sawmill",
+    "kubejs:expert_v042/mekanism/rotary_condensentrator",
+    "mekanism:chemical_infuser",
+    "mekanism:control_circuit/advanced",
+    "mekanism:control_circuit/elite",
+    "mekanism:control_circuit/infused_advanced",
+    "mekanism:control_circuit/infused_elite",
+    "mekanism:control_circuit/infused_ultimate",
+    "mekanism:control_circuit/ultimate",
+    "mekanism:crusher",
+    "mekanism:electrolytic_separator",
+    "mekanism:enrichment_chamber",
+    "mekanism:metallurgic_infuser",
+    "mekanism:module_base",
+    "mekanism:precision_sawmill",
+    "mekanism:rotary_condensentrator",
+    "mekanism:steel_casing",
+    "minecraft:furnace",
+    "minecraft:hopper",
+    "minecraft:piston",
+    "railcraft:copper_gear",
+    "railcraft:gold_gear",
+    "railcraft:iron_gear",
+    "sophisticatedstorage:basic_to_copper_tier_upgrade",
+    "sophisticatedstorage:basic_to_iron_tier_from_basic_to_copper_tier",
+    "sophisticatedstorage:basic_to_iron_tier_upgrade",
+    "sophisticatedstorage:copper_barrel",
+    "sophisticatedstorage:copper_chest",
+    "sophisticatedstorage:copper_shulker_box",
+    "sophisticatedstorage:copper_to_iron_tier_upgrade",
+    "sophisticatedstorage:double_copper_chest",
+    "sophisticatedstorage:double_iron_chest",
+    "sophisticatedstorage:double_iron_chest_from_copper_chest",
+    "sophisticatedstorage:iron_barrel",
+    "sophisticatedstorage:iron_barrel_from_copper_barrel",
+    "sophisticatedstorage:iron_chest",
+    "sophisticatedstorage:iron_chest_from_copper_chest",
+    "sophisticatedstorage:iron_shulker_box",
+    "sophisticatedstorage:iron_shulker_box_from_copper_shulker_box",
+    "sophisticatedstorage:limited_copper_barrel_1",
+    "sophisticatedstorage:limited_copper_barrel_2",
+    "sophisticatedstorage:limited_copper_barrel_3",
+    "sophisticatedstorage:limited_copper_barrel_4",
+    "sophisticatedstorage:limited_iron_barrel_1",
+    "sophisticatedstorage:limited_iron_barrel_1_from_limited_copper_barrel_1",
+    "sophisticatedstorage:limited_iron_barrel_2",
+    "sophisticatedstorage:limited_iron_barrel_2_from_limited_copper_barrel_2",
+    "sophisticatedstorage:limited_iron_barrel_3",
+    "sophisticatedstorage:limited_iron_barrel_3_from_limited_copper_barrel_3",
+    "sophisticatedstorage:limited_iron_barrel_4",
+    "sophisticatedstorage:limited_iron_barrel_4_from_limited_copper_barrel_4",
+    "terralith:piston_alt"
+  ],
+  "recipes": [
+    {
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_diamond",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "tag": "c:gems/diamond"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_gold"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_diamond",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "buildcraftcore:gears/gear_diamond"
+      ],
+      "reason": "Manual wood-to-stone-to-iron-to-gold-to-diamond gear ladder; no powered machine needed for bootstrap.",
+      "native_evidence": {
+        "jar": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+        "path": "data/buildcraftcore/recipe/gears/gear_diamond.json",
+        "sha256": "eb72e5f1fb68d150b206a8d8be92d82c7c0491d21b486eb1704923945a09168b",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_gold",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "tag": "c:plates/gold"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_gold",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "buildcraftcore:gears/gear_gold"
+      ],
+      "reason": "Manual wood-to-stone-to-iron-to-gold-to-diamond gear ladder; no powered machine needed for bootstrap.",
+      "native_evidence": {
+        "jar": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+        "path": "data/buildcraftcore/recipe/gears/gear_gold.json",
+        "sha256": "e67c5cd8d3f8d1d7bc5931d38795bcee04990152ed66bb0de7f1ec48685db289",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "tag": "c:plates/iron"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_iron",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "buildcraftcore:gears/gear_iron"
+      ],
+      "reason": "Manual wood-to-stone-to-iron-to-gold-to-diamond gear ladder; no powered machine needed for bootstrap.",
+      "native_evidence": {
+        "jar": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+        "path": "data/buildcraftcore/recipe/gears/gear_iron.json",
+        "sha256": "be489d555d81a4ded2f345f176c22345bbead8a491c892b4d781ef0e3dfb8ec5",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_stone",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "item": "minecraft:stone"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_wood"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_stone",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "buildcraftcore:gears/gear_stone"
+      ],
+      "reason": "Manual wood-to-stone-to-iron-to-gold-to-diamond gear ladder; no powered machine needed for bootstrap.",
+      "native_evidence": {
+        "jar": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+        "path": "data/buildcraftcore/recipe/gears/gear_stone.json",
+        "sha256": "f37cd0163dc23aa3b9a16954690905f006c6cc3788c5d5e9429ad8271ff29a29",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_wood",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "item": "minecraft:stick"
+          },
+          "I": {
+            "tag": "minecraft:wooden_buttons"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_wood",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "buildcraftcore:gears/gear_wood"
+      ],
+      "reason": "Manual wood-to-stone-to-iron-to-gold-to-diamond gear ladder; no powered machine needed for bootstrap.",
+      "native_evidence": {
+        "jar": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar",
+        "path": "data/buildcraftcore/recipe/gears/gear_wood.json",
+        "sha256": "47cedb89839e71ba3f44825e6585cb9b07a46f1fa5292595054b24b94ad4e414",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/enderio/iron_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "enderio:iron_gear",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "enderio:iron_gear"
+      ],
+      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain.",
+      "native_evidence": {
+        "jar": "enderio-8.2.12-beta.jar",
+        "path": "data/enderio/recipe/iron_gear.json",
+        "sha256": "6b157f532a18254c65dceab06316cb23127328f0ac30fd678a6c50e3fea022e6",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/industrialforegoing/gold_gear",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:gold_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/gold"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:gold_gear"
+        }
+      },
+      "replaces": [
+        "industrialforegoing:gold_gear"
+      ],
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "native_evidence": {
+        "jar": "industrialforegoing-1.21-3.6.39.jar",
+        "path": "data/industrialforegoing/recipe/gold_gear.json",
+        "sha256": "52070278a761865580ebf04124d1d06389f567704ea50b6c67aaf85b7dd72a8d",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/industrialforegoing/iron_gear",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:iron_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:iron_gear"
+        }
+      },
+      "replaces": [
+        "industrialforegoing:iron_gear"
+      ],
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "native_evidence": {
+        "jar": "industrialforegoing-1.21-3.6.39.jar",
+        "path": "data/industrialforegoing/recipe/iron_gear.json",
+        "sha256": "5859ce5e59940d9a2ae8326d61c35ac234b2f234f01015c58183c3ea8db04a14",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/railcraft/copper_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "key": {
+          "P": {
+            "tag": "c:plates/copper"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "railcraft:copper_gear",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "railcraft:copper_gear"
+      ],
+      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain.",
+      "native_evidence": {
+        "jar": "railcraft-reborn-1.21.1-1.2.12.jar",
+        "path": "data/railcraft/recipe/copper_gear.json",
+        "sha256": "f4851117983bc02ce16720a09578085c3878ace8b57ea13bc33078aef5e60c0c",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/railcraft/gold_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/gold"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "railcraft:gold_gear"
+        }
+      },
+      "replaces": [
+        "railcraft:gold_gear"
+      ],
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "native_evidence": {
+        "jar": "railcraft-reborn-1.21.1-1.2.12.jar",
+        "path": "data/railcraft/recipe/gold_gear.json",
+        "sha256": "ee869a6598b03dd270eac1675870d675b05ffde1f92fcefbde96408d6219d141",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/gears/railcraft/iron_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "railcraft:iron_gear",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "railcraft:iron_gear"
+      ],
+      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain.",
+      "native_evidence": {
+        "jar": "railcraft-reborn-1.21.1-1.2.12.jar",
+        "path": "data/railcraft/recipe/iron_gear.json",
+        "sha256": "6d92d21986e0a3441fdc459dbf366960c8150c5ea571462a36871276bc9e4781",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/copper_furnace",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "C": {
+            "item": "minecraft:furnace"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:copper_furnace"
+        },
+        "neoforge:conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      },
+      "replaces": [
+        "ironfurnaces:furnaces/copper_furnace"
+      ],
+      "reason": "Eight metal blocks per furnace; the copper-to-iron alternative pays the same 72 iron.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/furnaces/copper_furnace.json",
+        "sha256": "16b9f67365436d946950c45bcaca70a8f73d158fc71fc6f21da9f434240224c0",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/iron_furnace",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "C": {
+            "item": "minecraft:furnace"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:iron_furnace"
+        }
+      },
+      "replaces": [
+        "ironfurnaces:furnaces/iron_furnace"
+      ],
+      "reason": "Eight metal blocks per furnace; the copper-to-iron alternative pays the same 72 iron.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/furnaces/iron_furnace.json",
+        "sha256": "59aecd5d21dc8646c34c3f7e5e8808c922d6c156c4cef8e793e663094abc1e55",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/iron_furnace2",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "C": {
+            "tag": "c:furnaces/copper"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:iron_furnace"
+        }
+      },
+      "replaces": [
+        "ironfurnaces:furnaces/iron_furnace2"
+      ],
+      "reason": "Eight metal blocks per furnace; the copper-to-iron alternative pays the same 72 iron.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/furnaces/iron_furnace2.json",
+        "sha256": "41810fecbd8d26f4e9d13953a8c8733068558e23d94ec3ca73ab4d31d279621b",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_copper",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_copper"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      },
+      "replaces": [
+        "ironfurnaces:upgrades/upgrade_copper"
+      ],
+      "reason": "In-world native upgrade retains its item behavior and pays eight metal blocks.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/upgrades/upgrade_copper.json",
+        "sha256": "783e221f8fa3beea98f31a99cabd803a5fb07f5ce9c0c0759dc3ceae5ca675e5",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron"
+        }
+      },
+      "replaces": [
+        "ironfurnaces:upgrades/upgrade_iron"
+      ],
+      "reason": "In-world native upgrade retains its item behavior and pays eight metal blocks.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/upgrades/upgrade_iron.json",
+        "sha256": "aa6a883d1617fbe93c78f1fb16932f5e2abbbe6551b694173afc1aa9d3145b9d",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron2",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron2"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      },
+      "replaces": [
+        "ironfurnaces:upgrades/upgrade_iron2"
+      ],
+      "reason": "In-world native upgrade retains its item behavior and pays eight metal blocks.",
+      "native_evidence": {
+        "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
+        "path": "data/ironfurnaces/recipe/upgrades/upgrade_iron2.json",
+        "sha256": "99abcad42992ee9b26c5eca08266879b502a2f175f759028366b72d0ac9b0c02",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/manual/plate_copper",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "c:ingots/copper"
+          },
+          {
+            "tag": "c:ingots/copper"
+          },
+          {
+            "item": "immersiveengineering:hammer"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:plate_copper"
+        }
+      },
+      "replaces": [
+        "immersiveengineering:crafting/plate_copper_hammering"
+      ],
+      "reason": "Two ingots per manually hammered plate; native tool remainder and the powered one-ingot metal press are retained.",
+      "native_evidence": {
+        "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+        "path": "data/immersiveengineering/recipe/crafting/plate_copper_hammering.json",
+        "sha256": "e1cfadd0b0a90b5caf0d8f6bd03f746ab304e456345a03980adb4ba984238ca4",
+        "serializer": "minecraft:crafting_shapeless"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/manual/plate_gold",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "c:ingots/gold"
+          },
+          {
+            "tag": "c:ingots/gold"
+          },
+          {
+            "item": "immersiveengineering:hammer"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:plate_gold"
+        }
+      },
+      "replaces": [
+        "immersiveengineering:crafting/plate_gold_hammering"
+      ],
+      "reason": "Two ingots per manually hammered plate; native tool remainder and the powered one-ingot metal press are retained.",
+      "native_evidence": {
+        "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+        "path": "data/immersiveengineering/recipe/crafting/plate_gold_hammering.json",
+        "sha256": "ca2b9389d1e0453619af39793ef7fdfa68c2b8d9f33c92b2d181f5e391d88563",
+        "serializer": "minecraft:crafting_shapeless"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/manual/plate_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "c:ingots/iron"
+          },
+          {
+            "tag": "c:ingots/iron"
+          },
+          {
+            "item": "immersiveengineering:hammer"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:plate_iron"
+        }
+      },
+      "replaces": [
+        "immersiveengineering:crafting/plate_iron_hammering"
+      ],
+      "reason": "Two ingots per manually hammered plate; native tool remainder and the powered one-ingot metal press are retained.",
+      "native_evidence": {
+        "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+        "path": "data/immersiveengineering/recipe/crafting/plate_iron_hammering.json",
+        "sha256": "11aa7836885ffb4bd34ae6b3beb2b7896535115a3e724891a4e6c2d9f5e58443",
+        "serializer": "minecraft:crafting_shapeless"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/manual/plate_steel",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "c:ingots/steel"
+          },
+          {
+            "tag": "c:ingots/steel"
+          },
+          {
+            "item": "immersiveengineering:hammer"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "immersiveengineering:plate_steel"
+        }
+      },
+      "replaces": [
+        "immersiveengineering:crafting/plate_steel_hammering"
+      ],
+      "reason": "Two ingots per manually hammered plate; native tool remainder and the powered one-ingot metal press are retained.",
+      "native_evidence": {
+        "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+        "path": "data/immersiveengineering/recipe/crafting/plate_steel_hammering.json",
+        "sha256": "91350eacf9d555930e1d4355adfe083c7c464bd10b874ff2362d324300b0317a",
+        "serializer": "minecraft:crafting_shapeless"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/chemical_infuser",
+      "recipe": {
+        "type": "mekanism:mek_data",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/infused"
+          },
+          "C": {
+            "tag": "c:circuits/basic"
+          },
+          "T": {
+            "item": "mekanism:advanced_chemical_tank"
+          },
+          "X": {
+            "item": "mekanism:steel_casing"
+          },
+          "!": {
+            "item": "kubejs:sealed_process_chamber"
+          },
+          "@": {
+            "item": "kubejs:control_assembly"
+          }
+        },
+        "pattern": [
+          "!C@",
+          "TXT",
+          "ACA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:chemical_infuser"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/chemical_infuser",
+        "mekanism:chemical_infuser"
+      ],
+      "reason": "Advanced tanks add a manufactured process-vessel requirement; Mekanism data-transfer serializer remains unchanged."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/control_circuit/advanced",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "mekanism:basic_control_circuit"
+          },
+          {
+            "item": "mekanism:basic_control_circuit"
+          },
+          {
+            "item": "mekanism:alloy_infused"
+          },
+          {
+            "item": "mekanism:alloy_infused"
+          },
+          {
+            "item": "mekanism:alloy_infused"
+          },
+          {
+            "item": "mekanism:alloy_infused"
+          },
+          {
+            "item": "kubejs:precision_mechanism"
+          },
+          {
+            "item": "kubejs:control_assembly"
+          },
+          {
+            "item": "minecraft:redstone_block"
+          }
+        ],
+        "result": {
+          "id": "mekanism:advanced_control_circuit",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "kubejs:expert/mekanism/control_circuit/advanced",
+        "mekanism:control_circuit/advanced",
+        "mekanism:control_circuit/infused_advanced"
+      ],
+      "reason": "Two previous-tier circuits now produce one next-tier circuit. Existing cross-mod gates remain; basic infusing stays available before any advanced circuit."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/control_circuit/elite",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "mekanism:advanced_control_circuit"
+          },
+          {
+            "item": "mekanism:advanced_control_circuit"
+          },
+          {
+            "item": "mekanism:alloy_reinforced"
+          },
+          {
+            "item": "mekanism:alloy_reinforced"
+          },
+          {
+            "item": "mekanism:alloy_reinforced"
+          },
+          {
+            "item": "mekanism:alloy_reinforced"
+          },
+          {
+            "item": "kubejs:dimensional_matrix"
+          },
+          {
+            "item": "kubejs:quantum_processor"
+          },
+          {
+            "item": "minecraft:diamond_block"
+          }
+        ],
+        "result": {
+          "id": "mekanism:elite_control_circuit",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "kubejs:expert/mekanism/control_circuit/elite",
+        "mekanism:control_circuit/elite",
+        "mekanism:control_circuit/infused_elite"
+      ],
+      "reason": "Two previous-tier circuits now produce one next-tier circuit. Existing cross-mod gates remain; basic infusing stays available before any advanced circuit."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/control_circuit/ultimate",
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "mekanism:elite_control_circuit"
+          },
+          {
+            "item": "mekanism:elite_control_circuit"
+          },
+          {
+            "item": "mekanism:alloy_atomic"
+          },
+          {
+            "item": "mekanism:alloy_atomic"
+          },
+          {
+            "item": "mekanism:alloy_atomic"
+          },
+          {
+            "item": "mekanism:alloy_atomic"
+          },
+          {
+            "item": "kubejs:stellar_alloy"
+          },
+          {
+            "item": "kubejs:radiation_shield"
+          },
+          {
+            "item": "kubejs:quantum_processor"
+          }
+        ],
+        "result": {
+          "id": "mekanism:ultimate_control_circuit",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "kubejs:expert/mekanism/control_circuit/ultimate",
+        "mekanism:control_circuit/ultimate",
+        "mekanism:control_circuit/infused_ultimate"
+      ],
+      "reason": "Two previous-tier circuits now produce one next-tier circuit. Existing cross-mod gates remain; basic infusing stays available before any advanced circuit."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/crusher",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:buckets/lava"
+          },
+          "C": {
+            "tag": "c:circuits/basic"
+          },
+          "R": {
+            "tag": "c:storage_blocks/redstone"
+          },
+          "X": {
+            "item": "mekanism:steel_casing"
+          },
+          "!": {
+            "item": "kubejs:electromechanical_drive"
+          },
+          "@": {
+            "item": "kubejs:industrial_chassis"
+          }
+        },
+        "pattern": [
+          "!C@",
+          "BXB",
+          "RCR"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:crusher"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/crusher",
+        "mekanism:crusher"
+      ],
+      "reason": "Existing cross-mod machine recipe and serializer retained; raw iron/redstone positions require storage blocks."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/electrolytic_separator",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "mekanism:electrolytic_core"
+          },
+          "A": {
+            "tag": "mekanism:alloys/infused"
+          },
+          "I": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "R": {
+            "tag": "c:storage_blocks/redstone"
+          },
+          "!": {
+            "item": "kubejs:sealed_process_chamber"
+          },
+          "@": {
+            "item": "kubejs:control_assembly"
+          }
+        },
+        "pattern": [
+          "!R@",
+          "A#A",
+          "IRI"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:electrolytic_separator"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/electrolytic_separator",
+        "mekanism:electrolytic_separator"
+      ],
+      "reason": "Existing cross-mod machine recipe and serializer retained; raw iron/redstone positions require storage blocks."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/enrichment_chamber",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/basic"
+          },
+          "C": {
+            "tag": "c:circuits/basic"
+          },
+          "I": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "X": {
+            "item": "mekanism:steel_casing"
+          },
+          "!": {
+            "item": "kubejs:electromechanical_drive"
+          },
+          "@": {
+            "item": "kubejs:industrial_chassis"
+          }
+        },
+        "pattern": [
+          "!C@",
+          "IXI",
+          "ACA"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:enrichment_chamber"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/enrichment_chamber",
+        "mekanism:enrichment_chamber"
+      ],
+      "reason": "Existing cross-mod machine recipe and serializer retained; raw iron/redstone positions require storage blocks."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/metallurgic_infuser",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          "IFI",
+          "RCR",
+          "OFS"
+        ],
+        "key": {
+          "I": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "F": {
+            "item": "ironfurnaces:iron_furnace"
+          },
+          "R": {
+            "tag": "c:storage_blocks/redstone"
+          },
+          "C": {
+            "item": "kubejs:industrial_chassis"
+          },
+          "O": {
+            "tag": "c:storage_blocks/osmium"
+          },
+          "S": {
+            "item": "mekanism:steel_casing"
+          }
+        },
+        "result": {
+          "id": "mekanism:metallurgic_infuser",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "kubejs:expert/mekanism/metallurgic_infuser",
+        "mekanism:metallurgic_infuser"
+      ],
+      "reason": "Two iron furnaces plus iron/redstone/osmium blocks and casing; no infused alloy, circuit or precision mechanism is required."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/module_base",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "H": {
+            "item": "mekanism:hdpe_sheet"
+          },
+          "T": {
+            "tag": "c:storage_blocks/tin"
+          },
+          "S": {
+            "item": "immersiveengineering:plate_steel"
+          },
+          "C": {
+            "item": "mekanism:elite_control_circuit"
+          },
+          "B": {
+            "tag": "c:ingots/bronze"
+          }
+        },
+        "pattern": [
+          "HTH",
+          "SCS",
+          "BTB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:module_base"
+        }
+      },
+      "replaces": [
+        "mekanism:module_base"
+      ],
+      "reason": "Each installed module funds HDPE manufacture and an elite circuit; no nuclear product or module is required to make its own base.",
+      "native_evidence": {
+        "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+        "path": "data/mekanism/recipe/module_base.json",
+        "sha256": "45ebd3d71dad492afb82ecd77462ef1eae9f30c5ac794abe64313e0dc9f3cb2d",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/precision_sawmill",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "A": {
+            "tag": "mekanism:alloys/infused"
+          },
+          "C": {
+            "tag": "c:circuits/basic"
+          },
+          "I": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "X": {
+            "item": "mekanism:steel_casing"
+          },
+          "!": {
+            "item": "kubejs:electromechanical_drive"
+          },
+          "@": {
+            "item": "kubejs:industrial_chassis"
+          }
+        },
+        "pattern": [
+          "!C@",
+          "AXA",
+          "ICI"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:precision_sawmill"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/precision_sawmill",
+        "mekanism:precision_sawmill"
+      ],
+      "reason": "Existing cross-mod machine recipe and serializer retained; raw iron/redstone positions require storage blocks."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/rotary_condensentrator",
+      "recipe": {
+        "type": "mekanism:mek_data",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "mekanism:advanced_fluid_tank"
+          },
+          "C": {
+            "tag": "c:circuits/basic"
+          },
+          "E": {
+            "item": "mekanism:energy_tablet"
+          },
+          "G": {
+            "tag": "c:glass_blocks/cheap"
+          },
+          "T": {
+            "item": "mekanism:advanced_chemical_tank"
+          },
+          "!": {
+            "item": "kubejs:sealed_process_chamber"
+          },
+          "@": {
+            "item": "kubejs:control_assembly"
+          }
+        },
+        "pattern": [
+          "!C@",
+          "TE#",
+          "GCG"
+        ],
+        "result": {
+          "count": 1,
+          "id": "mekanism:rotary_condensentrator"
+        }
+      },
+      "replaces": [
+        "kubejs:expert_v042/mekanism/rotary_condensentrator",
+        "mekanism:rotary_condensentrator"
+      ],
+      "reason": "Advanced tanks add a manufactured process-vessel requirement; Mekanism data-transfer serializer remains unchanged."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/mekanism/steel_casing",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          "SGS",
+          "PCP",
+          "SOS"
+        ],
+        "key": {
+          "S": {
+            "tag": "c:storage_blocks/steel"
+          },
+          "G": {
+            "tag": "c:glass_blocks/cheap"
+          },
+          "P": {
+            "item": "immersiveengineering:plate_steel"
+          },
+          "C": {
+            "item": "kubejs:industrial_chassis"
+          },
+          "O": {
+            "tag": "c:storage_blocks/osmium"
+          }
+        },
+        "result": {
+          "id": "mekanism:steel_casing",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "kubejs:expert/mekanism/steel_casing",
+        "mekanism:steel_casing"
+      ],
+      "reason": "Four steel blocks, an osmium block, two steel plates and industrial chassis; IE blast-furnace steel bootstraps before Mekanism."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/minecraft/furnace",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          "CCC",
+          "CSC",
+          "CCC"
+        ],
+        "key": {
+          "C": {
+            "tag": "minecraft:stone_crafting_materials"
+          },
+          "S": {
+            "item": "minecraft:chest"
+          }
+        },
+        "result": {
+          "id": "minecraft:furnace",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "minecraft:furnace"
+      ],
+      "reason": "QM Recipe 1.zs:312; wooden chest is a real ingredient."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/minecraft/hopper",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          "I I",
+          "ICI",
+          "UI "
+        ],
+        "key": {
+          "I": {
+            "item": "minecraft:iron_ingot"
+          },
+          "C": {
+            "item": "minecraft:chest"
+          },
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          }
+        },
+        "result": {
+          "id": "minecraft:hopper",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "minecraft:hopper"
+      ],
+      "reason": "QM Recipe 1.zs:372; unused full iron-storage upgrade plus a vanilla chest represents the industrial chest kit without consuming a populated storage inventory."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/minecraft/piston",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          "WWW",
+          "CIC",
+          "CGC"
+        ],
+        "key": {
+          "W": {
+            "tag": "minecraft:wooden_slabs"
+          },
+          "C": {
+            "tag": "minecraft:stone_crafting_materials"
+          },
+          "I": {
+            "item": "immersiveengineering:stick_iron"
+          },
+          "G": {
+            "item": "railcraft:copper_gear"
+          }
+        },
+        "result": {
+          "id": "minecraft:piston",
+          "count": 1
+        }
+      },
+      "replaces": [
+        "minecraft:piston",
+        "aether:skyroot_piston",
+        "terralith:piston_alt"
+      ],
+      "reason": "QM Recipe 4.zs:327; Railcraft copper gear replaces Thermal copper gear, manual plates and rods remain available."
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/basic_to_copper_tier_upgrade",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:basic_to_copper_tier_upgrade"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "C": {
+            "item": "minecraft:lever"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:basic_to_copper_tier_upgrade"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:basic_to_copper_tier_upgrade"
+      ],
+      "reason": "Eight copper blocks then eight iron blocks on every path, including native in-world tier upgrades.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/basic_to_copper_tier_upgrade.json",
+        "sha256": "96c00235ef7fe7aaf6d7216da548fcfbbc97a45d6ccf27b46c1eef2d3f29cea9",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/basic_to_iron_tier_upgrade",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "C": {
+            "item": "sophisticatedstorage:basic_to_copper_tier_upgrade"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:basic_to_iron_tier_from_basic_to_copper_tier",
+        "sophisticatedstorage:basic_to_iron_tier_upgrade"
+      ],
+      "reason": "Eight copper blocks then eight iron blocks on every path, including native in-world tier upgrades.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/basic_to_iron_tier_upgrade.json",
+        "sha256": "8bd26a768207f1007fd7955f86add09a618911a53b5a9cd82d04bbc529781ebe",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/copper_barrel",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:copper_barrel"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:barrel"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:copper_barrel"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:copper_barrel"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/copper_barrel.json",
+        "sha256": "54c4529d09ba539da855af6bc1d22f91a98af2058c1257a08dcdf2454b32e8a2",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/copper_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:copper_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:chest"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:copper_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:copper_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/copper_chest.json",
+        "sha256": "aed5094cdca2c9600d658d95d5beb7917b25421c4774fceb1c20e413e69b77a2",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/copper_shulker_box",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:copper_shulker_box"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:shulker_box"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:copper_shulker_box"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:copper_shulker_box"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/copper_shulker_box.json",
+        "sha256": "1aef0978ae970299f28fb3fd7fafba47bd473c2777af6c6a878e8295be2598a7",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/copper_to_iron_tier_upgrade",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:copper_to_iron_tier_upgrade"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "C": {
+            "item": "minecraft:lever"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BCB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:copper_to_iron_tier_upgrade"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:copper_to_iron_tier_upgrade"
+      ],
+      "reason": "Eight copper blocks then eight iron blocks on every path, including native in-world tier upgrades.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/copper_to_iron_tier_upgrade.json",
+        "sha256": "37f30299d4eac600c95aad77e3a1a8d648aa0c915ffdbddc7b62fdf71827389c",
+        "serializer": "minecraft:crafting_shaped"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/double_copper_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:copper_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:double_chest_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_copper_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:chest"
+          }
+        },
+        "pattern": [
+          "USU"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:copper_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:double_copper_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/double_copper_chest.json",
+        "sha256": "23d11a9dc1587433b54a1f8f7c439c8c7653af500efb382e6b7cf14535475064",
+        "serializer": "sophisticatedstorage:double_chest_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/double_iron_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:double_chest_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:chest"
+          }
+        },
+        "pattern": [
+          "USU"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:double_iron_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/double_iron_chest.json",
+        "sha256": "bc617cdb9d3051b02198ae34f0665434cf917e85e527311611472acd4061e2c1",
+        "serializer": "sophisticatedstorage:double_chest_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/double_iron_chest_from_copper_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:double_chest_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:copper_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:copper_chest"
+          }
+        },
+        "pattern": [
+          "USU"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:double_iron_chest_from_copper_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/double_iron_chest_from_copper_chest.json",
+        "sha256": "41ae0ad89bd3d1053391e80550d7c0208743197ec063f7719b90cf7eaa7ab0aa",
+        "serializer": "sophisticatedstorage:double_chest_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_barrel",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_barrel"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:barrel"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_barrel"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_barrel"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_barrel.json",
+        "sha256": "7f23f813258de5411a00e0c0b6c16d919db0066bd214d63708eef658a52089b0",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_barrel_from_copper_barrel",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_barrel"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:copper_barrel"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_barrel"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_barrel_from_copper_barrel"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_barrel_from_copper_barrel.json",
+        "sha256": "a4f2471df12e75a405416ac6f85df6a91fc9b02831993d0931e25b2361ab3d93",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:chest"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_chest.json",
+        "sha256": "5b5ec26049dc2055e629bd8d510d32a830ad3195dce05face0e0969408244ede",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_chest_from_copper_chest",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_chest"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:copper_chest"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_chest"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_chest_from_copper_chest"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_chest_from_copper_chest.json",
+        "sha256": "e267e7d7a534c3fd97cf253d0327738e08bc9b58d3213cce6696510aa10c1a4a",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_shulker_box",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_shulker_box"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:shulker_box"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_shulker_box"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_shulker_box"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_shulker_box.json",
+        "sha256": "b363882e7ceb9a7a3314294165302ff97ed57e77ecd6eebef356ae4e13199f18",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/iron_shulker_box_from_copper_shulker_box",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:iron_shulker_box"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:copper_shulker_box"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:iron_shulker_box"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:iron_shulker_box_from_copper_shulker_box"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/iron_shulker_box_from_copper_shulker_box.json",
+        "sha256": "f6e1263c82b0516b1b1b72522c2f5b13df5164aaf029e752a483b84eaa71e92a",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_copper_barrel_1",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_copper_barrel_1"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_1"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_copper_barrel_1"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_copper_barrel_1"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_copper_barrel_1.json",
+        "sha256": "cc55bddd8ce590733e21565ce925f392d1b8783ea40409d127e2bbc9c6764a12",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_copper_barrel_2",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_copper_barrel_2"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_2"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_copper_barrel_2"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_copper_barrel_2"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_copper_barrel_2.json",
+        "sha256": "11cdf7eaa3099c8b384b354e1e017e19f446b609597c9bd6b8f55e163125d74f",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_copper_barrel_3",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_copper_barrel_3"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_3"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_copper_barrel_3"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_copper_barrel_3"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_copper_barrel_3.json",
+        "sha256": "b4cff78f909364fc1d9020ec20e9dc73eeea3cef3f961213ce74d29d74176063",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_copper_barrel_4",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_copper_barrel_4"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_4"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_copper_barrel_4"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_copper_barrel_4"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_copper_barrel_4.json",
+        "sha256": "737e8fd2afaff299d44ecff945163af4124508aeee0f20f977d5c0887788b9e3",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_1",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_1"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_1"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_1"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_1"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_1.json",
+        "sha256": "3b45ffc634e2efc42c5be35124c1b721ce32a90a3e54279c0d8a4d07a0b08d04",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_1_from_limited_copper_barrel_1",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_1"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_copper_barrel_1"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_1"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_1_from_limited_copper_barrel_1"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_1_from_limited_copper_barrel_1.json",
+        "sha256": "6c0dd739a40f7a0e7e604e04919a2a80839a4711838d4730487752fafbd1afd7",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_2",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_2"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_2"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_2"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_2"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_2.json",
+        "sha256": "de8e96e71e1f7c4ebda51420eb686d470df4681f2d270451c86592c36f7b7541",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_2_from_limited_copper_barrel_2",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_2"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_copper_barrel_2"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_2"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_2_from_limited_copper_barrel_2"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_2_from_limited_copper_barrel_2.json",
+        "sha256": "c7d80fd41944b0a68da3d0020e0cfcc5b6a41a38b6d4da1b20c7e86c3dc2ad66",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_3",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_3"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_3"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_3"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_3"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_3.json",
+        "sha256": "240a28316f35a5eab9122203b35c7484cc0a0afa155f26abb39bf27be13353c6",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_3_from_limited_copper_barrel_3",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_3"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_copper_barrel_3"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_3"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_3_from_limited_copper_barrel_3"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_3_from_limited_copper_barrel_3.json",
+        "sha256": "07659c972bddc1c816404f7d65fd6f1b6acab9bcf76150696520ad36c1ccc3a9",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_4",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_4"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "U": {
+            "item": "sophisticatedstorage:basic_to_iron_tier_upgrade"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_barrel_4"
+          }
+        },
+        "pattern": [
+          "US"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_4"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_4"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_4.json",
+        "sha256": "023df3002f1b9b40c58aca82f025d50859ebc7d5517d291e9fd617b93e9c474e",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    },
+    {
+      "id": "kubejs:hardcore_workshop/storage/limited_iron_barrel_4_from_limited_copper_barrel_4",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "sophisticatedcore:item_enabled",
+            "itemRegistryName": "sophisticatedstorage:limited_iron_barrel_4"
+          }
+        ],
+        "type": "sophisticatedstorage:storage_tier_upgrade",
+        "category": "misc",
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "sophisticatedstorage:limited_copper_barrel_4"
+          }
+        },
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "result": {
+          "count": 1,
+          "id": "sophisticatedstorage:limited_iron_barrel_4"
+        }
+      },
+      "replaces": [
+        "sophisticatedstorage:limited_iron_barrel_4_from_limited_copper_barrel_4"
+      ],
+      "reason": "Native storage serializer retained; singles pay one full tier, doubles pay two full tier kits.",
+      "native_evidence": {
+        "jar": "sophisticatedstorage-1.21.1-1.6.7.2184.jar",
+        "path": "data/sophisticatedstorage/recipe/limited_iron_barrel_4_from_limited_copper_barrel_4.json",
+        "sha256": "ad857b0c92dd0d3f0012bdf3e665b406d7dc1073131128a0da7d7a608429f382",
+        "serializer": "sophisticatedstorage:storage_tier_upgrade"
+      }
+    }
+  ],
+  "bootstrap_targets": [
+    "minecraft:furnace",
+    "minecraft:piston",
+    "minecraft:hopper",
+    "ironfurnaces:iron_furnace",
+    "sophisticatedstorage:iron_chest",
+    "mekanism:steel_casing",
+    "mekanism:metallurgic_infuser",
+    "mekanism:enrichment_chamber"
+  ],
+  "preserved_native_recipes": [
+    "immersiveengineering:crafting/hammer",
+    "immersiveengineering:crafting/stick_iron",
+    "immersiveengineering:metalpress/plate_iron",
+    "immersiveengineering:metalpress/plate_copper",
+    "immersiveengineering:metalpress/plate_gold",
+    "immersiveengineering:metalpress/plate_steel",
+    "immersiveengineering:metalpress/gear_copper",
+    "immersiveengineering:blastfurnace/steel"
+  ],
+  "food_recipe_changes": false,
+  "audit": {
+    "all_pinned_mod_archives_examined": 128,
+    "static_recipe_files_examined": 21234,
+    "alternate_piston_sources_removed": [
+      "aether:skyroot_piston",
+      "terralith:piston_alt"
+    ],
+    "gear_tags_examined": [
+      "c:gears/copper",
+      "c:gears/iron",
+      "c:gears/gold"
+    ],
+    "note": "Native recipe JSON was inspected without running third-party code; recipe visibility and storage preservation require the separate native runtime fixture.",
+    "unique_native_recipe_ids_examined": 21202
+  },
+  "allowed_native_output_alternatives": {
+    "sophisticatedstorage:copper_shulker_from_copper_chest": "Native same-tier shape conversion already consumes the full copper chest; preserves its storage components.",
+    "sophisticatedstorage:iron_shulker_from_iron_chest": "Native same-tier shape conversion already consumes the full iron chest; preserves its storage components."
+  },
+  "allowed_native_tag_output_processes": {
+    "immersiveengineering:metalpress/gear_copper": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:gears/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/gear_gold": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:gears/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/gear_iron": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:gears/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/plate_copper": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:plates/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/plate_gold": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:plates/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/plate_iron": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:plates/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "immersiveengineering:metalpress/plate_steel": {
+      "serializer": "immersiveengineering:metal_press",
+      "output_tag": "c:plates/steel",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/copper/gear_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/copper/gear_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/copper/plate_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/copper/plate_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/copper",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/gold/gear_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/gold/gear_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/gold/plate_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/gold/plate_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/gold",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/iron/gear_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/iron/gear_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:gears/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/iron/plate_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/iron/plate_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/iron",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/steel/plate_gold_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/steel",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    },
+    "modernfoundry:smeltery/casting/metal/steel/plate_sand_cast": {
+      "serializer": "modernfoundry:casting_table",
+      "output_tag": "c:plates/steel",
+      "reason": "Retained manufacturing route: native powered Metal Press or fuel/cast-based Smeltery, not a cheap crafting-grid alternative."
+    }
+  },
+  "remove_added_ids": [
+    "kubejs:expert/mekanism/control_circuit/advanced",
+    "kubejs:expert/mekanism/control_circuit/elite",
+    "kubejs:expert/mekanism/control_circuit/ultimate",
+    "kubejs:expert/mekanism/metallurgic_infuser",
+    "kubejs:expert/mekanism/steel_casing",
+    "kubejs:expert_v042/mekanism/chemical_infuser",
+    "kubejs:expert_v042/mekanism/crusher",
+    "kubejs:expert_v042/mekanism/electrolytic_separator",
+    "kubejs:expert_v042/mekanism/enrichment_chamber",
+    "kubejs:expert_v042/mekanism/precision_sawmill",
+    "kubejs:expert_v042/mekanism/rotary_condensentrator"
+  ],
+  "kubejs_removal_semantics": {
+    "native_originals": "event.remove({id}) only visits originalRecipes in pinned KubeJS 2101.7.2-build.377.",
+    "queued_additions": "Explicitly visit event.addedRecipes and call KubeRecipe.remove() on remove_added_ids before adding replacements.",
+    "source_methods": [
+      "dev.latvian.mods.kubejs.recipe.RecipesKubeEvent.forEachRecipe",
+      "dev.latvian.mods.kubejs.recipe.RecipesKubeEvent.applyChanges",
+      "dev.latvian.mods.kubejs.recipe.KubeRecipe.remove"
+    ]
+  }
+}

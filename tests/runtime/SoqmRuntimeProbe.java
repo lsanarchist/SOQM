@@ -73,7 +73,12 @@ public final class SoqmRuntimeProbe {
     private final List<Long> claimedRewardIds = new ArrayList<>();
     private final List<Long> legacySharedRewardIds = new ArrayList<>();
     private final List<Long> completedBranchQuestIds = List.of(
-            0x5140118233B3CC83L, 0x51301145AC657CE8L, 0x513011AAD4652E6FL);
+            0x5140118233B3CC83L, 0x51301145AC657CE8L, 0x513011AAD4652E6FL,
+            0x513011CDE1D10A76L, 0x51301111493CFC21L, 0x51301181BF058BAEL,
+            0x513011087C06E9D8L, 0x5130112F15810A47L, 0x51301138646C9874L,
+            0x513011C521E5B4DDL, 0x51301132F9C95555L, 0x5130113FB494C115L,
+            0x513011ED1A3D11E0L, 0x51301144D5FB95D4L, 0x51301155BDC855A3L,
+            0x513011F1FC51AAE1L, 0x51301125CDBD7A23L);
     private TeamData meTaskTeam;
 
     public SoqmRuntimeProbe() { NeoForge.EVENT_BUS.addListener(this::tick); }
@@ -84,6 +89,7 @@ public final class SoqmRuntimeProbe {
         try {
             if (stage == 0) {
                 check(ServerQuestFile.INSTANCE != null, "FTB quest file is loaded");
+                HardcoreWorkshopProbe.run(server, results);
                 testRecipeEvidence(server);
                 testProgressUpgrade(server);
                 MultiblockMaterialsProbe.run(server, results);
@@ -208,6 +214,7 @@ public final class SoqmRuntimeProbe {
             check(current.getQuest(id) != null && after.isCompleted(current.getQuest(id)),
                     "Completed production branch quests survive changed dependencies by persistent ID");
         }
+        checkNewLessonsUnclaimed(after);
         int sharedMigrations = 0;
         int personalClaims = 0;
         for (Reward oldReward : claimed) {
@@ -236,7 +243,7 @@ public final class SoqmRuntimeProbe {
         }
         check((sharedMigrations == 1625 && personalClaims == 1)
                         || (sharedMigrations == 0 && personalClaims == claimed.size()
-                            && (personalClaims == 1626 || personalClaims == 1627)),
+                            && (personalClaims == 1626 || personalClaims == 1627 || personalClaims == 1628)),
                 "The baseline exercises either the shared upgrade or already personal campaign claims");
         check(partial > 0, "Nonempty partial task progress was exercised");
         upgradeState = after.serializeNBT();
@@ -248,6 +255,19 @@ public final class SoqmRuntimeProbe {
         results.put("partial_tasks_preserved", partial);
         results.put("existing_personal_claims_preserved", personalClaims);
         results.put("completed_branch_quests_preserved", completedBranchQuestIds.size());
+        results.put("moved_mekasuit_quests_with_completed_progress_preserved", 14);
+        results.put("new_equipment_lessons_start_unclaimed", 15);
+    }
+
+    private static void checkNewLessonsUnclaimed(TeamData data) {
+        for (int index = 1; index <= 15; index++) {
+            var quest = ServerQuestFile.INSTANCE.getQuest(0x514C110000000000L + index);
+            check(quest != null && !data.isCompleted(quest), "An additive lesson never inherits an old completion");
+            for (Reward reward : quest.getRewards()) {
+                check(!data.isRewardClaimed(PLAYER, reward) && !data.isRewardClaimed(TEAMMATE, reward),
+                        "An additive personal reward never inherits an unrelated old claim");
+            }
+        }
     }
 
     private void testReloadPersistence(MinecraftServer server) throws Exception {
@@ -278,6 +298,7 @@ public final class SoqmRuntimeProbe {
             check(restoredTeam.isCompleted(ServerQuestFile.INSTANCE.getQuest(id)),
                     "Completed production branch quests remain complete after disk and data reload");
         }
+        checkNewLessonsUnclaimed(restoredTeam);
         for (long id : claimedRewardIds) {
             Reward reward = ServerQuestFile.INSTANCE.getReward(id);
             check(reward != null && restoredTeam.isRewardClaimed(PLAYER, reward)
