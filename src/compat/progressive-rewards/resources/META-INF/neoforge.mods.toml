@@ -3,9 +3,9 @@ loaderVersion="[4,)"
 license="MIT"
 [[mods]]
 modId="qm_progressive_rewards"
-version="0.4.9"
+version="0.4.10"
 displayName="SOQM Production Evidence"
-description='''Records actual manufacture for team technology unlocks and personal quest rewards.'''
+description='''Records actual manufacture for team technology unlocks and safe personal crafting refunds.'''
 [[mixins]]
 config="qm_progressive_rewards.mixins.json"
 [[dependencies.qm_progressive_rewards]]
@@ -48,5 +48,11 @@ side="BOTH"
 modId="sophisticatedstorage"
 type="required"
 versionRange="[1.6.7,1.6.8)"
+ordering="AFTER"
+side="BOTH"
+[[dependencies.qm_progressive_rewards]]
+modId="ironfurnaces"
+type="required"
+versionRange="[4.3.2,4.3.3)"
 ordering="AFTER"
 side="BOTH"

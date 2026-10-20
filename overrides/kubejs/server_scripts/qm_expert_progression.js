@@ -752,7 +752,7 @@ ServerEvents.recipes(function(event) {
           "item": "ae2:fluix_glass_cable"
         },
         "B": {
-          "item": "ironchest:gold_chest"
+          "item": "sophisticatedstorage:iron_to_gold_tier_upgrade"
         },
         "S": {
           "item": "ae2:engineering_processor"

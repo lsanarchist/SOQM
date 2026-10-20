@@ -4561,6 +4561,7 @@
     "ad_astra:engine_frame",
     "ad_astra:fan",
     "ad_astra:iron_rod",
+    "ad_astra:nasa_workbench",
     "ad_astra:ostrum_plate",
     "ad_astra:oxygen_gear",
     "ad_astra:oxygen_sensor",
@@ -4570,14 +4571,24 @@
     "ae2:basic_card",
     "ae2:calculation_processor",
     "ae2:capacity_card",
+    "ae2:cell_component_16k",
     "ae2:cell_component_1k",
+    "ae2:cell_component_256k",
+    "ae2:cell_component_4k",
+    "ae2:cell_component_64k",
     "ae2:certus_quartz_cutting_knife",
     "ae2:certus_quartz_wrench",
+    "ae2:controller",
     "ae2:crafting_card",
+    "ae2:crafting_unit",
+    "ae2:dense_energy_cell",
+    "ae2:drive",
     "ae2:engineering_processor",
     "ae2:fluix_glass_cable",
     "ae2:logic_processor",
     "ae2:memory_card",
+    "ae2:molecular_assembler",
+    "ae2:quantum_link",
     "ae2:quartz_fiber",
     "ae2:wireless_booster",
     "aether:ambrosium_torch",
@@ -4603,20 +4614,26 @@
     "botania:monocle",
     "botania:pink_petal",
     "botania:purple_petal",
+    "botania:runic_altar",
     "botania:super_travel_belt",
     "botania:travel_belt",
     "botania:vine_ball",
     "botania:white_petal",
     "buildcraftcore:gears/gear_gold",
     "buildcraftcore:gears/gear_iron",
+    "buildcraftsilicon:laser",
     "ecologics:azalea_planks",
     "ecologics:coconut_boat",
     "ecologics:coconut_planks",
     "ecologics:walnut_planks",
     "enderio:basic_capacitor",
+    "enderio:basic_capacitor_bank",
     "enderio:double_layer_capacitor",
     "enderio:ensouled_chassis",
     "enderio:octadic_capacitor",
+    "enderio:powered_spawner",
+    "enderio:sag_mill",
+    "enderio:soul_binder",
     "evilcraft:blood_infusion_core",
     "evilcraft:blood_orb_empty",
     "evilcraft:blood_pearl_of_teleportation",
@@ -4630,6 +4647,7 @@
     "exdeorum:golden_mesh",
     "exdeorum:iron_hammer",
     "exdeorum:iron_mesh",
+    "exdeorum:mechanical_hammer",
     "exdeorum:string_mesh",
     "exdeorum:wooden_hammer",
     "exmachinis:comparator_upgrade",
@@ -4663,10 +4681,12 @@
     "immersiveengineering:wirecoil_copper",
     "immersiveengineering:wirecoil_electrum",
     "immersiveengineering:wirecoil_steel",
+    "industrialforegoing:enchantment_extractor",
     "ironfurnaces:augment_blasting",
     "ironfurnaces:augment_fuel",
     "ironfurnaces:augment_smoking",
     "ironfurnaces:augment_speed",
+    "ironfurnaces:netherite_furnace",
     "kubejs:arcane_conduit",
     "kubejs:control_assembly",
     "kubejs:dimensional_matrix",
@@ -4689,14 +4709,30 @@
     "mekanism:alloy_reinforced",
     "mekanism:basic_control_circuit",
     "mekanism:basic_energy_cube",
+    "mekanism:basic_induction_cell",
     "mekanism:basic_universal_cable",
+    "mekanism:chemical_crystallizer",
+    "mekanism:chemical_infuser",
+    "mekanism:digital_miner",
     "mekanism:elite_control_circuit",
     "mekanism:elite_energy_cube",
     "mekanism:elite_universal_cable",
     "mekanism:energy_tablet",
+    "mekanism:laser",
+    "mekanism:pressurized_reaction_chamber",
+    "mekanism:qio_drive_array",
+    "mekanism:qio_drive_base",
+    "mekanism:qio_drive_hyper_dense",
+    "mekanism:qio_drive_supermassive",
+    "mekanism:qio_drive_time_dilating",
     "mekanism:steel_casing",
+    "mekanism:teleporter",
+    "mekanism:thermal_evaporation_controller",
     "mekanism:ultimate_control_circuit",
     "mekanism:ultimate_energy_cube",
+    "mekanismgenerators:fusion_reactor_controller",
+    "mekanismgenerators:gas_burning_generator",
+    "mekanismgenerators:wind_generator",
     "mekanismtools:steel_pickaxe",
     "mekanismtools:steel_shield",
     "millenaire:byzantine_sandstone_tiles",
@@ -4725,6 +4761,10 @@
     "projecte:mobius_fuel",
     "projecte:red_matter",
     "rftoolsbase:information_screen",
+    "rftoolsdim:dimension_builder",
+    "rftoolspower:cell2",
+    "rftoolspower:cell3",
+    "rftoolspower:dimensionalcell_advanced",
     "sophisticatedbackpacks:advanced_magnet_upgrade",
     "sophisticatedbackpacks:advanced_pickup_upgrade",
     "sophisticatedbackpacks:backpack",
@@ -4888,7 +4928,19 @@
     },
     "51301307572A4216": {
       "pool": "logistics",
-      "quest_id": "5130112D00658B23"
+      "quest_id": "5130112D00658B23",
+      "refund": {
+        "output": "ae2:molecular_assembler",
+        "items": [
+          {
+            "item": "ae2:annihilation_core",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/ae2/network/crafting/molecular_assembler"
+        ]
+      }
     },
     "51301307FC046291": {
       "pool": "logistics",
@@ -4936,7 +4988,19 @@
     },
     "513013094719A79D": {
       "pool": "engineering",
-      "quest_id": "514D115314DFB698"
+      "quest_id": "514D115314DFB698",
+      "refund": {
+        "output": "mekanism:chemical_crystallizer",
+        "items": [
+          {
+            "item": "kubejs:sealed_process_chamber",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanism/chemical_crystallizer"
+        ]
+      }
     },
     "51301309811D90FD": {
       "pool": "engineering",
@@ -4997,6 +5061,24 @@
     "5130130B62348F9B": {
       "pool": "engineering",
       "quest_id": "513011ECEDA27FBB"
+    },
+    "5130130B6AA0D8EE": {
+      "pool": "arcane",
+      "quest_id": "513011EAB08A97F7",
+      "refund": {
+        "output": "botania:runic_altar",
+        "items": [
+          {
+            "item": "kubejs:arcane_conduit",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/botania/runic_altar",
+          "kubejs:expert/botania/runic_altar_alt"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t2"
     },
     "5130130B8382D69A": {
       "pool": "expedition",
@@ -5064,7 +5146,19 @@
     },
     "5130130EB85290CA": {
       "pool": "engineering",
-      "quest_id": "513011C1C75B6080"
+      "quest_id": "513011C1C75B6080",
+      "refund": {
+        "output": "mekanism:qio_drive_time_dilating",
+        "items": [
+          {
+            "item": "mekanism:qio_drive_hyper_dense",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/qio_drive_time_dilating"
+        ]
+      }
     },
     "5130130ED419EA38": {
       "pool": "engineering",
@@ -5232,7 +5326,19 @@
     },
     "513013170845F86F": {
       "pool": "logistics",
-      "quest_id": "51301100A7D9F653"
+      "quest_id": "51301100A7D9F653",
+      "refund": {
+        "output": "rftoolspower:cell3",
+        "items": [
+          {
+            "item": "rftoolspower:power_core3",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/rftoolspower/cell3"
+        ]
+      }
     },
     "5130131750266930": {
       "pool": "space",
@@ -5444,7 +5550,19 @@
     },
     "513013217F133F5E": {
       "pool": "engineering",
-      "quest_id": "513011835D892AF4"
+      "quest_id": "513011835D892AF4",
+      "refund": {
+        "output": "mekanism:qio_drive_base",
+        "items": [
+          {
+            "item": "mekanism:ultimate_control_circuit",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/qio_drive_base"
+        ]
+      }
     },
     "51301321AB7A7826": {
       "pool": "equipment",
@@ -5584,7 +5702,19 @@
     },
     "513013289007E058": {
       "pool": "logistics",
-      "quest_id": "5130114905904323"
+      "quest_id": "5130114905904323",
+      "refund": {
+        "output": "ae2:cell_component_4k",
+        "items": [
+          {
+            "item": "ae2:cell_component_1k",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_4k_part"
+        ]
+      }
     },
     "513013289EBC3901": {
       "pool": "power",
@@ -5748,7 +5878,19 @@
     },
     "513013321746A49A": {
       "pool": "logistics",
-      "quest_id": "513011B5F7F592D8"
+      "quest_id": "513011B5F7F592D8",
+      "refund": {
+        "output": "ae2:crafting_unit",
+        "items": [
+          {
+            "item": "ae2:calculation_processor",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/ae2/network/crafting/cpu_crafting_unit"
+        ]
+      }
     },
     "5130133219517772": {
       "pool": "space",
@@ -5900,7 +6042,19 @@
     },
     "51301339588253B4": {
       "pool": "engineering",
-      "quest_id": "513011D2DC7B4947"
+      "quest_id": "513011D2DC7B4947",
+      "refund": {
+        "output": "mekanism:ultimate_energy_cube",
+        "items": [
+          {
+            "item": "minecraft:diamond_block",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/energy_cube/ultimate"
+        ]
+      }
     },
     "51301339B7988906": {
       "pool": "expedition",
@@ -5916,7 +6070,19 @@
     },
     "5130133AA9738553": {
       "pool": "engineering",
-      "quest_id": "5130112203442BAE"
+      "quest_id": "5130112203442BAE",
+      "refund": {
+        "output": "mekanism:qio_drive_hyper_dense",
+        "items": [
+          {
+            "item": "mekanism:qio_drive_base",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/qio_drive_hyper_dense"
+        ]
+      }
     },
     "5130133B3E380E62": {
       "pool": "logistics",
@@ -5928,7 +6094,19 @@
     },
     "5130133BB4B1FDB5": {
       "pool": "power",
-      "quest_id": "513011F6F0D21BC6"
+      "quest_id": "513011F6F0D21BC6",
+      "refund": {
+        "output": "mekanism:laser",
+        "items": [
+          {
+            "item": "mekanism:energy_tablet",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/laser"
+        ]
+      }
     },
     "5130133C09CFA2F5": {
       "pool": "engineering",
@@ -6245,6 +6423,23 @@
     "5130134E50354BFF": {
       "pool": "logistics",
       "quest_id": "5130117D90F459CC"
+    },
+    "5130134EA06A7441": {
+      "pool": "power",
+      "quest_id": "514D113E1E8CF8B1",
+      "refund": {
+        "output": "mekanismgenerators:fusion_reactor_controller",
+        "items": [
+          {
+            "item": "mekanismgenerators:fusion_reactor_frame",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanismgenerators/reactor/controller"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t5"
     },
     "5130134EA6176929": {
       "pool": "masterwork",
@@ -6608,7 +6803,19 @@
     },
     "513013619FF115B2": {
       "pool": "engineering",
-      "quest_id": "5130117AB9046CD2"
+      "quest_id": "5130117AB9046CD2",
+      "refund": {
+        "output": "industrialforegoing:enchantment_extractor",
+        "items": [
+          {
+            "item": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/industrialforegoing/enchantment_extractor"
+        ]
+      }
     },
     "51301361B67CD15F": {
       "pool": "survival",
@@ -6644,7 +6851,19 @@
     },
     "51301362D8E3BEF8": {
       "pool": "logistics",
-      "quest_id": "5130112D86FBD3AF"
+      "quest_id": "5130112D86FBD3AF",
+      "refund": {
+        "output": "ae2:quantum_link",
+        "items": [
+          {
+            "item": "ae2:fluix_pearl",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/blocks/quantum_link"
+        ]
+      }
     },
     "51301363019C927A": {
       "pool": "expedition",
@@ -6778,6 +6997,23 @@
       "pool": "engineering",
       "quest_id": "5130118E4A798482"
     },
+    "513013698733D4DC": {
+      "pool": "logistics",
+      "quest_id": "513011675037BC60",
+      "refund": {
+        "output": "rftoolsdim:dimension_builder",
+        "items": [
+          {
+            "item": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/rftoolsdim/dimension_builder"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t5"
+    },
     "51301369CC589D7D": {
       "pool": "masterwork",
       "quest_id": "513011417ED6EDBA"
@@ -6892,7 +7128,19 @@
     },
     "5130136ECEB91EB7": {
       "pool": "power",
-      "quest_id": "513011E2552BA5EA"
+      "quest_id": "513011E2552BA5EA",
+      "refund": {
+        "output": "mekanism:basic_induction_cell",
+        "items": [
+          {
+            "item": "mekanism:energy_tablet",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/induction/cell/basic"
+        ]
+      }
     },
     "5130136ED075628F": {
       "pool": "power",
@@ -6900,7 +7148,19 @@
     },
     "5130136F27025092": {
       "pool": "engineering",
-      "quest_id": "51301189AE52B1F5"
+      "quest_id": "51301189AE52B1F5",
+      "refund": {
+        "output": "enderio:sag_mill",
+        "items": [
+          {
+            "item": "kubejs:electromechanical_drive",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/enderio/sag_mill"
+        ]
+      }
     },
     "5130136F85F1F7A8": {
       "pool": "power",
@@ -7344,7 +7604,19 @@
     },
     "51301387B66E582C": {
       "pool": "logistics",
-      "quest_id": "513011BBCA06FEA6"
+      "quest_id": "513011BBCA06FEA6",
+      "refund": {
+        "output": "ae2:cell_component_16k",
+        "items": [
+          {
+            "item": "ae2:cell_component_4k",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_16k_part"
+        ]
+      }
     },
     "51301387C3B5AB7B": {
       "pool": "engineering",
@@ -7372,7 +7644,19 @@
     },
     "51301388DABC7CE1": {
       "pool": "logistics",
-      "quest_id": "5130117C8CDC4800"
+      "quest_id": "5130117C8CDC4800",
+      "refund": {
+        "output": "ae2:dense_energy_cell",
+        "items": [
+          {
+            "item": "ae2:energy_cell",
+            "count": 2
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/blocks/energy_dense_energy_cell"
+        ]
+      }
     },
     "513013890312456E": {
       "pool": "logistics",
@@ -7620,7 +7904,19 @@
     },
     "5130139500A324D9": {
       "pool": "engineering",
-      "quest_id": "514D1121D23494BB"
+      "quest_id": "514D1121D23494BB",
+      "refund": {
+        "output": "mekanismgenerators:wind_generator",
+        "items": [
+          {
+            "item": "mekanism:energy_tablet",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanismgenerators/generator/wind"
+        ]
+      }
     },
     "5130139539B8F9FE": {
       "pool": "arcane",
@@ -7744,7 +8040,19 @@
     },
     "51301399C9F0F6DF": {
       "pool": "engineering",
-      "quest_id": "51301151F34C43A4"
+      "quest_id": "51301151F34C43A4",
+      "refund": {
+        "output": "mekanismgenerators:gas_burning_generator",
+        "items": [
+          {
+            "item": "mekanism:steel_casing",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanismgenerators/generator/gas_burning"
+        ]
+      }
     },
     "51301399E0BD22B5": {
       "pool": "expedition",
@@ -7765,6 +8073,23 @@
     "5130139A464F9E75": {
       "pool": "logistics",
       "quest_id": "5130119EFAA043E3"
+    },
+    "5130139A8997083F": {
+      "pool": "engineering",
+      "quest_id": "51301167AE8889AA",
+      "refund": {
+        "output": "enderio:powered_spawner",
+        "items": [
+          {
+            "item": "enderio:soularium_block",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/enderio/powered_spawner"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t3"
     },
     "5130139AC9EF050C": {
       "pool": "space",
@@ -7840,7 +8165,19 @@
     },
     "5130139E508F019A": {
       "pool": "logistics",
-      "quest_id": "513011DA15992023"
+      "quest_id": "513011DA15992023",
+      "refund": {
+        "output": "ae2:cell_component_64k",
+        "items": [
+          {
+            "item": "ae2:cell_component_16k",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_64k_part"
+        ]
+      }
     },
     "5130139E909190A5": {
       "pool": "logistics",
@@ -8040,7 +8377,19 @@
     },
     "513013A93DFE0DE9": {
       "pool": "logistics",
-      "quest_id": "5130119BD717861F"
+      "quest_id": "5130119BD717861F",
+      "refund": {
+        "output": "ae2:controller",
+        "items": [
+          {
+            "item": "ae2:engineering_processor",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/ae2/network/blocks/controller"
+        ]
+      }
     },
     "513013A9507CADE1": {
       "pool": "expedition",
@@ -8070,9 +8419,38 @@
       "pool": "expedition",
       "quest_id": "5130112A26C9C751"
     },
+    "513013AA39F2E133": {
+      "pool": "engineering",
+      "quest_id": "514D110A613D8197",
+      "refund": {
+        "output": "mekanism:chemical_infuser",
+        "items": [
+          {
+            "item": "mekanism:basic_chemical_tank",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/chemical_infuser"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t3"
+    },
     "513013AA3BE5D877": {
       "pool": "engineering",
-      "quest_id": "514D11AB5959BBF5"
+      "quest_id": "514D11AB5959BBF5",
+      "refund": {
+        "output": "mekanism:digital_miner",
+        "items": [
+          {
+            "item": "mekanism:teleportation_core",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanism/digital_miner"
+        ]
+      }
     },
     "513013AA738FF205": {
       "pool": "engineering",
@@ -8162,6 +8540,23 @@
       "pool": "expedition",
       "quest_id": "513011BD18533AD4"
     },
+    "513013AF260BDB13": {
+      "pool": "engineering",
+      "quest_id": "51301148615D2591",
+      "refund": {
+        "output": "enderio:soul_binder",
+        "items": [
+          {
+            "item": "enderio:soularium_block",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/enderio/soul_binder"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t3"
+    },
     "513013AF36F8A4B1": {
       "pool": "engineering",
       "quest_id": "513011C1D784F1C8"
@@ -8240,7 +8635,19 @@
     },
     "513013B443C4C406": {
       "pool": "logistics",
-      "quest_id": "513011D1C9E27BE4"
+      "quest_id": "513011D1C9E27BE4",
+      "refund": {
+        "output": "rftoolspower:cell2",
+        "items": [
+          {
+            "item": "rftoolspower:power_core2",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/rftoolspower/cell2"
+        ]
+      }
     },
     "513013B47359AE81": {
       "pool": "expedition",
@@ -8772,7 +9179,19 @@
     },
     "513013D06151A3E4": {
       "pool": "logistics",
-      "quest_id": "5130117C40A8D2E1"
+      "quest_id": "5130117C40A8D2E1",
+      "refund": {
+        "output": "ae2:drive",
+        "items": [
+          {
+            "item": "ae2:engineering_processor",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/ae2/network/blocks/storage_drive"
+        ]
+      }
     },
     "513013D0A8A9470A": {
       "pool": "arcane",
@@ -8932,7 +9351,19 @@
     },
     "513013D8C495FD30": {
       "pool": "engineering",
-      "quest_id": "5130111D94D99E2B"
+      "quest_id": "5130111D94D99E2B",
+      "refund": {
+        "output": "enderio:basic_capacitor_bank",
+        "items": [
+          {
+            "item": "enderio:basic_capacitor",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/enderio/basic_capacitor_bank"
+        ]
+      }
     },
     "513013D8C4A1C520": {
       "pool": "space",
@@ -8972,7 +9403,19 @@
     },
     "513013DA15BB717C": {
       "pool": "engineering",
-      "quest_id": "5130116A8EF3B812"
+      "quest_id": "5130116A8EF3B812",
+      "refund": {
+        "output": "mekanism:qio_drive_array",
+        "items": [
+          {
+            "item": "mekanism:teleportation_core",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/qio_drive_array"
+        ]
+      }
     },
     "513013DB25814938": {
       "pool": "settlement",
@@ -9004,7 +9447,19 @@
     },
     "513013DC49F7014C": {
       "pool": "engineering",
-      "quest_id": "513011156F29CC4E"
+      "quest_id": "513011156F29CC4E",
+      "refund": {
+        "output": "mekanism:pressurized_reaction_chamber",
+        "items": [
+          {
+            "item": "mekanism:basic_chemical_tank",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/mekanism/pressurized_reaction_chamber"
+        ]
+      }
     },
     "513013DC77C3F03E": {
       "pool": "space",
@@ -9044,7 +9499,19 @@
     },
     "513013DD5A98AACC": {
       "pool": "logistics",
-      "quest_id": "5130110B5D09E918"
+      "quest_id": "5130110B5D09E918",
+      "refund": {
+        "output": "ae2:cell_component_256k",
+        "items": [
+          {
+            "item": "ae2:cell_component_64k",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/ae2/network/cells/item_storage_components_cell_256k_part"
+        ]
+      }
     },
     "513013DD68A4C653": {
       "pool": "logistics",
@@ -9065,6 +9532,23 @@
     "513013DE3D460BF5": {
       "pool": "equipment",
       "quest_id": "514D11521F7911EE"
+    },
+    "513013DE4673092F": {
+      "pool": "engineering",
+      "quest_id": "514D11F90042E7F4",
+      "refund": {
+        "output": "mekanism:thermal_evaporation_controller",
+        "items": [
+          {
+            "item": "mekanism:thermal_evaporation_block",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/thermal_evaporation/controller"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t2"
     },
     "513013DEA2E5AA07": {
       "pool": "survival",
@@ -9152,7 +9636,19 @@
     },
     "513013E373AE02B1": {
       "pool": "engineering",
-      "quest_id": "5130111A90908B6C"
+      "quest_id": "5130111A90908B6C",
+      "refund": {
+        "output": "buildcraftsilicon:laser",
+        "items": [
+          {
+            "item": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/buildcraftsilicon/laser"
+        ]
+      }
     },
     "513013E384FE26F5": {
       "pool": "engineering",
@@ -9286,6 +9782,23 @@
       "pool": "equipment",
       "quest_id": "514D11407706C5A7"
     },
+    "513013EA18E2D583": {
+      "pool": "logistics",
+      "quest_id": "5130119B9A6344A6",
+      "refund": {
+        "output": "rftoolspower:dimensionalcell_advanced",
+        "items": [
+          {
+            "item": "rftoolsbase:infused_diamond",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/rftoolspower/dimensionalcell_advanced"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t3"
+    },
     "513013EA47DE4DD5": {
       "pool": "power",
       "quest_id": "5130118AFFA97B98"
@@ -9376,7 +9889,19 @@
     },
     "513013EE40E832FB": {
       "pool": "space",
-      "quest_id": "51301125F300B5D5"
+      "quest_id": "51301125F300B5D5",
+      "refund": {
+        "output": "ad_astra:nasa_workbench",
+        "items": [
+          {
+            "item": "kubejs:control_assembly",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert/ad_astra/nasa_workbench"
+        ]
+      }
     },
     "513013EEDA175A1C": {
       "pool": "arcane",
@@ -9388,7 +9913,19 @@
     },
     "513013EF10E2C094": {
       "pool": "engineering",
-      "quest_id": "513011C1277D6FAE"
+      "quest_id": "513011C1277D6FAE",
+      "refund": {
+        "output": "mekanism:teleporter",
+        "items": [
+          {
+            "item": "mekanism:steel_casing",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/teleporter"
+        ]
+      }
     },
     "513013EF1FA3D878": {
       "pool": "power",
@@ -9448,7 +9985,19 @@
     },
     "513013F1B91CEC0B": {
       "pool": "engineering",
-      "quest_id": "5130119895187FB1"
+      "quest_id": "5130119895187FB1",
+      "refund": {
+        "output": "mekanism:qio_drive_supermassive",
+        "items": [
+          {
+            "item": "mekanism:qio_drive_time_dilating",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v042/mekanism/qio_drive_supermassive"
+        ]
+      }
     },
     "513013F20D03661C": {
       "pool": "equipment",
@@ -9793,6 +10342,23 @@
     "51401313D9130F19": {
       "pool": "expedition",
       "quest_id": "514011AFA54E5162"
+    },
+    "514013166266B601": {
+      "pool": "workshop",
+      "quest_id": "51401117A75D3720",
+      "refund": {
+        "output": "ironfurnaces:netherite_furnace",
+        "items": [
+          {
+            "item": "minecraft:netherite_ingot",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v040/ironfurnaces/furnaces/netherite_furnace"
+        ]
+      },
+      "cube": "kubejs:mayhem_cube_t4"
     },
     "51401316D415D8C9": {
       "pool": "workshop",
@@ -10352,7 +10918,19 @@
     },
     "514013ED2123D744": {
       "pool": "processing",
-      "quest_id": "514011CA86FD67E8"
+      "quest_id": "514011CA86FD67E8",
+      "refund": {
+        "output": "exdeorum:mechanical_hammer",
+        "items": [
+          {
+            "item": "enderio:dark_steel_ingot",
+            "count": 1
+          }
+        ],
+        "recipe_ids": [
+          "kubejs:expert_v040/exdeorum/mechanical_hammer"
+        ]
+      }
     },
     "514013EF38A2EE3B": {
       "pool": "processing",

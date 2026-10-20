@@ -15,6 +15,7 @@ import campaign_compatibility as compatibility
 import campaign_multiblocks as multiblocks
 import campaign_layout as layout
 import campaign_progression as progression
+import campaign_refunds as refunds
 
 
 def read(path):
@@ -151,6 +152,7 @@ class ProductionQuestBranchTests(unittest.TestCase):
                     if "description" in patch:
                         expected = (materials[ident][language]['description'] if ident in materials
                                     else patch['description'][language])
+                        expected = list(expected) + refunds.guidance(language).get(ident, [])
                         self.assertEqual(locale[f"quest.{ident}.quest_desc"], expected)
                     if "title" in patch:
                         expected = (materials[ident][language].get('title', patch['title'][language])

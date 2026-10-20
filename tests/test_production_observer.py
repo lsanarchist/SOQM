@@ -28,6 +28,139 @@ def declaration(source, marker):
 
 class ProductionObserverTests(unittest.TestCase):
     @unittest.skipUnless(shutil.which("java"), "Java 17+ source launcher required for observer checks")
+    def test_furnace_upgrade_requires_consumption_replacement_and_real_actor(self):
+        evidence = (MODULE / "ProductionEvidence.java").read_text(encoding="utf-8")
+        upgrade = (MODULE / "mixin/IronFurnacesUpgradeProductionMixin.java").read_text(encoding="utf-8")
+        harness = r'''import java.util.*;
+class FurnaceUpgradeObserverRegression {
+    static final Item AIR = new Item(), OLD = new Item(), OUTPUT = new Item(), WRONG = new Item();
+    static final Block BEFORE = new Block(OLD), AFTER = new Block(OUTPUT), OTHER = new Block(WRONG);
+    static final BlockPos POS = new BlockPos();
+    static int committed, ownershipReads;
+    static class Item {}
+    static class ItemStack {
+        final Item item;
+        int count;
+        boolean consume = true;
+        ItemStack(Item item) { this(item, 1); }
+        ItemStack(Item item, int count) { this.item = item; this.count = count; }
+        int getCount() { return count; }
+        Item getItem() { return count <= 0 ? AIR : item; }
+        void shrink(int amount) { if (consume) count = Math.max(0, count - amount); }
+        boolean is(Item other) { return getItem() == other; }
+    }
+    record Block(Item item) {
+        Item asItem() { return item; }
+        BlockState defaultBlockState() { return new BlockState(this); }
+    }
+    record BlockState(Block block) {
+        Block getBlock() { return block; }
+        boolean is(Block other) { return block == other; }
+    }
+    static class BlockPos {}
+    static class BlockIronFurnaceTileBase {}
+    static class Level {
+        Block block = AFTER;
+        Object blockEntity = new BlockIronFurnaceTileBase();
+        BlockState getBlockState(BlockPos pos) { return block.defaultBlockState(); }
+        Object getBlockEntity(BlockPos pos) { return blockEntity; }
+    }
+    static class ServerLevel extends Level { Object getServer() { return this; } }
+    static class Player {
+        boolean creative, spectator;
+        boolean isCreative() { return creative; }
+        boolean isSpectator() { return spectator; }
+        UUID getUUID() { return new UUID(0, 1); }
+    }
+    static class ServerPlayer extends Player {}
+    static class FakePlayer extends ServerPlayer {}
+    record UseOnContext(Player player, Level level) {
+        Player getPlayer() { return player; }
+        Level getLevel() { return level; }
+        BlockPos getClickedPos() { return POS; }
+    }
+    static class Team { UUID getId() { return new UUID(0, 2); } }
+    static class TeamManager {
+        Optional<Team> getTeamForPlayerID(UUID id) { ownershipReads++; return Optional.of(new Team()); }
+    }
+    static class ProductionEvidence {
+        static TeamManager manager() { return new TeamManager(); }
+        static boolean isTrackedOutput(ItemStack stack) { return stack.is(OUTPUT); }
+        static void rememberActor(ServerPlayer player, boolean allowed) {}
+        static void record(Object server, UUID player, UUID team, ItemStack output) {
+            check(output.is(OUTPUT), "Only the actual registered output is recorded"); committed++;
+        }
+        __EVIDENCE__
+    }
+    static class Upgrade extends Item {
+        Block from = BEFORE, to = AFTER;
+        __UPGRADE__
+    }
+    static void check(boolean value, String message) { if (!value) throw new AssertionError(message); }
+    static void rejected(Upgrade upgrade, ItemStack stack, int count, UseOnContext context, String message) {
+        int prior = committed;
+        upgrade.qm$afterConsumed(stack, count, context);
+        check(committed == prior, message);
+    }
+    public static void main(String[] args) {
+        Upgrade upgrade = new Upgrade();
+        ServerLevel level = new ServerLevel();
+        ServerPlayer player = new ServerPlayer();
+        UseOnContext context = new UseOnContext(player, level);
+        ItemStack successful = new ItemStack(upgrade);
+        upgrade.qm$afterConsumed(successful, 1, context);
+        check(successful.getCount() == 0 && committed == 1, "Final consumed upgrade retains pre-consumption identity");
+
+        rejected(upgrade, new ItemStack(upgrade, 0), 1, context, "Empty held stack");
+        rejected(upgrade, new ItemStack(WRONG), 1, context, "Consumed wrong item");
+        rejected(upgrade, new ItemStack(upgrade), 0, context, "Zero consumption request");
+        rejected(upgrade, new ItemStack(upgrade, 2), 2, context, "Unexpected native consumption amount");
+        ItemStack unchanged = new ItemStack(upgrade); unchanged.consume = false;
+        rejected(upgrade, unchanged, 1, context, "Requested consumption without actual delta");
+
+        level.block = BEFORE;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Failed replacement retains old block");
+        level.block = OTHER;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Replacement created a different block");
+        level.block = AFTER; level.blockEntity = null;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "No native furnace block entity");
+        level.blockEntity = new Object();
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Wrong block entity type");
+        level.blockEntity = new BlockIronFurnaceTileBase();
+        upgrade.from = AFTER;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Same from/to block");
+        upgrade.from = new Block(OUTPUT);
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Different blocks exposing the same output item");
+        upgrade.from = BEFORE;
+        player.creative = true;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Creative player");
+        player.creative = false; player.spectator = true;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Spectator player");
+        player.spectator = false;
+        rejected(upgrade, new ItemStack(upgrade), 1, new UseOnContext(new FakePlayer(), level), "FakePlayer");
+        rejected(upgrade, new ItemStack(upgrade), 1, new UseOnContext(new Player(), level), "Non-server player");
+        rejected(upgrade, new ItemStack(upgrade), 1, new UseOnContext(null, level), "Absent player");
+        rejected(upgrade, new ItemStack(upgrade), 1, new UseOnContext(player, new Level()), "Client/non-server level");
+        upgrade.to = OTHER; level.block = OTHER;
+        rejected(upgrade, new ItemStack(upgrade), 1, context, "Untracked actual output");
+        check(committed == 1 && ownershipReads == 1, "Every denied path avoids the ledger and ownership lookup");
+        System.out.println("PASS: exact native consumption, replacement, output identity and real survival actor required");
+    }
+}
+'''
+        harness = harness.replace("__EVIDENCE__", "\n".join(declaration(evidence, marker) for marker in (
+            "static boolean realSurvivalPlayer(", "public static void storageUpgraded(", "public static void furnaceUpgraded(",
+        )))
+        harness = harness.replace("__UPGRADE__", declaration(upgrade, "private void qm$afterConsumed("))
+        with tempfile.TemporaryDirectory(prefix="soqm-furnace-observer-") as temporary:
+            path = Path(temporary) / "FurnaceUpgradeObserverRegression.java"
+            path.write_text(harness, encoding="utf-8")
+            result = subprocess.run([shutil.which("java"), "-XX:-UsePerfData", "--source", "17", str(path)],
+                                    capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("PASS: exact native consumption", result.stdout)
+
+    @unittest.skipUnless(shutil.which("java"), "Java 17+ source launcher required for observer checks")
     def test_untracked_outputs_skip_work_without_changing_tracked_manufacture(self):
         policy = (MODULE / "ProductionPolicy.java").read_text(encoding="utf-8")
         evidence = (MODULE / "ProductionEvidence.java").read_text(encoding="utf-8")

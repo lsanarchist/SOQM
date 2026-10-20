@@ -2033,13 +2033,13 @@
           "id": "5130134EA06A7441",
           "team_reward": false,
           "auto": "disabled",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t5",
-            "count": 1
-          },
-          "count": 1,
-          "random_bonus": 0
+          "type": "custom",
+          "icon": "kubejs:mayhem_cube_t5",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power",
+            "soqm:recipe_refund"
+          ]
         }
       ],
       "size": 1.22,
@@ -2299,7 +2299,8 @@
           "icon": "minecraft:redstone",
           "tags": [
             "soqm:progressive_reward",
-            "soqm:reward_pool:power"
+            "soqm:reward_pool:power",
+            "soqm:recipe_refund"
           ]
         }
       ],
@@ -2833,7 +2834,8 @@
           "icon": "minecraft:redstone",
           "tags": [
             "soqm:progressive_reward",
-            "soqm:reward_pool:power"
+            "soqm:reward_pool:power",
+            "soqm:recipe_refund"
           ]
         }
       ],

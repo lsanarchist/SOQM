@@ -3,6 +3,24 @@
   "minVersion": "0.8",
   "package": "qm.questui.mixin",
   "compatibilityLevel": "JAVA_21",
-  "client": ["BaseScreenAccess", "QuestScreenKeysMixin", "ItemTaskTooltipMixin"],
-  "injectors": {"defaultRequire": 1}
+  "client": [
+    "BaseScreenAccess",
+    "QuestScreenKeysMixin",
+    "ItemTaskTooltipMixin",
+    "MinimapScaleMixin",
+    "MinimapAnchorMixin",
+    "UltimineHudMixin",
+    "AdAstraHudMixin",
+    "MekanismEnergyHudMixin",
+    "JadeHudMixin",
+    "PinnedRenderDataAccess",
+    "PinnedTrackerHudMixin",
+    "MinimapBoundsMixin",
+    "MinimapInfoMixin",
+    "ToastSlotsAccess",
+    "RFToolsBuffHudMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

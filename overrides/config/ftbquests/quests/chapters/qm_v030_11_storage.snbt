@@ -18,29 +18,30 @@
     {
       "id": "5130115C2448F78F",
       "x": -10.95,
-      "y": 1.85,
+      "y": 4.65,
       "icon": {
-        "id": "ironchest:copper_chest",
+        "id": "sophisticatedstorage:copper_chest",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_0",
-        "item_ironchest_copper_chest",
         "qm_v040",
-        "soqm_role_reference"
+        "item_sophisticatedstorage_copper_chest",
+        "stage_0",
+        "soqm_role_optional"
       ],
       "dependencies": [
-        "514D010000000002"
+        "514D010000000002",
+        "5142421100000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
           "item": {
-            "id": "ironchest:copper_chest",
+            "id": "sophisticatedstorage:copper_chest",
             "count": 1
           },
           "count": 1,
@@ -63,27 +64,28 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "5130111C4CD728C6",
-      "x": -7.95,
+      "x": -10.95,
       "y": 1.85,
       "icon": {
-        "id": "ironchest:iron_chest",
+        "id": "sophisticatedstorage:iron_chest",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "stage_0",
-        "item_ironchest_iron_chest",
         "qm_v040",
+        "item_sophisticatedstorage_iron_chest",
+        "stage_0",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002"
+        "514D010000000002",
+        "5142421100000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -92,7 +94,7 @@
         {
           "type": "item",
           "item": {
-            "id": "ironchest:iron_chest",
+            "id": "sophisticatedstorage:iron_chest",
             "count": 1
           },
           "count": 1,
@@ -121,21 +123,20 @@
     },
     {
       "id": "513011C482A87300",
-      "x": -4.95,
+      "x": -7.95,
       "y": 1.85,
       "icon": {
-        "id": "ironchest:gold_chest",
+        "id": "sophisticatedstorage:gold_chest",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "item_ironchest_gold_chest",
         "qm_v040",
+        "item_sophisticatedstorage_gold_chest",
         "stage_2",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "5130111C4CD728C6",
         "5130115E1ED084F6"
       ],
@@ -146,7 +147,7 @@
         {
           "type": "item",
           "item": {
-            "id": "ironchest:gold_chest",
+            "id": "sophisticatedstorage:gold_chest",
             "count": 1
           },
           "count": 1,
@@ -175,21 +176,20 @@
     },
     {
       "id": "5130113706F7FC90",
-      "x": -1.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
-        "id": "ironchest:diamond_chest",
+        "id": "sophisticatedstorage:diamond_chest",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "item_ironchest_diamond_chest",
         "qm_v040",
+        "item_sophisticatedstorage_diamond_chest",
         "stage_3",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
         "513011C482A87300",
         "513011AA869D0649"
       ],
@@ -200,7 +200,7 @@
         {
           "type": "item",
           "item": {
-            "id": "ironchest:diamond_chest",
+            "id": "sophisticatedstorage:diamond_chest",
             "count": 1
           },
           "count": 1,
@@ -230,31 +230,31 @@
     },
     {
       "id": "5130113B8DF6EC22",
-      "x": -10.95,
+      "x": -7.95,
       "y": 4.65,
       "icon": {
-        "id": "ironchest:crystal_chest",
+        "id": "sophisticatedstorage:stack_upgrade_tier_1",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "item_ironchest_crystal_chest",
         "qm_v040",
-        "stage_3",
-        "soqm_role_reference"
+        "item_sophisticatedstorage_stack_upgrade_tier_1",
+        "stage_0",
+        "soqm_role_optional"
       ],
       "dependencies": [
         "514D010000000002",
-        "5130113706F7FC90"
+        "5142421100000002"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
-      "optional": false,
+      "optional": true,
       "tasks": [
         {
           "type": "item",
           "item": {
-            "id": "ironchest:crystal_chest",
+            "id": "sophisticatedstorage:stack_upgrade_tier_1",
             "count": 1
           },
           "count": 1,
@@ -277,28 +277,28 @@
           ]
         }
       ],
-      "size": 0.9,
-      "shape": "rsquare",
+      "size": 0.8,
+      "shape": "circle",
       "hide_dependency_lines": true
     },
     {
       "id": "51301185B7779201",
-      "x": -7.95,
-      "y": 4.65,
+      "x": -1.95,
+      "y": 1.85,
       "icon": {
-        "id": "ironchest:obsidian_chest",
+        "id": "sophisticatedstorage:netherite_chest",
         "count": 1
       },
       "tags": [
         "qm_rebuild",
-        "item_ironchest_obsidian_chest",
         "qm_v040",
-        "stage_3",
+        "item_sophisticatedstorage_netherite_chest",
+        "stage_4",
         "soqm_role_reference"
       ],
       "dependencies": [
-        "514D010000000002",
-        "5130113706F7FC90"
+        "5130113706F7FC90",
+        "5130113E390D02AA"
       ],
       "can_repeat": false,
       "ignore_reward_blocking": true,
@@ -307,7 +307,7 @@
         {
           "type": "item",
           "item": {
-            "id": "ironchest:obsidian_chest",
+            "id": "sophisticatedstorage:netherite_chest",
             "count": 1
           },
           "count": 1,
@@ -332,7 +332,7 @@
       ],
       "size": 0.9,
       "shape": "rsquare",
-      "hide_dependency_lines": true
+      "hide_dependency_lines": false
     },
     {
       "id": "5130115694DC485A",
@@ -2542,7 +2542,7 @@
     {
       "id": "51410410000002D9",
       "x": -10.95,
-      "y": 2.77,
+      "y": 5.52,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2557,7 +2557,7 @@
     },
     {
       "id": "51410410000002DA",
-      "x": -7.95,
+      "x": -10.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2573,7 +2573,7 @@
     },
     {
       "id": "51410410000002DB",
-      "x": -4.95,
+      "x": -7.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2589,7 +2589,7 @@
     },
     {
       "id": "51410410000002DC",
-      "x": -1.95,
+      "x": -4.95,
       "y": 2.77,
       "width": 2.72,
       "height": 0.72,
@@ -2605,8 +2605,8 @@
     },
     {
       "id": "51410410000002DD",
-      "x": -10.95,
-      "y": 5.57,
+      "x": -7.95,
+      "y": 5.52,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2621,8 +2621,8 @@
     },
     {
       "id": "51410410000002DE",
-      "x": -7.95,
-      "y": 5.57,
+      "x": -1.95,
+      "y": 2.77,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

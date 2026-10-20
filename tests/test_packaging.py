@@ -49,6 +49,8 @@ def fixture(root):
     write_json(root / "overrides/config/pack.json", {"title": "Тест SOQM"})
     (root / "LICENSE").write_text("Fixture license\n", encoding="utf-8")
     (root / "README.md").write_text("Disposable packaging fixture.\n", encoding="utf-8")
+    (root / "scripts").mkdir()
+    shutil.copyfile(REPOSITORY / "scripts/audit_storage_upgrade.py", root / "scripts/audit_storage_upgrade.py")
     return root
 
 
@@ -173,6 +175,8 @@ class ReleasePackagingTests(unittest.TestCase):
                 self.assertEqual(entry.external_attr >> 16, 0o100644)
                 self.assertNotIn(self.temporary.name.encode(), archive.read(entry.filename))
             self.assertEqual(json.loads(archive.read("manifest.json"))["overrides"], "overrides")
+            self.assertEqual(archive.read("tools/audit_storage_upgrade.py"),
+                             (REPOSITORY / "scripts/audit_storage_upgrade.py").read_bytes())
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 package qm.rewards;
 
 import dev.ftb.mods.ftbteams.api.event.TeamEvent;
+import dev.ftb.mods.ftbquests.events.CustomRewardEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GameType;
@@ -29,11 +30,15 @@ public final class QmProgressiveRewards {
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, QmProgressiveRewards::gameMode);
         TeamEvent.PLAYER_JOINED_PARTY.register(event -> ProductionEvidence.joined(event.getPlayer()));
         TeamEvent.PLAYER_LEFT_PARTY.register(event -> ProductionEvidence.dirtyQuestTeams(event.getPlayerId()));
+        CustomRewardEvent.EVENT.register(RecipeRefunds::deliver);
     }
 
-    private static void reloadListeners(AddReloadListenerEvent event) { event.addListener(new ProductionPolicy()); }
-    private static void starting(ServerStartingEvent event) { ProductionPolicy.loadNow(); }
-    private static void stopped(ServerStoppedEvent event) { ProductionPolicy.clear(); }
+    private static void reloadListeners(AddReloadListenerEvent event) {
+        event.addListener(new ProductionPolicy());
+        event.addListener(new RecipeRefunds());
+    }
+    private static void starting(ServerStartingEvent event) { ProductionPolicy.loadNow(); RecipeRefunds.loadNow(); }
+    private static void stopped(ServerStoppedEvent event) { ProductionPolicy.clear(); RecipeRefunds.clear(); }
     private static void crafted(PlayerEvent.ItemCraftedEvent event) {
         ProductionEvidence.playerCrafted(event.getEntity(), event.getCrafting(), event.getInventory());
     }

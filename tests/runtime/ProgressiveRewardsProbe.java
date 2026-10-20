@@ -7,6 +7,7 @@ import com.google.gson.JsonParser;
 import com.mojang.authlib.GameProfile;
 import dev.ftb.mods.ftblibrary.snbt.SNBT;
 import dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag;
+import dev.ftb.mods.ftbquests.events.CustomRewardEvent;
 import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
 import dev.ftb.mods.ftbquests.quest.TeamData;
 import dev.ftb.mods.ftbquests.quest.reward.CustomReward;
@@ -46,6 +47,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import qm.rewards.ProductionEvidence;
+import qm.rewards.RecipeRefunds;
 
 /** Test-only helper: real native claims and teams; never installed in the pack. */
 public final class ProgressiveRewardsProbe {
@@ -63,6 +65,9 @@ public final class ProgressiveRewardsProbe {
     private static UUID destinationTeam;
     private static long switchedReward;
     private static JsonObject policy;
+    private static long refundPackId;
+    private static long refundCubeId;
+    private static UUID refundTeam;
 
     private ProgressiveRewardsProbe() {}
 
@@ -113,7 +118,7 @@ public final class ProgressiveRewardsProbe {
         results.put("native_actual_reward_catalogue_entries", catalogueEntries);
         results.put("native_actual_policy_loaded_without_fallback", true);
 
-        CustomReward same = custom.getFirst();
+        CustomReward same = custom.stream().filter(reward -> !reward.hasTag(RecipeRefunds.TAG)).findFirst().orElseThrow();
         JsonObject pool = poolFor(same);
         List<JsonObject> start = eligible(first, pool, 0);
         check(start.size() >= 2, "Two distinct initial prizes exercise independent player rolls");
@@ -185,6 +190,7 @@ public final class ProgressiveRewardsProbe {
         results.put("native_unproduced_expensive_prize_rejected", manufacturedId);
         results.put("native_actual_craft_unlock_and_five_draw_prize_delivery", manufacturedId);
 
+        testRecipeRefunds(server, party, first, second, custom, results);
         testTeamSwitch(server, manager, party, second, third, same, results);
         manager.saveNow();
         file.saveNow();
@@ -223,7 +229,7 @@ public final class ProgressiveRewardsProbe {
                 } finally { buffer.release(); }
             }
         }));
-        check(total[0] == 1627 && custom.size() == 1433, "All actual outer rewards and custom callbacks are covered");
+        check(total[0] == 1627 && custom.size() == 1442, "All actual outer rewards and custom callbacks are covered");
         results.put("native_personal_outer_rewards", total[0]);
         results.put("native_custom_rewards_nbt_and_packet_roundtripped", custom.size());
         return custom;
@@ -282,7 +288,7 @@ public final class ProgressiveRewardsProbe {
             }
         }
         check((legacyShared.size() == 1625 && oldPersonal.equals(List.of(BOOK_ID)))
-                        || (legacyShared.isEmpty() && oldPersonal.size() == 1626 && oldPersonal.contains(BOOK_ID)),
+                        || (legacyShared.isEmpty() && (oldPersonal.size() == 1626 || oldPersonal.size() == 1627) && oldPersonal.contains(BOOK_ID)),
                 "Both a legacy shared baseline and an already personal baseline retain every reward");
         after.saveIfChanged();
         migratedSnapshot = readTeam(server, MIGRATION).serializeNBT();
@@ -310,6 +316,7 @@ public final class ProgressiveRewardsProbe {
         party.leave(SECOND); // PlayerList deliberately has no online connection for this UUID.
         TeamData personal = file.getOrCreateTeamData(SECOND);
         check(personal == originalPersonal && personal.isRewardClaimed(SECOND, reward), "Native offline leave merges only this player's claim");
+        check(personal.isRewardClaimed(SECOND, file.getReward(refundPackId)), "A consumed crafting refund also follows its personal owner on leave");
         personal.saveIfChanged();
         TeamData fromDisk = readTeam(server, SECOND);
         check(fromDisk.isRewardClaimed(SECOND, reward) && !fromDisk.isRewardClaimed(FIRST, reward),
@@ -326,16 +333,195 @@ public final class ProgressiveRewardsProbe {
         afterJoin.saveIfChanged();
         TeamData destinationDisk = readTeam(server, destination.getId());
         check(destinationDisk.isRewardClaimed(SECOND, reward), "Post-join dirty hook persists the imported personal claim");
+        check(destinationDisk.isRewardClaimed(SECOND, file.getReward(refundPackId)), "Joining another party retains the exact refund claim key");
         file.addData(destinationDisk, true);
         complete(destinationDisk, reward);
         second.getInventory().clearContent();
         denyDuplicate(second, destinationDisk, reward);
+        denyDuplicate(second, destinationDisk, file.getReward(refundPackId));
         check(inventory(second).isEmpty(), "Changing teams and reloading disk state cannot duplicate a personal reward");
         destinationTeam = destination.getId();
         destinationDisk.saveIfChanged();
         results.put("native_offline_leave_claim_merge_saved_to_disk", true);
         results.put("native_join_claim_merge_saved_to_disk", true);
         results.put("native_team_switch_after_disk_reload_duplicate_rejected", true);
+    }
+
+    private static void testRecipeRefunds(MinecraftServer server, PartyTeam party, ProbePlayer first,
+                                           ProbePlayer second, List<CustomReward> custom,
+                                           Map<String, Object> results) throws Exception {
+        JsonObject config = JsonParser.parseString(Files.readString(Path.of("soqm_probe_config.json"))).getAsJsonObject();
+        JsonObject authored = JsonParser.parseString(Files.readString(Path.of(config.get("recipe_refunds").getAsString()))).getAsJsonObject();
+        int recipeCount = 0;
+        for (JsonElement value : authored.getAsJsonArray("refunds")) {
+            JsonObject refund = value.getAsJsonObject();
+            String output = refund.get("output").getAsString();
+            Set<String> expectedIds = new java.util.HashSet<>();
+            List<CraftingRecipe> actualRecipes = new ArrayList<>();
+            for (JsonElement proof : refund.getAsJsonArray("recipes")) {
+                String id = proof.getAsJsonObject().get("id").getAsString();
+                var holder = server.getRecipeManager().byKey(ResourceLocation.parse(id)).orElseThrow();
+                check(holder.value() instanceof CraftingRecipe, "Refund recipe uses a supported crafting output: " + id);
+                CraftingRecipe recipe = (CraftingRecipe) holder.value();
+                ItemStack result = recipe.getResultItem(server.registryAccess());
+                check(result.getCount() == 1 && BuiltInRegistries.ITEM.getKey(result.getItem()).toString().equals(output),
+                        "Native recipe makes exactly the refund's observed output: " + id);
+                actualRecipes.add(recipe);
+                expectedIds.add(id);
+                recipeCount++;
+            }
+            Set<String> activeIds = new java.util.HashSet<>();
+            for (var holder : server.getRecipeManager().getRecipes()) {
+                if (!(holder.value() instanceof CraftingRecipe recipe)
+                        || !BuiltInRegistries.ITEM.getKey(recipe.getResultItem(server.registryAccess()).getItem()).toString().equals(output)) continue;
+                // Erasure/recolour recipes obligatorily consume the same item.
+                // They cannot pass ProductionEvidence.isManufacture and are not
+                // a cheaper route to the output-only manufacture requirement.
+                if (exactIngredientCount(recipe, output) > 0) continue;
+                activeIds.add(holder.id().toString());
+            }
+            check(activeIds.equals(expectedIds), "All live manufacturing alternatives were reviewed: " + output + " " + activeIds);
+            if (refund.has("world_upgrade")) {
+                JsonObject upgrade = refund.getAsJsonObject("world_upgrade");
+                for (JsonElement proof : upgrade.getAsJsonArray("recipes")) {
+                    String id = proof.getAsJsonObject().get("id").getAsString();
+                    var holder = server.getRecipeManager().byKey(ResourceLocation.parse(id)).orElseThrow();
+                    check(holder.value() instanceof CraftingRecipe, "World-upgrade item has a supported recipe: " + id);
+                    CraftingRecipe recipe = (CraftingRecipe) holder.value();
+                    check(BuiltInRegistries.ITEM.getKey(recipe.getResultItem(server.registryAccess()).getItem()).toString()
+                                    .equals(upgrade.get("item").getAsString()),
+                            "The reviewed upgrade recipe makes the exact item consumed by the native upgrade hook");
+                    actualRecipes.add(recipe);
+                    recipeCount++;
+                }
+            }
+            for (JsonElement prizeValue : refund.getAsJsonArray("items")) {
+                JsonObject prize = prizeValue.getAsJsonObject();
+                int minimum = actualRecipes.stream().mapToInt(recipe -> exactIngredientCount(recipe, item(prize))).min().orElseThrow();
+                check(minimum == prize.get("minimum_consumed").getAsInt()
+                                && prize.get("count").getAsInt() <= minimum,
+                        "Fixed refund is backed by the actual minimum direct ingredient count: " + output + " / " + item(prize));
+            }
+        }
+        check(authored.getAsJsonArray("refunds").size() == 41, "Every reviewed refund has live recipe-cost coverage");
+        results.put("native_refund_recipe_costs_checked", recipeCount);
+
+        CustomReward pack = custom.stream().filter(reward -> {
+            JsonObject mapping = policy.getAsJsonObject("reward_mappings").getAsJsonObject(reward.getCodeString());
+            return mapping.has("refund") && mapping.getAsJsonObject("refund").get("output").getAsString().equals("ae2:drive");
+        }).findFirst().orElseThrow();
+        CustomReward cube = custom.stream().filter(reward -> {
+            JsonObject mapping = policy.getAsJsonObject("reward_mappings").getAsJsonObject(reward.getCodeString());
+            return mapping.has("refund") && mapping.has("cube")
+                    && mapping.getAsJsonObject("refund").get("output").getAsString().equals("ironfurnaces:netherite_furnace");
+        }).findFirst().orElseThrow();
+        TeamData claims = ServerQuestFile.INSTANCE.getOrCreateTeamData(party);
+        complete(claims, pack); // Includes the old completed-but-unclaimed world case.
+        first.getInventory().clearContent();
+        first.getInventory().add(new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("ae2:drive"))));
+        Map<String, Integer> gift = inventory(first);
+        int beforeCalls = first.random.calls;
+        claims.claimReward(first, pack, false);
+        check(!claims.isRewardClaimed(FIRST, pack) && claims.getRewardClaimTime(FIRST, pack).isEmpty()
+                        && inventory(first).equals(gift) && first.random.calls == beforeCalls,
+                "A completed quest and gifted machine cannot spend or deliver a refund before manufacture");
+        check(first.messages.stream().anyMatch(message -> message.contains("Your claim has not been spent")),
+                "A premature claim explains the exact manufacture condition without consuming the reward");
+
+        CompoundTag definition = new CompoundTag();
+        pack.writeData(definition, server.registryAccess());
+        CustomReward unknown = new CustomReward(0x5A7F000000000001L, pack.getQuest());
+        unknown.readData(definition, server.registryAccess());
+        claims.claimReward(first, unknown, false);
+        check(!claims.isRewardClaimed(FIRST, unknown) && inventory(first).equals(gift),
+                "An unknown refund mapping fails closed before FTB records a claim");
+        CustomReward wrongParent = new CustomReward(pack.id, cube.getQuest());
+        wrongParent.readData(definition, server.registryAccess());
+        claims.claimReward(first, wrongParent, false);
+        check(!claims.isRewardClaimed(FIRST, pack), "A stale parent-quest mapping cannot consume the saved reward ID");
+
+        craftOutput(server, first, "ae2:drive");
+        check(ProductionEvidence.hasProduced(second, "ae2:drive"), "The teammate shares actual machine manufacture");
+        check(!ProductionEvidence.hasProduced(first, "ae2:engineering_processor"),
+                "Using an obtained ingredient in a real machine recipe does not fabricate its own manufacture proof");
+        // A damaged native policy cannot silently spend the once-only claim and
+        // then substitute a fallback for its promised fixed component.
+        Path runtimePath = Path.of("kubejs/config/soqm_rewards.json");
+        String originalPolicy = Files.readString(runtimePath);
+        var reload = RecipeRefunds.class.getDeclaredMethod("loadNow");
+        reload.setAccessible(true);
+        try {
+            JsonObject damaged = policy.deepCopy();
+            damaged.getAsJsonObject("reward_mappings").getAsJsonObject(pack.getCodeString())
+                    .getAsJsonObject("refund").getAsJsonArray("items").get(0).getAsJsonObject().addProperty("count", 0);
+            Files.writeString(runtimePath, damaged.toString());
+            reload.invoke(null);
+            claims.claimReward(first, pack, false);
+            check(!claims.isRewardClaimed(FIRST, pack), "Invalid refund policy does not consume an otherwise eligible claim");
+            CustomReward unaffected = unclaimed(custom, claims, first, poolFor(pack).get("key").getAsString());
+            complete(claims, unaffected);
+            claimTarget(first, claims, unaffected, poolFor(unaffected), eligible(first, poolFor(unaffected), 6).getFirst(), 6);
+        } finally {
+            Files.writeString(runtimePath, originalPolicy);
+            reload.invoke(null);
+        }
+        Set<String> beforeRefund = ProductionEvidence.getProducedItems(first);
+        JsonObject packPool = poolFor(pack);
+        claimTarget(first, claims, pack, packPool, eligible(first, packPool, 6).getFirst(), 6);
+        check(inventory(first).getOrDefault("ae2:engineering_processor", 0) == 1,
+                "A real ME Drive craft pays its fixed Engineering Processor plus the original random pack");
+        check(ProductionEvidence.getProducedItems(first).equals(beforeRefund)
+                        && !ProductionEvidence.hasProduced(first, "ae2:engineering_processor"),
+                "Refund delivery neither unlocks its ingredient nor creates a production-evidence loop");
+        claimTarget(second, claims, pack, packPool, eligible(second, packPool, 6).getFirst(), 6);
+        check(inventory(second).getOrDefault("ae2:engineering_processor", 0) == 1,
+                "Actual team manufacture allows each teammate their own fixed compensation");
+        denyDuplicate(first, claims, pack);
+        denyDuplicate(second, claims, pack);
+        Map<String, Integer> paid = inventory(first);
+        CustomRewardEvent.EVENT.invoker().act(new CustomRewardEvent(pack, first, false));
+        check(inventory(first).equals(paid), "An out-of-context repeated custom event cannot pay a second refund or random pack");
+
+        complete(claims, cube);
+        craftOutput(server, first, "ironfurnaces:netherite_furnace");
+        assertCubeRefund(first, claims, cube);
+        assertCubeRefund(second, claims, cube);
+        denyDuplicate(first, claims, cube);
+        denyDuplicate(second, claims, cube);
+        refundPackId = pack.id;
+        refundCubeId = cube.id;
+        refundTeam = party.getId();
+        results.put("native_refund_premature_claim_remains_unclaimed", true);
+        results.put("native_refund_unknown_invalid_policy_and_wrong_parent_denied", true);
+        results.put("native_refund_fixed_plus_random_two_personal_team_claims", true);
+        results.put("native_refund_preserved_cube_and_exact_fixed_quantity", true);
+        results.put("native_refund_delivery_does_not_unlock_production", true);
+        results.put("native_refund_duplicate_event_without_claim_context_rejected", true);
+    }
+
+    private static int exactIngredientCount(CraftingRecipe recipe, String item) {
+        var expected = BuiltInRegistries.ITEM.get(ResourceLocation.parse(item));
+        int count = 0;
+        for (var ingredient : recipe.getIngredients()) {
+            ItemStack[] matches = ingredient.getItems();
+            if (matches.length > 0 && java.util.Arrays.stream(matches).allMatch(stack -> stack.is(expected))) count++;
+        }
+        return count;
+    }
+
+    private static void assertCubeRefund(ProbePlayer player, TeamData team, CustomReward reward) {
+        JsonObject mapping = policy.getAsJsonObject("reward_mappings").getAsJsonObject(reward.getCodeString());
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put(mapping.get("cube").getAsString(), 1);
+        for (JsonElement item : mapping.getAsJsonObject("refund").getAsJsonArray("items")) {
+            JsonObject prize = item.getAsJsonObject();
+            expected.merge(item(prize), prize.get("count").getAsInt(), Integer::sum);
+        }
+        player.getInventory().clearContent();
+        player.random.script(0.25);
+        team.claimReward(player, reward, false);
+        check(team.isRewardClaimed(player.getUUID(), reward) && inventory(player).equals(expected) && player.random.calls == 0,
+                "A cube milestone delivers exactly its original cube plus fixed materials, with no random pack");
     }
 
     public static void verifyReload(MinecraftServer server, Map<String, Object> results) throws Exception {
@@ -360,6 +546,18 @@ public final class ProgressiveRewardsProbe {
         check(restored.isRewardClaimed(FIRST, ServerQuestFile.INSTANCE.getReward(BOOK_ID)), "Personal book remains claimed after reload");
         TeamData switched = readTeam(server, destinationTeam);
         check(switched.isRewardClaimed(SECOND, ServerQuestFile.INSTANCE.getReward(switchedReward)), "Transferred claim survives /reload and native disk reading");
+        check(switched.isRewardClaimed(SECOND, ServerQuestFile.INSTANCE.getReward(refundPackId)), "Transferred crafting refund retains its saved personal claim after reload");
+        TeamData originalRefunds = readTeam(server, refundTeam);
+        check(originalRefunds.isRewardClaimed(FIRST, ServerQuestFile.INSTANCE.getReward(refundPackId))
+                        && originalRefunds.isRewardClaimed(FIRST, ServerQuestFile.INSTANCE.getReward(refundCubeId)),
+                "Both fixed-plus-random and fixed-plus-cube claims persist across reload");
+        ProbePlayer late = player(server, UUID.fromString("3f7a9456-abcd-4a2a-8610-b45ce14f53ba"), "SOQMRefundLate");
+        PartyTeam originalParty = (PartyTeam) FTBTeamsAPI.api().getManager().getTeamForPlayerID(FIRST).orElseThrow();
+        originalParty.join(late);
+        TeamData lateClaims = ServerQuestFile.INSTANCE.getOrCreateTeamData(originalParty);
+        assertCubeRefund(late, lateClaims, (CustomReward) ServerQuestFile.INSTANCE.getReward(refundCubeId));
+        denyDuplicate(late, lateClaims, ServerQuestFile.INSTANCE.getReward(refundCubeId));
+        results.put("native_refund_reload_uses_current_policy_and_late_joiner_claim", true);
         results.put("progressive_personal_claims_reload_and_disk_persistence", true);
     }
 
@@ -418,6 +616,11 @@ public final class ProgressiveRewardsProbe {
             sequence[draw * 2] = interval[0];
             sequence[draw * 2 + 1] = interval[1];
             expected.merge(item(chosen), chosen.get("count").getAsInt(), Integer::sum);
+        }
+        JsonObject binding = policy.getAsJsonObject("reward_mappings").getAsJsonObject(reward.getCodeString());
+        if (binding.has("refund")) for (JsonElement element : binding.getAsJsonObject("refund").getAsJsonArray("items")) {
+            JsonObject prize = element.getAsJsonObject();
+            expected.merge(item(prize), prize.get("count").getAsInt(), Integer::sum);
         }
         player.random.script(sequence);
         player.getInventory().clearContent();
@@ -514,6 +717,7 @@ public final class ProgressiveRewardsProbe {
 
     private static CustomReward unclaimed(List<CustomReward> rewards, TeamData data, ServerPlayer player, String pool) {
         return rewards.stream().filter(reward -> poolFor(reward).get("key").getAsString().equals(pool)
+                && !reward.hasTag(RecipeRefunds.TAG)
                 && !data.isRewardClaimed(player.getUUID(), reward)).findFirst().orElseThrow();
     }
 

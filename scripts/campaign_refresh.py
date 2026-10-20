@@ -20,7 +20,9 @@ import campaign_guidance
 import campaign_multiblocks
 import campaign_lessons
 import campaign_progression
+import campaign_refunds
 import campaign_rewards
+import campaign_storage
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
@@ -105,6 +107,7 @@ def edit_text(chapters: list[dict], locale: dict) -> dict:
         "У вкладці «Завдання» мультиблоку перелічені блоки для найменшої описаної конструкції. Потримай їх в інвентарі перед будівництвом: перевірка не забирає предмети. Окрема умова формування чи запуску, якщо вона є, підтверджує готову установку. Три інженерні задачі явно позначено як ручне підтвердження після власної перевірки.",
         "Пам’ятка книги: ПКМ із Quest Book; клавіша Open Quests налаштовується в Керуванні → FTB Quests. Над предметом R відкриває рецепт, U — застосування. У рецептах користуйся JEI поточної збірки; там показано актуальні інгредієнти.",
         "Кожен учасник особисто забирає нагороду раз за квест. Пакунок дає 3–5 призів: кількість зростає з виготовленням матеріальних рубежів командою. Якщо в темі вже відкриті поліпшені призи, один вибір гарантовано припаде на незвичайний або рідкісніший приз. Дорогі компоненти стають доступними лише після справжнього виготовлення саме цього предмета; подарунки й нагороди цього не замінюють.",
+        "Вибрані дорогі крафти також повертають частину витрачених компонентів. Точні предмети й кількості вказано в описі квеста та нагороди: це гарантоване доповнення до пакунка або куба. Забрати його можна після справжнього виготовлення результату тобою чи поточною командою; передчасне натискання не витрачає спробу.",
         "Завершення виробничих ланцюгів, важливі конструкції та пригодницькі цілі дають Mayhem Cube. Відкривай їх на окремому майданчику подалі від бази. Команда /soqm rewards показує рівень нагород, а /soqm rewards pool <тема> — доступні призи, шанси звичайного та гарантованого вибору й умови ще закритих предметів.",
     ]
     return dict(report)
@@ -118,16 +121,19 @@ def refresh(chapters: list[dict], locale: dict, groups: list[dict]) -> dict:
     if persistent_identity(chapters, groups) not in allowed_inputs:
         raise ValueError("Persistent campaign identities changed; review migration before refreshing")
     report = {"editorial": edit_text(chapters, locale)}
+    report["storage"] = campaign_storage.apply_structure(chapters)
     report["multiblock_materials"] = campaign_multiblocks.apply_structure(chapters)
     report["progression"] = campaign_progression.apply(chapters, locale)
     for ident, translations in load_json(ROOT / "metadata/campaign_route.json")["quests"].items():
         locale[f"quest.{ident}.title"] = translations["uk_ua"]["title"]
         locale[f"quest.{ident}.quest_desc"] = list(translations["uk_ua"]["description"])
     report["expanded_lessons"] = campaign_lessons.apply_locale(locale, "uk_ua")
+    report["storage_lessons"] = campaign_storage.apply_locale(locale, "uk_ua")
     report["multiblock_lessons"] = campaign_multiblocks.apply_locale(chapters, locale, "uk_ua")
     report["layout"] = campaign_layout.apply(chapters, locale)
     report["guidance"] = campaign_guidance.apply(chapters, locale, "uk_ua")
     report["rewards"] = campaign_rewards.apply(chapters, locale)
+    report["refund_guidance"] = campaign_refunds.apply_locale(locale, "uk_ua")
     if persistent_identity(chapters, groups) != expected:
         raise ValueError("Refresh changed a saved quest/task/reward identity or team claim setting")
     campaign_progression.assert_valid_graph({q['id']: q for c in chapters for q in c['quests']})

@@ -479,13 +479,13 @@
           "id": "514013166266B601",
           "team_reward": false,
           "auto": "disabled",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t4",
-            "count": 1
-          },
-          "count": 1,
-          "random_bonus": 0
+          "type": "custom",
+          "icon": "kubejs:mayhem_cube_t4",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:workshop",
+            "soqm:recipe_refund"
+          ]
         }
       ],
       "size": 0.9,

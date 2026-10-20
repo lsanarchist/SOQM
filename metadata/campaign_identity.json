@@ -31,5 +31,12 @@
     "material_kits": 35,
     "corrected_counts": 14,
     "migration": "Add construction item tasks without replacing existing task IDs, reward IDs, ownership or personal claim scope. Existing FTB completion timestamps remain intact. Exact reviewed old task and reward definitions are reconstructed and checked by campaign_compatibility.previous_questbook; new items are non-consuming and required for unfinished quests."
+  },
+  "storage_refund_update": {
+    "base_commit": "1a7ecd3b5691888bc807667eb90cbd913e191934",
+    "retargeted_tasks": 6,
+    "refund_rewards": 41,
+    "sha256": "17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d",
+    "migration": "Same quest/task/reward IDs and personal claim scopes. Six storage tasks now detect Sophisticated Storage; selected rewards add fixed refunds. Already claimed slots stay claimed. Exact definitions reconstruct through campaign_compatibility.previous_storage_refunds before older snapshots."
   }
 }

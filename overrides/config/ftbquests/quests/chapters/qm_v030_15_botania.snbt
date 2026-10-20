@@ -636,13 +636,13 @@
           "id": "5130130B6AA0D8EE",
           "team_reward": false,
           "auto": "disabled",
-          "type": "item",
-          "item": {
-            "id": "kubejs:mayhem_cube_t2",
-            "count": 1
-          },
-          "count": 1,
-          "random_bonus": 0
+          "type": "custom",
+          "icon": "kubejs:mayhem_cube_t2",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:arcane",
+            "soqm:recipe_refund"
+          ]
         }
       ],
       "size": 0.9,

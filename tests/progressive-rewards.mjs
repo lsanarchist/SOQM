@@ -105,6 +105,11 @@ function load(policy = makePolicy(), options = {}) {
           return {iterator: () => ({hasNext: () => index < values.length, next: () => values[index++]})};
         }};
       }
+      if (className === 'qm.rewards.RecipeRefunds') {
+        if (options.noAdapter) throw new Error('absent adapter');
+        return {beginRandomPack: (reward, player) => typeof options.refundPack === 'function'
+          ? options.refundPack(reward, player) : options.refundPack === true};
+      }
       if (className === 'dev.ftb.mods.ftbquests.quest.reward.ItemReward') return class {
         constructor(id, quest, item, count) {
           assert.equal(id, 0, 'Transient delivery must never round-trip the outer long through JS Number');
@@ -126,8 +131,9 @@ function load(policy = makePolicy(), options = {}) {
   });
   vm.runInContext(source, context, {filename: 'soqm_progressive_rewards.js', timeout: 2000});
   const preview = (player, key = 'survival') => context.SOQMProgressiveRewards.preview(player, key);
-  const claim = (player, {id = rewardId, quest = questId, marked = true, notify = true} = {}) => callback({
-    getReward: () => ({getCodeString: () => id, hasTag: tag => marked && tag === 'soqm:progressive_reward',
+  const claim = (player, {id = rewardId, quest = questId, marked = true, refund = false, notify = true} = {}) => callback({
+    getReward: () => ({getCodeString: () => id, hasTag: tag => (marked && tag === 'soqm:progressive_reward')
+        || (refund && tag === 'soqm:recipe_refund'),
       getQuest: () => ({getCodeString: () => quest})}),
     getPlayer: () => player,
     getNotify: () => notify,
@@ -269,6 +275,35 @@ const partial = new Player({random: [0, 0, 0.99, 0]});
 assert.throws(() => deliveryFailure.claim(partial), /delivery failure/);
 assert.deepEqual(partial.inventory, {'minecraft:bread': 2}, 'A partial native delivery never triggers a second whole-reward fallback');
 
+// Fixed refund stacks and cubes belong exclusively to the native accepted-claim
+// context. JS may add the original random pack once, never manufacture proof.
+const cubeBundle = load(), cubePlayer = new Player();
+cubeBundle.claim(cubePlayer, {refund: true});
+assert.equal(cubePlayer.randomIndex, 0, 'A native cube/refund bundle makes no random draws');
+assert.deepEqual(cubePlayer.inventory, {}, 'JS never duplicates the fixed native refund or cube');
+let packReceipt = true;
+const refundPack = load(makePolicy(), {refundPack: () => {
+  if (!packReceipt) return false;
+  packReceipt = false;
+  return true;
+}});
+const refundPlayer = new Player();
+refundPack.claim(refundPlayer, {refund: true});
+assert.deepEqual(refundPlayer.inventory, {'minecraft:bread': 4}, 'An accepted refund retains the original random pack');
+refundPack.claim(refundPlayer, {refund: true});
+assert.deepEqual(refundPlayer.inventory, {'minecraft:bread': 4}, 'A repeated custom event cannot roll a second bundle pack');
+assert.equal(refundPlayer.randomIndex, 4);
+assert.equal(refundPlayer.produced.size, 0, 'Reward delivery never creates production evidence');
+const unavailableRefund = load(makePolicy(), {noAdapter: true}), unavailablePlayer = new Player();
+unavailableRefund.claim(unavailablePlayer, {refund: true});
+assert.deepEqual(unavailablePlayer.inventory, {}, 'No native receipt means no unguarded refund callback');
+const invalidJsCube = load('{'), invalidJsPlayer = new Player();
+invalidJsCube.claim(invalidJsPlayer, {refund: true});
+assert.deepEqual(invalidJsPlayer.inventory, {}, 'A JS policy fallback does not append a random pack to a native cube bundle');
+const invalidJsPack = load('{', {refundPack: true}), invalidJsPackPlayer = new Player();
+invalidJsPack.claim(invalidJsPackPlayer, {refund: true});
+assert(invalidJsPackPlayer.deliveries.length > 0, 'An accepted native pack bundle retains safe random fallback delivery');
+
 const visitor = new Player({language: 'uk_ua', produced: ['kubejs:milestone_3']});
 const before = JSON.stringify({inventory: visitor.inventory, produced: [...visitor.produced], team: [...visitor.teamProduced]});
 assert.equal(adapter.runCommand(visitor, '/soqm rewards'), 1);
@@ -331,9 +366,12 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1433, 'Every campaign custom reward is mapped');
+assert.equal(Object.keys(actual.reward_mappings).length, 1442, 'Every campaign custom reward and cube/refund bundle is mapped');
+assert.equal(Object.values(actual.reward_mappings).filter(row => row.refund).length, 41);
+assert.equal(Object.values(actual.reward_mappings).filter(row => row.cube).length, 9);
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
+for (const output of actual.production_items) actualRegistry.add(output);
 for (const pool of actual.pools) for (const prize of pool.entries) actualRegistry.add(prize.item);
 const committed = load(actual, {registry: actualRegistry});
 assert.deepEqual(committed.warnings, [], 'The reviewed policy cannot silently use emergency fallback');
@@ -359,7 +397,7 @@ for (const pool of actual.pools) {
   assert.equal(end.state.qualityDraws, 1);
   assert(Math.abs(Array.from(end.selected.available).reduce((sum, prize) => sum + prize.quality_probability, 0) - 1) < 1e-12);
   assert(Math.abs(Array.from(end.selected.available).reduce((sum, prize) => sum + prize.probability, 0) - 1) < 1e-12);
-  const binding = Object.entries(actual.reward_mappings).find(([, row]) => row.pool === pool.key);
+  const binding = Object.entries(actual.reward_mappings).find(([, row]) => row.pool === pool.key && !row.refund);
   assert(binding, `At least one actual quest uses ${pool.key}`);
   const player = new Player({random: [0, 0]});
   committed.claim(player, {id: binding[0], quest: binding[1].quest_id});
@@ -372,4 +410,4 @@ for (const pool of actual.pools) {
   assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1433-reward policy contract, production gates, normalized two-stage odds, legacy 2/3/4 and new 3/4/5 draws, reserved quality prize, personal RNG, duplicate combining, exact outer IDs, fallback failures, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1442-custom-reward policy, 41 native refund bundles, native-only cube delivery, once-per-context random pack, production gates, normalized odds, 3/4/5 draws, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');

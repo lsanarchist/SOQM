@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "base_commit": "1a7ecd3b5691888bc807667eb90cbd913e191934",
+  "description": "Retarget six quest objectives in place. This is not a world/block-entity conversion. Empty and remove legacy containers on the old version before upgrading.",
+  "retired_mod": {
+    "name": "Iron Chests",
+    "version": "16.0.7",
+    "project_id": 228756,
+    "file_id": 5491156,
+    "filename": "ironchest-1.21-neoforge-16.0.7.jar",
+    "bytes": 305975,
+    "sha256": "dae66a38a33c2adac6ca0b7a4fbf4b365ba37a6a1f7a10961028617965c1fcaf",
+    "source_url": "https://www.curseforge.com/minecraft/mc-mods/iron-chests/files/5491156"
+  },
+  "quests": [
+    {
+      "quest_id": "5130115C2448F78F",
+      "task_id": "513012FE3E185048",
+      "before_item": "ironchest:copper_chest",
+      "after_item": "sophisticatedstorage:copper_chest",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Мідна скриня Sophisticated Storage",
+        "en_us": "Obtain 1 × Copper Chest"
+      }
+    },
+    {
+      "quest_id": "5130111C4CD728C6",
+      "task_id": "513012886D0DAE09",
+      "before_item": "ironchest:iron_chest",
+      "after_item": "sophisticatedstorage:iron_chest",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Залізна скриня",
+        "en_us": "Obtain 1 × Iron Chest"
+      }
+    },
+    {
+      "quest_id": "513011C482A87300",
+      "task_id": "5130128B3B305624",
+      "before_item": "ironchest:gold_chest",
+      "after_item": "sophisticatedstorage:gold_chest",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Золота скриня",
+        "en_us": "Obtain 1 × Gold Chest"
+      }
+    },
+    {
+      "quest_id": "5130113706F7FC90",
+      "task_id": "513012DB2041EE06",
+      "before_item": "ironchest:diamond_chest",
+      "after_item": "sophisticatedstorage:diamond_chest",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Діамантова скриня",
+        "en_us": "Obtain 1 × Diamond Chest"
+      }
+    },
+    {
+      "quest_id": "5130113B8DF6EC22",
+      "task_id": "51301243DF5E5914",
+      "before_item": "ironchest:crystal_chest",
+      "after_item": "sophisticatedstorage:stack_upgrade_tier_1",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Stack Upgrade",
+        "en_us": "Obtain 1 × Stack Upgrade Tier 1"
+      }
+    },
+    {
+      "quest_id": "51301185B7779201",
+      "task_id": "513012D7B664FC94",
+      "before_item": "ironchest:obsidian_chest",
+      "after_item": "sophisticatedstorage:netherite_chest",
+      "task_title": {
+        "uk_ua": "Отримай 1 × Незеритова скриня",
+        "en_us": "Obtain 1 × Netherite Chest"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "chapters": {
+    "qm_v030_11_storage": {
+      "summary": {
+        "uk_ua": "Скрині Sophisticated Storage мають одну послідовну лінію: залізо → золото → діамант → незерит. Мідь і Stack Upgrade — додаткові ранні можливості; функціональні модулі та Controller продовжуються у главі 37.",
+        "en_us": "Sophisticated Storage follows one container line: iron → gold → diamond → netherite. Copper and Stack Upgrade are optional early choices; chapter 37 continues with functional upgrades and the Controller."
+      },
+      "quests": {
+        "5130115C2448F78F": {
+          "dependencies": [
+            "514D010000000002",
+            "5142421100000002"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Мідна скриня Sophisticated Storage",
+            "en_us": "Sophisticated Storage: Copper Chest"
+          },
+          "description": {
+            "uk_ua": [
+              "Почни з дерев’яної скрині Sophisticated Storage у главі 37. Мідний варіант — доступне раннє розширення; це додаткова гілка, бо залізну скриню можна зробити відразу з дерев’яної.",
+              "Звір рецепт Copper Chest або відповідного Tier Upgrade у JEI. Для встановленої скрині застосуй комплект покращення правою кнопкою; кількість комплектів для подвійної скрині перевір у підказці мода.",
+              "Завдання перевіряє одну мідну скриню в інвентарі без вилучення, незалежно від деревини чи кольору. Зарахуй її перед установленням. Функціональні модулі та Controller продовжуються у главі 37."
+            ],
+            "en_us": [
+              "Start with a Sophisticated Storage wooden chest in chapter 37. Copper is an affordable early expansion. This is an optional branch because an iron chest can be upgraded directly from the wooden chest.",
+              "Check Copper Chest or its matching Tier Upgrade in JEI. Apply a tier upgrade to a placed chest with a right-click; check the mod tooltip for the number needed by a double chest.",
+              "The task detects one copper chest in your inventory without consuming it, regardless of wood or colour. Register it before placement. Functional upgrades and the Controller continue in chapter 37."
+            ]
+          }
+        },
+        "5130111C4CD728C6": {
+          "dependencies": [
+            "514D010000000002",
+            "5142421100000002"
+          ],
+          "stage": 0,
+          "optional": false,
+          "title": {
+            "uk_ua": "Залізна скриня: основа складу",
+            "en_us": "Iron Chest: Your Storage Foundation"
+          },
+          "description": {
+            "uk_ua": [
+              "Це Iron Chest саме з Sophisticated Storage. Виготов її з дерев’яної скрині або покращ мідну: обидва варіанти показані у JEI, проходити мідну гілку не обов’язково.",
+              "Звичайна скриня збільшує кількість комірок, а функціональні модулі додають окремі можливості. Візьми одну скриню до інвентарю перед установленням; завдання її не забирає й не вимагає конкретної деревини.",
+              "Наступне дороге розширення — Gold Chest після точного механізму. Комплекти Tier Upgrade і мережа Controller описані в главі 37; не плутай покращення рівня скрині зі Stack Upgrade для місткості комірки."
+            ],
+            "en_us": [
+              "This Iron Chest belongs to Sophisticated Storage. Craft it from a wooden chest or upgrade a copper one; JEI shows both routes, so the copper branch is optional.",
+              "The chest increases inventory slots; functional upgrades add separate capabilities. Hold one chest before placement. Detection consumes nothing and accepts any wood variant.",
+              "Gold Chest follows Precision Mechanism. Chapter 37 teaches Tier Upgrades and the Controller network. A container tier upgrade and a Stack Upgrade serve different purposes: the latter increases capacity per slot."
+            ]
+          }
+        },
+        "513011C482A87300": {
+          "dependencies": [
+            "5130111C4CD728C6",
+            "5130115E1ED084F6"
+          ],
+          "stage": 2,
+          "optional": false,
+          "title": {
+            "uk_ua": "Золота скриня: перший великий склад",
+            "en_us": "Gold Chest: A Larger Workshop Store"
+          },
+          "description": {
+            "uk_ua": [
+              "Покращ залізну скриню Sophisticated Storage до золотої. Рецепт збірки потребує точного механізму та керувального вузла, тому спочатку заверши ці матеріальні цілі.",
+              "У JEI порівняй рецепт скрині й Iron to Gold Tier Upgrade. Рідні рецепти покращення зберігають властивості контейнера; для вже встановленої скрині використовуй відповідний комплект.",
+              "Зарахуй золоту скриню в інвентарі без вилучення. ME Drive використовує окремий порожній комплект Iron to Gold Tier Upgrade, а не твою заповнену скриню: склад не потрібно витрачати на ME-мережу."
+            ],
+            "en_us": [
+              "Upgrade a Sophisticated Storage iron chest to gold. The pack recipe requires Precision Mechanism and Control Assembly, so prepare those production components first.",
+              "Compare the chest recipe and Iron to Gold Tier Upgrade in JEI. Native upgrade recipes retain container properties; use the matching upgrade kit for a placed chest.",
+              "Register the gold chest in your inventory without consuming it. The ME Drive recipe uses a separate Iron to Gold Tier Upgrade, so it cannot consume your filled storage chest."
+            ]
+          }
+        },
+        "5130113706F7FC90": {
+          "dependencies": [
+            "513011C482A87300",
+            "513011AA869D0649"
+          ],
+          "stage": 3,
+          "optional": false,
+          "title": {
+            "uk_ua": "Діамантова скриня: більше комірок",
+            "en_us": "Diamond Chest: More Inventory Slots"
+          },
+          "description": {
+            "uk_ua": [
+              "Наступний рівень Sophisticated Storage починається із золотої скрині. Квантовий процесор у рецепті потребує вимірної матриці; ранній склад не повинен блокуватися цим пізнім покращенням.",
+              "Виготов Diamond Chest або застосуй Gold to Diamond Tier Upgrade до готового контейнера. Перевір саме рецепт для одинарної чи подвійної скрині; варіанти мають різну вартість.",
+              "Предметна умова зараховує одну діамантову скриню без вилучення. Для Matter Condenser потрібен окремий Gold to Diamond Tier Upgrade. Далі можна збільшувати місткість комірок Stack Upgrade або перейти до незериту після експедиції на Місяць."
+            ],
+            "en_us": [
+              "This Sophisticated Storage tier starts with a gold chest. Its Quantum Processor requires Dimensional Matrix; an early storage setup does not need to wait for this later upgrade.",
+              "Craft a Diamond Chest or apply Gold to Diamond Tier Upgrade to a placed container. Check the recipe for a single or double chest: their costs differ.",
+              "The item task detects one diamond chest without consuming it. Matter Condenser uses a separate Gold to Diamond Tier Upgrade. Expand slot capacity with Stack Upgrades, or move on to netherite after the Moon expedition."
+            ]
+          }
+        },
+        "5130113B8DF6EC22": {
+          "dependencies": [
+            "514D010000000002",
+            "5142421100000002"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Stack Upgrade: місткість однієї комірки",
+            "en_us": "Stack Upgrade: More Items per Slot"
+          },
+          "description": {
+            "uk_ua": [
+              "Для великої кількості одного ресурсу спробуй Stack Upgrade Tier 1 саме з Sophisticated Storage. Цей модуль збільшує місткість комірок; це окреме раннє покращення, а не наступний рівень після діамантової скрині.",
+              "Виготов модуль за JEI, потримай його в інвентарі для завдання й постав у слот покращень контейнера. Звір доступну місткість і допустимі поєднання модулів у підказці поточної збірки.",
+              "Перед зняттям модуля розвантаж контейнер до його звичайної місткості. За вищими рівнями, сортуванням і Controller переходь до глави 37. Модулі Sophisticated Backpacks мають власні рецепти й не є автоматично взаємозамінними."
+            ],
+            "en_us": [
+              "For bulk resources, try Sophisticated Storage Stack Upgrade Tier 1. It increases capacity per slot. This is a separate early upgrade, not a tier after the diamond chest.",
+              "Craft the module using JEI, hold it for the task, then place it in a container upgrade slot. Check the current pack tooltip for the resulting capacity and permitted combinations.",
+              "Reduce stored amounts to the normal capacity before removing the module. Chapter 37 continues with higher tiers, automation and the Controller. Sophisticated Backpacks modules have their own recipes and are not automatically interchangeable."
+            ]
+          }
+        },
+        "51301185B7779201": {
+          "dependencies": [
+            "5130113706F7FC90",
+            "5130113E390D02AA"
+          ],
+          "stage": 4,
+          "optional": false,
+          "title": {
+            "uk_ua": "Незеритова скриня: завершення лінії",
+            "en_us": "Netherite Chest: The Final Container Tier"
+          },
+          "description": {
+            "uk_ua": [
+              "Покращ діамантову скриню Sophisticated Storage до незеритової. У рецепті збірки є радіаційний щит і керувальний вузол; щит потребує Desh із місячної експедиції.",
+              "Перевір у JEI одинарний або подвійний рецепт і підготуй усі матеріали. Рідний рецепт покращення зберігає контейнерні дані; не замінюй його звичайним рецептом, який просто споживає скриню.",
+              "Потримай одну незеритову скриню в інвентарі для умови без вилучення. Подальша місткість і автоматизація залежать від модулів та Controller у главі 37, а не від іншого паралельного мода скринь."
+            ],
+            "en_us": [
+              "Upgrade a Sophisticated Storage diamond chest to netherite. The pack recipe includes Radiation Shield and Control Assembly; the shield requires Desh from the Moon expedition.",
+              "Check the single or double chest recipe in JEI and prepare its materials. The native upgrade recipe retains container data; do not substitute an ordinary recipe that simply consumes a chest.",
+              "Hold one netherite chest to complete the non-consuming item task. Further capacity and automation come from modules and the Controller in chapter 37, within the same storage system."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "key": "sophisticated_chest_tiers",
+      "title": {
+        "uk_ua": "Скрині Sophisticated Storage",
+        "en_us": "Sophisticated Storage Chest Tiers"
+      },
+      "quests": [
+        "5130111C4CD728C6",
+        "513011C482A87300",
+        "5130113706F7FC90",
+        "51301185B7779201"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "source": "sophisticatedstorage-1.21.1-1.6.7.2184.jar :: data/sophisticatedstorage/recipe/{iron_chest,copper_chest,iron_chest_from_copper_chest,stack_upgrade_tier_1}.json",
+      "notes": "Native recipes allow direct wooden→iron, optional copper and early stack upgrade. Later recipes use the existing SOQM custom serializers and material gates."
+    },
+    {
+      "source": "overrides/kubejs/server_scripts/qm_expert_v042.js :: sophisticatedstorage chest and tier_upgrade recipes",
+      "notes": "Native storage_tier_upgrade and double_chest serializers retained. Gold uses Precision Mechanism; diamond Quantum Processor; netherite Radiation Shield."
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "schema": 1,
+  "base_commit": "1a7ecd3b5691888bc807667eb90cbd913e191934",
+  "description": "Reviewed 0.4.10 storage objective retargets and guaranteed refund bundles. Restore these in a copy before immutable earlier contracts; no save files or reward ledgers are edited.",
+  "tasks": {
+    "5130115C2448F78F": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:copper_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012FE3E185048"
+        }
+      ],
+      "after_sha256": "0e6500e404cc0496cd7a46005cc04e3921dbe7f97e4baa7bad2f45f90e064505"
+    },
+    "5130111C4CD728C6": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:iron_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012886D0DAE09"
+        }
+      ],
+      "after_sha256": "2ecb4f4115240ab54d629dece1983e74e7814af05d4d5f35629621aee7e4fed8"
+    },
+    "513011C482A87300": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:gold_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "5130128B3B305624"
+        }
+      ],
+      "after_sha256": "afc870d9514d2713835972536d7e8c947187c9dda1e5fdd3a0f4ec9441aead00"
+    },
+    "5130113706F7FC90": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:diamond_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012DB2041EE06"
+        }
+      ],
+      "after_sha256": "8bc0125ba0793f420d2608818b1b92f39b31865ea7ea3d1623e9a9fc5f7abf04"
+    },
+    "5130113B8DF6EC22": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:crystal_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "51301243DF5E5914"
+        }
+      ],
+      "after_sha256": "78bcec048b029709bca669a6885e5e3daf08fbe6eca4e2e7f62886dad29c0594"
+    },
+    "51301185B7779201": {
+      "before": [
+        {
+          "type": "item",
+          "item": {
+            "id": "ironchest:obsidian_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "513012D7B664FC94"
+        }
+      ],
+      "after_sha256": "b3fadd1a383cb0931553851ebbc6962b1d94f2d1dc77ff32062b54a62913615f"
+    }
+  },
+  "rewards": {
+    "514D1121D23494BB": {
+      "before": [
+        {
+          "id": "5130139500A324D9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "4ff73c4cdd65c920c5725ba0fa73a77a48432ed8e08b0b57ddb9f3b8b070ff59"
+    },
+    "514D11F90042E7F4": {
+      "before": [
+        {
+          "id": "513013DE4673092F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "d93a26ce4dd379604c83ba5aee65be6200143b3542f22d54f7b196126609952e"
+    },
+    "513011156F29CC4E": {
+      "before": [
+        {
+          "id": "513013DC49F7014C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "4cc7c3d491c692050604e5c0f91c63907536a5417651e8dc06dc44cf7fbb6cc6"
+    },
+    "514D110A613D8197": {
+      "before": [
+        {
+          "id": "513013AA39F2E133",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "084f7c249a07ebad13fdd0dba2459f2fdab50e642de4ed3ef8fee4409c8cfe1d"
+    },
+    "514D11AB5959BBF5": {
+      "before": [
+        {
+          "id": "513013AA3BE5D877",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "7ba8f48db597d29cdc30dcd1d62de2aa2388d50c5439279e535631ea288b05d8"
+    },
+    "513011C1277D6FAE": {
+      "before": [
+        {
+          "id": "513013EF10E2C094",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "37fb32386821f6acae5a832cd5c44cb5d0e959fe7624ecad8282ed04e439db5b"
+    },
+    "513011D2DC7B4947": {
+      "before": [
+        {
+          "id": "51301339588253B4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "549fb6245e483642eea80f73a081178ef7f4a57ca5e6d6e3eb5deca9b58b5c9d"
+    },
+    "51301151F34C43A4": {
+      "before": [
+        {
+          "id": "51301399C9F0F6DF",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "01a359dd97d52e225da4b2d00073e28f5cf073c72611adde5686b46af86d8372"
+    },
+    "514D115314DFB698": {
+      "before": [
+        {
+          "id": "513013094719A79D",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "272ec90f37539b9370aa9ddacb53d7f19ab53129479645eec94a15d4ab20c4fb"
+    },
+    "5130116A8EF3B812": {
+      "before": [
+        {
+          "id": "513013DA15BB717C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "0dbd39ad5fcb83820c1071db3a1519601ccbe27a175d83e305cb121280fabd7a"
+    },
+    "513011835D892AF4": {
+      "before": [
+        {
+          "id": "513013217F133F5E",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "1e3939d24b476555d98ddc658d223d4260f20dee336bbdcbec4ab27f020e966b"
+    },
+    "5130112203442BAE": {
+      "before": [
+        {
+          "id": "5130133AA9738553",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "282e170fb006b3e35bba58629dcd043f2f318a1706357ff8054f1fca10474f0b"
+    },
+    "513011C1C75B6080": {
+      "before": [
+        {
+          "id": "5130130EB85290CA",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "e8d133cf5c966b4e23e39121147b2036230f25afb50cf47ce5eecd2928077c65"
+    },
+    "5130119895187FB1": {
+      "before": [
+        {
+          "id": "513013F1B91CEC0B",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "2064956fd2fc2137c62789b7ee795efc20caf96b259444d9038c27b33b5ef3f8"
+    },
+    "514D113E1E8CF8B1": {
+      "before": [
+        {
+          "id": "5130134EA06A7441",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "64202cdedc4731b2e59283b498edbcc02250e0beff1face369c8ba69d8ad475c"
+    },
+    "513011E2552BA5EA": {
+      "before": [
+        {
+          "id": "5130136ECEB91EB7",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "bd3aa2ae0bfb93a7edc38ac493748e4fb502c418b5aad78789454b22806bb7c1"
+    },
+    "513011F6F0D21BC6": {
+      "before": [
+        {
+          "id": "5130133BB4B1FDB5",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:redstone",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:power"
+          ]
+        }
+      ],
+      "after_sha256": "959992a2ec718b7cde284235fc5c0a4efb74f5c848a9e62f3245ad8b1ace8294"
+    },
+    "5130111A90908B6C": {
+      "before": [
+        {
+          "id": "513013E373AE02B1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "78288d0e6f159f2fae832269098650e921d6de1c9f29a77fde2062c3b5ce72b6"
+    },
+    "51301189AE52B1F5": {
+      "before": [
+        {
+          "id": "5130136F27025092",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "f3e387f6291968d29f4b1c2ae8a78c69ba4d199f66fae24e89bdc8c7bfacc367"
+    },
+    "51301148615D2591": {
+      "before": [
+        {
+          "id": "513013AF260BDB13",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "ebc3cced1540da92b2e8a3c1fc9df5d61bde640f15a0abbb31bfebe1abf55b6e"
+    },
+    "51301167AE8889AA": {
+      "before": [
+        {
+          "id": "5130139A8997083F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "293871f2172d39c06cf9117ec60f7cae1f4402fcf53890cab41c4c5546fd8343"
+    },
+    "5130111D94D99E2B": {
+      "before": [
+        {
+          "id": "513013D8C495FD30",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "85b507f8d3a953c06b3a4b03ca0afd804f32227a4d6abcb18d3800f0e322f313"
+    },
+    "5130117AB9046CD2": {
+      "before": [
+        {
+          "id": "513013619FF115B2",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "mekanism:basic_control_circuit",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:engineering"
+          ]
+        }
+      ],
+      "after_sha256": "218c1320097758f3eb49303fa29299ba3e430fd4a38b393d3e5476d3ba07c81c"
+    },
+    "5130117C8CDC4800": {
+      "before": [
+        {
+          "id": "51301388DABC7CE1",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "18a6db880a18610b9808158d5aee965ebd0b77160e41b7b61505360e8bc76ea9"
+    },
+    "5130117C40A8D2E1": {
+      "before": [
+        {
+          "id": "513013D06151A3E4",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "3104e519b577d81841ac8f044c83a8fe36951d8246c46678a299a999525850ae"
+    },
+    "5130119BD717861F": {
+      "before": [
+        {
+          "id": "513013A93DFE0DE9",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "dbc371c7b59486f557be907bab598a4930694ede31fc5e2c43fa47f147d04671"
+    },
+    "5130114905904323": {
+      "before": [
+        {
+          "id": "513013289007E058",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "e21045e4a3f0a8f233e30265446a159a79713a711bc87dd5cd064a4cf1087c6b"
+    },
+    "513011BBCA06FEA6": {
+      "before": [
+        {
+          "id": "51301387B66E582C",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "19968d34399cfdebc42a8c064644404fdd68b3aeabc24c76d4f15240abe882ff"
+    },
+    "513011DA15992023": {
+      "before": [
+        {
+          "id": "5130139E508F019A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "3bbca4ee4280b70042bf23a80054eb31fe477218a1ee833891e2f99d696a3a64"
+    },
+    "5130110B5D09E918": {
+      "before": [
+        {
+          "id": "513013DD5A98AACC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "a0c308a311241907a21de2e8fe5d27300a477b9a722617d54fcd469c61af10cc"
+    },
+    "5130112D00658B23": {
+      "before": [
+        {
+          "id": "51301307572A4216",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "5b07a15c17c9eee699c4438a7fd8bd8def20aa6b9dab3723f3b2e403213c9124"
+    },
+    "513011B5F7F592D8": {
+      "before": [
+        {
+          "id": "513013321746A49A",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "084b1d7b6547b630471a722832c742134811433faec0a4a360e6e88957ddb6a0"
+    },
+    "5130112D86FBD3AF": {
+      "before": [
+        {
+          "id": "51301362D8E3BEF8",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "e6501d4f17feaf62009c4852853067728bb793ce2fbfa59f45484cec2406551f"
+    },
+    "513011D1C9E27BE4": {
+      "before": [
+        {
+          "id": "513013B443C4C406",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "512c5641a234a6893d61017a6d632b36cb8d04877a385080ec98cdfb4678a8de"
+    },
+    "51301100A7D9F653": {
+      "before": [
+        {
+          "id": "513013170845F86F",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:barrel",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:logistics"
+          ]
+        }
+      ],
+      "after_sha256": "ea8118ffad78487717c7c32de3a7e08d2e744dc41404d97ea87b166fe6bedaa7"
+    },
+    "5130119B9A6344A6": {
+      "before": [
+        {
+          "id": "513013EA18E2D583",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t3",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "9e964657d81861e9b33e35678f427563d4205f46462913d6bc8a34d46283d1c3"
+    },
+    "513011675037BC60": {
+      "before": [
+        {
+          "id": "513013698733D4DC",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t5",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "ede4c3b3bf56b9a5fc99e4750985c0d780047a8c6b9232268edadc7a89256888"
+    },
+    "513011EAB08A97F7": {
+      "before": [
+        {
+          "id": "5130130B6AA0D8EE",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t2",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "61430412d9d8efe587dd34fe79758496609d814bfa757d8db52e5f3063dd99ba"
+    },
+    "51301125F300B5D5": {
+      "before": [
+        {
+          "id": "513013EE40E832FB",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "ad_astra:space_helmet",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:space"
+          ]
+        }
+      ],
+      "after_sha256": "ee7208a9529c2a391588bd2f80c6cdf00b9eb18a0147471f2b103e9ca1ed928c"
+    },
+    "51401117A75D3720": {
+      "before": [
+        {
+          "id": "514013166266B601",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "item",
+          "item": {
+            "id": "kubejs:mayhem_cube_t4",
+            "count": 1
+          },
+          "count": 1,
+          "random_bonus": 0
+        }
+      ],
+      "after_sha256": "c880fdc1546df4170c7920d26ad931ead531108f8fb9f546f4bfca23199616a5"
+    },
+    "514011CA86FD67E8": {
+      "before": [
+        {
+          "id": "514013ED2123D744",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:furnace",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:processing"
+          ]
+        }
+      ],
+      "after_sha256": "2c577a6a90af600e3f557d15ad11bc874e7d292a0d2721fc52f6249367576fe5"
+    }
+  }
+}

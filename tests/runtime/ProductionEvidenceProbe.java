@@ -11,6 +11,7 @@ import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 import dev.ftb.mods.ftbteams.api.Team;
 import dev.ftb.mods.ftbteams.data.PartyTeam;
 import dev.ftb.mods.ftbteams.data.TeamManagerImpl;
+import ironfurnaces.items.upgrades.ItemUpgrade;
 import io.netty.channel.embedded.EmbeddedChannel;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -207,6 +208,7 @@ public final class ProductionEvidenceProbe {
                 && renamer.getTask().getResultItem().has(DataComponents.CUSTOM_NAME),
                 "Native Name Press recipe resolves the press's AE2 name component");
         testStorageUpgrade(server, results);
+        testIronFurnacesUpgrade(server, results);
         began = server.getTickCount();
         stage = 0;
     }
@@ -355,6 +357,67 @@ public final class ProductionEvidenceProbe {
                 "Native in-world upgrade consumes its item and changes the barrel tier");
         check(ProductionEvidence.hasProduced(producer, "sophisticatedstorage:iron_barrel"), "In-world tier manufacture is recorded");
         results.put("production_sophisticated_in_world_tier_upgrade_actual_consumption", true);
+    }
+
+    private static void testIronFurnacesUpgrade(MinecraftServer server, Map<String, Object> results) {
+        ServerLevel level = server.overworld();
+        BlockPos pos = ORIGIN.south(12);
+        String output = "ironfurnaces:netherite_furnace";
+        ItemUpgrade type = (ItemUpgrade) item("ironfurnaces:upgrade_netherite").getItem();
+        check(ProductionEvidence.isTrackedOutput(item(output)), "World-upgrade output belongs to the exact production policy");
+        check(!ProductionEvidence.hasProduced(producer, output), "Unmade netherite furnace starts locked");
+        for (String existing : List.of("ironfurnaces:iron_furnace", output)) {
+            place(level, pos, existing);
+            ItemStack upgrade = item("ironfurnaces:upgrade_netherite");
+            producer.setItemInHand(InteractionHand.MAIN_HAND, upgrade);
+            type.useOn(furnaceUpgradeContext(producer, pos));
+            check(upgrade.getCount() == 1 && level.getBlockState(pos).getBlock().asItem() == item(existing).getItem()
+                    && !ProductionEvidence.hasProduced(producer, output),
+                    "Wrong input tier or already-identical output cannot establish manufacture: " + existing);
+        }
+        // Native ItemUpgrade does not guard empty/wrong held items itself. Invoke
+        // the actual method to prove our observer requires its own consumed item.
+        for (ItemStack invalid : List.of(ItemStack.EMPTY, new ItemStack(Items.COBBLESTONE))) {
+            place(level, pos, "ironfurnaces:obsidian_furnace");
+            producer.setItemInHand(InteractionHand.MAIN_HAND, invalid);
+            type.useOn(furnaceUpgradeContext(producer, pos));
+            check(!ProductionEvidence.hasProduced(producer, output),
+                    "No consumed upgrade item means no evidence even if native code replaces the block");
+        }
+        place(level, pos, "ironfurnaces:obsidian_furnace");
+        ItemStack creativeUpgrade = item("ironfurnaces:upgrade_netherite");
+        denied.setGameMode(GameType.CREATIVE);
+        denied.setItemInHand(InteractionHand.MAIN_HAND, creativeUpgrade);
+        type.useOn(furnaceUpgradeContext(denied, pos));
+        check(creativeUpgrade.getCount() == 1 && !ProductionEvidence.hasProduced(denied, output),
+                "Creative replacement without consumption remains ineligible");
+        denied.setGameMode(GameType.SURVIVAL);
+
+        var fake = FakePlayerFactory.get(level, new GameProfile(
+                UUID.fromString("c87e6889-3d5a-44d0-adb9-0bd04d9d4d05"), "SOQMFurnaceFake"));
+        fake.setGameMode(GameType.SURVIVAL);
+        place(level, pos, "ironfurnaces:obsidian_furnace");
+        ItemStack fakeUpgrade = item("ironfurnaces:upgrade_netherite");
+        fake.setItemInHand(InteractionHand.MAIN_HAND, fakeUpgrade);
+        type.useOn(furnaceUpgradeContext(fake, pos));
+        check(fakeUpgrade.isEmpty() && !ProductionEvidence.hasProduced(fake, output),
+                "FakePlayer actual world-upgrade consumption never records manufacture");
+
+        place(level, pos, "ironfurnaces:obsidian_furnace");
+        ItemStack upgrade = item("ironfurnaces:upgrade_netherite");
+        producer.setItemInHand(InteractionHand.MAIN_HAND, upgrade);
+        type.useOn(furnaceUpgradeContext(producer, pos));
+        // Pinned ItemUpgrade returns PASS via super.useOn even on this success.
+        check(upgrade.isEmpty() && level.getBlockState(pos).getBlock().asItem() == item(output).getItem(),
+                "Native survival upgrade consumes its item and replaces obsidian with netherite furnace");
+        check(ProductionEvidence.hasProduced(producer, output), "Actual placed-furnace upgrade records its exact output");
+        results.put("production_ironfurnaces_world_upgrade_actual_consumption", true);
+        results.put("production_ironfurnaces_wrong_tier_same_output_empty_wrong_item_creative_fake_rejected", true);
+    }
+
+    private static UseOnContext furnaceUpgradeContext(ServerPlayer player, BlockPos pos) {
+        return new UseOnContext(player, InteractionHand.MAIN_HAND,
+                new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false));
     }
 
     private static void verifyNativeDisk(MinecraftServer server, Map<String, Object> results) {

@@ -5,6 +5,7 @@ import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
 import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 import dev.ftb.mods.ftbteams.api.Team;
 import dev.ftb.mods.ftbteams.api.TeamManager;
+import ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +26,9 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -293,6 +296,18 @@ public final class ProductionEvidence {
         rememberActor(serverPlayer, true);
         manager.getTeamForPlayerID(player.getUUID()).ifPresent(team ->
                 record(serverLevel.getServer(), player.getUUID(), team.getId(), output));
+    }
+
+    /** Native Iron Furnaces replacement after exact upgrade-item consumption. */
+    public static void furnaceUpgraded(UseOnContext context, Block before, Block after) {
+        if (!(context.getLevel() instanceof ServerLevel level)
+                || !realSurvivalPlayer(context.getPlayer()) || before == after) return;
+        BlockPos pos = context.getClickedPos();
+        // Native setBlock can fail. A spent upgrade without the expected new
+        // furnace is not manufacture, nor is touching an already identical tier.
+        if (!level.getBlockState(pos).is(after)
+                || !(level.getBlockEntity(pos) instanceof BlockIronFurnaceTileBase)) return;
+        storageUpgraded(context.getPlayer(), level, pos, before.defaultBlockState());
     }
 
     static void joined(ServerPlayer player) {

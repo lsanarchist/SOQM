@@ -141,4 +141,40 @@ These are the only quantity changes to pre-existing task IDs; all other material
 
 Run `python -m unittest discover -s tests -p test_multiblock_materials.py -v`.
 
+### Native detection and cost of the added tasks
+
+The new material conditions use FTB Quests **2101.1.36**'s ordinary `ItemTask`
+with `consume_items: false`, `only_from_crafting: false` and
+`match_components: "none"`. They do not poll block entities, search a radius or
+load chunks. A completed material condition is a recorded inventory quantity;
+it does not become a requirement to keep those blocks in the inventory forever.
+
+The pinned native inventory listener coalesces relevant inventory slot changes
+using the pack's existing **20-tick** detection delay. Repeated changes keep one
+pending check for that player without pushing its deadline back. On detection,
+FTB builds a summary of the main inventory once and exact-item tasks look up
+their relevant stacks in that summary. Completed tasks return immediately.
+The pack's flexible progression can record items before prerequisites are
+finished; this does not turn the material checks into formation evidence.
+
+`tests/runtime/MultiblockMaterialsProbe.java` exercises all **166 live item
+conditions** in the 35 kits against the pinned Java implementation. It checks
+one-short quantities, repeated detection, legal multiple stacks, changed item
+names, non-consumption, persistence, retained completion after placing blocks,
+separate formation/operation conditions and old quest completion timestamps.
+The same fixture calls the actual inventory listener and checks that 101 slot
+changes share one pending detection. It records additional loaded chunks.
+
+The timing fixture compares **1,469** existing item conditions with the current
+**1,607**, including the 138 added conditions. Both variants run on the server
+thread, with one inventory summary per scan, warm-up and alternating paired
+samples. Empty inventory isolates task dispatch and item lookup; the complete
+native listener and already completed tasks are measured separately. These
+numbers characterize the checks, not a graphical client's FPS, whole-server
+TPS or the running machines' own simulation cost. Executed measurements and
+the exact tested payload are recorded in
+[the 0.4.10 verification report](../reports/verification-0.4.10.md).
+
+### Construction geometry coverage
+
 The ten focused checks cover additive IDs, native-task preservation, the complete reviewed count-change inventory, deterministic repeated passes, both authored languages, pinned source hashes, different IE/Railcraft brick templates, deduplicated fusion/SPS geometry, complete Mekanism shells, the explicit ER turbine axis and shell positions, and the paired AE2 bridge. They do not replace running Minecraft with the pinned mod set. Before release, smoke-test one native formed quest, the Modern Foundry minimum layouts, the two turbine layouts and completion behavior in an existing save.

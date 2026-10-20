@@ -4,6 +4,10 @@
 
 **Every member can claim a personal pack for a completed ordinary quest. A pack contains 3–5 independently drawn themed prizes; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
 
+**41 квест за дорогі крафти також повертає фіксовану частину реально витрачених компонентів.** Компенсація додається до наявного пакунка або куба після підтвердженого виготовлення потрібного виробу вами чи вашою командою. Повний перелік рецептів, кількостей і SHA256 містить [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json).
+
+**41 expensive crafting quests also return fixed quantities of components consumed by their actual recipes.** The refund accompanies the existing pack or cube after you or your team manufacture the required output. Exact recipes, quantities and SHA256 evidence are recorded in [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json).
+
 Каталог і правила задає [`metadata/reward_pools.json`](../metadata/reward_pools.json). Підтвердження предметів і продуктивних рецептів із закріплених версій модів містить [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Компілятор створює [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json); обробник нагород і спостерігач виробництва читають цей спільний runtime-файл.
 
 The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/reward_pools.json). Exact pinned item and productive recipe evidence is recorded in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). The compiler produces [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json), the shared runtime policy read by the reward handler and production observer.
@@ -15,16 +19,113 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 | Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1433 |
 | Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 193 |
 | Особиста вступна книга / Personal introductory book | 1 |
+| Квести з гарантованою компенсацією / Quests with guaranteed crafting refunds | 41 |
+| Компенсація разом із пакунком / Refund plus the original pack | 32 |
+| Компенсація разом із кубом / Refund plus the original cube | 9 |
+| Нативні custom reward objects / Native custom reward objects | 1442 |
+| Окремі фіксовані cube item reward objects / Standalone fixed cube item reward objects | 184 |
 | Тематичні пули / Themes | 14 |
 | Позиції повного каталогу / Catalogue entries | 326 |
 | Унікальні предмети, з них модові / Distinct items, including modded items | 238 / 210 |
 | Модові позиції з повтореннями між темами / Modded entries across themes | 256 |
 | Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 240 |
-| Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 202 |
+| Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 242 |
 
 У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають один куб замість пакунка; повний список задає `milestones` у каталозі. Числа походять із каталогу та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до наявної книги.
 
 Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award one cube in place of a pack; the catalogue’s `milestones` map is the complete list. These counts come from the catalogue and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the existing book.
+
+## Гарантовані компенсації крафту / Guaranteed crafting refunds
+
+Фіксовані матеріали не залежать від жеребкування. У 34 квестах повертається 25–50% вибраного повторюваного інгредієнта: одне з двох ядер телепортації Digital Miner, один із двох незеритових злитків печі, дві із шести енергокомірок Dense Energy Cell, один із трьох попередніх QIO-дисків або компонентів ME. У семи інших квестах повертається один неподільний процесор чи вторинна збірка; щонайменше два інші авторські компоненти розвитку залишаються витраченими. Це частка конкретних інгредієнтів, а не оцінка загальної ціни рецепта у відсотках.
+
+Fixed materials do not depend on the random roll. In 34 quests, the refund returns 25–50% of one repeated ingredient: one of the Digital Miner's two Teleportation Cores, one of the furnace's two Netherite Ingots, two of the Dense Energy Cell's six Energy Cells, or one of the three preceding QIO drives or ME components. Seven other quests return one indivisible processor or secondary assembly, while at least two other authored campaign components remain consumed. These fractions describe specific ingredients, not an estimated percentage of the complete recipe's value.
+
+Повернення прив’язане до одного основного квесту для кожного output ID. Дублікати цього виробу в підсумкових або будівельних завданнях не створюють ще одну компенсацію. Компілятор перевіряє всі власні альтернативні рецепти, точні позиції інгредієнтів, мінімальну витрату між варіантами й SHA256 рецепта. Тег матеріалу не перетворюється на здогаданий конкретний предмет. Live RecipeManager також перевіряється native-тестом: активна дешевша альтернатива не може непомітно залишити стару компенсацію.
+
+Each output ID has one primary refund quest. Its appearances in convergence or construction objectives do not create extra refunds. The compiler checks every authored recipe alternative, exact ingredient positions, the minimum consumed across variants, and the recipe SHA256. Material tags are not guessed into specific returned items. A native test also audits the live RecipeManager, so an active cheaper alternative cannot silently retain an outdated refund.
+
+### Справжнє виготовлення та особисте отримання / Manufacture and personal claims
+
+Для компенсації потрібен виробничий факт **готового виробу**. Якщо гравець легально використав отриманий від іншого гравця процесор у рецепті ME Drive, справжнє виготовлення дисковода вже дозволяє повернути витрачений процесор. Отримання цієї нагороди не записує факт виготовлення процесора: у випадковому пулі він залишиться закритим до власного виготовлення. Виробництво поточної партії дозволяє отримати особисту компенсацію кожному її учаснику.
+
+The refund requires manufacture evidence for the **finished output**. If a player legitimately uses an obtained Engineering Processor in a ME Drive recipe, actually manufacturing the drive is sufficient to return a processor that recipe consumed. The payout does not record processor manufacture; the processor remains locked in random pools until its own production is observed. Current-party manufacture lets each member claim their personal compensation.
+
+Власником отримання залишається FTB Quests і той самий `(player UUID, outer reward ID)`. Для цих 41 слотів native gate перевіряє виробництво **до** запису отриманої нагороди. Завчасне натискання, невідомий mapping, невірна батьківська quest ID або пошкоджена політика залишають нагороду неотриманою й пояснюють відмову. Решта нагород зберігає звичайну поведінку. Після успішного запису scoped callback видає фіксовані компоненти та, за потреби, початковий куб; KubeJS робить лише початкові 3–5 випадкових жеребкувань для пакунка. Повторний custom event не має нового дозволу на видачу. Scoped context прибирається у `finally`, без додаткового постійного claim ledger.
+
+FTB Quests and the same `(player UUID, outer reward ID)` remain responsible for claims. A native gate checks manufacture **before** FTB marks these 41 slots claimed. An early click, unknown mapping, wrong parent quest ID or invalid policy leaves the reward unclaimed and explains the refusal. Other rewards retain their normal behavior. After the native claim succeeds, a scoped callback delivers the fixed components and any original cube; KubeJS performs only the pack's original 3–5 random draws. A repeated custom event has no fresh delivery authorization. The context is cleared in `finally`, without another persistent claim ledger.
+
+Апгрейд установленої обсидіанової печі до незеритової теж підтримується. Observer закріпленого Iron Furnaces 4.3.2 перевіряє нативний перехід блока, фактичну витрату upgrade-предмета й кінцевий block entity. Прямий рецепт печі та рецепт поліпшення витрачають по два незеритові злитки; компенсація в обох випадках — один. Сам крафт поліпшення без його застосування ще не означає виготовлення печі. Інші підтримувані маршрути наведено нижче.
+
+Upgrading a placed Obsidian Furnace to Netherite is also supported. The pinned Iron Furnaces 4.3.2 observer verifies the native block transition, actual upgrade-item consumption and resulting block entity. Both the direct furnace recipe and the upgrade recipe consume two Netherite Ingots; either route earns one ingot back. Crafting the upgrade item without applying it does not manufacture the furnace. Other supported routes appear below.
+
+### Оновлення існуючих світів / Existing worlds
+
+Усі 1627 зовнішніх ID і персональні claim keys збережені. **Уже отримана нагорода не видається повторно й не отримує автоматичної доплати.** Дев’ять кубів тепер доставляються разом із компенсацією через custom reward, але з тим самим ID, кількістю й tier. Збережені отримання переживають цю зміну типу.
+
+All 1627 outer IDs and personal claim keys are retained. **Already claimed rewards remain claimed and receive no automatic top-up.** Nine cubes now travel with a refund through a custom reward, retaining the same ID, count and tier. Existing claims survive that type change.
+
+Для старого завершеного, але ще не отриманого квесту діє нова умова виробництва. 40 із 41 потрібного output ID раніше не відстежувалися; їхній минулий крафт відновити з інвентарю чи прогресу неможливо. Для таких квестів після оновлення потрібне нове справжнє виготовлення або підтримуваний апгрейд. Раніше записаний факт `mekanism:ultimate_energy_cube` уже придатний для відповідної компенсації. Зміна команди не скидає отриманих персональних нагород і не копіює чужі виробничі факти у власний запис.
+
+An old completed but unclaimed refund quest uses the new manufacture condition. Forty of the 41 required outputs were not previously observed; inventory or quest progress cannot reconstruct their past crafting. Those quests require a new real manufacture or supported upgrade after updating. An already recorded `mekanism:ultimate_energy_cube` fact can satisfy its refund immediately. Team changes do not reset personal claims or copy other players' production facts into the player's own record.
+
+### Первинні приклади / Primary-source precedents
+
+Досліджено квестбуки Craftoria на commit [`7d940d2`](https://github.com/TeamAOF/Craftoria/tree/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters) та офіційний [Questing Mayhem 1.0.3 для Minecraft 1.7.10](https://www.curseforge.com/minecraft/modpacks/questing-mayhem/files/3374264). Craftoria дає чотири Engineering Processors за Spatial IO Port, вісім Quartz Glass за ME Drive, вісім Clean Stainless Steel Machine Casings за Distillation Tower; це конкретні матеріальні нагороди в [AE2](https://github.com/TeamAOF/Craftoria/blob/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters/applied_energistics.snbt) та [MI](https://github.com/TeamAOF/Craftoria/blob/7d940d2111eb39e8b24c463c9e9e3b254ed151a0/config/ftbquests/quests/chapters/mi_electric_age.snbt).
+
+У Questing Mayhem квест 554 повертає один із 40 витрачених Deep Storage Units за Infinity Chest; 540 повертає один із чотирьох Molecular Assemblers у ланцюжку EMC Crafter; квести крафту Signalum/Terrasteel Seeds повертають один із чотирьох відповідних блоків поряд із reward bag. Fluix Seeds повертає один із двох Fluix Blocks. Джерела — `overrides/config/betterquesting/DefaultQuests.json` і точні `.zs` рецепти офіційного ZIP, SHA256 `22c584d549132744d6f48292a78c315cb256c05a05521de75ba3e4a7c992dbcf`. У metadata записані file ID, URL, рядки рецептів та quest IDs. Атрибуцію «by spirit» у цьому джерелі не підтверджено: manifest указує DaZombieBoss, поточна сторінка CurseForge — onemantic.
+
+These primary questbooks establish fixed material rewards alongside other prizes. Questing Mayhem's checked examples return specific consumed components in varying proportions, with separate personal party rewards. SOQM applies that principle to its own pinned recipes and keeps its stronger actual-manufacture evidence requirement. The research does not imply a universal percentage refund of complete recipe value.
+
+### Повний перелік компенсацій / Complete refund list
+
+`Витрата → повернення` описує лише зазначений прямий інгредієнт. `*` означає повернення одного неподільного компонента з дорожчого рецепта, не 100% вартості всього крафту. Кожен рядок зберігає одну особисту нагороду за своїм наявним ID. / `Consumed → returned` refers only to the named direct ingredient. `*` marks one indivisible component returned from a larger expensive recipe, never the full craft cost. Each row retains one personal claim with its existing ID.
+
+| Quest ID | Виріб / Output | Повернений інгредієнт / Returned ingredient | Витрата → повернення / Consumed → returned | Наявна нагорода / Existing prize |
+| --- | --- | --- | ---: | --- |
+| `51301125F300B5D5` | NASA Workbench — `ad_astra:nasa_workbench` | `kubejs:control_assembly` | 1 → 1 * | Пакунок / Pack |
+| `513011BBCA06FEA6` | 16k ME Storage Component — `ae2:cell_component_16k` | `ae2:cell_component_4k` | 3 → 1 | Пакунок / Pack |
+| `5130110B5D09E918` | 256k ME Storage Component — `ae2:cell_component_256k` | `ae2:cell_component_64k` | 3 → 1 | Пакунок / Pack |
+| `5130114905904323` | 4k ME Storage Component — `ae2:cell_component_4k` | `ae2:cell_component_1k` | 3 → 1 | Пакунок / Pack |
+| `513011DA15992023` | 64k ME Storage Component — `ae2:cell_component_64k` | `ae2:cell_component_16k` | 3 → 1 | Пакунок / Pack |
+| `5130119BD717861F` | ME Controller — `ae2:controller` | `ae2:engineering_processor` | 1 → 1 * | Пакунок / Pack |
+| `513011B5F7F592D8` | Crafting Unit — `ae2:crafting_unit` | `ae2:calculation_processor` | 1 → 1 * | Пакунок / Pack |
+| `5130117C8CDC4800` | Dense Energy Cell — `ae2:dense_energy_cell` | `ae2:energy_cell` | 6 → 2 | Пакунок / Pack |
+| `5130117C40A8D2E1` | ME Drive — `ae2:drive` | `ae2:engineering_processor` | 2 → 1 | Пакунок / Pack |
+| `5130112D00658B23` | Molecular Assembler — `ae2:molecular_assembler` | `ae2:annihilation_core` | 1 → 1 * | Пакунок / Pack |
+| `5130112D86FBD3AF` | ME Quantum Link Chamber — `ae2:quantum_link` | `ae2:fluix_pearl` | 4 → 1 | Пакунок / Pack |
+| `513011EAB08A97F7` | Runic Altar — `botania:runic_altar` | `kubejs:arcane_conduit` | 1 → 1 * | Mayhem Cube T2 |
+| `5130111A90908B6C` | BuildCraft Laser — `buildcraftsilicon:laser` | `minecraft:diamond` | 2 → 1 | Пакунок / Pack |
+| `5130111D94D99E2B` | Basic Capacitor Bank — `enderio:basic_capacitor_bank` | `enderio:basic_capacitor` | 2 → 1 | Пакунок / Pack |
+| `51301167AE8889AA` | Powered Spawner — `enderio:powered_spawner` | `enderio:soularium_block` | 2 → 1 | Mayhem Cube T3 |
+| `51301189AE52B1F5` | SAG Mill — `enderio:sag_mill` | `kubejs:electromechanical_drive` | 1 → 1 * | Пакунок / Pack |
+| `51301148615D2591` | Soul Binder — `enderio:soul_binder` | `enderio:soularium_block` | 2 → 1 | Mayhem Cube T3 |
+| `514011CA86FD67E8` | Mechanical Hammer — `exdeorum:mechanical_hammer` | `enderio:dark_steel_ingot` | 3 → 1 | Пакунок / Pack |
+| `5130117AB9046CD2` | Enchantment Extractor — `industrialforegoing:enchantment_extractor` | `minecraft:diamond` | 2 → 1 | Пакунок / Pack |
+| `51401117A75D3720` | Netherite Furnace — `ironfurnaces:netherite_furnace` | `minecraft:netherite_ingot` | 2 → 1 | Mayhem Cube T4 |
+| `513011E2552BA5EA` | Basic Induction Cell — `mekanism:basic_induction_cell` | `mekanism:energy_tablet` | 3 → 1 | Пакунок / Pack |
+| `514D115314DFB698` | Chemical Crystallizer — `mekanism:chemical_crystallizer` | `kubejs:sealed_process_chamber` | 1 → 1 * | Пакунок / Pack |
+| `514D110A613D8197` | Chemical Infuser — `mekanism:chemical_infuser` | `mekanism:basic_chemical_tank` | 2 → 1 | Mayhem Cube T3 |
+| `514D11AB5959BBF5` | Digital Miner — `mekanism:digital_miner` | `mekanism:teleportation_core` | 2 → 1 | Пакунок / Pack |
+| `513011F6F0D21BC6` | Mekanism Laser — `mekanism:laser` | `mekanism:energy_tablet` | 2 → 1 | Пакунок / Pack |
+| `513011156F29CC4E` | Pressurized Reaction Chamber — `mekanism:pressurized_reaction_chamber` | `mekanism:basic_chemical_tank` | 2 → 1 | Пакунок / Pack |
+| `5130116A8EF3B812` | QIO Drive Array — `mekanism:qio_drive_array` | `mekanism:teleportation_core` | 2 → 1 | Пакунок / Pack |
+| `513011835D892AF4` | Base QIO Drive — `mekanism:qio_drive_base` | `mekanism:ultimate_control_circuit` | 3 → 1 | Пакунок / Pack |
+| `5130112203442BAE` | Hyper-Dense QIO Drive — `mekanism:qio_drive_hyper_dense` | `mekanism:qio_drive_base` | 3 → 1 | Пакунок / Pack |
+| `5130119895187FB1` | Supermassive QIO Drive — `mekanism:qio_drive_supermassive` | `mekanism:qio_drive_time_dilating` | 3 → 1 | Пакунок / Pack |
+| `513011C1C75B6080` | Time-Dilating QIO Drive — `mekanism:qio_drive_time_dilating` | `mekanism:qio_drive_hyper_dense` | 3 → 1 | Пакунок / Pack |
+| `513011C1277D6FAE` | Teleporter — `mekanism:teleporter` | `mekanism:steel_casing` | 3 → 1 | Пакунок / Pack |
+| `514D11F90042E7F4` | Thermal Evaporation Controller — `mekanism:thermal_evaporation_controller` | `mekanism:thermal_evaporation_block` | 3 → 1 | Mayhem Cube T2 |
+| `513011D2DC7B4947` | Ultimate Energy Cube — `mekanism:ultimate_energy_cube` | `minecraft:diamond_block` | 2 → 1 | Пакунок / Pack |
+| `514D113E1E8CF8B1` | Fusion Reactor Controller — `mekanismgenerators:fusion_reactor_controller` | `mekanismgenerators:fusion_reactor_frame` | 4 → 1 | Mayhem Cube T5 |
+| `51301151F34C43A4` | Gas-Burning Generator — `mekanismgenerators:gas_burning_generator` | `mekanism:steel_casing` | 2 → 1 | Пакунок / Pack |
+| `514D1121D23494BB` | Wind Generator — `mekanismgenerators:wind_generator` | `mekanism:energy_tablet` | 2 → 1 | Пакунок / Pack |
+| `513011675037BC60` | Dimension Builder — `rftoolsdim:dimension_builder` | `minecraft:diamond` | 2 → 1 | Mayhem Cube T5 |
+| `513011D1C9E27BE4` | RFTools Power Cell II — `rftoolspower:cell2` | `rftoolspower:power_core2` | 3 → 1 | Пакунок / Pack |
+| `51301100A7D9F653` | RFTools Power Cell III — `rftoolspower:cell3` | `rftoolspower:power_core3` | 3 → 1 | Пакунок / Pack |
+| `5130119B9A6344A6` | Advanced Dimensional Cell — `rftoolspower:dimensionalcell_advanced` | `rftoolsbase:infused_diamond` | 3 → 1 | Mayhem Cube T3 |
+
+Recipe IDs, canonical SHA256 values and the native world-upgrade alternative are recorded per quest in [`recipe_refunds.json`](../metadata/recipe_refunds.json). The compiler validates this authored evidence before generating either reward mappings or localized guidance.
 
 ## Як це працює
 
@@ -164,9 +265,9 @@ A draw contains 1–16 units. Rare/epic prizes, KubeJS components, barrels, back
 | space | 13.931 |
 | masterwork | 6.248 |
 
-Ці значення — умовні математичні сподівання, не результати ігрового проходження. Фіксованої суми ресурсів «за всю кампанію» більше немає: її визначають момент отримання, відкриті вироби та кількість гравців. Особистий режим множить загальну командну видачу на кількість учасників, які отримають власні нагороди. Більша нагорода не стає повторюваним квестом; потрібний для першого виготовлення дорогий предмет не може випасти до відповідного виробничого факту.
+Ці значення — умовні математичні сподівання випадкових пакунків, не результати ігрового проходження. Їхню загальну видачу визначають момент отримання, відкриті вироби та кількість гравців. Окремі гарантовані компенсації мають фіксований бюджет: 42 одиниці компонентів у 41 квесті на кожного гравця, який виконає всі відповідні умови й забере всі ці нагороди. Особистий режим множить загальну командну видачу на кількість учасників, які отримають власні нагороди. Більша нагорода не стає повторюваним квестом; випадковий дорогий приз не може випасти до відповідного виробничого факту.
 
-These are conditional mathematical expectations, not playthrough results. There is no single fixed campaign-wide material budget: claim timing, discovered outputs and player count determine it. Personal claims increase total team delivery with the number of members claiming their own rewards. Larger packs do not make quests repeatable; a required first expensive item cannot drop before its exact production fact exists.
+These are conditional mathematical expectations for random packs, not playthrough results. Claim timing, discovered outputs and player count determine their total delivery. The separate guaranteed refunds have a fixed budget: 42 component units across 41 quests per player who satisfies every corresponding condition and claims all these rewards. Personal claims increase total team delivery with the number of members claiming their own rewards. Larger packs do not make quests repeatable; a random expensive prize cannot drop before its exact production fact exists.
 
 **Пластик і HDPE виключені з призів, зокрема після відкриття.** Готовий радіаційний захист може бути призом після його фактичного виготовлення: HDPE у рецепті захисту не перетворюється на окрему нагороду. Контейнери, енергокуби, планшети мани й інші предмети створюються свіжими, із порожнім/default станом. Копіювати зі зразка вміст, storage UUID, енергію, ману, поліпшення чи афікси заборонено.
 
@@ -229,9 +330,9 @@ IE cube tiers follow the required recipes: the coke oven, initial blast furnace 
 
 ## Виробничі hooks і межі перевірки / Production hooks and validation scope
 
-**Нижче наведено очікуване покриття нових hooks 0.4.8. Цей документ не заявляє успішне проходження native-перевірки.** Фактичний статус потрібно звіряти зі звітами поточної версії у [`reports/`](../reports/); результати попередньої 0.4.7 не доводять нові шляхи виробництва й особистої міграції. Native серверна перевірка також не є графічною перевіркою клієнта чи повним survival-проходженням.
+Нижче наведено реалізовані шляхи спостерігача **0.4.10**. Native dedicated-server перевірка пройшла: 43 активні рецепти витрат, персональні компенсації, відмови без витрати claim, відсутність повторної видачі, апгрейд печі та збереження після reload підтверджені у [звіті 0.4.10](../reports/verification-0.4.10.md) і локальному машинному звіті `reports/runtime-probe.json`. Це серверна перевірка; графічний клієнт і повне survival-проходження до її обсягу не входять.
 
-**The rows below describe intended coverage of the new 0.4.8 hooks. This document does not assert that native validation has passed.** Check the current-version results in [`reports/`](../reports/) for actual evidence; previous 0.4.7 results do not prove the new production or personal-migration paths. A native dedicated-server check also does not constitute graphical client validation or a complete survival playthrough.
+The rows below describe the implemented **0.4.10** observer routes. Native dedicated-server validation passed: 43 active cost recipes, personal refunds, refusals without consuming claims, duplicate rejection, furnace upgrades and post-reload persistence are recorded in the [0.4.10 verification report](../reports/verification-0.4.10.md) and the locally generated `reports/runtime-probe.json`. Its scope covers server behavior; it does not include a graphical client or complete survival playthrough.
 
 | Шлях / Path | Очікувана умова запису / Intended recorded event | Приклади / Examples |
 | --- | --- | --- |
@@ -242,6 +343,7 @@ IE cube tiers follow the required recipes: the coke oven, initial blast furnace 
 | Mekanism Infusing Factory | Та сама умова завершення, тільки `FactoryType.INFUSING` / The same completed-operation condition, restricted to `FactoryType.INFUSING` | Ті самі схеми та сплави у фабриці / The same circuits and alloys in a factory |
 | Sophisticated crafting serializers | Справжній результат vanilla/ME crafting для зміни рівня та upgrade-рецептів / Actual vanilla/ME craft result for tier and upgrade recipes | Storage tier upgrades, backpack upgrades, next-tier upgrades |
 | Sophisticated upgrade на встановленій бочці / In-world storage tier upgrade | Native upgrade успішний, предмет поліпшення реально витрачено, новий block-item ID відрізняється / Native upgrade succeeded, upgrade item was consumed, and the resulting block-item ID changed | Підвищення рівня вже встановленої бочки / Upgrading an already-placed barrel |
+| Iron Furnaces upgrade установленої печі / In-world furnace tier upgrade | Native перехід від правильного попереднього tier, точний предмет поліпшення витрачено, фактичний кінцевий блок і його furnace block entity перевірено / Native transition from the required tier, exact upgrade item consumed, resulting block and furnace block entity verified | Обсидіанова → незеритова піч / Obsidian → Netherite Furnace |
 
 Native-джерела: [`QmProgressiveRewards`](../src/compat/progressive-rewards/src/qm/rewards/QmProgressiveRewards.java), [`ProductionEvidence`](../src/compat/progressive-rewards/src/qm/rewards/ProductionEvidence.java), [`ProductionPolicy`](../src/compat/progressive-rewards/src/qm/rewards/ProductionPolicy.java), [mixin-класи](../src/compat/progressive-rewards/src/qm/rewards/mixin/). Докази в каталозі вказують реальні продуктивні recipe ID й способи; native whitelist задає точні дозволені output item ID, а не закриває чесні варіанти деревини чи альтернативні supported-рецепти.
 
@@ -251,15 +353,23 @@ Native sources: [`QmProgressiveRewards`](../src/compat/progressive-rewards/src/q
 
 Validation must cover real completion for every supported channel, blocked output and missing inputs, no facts from pickup/reward/reset, correct owner and team, creative/fake/spectator actors, offline owners, save/reload, two players' personal claims, old NIL claims and preserved old personal claims, missing/invalid policy, and a missing observer. Ukrainian/English commands, labels and client readability require separate client review.
 
+Для компенсацій [`ProgressiveRewardsProbe`](../tests/runtime/ProgressiveRewardsProbe.java) додатково перевіряє 43 активні рецепти витрат для 41 виробу, відмову до витрати claim, невідомий mapping, невірного батька, пошкоджену політику без блокування сторонніх нагород, особисту видачу двом учасникам і точне збереження куба. Повторні custom events, перехід між командами, дискове збереження та отримання після reload не повинні створювати повторних виплат. Повернений компонент не повинен відкривати сам себе у випадковому пулі. Native-джерело цього контракту — [`RecipeRefunds`](../src/compat/progressive-rewards/src/qm/rewards/RecipeRefunds.java).
+
+For refunds, [`ProgressiveRewardsProbe`](../tests/runtime/ProgressiveRewardsProbe.java) additionally checks 43 active cost recipes for 41 outputs, refusal before a claim is spent, unknown mappings, wrong parent ownership, invalid policy without blocking unrelated rewards, two members' personal delivery and exact cube preservation. Repeated custom events, team transitions, disk persistence and post-reload claims must not duplicate payouts. A returned component must not unlock itself in random pools. [`RecipeRefunds`](../src/compat/progressive-rewards/src/qm/rewards/RecipeRefunds.java) implements that native contract.
+
 ## Редагування й відтворення / Editing and regeneration
 
 Змінювати склад потрібно в [`metadata/reward_pools.json`](../metadata/reward_pools.json), а підтвердження — у [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Зберігайте позитивні ваги, 1–16 одиниці за жеребкування, одноштучні дорогі призи, двомовні назви, точний own-item gate і щонайменше п’ять безпечних стартових результатів у кожній темі. Новий machine-only приз потребує підтримуваного й перевіреного observer. Інвентар, квестова детекція чи JEI не є заміною.
 
 Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) and evidence in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Preserve positive weights, 1–16 units per draw, single-unit expensive prizes, bilingual names, exact own-item gates and at least five safe starter results per theme. A new machine-only prize requires a supported and validated observer. Inventory, quest detection and JEI are not substitutes.
 
-`campaign_rewards.apply(chapters, locale)` перетворює наявні ordinary reward objects на особисті custom rewards зі збереженими ID, лишає milestone-куби фіксованими й зберігає особисту книгу. Runtime-політика містить mapping зовнішнього reward ID до quest ID і теми. Старі 14 статичних random-таблиць попередньої політики прибираються під час генерації; нова система не використовує їхні незмінні відсотки.
+Компенсації редагуються в [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json). Для кожного виробу вкажіть один основний квест, усі активні авторські рецепти та їхні SHA256, прямий дорогий інгредієнт і мінімальну витрату серед альтернатив. `partial_ingredient` повертає не більше половини повторюваного інгредієнта; `one_component` допускає один неподільний компонент, якщо щонайменше два інші різні авторські компоненти залишаються витраченими. Новий маршрут виготовлення потребує native observer і перевірки його фактичних витрат. Не додавайте другий refund slot, виробничий запис під час видачі чи перевірку володіння замість виготовлення.
 
-`campaign_rewards.apply(chapters, locale)` converts existing ordinary reward objects into personal custom rewards while retaining IDs, keeps milestone cubes fixed and preserves the personal book. Runtime policy maps the outer reward ID to its quest ID and theme. Regeneration removes the previous policy's fourteen static random tables; the new system does not use their fixed percentages.
+Edit refunds in [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json). For each output, record one primary quest, every active authored recipe and its SHA256, a direct expensive ingredient and the minimum consumption across alternatives. `partial_ingredient` returns at most half a repeated ingredient; `one_component` permits one indivisible component when at least two other distinct authored components remain consumed. A new manufacture route requires a native observer and verification of its actual costs. Keep one refund slot, and do not record manufacture during payout or substitute possession for manufacture.
+
+`campaign_rewards.apply(chapters, locale)` перетворює наявні ordinary reward objects на особисті custom rewards зі збереженими ID та зберігає особисту книгу. Усі milestone-куби лишаються фіксованими: дев’ять видаються через custom reward разом із компенсацією, решта — як ItemReward. Runtime-політика містить mapping зовнішнього reward ID до quest ID, теми та, за наявності, `refund` і `cube`. `campaign_refunds.apply_locale` замінює старі абзаци компенсації в українських та англійських описах, включно з видаленими записами політики. Старі 14 статичних random-таблиць попередньої політики прибираються під час генерації; нова система не використовує їхні незмінні відсотки.
+
+`campaign_rewards.apply(chapters, locale)` converts existing ordinary reward objects into personal custom rewards while retaining IDs and preserves the personal book. All milestone cubes remain fixed: nine use custom rewards alongside their refund, while the rest remain ItemRewards. Runtime policy maps each outer reward ID to its quest ID, theme and optional `refund` and `cube`. `campaign_refunds.apply_locale` replaces old refund paragraphs in Ukrainian and English descriptions, including entries removed from the policy. Regeneration removes the previous policy's fourteen static random tables; the new system does not use their fixed percentages.
 
 Відтворення після редагування / Regenerate after editing:
 
@@ -274,6 +384,8 @@ python3 scripts/soqm.py lock
 ```sh
 python3 scripts/campaign_rewards.py --check
 python3 -m unittest discover -s tests -p test_rewards.py -v
+python3 -m unittest discover -s tests -p test_recipe_refunds.py -v
+python3 -m unittest discover -s tests -p test_production_observer.py -v
 node tests/progressive-rewards.mjs
 ```
 

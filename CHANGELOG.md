@@ -2,6 +2,35 @@
 
 ## Unreleased
 
+### 0.4.10 — crafting refunds, coordinated HUD and Sophisticated Storage
+
+- Give 41 expensive crafting quests a guaranteed return of reviewed recipe
+  ingredients alongside their existing personal random pack or Mayhem Cube.
+  Partial refunds follow the cheapest supported live recipe, with native
+  manufacture evidence and a pre-claim gate that keeps an early claim available.
+  Nine cube/refund bundles reuse their original reward IDs; all 193 cube
+  milestones remain. Existing claims are never reissued.
+- Recognize successful Iron Furnaces upgrades performed in the world as
+  manufacture, alongside the existing crafting and automation hooks.
+- Coordinate Xaero's minimap, FTB Ultimine, the pinned quest tracker, Jade,
+  Ad Astra suit indicators and Mekanism HUD panels in the existing Quest UI
+  adapter. Keep the tracker bounded, wrap long lines and expose configurable
+  Page Up/Page Down scrolling; retain an opt-out for custom HUD arrangements.
+- Remove Iron Chests from the dependency manifest, recipes, EMC entries and
+  quest content. Retarget six saved quest slots to Sophisticated Storage,
+  teach one consistent storage route and use inventory-free tier upgrade kits
+  in AE2 machine recipes. Include a read-only old-world reference audit and
+  explicit preparation/rollback instructions; container conversion is not automatic.
+- Add native correctness and timing probes for all 166 item conditions in the
+  35 construction kits, including multi-stack amounts, inventory debounce,
+  retained progress and separate formation/operation conditions. No world
+  scanner or periodic multiblock search is added for material detection.
+- Preserve 1,626 quest IDs, 1,911 task IDs and 1,627 personal reward IDs. Record
+  the six task retargets and 41 reward edits against the previous main commit
+  without replacing the older immutable save contracts.
+
+### Previously reviewed 0.4.9 questbook changes
+
 - Add explicit, non-consuming construction checklists to 35 multiblock and
   assembly quests: 138 additive item tasks and 14 corrected quantities, checked
   against pinned structure templates and validators. Retain native formation

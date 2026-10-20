@@ -86,6 +86,7 @@ public final class SoqmRuntimeProbe {
                 check(ServerQuestFile.INSTANCE != null, "FTB quest file is loaded");
                 testRecipeEvidence(server);
                 testProgressUpgrade(server);
+                MultiblockMaterialsProbe.run(server, results);
                 prepareWorkshop(server);
                 CardboardTransportProbe.run(server, player, results);
                 FusionRuntimeProbe.run(server, results);
@@ -232,7 +233,8 @@ public final class SoqmRuntimeProbe {
             }
         }
         check((sharedMigrations == 1625 && personalClaims == 1)
-                        || (sharedMigrations == 0 && personalClaims == 1626),
+                        || (sharedMigrations == 0 && personalClaims == claimed.size()
+                            && (personalClaims == 1626 || personalClaims == 1627)),
                 "The baseline exercises either the shared upgrade or already personal campaign claims");
         check(partial > 0, "Nonempty partial task progress was exercised");
         upgradeState = after.serializeNBT();
