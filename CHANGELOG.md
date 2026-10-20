@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### 0.4.13 — dynamic lighting from held items
+
+- Add LambDynamicLights 4.8.11+1.21.1 for Minecraft 1.21.1 / NeoForge, pinned
+  to official CurseForge project 393442 / file 8780227 with verified byte count
+  and SHA-256. This release supports the pack's Sodium 0.8.13.
+- Enable lighting from held torches and lanterns through the mod's standard
+  defaults. The pack does not overwrite a player's existing lighting settings.
+  Required NeoForge libraries are already included in the official mod JAR.
+- Mark the dependency as client-only so the dedicated-server harness excludes
+  it. Update the manifest, mod list and installation guides for 129 pinned
+  third-party dependencies and package version 0.4.13.
+
 ### 0.4.12 — hardcore workshop, MekaSuit progression and visible rewards
 
 - Adapt the early Questing Mayhem workshop into 63 explicit recipe replacements:

@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/banner.svg" alt="Shout Out to Questing Mayhem" width="100%"></p>
 
-<p align="center"><b>SOQM 0.4.12 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
+<p align="center"><b>SOQM 0.4.13 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
 **Shout Out to Questing Mayhem (SOQM)** is an Expert Minecraft modpack about
 turning a small workshop into an automated empire. Over **1,600 quests across
@@ -24,7 +24,8 @@ material milestones and guided production routes.
   after the team has actually made them. Preview guaranteed item stacks and all
   possible pack prizes directly in the quest book.
 - **Everyday conveniences:** inventory sorting with Inventory Profiles Next,
-  upgradeable storage and backpacks, recipe lookup, maps and waystones.
+  light from held torches with LambDynamicLights, upgradeable storage and
+  backpacks, recipe lookup, maps and waystones.
 
 **Status: alpha.** Campaign balance, full playthroughs and long-term multiplayer
 behavior are still being validated.
@@ -40,7 +41,7 @@ are not automatically converted. Follow the [storage migration guide](docs/STORA
 1. Open [Actions → Validate and package](https://github.com/lsanarchist/SOQM/actions/workflows/validate.yml)
    and choose a successful run for the commit you want.
 2. Download `SOQM-candidate-<commit>` and extract GitHub's outer ZIP.
-3. Import the enclosed `SOQM-0.4.12-curseforge.zip` into the CurseForge App.
+3. Import the enclosed `SOQM-0.4.13-curseforge.zip` into the CurseForge App.
 
 CI candidates are retained for 14 days. The
 [installation guide](docs/INSTALL.en.md) covers local builds, other launchers
