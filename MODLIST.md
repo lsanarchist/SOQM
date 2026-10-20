@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **129 pinned third-party dependencies**. SOQM 0.4.13 additionally
+The table lists **129 pinned third-party dependencies**. SOQM 0.4.14 additionally
 ships **12 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new

@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+### 0.4.14 — Village Guard without global mob polling
+
+- Replace Village Guard's per-tick pass over every mob with target-change hooks
+  and checks of ongoing encounters involving Millénaire villagers. Cover native
+  mob targets, direct Brain attack-memory writes and Millénaire combat targets,
+  including villagers entering protected ground after a pursuit begins.
+- Update the spatial index after village membership, building geometry or culture
+  definitions change. Coalesce repeated changes and rebuild only the affected
+  village during ordinary play; unchanged villages no longer rebuild every
+  200 ticks. Keep the index owned by its native manager and release listeners
+  on removal or level unload.
+- Retain peaceful-resident and actual-raider rules, radius and rotated building
+  boundaries, damage prevention and block-by-block mob explosion filtering.
+  Add an isolated native server regression harness with work counters.
+- Rebuild and pin `qm-village-guard-0.4.3.jar`. A manual client/server update
+  must remove the old `qm-village-guard-0.4.2.jar` before starting the new profile.
+
 ### 0.4.13 — dynamic lighting from held items
 
 - Add LambDynamicLights 4.8.11+1.21.1 for Minecraft 1.21.1 / NeoForge, pinned

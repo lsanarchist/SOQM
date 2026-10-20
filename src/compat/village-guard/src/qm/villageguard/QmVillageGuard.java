@@ -13,35 +13,39 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.entity.EntityMobGriefingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDestroyBlockEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.ExplosionEvent;
+import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStoppedEvent;
-import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import org.millenaire.building.BuildingInstance;
-import org.millenaire.building.BuildingPlan;
-import org.millenaire.culture.VillageType;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.millenaire.culture.VillagerType;
 import org.millenaire.entity.MillVillager;
 import org.millenaire.culture.ModCultures;
-import org.millenaire.village.Village;
-import org.millenaire.village.VillageId;
-import org.millenaire.village.VillageSavedData;
 
 /** Protects peaceful registered Millenaire settlements without loading chunks. */
 @Mod(QmVillageGuard.MOD_ID)
 public final class QmVillageGuard {
     public static final String MOD_ID = "qm_village_guard";
-    private static final Map<ServerLevel, Index> INDEXES = new WeakHashMap<>();
-    private static final int CELL_SHIFT = 8; // 256 block X/Z spatial cells.
-    private static final long REFRESH_TICKS = 200L;
+    // Only attackers with a Millenaire target need boundary/type rechecks.
+    // Weak keys and explicit leave/unload cleanup cannot retain an old world.
+    private static final Set<Mob> TRACKED = Collections.newSetFromMap(new WeakHashMap<>());
+    private static final Set<Mob> PENDING = Collections.newSetFromMap(new IdentityHashMap<>());
+    private static final Set<Mob> REMOVING = Collections.newSetFromMap(new IdentityHashMap<>());
+    private static boolean checkingTargets;
+    private static long targetChecks, observations, brainBindings;
 
     public QmVillageGuard() {
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, QmVillageGuard::onTarget);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, QmVillageGuard::onTick);
+        NeoForge.EVENT_BUS.addListener(QmVillageGuard::onJoin);
+        NeoForge.EVENT_BUS.addListener(QmVillageGuard::onLeave);
+        NeoForge.EVENT_BUS.addListener(QmVillageGuard::onLevelUnload);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, QmVillageGuard::onDamage);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, QmVillageGuard::onExplosion);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, QmVillageGuard::onGrief);
@@ -50,71 +54,8 @@ public final class QmVillageGuard {
         NeoForge.EVENT_BUS.addListener(QmVillageGuard::onStopped);
     }
 
-    private record Footprint(BuildingInstance building, int minY, int maxY,
-                             int minX, int maxX, int minZ, int maxZ) {
-        boolean contains(BlockPos pos) {
-            return pos.getY() >= minY && pos.getY() <= maxY && building.containsPos(pos);
-        }
-    }
-
-    private record Area(VillageId id, BlockPos center, int radius, List<Footprint> footprints,
-                        int minX, int maxX, int minZ, int maxZ) {
-        boolean contains(BlockPos pos) {
-            long dx=(long)pos.getX()-center.getX(), dz=(long)pos.getZ()-center.getZ();
-            if (pos.getY() >= center.getY()-24 && pos.getY() <= center.getY()+64 &&
-                    dx*dx + dz*dz <= (long)radius*radius) return true;
-            for (Footprint f : footprints) if (f.contains(pos)) return true;
-            return false;
-        }
-    }
-
-    private static final class Index {
-        long refreshedAt = Long.MIN_VALUE;
-        int villageCount = -1;
-        final Map<VillageId, Area> byId = new HashMap<>();
-        final Map<Long, List<Area>> cells = new HashMap<>();
-        void refresh(ServerLevel level, Collection<Village> villages) {
-            byId.clear(); cells.clear(); villageCount = villages.size(); refreshedAt = level.getGameTime();
-            for (Village village : villages) {
-                VillageType type = ModCultures.getVillageType(village.getVillageTypeId());
-                if (type == null || type.loneBuilding()) continue;
-                BlockPos center = village.getCenter().immutable(); int radius=Math.max(0,type.radius());
-                int minX=center.getX()-radius,maxX=center.getX()+radius,minZ=center.getZ()-radius,maxZ=center.getZ()+radius;
-                List<Footprint> footprints=new ArrayList<>();
-                for (BuildingInstance building : village.getBuildings()) {
-                    BuildingPlan plan=building.getPlanId()==null?null:ModCultures.getBuildingPlan(building.getPlanId());
-                    if (plan==null || plan.width()<=0 || plan.depth()<=0 || plan.height()<=0) continue;
-                    // Conservative cell bounds; the exact rotated native footprint
-                    // performs the final position test, including negative offsets.
-                    int extent=Math.max(plan.width(),plan.depth()); BlockPos origin=building.getOrigin();
-                    int x0=origin.getX()-extent,x1=origin.getX()+extent,z0=origin.getZ()-extent,z1=origin.getZ()+extent;
-                    int floor=building.getWallFootY();
-                    footprints.add(new Footprint(building,floor-2,floor+plan.height()+2,x0,x1,z0,z1));
-                    minX=Math.min(minX,x0);maxX=Math.max(maxX,x1);minZ=Math.min(minZ,z0);maxZ=Math.max(maxZ,z1);
-                }
-                Area area=new Area(village.getId(),center,radius,List.copyOf(footprints),minX,maxX,minZ,maxZ);
-                byId.put(area.id(),area);
-                for (int cx=minX>>CELL_SHIFT;cx<=maxX>>CELL_SHIFT;cx++)
-                    for (int cz=minZ>>CELL_SHIFT;cz<=maxZ>>CELL_SHIFT;cz++)
-                        cells.computeIfAbsent(cell(cx,cz),ignored->new ArrayList<>()).add(area);
-            }
-        }
-    }
-
-    private static long cell(int x,int z) { return ((long)x<<32) ^ (z & 0xffffffffL); }
-    private static Index index(ServerLevel level) {
-        Collection<Village> villages=VillageSavedData.get(level).getVillageManager().getAllVillages();
-        Index index=INDEXES.computeIfAbsent(level,ignored->new Index()); long now=level.getGameTime();
-        if(index.villageCount!=villages.size() || index.refreshedAt==Long.MIN_VALUE || now<index.refreshedAt || now-index.refreshedAt>=REFRESH_TICKS)
-            index.refresh(level,villages);
-        return index;
-    }
-
     public static boolean isProtectedPos(ServerLevel level,BlockPos pos) {
-        List<Area> areas=index(level).cells.get(cell(pos.getX()>>CELL_SHIFT,pos.getZ()>>CELL_SHIFT));
-        if(areas==null)return false;
-        for(Area area:areas)if(area.contains(pos))return true;
-        return false;
+        return VillageProtectionIndex.get(level).contains(pos);
     }
 
     public static boolean isProtectedVillager(Entity entity) {
@@ -124,8 +65,7 @@ public final class QmVillageGuard {
         if(type==null || type.isHostile())return false;
         // A guard's profession may have the "raider" capability, but only an
         // actual raider entity is excluded. Lone inns/farms/bandit huts are excluded.
-        Area home=index(level).byId.get(villager.getVillageId());
-        return home!=null && home.contains(villager.blockPosition());
+        return VillageProtectionIndex.get(level).containsVillager(villager.getVillageId(),villager.blockPosition());
     }
 
     public static boolean isHostile(Entity entity) {
@@ -153,7 +93,11 @@ public final class QmVillageGuard {
             mob.getBrain().eraseMemory(MemoryModuleType.ATTACK_TARGET);changed=true;
         }
         if(mob instanceof MillVillager villager && isProtectedVillager(villager.getAttackTarget())) {
+            // Millenaire's custom setter also overwrites Mob.target. The
+            // remaining ordinary target has already passed the guard above.
+            LivingEntity ordinary=mob.getTarget();
             villager.setAttackTarget(null);changed=true;
+            if(ordinary!=null && mob.getTarget()==null)mob.setTarget(ordinary);
         }
         // Keep any unrelated player target/navigation intact.
         if(changed && mob.getTarget()==null && attackMemory(mob).isEmpty() &&
@@ -169,13 +113,98 @@ public final class QmVillageGuard {
     }
 
     private static void onTarget(LivingChangeTargetEvent event) {
-        if(event.getEntity() instanceof Mob mob && isProtectedVillager(event.getNewAboutToBeSetTarget())) {
-            event.setCanceled(true);clearProtectedTargets(mob);
+        if(event.getEntity() instanceof Mob mob && mob.level() instanceof ServerLevel) {
+            if(rejectTarget(mob,event.getNewAboutToBeSetTarget()))event.setCanceled(true);
         }
     }
 
-    private static void onTick(EntityTickEvent.Pre event) {
-        if(event.getEntity() instanceof Mob mob && mob.level() instanceof ServerLevel)clearProtectedTargets(mob);
+    /** Shared guard for native targets, direct Brain writes and Millenaire combat. */
+    public static boolean rejectTarget(Mob owner, LivingEntity target) {
+        if(isProtectedVillager(target)) {
+            if(owner!=null && owner.level() instanceof ServerLevel)clearProtectedTargets(owner);
+            return true;
+        }
+        if(owner!=null && target instanceof MillVillager && target.isAlive())watch(owner);
+        return false;
+    }
+
+    private static void watch(Mob mob) {
+        if(!(mob.level() instanceof ServerLevel) || mob.isRemoved() || !mob.isAlive())return;
+        if(checkingTargets) {
+            REMOVING.remove(mob);
+            PENDING.add(mob);
+        } else TRACKED.add(mob);
+    }
+
+    private static boolean hasVillageTarget(Mob mob) {
+        LivingEntity ordinary=mob.getTarget();
+        if(ordinary instanceof MillVillager && ordinary.isAlive())return true;
+        Optional<LivingEntity> memory=attackMemory(mob);
+        if(memory.isPresent() && memory.get() instanceof MillVillager && memory.get().isAlive())return true;
+        return mob instanceof MillVillager villager && villager.getAttackTarget() instanceof MillVillager target && target.isAlive();
+    }
+
+    /** One cold observation on entity join or Brain replacement, never an all-mob tick. */
+    public static void observeTargets(Mob mob) {
+        if(!(mob.level() instanceof ServerLevel))return;
+        observations++;
+        if(hasVillageTarget(mob))watch(mob);
+    }
+
+    public static void brainBound(Mob owner) {
+        if(!(owner.level() instanceof ServerLevel))return;
+        brainBindings++;
+        observeTargets(owner);
+    }
+
+    /** Recheck only ongoing village-target encounters, including boundary crossings. */
+    public static void tickTrackedTargets() {
+        if(checkingTargets)return;
+        checkingTargets=true;
+        try {
+            Iterator<Mob> iterator=TRACKED.iterator();
+            while(iterator.hasNext()) {
+                Mob mob=iterator.next();
+                if(mob.isRemoved() || !mob.isAlive() || !(mob.level() instanceof ServerLevel)) {
+                    iterator.remove();continue;
+                }
+                targetChecks++;
+                clearProtectedTargets(mob);
+                if(!hasVillageTarget(mob))iterator.remove();
+            }
+        } finally {
+            checkingTargets=false;
+            TRACKED.addAll(PENDING);
+            TRACKED.removeAll(REMOVING);
+            PENDING.clear();REMOVING.clear();
+        }
+    }
+
+    private static void forget(Mob mob) {
+        PENDING.remove(mob);
+        if(checkingTargets)REMOVING.add(mob);else TRACKED.remove(mob);
+    }
+
+    private static void onTick(ServerTickEvent.Pre event) { tickTrackedTargets(); }
+
+    private static void onJoin(EntityJoinLevelEvent event) {
+        if(event.getLevel() instanceof ServerLevel && event.getEntity() instanceof Mob mob)
+            ((GuardedBrain)mob.getBrain()).qm$bindOwner(mob);
+    }
+
+    private static void onLeave(EntityLeaveLevelEvent event) {
+        // NeoForge also posts this when a live section becomes hidden. Becoming
+        // visible again need not post a join, so keep those ongoing encounters.
+        if(event.getLevel() instanceof ServerLevel && event.getEntity() instanceof Mob mob
+                && mob.getRemovalReason()!=null)forget(mob);
+    }
+
+    private static void onLevelUnload(LevelEvent.Unload event) {
+        if(!(event.getLevel() instanceof ServerLevel level))return;
+        // Use a snapshot: level teardown can be reentrant during an event callback.
+        for(Mob mob:new ArrayList<>(TRACKED))if(mob.level()==level)forget(mob);
+        PENDING.removeIf(mob->mob.level()==level);
+        VillageProtectionIndex.unload(level);
     }
 
     private static void onDamage(LivingIncomingDamageEvent event) {
@@ -206,9 +235,16 @@ public final class QmVillageGuard {
         if(entity!=null && entity.level() instanceof ServerLevel level && isHostile(entity) && isProtectedPos(level,event.getPos()))event.setCanceled(true);
     }
 
-    private static void onStopped(ServerStoppedEvent event) { invalidateAll(); }
-    public static void invalidateAll() { INDEXES.clear(); }
+    private static void onStopped(ServerStoppedEvent event) {
+        VillageProtectionIndex.invalidateAll();
+        TRACKED.clear();PENDING.clear();REMOVING.clear();
+    }
+    public static void invalidateAll() { VillageProtectionIndex.invalidateAll(); }
     public static Map<String,Integer> debugIndex(ServerLevel level) {
-        Index index=index(level);return Map.of("villages",index.byId.size(),"cells",index.cells.size(),"registered",index.villageCount);
+        return VillageProtectionIndex.get(level).diagnostics();
+    }
+    public static Map<String,Long> debugTracking() {
+        return Map.of("tracked",(long)TRACKED.size(),"checks",targetChecks,
+                "observations",observations,"brain_bindings",brainBindings);
     }
 }

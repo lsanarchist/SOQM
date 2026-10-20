@@ -3,6 +3,14 @@
   "minVersion": "0.8",
   "package": "qm.villageguard.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["VillagerCombatMixin"],
+  "mixins": [
+    "VillagerCombatMixin",
+    "BrainTargetMixin",
+    "VillageManagerIndexMixin",
+    "VillageGeometryMixin",
+    "BuildingGeometryMixin",
+    "CultureGeometryMixin",
+    "VillageSavedDataCacheAccess"
+  ],
   "injectors": {"defaultRequire": 1}
 }
