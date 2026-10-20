@@ -9,10 +9,9 @@ with Mojang or Microsoft.
   `5c17c9030296cbbc4ce8a5c0e075c19f10366524a17f95f7fbcbe12c25604061`.
   `soqm.json` records the input; source archives and their historical runtime
   reports are not committed as project artifacts.
-- **Third-party mods:** `metadata/mods.lock.json` pins **125** official
-  project/file references, versions, hashes and sizes. The original 111 pins
-  remain unchanged, with 14 additions. The installable ZIP uses a manifest,
-  rather than bundling these mod JARs. Each mod retains its own license;
+- **Third-party mods:** `metadata/mods.lock.json` pins **128** official
+  project/file references, versions, hashes and sizes. The installable ZIP uses
+  a manifest, rather than bundling these mod JARs. Each mod retains its own license;
   an absent license field is unknown, not a grant of redistribution rights.
   See [MODLIST.md](MODLIST.md).
 - **Authored compatibility modules:** **10** `qm-*` modules come from the

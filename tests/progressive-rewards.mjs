@@ -366,7 +366,7 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1442, 'Every campaign custom reward and cube/refund bundle is mapped');
+assert.equal(Object.keys(actual.reward_mappings).length, 1443, 'Every campaign custom reward and cube/refund bundle is mapped');
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.refund).length, 41);
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.cube).length, 9);
 const actualRegistry = new Set(registry);
@@ -410,4 +410,4 @@ for (const pool of actual.pools) {
   assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1442-custom-reward policy, 41 native refund bundles, native-only cube delivery, once-per-context random pack, production gates, normalized odds, 3/4/5 draws, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1443-custom-reward policy, 41 native refund bundles, native-only cube delivery, once-per-context random pack, production gates, normalized odds, 3/4/5 draws, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');

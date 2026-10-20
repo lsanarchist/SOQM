@@ -1,0 +1,113 @@
+{
+  "chapter.514010943B3A651C.chapter_subtitle": [
+    "Feed → Flux Hammer → Flux Sieve → receiver. Scale batches after testing the line, then import drops from the external buffer into ME.",
+    "10 quests · 3 sequential production sections.",
+    "Read top to bottom · hover a quest to see all its connections",
+    "Open a quest to inspect all prerequisites, including links to other chapters. Item tasks check inventory; the description explains assembly and a test run."
+  ],
+  "chapter.514010943B3A651C.title": "30 · Ex Machinis: Powered Processing",
+  "image.51410410000008B2.title": "30 · Ex Machinis: Powered Processing",
+  "image.51410410000008B3.title": "Read top to bottom · hover a quest to see all its connections",
+  "image.51410410000008B8.title": "01  Assemble the first Flux line",
+  "image.51410410000008B9.title": "Crushing in a Flux\nLine",
+  "image.51410410000008BA.title": "Feed Items without\nFE",
+  "image.51410410000008BB.title": "Sifting in a Flux\nLine",
+  "image.51410410000008BC.title": "Chunks Become Ore\nAgain",
+  "image.51410410000008BF.title": "02  Ore packing and larger batches",
+  "image.51410410000008C0.title": "Gold Batch\nUpgrades",
+  "image.51410410000008C1.title": "Diamond Batch\nUpgrades",
+  "image.51410410000008C2.title": "Maximum Flux\nThroughput",
+  "image.51410410000008C3.title": "A Signal from the\nBuffer",
+  "image.51410410000008C6.title": "03  Deliver to digital storage",
+  "image.51410410000008C7.title": "Feed Gravel to the\nSieve",
+  "image.51410410000008C8.title": "Sieve Drops Reach\nME",
+  "quest.51401111C237D431.quest_desc": [
+    "The Flux Compactor continues the chunk-to-ore assembly you already learned. Its Expert recipe needs a Precision Mechanism and a Control Assembly; compressed cobblestone is not a prerequisite.",
+    "Feed matching chunks to its internal inventory, supply FE and place a separate receiver on its output, downward by default. Check JEI’s Flux Compactor category: it runs specific recipes rather than arbitrary crafting-grid patterns.",
+    "The pack includes separate compacting recipes for osmium and other compatible modded ores. Send completed ore to smelting or processing and keep meshes, fuel and random by-products on other routes."
+  ],
+  "quest.51401111C237D431.quest_subtitle": "2 · Ore packing and larger batches",
+  "quest.51401111C237D431.title": "Chunks Become Ore Again",
+  "quest.5140113E0CEBF67F.quest_desc": [
+    "A Comparator Upgrade fits the Item Buffer’s separate comparator slot. It reads that buffer’s fullness; it does not require a Flux Compactor.",
+    "While holding the upgrade, sneak-right-click a block face to select its redstone output direction. Install it and test the signal with a small batch. Redstone direction and item-output direction are configured separately.",
+    "To monitor sieve output, use the buffer as its receiver and arrange an early production shutoff. A single fullness signal does not guarantee room for every new random drop type; reserve empty slots and check the receiver before large batches."
+  ],
+  "quest.5140113E0CEBF67F.quest_subtitle": "1 · Assemble the first Flux line",
+  "quest.5140113E0CEBF67F.title": "A Signal from the Buffer",
+  "quest.5140114A64A45C5A.quest_desc": [
+    "A Netherite Upgrade needs three Diamond Upgrades, Stellar Alloy, Quantum Processor, Dimensional Matrix and netherite. This is a late material step, not a required first-ME-storage component.",
+    "Install one netherite module. It processes up to 64 items in a default 20-tick cycle; at 2560 FE per item, continuous full batches average 8192 FE/t. Check generation, cables and the energy reserve.",
+    "Test maximum throughput only with extraction configured and spare output slots. Insufficient energy can reduce the actual batch, and a full sieve receiver can lose drops."
+  ],
+  "quest.5140114A64A45C5A.quest_subtitle": "2 · Ore packing and larger batches",
+  "quest.5140114A64A45C5A.title": "Maximum Flux Throughput",
+  "quest.51401188E2DC8B2A.quest_desc": [
+    "Craft a Flux Sieve from the Mechanical Sieve, a Precision Mechanism and a Control Assembly. Fit a suitable mesh in its mesh slot; a Diamond Mesh is not mandatory.",
+    "Input: gravel in the internal inventory. Power: FE through a cable. Output: a separate chest or Item Buffer below the sieve, into which it pushes drops. Change the output side by sneaking and right-clicking the desired face with a hammer.",
+    "Leave free slots for the different drops. This version can lose drops that a full receiver rejects: stop the machine with redstone and stop input before the receiver fills. A later Import Bus belongs on the output chest or buffer, not the sieve’s internal inventory."
+  ],
+  "quest.51401188E2DC8B2A.quest_subtitle": "1 · Assemble the first Flux line",
+  "quest.51401188E2DC8B2A.title": "Sifting in a Flux Line",
+  "quest.5140119A18901AB3.quest_desc": [
+    "The Item Buffer stores items and pushes them into an adjacent inventory on its output side, downward by default. It needs no FE. Its recipe uses a chest, hopper, iron and redstone rather than a Precision Mechanism.",
+    "First place the buffer above a chest and test a small transfer. Then use it to feed a Flux Hammer or as an external output receiver. Set the output side by sneaking and right-clicking the desired face with an Ex Deorum hammer."
+  ],
+  "quest.5140119A18901AB3.quest_subtitle": "1 · Assemble the first Flux line",
+  "quest.5140119A18901AB3.title": "Feed Items without FE",
+  "quest.514011ADCD0AC819.quest_desc": [
+    "Prepare a Flux Sieve, a Diamond Upgrade and an ME Import Bus. The earlier quest established a powered, stocked ME network and a real terminal craft; simple importing needs no crafting CPU, Pattern Provider or autocrafting. The Import Bus also works before the Diamond Upgrade: this task assembles the existing kit for a scaled production line.",
+    "The sieve first pushes drops into an external chest or Item Buffer. Attach the Import Bus to that receiver and connect its cable to a powered ME network with a storage cell and an available channel. Pipes and buses cannot extract from the Flux Sieve’s internal input inventory.",
+    "Run a small batch through Cobblestone → Gravel → receiver drops → items visible in the ME Terminal. Check bus filters, cell capacity and receiver leftovers. The quest confirms the three listed inventory items; verify bus placement and operation in the world."
+  ],
+  "quest.514011ADCD0AC819.quest_subtitle": "3 · Deliver to digital storage",
+  "quest.514011ADCD0AC819.title": "Sieve Drops Reach ME",
+  "quest.514011B0DCF6C72E.quest_desc": [
+    "The Expert Flux Hammer recipe uses the Mechanical Hammer you prepared, a Precision Mechanism and a Control Assembly. Complete the earlier machine’s item task before consuming it in crafting.",
+    "Supply FE and Cobblestone to the internal input. The hammer can also pull valid items from an inventory directly above it. It pushes results into an external inventory in front; change the output by sneaking and right-clicking a face with a hammer.",
+    "Test a single Cobblestone → Gravel operation and a receiver with free space. Without upgrades it processes up to one item per cycle; the separate upgrade branch enables larger batches. A redstone signal disables the machine."
+  ],
+  "quest.514011B0DCF6C72E.quest_subtitle": "1 · Assemble the first Flux line",
+  "quest.514011B0DCF6C72E.title": "Crushing in a Flux Line",
+  "quest.514011D678215A73.quest_desc": [
+    "The Diamond Upgrade has a real crafting prerequisite: three Gold Upgrades, a Dimensional Matrix, Control Assembly, Precision Mechanism and diamonds. The gold quest checked one module, so prepare the additional modules for crafting.",
+    "One / two / three diamond modules allow up to 16 / 32 / 64 items per cycle. The default cycle is 80 ticks at 2560 FE per processed item. Three modules running continuous full batches average 2048 FE/t.",
+    "Expand power and output handling first. This tier already supports the final ME-import lesson; netherite remains a separate later branch."
+  ],
+  "quest.514011D678215A73.quest_subtitle": "2 · Ore packing and larger batches",
+  "quest.514011D678215A73.title": "Diamond Batch Upgrades",
+  "quest.514011F45FF8C855.quest_desc": [
+    "Prepare a Flux Hammer, an Item Buffer and four Basic Logistical Transporters; the Flux Sieve is covered by its own prerequisite quest. Build the chain: Cobblestone supply → buffer and feed → Flux Hammer → meshed Flux Sieve → output chest.",
+    "The buffer can push into the transporter route feeding the hammer. Point the hammer output at the sieve or an intermediate inventory; both Flux machines need their own FE connection. Avoid returning output to the raw-input stock without filtering.",
+    "Test a small batch: Cobblestone decreases, Gravel reaches the sieve, and different drops accumulate in the external chest. The quest checks the item kit in your inventory; verify feeding, cables and overflow protection in the installed line."
+  ],
+  "quest.514011F45FF8C855.quest_subtitle": "1 · Assemble the first Flux line",
+  "quest.514011F45FF8C855.title": "Feed Gravel to the Sieve",
+  "quest.514011FB04BE4F17.quest_desc": [
+    "After the first line is working, fit a Gold Upgrade. The upgrade slot holds one, two or three matching gold modules for up to 2 / 4 / 8 items per cycle.",
+    "Under Ex Machinis defaults, a cycle takes 160 ticks and processing costs 1280 FE per item. Larger batches need the matching energy reserve and output capacity; the mesh still determines the desired drop’s chance.",
+    "The Item Buffer also accepts these modules, but already attempts to move its available contents without upgrades and uses no FE. Gold does not shorten its interval compared with no module; later upgrade types speed the buffer up."
+  ],
+  "quest.514011FB04BE4F17.quest_subtitle": "2 · Ore packing and larger batches",
+  "quest.514011FB04BE4F17.title": "Gold Batch Upgrades",
+  "reward.51401319CC7C6E74.title": "Processing Supplies",
+  "reward.5140132F5CC67F85.title": "Processing Supplies",
+  "reward.5140133593B2ECA3.title": "Processing Supplies",
+  "reward.5140136100966EE1.title": "Processing Supplies",
+  "reward.5140137D6F4E5D99.title": "Processing Supplies",
+  "reward.514013FA7C5687C0.title": "Processing Supplies",
+  "task.51401240DF98A980.title": "Obtain 1 × Comparator Upgrade",
+  "task.51401249EEEBA40A.title": "Obtain 1 × Flux Sieve",
+  "task.5140124F217871F2.title": "Obtain 1 × Diamond Upgrade",
+  "task.5140124FF7B15816.title": "Obtain 1 × Flux Sieve",
+  "task.5140126102291146.title": "Obtain 1 × Flux Hammer",
+  "task.514012617CEEF883.title": "Obtain 1 × Flux Hammer",
+  "task.514012AC68140893.title": "Obtain 1 × ME Import Bus",
+  "task.514012BD9BCFF890.title": "Obtain 1 × Item Buffer",
+  "task.514012C67E3AC01B.title": "Obtain 1 × Diamond Upgrade",
+  "task.514012D813E4A66A.title": "Obtain 1 × Item Buffer",
+  "task.514012E23B4C4897.title": "Obtain 1 × Gold Upgrade",
+  "task.514012E23BE6FA11.title": "Obtain 4 × Basic Logistical Transporter",
+  "task.514012E788A4EF43.title": "Obtain 1 × Netherite Upgrade",
+  "task.514012FF7404F400.title": "Obtain 1 × Flux Compactor"
+}

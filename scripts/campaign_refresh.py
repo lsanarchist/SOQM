@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 
 import campaign_layout
+import campaign_locales
 import campaign_guidance
 import campaign_multiblocks
 import campaign_lessons
@@ -146,12 +147,11 @@ def main() -> int:
     args = parser.parse_args()
     paths = sorted((QUESTS / "chapters").glob("*.snbt"))
     chapters = [load_json(path) for path in paths]
-    locale_path = QUESTS / "lang/uk_ua.snbt"
-    locale = load_json(locale_path)
+    locale = campaign_locales.load("uk_ua", ROOT)
     groups = load_json(QUESTS / "chapter_groups.snbt")["chapter_groups"]
     report = refresh(chapters, locale, groups)
     outputs = {path: serialize(chapter) for path, chapter in zip(paths, chapters)}
-    outputs[locale_path] = serialize(locale)
+    outputs.update(campaign_locales.expected_outputs(locale, "uk_ua", chapters, ROOT))
     outputs.update(campaign_rewards.expected_outputs(chapters))
     stale = [str(path.relative_to(ROOT)) for path, content in outputs.items()
              if not path.exists() or path.read_text(encoding="utf-8") != content]

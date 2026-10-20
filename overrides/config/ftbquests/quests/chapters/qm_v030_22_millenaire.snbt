@@ -16,8 +16,59 @@
   "default_repeatable_quest": false,
   "quests": [
     {
-      "id": "513011EFC8A2F513",
+      "id": "514B110000000001",
       "x": -10.95,
+      "y": 1.85,
+      "icon": {
+        "id": "torchmaster:megatorch",
+        "count": 1
+      },
+      "tags": [
+        "qm_rebuild",
+        "stage_0",
+        "item_torchmaster_megatorch",
+        "soqm_role_optional"
+      ],
+      "dependencies": [
+        "514D010000000002"
+      ],
+      "can_repeat": false,
+      "ignore_reward_blocking": true,
+      "optional": true,
+      "tasks": [
+        {
+          "type": "item",
+          "item": {
+            "id": "torchmaster:megatorch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false,
+          "match_components": "none",
+          "id": "514B120000000001"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "514B130000000001",
+          "team_reward": false,
+          "auto": "disabled",
+          "type": "custom",
+          "icon": "minecraft:bell",
+          "tags": [
+            "soqm:progressive_reward",
+            "soqm:reward_pool:settlement"
+          ]
+        }
+      ],
+      "size": 0.8,
+      "shape": "circle",
+      "hide_dependency_lines": true
+    },
+    {
+      "id": "513011EFC8A2F513",
+      "x": -7.95,
       "y": 1.85,
       "icon": {
         "id": "millenaire:village_scroll",
@@ -63,7 +114,7 @@
     },
     {
       "id": "513011E969A0F7CE",
-      "x": -4.95,
+      "x": -1.95,
       "y": 1.85,
       "icon": {
         "id": "millenaire:denier",
@@ -115,8 +166,8 @@
     },
     {
       "id": "5130115077464BDE",
-      "x": -1.95,
-      "y": 1.85,
+      "x": -10.95,
+      "y": 4.65,
       "icon": {
         "id": "millenaire:denier_argent",
         "count": 1
@@ -167,7 +218,7 @@
     },
     {
       "id": "513011265272EA83",
-      "x": -10.95,
+      "x": -7.95,
       "y": 4.65,
       "icon": {
         "id": "minecraft:writable_book",
@@ -214,7 +265,7 @@
     },
     {
       "id": "513011707B727ED1",
-      "x": -7.95,
+      "x": -4.95,
       "y": 1.85,
       "icon": {
         "id": "millenaire:denier",
@@ -521,7 +572,7 @@
     },
     {
       "id": "513011AA900A4C9A",
-      "x": -7.95,
+      "x": -4.95,
       "y": 4.65,
       "icon": {
         "id": "millenaire:purse",
@@ -616,7 +667,7 @@
     },
     {
       "id": "51301109AA6CD696",
-      "x": -4.95,
+      "x": -1.95,
       "y": 4.65,
       "icon": {
         "id": "millenaire:denier_argent",
@@ -2125,7 +2176,7 @@
     },
     {
       "id": "51410410000006D6",
-      "x": -10.95,
+      "x": -7.95,
       "y": 2.72,
       "width": 2.72,
       "height": 0.72,
@@ -2141,7 +2192,7 @@
     },
     {
       "id": "51410410000006D7",
-      "x": -7.95,
+      "x": -4.95,
       "y": 2.72,
       "width": 2.72,
       "height": 0.72,
@@ -2157,22 +2208,6 @@
     },
     {
       "id": "51410410000006D8",
-      "x": -4.95,
-      "y": 2.77,
-      "width": 2.72,
-      "height": 0.72,
-      "rotation": 0.0,
-      "image": "color:#0017202B",
-      "text_on_image": true,
-      "text_h_align": "middle",
-      "text_v_align": "middle",
-      "text_inset": 0,
-      "text_shadow": false,
-      "position_locked": true,
-      "order": 5
-    },
-    {
-      "id": "51410410000006D9",
       "x": -1.95,
       "y": 2.77,
       "width": 2.72,
@@ -2188,9 +2223,9 @@
       "order": 5
     },
     {
-      "id": "51410410000006DA",
+      "id": "51410410000006D9",
       "x": -10.95,
-      "y": 5.52,
+      "y": 5.57,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,
@@ -2204,7 +2239,7 @@
       "order": 5
     },
     {
-      "id": "51410410000006DB",
+      "id": "51410410000006DA",
       "x": -7.95,
       "y": 5.52,
       "width": 2.72,
@@ -2220,8 +2255,24 @@
       "order": 5
     },
     {
-      "id": "51410410000006DC",
+      "id": "51410410000006DB",
       "x": -4.95,
+      "y": 5.52,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "51410410000006DC",
+      "x": -1.95,
       "y": 5.52,
       "width": 2.72,
       "height": 0.72,
@@ -3087,6 +3138,22 @@
       "id": "5141041000000712",
       "x": 4.95,
       "y": 25.58,
+      "width": 2.72,
+      "height": 0.72,
+      "rotation": 0.0,
+      "image": "color:#0017202B",
+      "text_on_image": true,
+      "text_h_align": "middle",
+      "text_v_align": "middle",
+      "text_inset": 0,
+      "text_shadow": false,
+      "position_locked": true,
+      "order": 5
+    },
+    {
+      "id": "514B140000000001",
+      "x": -10.95,
+      "y": 2.72,
       "width": 2.72,
       "height": 0.72,
       "rotation": 0.0,

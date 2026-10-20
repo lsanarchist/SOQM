@@ -24,6 +24,7 @@ from pathlib import Path
 import re
 
 import campaign_layout
+import campaign_locales
 
 ROOT = Path(__file__).resolve().parents[1]
 QUESTS = ROOT / "overrides/config/ftbquests/quests"
@@ -278,7 +279,7 @@ def expected_files() -> dict[str, str]:
     chapters = [read(path) for path in sorted((QUESTS / "chapters").glob("*.snbt"))]
     by_filename = {chapter["filename"]: chapter for chapter in chapters}
     all_quests = {quest["id"]: quest for chapter in chapters for quest in chapter["quests"]}
-    locale = read(QUESTS / "lang/uk_ua.snbt")
+    locale = campaign_locales.load("uk_ua", ROOT)
     specs = campaign_layout.blueprint()
     return {filename: build_svg(by_filename[chapter], locale, specs[chapter], all_quests, limit)
             for chapter, limit, filename in OUTPUTS}

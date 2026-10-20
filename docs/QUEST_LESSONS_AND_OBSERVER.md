@@ -64,9 +64,12 @@ python3 scripts/soqm.py lock
 python3 scripts/render_campaign.py --check
 ```
 
-Both locales are committed generated output. The 37 chapter files remain
-byte-for-byte equal to the base commit, as do reward policy, recipes and all
-other compatibility-module binaries.
+Both locales are committed as generated chapter fragments under
+`metadata/quest_locales/`; packaging assembles the runtime language files.
+See [localization](LOCALIZATION.md) for the source and runtime layouts.
+For this lesson update, the 37 chapter files remain byte-for-byte equal to
+the base commit, as do reward policy, recipes and all other
+compatibility-module binaries.
 
 ## Production observer 0.4.9
 

@@ -1,11 +1,11 @@
 {
   "base_commit": "e71db8398ddc9f07e85981fac942f52dd23f447d",
   "serialization": "SHA-256 of sorted compact JSON; see campaign_refresh.persistent_identity",
-  "sha256": "17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d",
+  "sha256": "b883503b48a5d90e32085663878d7097d371b96478a2a0143bc266036e0dd0ca",
   "chapters": 37,
-  "quests": 1626,
-  "tasks": 1911,
-  "outer_rewards": 1627,
+  "quests": 1627,
+  "tasks": 1912,
+  "outer_rewards": 1628,
   "previous_claim_scope": {
     "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
     "base_commit": "72bd75d131a986afe9cf0d11580fdcaf009a208a",
@@ -38,5 +38,16 @@
     "refund_rewards": 41,
     "sha256": "17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d",
     "migration": "Same quest/task/reward IDs and personal claim scopes. Six storage tasks now detect Sophisticated Storage; selected rewards add fixed refunds. Already claimed slots stay claimed. Exact definitions reconstruct through campaign_compatibility.previous_storage_refunds before older snapshots."
+  },
+  "previous_torchmaster": {
+    "base_commit": "226485323c223a7bb6c01354fc88418d08c4836f",
+    "sha256": "17b49fe75ee12d853c098b43bf98f080f1393780e818e7854555a63263fd245d",
+    "added_quests": [
+      "514B110000000001"
+    ],
+    "added_images": [
+      "514B140000000001"
+    ],
+    "migration": "One additive optional Mega Torch quest in the first Millenaire section, with one non-consuming item task, personal settlement reward and caption. Existing quest/task/reward IDs, ownership and claim scopes are unchanged. Removing only these additions reconstructs the immediate prior save identity before all older snapshots."
   }
 }

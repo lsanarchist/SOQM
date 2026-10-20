@@ -19,12 +19,15 @@ import shutil
 import socket
 import subprocess
 import sys
+import tempfile
 import time
 import zipfile
 
+import campaign_locales
+
 from smoke_server import (
     ROOT, NATIVE_SHA256, SmokeFailure, hashes, inspect_errors,
-    java_network_flags, read, remaining, require, sha,
+    java_network_flags, production_hashes, read, remaining, require, sha, stage_production_payload,
 )
 
 
@@ -39,18 +42,51 @@ def baseline_quests(ref, target, deadline):
                               capture_output=True, text=True, timeout=min(10, remaining(deadline)))
     commit = resolved.stdout.strip()
     require(resolved.returncode == 0 and re.fullmatch(r"[a-f0-9]{40}", commit), "Baseline commit is unavailable")
-    listing = subprocess.run(["git", "ls-tree", "-r", "--name-only", commit, "--", QUESTS.as_posix()],
+    locale_sources = Path("metadata/quest_locales")
+    listing = subprocess.run(["git", "ls-tree", "-r", "--name-only", commit, "--",
+                              QUESTS.as_posix(), locale_sources.as_posix()],
                              cwd=ROOT, capture_output=True, text=True, timeout=min(10, remaining(deadline)))
     require(listing.returncode == 0 and listing.stdout.strip(), "Baseline contains no quest files")
-    for filename in listing.stdout.splitlines():
-        relative = Path(filename).relative_to(QUESTS)
-        require(".." not in relative.parts, "Unsafe baseline quest path")
-        blob = subprocess.run(["git", "show", commit + ":" + filename], cwd=ROOT,
-                              capture_output=True, timeout=min(10, remaining(deadline)))
-        require(blob.returncode == 0, "Could not read baseline quest file")
-        path = target / relative
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(blob.stdout)
+    target = Path(target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    # Old refs contain native locale files; newer refs contain chapter shards.
+    # Rebuild the latter from the selected ref, never from today's translations.
+    with tempfile.TemporaryDirectory(prefix="baseline-locale-source-", dir=target.parent) as temporary:
+        snapshot = Path(temporary)
+        quest_files = []
+        has_shards = False
+        for filename in listing.stdout.splitlines():
+            relative = Path(filename)
+            require(not relative.is_absolute() and ".." not in relative.parts,
+                    "Unsafe baseline quest path")
+            is_quest = relative.is_relative_to(QUESTS)
+            is_locale = relative.is_relative_to(locale_sources)
+            require(is_quest or is_locale, "Unexpected baseline quest path")
+            blob = subprocess.run(["git", "show", commit + ":" + filename], cwd=ROOT,
+                                  capture_output=True, timeout=min(10, remaining(deadline)))
+            require(blob.returncode == 0, "Could not read baseline quest file")
+            path = snapshot / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(blob.stdout)
+            if is_quest:
+                quest_files.append((relative.relative_to(QUESTS), path))
+            has_shards |= is_locale
+        require(quest_files, "Baseline contains no quest files")
+        for relative, source in quest_files:
+            path = target / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, path)
+        if has_shards:
+            try:
+                generated = campaign_locales.runtime_payload(snapshot)
+            except (ValueError, OSError) as error:
+                raise SmokeFailure("Invalid baseline locale sources: " + str(error)) from error
+            for name, data in generated.items():
+                relative = Path(name).relative_to(QUESTS.relative_to("overrides"))
+                path = target / relative
+                require(not path.exists(), "Baseline mixes generated locale files with locale sources")
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(data)
     return commit
 
 
@@ -116,7 +152,7 @@ def run(args, report, deadline, *, compile_fn=compile_probe, probe_source=SOURCE
     runtime = Path(args.runtime).resolve()
     require((runtime / "libraries/net/neoforged/neoforge/21.1.262/unix_args.txt").is_file(),
             "--runtime must name an installed smoke-test server directory")
-    payload = hashes(ROOT / "overrides")
+    payload = production_hashes(ROOT)
     reviewed = payload == read(ROOT / "metadata/payload.sha256.json")
     require(reviewed or args.allow_unlocked_payload, "Payload differs from its reviewed lock")
     pins = read(ROOT / "metadata/mods.lock.json")["mods"]
@@ -161,16 +197,8 @@ def run(args, report, deadline, *, compile_fn=compile_probe, probe_source=SOURCE
     # Runtime libraries are immutable reused dependencies; each tested payload,
     # configuration and world is an independent copy in a fresh directory.
     (server / "libraries").symlink_to(runtime / "libraries", target_is_directory=True)
-    for source in (ROOT / "overrides").rglob("*"):
-        if not source.is_file():
-            continue
-        relative = source.relative_to(ROOT / "overrides")
-        if relative.parts[0] == "mods" and authored_by_name[source.name].get("side") == "client":
-            continue
-        target = server / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, target)
-        require(sha(target) == payload[relative.as_posix()], "Payload changed while staging")
+    excluded_payload = {"mods/" + name for name, row in authored_by_name.items() if row.get("side") == "client"}
+    stage_production_payload(ROOT, server, payload, excluded_payload)
     for row in selected:
         target = server / "mods" / row["filename"]
         require(not target.exists(), "Dependency filename collision")
@@ -263,7 +291,7 @@ def run(args, report, deadline, *, compile_fn=compile_probe, probe_source=SOURCE
     report.update(probe=observed, startup_done=startup_done, initial_recipe_count=initial_count,
                   reload_recipe_count=reload_count, server_exit_code=process.returncode, forced_termination=forced,
                   error_counts=errors, kubejs_logs_present=logs, console_sha256=sha(console),
-                  production_payload_unchanged=hashes(ROOT / "overrides") == payload,
+                  production_payload_unchanged=production_hashes(ROOT) == payload,
                   shutdown_complete="Stopping server" in text and "All dimensions are saved" in text)
     require(report["production_payload_unchanged"] or args.allow_unlocked_payload, "Payload changed during the test")
     require(startup_done and observed.get("passed"), "Native interaction probe failed; inspect the report and console")

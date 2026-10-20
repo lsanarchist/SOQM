@@ -29,6 +29,29 @@ ME Chest, 1k-автокрафт, зовнішню обробку, канали �
 
 Решта англійських цілей виводиться з фактичних задач. Назви предметів і досягнень надходять із закріплених ресурсів модів, наявних авторських ресурсів або читабельного registry ID. Словник `metadata/quest_english_names.json` містить лише використані назви та SHA-256 джерел. Повний художній переклад залишено поза заявленим обсягом англійського довідника.
 
+## Файли перекладів за главами
+
+У Git переклади зберігаються невеликими JSON-файлами в
+`metadata/quest_locales/uk_ua/` та `metadata/quest_locales/en_us/`.
+Назва файла відповідає файлу глави; він містить тексти самої глави та її
+квестів, задач, нагород і підписів. `_global.json` містить решту записів,
+зокрема загальні назви книги й груп глав. Власник визначається за стабільним
+ID об'єкта. Об'єднання відхиляє дублікати ключів; тексти й списки абзаців
+зберігаються повністю, без скорочення.
+
+Закріплена FTB Quests **2101.1.36** читає один файл `lang/<мова>.snbt` на
+мову. Її [TranslationManager](https://github.com/FTBTeam/FTB-Quests/blob/v2101.1.36/common/src/main/java/dev/ftb/mods/ftbquests/quest/translation/TranslationManager.java)
+переглядає лише верхній рівень `lang/`, а всю назву файла до `.snbt`
+вважає кодом мови. Тому частини зберігаються в метаданих репозиторію.
+Команди `soqm.py lock` і пакування об'єднують їх у пам'яті; інсталяційний
+ZIP та підготовлений інстанс отримують звичайні `lang/uk_ua.snbt` і
+`lang/en_us.snbt`. Ці два великі файли не відстежуються Git і не потрібні
+на диску у вихідній копії для перевірки чи збирання.
+
+Генератори оновлюють частини за главами. Для запуску гри використовуй
+зібраний інсталяційний ZIP або сценарій підготовки інстансу, який об'єднує
+переклади; просте копіювання `overrides/` із вихідної копії їх не створює.
+
 Порядок оновлення:
 
 ```bash
@@ -103,3 +126,25 @@ derive their quantities and conditions from actual tasks.
 The single introductory controls guide explains inventory detection and JEI. Repeated patch notes and per-quest R/U reminders have been removed. Registry names are retained in the offline name lexicon; unknown display names fall back to readable identifiers. This is an alpha objective guide with authored core lessons; a full literary translation and graphical client review remain separate work.
 
 The commands above regenerate and validate the campaign, locale and payload lock. Existing quest, task, reward and image IDs stay stable. See [campaign update](CAMPAIGN_UPDATE.md) for migration and [native validation](RUNTIME_VALIDATION.md) for executable completion checks.
+
+## Locale files by chapter
+
+Git stores the translations as small JSON files under
+`metadata/quest_locales/uk_ua/` and `metadata/quest_locales/en_us/`.
+Each chapter file owns the text for that chapter and its quests, tasks,
+rewards and captions, using their stable object IDs. `_global.json` holds
+the remaining entries, including book and chapter-group names. Merging
+rejects duplicate keys and preserves every string and paragraph list.
+
+The pinned FTB Quests **2101.1.36**
+[TranslationManager](https://github.com/FTBTeam/FTB-Quests/blob/v2101.1.36/common/src/main/java/dev/ftb/mods/ftbquests/quest/translation/TranslationManager.java)
+scans only the top level of `lang/` and treats each basename as a locale.
+The repository fragments therefore live outside the game payload. The
+existing generators update them; `soqm.py lock`, packaging and instance
+staging merge them into the normal `lang/uk_ua.snbt` and `lang/en_us.snbt`
+runtime files. These two large generated files are not tracked by Git and
+do not need to exist on disk for source validation or packaging.
+
+Use the built installation ZIP or instance-staging tooling to run the pack.
+Copying only the repository's `overrides/` directory omits the generated
+quest translations. The regeneration commands above remain unchanged.

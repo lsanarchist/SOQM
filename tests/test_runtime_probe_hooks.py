@@ -53,7 +53,11 @@ class RuntimeProbeHooksTests(unittest.TestCase):
             "filename": self.authored.name, "sha256": smoke_server.sha(self.authored),
         }])
         self.write(self.root / "metadata/mods.lock.json", {"mods": []})
-        self.write(self.root / "metadata/payload.sha256.json", smoke_server.hashes(self.root / "overrides"))
+        for language in ("uk_ua", "en_us"):
+            self.write(self.root / "metadata/quest_locales" / language / "_global.json", {
+                "file.0000000000000001.title": "Current fixture " + language,
+            })
+        self.write(self.root / "metadata/payload.sha256.json", smoke_server.production_hashes(self.root))
         self.evidence = self.root / "metadata/reward_item_evidence.json"
         self.write(self.evidence, {"test_recipe_evidence": ["minecraft:crafting"]})
         self.default_source = self.root / "tests/runtime/SoqmRuntimeProbe.java"
@@ -130,6 +134,49 @@ class RuntimeProbeHooksTests(unittest.TestCase):
         self.assertEqual((workspace / "server/soqm_probe_recipe_evidence.json").read_bytes(), self.evidence.read_bytes())
         self.assertTrue(report["reviewed_payload_match"])
         self.assertFalse(any(command[0] == str(self.java.with_name("javac")) for command in self.commands))
+
+    def test_runtime_staging_includes_generated_locales_without_source_fragments(self):
+        destination = self.root / "staged-server"
+        smoke_server.stage_production_payload(self.root, destination, smoke_server.production_hashes(self.root))
+        for language in ("uk_ua", "en_us"):
+            locale = json.loads((destination / "config/ftbquests/quests/lang" / (language + ".snbt")).read_text())
+            self.assertEqual(locale["file.0000000000000001.title"], "Current fixture " + language)
+        self.assertFalse((destination / "metadata/quest_locales").exists())
+
+    def test_baseline_merges_the_selected_commit_locales_not_current_sources(self):
+        chapter_path = "overrides/config/ftbquests/quests/chapters/saved.snbt"
+        chapter = {"filename": "saved", "id": "1111111111111111", "quests": [], "images": []}
+        blobs = {chapter_path: json.dumps(chapter).encode()}
+        for language in ("uk_ua", "en_us"):
+            prefix = "metadata/quest_locales/" + language + "/"
+            blobs[prefix + "_global.json"] = json.dumps({
+                "file.0000000000000001.title": "Historical fixture " + language,
+            }).encode()
+            blobs[prefix + "saved.json"] = json.dumps({
+                "chapter.1111111111111111.title": "Historical chapter " + language,
+            }).encode()
+
+        def historical_git(command, **kwargs):
+            if command[:3] == ["git", "rev-parse", "--verify"]:
+                return subprocess.CompletedProcess(command, 0, self.baseline_commit + "\n", "")
+            if command[:3] == ["git", "ls-tree", "-r"]:
+                return subprocess.CompletedProcess(command, 0, "\n".join(sorted(blobs)) + "\n", "")
+            if command[:2] == ["git", "show"]:
+                return subprocess.CompletedProcess(command, 0, blobs[command[2].split(":", 1)[1]], b"")
+            self.fail(f"Unexpected baseline command: {command}")
+
+        destination = self.root / "selected-baseline"
+        with patch.object(self.probe.subprocess, "run", side_effect=historical_git):
+            self.assertEqual(self.probe.baseline_quests("historical", destination, time.monotonic() + 120),
+                             self.baseline_commit)
+            self.assertEqual((destination / "chapters/saved.snbt").read_bytes(), blobs[chapter_path])
+            for language in ("uk_ua", "en_us"):
+                locale = json.loads((destination / "lang" / (language + ".snbt")).read_text())
+                self.assertEqual(locale["file.0000000000000001.title"], "Historical fixture " + language)
+                self.assertEqual(locale["chapter.1111111111111111.title"], "Historical chapter " + language)
+            blobs["overrides/config/ftbquests/quests/lang/uk_ua.snbt"] = b"{}\n"
+            with self.assertRaisesRegex(smoke_server.SmokeFailure, "mixes generated locale files"):
+                self.probe.baseline_quests("mixed", self.root / "mixed-baseline", time.monotonic() + 120)
 
     def test_default_invocation_preserves_progressive_reward_sources_and_authored_classpath(self):
         report = {}

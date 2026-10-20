@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+### Early settlement protection
+
+- Add the pinned Torchmaster 21.1.13 build for Minecraft 1.21.1 / NeoForge.
+  Add an optional Mega Torch quest first in the Millénaire contact section,
+  available after Base Foundation without a settlement visit or industrial gate.
+- Explain the default 64-block hostile natural-spawn protection, range display,
+  working spawners, existing mobs, event/raid limits and the separate passive-mob
+  Dread Lamp in Ukrainian and English. The item check does not consume the torch.
+- Keep all existing saved IDs and personal claims; add one personal settlement
+  reward and verify the unchanged pre-addition save contract.
+
+### Chapter-sized quest translations
+
+- Split Ukrainian and English quest translations into 37 chapter files and one
+  global file per language under `metadata/quest_locales/`. Preserve every
+  translation key, string and paragraph; reject duplicate or misplaced entries.
+- Assemble the two native FTB Quests locale files during packaging and server
+  staging. Keep large generated files out of Git, with identical locale content
+  in release archives, runtime checks and historical upgrade fixtures.
+- Validate fragment ownership, matching language keys and a 200 KiB per-file
+  limit so future text updates remain small and reviewable.
+
 ### 0.4.11 — optional exploration, varied dungeon loot and equipment compatibility
 
 - Add the exact Minecraft 1.21.1 NeoForge builds of Twilight Treehouses 1.0.2,

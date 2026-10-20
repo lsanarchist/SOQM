@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_lessons as lessons
+import campaign_locales
 
 
 class TutorialExpansionTests(unittest.TestCase):
@@ -65,8 +66,7 @@ class TutorialExpansionTests(unittest.TestCase):
     def test_reviewed_lessons_reference_existing_quests_and_available_evidence(self):
         authored = lessons.load_lessons()
         for language in sorted(lessons.LANGUAGES):
-            locale = json.loads((ROOT / "overrides/config/ftbquests/quests/lang" /
-                                 f"{language}.snbt").read_text(encoding="utf-8"))
+            locale = campaign_locales.load(language)
             lessons.apply_locale(locale, language, authored)
         for ident, lesson in authored.items():
             for source in lesson["sources"]:

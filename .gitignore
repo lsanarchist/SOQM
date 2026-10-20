@@ -31,6 +31,9 @@ out/
 *.mrpack
 /downloads/SHA256SUMS
 /reports/**/*.json
+# Compiled from metadata/quest_locales when packaging or staging an instance.
+/overrides/config/ftbquests/quests/lang/uk_ua.snbt
+/overrides/config/ftbquests/quests/lang/en_us.snbt
 
 # Python, local credentials and editor/OS state
 __pycache__/

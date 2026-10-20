@@ -9,6 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import campaign_rewards as rewards
+import campaign_locales
 import campaign_refresh as refresh
 import campaign_compatibility as compatibility
 import campaign_refunds as refunds
@@ -41,7 +42,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
         self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
         self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
-        self.assertEqual(len(self.runtime['reward_mappings']), 1442)
+        self.assertEqual(len(self.runtime['reward_mappings']), 1443)
         owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
         for ident, mapping in self.runtime['reward_mappings'].items():
             self.assertRegex(ident, rewards.ID_PATTERN)
@@ -74,8 +75,8 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
             self.assertFalse(quest.get('repeatable', False))
 
     def test_native_custom_flags_icons_and_localized_titles_are_complete(self):
-        uk = load(rewards.QUESTS / 'lang/uk_ua.snbt')
-        en = load(rewards.QUESTS / 'lang/en_us.snbt')
+        uk = campaign_locales.load('uk_ua')
+        en = campaign_locales.load('en_us')
         count = 0
         for reward in outer_rewards(self.chapters):
             self.assertFalse(reward['team_reward'])
@@ -89,7 +90,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertNotIn('item', reward)
                 for locale in (uk, en):
                     self.assertTrue(locale[f"reward.{reward['id']}.title"])
-        self.assertEqual(count, 1442)
+        self.assertEqual(count, 1443)
 
     def test_fixed_milestones_and_original_personal_book_are_retained(self):
         cubes = books = 0
@@ -114,7 +115,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         self.assertEqual((cubes, books), (193, 1))
 
     def test_player_guidance_matches_personal_claims_and_real_reward_types(self):
-        uk = load(rewards.QUESTS / 'lang/uk_ua.snbt')
+        uk = campaign_locales.load('uk_ua')
         all_descriptions = '\n'.join(line for key, lines in uk.items() if key.endswith('.quest_desc') for line in lines)
         self.assertNotIn('Нагорода одноразова для команди', all_descriptions)
         self.assertNotIn('Нагорода команді одноразова', all_descriptions)
@@ -257,11 +258,11 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         locale = {'unrelated.key': 'untouched'}
         report = rewards.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
-        self.assertEqual(report['personal_rewards'], 1627)
-        self.assertEqual(report['progressive_rewards'], 1433)
+        self.assertEqual(report['personal_rewards'], 1628)
+        self.assertEqual(report['progressive_rewards'], 1434)
         self.assertEqual(report['recipe_refunds'], 41)
         self.assertEqual(report['refund_cube_bundles'], 9)
-        self.assertEqual(report['custom_rewards'], 1442)
+        self.assertEqual(report['custom_rewards'], 1443)
         self.assertEqual(locale['unrelated.key'], 'untouched')
         again = deepcopy(locale)
         self.assertEqual(rewards.apply(chapters, again), report)

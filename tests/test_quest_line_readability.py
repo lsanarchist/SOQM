@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import campaign_branches
 import campaign_layout as layout
+import campaign_locales
 import render_campaign
 
 
@@ -23,7 +24,7 @@ class QuestLineReadabilityTests(unittest.TestCase):
         cls.chapters = [json.loads(path.read_text()) for path in sorted((quests / "chapters").glob("*.snbt"))]
         campaign_branches.apply_structure(cls.chapters)
         cls.before = copy.deepcopy(cls.chapters)
-        locale = json.loads((quests / "lang/uk_ua.snbt").read_text())
+        locale = campaign_locales.load("uk_ua")
         layout.apply(cls.chapters, locale)
         cls.locale = locale
         cls.specs = layout.blueprint()

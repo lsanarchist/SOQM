@@ -229,7 +229,7 @@ public final class ProgressiveRewardsProbe {
                 } finally { buffer.release(); }
             }
         }));
-        check(total[0] == 1627 && custom.size() == 1442, "All actual outer rewards and custom callbacks are covered");
+        check(total[0] == 1628 && custom.size() == 1443, "All actual outer rewards and custom callbacks are covered");
         results.put("native_personal_outer_rewards", total[0]);
         results.put("native_custom_rewards_nbt_and_packet_roundtripped", custom.size());
         return custom;
