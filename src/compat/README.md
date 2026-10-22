@@ -1,8 +1,8 @@
 # Compatibility sources
 
-SOQM 0.4.11 uses **twelve** authored compatibility modules: ten recovered from
+SOQM 0.4.15 uses **thirteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
-module and the production-evidence adapter. The original eight include full MIT
+module, the production-evidence adapter and the Foundry crafting fix. The original eight include full MIT
 notices, which must remain with their source and binaries. The two later recovered modules
 declare MIT in `neoforge.mods.toml`, but neither their source nor JAR supplied a
 full license/copyright notice. Their local `LICENSE` files record that declaration
@@ -22,6 +22,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chest-balance` | `qm-chest-balance-0.4.11.jar` | Recovered 0.4.6 source; bounded varied exploration update |
 | `progressive-rewards` | `qm-progressive-rewards-0.4.10.jar` | New SOQM source; recipe-backed refunds, world upgrades and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
+| `foundry-compat` | `qm-foundry-compat-0.4.15.jar` | New SOQM source; positioned ingredient writes for Modern Foundry 4.1.6 |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -52,6 +53,12 @@ tunnel-height queries within one placement search, bounds Mayhem guardian
 record processing and reduces Dungeons & Taverns polling. Its native API build
 also reproduces Quest Automation 0.4.3. Both preserve their original MIT notices.
 See the [runtime verification](../../reports/verification-pr5.md).
+
+The [Foundry compatibility module](foundry-compat/README.md) remaps the three
+ingredient/remainder writes in the pinned Crafting Station to their physical
+inventory slots. It follows the upstream correction without including third-party
+implementation classes. Its exact-version dependency and required injection
+count prevent silently applying an unreviewed patch to a different release.
 
 **Independent recompilation of all ten recovered production JARs has not been
 reproduced.** The Cannibal, Quest Automation, Quest UI, runtime optimization and

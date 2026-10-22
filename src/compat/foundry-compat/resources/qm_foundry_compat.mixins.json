@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.foundrycompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CraftingStationSlotMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 3
+  },
+  "mixinextras": {
+    "minVersion": "0.5.5"
+  }
+}

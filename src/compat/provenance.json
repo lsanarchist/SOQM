@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions and two original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.3, Runtime Optimizations 0.4.7 and Progressive Rewards 0.4.10; recompilation of the other seven production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions and three original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.3, Runtime Optimizations 0.4.7 Progressive Rewards 0.4.10 and Foundry Compatibility 0.4.15; recompilation of the other seven production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -430,6 +430,33 @@
         "src/qm/performance/worldgen/TunnelHeightCache.java": "510d8b5209c03ef25093432e8846212f14eaf4aa5741581646eb943511d87065"
       },
       "production_jar_sha256": "538ec28ceef21f45452d4653f06a5a20b8ac68ab86f1e20609cc596d874bbb5b"
+    },
+    {
+      "module": "foundry-compat",
+      "production_jar": "qm-foundry-compat-0.4.15.jar",
+      "production_jar_sha256": "8d68c962a5fb77bdb1b0ec37e567730efa422dba49572cdf441e17cd4fa6254d",
+      "source_origin": "Original SOQM compatibility integration",
+      "files_sha256": {
+        "LICENSE": "ab3a374cb064a886399d992b5dd639736fbcd5b148b8b1b470d2ada5f37972eb",
+        "README.md": "cb60408cacde08240d38f79f8d59314777ae38537a5cd567ecd041ec1d6341bc",
+        "build.py": "9b1bc58473a42db371a992798de72199707316b9db2a7243e5735dc1c91e872d",
+        "resources/META-INF/neoforge.mods.toml": "c4218d1391401e4921d5e673144f51422dd077585fec48640efdd49fb724779c",
+        "resources/qm_foundry_compat.mixins.json": "a4f431cd45fdfb11b0e63e6396e678fa1fef619dd22625df5a98d82317fe1e23",
+        "src/qm/foundrycompat/QmFoundryCompat.java": "66318302ad762cda58c05af5018f59ff9467321a51483b3d83564090eea3bc1d",
+        "src/qm/foundrycompat/mixin/CraftingStationSlotMixin.java": "a6ed876e3de175195db6a7872268e276c5f777d5f2edb4fd593f87f58cc0ff84"
+      },
+      "local_revision": {
+        "version": "0.4.15",
+        "change": "Map the three Modern Foundry Crafting Station ingredient/remainder writes to their positioned physical inventory slots.",
+        "upstream_fix_url": "https://github.com/Modern-Mods/ModernFoundry/commit/6cf71f28d3b943ed9d0f134b7e13701365e8f221",
+        "compiler": "Eclipse Temurin javac 21.0.13 (JDK 21.0.13+9)",
+        "compiler_archive_sha256": "d7f5d5cf865a2902b70ff549b97586a7d3f234e016f041ab447ea740c7d66d1c",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
+        "modernfoundry_sha256": "0b0026db1c27a1d08b1e3d3eba8fd2cc470d4cb534eb08d74633adc5be5691f1",
+        "crafting_station_class_sha256": "0707ddb5efd94481ef2f35a10df9f61ef12b49e9bbe452a2e7ac90b50a5c757d"
+      }
     }
   ]
 }

@@ -2,18 +2,22 @@
 
 ## Unreleased
 
-### Mass-crafting investigation: default-off ingredient refill
+### 0.4.15 — Modern Foundry crafting ingredient consumption
 
-- Start Inventory Profiles Next's continuous-crafting checkbox unchecked and
-  its saved refill state disabled. This prevents automatic client-side grid
-  refill unless the player enables it for that screen; manual crafting,
-  middle-click sorting and JEI recipe transfer remain available.
-- This is a reversible mitigation for the reported sand duplication during
-  modifier-assisted crafting, **not a confirmed duplication fix**. The pinned
-  Ex Deorum and Extra Utilities sand recipes both balance 9:1:9; the exact
-  click target and whether extra items survive reconnect are still unverified.
-- Document the existing-profile configuration merge and a counted graphical
-  reproduction check in both languages. No graphical reproduction has passed.
+- Add `qm-foundry-compat-0.4.15.jar` for the pinned Modern Foundry 4.1.6.
+  Its Crafting Station reads positioned ingredients from the correct 3x3
+  slots but writes their remaining stacks to compact recipe indices. Remap
+  all three writes to the physical slots, matching the upstream correction.
+  This fixes displaced ingredients and duplication when crafting sandstone
+  and other recipes smaller than the grid.
+- Keep the official CurseForge dependency pin: the fixed upstream 4.1.8 is
+  available on GitHub but has no CurseForge file in the checked listing.
+  The source-backed compatibility module applies only to 4.1.6 and must be
+  installed on both client and server. Remove it when upgrading to an
+  upstream version that includes the fix.
+- Restore the previous IPN defaults; disabling continuous crafting does not
+  correct this server-side inventory-index bug. Document the cause, exact
+  counted reproduction and remaining graphical checks in both languages.
 
 ### 0.4.14 — Village Guard without global mob polling
 

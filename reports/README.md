@@ -1,5 +1,23 @@
 # Verification status
 
+## SOQM 0.4.15 — Crafting Station ingredient consumption
+
+The pinned Modern Foundry 4.1.6 incorrectly writes positioned recipe leftovers
+to compact indices. The new Foundry compatibility module corrects all three
+write arguments. Actual unmodified method bytecode reproduced the reported
+eight-slot sand layout; the real Mixin transformation corrected all three sites.
+The isolated behavior probe passed **868 cases / 12,306 assertions**, including
+64 sand becoming exactly 16 sandstone in each corner of the station.
+
+The module built byte-identically twice. The pack gate passed **162 Python
+tests with no skips**, both Node suites and deterministic packaging. All
+**129 third-party artifacts** passed hash, size and archive verification.
+The code probe uses external-state fixtures; graphical Ctrl input, world
+loading, multiplayer synchronization and all-mod interaction remain untested.
+
+[Cause, evidence and scope](../docs/CRAFTING_STATION_FIX.md) ·
+[Reproducible build and probe](../src/compat/foundry-compat/README.md).
+
 ## SOQM 0.4.14 — Village Guard
 
 Village Guard 0.4.3 replaces all-mob tick polling with target hooks and checks of

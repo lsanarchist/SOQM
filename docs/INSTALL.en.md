@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.14
+# Installing SOQM 0.4.15
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.14-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.15-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.14-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.14 asset is not claimed. The
+The current output is `dist/SOQM-0.4.15-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.15 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.14 ZIP and wait for every download. See the
+   select the built 0.4.15 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -43,6 +43,24 @@ directly from a source checkout omits those generated translations.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
+## Crafting Station fix in 0.4.15
+
+The package includes `qm-foundry-compat-0.4.15.jar` for **Modern Foundry 4.1.6**.
+It corrects the station's ingredient-slot writes when taking a crafted result,
+including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
+close the game and server, add this JAR from the candidate's `overrides/mods/`
+to **both the client and server** `mods/` directories, then restart. An imported
+0.4.15 candidate already includes it. The remaining third-party pins are the
+same as 0.4.14.
+
+The module deliberately requires Modern Foundry 4.1.6. Remove it before a
+coordinated client/server upgrade to an upstream release containing the fix,
+such as 4.1.8. Until the hotfix is installed, use the ordinary Minecraft
+crafting table for this recipe. Changing Ctrl bindings or IPN refill settings
+does not repair the faulty station code. See the
+[cause and validation](CRAFTING_STATION_FIX.md) and
+[counted playtest](PLAYTEST.en.md#modern-foundry-crafting-station).
+
 ## Inventory sorting
 
 Inventory Profiles Next sorts inventory slots with the **middle mouse button**
@@ -52,37 +70,6 @@ settings with **R+C** to customize shortcuts, locked slots and item transfers.
 The client manifest includes Inventory Profiles Next, libIPN and Kotlin for
 Forge at their pinned versions. This dependency chain is only needed by the
 client in SOQM and is excluded by the dedicated-server harness.
-
-### Temporary workaround for the sand crafting report
-
-SOQM starts IPN's **continuous crafting** unchecked. IPN otherwise refills empty
-recipe slots automatically after a craft using additional client-side clicks.
-Leaving this unchecked removes that refill path while the reported sand
-duplication is investigated. **The cause has not been reproduced in a graphical
-client; this is a mitigation, not a verified duplication fix.** Sorting and
-manual crafting remain available. The checkbox can be enabled for the current
-screen; reopening a crafting screen starts it unchecked again.
-
-For an existing profile, fully close Minecraft and merge these two properties
-into the existing `GuiSettings` object in
-`config/inventoryprofilesnext/inventoryprofiles.json`, creating the object if
-absent. Preserve the other settings, then restart the client:
-
-```json
-"GuiSettings": {
-  "continuous_crafting_checkbox_value": "UNCHECKED",
-  "continuous_crafting_saved_value": false
-}
-```
-
-The snippet is an object member, not a replacement for the complete JSON file.
-Record the exact gesture: in the pinned JEI version **Ctrl+left-click on a recipe
-bookmark** transfers maximum ingredients; **Shift+click on `+`** also fills the
-recipe. Neither gesture takes the crafted result. For normal bulk crafting,
-fill the recipe and **Shift+click the output**. Verify the counted result using
-the [crafting check](PLAYTEST.en.md#sand-crafting-report) before considering the
-report resolved. The continuous-crafting setting also applies to IPN's
-stonecutter refill; normal stonecutter use remains available.
 
 ## Dynamic lighting
 
@@ -110,7 +97,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
    Do not copy the manifest itself or a GitHub source archive into that folder.
 3. Install the **129** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **12** authored modules, these form the SOQM mod set. Remove
+   the package's **13** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.

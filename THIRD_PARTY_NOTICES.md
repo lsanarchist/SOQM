@@ -31,12 +31,18 @@ with Mojang or Microsoft.
   mods' APIs; no Craftoria implementation or reward table is included.
 - **Runtime optimizations:** `qm-runtime-optimizations-0.4.7` is an original
   SOQM module under MIT, shipped alongside the production adapter for a total
-  of 12 authored modules. It targets pinned Abandoned Tunnels and Dungeons &
+  of 12 authored modules before the 0.4.15 Foundry addition. It targets pinned Abandoned Tunnels and Dungeons &
   Taverns APIs/data without redistributing their implementations. The locally
   revised `qm-quest-automation-0.4.3` retains its original MIT notice. Sources,
   build inputs and verification are in
   [the runtime module](src/compat/runtime-optimizations/README.md) and
   [optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
+- **Foundry compatibility:** `qm-foundry-compat-0.4.15` is an original SOQM
+  integration under the project MIT license, bringing the total to **13**
+  authored modules. It corrects three inventory-slot arguments in the pinned
+  Modern Foundry 4.1.6 via Mixin. The diagnosis and upstream fix are credited
+  in [the module notes](src/compat/foundry-compat/README.md); no Modern Foundry
+  implementation class or third-party JAR is redistributed by this addition.
 - **Modified structure templates:** nine inherited NBT resources adjust only
   inventories from upstream structures. Their origin is recorded, but their
   redistribution licenses have not been established. They are not covered by
