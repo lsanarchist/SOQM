@@ -25,6 +25,35 @@ Record the release, commit, imported ZIP SHA-256, date, OS, GPU, Java, allocated
 
 These samples do not prove a complete campaign, long-term economic balance or extended-session stability. Performance claims need measurements with machine and test conditions; one machine does not establish universal requirements.
 
+## Sand crafting report
+
+The reported Ctrl-assisted sand duplication is **unresolved**. Static inspection
+of the pinned recipes found balanced 9 sand -> 1 compressed sand -> 9 sand
+routes in both Ex Deorum and Extra Utilities Reborn. That does not verify the
+client/server interaction. Keep the following boxes unchecked until performed.
+
+- [ ] In a separate survival test world, start with exactly 576 sand and no
+  other sand or compressed sand in the inventory, crafting grid or cursor.
+  Record the click target, modifier, result item ID, pack commit and whether
+  this is singleplayer or a dedicated server.
+- [ ] Test ordinary output pickup, Shift+output pickup, Shift+JEI `+` transfer
+  and Ctrl+left-click JEI recipe-bookmark transfer separately. Repeat the
+  original reported gesture; do not substitute a different shortcut.
+- [ ] With continuous crafting unchecked, check material conservation with
+  empty inventory space and with a nearly full inventory. Include the grid,
+  cursor and any dropped items; exclude the preview output until it is taken.
+  Sand + 9 times either mod's compressed sand + 81 times Extra Utilities double
+  compressed sand must remain 576 through compression and decompression.
+- [ ] Close the table and reconnect to the world/server. Recount and verify
+  that apparent extra stacks can actually be moved and placed. Record whether
+  the discrepancy survives reconnect rather than inferring it from a screenshot.
+- [ ] Repeat the same sequence with continuous crafting enabled only in the
+  disposable test world. Record whether the setting changes the outcome. A
+  difference supports this workaround; no difference leaves that hypothesis open.
+- [ ] Verify middle-click sorting, normal crafting, recipe transfer and normal
+  stonecutter use with the new defaults. Verify the refill checkbox starts
+  unchecked again after reopening the crafting screen.
+
 ## Public alpha criteria
 
 Require a clean import, successful graphical launch, a tested early survival route, persistent quest progress and no known blockers on that route. Every advertised mode needs its own completed test. Release notes must list known issues and untested branches.

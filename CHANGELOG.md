@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### Mass-crafting investigation: default-off ingredient refill
+
+- Start Inventory Profiles Next's continuous-crafting checkbox unchecked and
+  its saved refill state disabled. This prevents automatic client-side grid
+  refill unless the player enables it for that screen; manual crafting,
+  middle-click sorting and JEI recipe transfer remain available.
+- This is a reversible mitigation for the reported sand duplication during
+  modifier-assisted crafting, **not a confirmed duplication fix**. The pinned
+  Ex Deorum and Extra Utilities sand recipes both balance 9:1:9; the exact
+  click target and whether extra items survive reconnect are still unverified.
+- Document the existing-profile configuration merge and a counted graphical
+  reproduction check in both languages. No graphical reproduction has passed.
+
 ### 0.4.14 — Village Guard without global mob polling
 
 - Replace Village Guard's per-tick pass over every mob with target-change hooks

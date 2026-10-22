@@ -53,6 +53,37 @@ The client manifest includes Inventory Profiles Next, libIPN and Kotlin for
 Forge at their pinned versions. This dependency chain is only needed by the
 client in SOQM and is excluded by the dedicated-server harness.
 
+### Temporary workaround for the sand crafting report
+
+SOQM starts IPN's **continuous crafting** unchecked. IPN otherwise refills empty
+recipe slots automatically after a craft using additional client-side clicks.
+Leaving this unchecked removes that refill path while the reported sand
+duplication is investigated. **The cause has not been reproduced in a graphical
+client; this is a mitigation, not a verified duplication fix.** Sorting and
+manual crafting remain available. The checkbox can be enabled for the current
+screen; reopening a crafting screen starts it unchecked again.
+
+For an existing profile, fully close Minecraft and merge these two properties
+into the existing `GuiSettings` object in
+`config/inventoryprofilesnext/inventoryprofiles.json`, creating the object if
+absent. Preserve the other settings, then restart the client:
+
+```json
+"GuiSettings": {
+  "continuous_crafting_checkbox_value": "UNCHECKED",
+  "continuous_crafting_saved_value": false
+}
+```
+
+The snippet is an object member, not a replacement for the complete JSON file.
+Record the exact gesture: in the pinned JEI version **Ctrl+left-click on a recipe
+bookmark** transfers maximum ingredients; **Shift+click on `+`** also fills the
+recipe. Neither gesture takes the crafted result. For normal bulk crafting,
+fill the recipe and **Shift+click the output**. Verify the counted result using
+the [crafting check](PLAYTEST.en.md#sand-crafting-report) before considering the
+report resolved. The continuous-crafting setting also applies to IPN's
+stonecutter refill; normal stonecutter use remains available.
+
 ## Dynamic lighting
 
 The client manifest includes [LambDynamicLights 4.8.11+1.21.1](https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/8780227).
