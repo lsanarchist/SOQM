@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions and four original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.5, Runtime Optimizations 0.4.7, Progressive Rewards 0.4.10, Foundry Compatibility 0.4.15 and Storage JEI Compatibility 0.4.17. Quest UI 0.4.6 is a resource-only revision preserving all native 0.4.5 class bytes; recompilation of the other seven production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions and four original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.5, Runtime Optimizations 0.4.7, Progressive Rewards 0.4.10, Foundry Compatibility 0.4.15 and Storage JEI Compatibility 0.4.17. Quest UI 0.4.7 is a resource-only revision preserving all native 0.4.5 class bytes; recompilation of the other seven production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -118,18 +118,18 @@
     },
     {
       "module": "quest-ui",
-      "production_jar": "qm-quest-ui-0.4.6.jar",
-      "production_jar_sha256": "f3946a8d5d58816f790be9cd351c63f43d5481bb62c8e0f3e2d073c57fc91faf",
+      "production_jar": "qm-quest-ui-0.4.7.jar",
+      "production_jar_sha256": "fd766ba25742747d896f2b1a7af9ea2598da12c7158207fb6a659b747b376552",
       "source_origin": "v042_work/quest_ui/compat",
       "baseline_archive": "0.4.2",
       "files_sha256": {
         "LICENSE": "fd94b94c25259d9374a35c6090fe7dbcc6c1f3d5dfe711cfeb645a174d8faefb",
-        "README.md": "d732c02c701006ced9fea989e4a44f0477f52f7ce863b8d51d295157a704140f",
+        "README.md": "0fbdd1e3300167aa15d57da8ea6d35674826a83b10c49310bc6cfe7e7ec01dc4",
         "build.py": "780af97b4c0e89c5708f90768d56a55b6ec7cbd503c556a19f076e87e817b923",
-        "resources/META-INF/neoforge.mods.toml": "d9ec7fc026a375731c434961b630f54616939c0f055586dd13d542b8b80abe9b",
+        "resources/META-INF/neoforge.mods.toml": "01a10643203fae3027ed09cee1375daac9c1e9e67d68f594f151aa40c7cc2924",
         "resources/assets/qm_quest_ui/lang/en_us.json": "5f309bac11bbae6ed72f76b0dd0928c0fa0f2343fbaaa28ce8540772ecea3fa3",
         "resources/assets/qm_quest_ui/lang/uk_ua.json": "7c22cb508e5a892cf37f81d1d62d0db1af0ada30714735eeed3dffa68da8f82a",
-        "resources/assets/qm_quest_ui/reward_catalog.json": "dddc7878d15eda8d9b4f05e32788a287489bf9157f8bef38f2b64b7a3be0559c",
+        "resources/assets/qm_quest_ui/reward_catalog.json": "4371144910b2e13099e06ef01372d786771603d71f9782e8f227db0d6a857973",
         "resources/qm_quest_ui.mixins.json": "9684bac235dc559e94b5cd84f22e39666e9593d22da52003560cdf365c11a948",
         "src/qm/questui/HudConfig.java": "f43473081058d74a1b58b9fb58d7bfdb66db81aa8e35ffe893c3c35a13733bd3",
         "src/qm/questui/QmQuestUi.java": "f05ca2cf1ecaf719bdf8914830bbff57f084df27e2b50cd638c4e26e3fe5c83a",
@@ -164,8 +164,8 @@
         "src/qm/questui/mixin/UltimineHudMixin.java": "f021ff588aebd3c8e0a467e65375854448e6eaa571958538ca77e4b88313cd24"
       },
       "local_revision": {
-        "version": "0.4.6",
-        "change": "Resource-only reward catalogue update: remove Millenaire Masa and explain the per-claim singleton equipment limit; preserve the entire native 0.4.5 class set and bytecode.",
+        "version": "0.4.7",
+        "change": "Resource-only reward catalogue update: replace all backpack and boat entries with useful consumable batches and preserve the Masa exclusion and singleton equipment help; retain the entire native 0.4.5 class set and bytecode.",
         "build_mode": "resource_only",
         "baseline_production_jar": "qm-quest-ui-0.4.5.jar",
         "baseline_production_jar_sha256": "66688e1cca5af8e5218afeaa57c21dc7251225b36b73eff82082444e2472b9c0",
@@ -186,9 +186,38 @@
         "resource_build_regression_tests": 8,
         "native_compilation_performed": false,
         "native_mixin_probes_rerun": false,
-        "graphical_client_playtest": false
+        "graphical_client_playtest": false,
+        "updated_resources_since_previous_revision": [
+          "META-INF/neoforge.mods.toml",
+          "assets/qm_quest_ui/reward_catalog.json"
+        ]
       },
       "previous_local_revisions": [
+        {
+          "version": "0.4.6",
+          "change": "Resource-only reward catalogue update: remove Millenaire Masa and explain the per-claim singleton equipment limit; preserve the entire native 0.4.5 class set and bytecode.",
+          "build_mode": "resource_only",
+          "baseline_production_jar": "qm-quest-ui-0.4.5.jar",
+          "baseline_production_jar_sha256": "66688e1cca5af8e5218afeaa57c21dc7251225b36b73eff82082444e2472b9c0",
+          "build_script": "src/compat/quest-ui/build.py",
+          "build_script_sha256": "780af97b4c0e89c5708f90768d56a55b6ec7cbd503c556a19f076e87e817b923",
+          "java_source_tree_sha256": "7915a7e996a35e705dc7d7bd31aad7dc81d02174951383988d9d6fb562fadc60",
+          "class_manifest_sha256": "3c07145be4985d15aa8b53942e9936382088e0a7980beed98673e2bd4265cb58",
+          "digest_format": "SHA256 of sorted compact JSON mapping relative paths to content SHA256 values",
+          "preserved_classes": 41,
+          "all_class_bytes_preserved": true,
+          "updated_resources": [
+            "META-INF/neoforge.mods.toml",
+            "assets/qm_quest_ui/lang/en_us.json",
+            "assets/qm_quest_ui/lang/uk_ua.json",
+            "assets/qm_quest_ui/reward_catalog.json"
+          ],
+          "resource_repacked_byte_identically_twice": true,
+          "resource_build_regression_tests": 8,
+          "native_compilation_performed": false,
+          "native_mixin_probes_rerun": false,
+          "graphical_client_playtest": false
+        },
         {
           "version": "0.4.5",
           "change": "Show counted guaranteed refund items inline and a bounded in-book catalogue of all possible prizes and manufacture conditions. Keep tooltips above the catalogue and consume its shortcut before editor paste, preserving text and unrelated modal input. Preserve native personal claim behavior and the existing Xaero AUTO-size crash fix.",

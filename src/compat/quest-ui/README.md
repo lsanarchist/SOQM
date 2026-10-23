@@ -1,13 +1,14 @@
-# Quest and HUD Help 0.4.6
+# Quest and HUD Help 0.4.7
 
 Pack-owned client adapter for the exact SOQM Minecraft 1.21.1 / NeoForge
 21.1.262 dependency set. Existing quest-item names, mod names and JEI recipe/use
 keys remain supported. The adapter coordinates Xaero, Ultimine, FTB pinned
 quests, Jade, Ad Astra, Mekanism and RFTools HUD geometry. Version 0.4.4 fixes
 the first-world-render stack overflow with Xaero's automatic minimap size.
-Version 0.4.6 updates resources while preserving every class from the reviewed
-0.4.5 artifact. It removes Masa from the reward catalogue and explains the
-server's one-copy limit for each identical unstackable item per claim.
+Version 0.4.6 removed Masa from the reward catalogue and explained the server's
+one-copy limit for each identical unstackable item per claim. Version 0.4.7
+replaces backpack and boat prizes with reviewed consumable rewards. Both updates
+preserve every class from the reviewed 0.4.5 artifact.
 
 See [HUD_LAYOUT.md](../../../docs/HUD_LAYOUT.md) for player controls, automatic
 existing-instance behavior, audited overlays, pinned sources and limitations.
@@ -33,6 +34,10 @@ the selection probabilities unchanged and does not promise 3–5 distinct items.
 The visible conditions describe
 eligibility; the server remains responsible for the actual unlock state and
 claim. JEI recipe/use keys work on catalogue items.
+
+The current catalogue contains no backpack, boat, raft or Masa prizes. The new
+consumable entries show their actual quantities and production requirements
+from the shared server policy. Backpack upgrade components remain separate items.
 
 `scripts/campaign_rewards.py` generates the shipped
 `assets/qm_quest_ui/reward_catalog.json` from the same chapter rewards, random
@@ -79,9 +84,9 @@ or config rewriting occurs. All hooks are in the client list of the production
 Mixin config. The mod entrypoint registers only a common config definition and
 does not load rendering classes on a dedicated server.
 
-## Reproducible 0.4.6 resource update
+## Reproducible 0.4.7 resource update
 
-The shipped 0.4.6 artifact is a resource-only update of the reviewed 0.4.5 JAR.
+The shipped 0.4.7 artifact is a resource-only update of the reviewed 0.4.5 JAR.
 Save that JAR outside `overrides/mods` before updating; its required SHA-256 is:
 
 ```text
@@ -93,7 +98,7 @@ After regenerating the campaign catalogue, reproduce the update with Python 3.11
 ```sh
 python3 src/compat/quest-ui/build.py \
   --resource-only-from /path/to/saved/qm-quest-ui-0.4.5.jar \
-  --output /tmp/qm-quest-ui-0.4.6.jar
+  --output /tmp/qm-quest-ui-0.4.7.jar
 python3 -m unittest discover -s tests -p test_quest_ui_resource_build.py
 ```
 
@@ -111,11 +116,12 @@ byte size. It rejects native compilation or verification flags in this mode.
 The focused tests cover deterministic output, current resource equality, actual
 published class identity and rejection of changed sources, mixins, dependencies,
 resource paths or an unpinned baseline. A Java source change requires native
-compilation instead.
+compilation instead. The shipped catalogue check rejects backpack, boat, raft
+and Masa prizes in both random pools and guaranteed item lists.
 
 The native 0.4.5 build and probe results are historical evidence for the unchanged
 classes. No Java compilation, native Mixin probe, server or Minecraft client run
-is claimed for the 0.4.6 resource update.
+is claimed for the 0.4.7 resource update.
 
 ## Native compilation and native gate
 
@@ -127,7 +133,7 @@ python3 src/compat/quest-ui/build.py \
   --runtime /path/to/neoforge-client-instance \
   --javac /path/to/jdk-21/bin/javac \
   --verify \
-  --output /tmp/qm-quest-ui-0.4.6-native.jar
+  --output /tmp/qm-quest-ui-0.4.7-native.jar
 ```
 
 The builder checks Java 21, every `metadata/mods.lock.json` mod artifact, and the

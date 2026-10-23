@@ -16,6 +16,14 @@ var SOQMProgressiveRewards = (function () {
   ];
   var itemPattern = /^[a-z0-9_.-]+:[a-z0-9_./-]+$/;
   var poolPattern = /^[a-z0-9_]+$/;
+  // Reviewed consumable batches are the only exceptions to single rare prizes.
+  // Runtime limits stay pinned here even if an external policy is damaged.
+  var premiumBatchLimits = {
+    'minecraft:golden_carrot': 8,
+    'minecraft:experience_bottle': 8,
+    'mekanism:alloy_reinforced': 4,
+    'mekanism:alloy_atomic': 2
+  };
   var marker = 'soqm:progressive_reward';
   var refundMarker = 'soqm:recipe_refund';
   var rarityNames = {
@@ -40,6 +48,14 @@ var SOQMProgressiveRewards = (function () {
     return /^(kubejs|sophisticatedstorage|sophisticatedbackpacks):/.test(id) ||
       /^(ae2):(logic|calculation|engineering)_processor$/.test(id) ||
       (id.indexOf('minecraft:') !== 0 && (rarity === 'rare' || rarity === 'epic'));
+  }
+  function forbiddenEquipment(id) {
+    // Match item paths, not the namespace: backpack upgrades remain valid.
+    return /(?:^|[_/])(backpack|boat|raft)$/.test(id.slice(id.indexOf(':') + 1));
+  }
+  function maximumRewardCount(id, rarity) {
+    if (rarity === 'rare' || rarity === 'epic') return premiumBatchLimits[id] || 1;
+    return protectedProduct(id, rarity) ? 1 : 16;
   }
   function code(id) {
     if (typeof id !== 'string' || !/^[0-9a-fA-F]{1,16}$/.test(id)) return '';
@@ -125,14 +141,13 @@ var SOQMProgressiveRewards = (function () {
         // A damaged condition is rejected, never interpreted as ungated. The
         // allowlist also protects cheap crafted supplies; independent family
         // guards protect expensive parts if both the gate and list were edited.
-        if (!entry || !validItem(entry.item) || !integer(entry.count, 1, 16) ||
-            /plastic|hdpe|mayhem_cube/.test(entry.item) || entry.item === 'millenaire:masa' ||
+        if (!entry || !validItem(entry.item) || !integer(entry.count, 1, maximumRewardCount(entry.item, entry.rarity)) ||
+            /plastic|hdpe|mayhem_cube/.test(entry.item) || entry.item === 'millenaire:masa' || forbiddenEquipment(entry.item) ||
             !finite(entry.weight) || entry.weight <= 0 || entry.weight > 1000000 ||
             rarities.indexOf(entry.rarity) < 0 || !integer(minLevel, 0, 6) ||
             !Array.isArray(required) || !required.every(function (id, index) {
               return typeof id === 'string' && productionItems[id] && required.indexOf(id) === index;
-            }) || ((productionItems[entry.item] || protectedProduct(entry.item, entry.rarity)) && required.indexOf(entry.item) < 0) ||
-            (protectedProduct(entry.item, entry.rarity) && entry.count !== 1)) {
+            }) || ((productionItems[entry.item] || protectedProduct(entry.item, entry.rarity)) && required.indexOf(entry.item) < 0)) {
           warn('entry:' + pool.key + ':' + entries.length, 'Ignoring invalid entry in pool ' + pool.key);
           return;
         }
@@ -316,6 +331,8 @@ var SOQMProgressiveRewards = (function () {
       'Reward level: ' + state.level + '/6; draws per quest: ' + state.draws + '.');
     say(player, 'Особисте отримання раз за квест. Кожен приз розігрується окремо. Повтори предметів, що складаються у стос, додаються; решта — максимум по одному кожного виду за набір.',
       'One personal claim per quest. Each prize is rolled independently. Stackable repeats combine; unstackable items are limited to one of each item per pack.');
+    say(player, 'Наплічники, човни, плоти й Маса не входять до квестових пакунків.',
+      'Backpacks, boats, rafts and Masa are excluded from quest packs.');
     say(player, 'Вказані в квесті компенсації додають витрачені компоненти до набору або куба після справжнього виготовлення вами чи командою.',
       'Refunds listed in a quest add consumed components to its pack or cube after actual manufacture by you or your team.');
     if (state.qualityDraws) say(player,

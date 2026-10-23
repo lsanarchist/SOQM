@@ -12,21 +12,46 @@
 
 The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/reward_pools.json). Exact pinned item and productive recipe evidence is recorded in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). The compiler produces [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json), the shared runtime policy read by the reward handler and production observer.
 
-## Зміни 0.4.18 / Changes in 0.4.18
+## Зміни 0.4.19 / Changes in 0.4.19
 
-За один пакунок видається не більше одного однакового предмета, що не складається у стек: наплічника, човна чи іншого спорядження з нативним максимальним розміром стека 1. Ліміт застосовується після всіх 3–5 жеребкувань, тому повторні випадіння можуть дати менше різних призів. Інший квест може дати ще один такий предмет; наявність його в інвентарі не впливає на нагороду. Партії звичайних ресурсів і кількості фіксованих компенсацій зберігаються. «Маса» (`millenaire:masa`) прибрана з обох пулів, серверної політики та клієнтського каталогу.
+**Самі наплічники, човни та плоти повністю вилучено з нагород.** Вісім колишніх позицій у `survival`, `expedition` та `equipment` замінено корисними витратними припасами: їжею, пляшечками досвіду й матеріалами для крафту. Поліпшення наплічників залишаються окремими призами після власного виготовлення. «Маса» (`millenaire:masa`) і далі виключена з пулів, серверної політики та клієнтського каталогу.
 
-Each pack delivers at most one of each identical unstackable item, including backpacks, boats and other equipment with native maximum stack size 1. The cap is applied after all 3–5 draws, so repeated selections can yield fewer distinct prizes. Another quest can award another copy; inventory possession does not suppress a reward. Ordinary resource batches and fixed refund quantities are retained. Masa (`millenaire:masa`) is removed from both pools, the server policy and the client catalogue.
+**Backpack, boat and raft items are excluded entirely from rewards.** Their eight former entries in `survival`, `expedition` and `equipment` now provide useful consumable supplies: food, experience bottles and crafting materials. Backpack upgrades remain separate prizes after their own manufacture. Masa (`millenaire:masa`) remains excluded from the pools, server policy and client catalogue.
 
-Поточна зміна зберігає всі **1643** наявні зовнішні ID та історію особистих отримань. Уже видані предмети залишаються в гравця. Поділ на 1628 попередніх і 15 доданих ID нижче описує попереднє розширення книги; 0.4.18 не додає нових claim slots.
+Кожен рядок нижче зберігає попередні рідкість, вагу `w` та мінімальний рівень `L`. Кількість указана **за одне жеребкування**; повторні випадіння витратних предметів у пакунку додаються. / Each row retains its previous rarity, weight `w` and minimum level `L`. Quantities are **per draw**; repeated selections of these stackable consumables add together within a pack.
 
-This change preserves all **1643** existing outer IDs and personal claim history. Previously awarded items remain with the player. The 1628 retained plus 15 added IDs below describe the earlier questbook expansion; 0.4.18 adds no claim slots.
+| Пул / Pool | Вилучений предмет / Removed item | Новий приз / Replacement | × за жеребкування / per draw | Rarity | w | L |
+| --- | --- | --- | ---: | --- | ---: | ---: |
+| survival | `sophisticatedbackpacks:backpack` | `minecraft:golden_carrot` | 8 | rare | 8 | 0 |
+| expedition | `sophisticatedbackpacks:backpack` | `minecraft:experience_bottle` | 8 | rare | 8 | 0 |
+| expedition | `ecologics:coconut_boat` | `minecraft:golden_carrot` | 8 | uncommon | 6 | 0 |
+| equipment | `sophisticatedbackpacks:backpack` | `minecraft:redstone` | 16 | uncommon | 10 | 0 |
+| equipment | `sophisticatedbackpacks:copper_backpack` | `minecraft:gold_ingot` | 8 | uncommon | 8 | 0 |
+| equipment | `sophisticatedbackpacks:iron_backpack` | `minecraft:experience_bottle` | 8 | rare | 10 | 0 |
+| equipment | `sophisticatedbackpacks:gold_backpack` | `mekanism:alloy_reinforced` | 4 | rare | 8 | 2 |
+| equipment | `sophisticatedbackpacks:diamond_backpack` | `mekanism:alloy_atomic` | 2 | epic | 6 | 3 |
+
+Зміцнений сплав відкривається лише після справжнього виготовлення `mekanism:alloy_reinforced` командою та досягнення рівня 2; атомний — після виготовлення `mekanism:alloy_atomic` і рівня 3. Підтримуються завершені продуктивні операції Metallurgic Infuser та Infusing Factory. Рівень сам по собі не відкриває ці матеріали; отриманий приз також не записує факт їх виготовлення. Шість інших замін — стартові припаси без виробничої умови. Точні записи й рецепти наведено в [політиці нагород](../metadata/reward_pools.json) та [доказах рецептів](../metadata/reward_item_evidence.json).
+
+Reinforced Alloy requires actual team manufacture of `mekanism:alloy_reinforced` and level 2; Atomic Alloy requires manufacture of `mekanism:alloy_atomic` and level 3. Completed productive operations in the Metallurgic Infuser and Infusing Factory are supported. Level alone does not unlock either material, and receiving a prize does not record its manufacture. The other six replacements are starter supplies without a production requirement. Exact entries and recipes are recorded in the [reward policy](../metadata/reward_pools.json) and [recipe evidence](../metadata/reward_item_evidence.json).
+
+Для решти предметів із нативним максимальним розміром стека 1 зберігається ліміт: **не більше однієї однакової речі за пакунок** після всіх 3–5 жеребкувань. Зайві копії не спричиняють повторного жеребкування; інший квест може дати ще одну річ. Фіксовані компенсації зберігають свої кількості.
+
+Other items with native maximum stack size 1 retain the existing limit: **at most one of each identical item per pack**, applied after all 3–5 draws. Surplus copies do not trigger replacement draws; another quest may award another copy. Fixed refund quantities remain unchanged.
+
+Окремо в [дозволеному списку Chance Cubes](../overrides/kubejs/server_scripts/qm_chancecubes_balance.js) `minecraft:oak_boat` замінено на `minecraft:golden_carrot`. Кількість визначає власна нативна нагорода Chance Cubes: прямі випадкові предметні призи створюють стек з однієї одиниці. Це окремий механізм від партій прогресивного пакунка в таблиці вище.
+
+Separately, the [Chance Cubes allowlist](../overrides/kubejs/server_scripts/qm_chancecubes_balance.js) replaces `minecraft:oak_boat` with `minecraft:golden_carrot`. Quantity remains controlled by Chance Cubes' native reward definition: direct random-item prizes create a one-item stack. This mechanism is separate from the progressive pack batches listed above.
+
+Поточна зміна зберігає всі **1643** наявні зовнішні ID та історію особистих отримань. Уже видані предмети залишаються в гравця. Поділ на 1628 попередніх і 15 доданих ID описує попереднє розширення книги; 0.4.19 не додає нових claim slots.
+
+This change preserves all **1643** existing outer IDs and personal claim history. Previously awarded items remain with the player. The 1628 retained plus 15 added IDs describe the earlier questbook expansion; 0.4.19 adds no claim slots.
 
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
 | Зовнішні ID нагород загалом / Total outer reward IDs | 1643 |
-| Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1628 |
-| Нові особисті нагороди квестів спорядження / New personal equipment quest rewards | 15 |
+| Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1643 |
+| Особисті нагороди спорядження, додані в попередньому розширенні / Personal equipment rewards added in the earlier expansion | 15 |
 | Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1449 |
 | Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 193 |
 | Гарантовані куби загалом на гравця / Total guaranteed cube units per player | 222 |
@@ -39,14 +64,14 @@ This change preserves all **1643** existing outer IDs and personal claim history
 | Окремі фіксовані cube item reward objects / Standalone fixed cube item reward objects | 184 |
 | Тематичні пули / Themes | 14 |
 | Позиції повного каталогу / Catalogue entries | 324 |
-| Унікальні предмети, з них модові / Distinct items, including modded items | 237 / 209 |
-| Модові позиції з повтореннями між темами / Modded entries across themes | 254 |
-| Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 240 |
-| Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 242 |
+| Унікальні предмети, з них модові / Distinct items, including modded items | 231 / 203 |
+| Модові позиції з повтореннями між темами / Modded entries across themes | 248 |
+| Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 234 |
+| Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 236 |
 
-У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають фіксовані куби замість пакунка; повний список задає `milestones` у каталозі. У 29 наявних прямих нагородах кількість збільшено з одного до двох: загальний бюджет зріс із 193 до **222 кубів на гравця, на 15,0259%**. Решта 164 рубежів зберігає по одному кубу, зокрема дев’ять наборів із компенсацією. 15 нових квестів спорядження дають звичайні особисті пакунки. Числа походять із каталогу, фіксованої вибірки [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до книги.
+У кожного звичайного квесту один пакунок. Вступний квест додатково зберігає особисту книгу. 193 рубежі гілок, босів, мультиблоків і великих виробничих кроків дають фіксовані куби замість пакунка; повний список задає `milestones` у каталозі. У 29 наявних прямих нагородах кількість збільшено з одного до двох: загальний бюджет зріс із 193 до **222 кубів на гравця, на 15,0259%**. Решта 164 рубежів зберігає по одному кубу, зокрема дев’ять наборів із компенсацією. 15 квестів спорядження з попереднього розширення дають звичайні особисті пакунки. Числа походять із каталогу, фіксованої вибірки [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) та застосування [`campaign_rewards.apply`](../scripts/campaign_rewards.py) до книги.
 
-Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award fixed cubes in place of a pack; the catalogue’s `milestones` map is the complete list. Twenty-nine existing direct rewards increase from one to two cubes, raising the total budget from 193 to **222 cubes per player, a 15.0259% increase**. The remaining 164 milestones retain one cube each, including the nine refund bundles. The 15 new equipment quests award ordinary personal packs. These counts come from the catalogue, the fixed selection in [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json), and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the book.
+Each ordinary quest has one pack. The introductory quest also retains its personal book. The 193 branch, boss, multiblock and substantial production milestones award fixed cubes in place of a pack; the catalogue’s `milestones` map is the complete list. Twenty-nine existing direct rewards increase from one to two cubes, raising the total budget from 193 to **222 cubes per player, a 15.0259% increase**. The remaining 164 milestones retain one cube each, including the nine refund bundles. The 15 equipment quests from the earlier expansion award ordinary personal packs. These counts come from the catalogue, the fixed selection in [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json), and [`campaign_rewards.apply`](../scripts/campaign_rewards.py) applied to the book.
 
 ## Гарантовані компенсації крафту / Guaranteed crafting refunds
 
@@ -74,9 +99,9 @@ Upgrading a placed Obsidian Furnace to Netherite is also supported. The pinned I
 
 ### Оновлення існуючих світів / Existing worlds
 
-Усі 1628 наявних зовнішніх ID і персональні claim keys збережені; 15 нових квестів спорядження додають власні нагороди з новими ID. **Уже отримана нагорода не видається повторно й не отримує автоматичної доплати.** Два куби у 29 вибраних слотах доступні лише за ще не отриманими нагородами. Дев’ять кубів, об’єднаних із компенсацією в історичному оновленні 0.4.10, і далі видаються через custom reward з тим самим ID, кількістю й tier.
+Усі **1643** наявні зовнішні ID і персональні claim keys збережені. Попереднє розширення книги зберегло 1628 ID і додало 15 особистих нагород квестів спорядження; 0.4.19 зберігає обидві групи. **Уже отримана нагорода не видається повторно й не отримує автоматичної доплати.** Два куби у 29 вибраних слотах доступні лише за ще не отриманими нагородами. Дев’ять кубів, об’єднаних із компенсацією в історичному оновленні 0.4.10, і далі видаються через custom reward з тим самим ID, кількістю й tier.
 
-All 1628 existing outer IDs and personal claim keys are retained; the 15 new equipment quests add their own rewards with new IDs. **Already claimed rewards remain claimed and receive no automatic top-up.** The doubled cube quantities in 29 selected slots apply only to unclaimed rewards. The nine cubes bundled with refunds in the historical 0.4.10 update continue to use custom rewards with the same ID, count and tier.
+All **1643** existing outer IDs and personal claim keys are retained. The earlier questbook expansion preserved 1628 IDs and added 15 personal equipment quest rewards; 0.4.19 preserves both groups. **Already claimed rewards remain claimed and receive no automatic top-up.** The doubled cube quantities in 29 selected slots apply only to unclaimed rewards. The nine cubes bundled with refunds in the historical 0.4.10 update continue to use custom rewards with the same ID, count and tier.
 
 Історична умова переходу з версій до запровадження компенсацій у 0.4.10: для завершеного, але ще не отриманого квесту потрібен виробничий факт. До того оновлення 40 із 41 потрібного output ID не відстежувалися; минулий крафт неможливо відновити з інвентарю чи прогресу. Для таких старих світів потрібне нове справжнє виготовлення або підтримуваний апгрейд. Уже записані виробничі факти, зокрема `mekanism:ultimate_energy_cube`, залишаються придатними; поточне оновлення їх не скидає. Зміна команди не скидає отриманих персональних нагород і не копіює чужі виробничі факти у власний запис.
 
@@ -155,7 +180,7 @@ Recipe IDs, canonical SHA256 values and the native world-upgrade alternative are
 
 **Старі інвентарі автоматично не індексуються.** Після оновлення старий запас, пройдені квести й уже готові машини не вважаються доказом минулого виробництва. Потрібно виконати нову підтримувану операцію. Раніше встановлена машина з придатним native-власником може записати наступний справжній завершений результат; це не зарахування старого вмісту. Без придатного власника або виробничого observer дорогі позиції залишаються закритими.
 
-Кожна тема має 5–10 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Корисні партії їжі, деревини, паперу та звичайних матеріалів служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
+Кожна тема має 5–12 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Корисні партії їжі, деревини, паперу та звичайних матеріалів служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
 
 ## How it works
 
@@ -172,7 +197,7 @@ The observer keeps the player's own production facts and a separate union for th
 
 **Existing inventories are not automatically backfilled.** Old stock, completed quests and already-built machines do not prove earlier production after upgrading. A new supported operation is required. An existing machine with a valid native owner can record its next real completed output; this does not credit its old contents. Missing valid ownership or an unsupported production observer leaves manufactured prizes locked.
 
-Every theme contains 5–10 eligible starter supplies, so a pack has contents even without discoveries. Useful batches of food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
+Every theme contains 5–12 eligible starter supplies, so a pack has contents even without discoveries. Useful batches of food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
 
 ## Рівні та кількість призів / Levels and draw counts
 
@@ -233,19 +258,19 @@ Command and calculation source: [`soqm_progressive_rewards.js`](../overrides/kub
 
 | Ключ / Key | Тема / Theme | Позицій / Entries | Вміст / Contents |
 | --- | --- | ---: | --- |
-| [survival](#survival) | Припаси для старту / Starting Supplies | 20 | Їжа, базові інструменти, перший наплічник / Food, basic tools, first backpack |
+| [survival](#survival) | Припаси для старту / Starting Supplies | 19 | Їжа, золота морква, базові інструменти й дорожні припаси / Food, golden carrots, basic tools and travel supplies |
 | [workshop](#workshop) | Запас майстерні / Workshop Supplies | 24 | Пластини IE, приводи, шасі, модулі печей / IE plates, drives, chassis, furnace augments |
 | [engineering](#engineering) | Запас для виробництва / Factory Supplies | 24 | Процесори AE2, схеми й сплави Mekanism, конденсатори / AE2 processors, Mekanism circuits/alloys, capacitors |
 | [power](#power) | Запас енергетика / Power Workshop Supplies | 24 | Дроти, роз’єми, накопичувачі й енергокуби / Wires, connectors, accumulators and energy cubes |
 | [logistics](#logistics) | Припаси для складу / Storage Supplies | 24 | Шість бочок Sophisticated, поліпшення стосів, деталі AE2 / Six Sophisticated barrels, stack upgrades, AE2 parts |
 | [scholar](#scholar) | Матеріали дослідника / Research Supplies | 20 | Картки AE2, книжкові полиці, квантовий процесор / AE2 cards, bookshelves, quantum processor |
 | [arcane](#arcane) | Запас для магічної майстерні / Arcane Workshop Supplies | 24 | Пелюстки, лінзи, пахощі, вироби EvilCraft, магічні компоненти / Petals, lenses, incense, EvilCraft items, arcane components |
-| [expedition](#expedition) | Припаси для експедиції / Expedition Supplies | 22 | Їжа, сувої Waystones, парашути, дорожні аксесуари / Food, Waystones scrolls, parachutes, travel accessories |
-| [settlement](#settlement) | Посилка для будівельника / Settlement Supplies | 24 | Модова деревина й плитка, ящики, бочки, ліхтарі / Modded wood and tiles, crates, barrels, lanterns |
+| [expedition](#expedition) | Припаси для експедиції / Expedition Supplies | 22 | Їжа, пляшечки досвіду, сувої Waystones, парашути й дорожні аксесуари / Food, experience bottles, Waystones scrolls, parachutes and travel accessories |
+| [settlement](#settlement) | Посилка для будівельника / Settlement Supplies | 23 | Модова деревина й плитка, ящики, бочки, ліхтарі / Modded wood and tiles, crates, barrels, lanterns |
 | [space](#space) | Запас космічної майстерні / Space Workshop Supplies | 24 | Деталі Ad Astra, космічні пластини, турбіна, захист / Ad Astra parts, space-metal plates, turbine, shielding |
 | [processing](#processing) | Сировина для переробки / Processing Supplies | 24 | Сітки й молоти, Ex Machinis, модулі плавлення / Meshes and hammers, Ex Machinis, smelting augments |
 | [hunting](#hunting) | Припаси мисливця / Hunting Supplies | 24 | Деталі ферми мобів, поліпшення, збір предметів і XP / Mob-farm parts, upgrades, item and XP collection |
-| [equipment](#equipment) | Запас для спорядження / Equipment Supplies | 24 | Наплічники, поліпшення, інструменти, аксесуари й сигіли / Backpacks, upgrades, tools, accessories and sigils |
+| [equipment](#equipment) | Запас для спорядження / Equipment Supplies | 24 | Редстоун, золото, досвід, сплави, поліпшення, інструменти, аксесуари й сигіли / Redstone, gold, experience, alloys, upgrades, tools, accessories and sigils |
 | [masterwork](#masterwork) | Запас майстра / Masterwork Supplies | 24 | Усі головні компоненти, ProjectE та матеріали Avaritia / All main components, ProjectE and Avaritia materials |
 
 ## Формула шансів і бюджет / Probability formula and budget
@@ -287,9 +312,20 @@ An entry's catalogue weight **is not its final percentage**. Unlocking another e
 | Logistics, рівень 6, усе відкрито: незеритова бочка / Level 6, everything unlocked: netherite barrel | 3.7500% | 4.2614% | 17.8344% за 5 / over 5 draws |
 | Рівень 6, усі рідкості доступні: rare або epic / Level 6, all rarities available: rare or epic | 48% | 48 / 88 = 54.5455% | 96.6765% за 5 / over 5 draws |
 
-Кількість за одне жеребкування — 1–16 одиниць. Усі rare/epic, KubeJS-компоненти, бочки, наплічники та їхні поліпшення даються по одному. Звичайні ресурси мають практичні партії: наприклад, 6 заліза, 8 міді, 16 редстоуну; базові схеми та сплави — по 4, кабелі — по 8. Кожен виготовлений компонент усе ще вимагає власного виробничого запису. Максимум для суто звичайних припасів — 80 предметів за п'ять жеребкувань; це межа, а не гарантована кількість чи вартість.
+Кількість за одне жеребкування — 1–16 одиниць. Для rare/epic діє правило однієї одиниці, крім **чотирьох явно перевірених витратних предметів** у `rare_reward_batch_limits`. Наведені нижче ліміти застосовуються до їхніх rare/epic-позицій. KubeJS-компоненти, сховища Sophisticated, поліпшення сховищ і наплічників та процесори AE2 залишаються одноштучними за будь-якої рідкості. Самі наплічники, човни та плоти виключені.
 
-A draw contains 1–16 units. Rare/epic prizes, KubeJS components, barrels, backpacks and upgrades remain single-item draws. Ordinary supplies have practical batch sizes: for example, 6 iron, 8 copper or 16 redstone; basic circuits/alloys give 4 and cables give 8. Every manufactured component still needs its own production fact. Five ordinary supply draws have a hard upper bound of 80 items; this is neither guaranteed quantity nor value.
+A draw contains 1–16 units. Rare/epic entries give one item except for **four explicitly reviewed consumables** in `rare_reward_batch_limits`. The limits below apply to their rare/epic entries. KubeJS components, Sophisticated storage, storage and backpack upgrades, and AE2 processors remain single-item draws at every rarity. Backpack, boat and raft items are excluded.
+
+| Виняток / Exception | Максимум за rare/epic-жеребкування / Maximum per rare/epic draw |
+| --- | ---: |
+| `minecraft:golden_carrot` — Золота морква / Golden Carrot | 8 |
+| `minecraft:experience_bottle` — Пляшечка досвіду / Bottle o’ Enchanting | 8 |
+| `mekanism:alloy_reinforced` — Зміцнений сплав / Reinforced Alloy | 4 |
+| `mekanism:alloy_atomic` — Атомний сплав / Atomic Alloy | 2 |
+
+Звичайні ресурси мають практичні партії: наприклад, 6 заліза, 8 міді, 16 редстоуну; базові схеми та сплави — по 4, кабелі — по 8. Кожен виготовлений компонент, включно з обома сплавами-винятками, усе ще вимагає власного виробничого запису й мінімального рівня своєї позиції. Максимум для суто звичайних припасів — 80 предметів за п'ять жеребкувань; це межа, а не гарантована кількість чи вартість.
+
+Ordinary supplies have practical batch sizes: for example, 6 iron, 8 copper or 16 redstone; basic circuits/alloys give 4 and cables give 8. Every manufactured component, including both alloy exceptions, still needs its own production fact and the entry's minimum level. Five ordinary supply draws have a hard upper bound of 80 items; this is neither guaranteed quantity nor value.
 
 | Пул / Pool | Середня кількість до ліміту спорядження, рівень 6, усе відкрито / Expected selected units before the equipment limit, level 6, everything unlocked |
 | --- | ---: |
@@ -309,9 +345,9 @@ These are conditional expectations before the maximum-stack-size-1 limit, so the
 
 ## Особисті отримання та оновлення старого світу / Personal claims and existing-world upgrades
 
-**Поточне перебалансування не дає повторного отримання наявних нагород.** Усі 1628 наявних зовнішніх ID та особисті області збережено. Уже забраний пакунок або куб залишається забраним; додатковий куб у 29 вибраних слотах застосовується лише до ще не отриманих призів. 15 нових квестів спорядження мають нові ID власних нагород; каталог не додає нових claim slots.
+**Поточне перебалансування не дає повторного отримання наявних нагород.** Усі **1643** наявні зовнішні ID та особисті області збережено, включно з 15 нагородами спорядження з попереднього розширення. Уже забраний пакунок або куб залишається забраним; додатковий куб у 29 вибраних слотах застосовується лише до ще не отриманих призів. Оновлення 0.4.19 не додає нових claim slots.
 
-**This rebalance does not reopen existing rewards.** All 1628 existing outer IDs and personal scopes are retained. An already claimed pack or cube stays claimed; the additional cube in 29 selected slots applies only to unclaimed rewards. The 15 new equipment quests have new IDs for their own rewards; the catalogue adds no claim slots.
+**This rebalance does not reopen existing rewards.** All **1643** existing outer IDs and personal scopes are retained, including the 15 equipment rewards from the earlier expansion. An already claimed pack or cube stays claimed; the additional cube in 29 selected slots applies only to unclaimed rewards. Version 0.4.19 adds no claim slots.
 
 ### Історична міграція 0.4.8 / Historical 0.4.8 migration
 
@@ -399,9 +435,9 @@ For refunds, [`ProgressiveRewardsProbe`](../tests/runtime/ProgressiveRewardsProb
 
 ## Редагування й відтворення / Editing and regeneration
 
-Змінювати склад потрібно в [`metadata/reward_pools.json`](../metadata/reward_pools.json), а підтвердження — у [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Зберігайте позитивні ваги, 1–16 одиниці за жеребкування, одноштучні дорогі призи, двомовні назви, точний own-item gate і щонайменше п’ять безпечних стартових результатів у кожній темі. Новий machine-only приз потребує підтримуваного й перевіреного observer. Інвентар, квестова детекція чи JEI не є заміною.
+Змінювати склад потрібно в [`metadata/reward_pools.json`](../metadata/reward_pools.json), а підтвердження — у [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Зберігайте позитивні ваги, 1–16 одиниці за жеребкування, описані вище одноштучні обмеження й чотири перевірені винятки, двомовні назви, точний own-item gate і щонайменше п’ять безпечних стартових результатів у кожній темі. `rare_reward_batch_limits` має точно відповідати перевіреному списку компілятора й обробника; довільна зміна metadata не розширює дозволені партії. Наплічники, човни, плоти та `millenaire:masa` не можна повертати до нагород. Новий machine-only приз потребує підтримуваного й перевіреного observer. Інвентар, квестова детекція чи JEI не є заміною.
 
-Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) and evidence in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Preserve positive weights, 1–16 units per draw, single-unit expensive prizes, bilingual names, exact own-item gates and at least five safe starter results per theme. A new machine-only prize requires a supported and validated observer. Inventory, quest detection and JEI are not substitutes.
+Edit contents in [`metadata/reward_pools.json`](../metadata/reward_pools.json) and evidence in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Preserve positive weights, 1–16 units per draw, the single-item restrictions and four reviewed exceptions above, bilingual names, exact own-item gates and at least five safe starter results per theme. `rare_reward_batch_limits` must match the compiler's and handler's reviewed list exactly; changing metadata alone cannot authorize larger batches. Keep backpack, boat and raft items and `millenaire:masa` excluded from rewards. A new machine-only prize requires a supported and validated observer. Inventory, quest detection and JEI are not substitutes.
 
 Компенсації редагуються в [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json). Для кожного виробу вкажіть один основний квест, усі активні авторські рецепти та їхні SHA256, прямий дорогий інгредієнт і мінімальну витрату серед альтернатив. `partial_ingredient` повертає не більше половини повторюваного інгредієнта; `one_component` допускає один неподільний компонент, якщо щонайменше два інші різні авторські компоненти залишаються витраченими. Новий маршрут виготовлення потребує native observer і перевірки його фактичних витрат. Не додавайте другий refund slot, виробничий запис під час видачі чи перевірку володіння замість виготовлення.
 
@@ -470,7 +506,7 @@ All **324** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `exdeorum:wooden_hammer` | Дерев’яний молот / Wooden Hammer | 1 | uncommon | 2 | 0 | Цей ID / Same ID |
 | `exdeorum:string_mesh` | Нитяна сітка / String Mesh | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:hemp_fabric` | Міцна тканина / Tough Fabric | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
-| `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | rare | 8 | 0 | Цей ID / Same ID |
+| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 8 | rare | 8 | 0 | — |
 | `aether:cold_parachute` | Холодний парашут / Cold Parachute | 1 | rare | 8 | 0 | Цей ID / Same ID |
 | `botania:travel_belt` | Пояс мандрівника / Sojourner's Sash | 1 | epic | 4 | 1 | Цей ID / Same ID |
 
@@ -680,10 +716,10 @@ All **324** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `aether:ambrosium_torch` | Амброзієвий смолоскип / Ambrosium Torch | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `aether:cold_parachute` | Холодний парашут / Cold Parachute | 1 | rare | 8 | 0 | Цей ID / Same ID |
 | `aether:golden_parachute` | Золотий парашут / Golden Parachute | 1 | rare | 6 | 1 | Цей ID / Same ID |
-| `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | rare | 8 | 0 | Цей ID / Same ID |
+| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 8 | rare | 8 | 0 | — |
 | `sophisticatedbackpacks:feeding_upgrade` | Поліпшення годування / Feeding Upgrade | 1 | rare | 10 | 1 | Цей ID / Same ID |
 | `botania:travel_belt` | Пояс мандрівника / Sojourner's Sash | 1 | epic | 6 | 1 | Цей ID / Same ID |
-| `ecologics:coconut_boat` | Кокосовий човен / Coconut Boat | 1 | uncommon | 6 | 0 | Цей ID / Same ID |
+| `minecraft:golden_carrot` | Золота морква / Golden Carrot | 8 | uncommon | 6 | 0 | — |
 
 ### settlement
 
@@ -819,11 +855,11 @@ All **324** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `minecraft:string` | Нитка / String | 8 | common | 10 | 0 | — |
 | `minecraft:lapis_lazuli` | Лазурит / Lapis Lazuli | 12 | common | 10 | 0 | — |
 | `minecraft:iron_ingot` | Залізний злиток / Iron Ingot | 6 | common | 10 | 0 | — |
-| `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
-| `sophisticatedbackpacks:copper_backpack` | Мідний наплічник / Copper Backpack | 1 | uncommon | 8 | 0 | Цей ID / Same ID |
-| `sophisticatedbackpacks:iron_backpack` | Залізний наплічник / Iron Backpack | 1 | rare | 10 | 0 | Цей ID / Same ID |
-| `sophisticatedbackpacks:gold_backpack` | Золотий наплічник / Gold Backpack | 1 | rare | 8 | 2 | Цей ID / Same ID |
-| `sophisticatedbackpacks:diamond_backpack` | Діамантовий наплічник / Diamond Backpack | 1 | epic | 6 | 3 | Цей ID / Same ID |
+| `minecraft:redstone` | Редстоун / Redstone Dust | 16 | uncommon | 10 | 0 | — |
+| `minecraft:gold_ingot` | Золотий зливок / Gold Ingot | 8 | uncommon | 8 | 0 | — |
+| `minecraft:experience_bottle` | Пляшечка досвіду / Bottle o’ Enchanting | 8 | rare | 10 | 0 | — |
+| `mekanism:alloy_reinforced` | Зміцнений сплав / Reinforced Alloy | 4 | rare | 8 | 2 | Цей ID / Same ID |
+| `mekanism:alloy_atomic` | Атомний сплав / Atomic Alloy | 2 | epic | 6 | 3 | Цей ID / Same ID |
 | `sophisticatedbackpacks:pickup_upgrade` | Поліпшення підбирання / Pickup Upgrade | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:filter_upgrade` | Поліпшення фільтра / Filter Upgrade | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:feeding_upgrade` | Поліпшення годування / Feeding Upgrade | 1 | uncommon | 12 | 1 | Цей ID / Same ID |

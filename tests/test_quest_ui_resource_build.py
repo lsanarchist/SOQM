@@ -154,7 +154,12 @@ class ShippedQuestUiResourceTests(unittest.TestCase):
         self.assertEqual(build.entries_hash(classes), build.RESOURCE_BASELINE_CLASSES_HASH)
         self.assertEqual(build.entries_hash(build.directory_entries(MODULE / "src")), build.RESOURCE_BASELINE_SOURCES_HASH)
         self.assertEqual(resources, build.resource_entries())
-        self.assertNotIn(b"millenaire:masa", resources["assets/qm_quest_ui/reward_catalog.json"])
+        catalogue = json.loads(resources["assets/qm_quest_ui/reward_catalog.json"])
+        prizes = {entry["item"] for pool in catalogue["pools"] for entry in pool["entries"]}
+        prizes.update(entry["item"] for claim in catalogue["rewards"].values() for entry in claim["guaranteed"])
+        self.assertNotIn("millenaire:masa", prizes)
+        for item in prizes:
+            self.assertNotRegex(item.split(":", 1)[1], r"(?:^|[_/])(backpack|boat|raft)$", item)
         for locale in ("en_us", "uk_ua"):
             language = json.loads(resources[f"assets/qm_quest_ui/lang/{locale}.json"])
             self.assertEqual(language["qm_quest_ui.rewards.draws"].count("%s"), 2)

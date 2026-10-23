@@ -308,6 +308,74 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
             with self.subTest(pool=pool_key), self.assertRaisesRegex(ValueError, 'Masa'):
                 rewards.validate_policy(policy)
 
+    def test_backpacks_boats_and_rafts_are_absent_from_every_quest_reward_layer(self):
+        for document in (self.policy, self.runtime, load(rewards.PREVIEW_PATH)):
+            for pool in document['pools']:
+                for entry in pool['entries']:
+                    self.assertIsNone(rewards.EXCLUDED_EQUIPMENT_PATH.search(entry['item'].partition(':')[2]))
+        preview = load(rewards.PREVIEW_PATH)
+        fixed = [entry['item'] for claim in preview['rewards'].values() for entry in claim['guaranteed']]
+        self.assertTrue(all(not rewards.EXCLUDED_EQUIPMENT_PATH.search(item.partition(':')[2]) for item in fixed))
+        self.assertFalse(any(rewards.EXCLUDED_EQUIPMENT_PATH.search(item.partition(':')[2])
+                             for item in self.runtime['production_items']))
+        # A namespace ban would incorrectly remove useful backpack upgrades.
+        self.assertIn('sophisticatedbackpacks:pickup_upgrade', {e['item'] for e in self.entries})
+        for item in ('sophisticatedbackpacks:backpack', 'sophisticatedbackpacks:netherite_backpack',
+                     'ecologics:coconut_boat', 'minecraft:oak_boat', 'minecraft:oak_chest_boat',
+                     'minecraft:bamboo_raft', 'minecraft:bamboo_chest_raft', 'future:gear/copper_backpack'):
+            policy = deepcopy(self.policy)
+            entry = next(e for e in policy['pools'][0]['entries'] if e['evidence']['method'] == 'starter_supply')
+            entry['item'] = item
+            with self.subTest(item=item), self.assertRaisesRegex(ValueError, 'excluded from rewards'):
+                rewards.validate_policy(policy)
+
+    def test_replacement_consumables_have_useful_batches_and_exact_alloy_gates(self):
+        expected = {
+            ('survival', 'minecraft:golden_carrot'): (8, 'rare', 8, 0),
+            ('expedition', 'minecraft:experience_bottle'): (8, 'rare', 8, 0),
+            ('expedition', 'minecraft:golden_carrot'): (8, 'uncommon', 6, 0),
+            ('equipment', 'minecraft:redstone'): (16, 'uncommon', 10, 0),
+            ('equipment', 'minecraft:gold_ingot'): (8, 'uncommon', 8, 0),
+            ('equipment', 'minecraft:experience_bottle'): (8, 'rare', 10, 0),
+            ('equipment', 'mekanism:alloy_reinforced'): (4, 'rare', 8, 2),
+            ('equipment', 'mekanism:alloy_atomic'): (2, 'epic', 6, 3),
+        }
+        for (key, item), quantities in expected.items():
+            entry = next(e for e in self.by_key[key]['entries'] if e['item'] == item)
+            with self.subTest(pool=key, item=item):
+                self.assertEqual((entry['count'], entry['rarity'], entry['weight'], entry['min_level']), quantities)
+                if item.startswith('mekanism:'):
+                    self.assertEqual(entry['requires_craft'], [item])
+                    self.assertEqual(entry['evidence']['method'], 'mekanism_infusing')
+                    self.assertNotIn(entry, rewards.eligible_entries(self.by_key[key], 6, set(rewards.GATES)))
+                    self.assertIn(entry, rewards.eligible_entries(self.by_key[key], quantities[3], {item}))
+                else:
+                    self.assertIn(entry, rewards.eligible_entries(self.by_key[key], 0, set()))
+
+    def test_rare_batch_exceptions_cannot_expand_or_weaken_production_requirements(self):
+        for item, limit in rewards.RARE_REWARD_BATCH_LIMITS.items():
+            policy = deepcopy(self.policy)
+            entry = next(e for p in policy['pools'] for e in p['entries']
+                         if e['item'] == item and e['rarity'] in {'rare', 'epic'})
+            entry['count'] = limit + 1
+            with self.subTest(item=item), self.assertRaisesRegex(ValueError, 'reviewed limit'):
+                rewards.validate_policy(policy)
+        policy = deepcopy(self.policy)
+        entry = next(e for p in policy['pools'] for e in p['entries'] if e['item'] == 'minecraft:gold_ingot')
+        entry.update(count=2, rarity='rare')
+        with self.assertRaisesRegex(ValueError, 'reviewed limit'):
+            rewards.validate_policy(policy)
+        policy['rare_reward_batch_limits']['minecraft:gold_ingot'] = 2
+        with self.assertRaisesRegex(ValueError, 'four reviewed limits'):
+            rewards.validate_policy(policy)
+        for item in ('mekanism:alloy_reinforced', 'mekanism:alloy_atomic'):
+            policy = deepcopy(self.policy)
+            entry = next(e for p in policy['pools'] for e in p['entries']
+                         if e['item'] == item and e['rarity'] in {'rare', 'epic'})
+            entry['requires_craft'] = []
+            with self.subTest(item=item), self.assertRaisesRegex(ValueError, 'proof of that same item'):
+                rewards.validate_policy(policy)
+
     def test_whitelist_equals_exact_craft_requirements_and_has_no_stale_tables(self):
         expected = set(rewards.GATES)
         for entry in self.entries:

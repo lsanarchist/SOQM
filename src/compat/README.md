@@ -1,6 +1,6 @@
 # Compatibility sources
 
-SOQM 0.4.18 uses **fourteen** authored compatibility modules: ten recovered from
+SOQM 0.4.19 uses **fourteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
 module, the production-evidence adapter, the Foundry crafting fix and the
 Sophisticated Core/JEI display fix. The original eight include full MIT
@@ -16,7 +16,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
 | `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
-| `quest-ui` | `qm-quest-ui-0.4.6.jar` | 0.4.2, then coordinated HUD, reward catalogue, mapped client API build and automatic minimap crash fix |
+| `quest-ui` | `qm-quest-ui-0.4.7.jar` | 0.4.2, then coordinated HUD, reward catalogue, mapped client API build and automatic minimap crash fix |
 | `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
@@ -50,9 +50,10 @@ status HUDs. Its build uses the pinned mapped client API, checks real Mixin
 transformations and executes the native minimap size/scale call chain. The
 client entry points remain isolated from dedicated servers.
 
-Quest UI 0.4.6 is a resource-only revision of the verified 0.4.5 artifact. It
-removes Masa from the catalogue and explains the unstackable reward limit,
-while preserving every compiled class byte. Its separate resource build mode
+Quest UI 0.4.7 is a resource-only revision of the verified 0.4.5 artifact. It
+replaces backpacks and boats in the catalogue with consumable food, experience
+and crafting supplies, retains the Masa exclusion and unstackable reward help,
+and preserves every compiled class byte. Its separate resource build mode
 pins the baseline artifact and unchanged sources; it does not claim a fresh
 native compilation or graphical playtest.
 

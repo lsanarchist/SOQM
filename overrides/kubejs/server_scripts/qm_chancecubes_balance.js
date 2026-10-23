@@ -78,7 +78,7 @@ ServerEvents.tags("item", event => {
     "minecraft:rail",
     "minecraft:powered_rail",
     "minecraft:minecart",
-    "minecraft:oak_boat",
+    "minecraft:golden_carrot",
     "minecraft:chest",
     "minecraft:barrel",
     "minecraft:hopper",
