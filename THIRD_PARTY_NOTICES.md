@@ -38,11 +38,18 @@ with Mojang or Microsoft.
   [the runtime module](src/compat/runtime-optimizations/README.md) and
   [optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
 - **Foundry compatibility:** `qm-foundry-compat-0.4.15` is an original SOQM
-  integration under the project MIT license, bringing the total to **13**
-  authored modules. It corrects three inventory-slot arguments in the pinned
+  integration under the project MIT license, added as the thirteenth
+  authored module. It corrects three inventory-slot arguments in the pinned
   Modern Foundry 4.1.6 via Mixin. The diagnosis and upstream fix are credited
   in [the module notes](src/compat/foundry-compat/README.md); no Modern Foundry
   implementation class or third-party JAR is redistributed by this addition.
+- **Storage JEI compatibility:** `qm-storage-jei-compat-0.4.17` is an original
+  SOQM integration under the project MIT license, bringing the total to **14**
+  authored modules. It corrects one display-slot index in Sophisticated Core
+  through a client-only Mixin and JEI's public mapping API. Sources, exact
+  target pins and upstream references are in
+  [the module notes](src/compat/storage-jei-compat/README.md). No Sophisticated
+  or JEI implementation class is redistributed by this addition.
 - **Modified structure templates:** nine inherited NBT resources adjust only
   inventories from upstream structures. Their origin is recorded, but their
   redistribution licenses have not been established. They are not covered by

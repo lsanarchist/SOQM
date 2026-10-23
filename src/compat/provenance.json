@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions and three original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.3, Runtime Optimizations 0.4.7 Progressive Rewards 0.4.10 and Foundry Compatibility 0.4.15; recompilation of the other seven production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance plus reviewed local revisions and four original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.5, Runtime Optimizations 0.4.7, Progressive Rewards 0.4.10, Foundry Compatibility 0.4.15 and Storage JEI Compatibility 0.4.17; recompilation of the other seven production modules remains unproven.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -456,6 +456,36 @@
         "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
         "modernfoundry_sha256": "0b0026db1c27a1d08b1e3d3eba8fd2cc470d4cb534eb08d74633adc5be5691f1",
         "crafting_station_class_sha256": "0707ddb5efd94481ef2f35a10df9f61ef12b49e9bbe452a2e7ac90b50a5c757d"
+      }
+    },
+    {
+      "module": "storage-jei-compat",
+      "production_jar": "qm-storage-jei-compat-0.4.17.jar",
+      "production_jar_sha256": "7c45f5c63648ed3c0986d6884fb2dfbc3e76532d0c4753fb690137306c11757c",
+      "source_origin": "Original SOQM compatibility integration",
+      "license_evidence": "Original MIT module; complete notice retained in source and production JAR.",
+      "files_sha256": {
+        "LICENSE": "ab3a374cb064a886399d992b5dd639736fbcd5b148b8b1b470d2ada5f37972eb",
+        "README.md": "e840a8bb52734d9d7426d49e3190333d08cbfc3581d33b3476494ad1f438c012",
+        "build.py": "e0fffd7a1666527fc7f82feb4d7b9ff4729e645053d68ac8158515ef401b0c3f",
+        "resources/META-INF/neoforge.mods.toml": "28b5d65ea1ce76fb5a7c42f0ed0e5488c7bf8f3597321e5248b260664c507852",
+        "resources/qm_storage_jei_compat.mixins.json": "852e7fb94e25fc99fc5448e6fa872d9379803665cabe144edf4c37d2ed9d93cf",
+        "src/qm/storagejeicompat/QmStorageJeiCompat.java": "25a3a85738199447f1a169737b8a32c719d60c3fec37de9cf4c9fdd19d66cd6c",
+        "src/qm/storagejeicompat/mixin/CraftingSpecFocusSlotMixin.java": "14ee867c8e75a9aed7ab3500e13183de62236ef8c4b449c60574c454c55fe5be"
+      },
+      "local_revision": {
+        "version": "0.4.17",
+        "change": "Map only the Sophisticated Core source-slot builder lookup to JEI's centred grid index, preserving compact ingredient lookup, focus conditions and storage recipes.",
+        "upstream_api_url": "https://github.com/mezz/JustEnoughItems/commit/43206a25e4786fb852cd13e913cbfc4e08cccf30",
+        "compiler": "Eclipse Temurin javac 21.0.13 (JDK 21.0.13+9)",
+        "compiler_archive_sha256": "d7f5d5cf865a2902b70ff549b97586a7d3f234e016f041ab447ea740c7d66d1c",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
+        "sophisticatedcore_sha256": "3abac9ba876a2eb19ce7ab9c080b81a5383f286d6e54b7d0912b29401aca9c2c",
+        "jei_sha256": "f7a9de3d7ee07eed8d293a1a1a0f6afaac556eb43c103523457bd07ebb551e7b",
+        "crafting_spec_extension_class_sha256": "422d00aabf7a4a36d155ba7aaa121c927ec0ba0ea202a41dddc37ecbbeec1386",
+        "rebuilt_byte_identically_twice": true
       }
     }
   ]

@@ -2,8 +2,8 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **129 pinned third-party dependencies**. SOQM 0.4.15 additionally
-ships **13 authored compatibility modules**, listed with their source and exact
+The table lists **129 pinned third-party dependencies**. SOQM 0.4.17 additionally
+ships **14 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.10` module records production evidence, preserves
@@ -16,6 +16,10 @@ already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMI
 `qm-foundry-compat-0.4.15` fixes positioned ingredient consumption in the pinned
 Modern Foundry 4.1.6 Crafting Station. Install it on both client and server;
 see [the crafting fix](docs/CRAFTING_STATION_FIX.md).
+
+`qm-storage-jei-compat-0.4.17` fixes the Sophisticated Core focus-link display
+error for compact storage recipes in JEI. This module is client-only; see
+[the storage display fix](docs/STORAGE_JEI_FIX.md).
 
 Inventory Profiles Next uses libIPN and Kotlin for Forge. All three are marked
 `client` here because only the client inventory tools need them in SOQM; the

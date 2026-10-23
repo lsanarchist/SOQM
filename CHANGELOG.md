@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+### 0.4.17 — Sophisticated Storage recipe displays in JEI
+
+- Add the client-only `qm-storage-jei-compat-0.4.17.jar` for pinned
+  Sophisticated Core 1.5.14.2413 and JEI 19.64.0.455.
+- Correct the compact ingredient index used to select a centred JEI slot for
+  a source/result focus link. Single-row `US` and `USU` storage recipes were
+  linking an empty slot to one output, causing the reported ingredient-count
+  exception. Shapeless layouts use the same dimension normalization as JEI.
+- Preserve the original focus conditions and all native storage recipes,
+  material costs and component/inventory carryover.
+- Include a native Core/JEI reproduction and regression runner for the actual
+  shipped Mixin. Keep graphical recipe transfer and full-client reload checks
+  explicitly separate from the headless probe.
+- Retain the Foundry duplication fix, workshop recipe disambiguation and all
+  129 third-party pins. The installation candidate is now 0.4.17.
+
 ### 0.4.16 — unambiguous workshop recipes
 
 - Give the four iron-gear recipes and three gold-gear recipes distinct crafting

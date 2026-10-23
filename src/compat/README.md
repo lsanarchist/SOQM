@@ -1,8 +1,9 @@
 # Compatibility sources
 
-SOQM 0.4.15 uses **thirteen** authored compatibility modules: ten recovered from
+SOQM 0.4.17 uses **fourteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
-module, the production-evidence adapter and the Foundry crafting fix. The original eight include full MIT
+module, the production-evidence adapter, the Foundry crafting fix and the
+Sophisticated Core/JEI display fix. The original eight include full MIT
 notices, which must remain with their source and binaries. The two later recovered modules
 declare MIT in `neoforge.mods.toml`, but neither their source nor JAR supplied a
 full license/copyright notice. Their local `LICENSE` files record that declaration
@@ -15,7 +16,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
 | `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
-| `quest-ui` | `qm-quest-ui-0.4.4.jar` | 0.4.2, then coordinated HUD, mapped client API build and automatic minimap crash fix |
+| `quest-ui` | `qm-quest-ui-0.4.5.jar` | 0.4.2, then coordinated HUD, reward catalogue, mapped client API build and automatic minimap crash fix |
 | `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
@@ -23,6 +24,7 @@ and missing notice; they do not invent an upstream copyright holder.
 | `progressive-rewards` | `qm-progressive-rewards-0.4.10.jar` | New SOQM source; recipe-backed refunds, world upgrades and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
 | `foundry-compat` | `qm-foundry-compat-0.4.15.jar` | New SOQM source; positioned ingredient writes for Modern Foundry 4.1.6 |
+| `storage-jei-compat` | `qm-storage-jei-compat-0.4.17.jar` | New SOQM source; centred display-slot focus links for pinned Sophisticated Core and JEI |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -59,6 +61,13 @@ ingredient/remainder writes in the pinned Crafting Station to their physical
 inventory slots. It follows the upstream correction without including third-party
 implementation classes. Its exact-version dependency and required injection
 count prevent silently applying an unreviewed patch to a different release.
+
+The client-only [storage JEI compatibility module](storage-jei-compat/README.md)
+maps the compact source ingredient index to JEI's centred display slot before
+Core links that slot to the result. Its exact dependency pins and required
+single injection preserve the original focus conditions, recipes and storage
+state transfer. It uses JEI's public mapping API and includes no upstream
+implementation classes. The dedicated-server materializer excludes it.
 
 **Independent recompilation of all ten recovered production JARs has not been
 reproduced.** The Cannibal, Quest Automation, Quest UI, runtime optimization and

@@ -1,5 +1,42 @@
 # Verification status
 
+## SOQM 0.4.17 — Sophisticated Storage focus links in JEI
+
+Correct the compact ingredient index used to select a physical JEI display
+slot in the pinned Sophisticated Core adapter. The client-only module uses
+JEI's public centring API and preserves the original focus-link conditions,
+recipes, costs and storage state transfer. The supplied log identifies eleven
+storage display entries matching this defect; three other errors mentioned
+in its total have no IDs or traces in the extract.
+
+The real Sponge/MixinExtras transformation changes **one argument** while
+retaining both native `List.get` calls. Actual Core and JEI methods pass
+**830 cases / 14,544 assertions**: **415 correct source/output links** and
+**415 preserved no-link conditions**. Coverage includes all **36 shaped
+source positions** across widths/heights 1–3, all **45 shapeless positions**
+for 1–9 ingredients, either-dimension normalization, grouped/ungrouped displays,
+both focus directions, sparse slots and component-bearing vanilla items.
+With the original Core class, the shaped negative control produces **15 exact
+exceptions**, **8 silent wrong-source links** and **13 already-correct layouts**;
+the reported `US` and `USU` failures are required to reproduce. Applying the
+configuration on the server side leaves the target class unchanged.
+
+Two clean native API builds produce the same **3,520-byte** module. The
+repository gate passes **170 Python tests without skips**, both Node suites,
+generator/localization checks and deterministic package validation. All **12**
+coordinate previews remain fresh. All **129 third-party pins** and the earlier
+Foundry/recipe-conflict fixes remain unchanged.
+
+This probe starts at native Core display specifications with vanilla item
+witnesses and an ItemStack identity helper. It does not register the complete
+Sophisticated Storage mod, initialize actual storage components, launch a
+graphical client or execute crafting, transfer or multiplayer synchronization.
+The full-client playtest remains open.
+
+[Cause, scope and reproduction](../docs/STORAGE_JEI_FIX.md) ·
+[Module and exact build pins](../src/compat/storage-jei-compat/README.md) ·
+[Installation in Ukrainian](../docs/INSTALL.uk.md#відображення-sophisticated-storage-у-jei).
+
 ## SOQM 0.4.16 — distinct gear and furnace-upgrade recipes
 
 Correct three groups of overlapping manual grids across nine recipes, retaining
@@ -28,8 +65,8 @@ compatibility JAR and all 129 third-party pins remain unchanged from 0.4.15.
 No new graphical client, world or multiplayer run is claimed.
 
 [Fix, reproduction and limits](../docs/RECIPE_CONFLICT_FIX.md) ·
-[Installation](../docs/INSTALL.en.md#crafting-fixes-in-0416) ·
-[Гравцям українською](../docs/INSTALL.uk.md#виправлення-крафтів-у-0416).
+[Installation](../docs/INSTALL.en.md#crafting-fixes-in-0417) ·
+[Гравцям українською](../docs/INSTALL.uk.md#виправлення-крафтів-у-0417).
 
 ## SOQM 0.4.15 — Crafting Station ingredient consumption
 

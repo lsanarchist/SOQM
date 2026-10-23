@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qm.storagejeicompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "CraftingSpecFocusSlotMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.5"
+  }
+}

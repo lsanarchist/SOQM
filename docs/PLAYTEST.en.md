@@ -65,6 +65,29 @@ until actually performed; offline validation does not complete them.
 - [ ] Confirm one gear consumes four plates and one previous-tier gear, and
   one iron-upgrade token consumes eight iron blocks and its centre ingredient.
 
+## Sophisticated Storage in JEI
+
+The headless regression exercises the actual pinned Core/JEI focus-link path.
+The following GUI and full-pack checks require a graphical client and remain
+unchecked until performed.
+
+- [ ] Verify `qm-storage-jei-compat-0.4.17.jar`, Core 1.5.14.2413 and
+  JEI 19.64.0.455 in the client. Fully restart it and join the test world.
+- [ ] Open the basic-to-iron chest, barrel, shulker and all four limited-barrel
+  recipes, plus the three double-chest upgrades. No listed storage recipe
+  should show the broken-recipe banner or the focus-link exception in the log.
+- [ ] Check recipe lookup and uses for plain, named and coloured storage.
+  Each displayed source must correspond to the expected result variant.
+- [ ] Transfer a `US` and a `USU` recipe into a crafting grid. Verify the
+  required upgrade item(s), result and quantities; also inspect a full 3x3
+  copper-to-iron recipe.
+- [ ] Craft a named/coloured container containing a known inventory and
+  upgrades. Verify retained components, contents and consumed materials.
+- [ ] Repeat recipe display and lookup after `/reload` and after reconnecting
+  to a dedicated server without the client-only compatibility module.
+- [ ] If any broken-recipe diagnostics remain, record each recipe ID and its
+  complete exception. The supplied extract omitted three nonstorage errors.
+
 ## Public alpha criteria
 
 Require a clean import, successful graphical launch, a tested early survival route, persistent quest progress and no known blockers on that route. Every advertised mode needs its own completed test. Release notes must list known issues and untested branches.
