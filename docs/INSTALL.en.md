@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.18
+# Installing SOQM 0.4.19
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.18-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.19-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.18-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.18 asset is not claimed. The
+The current output is `dist/SOQM-0.4.19-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.19 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.18 ZIP and wait for every download. See the
+   select the built 0.4.19 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -43,22 +43,33 @@ directly from a source checkout omits those generated translations.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
-## Quest reward quantities in 0.4.18
+## Consumable quest rewards in 0.4.19
 
-Random quest packs now award at most one of each identical unstackable item,
-including backpacks and boats. Masa no longer appears in either reward pool or
-the in-book catalogue. Resource batches, crafting refunds and cube quantities
-keep their existing rules; already claimed rewards remain claimed.
+Backpacks, boats and rafts are completely excluded from quest rewards and the
+in-book reward catalogue. Their former entries now offer useful consumables:
+eight golden carrots, eight bottles of experience, sixteen redstone, eight gold
+ingots, four reinforced alloys or two atomic alloys per draw, according to the
+pool. These are possible prizes; a pack does not grant every listed item.
+Masa remains excluded.
 
-Import the complete 0.4.18 candidate, or update the built ZIP's `kubejs/` and
+Reinforced alloy requires reward production level 2 and recorded manufacture of
+that exact alloy by you or your team. Atomic alloy similarly requires level 3
+and its own manufacture record. Possessing an alloy or reaching a high level
+alone does not unlock it. Other unstackable equipment retains the one-copy limit
+per identical item per pack. Stackable repeats combine, while fixed crafting
+refunds and cube quantities retain their existing rules.
+
+Import the complete 0.4.19 candidate, or update the built ZIP's `kubejs/` and
 generated quest language files on both stopped client and server. Replace
-`qm-quest-ui-0.4.5.jar` with `qm-quest-ui-0.4.6.jar` in each installation and
-keep only the new version. Restart both sides to load the reward script and
-updated catalogue. Quest progress and production evidence need no reset.
+`qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.7.jar` in each installation and
+remove older duplicate versions. Restart both sides to load the reward script
+and updated catalogue. All **1,643 existing outer reward IDs** and personal
+claim history are preserved; already claimed rewards stay claimed. Quest
+progress and production evidence need no reset.
 
-## Crafting fixes in 0.4.18
+## Crafting fixes in 0.4.19
 
-The 0.4.18 candidate includes distinct manual iron/gold gear layouts and a
+The 0.4.19 candidate includes distinct manual iron/gold gear layouts and a
 copper-ingot centre for the Copper-to-Iron Furnace Upgrade. Update the built
 candidate's `overrides/kubejs/` files on both client and server while stopped,
 or import the complete candidate into a new profile. Restart both sides, use
@@ -71,7 +82,7 @@ It corrects the station's ingredient-slot writes when taking a crafted result,
 including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
 close the game and server, add this JAR from the candidate's `overrides/mods/`
 to **both the client and server** `mods/` directories, then restart. An imported
-0.4.18 candidate already includes it. The remaining third-party pins are the
+0.4.19 candidate already includes it. The remaining third-party pins are the
 same as 0.4.14.
 
 The module deliberately requires Modern Foundry 4.1.6. Remove it before a
@@ -84,7 +95,7 @@ does not repair the faulty station code. See the
 
 ## Sophisticated Storage displays in JEI
 
-SOQM 0.4.18 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
+SOQM 0.4.19 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
 `All slots must have the same number of ingredients` exception when JEI
 builds compact storage upgrade recipes. For an existing 0.4.14–0.4.16 profile
 with the pinned mods, close Minecraft, copy this JAR from the candidate's
@@ -98,7 +109,7 @@ the exact archive is pinned in the pack. Keep these dependencies together.
 Review or remove the adapter before a coordinated dependency update. The fix
 maps the storage ingredient to its actual JEI slot; recipe costs and storage
 state transfer are unchanged. This client JAR alone does not install the
-earlier Foundry or workshop recipe fixes; import the complete 0.4.18 candidate
+earlier Foundry or workshop recipe fixes; import the complete 0.4.19 candidate
 to receive all three changes.
 
 See [cause, native reproduction and limits](STORAGE_JEI_FIX.md) and the
@@ -140,7 +151,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
    Do not copy the manifest itself or a GitHub source archive into that folder.
 3. Install the **129** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **13** authored modules, these form the SOQM mod set. Remove
+   the package's **14** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.
@@ -207,9 +218,10 @@ bringing the full campaign from 193 to 222 cubes. Previously claimed personal
 rewards stay claimed and receive no automatic top-up. The updated Quest UI
 client module shows separate refund icons and the possible-prize catalogue.
 Opening a preview does not claim a reward.
-For a manual update, remove `mods/qm-quest-ui-0.4.4.jar` from the copied profile;
-keep only the new `qm-quest-ui-0.4.6.jar` from the package. Copying files into an
-existing directory does not remove the differently named previous version.
+For a manual update to the current 0.4.19 candidate, remove older
+`qm-quest-ui-*.jar` versions from the copied profile and keep only
+`qm-quest-ui-0.4.7.jar` from the package. Copying files into an existing directory
+does not remove a differently named previous version.
 
 For **0.4.12 → 0.4.13**, update the client profile to the new package so the
 launcher downloads the pinned LambDynamicLights JAR. With a manual installation,

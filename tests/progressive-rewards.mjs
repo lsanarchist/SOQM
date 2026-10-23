@@ -212,7 +212,7 @@ assert.equal(mid.randomIndex, 6, 'Intermediate production grants three draws');
 
 // Count=1 constrains one draw, not the final pack. Real unstackable items must
 // remain one per type and claim even if every replacement draw selects them.
-const equipmentItems = ['sophisticatedbackpacks:backpack', 'ecologics:coconut_boat', 'minecraft:oak_boat'];
+const equipmentItems = ['exdeorum:crook', 'exdeorum:wooden_hammer', 'minecraft:shield'];
 const equipmentRegistry = new Set([...registry, ...equipmentItems]);
 const equipmentStackSizes = Object.fromEntries(equipmentItems.map(item => [item, 1]));
 const repeatedPolicy = (item, count, rarity = 'uncommon') => {
@@ -231,14 +231,6 @@ for (const item of equipmentItems) for (const level of [0, 6]) {
   assert.equal(player.deliveries.length, 1);
   assert.equal(player.randomIndex, (level ? 5 : 3) * 2, 'The cap cannot reroll or change the draw budget');
 }
-const oversizedBoatPolicy = repeatedPolicy('ecologics:coconut_boat', 16);
-const oversizedBoat = load(oversizedBoatPolicy, {registry: equipmentRegistry, stackSizes: equipmentStackSizes});
-const boatPlayer = new Player({produced: ['ecologics:coconut_boat', 'kubejs:milestone_6']});
-assert.equal(oversizedBoat.preview(boatPlayer).selected.available[0].entry.count, 16,
-  'Exercise the delivery backstop against a valid-but-oversized legacy pool entry');
-oversizedBoat.claim(boatPlayer);
-assert.deepEqual(boatPlayer.inventory, {'ecologics:coconut_boat': 1}, 'Five 16-boat draws still deliver only one boat');
-assert.equal(boatPlayer.randomIndex, 10);
 const mixedEquipmentPolicy = repeatedPolicy(equipmentItems[0], 1);
 mixedEquipmentPolicy.pools[0].entries.push(entry(equipmentItems[1], 1, 'uncommon', {requires_craft: [equipmentItems[1]]}));
 mixedEquipmentPolicy.reward_mappings.F123456789ABCDE1 = {pool: 'survival', quest_id: questId};
@@ -260,6 +252,101 @@ for (const [item, count, rarity] of [['minecraft:bread', 8, 'common'], ['minecra
   fixture.claim(player);
   assert.deepEqual(player.inventory, {[item]: count * 5}, 'Stackable batches and count-one processors still accumulate');
   assert.equal(player.randomIndex, 10);
+}
+
+// Removed equipment must never be delivered, even from an older/damaged policy.
+// Every entry below is registered and otherwise valid, with its exact craft gate.
+const removedEquipment = [
+  'sophisticatedbackpacks:backpack', 'sophisticatedbackpacks:copper_backpack',
+  'sophisticatedbackpacks:iron_backpack', 'sophisticatedbackpacks:gold_backpack',
+  'sophisticatedbackpacks:diamond_backpack', 'sophisticatedbackpacks:netherite_backpack',
+  'ecologics:coconut_boat', 'ecologics:coconut_chest_boat', 'minecraft:oak_boat',
+  'minecraft:oak_chest_boat', 'minecraft:bamboo_raft', 'minecraft:bamboo_chest_raft',
+  'example:backpack', 'example:boats/boat', 'example:transport/raft',
+];
+const upgradeItems = ['sophisticatedbackpacks:pickup_upgrade', 'sophisticatedbackpacks:advanced_magnet_upgrade'];
+const replacementRegistry = new Set([...registry, ...removedEquipment, ...upgradeItems]);
+for (const item of removedEquipment) {
+  const policy = makePolicy();
+  policy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+  policy.guaranteed_quality_draws = 1;
+  policy.production_items.push(item);
+  policy.pools[0].entries = [entry(item, 1, 'uncommon', {requires_craft: [item]}), entry('minecraft:bread', 8, 'common')];
+  const fixture = load(policy, {registry: replacementRegistry});
+  const player = new Player({produced: [item, 'kubejs:milestone_6'], random: [0.9999, 0]});
+  fixture.claim(player);
+  assert.deepEqual(player.inventory, {'minecraft:bread': 40}, `${item} is excluded instead of being awarded once`);
+  assert.equal(player.randomIndex, 10, 'Excluding equipment must not add hidden rerolls');
+  assert(fixture.warnings.some(warning => warning.includes('Ignoring invalid entry')));
+}
+const obsoleteBoatPolicy = makePolicy();
+obsoleteBoatPolicy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+obsoleteBoatPolicy.production_items.push('ecologics:coconut_boat');
+obsoleteBoatPolicy.pools[0].entries = [entry('ecologics:coconut_boat', 16, 'uncommon', {requires_craft: ['ecologics:coconut_boat']})];
+const obsoleteBoat = load(obsoleteBoatPolicy, {registry: replacementRegistry});
+const boatPlayer = new Player({produced: ['ecologics:coconut_boat', 'kubejs:milestone_6']});
+assert(obsoleteBoat.preview(boatPlayer).fallback, 'A pool containing only removed equipment falls back safely');
+obsoleteBoat.claim(boatPlayer);
+assert.deepEqual(boatPlayer.inventory, {'minecraft:bread': 40}, 'An oversized legacy boat entry never awards a boat');
+for (const item of upgradeItems) {
+  const policy = makePolicy();
+  policy.production_items.push(item);
+  policy.pools[0].entries = [entry(item, 1, 'uncommon', {requires_craft: [item]})];
+  const fixture = load(policy, {registry: replacementRegistry});
+  const player = new Player({produced: [item]});
+  fixture.claim(player);
+  assert(player.deliveries.length > 0 && player.deliveries.every(prize => prize.item === item),
+    'Excluding backpack bodies must not remove useful backpack upgrades');
+  assert.deepEqual(fixture.warnings, []);
+}
+
+// Worthwhile consumable stacks have exact premium limits; other rare products
+// remain single-item draws and the two alloys still require their own output.
+const premiumBatches = [
+  ['minecraft:golden_carrot', 8, 'rare'], ['minecraft:experience_bottle', 8, 'rare'],
+  ['mekanism:alloy_reinforced', 4, 'rare'], ['mekanism:alloy_atomic', 2, 'epic'],
+];
+const alloyItems = premiumBatches.map(([item]) => item).filter(item => item.startsWith('mekanism:'));
+const premiumRegistry = new Set([...registry, ...premiumBatches.map(([item]) => item),
+  'minecraft:diamond', 'mekanism:alloy_infused']);
+function premiumPolicy(item, count, rarity) {
+  const policy = makePolicy();
+  policy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+  policy.guaranteed_quality_draws = 1;
+  const requires = item.startsWith('mekanism:') ? [item] : [];
+  policy.production_items.push(...requires);
+  policy.pools[0].entries = [entry(item, count, rarity, {requires_craft: requires})];
+  return policy;
+}
+for (const [item, limit, rarity] of premiumBatches) {
+  const fixture = load(premiumPolicy(item, limit, rarity), {registry: premiumRegistry});
+  const player = new Player({produced: [item, 'kubejs:milestone_6']});
+  fixture.claim(player);
+  assert.deepEqual(player.inventory, {[item]: limit * 5}, `${item} delivers the approved consumable batch on each draw`);
+  assert.equal(player.randomIndex, 10);
+  assert.deepEqual(fixture.warnings, []);
+  const excessive = load(premiumPolicy(item, limit + 1, rarity), {registry: premiumRegistry});
+  const rejected = new Player({produced: [item, 'kubejs:milestone_6']});
+  excessive.claim(rejected);
+  assert.deepEqual(rejected.inventory, {'minecraft:bread': 40}, `${item} cannot exceed its pinned premium batch limit`);
+  if (alloyItems.includes(item)) {
+    const unmade = new Player({produced: ['kubejs:milestone_6', ...alloyItems.filter(other => other !== item)]});
+    fixture.claim(unmade);
+    assert.deepEqual(unmade.inventory, {'minecraft:bread': 40}, 'Level six or another alloy does not unlock an unmade alloy');
+    const ungated = premiumPolicy(item, limit, rarity);
+    ungated.production_items = ungated.production_items.filter(output => output !== item);
+    ungated.pools[0].entries[0].requires_craft = [];
+    const damaged = load(ungated, {registry: premiumRegistry});
+    const recipient = new Player({produced: ['kubejs:milestone_6']});
+    damaged.claim(recipient);
+    assert.deepEqual(recipient.inventory, {'minecraft:bread': 40}, 'Removing both the alloy gate and allowlist does not make it free');
+  }
+}
+for (const [item, rarity] of [['minecraft:diamond', 'rare'], ['mekanism:alloy_infused', 'epic']]) {
+  const fixture = load(premiumPolicy(item, 2, rarity), {registry: premiumRegistry});
+  const player = new Player({produced: [item, 'kubejs:milestone_6']});
+  fixture.claim(player);
+  assert.deepEqual(player.inventory, {'minecraft:bread': 40}, 'Unreviewed rare/epic batch exceptions remain rejected');
 }
 
 const outsider = new Player();
@@ -437,6 +524,8 @@ assert(actual.pools.every(pool => pool.entries.every(prize => !prize.item.starts
   'Fixed milestone cubes must not become random-pool prizes');
 assert(actual.pools.every(pool => pool.entries.every(prize => prize.item !== 'millenaire:masa')),
   'The committed policy must remove masa from every reward theme');
+assert(actual.pools.every(pool => pool.entries.every(prize => !/(?:^|[_/])(backpack|boat|raft)$/.test(prize.item.split(':')[1]))),
+  'The committed policy contains no backpack bodies, boats, chest boats or rafts');
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
 for (const output of actual.production_items) actualRegistry.add(output);
@@ -488,6 +577,84 @@ for (const pool of actual.pools) {
   assert(experienced.deliveries.some(row => premiumItems.has(row.item)), `${pool.key} always includes an eligible premium prize even with the lowest RNG`);
   assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
+
+// Force each of the eight real replacements through its actual quest mapping.
+// Quantities below are the reviewed per-draw batches, independent of the script.
+const replacementBatches = [
+  ['survival', 'minecraft:golden_carrot', 8],
+  ['expedition', 'minecraft:experience_bottle', 8],
+  ['expedition', 'minecraft:golden_carrot', 8],
+  ['equipment', 'minecraft:redstone', 16],
+  ['equipment', 'minecraft:gold_ingot', 8],
+  ['equipment', 'minecraft:experience_bottle', 8],
+  ['equipment', 'mekanism:alloy_reinforced', 4],
+  ['equipment', 'mekanism:alloy_atomic', 2],
+];
+function drawAt(selected, item, premium) {
+  const groups = rarities.map(rarity => selected.groups[rarity])
+    .filter(group => group.weight > 0 && group.entries.length && (!premium || group.rarity !== 'common'));
+  const groupIndex = groups.findIndex(group => group.entries.some(prize => prize.item === item));
+  assert(groupIndex >= 0, `${item} must be available in the selected draw`);
+  const group = groups[groupIndex];
+  const itemIndex = group.entries.findIndex(prize => prize.item === item);
+  const groupStart = groups.slice(0, groupIndex).reduce((sum, row) => sum + row.weight, 0);
+  const groupTotal = groups.reduce((sum, row) => sum + row.weight, 0);
+  const itemStart = group.entries.slice(0, itemIndex).reduce((sum, row) => sum + row.weight, 0);
+  return [(groupStart + group.weight / 2) / groupTotal,
+    (itemStart + group.entries[itemIndex].weight / 2) / group.total];
+}
+for (const [key, item, count] of replacementBatches) {
+  const player = new Player({produced: actual.production_items});
+  const selected = committed.preview(player, key).selected;
+  const prize = selected.available.find(row => row.entry.item === item);
+  assert(prize, `${key} must contain ${item}`);
+  assert.equal(prize.entry.count, count, 'The actual catalogue must retain the reviewed consumable batch');
+  player.randomValues = [...drawAt(selected, item, true), ...Array.from({length: 4}, () => drawAt(selected, item, false)).flat()];
+  const [id, binding] = Object.entries(actual.reward_mappings).find(([, row]) => row.pool === key && !row.refund);
+  committed.claim(player, {id, quest: binding.quest_id});
+  assert.deepEqual(player.inventory, {[item]: count * 5}, `${key}/${item} reaches native delivery in its complete batch`);
+  assert.equal(player.randomIndex, 10);
+}
+const milestoneOnly = new Player({produced: actual.levels.map(milestone => milestone.item)});
+const lockedEquipment = committed.preview(milestoneOnly, 'equipment').locked;
+for (const item of alloyItems) assert(lockedEquipment.some(row => row.entry.item === item && row.missing.includes(item)),
+  'The actual equipment pool keeps the exact alloy production requirement at maximum milestone level');
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
 assert(statusVisitor.messages.some(line => line.includes('unstackable items are limited to one of each item per pack')));
-console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, per-claim unstackable caps, preserved supply/processor batches, masa exclusion, exact IDs, fallbacks, read-only bilingual commands, reload');
+assert(statusVisitor.messages.some(line => line.includes('Backpacks, boats, rafts and Masa are excluded')));
+
+// Cubes can also roll items from the registry; exercise the real tag callback
+// so the finite exception list cannot reintroduce removed quest equipment.
+let cubeTags;
+vm.runInContext(fs.readFileSync(path.join(base, 'kubejs/server_scripts/qm_chancecubes_balance.js'), 'utf8'),
+  vm.createContext({ServerEvents: {
+    tags: (type, callback) => {
+      assert.equal(type, 'item');
+      assert.equal(cubeTags, undefined);
+      cubeTags = callback;
+    },
+    recipes: () => {},
+  }}), {filename: 'qm_chancecubes_balance.js', timeout: 2000});
+assert.equal(typeof cubeTags, 'function');
+const cubeTagOperations = [], cubeAllowedItems = [];
+cubeTags({
+  removeAll: tag => { assert.equal(tag, 'chancecubes:blacklist'); cubeTagOperations.push('clear'); },
+  add: (tag, pattern) => {
+    assert.equal(tag, 'chancecubes:blacklist');
+    assert.equal(String(pattern), '/.*/');
+    cubeTagOperations.push('block registry');
+  },
+  remove: (tag, item) => {
+    assert.equal(tag, 'chancecubes:blacklist');
+    assert.equal(typeof item, 'string');
+    assert.match(item, /^[a-z0-9_.-]+:[a-z0-9_./-]+$/, 'Cube exceptions must be finite item IDs');
+    assert.deepEqual(cubeTagOperations, ['clear', 'block registry']);
+    cubeAllowedItems.push(item);
+  },
+});
+assert.deepEqual(cubeTagOperations, ['clear', 'block registry']);
+assert(cubeAllowedItems.every(item => item !== 'millenaire:masa' && !/(?:^|[_/])(backpack|boat|raft)$/.test(item.split(':')[1])),
+  'The native Chance Cubes item pool excludes backpack bodies, boats, chest boats, rafts and Masa');
+assert.equal(cubeAllowedItems.filter(item => item === 'minecraft:golden_carrot').length, 1,
+  'The removed cube boat is replaced by one golden-carrot entry');
+console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, per-claim unstackable caps, preserved supply/processor batches, backpack/boat/raft/masa exclusion, capped consumable premium batches, finite Chance Cubes item pool, exact IDs, fallbacks, read-only bilingual commands, reload');

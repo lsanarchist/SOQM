@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "version": "2.2",
+  "version": "2.3",
   "max_items_per_roll": 4,
-  "notes": "Personal themed reward packs perform 3–5 draws with replacement. Repeated stackable prizes combine; each identical nonstackable item (native maximum stack size 1) is delivered at most once per personal claim, after all draws. This can yield fewer distinct prizes than draws. The first draw uses eligible uncommon-or-better prizes when available; otherwise it uses ordinary supplies. The remaining draws choose an eligible rarity then an item by weight. Every manufactured reward still requires actual team production of that exact output. Rare/epic, custom components and storage equipment remain single-item draws. Reviewed raw supplies and basic components use useful batch sizes up to 16. Explicit branch-achievement quests award one Mayhem Cube instead of a pack, preserving the original outer claim ID and personal ownership. Plastic, HDPE and millenaire:masa remain excluded.",
+  "notes": "Personal themed reward packs perform 3–5 draws with replacement. Repeated stackable prizes combine; each identical nonstackable item (native maximum stack size 1) is delivered at most once per personal claim, after all draws. This can yield fewer distinct prizes than draws. The first draw uses eligible uncommon-or-better prizes when available; otherwise it uses ordinary supplies. The remaining draws choose an eligible rarity then an item by weight. Every manufactured reward still requires actual team production of that exact output. Rare/epic prizes, custom components and storage equipment remain single-item draws except the four explicitly reviewed consumable batches in rare_reward_batch_limits. Backpacks, boats and rafts are excluded entirely; their former entries now award golden carrots, experience bottles, redstone, gold ingots and production-gated Mekanism alloys. Reviewed raw supplies and basic components use useful batch sizes up to 16. Explicit branch-achievement quests award one Mayhem Cube instead of a pack, preserving the original outer claim ID and personal ownership. Plastic, HDPE and millenaire:masa remain excluded.",
   "sources": {
     "ftb_quests_version": "2101.1.36",
     "ftb_quests_sha256": "6a39982c4b3afc00b1e788041a4f0d394e1659e3b3a6e5d078cd790bc36d0018",
@@ -422,24 +422,19 @@
           ]
         },
         {
-          "item": "sophisticatedbackpacks:backpack",
-          "count": 1,
+          "item": "minecraft:golden_carrot",
+          "count": 8,
           "weight": 8,
           "rarity": "rare",
           "min_level": 0,
           "name": {
-            "uk_ua": "Наплічник",
-            "en_us": "Backpack"
+            "uk_ua": "Золота морква",
+            "en_us": "Golden Carrot"
           },
           "evidence": {
-            "recipe_ids": [
-              "sophisticatedbackpacks:backpack"
-            ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "sophisticatedbackpacks:backpack"
-          ]
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
         },
         {
           "item": "aether:cold_parachute",
@@ -3606,24 +3601,19 @@
           ]
         },
         {
-          "item": "sophisticatedbackpacks:backpack",
-          "count": 1,
+          "item": "minecraft:experience_bottle",
+          "count": 8,
           "weight": 8,
           "rarity": "rare",
           "min_level": 0,
           "name": {
-            "uk_ua": "Наплічник",
-            "en_us": "Backpack"
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
           },
           "evidence": {
-            "recipe_ids": [
-              "sophisticatedbackpacks:backpack"
-            ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "sophisticatedbackpacks:backpack"
-          ]
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
         },
         {
           "item": "sophisticatedbackpacks:feeding_upgrade",
@@ -3666,24 +3656,19 @@
           ]
         },
         {
-          "item": "ecologics:coconut_boat",
-          "count": 1,
+          "item": "minecraft:golden_carrot",
+          "count": 8,
           "weight": 6,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
-            "uk_ua": "Кокосовий човен",
-            "en_us": "Coconut Boat"
+            "uk_ua": "Золота морква",
+            "en_us": "Golden Carrot"
           },
           "evidence": {
-            "recipe_ids": [
-              "ecologics:coconut_boat"
-            ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "ecologics:coconut_boat"
-          ]
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
         }
       ]
     },
@@ -5651,104 +5636,92 @@
           }
         },
         {
-          "item": "sophisticatedbackpacks:backpack",
-          "count": 1,
+          "item": "minecraft:redstone",
+          "count": 16,
           "weight": 10,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
-            "uk_ua": "Наплічник",
-            "en_us": "Backpack"
+            "uk_ua": "Редстоун",
+            "en_us": "Redstone Dust"
           },
           "evidence": {
-            "recipe_ids": [
-              "sophisticatedbackpacks:backpack"
-            ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "sophisticatedbackpacks:backpack"
-          ]
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
         },
         {
-          "item": "sophisticatedbackpacks:copper_backpack",
-          "count": 1,
+          "item": "minecraft:gold_ingot",
+          "count": 8,
           "weight": 8,
           "rarity": "uncommon",
           "min_level": 0,
           "name": {
-            "uk_ua": "Мідний наплічник",
-            "en_us": "Copper Backpack"
+            "uk_ua": "Золотий зливок",
+            "en_us": "Gold Ingot"
           },
           "evidence": {
             "recipe_ids": [
-              "sophisticatedbackpacks:copper_backpack"
+              "ad_astra:smelting/gold_ingot_from_smelting_venus_gold_ore",
+              "immersiveengineering:smelting/gold_ingot_from_dust",
+              "mekanism:processing/gold/ingot/from_dust_smelting"
             ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "sophisticatedbackpacks:copper_backpack"
-          ]
+            "method": "starter_supply"
+          }
         },
         {
-          "item": "sophisticatedbackpacks:iron_backpack",
-          "count": 1,
+          "item": "minecraft:experience_bottle",
+          "count": 8,
           "weight": 10,
           "rarity": "rare",
           "min_level": 0,
           "name": {
-            "uk_ua": "Залізний наплічник",
-            "en_us": "Iron Backpack"
+            "uk_ua": "Пляшечка досвіду",
+            "en_us": "Bottle o’ Enchanting"
           },
           "evidence": {
-            "recipe_ids": [
-              "sophisticatedbackpacks:iron_backpack",
-              "sophisticatedbackpacks:iron_backpack_from_copper"
-            ],
-            "method": "crafting"
-          },
-          "requires_craft": [
-            "sophisticatedbackpacks:iron_backpack"
-          ]
+            "recipe_ids": [],
+            "method": "starter_supply"
+          }
         },
         {
-          "item": "sophisticatedbackpacks:gold_backpack",
-          "count": 1,
+          "item": "mekanism:alloy_reinforced",
+          "count": 4,
           "weight": 8,
           "rarity": "rare",
           "min_level": 2,
           "name": {
-            "uk_ua": "Золотий наплічник",
-            "en_us": "Gold Backpack"
+            "uk_ua": "Зміцнений сплав",
+            "en_us": "Reinforced Alloy"
           },
           "evidence": {
             "recipe_ids": [
-              "kubejs:expert_v042/sophisticatedbackpacks/gold_backpack"
+              "mekanism:metallurgic_infusing/alloy/reinforced"
             ],
-            "method": "crafting"
+            "method": "mekanism_infusing"
           },
           "requires_craft": [
-            "sophisticatedbackpacks:gold_backpack"
+            "mekanism:alloy_reinforced"
           ]
         },
         {
-          "item": "sophisticatedbackpacks:diamond_backpack",
-          "count": 1,
+          "item": "mekanism:alloy_atomic",
+          "count": 2,
           "weight": 6,
           "rarity": "epic",
           "min_level": 3,
           "name": {
-            "uk_ua": "Діамантовий наплічник",
-            "en_us": "Diamond Backpack"
+            "uk_ua": "Атомний сплав",
+            "en_us": "Atomic Alloy"
           },
           "evidence": {
             "recipe_ids": [
-              "kubejs:expert_v042/sophisticatedbackpacks/diamond_backpack"
+              "mekanism:metallurgic_infusing/alloy/atomic"
             ],
-            "method": "crafting"
+            "method": "mekanism_infusing"
           },
           "requires_craft": [
-            "sophisticatedbackpacks:diamond_backpack"
+            "mekanism:alloy_atomic"
           ]
         },
         {
@@ -7339,5 +7312,11 @@
   ],
   "forbidden_reward_items": [
     "millenaire:masa"
-  ]
+  ],
+  "rare_reward_batch_limits": {
+    "minecraft:golden_carrot": 8,
+    "minecraft:experience_bottle": 8,
+    "mekanism:alloy_reinforced": 4,
+    "mekanism:alloy_atomic": 2
+  }
 }

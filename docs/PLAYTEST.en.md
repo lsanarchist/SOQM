@@ -90,15 +90,24 @@ unchecked until performed.
 
 ## Quest reward quantities
 
-- [ ] In the 0.4.18 quest book, the starting and settlement reward catalogues
-  contain no Masa. Help describes 3–5 draws and the one-copy unstackable limit.
-- [ ] After genuinely manufacturing a backpack or coconut boat, claim eligible
-  rewards individually. One pack must never deliver two copies of the same
-  unstackable item. Different quests may each award a copy.
-- [ ] Ordinary materials still arrive in useful batches. Fixed crafting refunds
-  and cube rewards retain the quantities displayed in the book.
+- [ ] In the 0.4.19 quest book, no reward catalogue contains a backpack, boat,
+  raft or Masa. Claim rewards individually and through Claim All; none of those
+  items should be awarded, including after manufacturing them.
+- [ ] Check the replacement entries and quantities per draw: 8 golden carrots,
+  8 experience bottles, 16 redstone, 8 gold ingots, 4 reinforced alloys and
+  2 atomic alloys in their respective pools. Repeated stackable draws may
+  combine several batches in the delivered reward.
+- [ ] Before manufacturing each alloy, it remains locked even when the team has
+  a high reward level or possesses a sample. Genuine reinforced-alloy production
+  unlocks its prize only at reward level 2 or above; atomic alloy needs its own
+  production and level 3 or above. Below the required level, production alone
+  must not unlock the prize.
+- [ ] Other unstackable equipment, such as an Ex Deorum crook or hammer, remains
+  limited to one of each identical item per pack. Ordinary material batches,
+  fixed crafting refunds and cube quantities match the book.
 - [ ] Reopen the test save and reconnect: already claimed rewards stay claimed,
-  production unlocks survive, and the updated catalogue still matches the server.
+  all 1,643 existing reward IDs retain their history, production unlocks survive,
+  and the updated catalogue still matches the server.
 
 ## Public alpha criteria
 

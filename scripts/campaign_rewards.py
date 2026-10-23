@@ -26,6 +26,13 @@ BOOK_QUEST = '514D010000000001'
 ID_PATTERN = re.compile(r'[0-9A-F]{16}\Z')
 ITEM_PATTERN = re.compile(r'[a-z0-9_.-]+:[a-z0-9_./-]+\Z')
 RARITIES = ('common', 'uncommon', 'rare', 'epic')
+EXCLUDED_EQUIPMENT_PATH = re.compile(r'(?:^|[_/])(backpack|boat|raft)\Z')
+RARE_REWARD_BATCH_LIMITS = {
+    'minecraft:golden_carrot': 8,
+    'minecraft:experience_bottle': 8,
+    'mekanism:alloy_reinforced': 4,
+    'mekanism:alloy_atomic': 2,
+}
 GATES = ('kubejs:industrial_chassis', 'kubejs:precision_mechanism',
          'kubejs:dimensional_matrix', 'kubejs:stellar_alloy',
          'kubejs:mythic_circuit', 'kubejs:emc_core')
@@ -93,6 +100,8 @@ def eligible_entries(pool: dict, level: int, produced: set[str]) -> list[dict]:
 def validate_policy(policy: dict) -> None:
     if policy.get('schema') != 2:
         raise ValueError('Unknown progressive reward policy schema')
+    if policy.get('rare_reward_batch_limits') != RARE_REWARD_BATCH_LIMITS:
+        raise ValueError('Rare consumable batches must retain the four reviewed limits')
     if [r['level'] for r in policy['levels']] != list(range(1, 7)) or [r['item'] for r in policy['levels']] != list(GATES):
         raise ValueError('Production levels must be the six ordered campaign milestones')
     if policy['draws_by_level'] != [3, 3, 4, 4, 4, 5, 5]:
@@ -130,6 +139,8 @@ def validate_policy(policy: dict) -> None:
                 raise ValueError(f'Plastic and nested cubes remain excluded: {item}')
             if item == 'millenaire:masa':
                 raise ValueError('Masa is excluded from quest rewards')
+            if EXCLUDED_EQUIPMENT_PATH.search(item.partition(':')[2]):
+                raise ValueError(f'Backpacks, boats and rafts are excluded from rewards: {item}')
             if type(entry['count']) is not int or not 1 <= entry['count'] <= 16:
                 raise ValueError('Each draw awards one reviewed stack of 1–16 items')
             if type(entry['weight']) is not int or entry['weight'] <= 0:
@@ -153,8 +164,16 @@ def validate_policy(policy: dict) -> None:
                             or (not item.startswith('minecraft:') and entry['rarity'] in {'rare', 'epic'}))
             if manufactured and item not in required:
                 raise ValueError(f'Manufactured prizes require proof of that same item: {item}')
-            if (item.startswith('kubejs:') or entry['rarity'] in {'rare', 'epic'}) and entry['count'] != 1:
-                raise ValueError('Rare prizes and custom progression components are single-item prizes')
+            single_item_product = (item.startswith(('kubejs:', 'sophisticatedstorage:', 'sophisticatedbackpacks:'))
+                                   or item in {'ae2:logic_processor', 'ae2:calculation_processor', 'ae2:engineering_processor'})
+            if single_item_product:
+                limit = 1
+            elif entry['rarity'] in {'rare', 'epic'}:
+                limit = RARE_REWARD_BATCH_LIMITS.get(item, 1)
+            else:
+                limit = 16
+            if entry['count'] > limit:
+                raise ValueError(f'Reward batch exceeds its reviewed limit of {limit}: {item}')
             if set(entry.get('name', {})) != {'uk_ua', 'en_us'} or not all(entry['name'].values()):
                 raise ValueError('Every prize needs bilingual names')
         if len(eligible_entries(pool, 0, set())) < 5:

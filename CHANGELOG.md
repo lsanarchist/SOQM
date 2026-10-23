@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+### 0.4.19 — consumable quest rewards
+
+- Remove all backpack, boat and raft bodies from random quest rewards. Replace
+  the eight previous backpack/boat entries with useful consumable batches:
+  8 golden carrots, 8 experience bottles, 16 redstone, 8 gold ingots,
+  4 reinforced alloy or 2 atomic alloy, according to the original theme.
+- Keep each replacement's rarity, selection weight and minimum campaign level.
+  Reinforced and atomic alloy still require the team to manufacture that exact
+  alloy first. Permit only four reviewed rare/epic batch exceptions; other
+  protected components and upgrades remain single-item draws.
+- Reject excluded equipment during catalogue generation and runtime policy
+  validation, including obsolete or oversized entries. Replace the oak boat
+  in the separate Chance Cubes allowlist with golden carrot.
+- Publish the matching server catalogue and Quest UI 0.4.7 resource update;
+  preserve all 41 native 0.4.5 class files. Update Ukrainian and English guidance.
+- Preserve all 1,643 reward IDs, personal claim history, fixed refunds, cube
+  quantities, the Masa exclusion and the per-pack cap for other unstackable
+  equipment. Keep all 129 third-party pins and the Foundry/JEI crafting fixes.
+- Exercise actual reward claims for every replacement, old excluded entries,
+  useful batch limits and exact alloy production gates; check the packaged
+  catalogue and Chance Cubes blacklist callback.
+
 ### 0.4.18 — quest reward quantities
 
 - Limit each identical unstackable item to one per personal random reward pack.

@@ -2,13 +2,13 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **129 pinned third-party dependencies**. SOQM 0.4.18 additionally
+The table lists **129 pinned third-party dependencies**. SOQM 0.4.19 additionally
 ships **14 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.10` module records production evidence, preserves
 personal claims, and delivers guaranteed recipe refunds. The client-only
-`qm-quest-ui-0.4.5` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
+`qm-quest-ui-0.4.7` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
 `qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
 and background encounter/dungeon work; `qm-quest-automation-0.4.4` skips
 already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).

@@ -110,6 +110,9 @@ public final class ProgressiveRewardsProbe {
                 check(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(id))
                                 && !new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(id))).isEmpty(),
                         "Every authored prize is an actual nonempty registered item: " + id);
+                check(!ResourceLocation.parse(id).getPath().matches("(?:.*[_/])?(?:backpack|boat|raft)")
+                                && !id.equals("millenaire:masa"),
+                        "Removed backpack, boat, raft and Masa rewards never enter the native catalogue: " + id);
             }
             verifyPoolCommand(server, first, pool, 0);
         }
