@@ -8,9 +8,11 @@ import java.util.Objects;
 import java.util.Set;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingInput;
@@ -29,6 +31,28 @@ import net.p3pp3rf1y.sophisticatedstorage.item.WoodStorageBlockItem;
 public final class HardcoreWorkshopProbe {
     private static final String PREFIX = "kubejs:hardcore_workshop/";
     private static final int EXPECTED_RECIPES = 63;
+    private record LookupCase(String suffix, String output, String materialTag,
+            int materialCount, String center) {}
+    private static final List<LookupCase> UNIQUE_LOOKUPS = List.of(
+        new LookupCase("gears/buildcraft_iron", "buildcraftcore:gears/gear_iron",
+                "c:plates/iron", 4, "buildcraftcore:gears/gear_stone"),
+        new LookupCase("gears/enderio/iron_gear", "enderio:iron_gear",
+                "c:plates/iron", 4, "buildcraftcore:gears/gear_stone"),
+        new LookupCase("gears/industrialforegoing/iron_gear", "industrialforegoing:iron_gear",
+                "c:plates/iron", 4, "buildcraftcore:gears/gear_stone"),
+        new LookupCase("gears/railcraft/iron_gear", "railcraft:iron_gear",
+                "c:plates/iron", 4, "buildcraftcore:gears/gear_stone"),
+        new LookupCase("gears/buildcraft_gold", "buildcraftcore:gears/gear_gold",
+                "c:plates/gold", 4, "buildcraftcore:gears/gear_iron"),
+        new LookupCase("gears/industrialforegoing/gold_gear", "industrialforegoing:gold_gear",
+                "c:plates/gold", 4, "buildcraftcore:gears/gear_iron"),
+        new LookupCase("gears/railcraft/gold_gear", "railcraft:gold_gear",
+                "c:plates/gold", 4, "buildcraftcore:gears/gear_iron"),
+        new LookupCase("ironfurnaces/upgrade_iron", "ironfurnaces:upgrade_iron",
+                "c:storage_blocks/iron", 8, "minecraft:cobblestone"),
+        new LookupCase("ironfurnaces/upgrade_iron2", "ironfurnaces:upgrade_iron2",
+                "c:storage_blocks/iron", 8, "minecraft:copper_ingot")
+    );
     private static final Set<String> REMOVED = Set.of(
         "aether:skyroot_piston",
         "buildcraftcore:gears/gear_diamond",
@@ -119,8 +143,9 @@ public final class HardcoreWorkshopProbe {
             check(server.getRecipeManager().byKey(ResourceLocation.parse(id)).isEmpty(),
                     "Removed cheap/baseline recipe must stay absent: " + id);
         }
-        List<RecipeHolder<CraftingRecipe>> recipes = server.getRecipeManager()
-                .getAllRecipesFor(RecipeType.CRAFTING).stream()
+        List<RecipeHolder<CraftingRecipe>> allCrafting = server.getRecipeManager()
+                .getAllRecipesFor(RecipeType.CRAFTING);
+        List<RecipeHolder<CraftingRecipe>> recipes = allCrafting.stream()
                 .filter(holder -> holder.id().toString().startsWith(PREFIX)).toList();
         check(recipes.size() == EXPECTED_RECIPES,
                 "Every hardcore recipe loads: expected " + EXPECTED_RECIPES + ", got " + recipes.size());
@@ -149,6 +174,7 @@ public final class HardcoreWorkshopProbe {
         check(storage == 24, "All 21 single and 3 double native storage variants were exercised");
         testChestAndHopperSafety(server);
         testObsoletePatterns(server);
+        int lookupCases = testUniqueRecipeLookups(server, allCrafting);
         for (String id : List.of("immersiveengineering:crafting/hammer", "immersiveengineering:crafting/stick_iron",
                 "immersiveengineering:metalpress/plate_iron", "immersiveengineering:metalpress/plate_copper",
                 "immersiveengineering:metalpress/plate_gold", "immersiveengineering:metalpress/plate_steel",
@@ -163,6 +189,83 @@ public final class HardcoreWorkshopProbe {
         results.put("hardcore_hopper_rejects_populated_storage", true);
         results.put("hardcore_manual_hammer_remainder_and_bootstrap_recipes", true);
         results.put("hardcore_vanilla_cheap_patterns_rejected", true);
+        results.put("hardcore_unique_lookup_affected_recipes", UNIQUE_LOOKUPS.size());
+        results.put("hardcore_unique_lookup_item_combinations_and_mirrors", lookupCases);
+        results.put("hardcore_unique_lookup_full_crafting_collection", allCrafting.size());
+        results.put("hardcore_unique_lookup_costs_and_expected_outputs", true);
+    }
+
+    /** Test ordinary no-hint selection, not only each recipe's by-ID matcher. */
+    private static int testUniqueRecipeLookups(MinecraftServer server,
+            List<RecipeHolder<CraftingRecipe>> allCrafting) {
+        int tested = 0;
+        for (LookupCase expected : UNIQUE_LOOKUPS) {
+            CraftingRecipe recipe = recipe(server, expected.suffix());
+            check(recipe instanceof ShapedRecipe, "Lookup fixture is shaped: " + expected.suffix());
+            ShapedRecipe shaped = (ShapedRecipe)recipe;
+            check(shaped.getWidth() == 3 && shaped.getHeight() == 3,
+                    "Lookup fixtures retain their full 3x3 grid: " + expected.suffix());
+            List<ItemStack[]> choices = new ArrayList<>();
+            long combinations = 1;
+            for (Ingredient ingredient : shaped.getIngredients()) {
+                ItemStack[] options = ingredient.isEmpty() ? new ItemStack[]{ItemStack.EMPTY}
+                        : Arrays.stream(ingredient.getItems()).map(stack -> stack.copyWithCount(1))
+                                .toArray(ItemStack[]::new);
+                check(options.length > 0, "Lookup ingredient has a registered witness: " + expected.suffix());
+                combinations *= options.length;
+                check(combinations <= 4096, "Pinned lookup witness set grew unexpectedly: " + expected.suffix());
+                choices.add(options);
+            }
+            tested += testLookupCombinations(server, allCrafting, expected, choices, new ItemStack[9], 0);
+        }
+        return tested;
+    }
+
+    private static int testLookupCombinations(MinecraftServer server,
+            List<RecipeHolder<CraftingRecipe>> allCrafting, LookupCase expected,
+            List<ItemStack[]> choices, ItemStack[] inputs, int index) {
+        if (index < choices.size()) {
+            int tested = 0;
+            for (ItemStack option : choices.get(index)) {
+                inputs[index] = option;
+                tested += testLookupCombinations(server, allCrafting, expected, choices, inputs, index + 1);
+            }
+            return tested;
+        }
+        testLookupGrid(server, allCrafting, expected, inputs);
+        ItemStack[] mirrored = new ItemStack[9];
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+                mirrored[row * 3 + column] = inputs[row * 3 + 2 - column];
+            }
+        }
+        testLookupGrid(server, allCrafting, expected, mirrored);
+        return 2;
+    }
+
+    private static void testLookupGrid(MinecraftServer server,
+            List<RecipeHolder<CraftingRecipe>> allCrafting, LookupCase expected, ItemStack[] inputs) {
+        var material = TagKey.create(Registries.ITEM, ResourceLocation.parse(expected.materialTag()));
+        long materialSlots = Arrays.stream(inputs).filter(stack -> stack.is(material)).count();
+        long centerSlots = Arrays.stream(inputs).filter(stack -> stack.getItem() == item(expected.center()).getItem()).count();
+        long occupied = Arrays.stream(inputs).filter(stack -> !stack.isEmpty()).count();
+        check(materialSlots == expected.materialCount() && centerSlots == 1
+                        && occupied == expected.materialCount() + 1
+                        && Arrays.stream(inputs).filter(stack -> !stack.isEmpty()).allMatch(stack -> stack.getCount() == 1),
+                "Every witness preserves the reviewed material cost: " + expected.suffix());
+        CraftingInput input = grid(inputs);
+        ResourceLocation expectedId = ResourceLocation.parse(PREFIX + expected.suffix());
+        List<ResourceLocation> matching = allCrafting.stream()
+                .filter(holder -> holder.value().matches(input, server.overworld()))
+                .map(RecipeHolder::id).toList();
+        check(matching.equals(List.of(expectedId)),
+                "Full crafting registry has exactly one match for " + expectedId + ": " + matching);
+        RecipeHolder<CraftingRecipe> selected = server.getRecipeManager()
+                .getRecipeFor(RecipeType.CRAFTING, input, server.overworld()).orElseThrow();
+        check(selected.id().equals(expectedId), "Ordinary no-hint lookup selects " + expectedId);
+        ItemStack result = selected.value().assemble(input, server.registryAccess());
+        check(result.getItem() == item(expected.output()).getItem() && result.getCount() == 1,
+                "Global selection produces exactly one expected output: " + expectedId);
     }
 
     private static void testStorageCarryover(MinecraftServer server, RecipeHolder<CraftingRecipe> holder,

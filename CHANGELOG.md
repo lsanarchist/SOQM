@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+### 0.4.16 — unambiguous workshop recipes
+
+- Give the four iron-gear recipes and three gold-gear recipes distinct crafting
+  layouts, including Minecraft's horizontal mirror matching. Each still uses
+  four plates and the same previous-tier BuildCraft gear. BuildCraft keeps its
+  existing cross layout; ordinary table selection can now distinguish all seven
+  exact outputs without a recipe-book hint.
+- Restore the copper-ingot centre of the Copper-to-Iron Furnace Upgrade.
+  Both iron upgrade routes still cost eight iron blocks, but no longer share
+  the same grid and compete for one result slot.
+- Use `neoforge:conditions` for all three affected Iron Furnaces tag conditions
+  so the pinned NeoForge loader evaluates them.
+- Add regression checks for overlapping shaped inputs, horizontal mirrors,
+  tag alternatives and the actual prior collision examples. Extend the native
+  server fixture to check global recipe selection and competing matches.
+- Retain the 0.4.15 Crafting Station duplication fix and the existing 129
+  third-party version pins. The installation candidate is now 0.4.16.
+
 ### 0.4.15 — Modern Foundry crafting ingredient consumption
 
 - Add `qm-foundry-compat-0.4.15.jar` for the pinned Modern Foundry 4.1.6.

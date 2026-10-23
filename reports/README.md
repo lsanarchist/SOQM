@@ -1,5 +1,36 @@
 # Verification status
 
+## SOQM 0.4.16 — distinct gear and furnace-upgrade recipes
+
+Correct three groups of overlapping manual grids across nine recipes, retaining
+all gear material costs and both eight-iron-block upgrade routes. Five gear
+layouts change; Copper-to-Iron regains its copper-ingot centre. Three Iron
+Furnaces tag conditions now use the pinned loader's `neoforge:conditions` key.
+
+The offline regression executes all seven recipe handlers, accounts for the
+eleven removed queued definitions, and finds no different-output collisions
+among **474 supported authored shaped recipes**. Its negative control restores
+the actual old definitions and reproduces **all ten conflicting pairs** in the
+three groups. The **149-tag** fixture is bound to dependency pins and authored
+tag inputs.
+
+Actual Minecraft codecs, pattern matching and no-hint `RecipeManager` selection
+pass **748 witness/mirror cases** in an isolated nine-recipe pool with explicit
+vanilla stand-ins for mod items. The old definitions yield 748 ambiguous grids
+and 552 selections of another output; the current definitions yield zero of
+each. The strengthened full-pack server probe compiles against the pinned APIs
+but was not executed in a server.
+
+The repository gate passes **170 Python tests with no skips**, both Node
+suites, generator/localization checks and deterministic installation packaging.
+All 12 coordinate previews remain fresh. The existing Crafting Station
+compatibility JAR and all 129 third-party pins remain unchanged from 0.4.15.
+No new graphical client, world or multiplayer run is claimed.
+
+[Fix, reproduction and limits](../docs/RECIPE_CONFLICT_FIX.md) ·
+[Installation](../docs/INSTALL.en.md#crafting-fixes-in-0416) ·
+[Гравцям українською](../docs/INSTALL.uk.md#виправлення-крафтів-у-0416).
+
 ## SOQM 0.4.15 — Crafting Station ingredient consumption
 
 The pinned Modern Foundry 4.1.6 incorrectly writes positioned recipe leftovers

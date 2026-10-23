@@ -26,7 +26,7 @@ Metal blocks contain nine ingots.
 | Vanilla Furnace | 8 stone crafting materials around a vanilla Chest | Restores the old chest-in-the-furnace workshop cost. |
 | Copper Furnace | 8 copper blocks + Furnace | 72 copper establishes the first upgraded furnace as a substantial purchase. |
 | Iron Furnace | 8 iron blocks + Furnace, or 8 iron blocks + Copper Furnace | Every path pays 72 iron. The optional copper path retains its earlier copper investment. |
-| Furnace upgrade items | 8 copper/iron blocks + cobblestone | In-world upgrades cannot avoid the corresponding metal cost. |
+| Furnace upgrade items | 8 copper/iron blocks + cobblestone for Stone-to-Copper/Stone-to-Iron; 8 iron blocks + copper ingot for Copper-to-Iron | In-world upgrades pay the same metal-block cost and use distinct grids. |
 | Iron/copper/gold/steel plate, manual | 2 corresponding ingots + Engineer's Hammer → 1 plate | The native hammer remainder is retained. The powered Metal Press still uses 1 ingot per plate. |
 | Wooden Gear | 4 sticks + wooden button | A manual centre part, using available BuildCraft items. |
 | Stone Gear | 4 smelted stone + Wooden Gear | Smelting stone is part of the mechanical workshop. |
@@ -41,6 +41,14 @@ A manually made Copper Gear costs eight copper ingots in its four plates,
 before its Stone Gear and Wooden Gear. A native IE iron-rod craft produces four
 rods from two iron ingots. Thus the piston now consumes a mechanical workshop;
 its iron rod does not require the machine that the piston will help build.
+
+Since 0.4.16, each mod's iron and gold gear has a distinct manual layout. Each
+still consumes four corresponding plates and the same previous-tier BuildCraft
+gear. BuildCraft retains the cross layout; use JEI for the other exact outputs.
+The layouts also remain distinct when mirrored horizontally. The Copper-to-Iron
+Furnace Upgrade uses a copper ingot in its centre, while Stone-to-Iron uses
+cobblestone. Both still consume eight iron blocks. Existing autocrafting
+patterns for the changed layouts need to be recorded again.
 
 Native gear/plate manufacturing remains available through the powered IE Metal
 Press and ModernFoundry's fuel-and-cast Smeltery. Smeltery casting does not
@@ -194,7 +202,17 @@ Focused authoring checks:
 python3 scripts/hardcore_workshop.py --check
 python3 -m unittest discover -s tests -p 'test_hardcore_workshop.py' -v
 node --check overrides/kubejs/server_scripts/qm_expert_hardcore_workshop.js
+python3 scripts/recipe_collisions.py
+python3 -m unittest discover -s tests -p 'test_recipe_collisions.py' -v
 ```
+
+The recipe-choice regression checks all supported authored shaped grids for
+different outputs accepting the same ingredients, including horizontal mirrors
+and overlapping tags. It also verifies the nine formerly ambiguous gear/upgrade
+outputs against the whole supported authored catalogue. The native server
+fixture now checks these grids through the full `RecipeManager`, all competing
+crafting recipes and real ingredient alternatives. See the
+[conflict fix and verification scope](RECIPE_CONFLICT_FIX.md).
 
 Campaign recipe analysis must honor script priorities and explicit
 `removeAddedIds` before calculating active authored alternatives. The ordinary

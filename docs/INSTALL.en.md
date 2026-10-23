@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.15
+# Installing SOQM 0.4.16
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.15-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.16-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.15-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.15 asset is not claimed. The
+The current output is `dist/SOQM-0.4.16-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.16 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.15 ZIP and wait for every download. See the
+   select the built 0.4.16 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -43,14 +43,22 @@ directly from a source checkout omits those generated translations.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
-## Crafting Station fix in 0.4.15
+## Crafting fixes in 0.4.16
+
+The 0.4.16 candidate includes distinct manual iron/gold gear layouts and a
+copper-ingot centre for the Copper-to-Iron Furnace Upgrade. Update the built
+candidate's `overrides/kubejs/` files on both client and server while stopped,
+or import the complete candidate into a new profile. Restart both sides, use
+JEI to check the new layouts and record affected autocrafting patterns again.
+All seven gear variants still use four plates and the same previous-tier gear;
+both iron furnace upgrade tokens still cost eight iron blocks.
 
 The package includes `qm-foundry-compat-0.4.15.jar` for **Modern Foundry 4.1.6**.
 It corrects the station's ingredient-slot writes when taking a crafted result,
 including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
 close the game and server, add this JAR from the candidate's `overrides/mods/`
 to **both the client and server** `mods/` directories, then restart. An imported
-0.4.15 candidate already includes it. The remaining third-party pins are the
+0.4.16 candidate already includes it. The remaining third-party pins are the
 same as 0.4.14.
 
 The module deliberately requires Modern Foundry 4.1.6. Remove it before a

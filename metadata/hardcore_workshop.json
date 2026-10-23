@@ -353,9 +353,9 @@
         "type": "minecraft:crafting_shaped",
         "category": "misc",
         "pattern": [
-          " P ",
-          "PGP",
-          " P "
+          "P P",
+          " G ",
+          "P P"
         ],
         "key": {
           "P": {
@@ -373,7 +373,7 @@
       "replaces": [
         "enderio:iron_gear"
       ],
-      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain.",
+      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain. Distinct plate placement prevents overlap with other manual gear outputs at the same material cost.",
       "native_evidence": {
         "jar": "enderio-8.2.12-beta.jar",
         "path": "data/enderio/recipe/iron_gear.json",
@@ -401,9 +401,9 @@
           }
         },
         "pattern": [
-          " P ",
-          "PGP",
-          " P "
+          "P P",
+          " G ",
+          "P P"
         ],
         "result": {
           "count": 1,
@@ -413,7 +413,7 @@
       "replaces": [
         "industrialforegoing:gold_gear"
       ],
-      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes. Distinct plate placement prevents overlap with other manual gear outputs at the same material cost.",
       "native_evidence": {
         "jar": "industrialforegoing-1.21-3.6.39.jar",
         "path": "data/industrialforegoing/recipe/gold_gear.json",
@@ -441,9 +441,9 @@
           }
         },
         "pattern": [
-          " P ",
-          "PGP",
-          " P "
+          "PP ",
+          " G ",
+          " PP"
         ],
         "result": {
           "count": 1,
@@ -453,7 +453,7 @@
       "replaces": [
         "industrialforegoing:iron_gear"
       ],
-      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes. Distinct plate placement prevents overlap with other manual gear outputs at the same material cost.",
       "native_evidence": {
         "jar": "industrialforegoing-1.21-3.6.39.jar",
         "path": "data/industrialforegoing/recipe/iron_gear.json",
@@ -509,8 +509,8 @@
           }
         },
         "pattern": [
-          " P ",
-          "PGP",
+          "PPP",
+          " G ",
           " P "
         ],
         "result": {
@@ -521,7 +521,7 @@
       "replaces": [
         "railcraft:gold_gear"
       ],
-      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes.",
+      "reason": "Close cheaper manual gear variants in the shared gear tags; retain powered metal-press recipes. Distinct plate placement prevents overlap with other manual gear outputs at the same material cost.",
       "native_evidence": {
         "jar": "railcraft-reborn-1.21.1-1.2.12.jar",
         "path": "data/railcraft/recipe/gold_gear.json",
@@ -535,8 +535,8 @@
         "type": "minecraft:crafting_shaped",
         "category": "misc",
         "pattern": [
-          " P ",
-          "PGP",
+          "PPP",
+          " G ",
           " P "
         ],
         "key": {
@@ -555,7 +555,7 @@
       "replaces": [
         "railcraft:iron_gear"
       ],
-      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain.",
+      "reason": "All common manual copper/iron-gear variants use plates and the previous gear; IE metal-press alternatives remain. Distinct plate placement prevents overlap with other manual gear outputs at the same material cost.",
       "native_evidence": {
         "jar": "railcraft-reborn-1.21.1-1.2.12.jar",
         "path": "data/railcraft/recipe/iron_gear.json",
@@ -688,7 +688,7 @@
         "result": {
           "id": "ironfurnaces:upgrade_copper"
         },
-        "conditions": [
+        "neoforge:conditions": [
           {
             "value": {
               "type": "neoforge:tag_empty",
@@ -755,13 +755,13 @@
             "tag": "c:storage_blocks/iron"
           },
           "S": {
-            "item": "minecraft:cobblestone"
+            "item": "minecraft:copper_ingot"
           }
         },
         "result": {
           "id": "ironfurnaces:upgrade_iron2"
         },
-        "conditions": [
+        "neoforge:conditions": [
           {
             "value": {
               "type": "neoforge:tag_empty",
@@ -774,7 +774,7 @@
       "replaces": [
         "ironfurnaces:upgrades/upgrade_iron2"
       ],
-      "reason": "In-world native upgrade retains its item behavior and pays eight metal blocks.",
+      "reason": "In-world copper-to-iron upgrade retains its native copper marker and pays eight iron blocks.",
       "native_evidence": {
         "jar": "ironfurnaces-neoforge-1.21.1-4.3.2.jar",
         "path": "data/ironfurnaces/recipe/upgrades/upgrade_iron2.json",

@@ -137,7 +137,7 @@ ServerEvents.recipes(function (event) {
       "result": {
         "id": "ironfurnaces:upgrade_gold2"
       },
-      "conditions": [
+      "neoforge:conditions": [
         {
           "value": {
             "type": "neoforge:tag_empty",

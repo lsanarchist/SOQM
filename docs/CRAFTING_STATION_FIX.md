@@ -1,10 +1,10 @@
 # Modern Foundry Crafting Station ingredient duplication
 
-SOQM 0.4.15 includes `qm-foundry-compat-0.4.15.jar` for the pinned
+SOQM 0.4.15 and later include `qm-foundry-compat-0.4.15.jar` for the pinned
 **Modern Foundry 4.1.6**, Minecraft 1.21.1 and NeoForge 21.1.262. It corrects
 the station's ingredient and crafting-remainder write indices. Install the
-module on both client and server; see the [English](INSTALL.en.md#crafting-station-fix-in-0415)
-or [Ukrainian](INSTALL.uk.md#виправлення-верстака-у-0415) installation instructions.
+module on both client and server; see the [English](INSTALL.en.md#crafting-fixes-in-0416)
+or [Ukrainian](INSTALL.uk.md#виправлення-крафтів-у-0416) installation instructions.
 
 ## Confirmed cause
 

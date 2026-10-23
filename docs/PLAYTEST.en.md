@@ -51,6 +51,20 @@ until actually performed; offline validation does not complete them.
 - [ ] Confirm JEI ingredient transfer, IPN sorting and ordinary crafting-table
   behavior still work with the existing settings.
 
+## Workshop recipe selection
+
+- [ ] In an ordinary table, manually arrange each of the four iron gears and
+  three gold gears shown in JEI. Before taking the result, check its exact mod
+  and item ID. Repeat with a horizontally mirrored grid and after `/reload`.
+- [ ] Craft Stone-to-Iron with eight iron blocks around cobblestone, and
+  Copper-to-Iron with eight iron blocks around a copper ingot. Check each
+  token upgrades its intended placed furnace.
+- [ ] Repeat gear and upgrade crafting in the Modern Foundry station and via
+  JEI transfer. Record the five changed gear patterns and Copper-to-Iron
+  upgrade again in AE2 or other existing autocrafting systems.
+- [ ] Confirm one gear consumes four plates and one previous-tier gear, and
+  one iron-upgrade token consumes eight iron blocks and its centre ingredient.
+
 ## Public alpha criteria
 
 Require a clean import, successful graphical launch, a tested early survival route, persistent quest progress and no known blockers on that route. Every advertised mode needs its own completed test. Release notes must list known issues and untested branches.
