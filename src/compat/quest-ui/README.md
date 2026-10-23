@@ -1,10 +1,13 @@
-# Quest and HUD Help 0.4.5
+# Quest and HUD Help 0.4.6
 
 Pack-owned client adapter for the exact SOQM Minecraft 1.21.1 / NeoForge
 21.1.262 dependency set. Existing quest-item names, mod names and JEI recipe/use
 keys remain supported. The adapter coordinates Xaero, Ultimine, FTB pinned
 quests, Jade, Ad Astra, Mekanism and RFTools HUD geometry. Version 0.4.4 fixes
 the first-world-render stack overflow with Xaero's automatic minimap size.
+Version 0.4.6 updates resources while preserving every class from the reviewed
+0.4.5 artifact. It removes Masa from the reward catalogue and explains the
+server's one-copy limit for each identical unstackable item per claim.
 
 See [HUD_LAYOUT.md](../../../docs/HUD_LAYOUT.md) for player controls, automatic
 existing-instance behavior, audited overlays, pinned sources and limitations.
@@ -22,9 +25,12 @@ quest description. **Ctrl+Shift+V** opens the same view while that quest is open
 the shortcut does not intercept focused text fields or other modal panels. The
 scrollable catalogue shows every guaranteed stack and every possible entry in
 the quest's random pool, including count, rarity, production level and exact
-manufacturing conditions. It explains that a random pack draws 3–5 prizes,
+manufacturing conditions. It explains that a random pack makes 3–5 draws,
 reserves one of those draws for an eligible uncommon-or-better prize, and
-does not grant every displayed possibility. The visible conditions describe
+does not grant every displayed possibility. Repeated draws of an identical
+unstackable item produce only one copy per claim; this final delivery cap leaves
+the selection probabilities unchanged and does not promise 3–5 distinct items.
+The visible conditions describe
 eligibility; the server remains responsible for the actual unlock state and
 claim. JEI recipe/use keys work on catalogue items.
 
@@ -73,7 +79,45 @@ or config rewriting occurs. All hooks are in the client list of the production
 Mixin config. The mod entrypoint registers only a common config definition and
 does not load rendering classes on a dedicated server.
 
-## Reproducible build and native gate
+## Reproducible 0.4.6 resource update
+
+The shipped 0.4.6 artifact is a resource-only update of the reviewed 0.4.5 JAR.
+Save that JAR outside `overrides/mods` before updating; its required SHA-256 is:
+
+```text
+66688e1cca5af8e5218afeaa57c21dc7251225b36b73eff82082444e2472b9c0
+```
+
+After regenerating the campaign catalogue, reproduce the update with Python 3.11+:
+
+```sh
+python3 src/compat/quest-ui/build.py \
+  --resource-only-from /path/to/saved/qm-quest-ui-0.4.5.jar \
+  --output /tmp/qm-quest-ui-0.4.6.jar
+python3 -m unittest discover -s tests -p test_quest_ui_resource_build.py
+```
+
+This mode verifies the baseline JAR hash and a pinned digest of every Java source
+path and its contents. It copies the exact original set of 41 class files without
+modifying any bytes, replaces resources from this source tree, and verifies the
+output class set again. Only the version in `neoforge.mods.toml`, the generated
+catalogue and the two language files may change. Mixin configuration, dependencies,
+resource paths, manifest and license must remain identical to the baseline.
+Class files cannot be supplied through the resource directory.
+
+The builder normalizes entry order, timestamps and modes and reports
+`build_mode: resource_only`, baseline/source/class digests, output SHA-256 and
+byte size. It rejects native compilation or verification flags in this mode.
+The focused tests cover deterministic output, current resource equality, actual
+published class identity and rejection of changed sources, mixins, dependencies,
+resource paths or an unpinned baseline. A Java source change requires native
+compilation instead.
+
+The native 0.4.5 build and probe results are historical evidence for the unchanged
+classes. No Java compilation, native Mixin probe, server or Minecraft client run
+is claimed for the 0.4.6 resource update.
+
+## Native compilation and native gate
 
 Install NeoForge 21.1.262's client runtime with the official installer and obtain
 the hash-verified mod cache used by the pack. Then run:
@@ -83,7 +127,7 @@ python3 src/compat/quest-ui/build.py \
   --runtime /path/to/neoforge-client-instance \
   --javac /path/to/jdk-21/bin/javac \
   --verify \
-  --output /tmp/qm-quest-ui-0.4.5.jar
+  --output /tmp/qm-quest-ui-0.4.6-native.jar
 ```
 
 The builder checks Java 21, every `metadata/mods.lock.json` mod artifact, and the

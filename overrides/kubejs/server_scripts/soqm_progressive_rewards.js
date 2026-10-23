@@ -126,7 +126,7 @@ var SOQMProgressiveRewards = (function () {
         // allowlist also protects cheap crafted supplies; independent family
         // guards protect expensive parts if both the gate and list were edited.
         if (!entry || !validItem(entry.item) || !integer(entry.count, 1, 16) ||
-            /plastic|hdpe|mayhem_cube/.test(entry.item) ||
+            /plastic|hdpe|mayhem_cube/.test(entry.item) || entry.item === 'millenaire:masa' ||
             !finite(entry.weight) || entry.weight <= 0 || entry.weight > 1000000 ||
             rarities.indexOf(entry.rarity) < 0 || !integer(minLevel, 0, 6) ||
             !Array.isArray(required) || !required.every(function (id, index) {
@@ -296,7 +296,12 @@ var SOQMProgressiveRewards = (function () {
     var deliveries = Object.keys(chosen).map(function (id) {
       // ID 0 is transient and never added to QuestFile. ItemReward.claim uses only
       // the stack/count; the actual 64-bit outer ID never passes through JS Number.
-      return new ItemReward(0, reward.getQuest(), Item.of(id), chosen[id]);
+      // A count of one in a pool is per draw, so repeated equipment rolls can
+      // still accumulate. Limit each native unstackable item once per pack;
+      // stackable supplies and components retain their combined quantities.
+      var stack = Item.of(id);
+      var count = Number(stack.getMaxStackSize()) === 1 ? 1 : chosen[id];
+      return new ItemReward(0, reward.getQuest(), stack, count);
     });
     deliveries.forEach(function (delivery) { delivery.claim(player, event.getNotify()); });
   });
@@ -307,10 +312,10 @@ var SOQMProgressiveRewards = (function () {
 
   function status(player) {
     var state = production(player), locale = language(player);
-    say(player, 'Рівень нагород: ' + state.level + '/6; призів за квест: ' + state.draws + '.',
-      'Reward level: ' + state.level + '/6; prizes per quest: ' + state.draws + '.');
-    say(player, 'Особисте отримання раз за квест. Кожен приз розігрується окремо; повтори додаються.',
-      'One personal claim per quest. Each prize is rolled independently; duplicate items are combined.');
+    say(player, 'Рівень нагород: ' + state.level + '/6; жеребкувань за квест: ' + state.draws + '.',
+      'Reward level: ' + state.level + '/6; draws per quest: ' + state.draws + '.');
+    say(player, 'Особисте отримання раз за квест. Кожен приз розігрується окремо. Повтори предметів, що складаються у стос, додаються; решта — максимум по одному кожного виду за набір.',
+      'One personal claim per quest. Each prize is rolled independently. Stackable repeats combine; unstackable items are limited to one of each item per pack.');
     say(player, 'Вказані в квесті компенсації додають витрачені компоненти до набору або куба після справжнього виготовлення вами чи командою.',
       'Refunds listed in a quest add consumed components to its pack or cube after actual manufacture by you or your team.');
     if (state.qualityDraws) say(player,
@@ -335,10 +340,10 @@ var SOQMProgressiveRewards = (function () {
   function showPool(player, key) {
     var current = view(production(player), key), locale = language(player);
     var title = (current.requested || current.selected.pool).title[locale];
-    say(player, title + ' — рівень ' + current.state.level + ', ' + current.state.draws + ' призи за квест.',
-      title + ' — level ' + current.state.level + ', ' + current.state.draws + ' prizes per quest.');
-    say(player, 'Шанс вказано за одне жеребкування. Предмет може випасти повторно.',
-      'Chances are for one draw. The same item can be rolled again.');
+    say(player, title + ' — рівень ' + current.state.level + '; жеребкувань за квест: ' + current.state.draws + '.',
+      title + ' — level ' + current.state.level + ', ' + current.state.draws + ' draws per quest.');
+    say(player, 'Шанс вказано за одне жеребкування. Предмет може випасти повторно, але ті, що не складаються у стос, видаються максимум по одному кожного виду за набір.',
+      'Chances are for one draw. The same item can be rolled again, but unstackable items are limited to one of each item per pack.');
     if (current.state.qualityDraws) say(player,
       'Перше жеребкування: лише відкриті незвичайні або кращі призи. Без них діє звичайний пул.',
       'First draw: eligible uncommon-or-better prizes only. Without one, the normal pool is used.');

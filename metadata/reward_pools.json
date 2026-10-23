@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "version": "2.1",
+  "version": "2.2",
   "max_items_per_roll": 4,
-  "notes": "Personal themed reward packs draw 3–5 prizes with replacement. The first draw uses eligible uncommon-or-better prizes when available; otherwise it uses ordinary supplies. The remaining draws choose an eligible rarity then an item by weight. Every manufactured reward still requires actual team production of that exact output. Rare/epic, custom components and storage equipment remain single-item draws. Reviewed raw supplies and basic components use useful batch sizes up to 16. Explicit branch-achievement quests award one Mayhem Cube instead of a pack, preserving the original outer claim ID and personal ownership. Plastic and HDPE remain excluded.",
+  "notes": "Personal themed reward packs perform 3–5 draws with replacement. Repeated stackable prizes combine; each identical nonstackable item (native maximum stack size 1) is delivered at most once per personal claim, after all draws. This can yield fewer distinct prizes than draws. The first draw uses eligible uncommon-or-better prizes when available; otherwise it uses ordinary supplies. The remaining draws choose an eligible rarity then an item by weight. Every manufactured reward still requires actual team production of that exact output. Rare/epic, custom components and storage equipment remain single-item draws. Reviewed raw supplies and basic components use useful batch sizes up to 16. Explicit branch-achievement quests award one Mayhem Cube instead of a pack, preserving the original outer claim ID and personal ownership. Plastic, HDPE and millenaire:masa remain excluded.",
   "sources": {
     "ftb_quests_version": "2101.1.36",
     "ftb_quests_sha256": "6a39982c4b3afc00b1e788041a4f0d394e1659e3b3a6e5d078cd790bc36d0018",
@@ -440,23 +440,6 @@
           "requires_craft": [
             "sophisticatedbackpacks:backpack"
           ]
-        },
-        {
-          "item": "millenaire:masa",
-          "count": 8,
-          "weight": 10,
-          "rarity": "common",
-          "min_level": 0,
-          "name": {
-            "uk_ua": "Маса з кукурудзи",
-            "en_us": "Masa"
-          },
-          "evidence": {
-            "recipe_ids": [
-              "millenaire:masa"
-            ],
-            "method": "starter_supply"
-          }
         },
         {
           "item": "aether:cold_parachute",
@@ -3913,23 +3896,6 @@
           ]
         },
         {
-          "item": "millenaire:masa",
-          "count": 8,
-          "weight": 10,
-          "rarity": "common",
-          "min_level": 0,
-          "name": {
-            "uk_ua": "Маса з кукурудзи",
-            "en_us": "Masa"
-          },
-          "evidence": {
-            "recipe_ids": [
-              "millenaire:masa"
-            ],
-            "method": "starter_supply"
-          }
-        },
-        {
           "item": "millenaire:cider",
           "count": 1,
           "weight": 12,
@@ -7370,5 +7336,8 @@
       "url": "https://github.com/TeamAOF/Craftoria/blob/main/config/ftbquests/quests/reward_tables/0414572B7C36F04F.snbt",
       "applied": "Useful themed crafting supplies mixed with discrete equipment rewards."
     }
+  ],
+  "forbidden_reward_items": [
+    "millenaire:masa"
   ]
 }

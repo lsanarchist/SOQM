@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+### 0.4.18 — quest reward quantities
+
+- Limit each identical unstackable item to one per personal random reward pack.
+  Repeated draws no longer accumulate extra backpacks, boats or other equipment
+  whose native maximum stack size is one. Resource batches and stackable
+  components retain their combined quantities.
+- Remove Millénaire Masa (`millenaire:masa`) from both the starting and settlement
+  pools. Reject it during policy generation and runtime validation.
+- Regenerate the server policy and the in-book catalogue. Quest UI 0.4.6 updates
+  only resources, preserving every Java class from the pinned 0.4.5 artifact.
+  English and Ukrainian help explain the per-pack limit and the 3–5 draws.
+- Preserve all 1,643 reward IDs, personal claim history, production conditions,
+  fixed refunds and cube quantities. Already claimed rewards stay claimed.
+- Add regression cases for repeated backpack/boat draws, oversized legacy boat
+  entries, unchanged resource batches, separate claims and Masa exclusion.
+  Retain the Foundry and JEI fixes and all 129 third-party version pins.
+
 ### 0.4.17 — Sophisticated Storage recipe displays in JEI
 
 - Add the client-only `qm-storage-jei-compat-0.4.17.jar` for pinned

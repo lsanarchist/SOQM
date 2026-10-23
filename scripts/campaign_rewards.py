@@ -128,6 +128,8 @@ def validate_policy(policy: dict) -> None:
                 raise ValueError('Invalid reward item ID')
             if any(word in item for word in ('plastic', 'hdpe', 'mayhem_cube')):
                 raise ValueError(f'Plastic and nested cubes remain excluded: {item}')
+            if item == 'millenaire:masa':
+                raise ValueError('Masa is excluded from quest rewards')
             if type(entry['count']) is not int or not 1 <= entry['count'] <= 16:
                 raise ValueError('Each draw awards one reviewed stack of 1–16 items')
             if type(entry['weight']) is not int or entry['weight'] <= 0:

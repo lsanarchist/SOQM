@@ -81,6 +81,7 @@ function load(policy = makePolicy(), options = {}) {
   let proofReads = 0;
   const warnings = [];
   const registered = options.registry || registry;
+  const stackSizes = options.stackSizes || {};
   const context = vm.createContext({
     console: {warn: message => warnings.push(message)},
     JsonIO: {readString: filename => {
@@ -89,7 +90,8 @@ function load(policy = makePolicy(), options = {}) {
       return typeof policy === 'string' ? policy : JSON.stringify(policy);
     }},
     Item: {exists: id => registered.has(id), of: id => {
-      assert(registered.has(id), `Native stack must be registered: ${id}`); return {id};
+      assert(registered.has(id), `Native stack must be registered: ${id}`);
+      return {id, getMaxStackSize: () => stackSizes[id] ?? 64};
     }},
     Java: {loadClass: className => {
       if (className === 'net.minecraft.network.chat.Component') return {literal: value => value};
@@ -208,6 +210,58 @@ const mid = new Player({produced: ['kubejs:milestone_2'], random: [0, 0]});
 adapter.claim(mid);
 assert.equal(mid.randomIndex, 6, 'Intermediate production grants three draws');
 
+// Count=1 constrains one draw, not the final pack. Real unstackable items must
+// remain one per type and claim even if every replacement draw selects them.
+const equipmentItems = ['sophisticatedbackpacks:backpack', 'ecologics:coconut_boat', 'minecraft:oak_boat'];
+const equipmentRegistry = new Set([...registry, ...equipmentItems]);
+const equipmentStackSizes = Object.fromEntries(equipmentItems.map(item => [item, 1]));
+const repeatedPolicy = (item, count, rarity = 'uncommon') => {
+  const policy = makePolicy();
+  policy.draws_by_level = [3, 3, 4, 4, 4, 5, 5];
+  policy.guaranteed_quality_draws = 1;
+  policy.production_items.push(...equipmentItems);
+  policy.pools[0].entries = [entry(item, count, rarity, {requires_craft: [item]})];
+  return policy;
+};
+for (const item of equipmentItems) for (const level of [0, 6]) {
+  const fixture = load(repeatedPolicy(item, 1), {registry: equipmentRegistry, stackSizes: equipmentStackSizes});
+  const player = new Player({produced: [item, ...(level ? ['kubejs:milestone_6'] : [])], random: [0, 0]});
+  fixture.claim(player);
+  assert.deepEqual(player.inventory, {[item]: 1}, `${item} is capped after ${level ? 5 : 3} identical draws`);
+  assert.equal(player.deliveries.length, 1);
+  assert.equal(player.randomIndex, (level ? 5 : 3) * 2, 'The cap cannot reroll or change the draw budget');
+}
+const oversizedBoatPolicy = repeatedPolicy('ecologics:coconut_boat', 16);
+const oversizedBoat = load(oversizedBoatPolicy, {registry: equipmentRegistry, stackSizes: equipmentStackSizes});
+const boatPlayer = new Player({produced: ['ecologics:coconut_boat', 'kubejs:milestone_6']});
+assert.equal(oversizedBoat.preview(boatPlayer).selected.available[0].entry.count, 16,
+  'Exercise the delivery backstop against a valid-but-oversized legacy pool entry');
+oversizedBoat.claim(boatPlayer);
+assert.deepEqual(boatPlayer.inventory, {'ecologics:coconut_boat': 1}, 'Five 16-boat draws still deliver only one boat');
+assert.equal(boatPlayer.randomIndex, 10);
+const mixedEquipmentPolicy = repeatedPolicy(equipmentItems[0], 1);
+mixedEquipmentPolicy.pools[0].entries.push(entry(equipmentItems[1], 1, 'uncommon', {requires_craft: [equipmentItems[1]]}));
+mixedEquipmentPolicy.reward_mappings.F123456789ABCDE1 = {pool: 'survival', quest_id: questId};
+const mixedEquipment = load(mixedEquipmentPolicy, {registry: equipmentRegistry, stackSizes: equipmentStackSizes});
+const equipped = new Player({produced: [...equipmentItems, 'kubejs:milestone_6'], random: [0, 0, 0, 0.75]});
+equipped.inventory[equipmentItems[0]] = 7;
+mixedEquipment.claim(equipped);
+assert.deepEqual(equipped.inventory, {[equipmentItems[0]]: 8, [equipmentItems[1]]: 1},
+  'Distinct equipment types each survive; existing inventory does not block the new claim');
+mixedEquipment.claim(equipped, {id: 'F123456789ABCDE1'});
+assert.deepEqual(equipped.inventory, {[equipmentItems[0]]: 9, [equipmentItems[1]]: 2},
+  'The cap resets for another accepted quest reward, not once per player');
+for (const [item, count, rarity] of [['minecraft:bread', 8, 'common'], ['minecraft:torch', 16, 'common'],
+  ['ae2:engineering_processor', 1, 'epic']]) {
+  const policy = repeatedPolicy(item, count, rarity);
+  if (!policy.production_items.includes(item)) policy.production_items.push(item);
+  const fixture = load(policy, {registry: equipmentRegistry, stackSizes: equipmentStackSizes});
+  const player = new Player({produced: [item, 'kubejs:milestone_6']});
+  fixture.claim(player);
+  assert.deepEqual(player.inventory, {[item]: count * 5}, 'Stackable batches and count-one processors still accumulate');
+  assert.equal(player.randomIndex, 10);
+}
+
 const outsider = new Player();
 adapter.claim(outsider, {id: '0000000000000123', marked: false});
 assert.equal(outsider.deliveries.length, 0, 'Unrelated custom rewards are not intercepted');
@@ -248,7 +302,7 @@ assert.equal(invalidEntries.preview(new Player()).selected.available.length, 3, 
 const damaged = makePolicy();
 damaged.production_items.push('ecologics:coconut_planks');
 const damagedRegistry = new Set([...registry, 'ecologics:coconut_planks', 'sophisticatedstorage:gold_barrel',
-  'mekanism:hdpe_sheet', 'kubejs:mayhem_cube_t0', 'industrialforegoing:plastic']);
+  'mekanism:hdpe_sheet', 'kubejs:mayhem_cube_t0', 'industrialforegoing:plastic', 'millenaire:masa']);
 damaged.pools[0].entries.push(
   entry('sophisticatedstorage:gold_barrel', 1, 'common'), // Gate and allowlist entry both absent.
   entry('kubejs:sealed_chassis', 1, 'common'),
@@ -257,6 +311,7 @@ damaged.pools[0].entries.push(
   entry('mekanism:hdpe_sheet', 1, 'common'),
   entry('industrialforegoing:plastic', 1, 'common'),
   entry('kubejs:mayhem_cube_t0', 1, 'common'),
+  entry('millenaire:masa', 8, 'common'),
   entry('kubejs:sealed_chassis', 2, 'rare', {requires_craft: ['kubejs:sealed_chassis']}),
   entry('ecologics:coconut_planks', 4, 'common', {requires_craft: ['ecologics:coconut_planks']}),
 );
@@ -266,6 +321,8 @@ view = protectedEntries.preview(craftedSupplyPlayer);
 assert.equal(view.selected.available.length, 6, 'Omitted protected gates and banned products are discarded; valid original entries and crafted cheap supplies survive');
 assert.equal(Array.from(view.selected.available).find(row => row.entry.item === 'ecologics:coconut_planks').entry.count, 4,
   'Allowed cheap crafted supplies retain the reviewed batch size');
+assert(!Array.from(view.selected.available).some(row => row.entry.item === 'millenaire:masa'),
+  'A registered masa entry is rejected even if a damaged policy reintroduces it');
 assert.equal(protectedEntries.preview(new Player()).selected.available.length, 3, 'Missing own-craft gates never become starter prizes');
 const badRandom = new Player({random: [NaN]});
 adapter.claim(badRandom);
@@ -314,6 +371,7 @@ assert(visitor.messages.some(line => line.includes('3: Milestone 3')), 'Mileston
 assert(visitor.messages.some(line => line.includes('особисте отримання')));
 assert(visitor.messages.some(line => line.includes('виготовте ae2:engineering_processor')));
 assert(visitor.messages.some(line => line.includes('Шанс вказано за одне жеребкування')));
+assert(visitor.messages.some(line => line.includes('максимум по одному кожного виду за набір')));
 assert.equal(JSON.stringify({inventory: visitor.inventory, produced: [...visitor.produced], team: [...visitor.teamProduced]}), before, 'Status and pool inspection must not grant items or manufacture evidence');
 assert.equal(visitor.randomIndex, 0, 'Preview does not advance player RNG');
 assert.equal(visitor.deliveries.length, 0);
@@ -377,11 +435,13 @@ assert.equal(Object.values(actual.reward_mappings).filter(row => row.cube).lengt
 assert.deepEqual(actual.draws_by_level, [3, 3, 4, 4, 4, 5, 5], 'Extra fixed cubes must not increase random-pack draws');
 assert(actual.pools.every(pool => pool.entries.every(prize => !prize.item.startsWith('kubejs:mayhem_cube_t'))),
   'Fixed milestone cubes must not become random-pool prizes');
+assert(actual.pools.every(pool => pool.entries.every(prize => prize.item !== 'millenaire:masa')),
+  'The committed policy must remove masa from every reward theme');
 const actualRegistry = new Set(registry);
 for (const milestone of actual.levels) actualRegistry.add(milestone.item);
 for (const output of actual.production_items) actualRegistry.add(output);
 for (const pool of actual.pools) for (const prize of pool.entries) actualRegistry.add(prize.item);
-const committed = load(actual, {registry: actualRegistry});
+const committed = load(actual, {registry: actualRegistry, stackSizes: equipmentStackSizes});
 assert.deepEqual(committed.warnings, [], 'The reviewed policy cannot silently use emergency fallback');
 for (let number = 1; number <= 15; number++) {
   const suffix = number.toString(16).toUpperCase().padStart(10, '0');
@@ -429,4 +489,5 @@ for (const pool of actual.pools) {
   assert.equal(experienced.randomIndex, 10, `${pool.key} uses five actual draws at maximum production level`);
 }
 assert.deepEqual(committed.warnings, [], 'All actual reward bindings and pools load without emergency fallback');
-console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, duplicate combining, exact IDs, fallbacks, read-only bilingual commands, reload');
+assert(statusVisitor.messages.some(line => line.includes('unstackable items are limited to one of each item per pack')));
+console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, per-claim unstackable caps, preserved supply/processor batches, masa exclusion, exact IDs, fallbacks, read-only bilingual commands, reload');
