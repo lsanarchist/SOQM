@@ -1,8 +1,8 @@
 # SOQM: особисті прогресивні нагороди / Progressive personal rewards
 
-**Кожен учасник отримує власний пакунок за завершений звичайний квест. Пакунок містить 3–5 незалежних тематичних призів; дорогий предмет стає доступним лише після фактичного виготовлення цього самого предмета командою.** Кількість призів і ваги рідкостей зростають із виробничими відкриттями. Отримання ручне, одноразове й особисте.
+**Кожен учасник отримує власний пакунок за завершений звичайний квест. Пакунок виконує 3–5 незалежних жеребкувань тематичних призів; дорогий предмет стає доступним лише після фактичного виготовлення цього самого предмета командою.** Кількість жеребкувань і ваги рідкостей зростають із виробничими відкриттями. Отримання ручне, одноразове й особисте.
 
-**Every member can claim a personal pack for a completed ordinary quest. A pack contains 3–5 independently drawn themed prizes; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
+**Every member can claim a personal pack for a completed ordinary quest. A pack performs 3–5 independent themed prize draws; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
 
 **41 квест за дорогі крафти також повертає фіксовану частину реально витрачених компонентів.** Компенсація додається до наявного пакунка або куба після підтвердженого виготовлення потрібного виробу вами чи вашою командою. Повний перелік рецептів, кількостей і SHA256 містить [`metadata/recipe_refunds.json`](../metadata/recipe_refunds.json).
 
@@ -11,6 +11,16 @@
 Каталог і правила задає [`metadata/reward_pools.json`](../metadata/reward_pools.json). Підтвердження предметів і продуктивних рецептів із закріплених версій модів містить [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). Компілятор створює [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json); обробник нагород і спостерігач виробництва читають цей спільний runtime-файл.
 
 The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/reward_pools.json). Exact pinned item and productive recipe evidence is recorded in [`metadata/reward_item_evidence.json`](../metadata/reward_item_evidence.json). The compiler produces [`kubejs/config/soqm_rewards.json`](../overrides/kubejs/config/soqm_rewards.json), the shared runtime policy read by the reward handler and production observer.
+
+## Зміни 0.4.18 / Changes in 0.4.18
+
+За один пакунок видається не більше одного однакового предмета, що не складається у стек: наплічника, човна чи іншого спорядження з нативним максимальним розміром стека 1. Ліміт застосовується після всіх 3–5 жеребкувань, тому повторні випадіння можуть дати менше різних призів. Інший квест може дати ще один такий предмет; наявність його в інвентарі не впливає на нагороду. Партії звичайних ресурсів і кількості фіксованих компенсацій зберігаються. «Маса» (`millenaire:masa`) прибрана з обох пулів, серверної політики та клієнтського каталогу.
+
+Each pack delivers at most one of each identical unstackable item, including backpacks, boats and other equipment with native maximum stack size 1. The cap is applied after all 3–5 draws, so repeated selections can yield fewer distinct prizes. Another quest can award another copy; inventory possession does not suppress a reward. Ordinary resource batches and fixed refund quantities are retained. Masa (`millenaire:masa`) is removed from both pools, the server policy and the client catalogue.
+
+Поточна зміна зберігає всі **1643** наявні зовнішні ID та історію особистих отримань. Уже видані предмети залишаються в гравця. Поділ на 1628 попередніх і 15 доданих ID нижче описує попереднє розширення книги; 0.4.18 не додає нових claim slots.
+
+This change preserves all **1643** existing outer IDs and personal claim history. Previously awarded items remain with the player. The 1628 retained plus 15 added IDs below describe the earlier questbook expansion; 0.4.18 adds no claim slots.
 
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
@@ -28,9 +38,9 @@ The catalogue and rules live in [`metadata/reward_pools.json`](../metadata/rewar
 | Нативні custom reward objects / Native custom reward objects | 1458 |
 | Окремі фіксовані cube item reward objects / Standalone fixed cube item reward objects | 184 |
 | Тематичні пули / Themes | 14 |
-| Позиції повного каталогу / Catalogue entries | 326 |
-| Унікальні предмети, з них модові / Distinct items, including modded items | 238 / 210 |
-| Модові позиції з повтореннями між темами / Modded entries across themes | 256 |
+| Позиції повного каталогу / Catalogue entries | 324 |
+| Унікальні предмети, з них модові / Distinct items, including modded items | 237 / 209 |
+| Модові позиції з повтореннями між темами / Modded entries across themes | 254 |
 | Позиції з умовою власного виготовлення / Entries requiring exact manufacture | 240 |
 | Унікальні відстежувані виробничі результати / Distinct tracked production outputs | 242 |
 
@@ -135,7 +145,7 @@ Recipe IDs, canonical SHA256 values and the native world-upgrade alternative are
 1. **Тему задає глава.** Майстерня, логістика, магія, експедиції та інші гілки мають власні набори. Колишній статичний перехід на інший пул через тег `stage_N` прибрано: тема залишається темою глави, а доступність і якість залежать від поточного виробництва команди.
 2. **Рівень визначається виробництвом.** Система бере найвищий рівень із шести рубежів, для якого записано справжнє виготовлення відповідного KubeJS-компонента. До першого такого запису діє рівень 0. Це окрема шкала нагород; завершення предметного завдання в квестбуці саме собою не створює виробничий запис.
 3. **Кожен виріб має власне відкриття.** Для позиції з `requires_craft` потрібні всі зазначені item ID у виробничих фактах команди та рівень не нижчий за `min_level`. Виготовлена залізна бочка відкриває саме залізну бочку; золоту й незеритову потрібно реально виготовити окремо. Рівень 6 також не відкриває ще не виготовлені процесори, шасі чи поліпшення.
-4. **Пакунок розігрується під час отримання.** Враховується стан команди в момент натискання «отримати», а не стан під час завершення квесту. Перший із 3–5 призів обирається серед відкритих незвичайних або кращих позицій. Якщо таких позицій ще немає, використовується звичайний пул. Решта жеребкувань обирає доступну рідкість, потім предмет усередині неї. Повтори дозволені; однакові результати складаються. Видача предметів не створює виробничих відкриттів.
+4. **Пакунок розігрується під час отримання.** Враховується стан команди в момент натискання «отримати», а не стан під час завершення квесту. Перший із 3–5 розіграшів обирає приз серед відкритих незвичайних або кращих позицій. Якщо таких позицій ще немає, використовується звичайний пул. Решта жеребкувань обирає доступну рідкість, потім предмет усередині неї. Повтори дозволені. Кількості однакових ресурсів додаються; кожен однаковий предмет із максимальним розміром стека 1 видається щонайбільше один раз за пакунок. Повторного жеребкування замість зайвих копій немає. Видача предметів не створює виробничих відкриттів.
 
 Доказом служить завершена підтримувана операція виробництва з фактичним результатом. Підбирання, передавання, відкривання скрині, видача нагороди, наявність предмета в інвентарі, JEI, ME-склад і завершена заявка CPU без підтвердженої виробничої операції не є таким доказом. Перейменування, скидання чи зміна оформлення з тим самим item ID серед входів і виходу відсікаються. Для нового дорогого типу виробництва потрібен окремий надійний observer; замінювати його перевіркою інвентарю не можна.
 
@@ -145,14 +155,14 @@ Recipe IDs, canonical SHA256 values and the native world-upgrade alternative are
 
 **Старі інвентарі автоматично не індексуються.** Після оновлення старий запас, пройдені квести й уже готові машини не вважаються доказом минулого виробництва. Потрібно виконати нову підтримувану операцію. Раніше встановлена машина з придатним native-власником може записати наступний справжній завершений результат; це не зарахування старого вмісту. Без придатного власника або виробничого observer дорогі позиції залишаються закритими.
 
-Кожна тема має 5–11 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Корисні партії їжі, деревини, паперу та звичайних матеріалів служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
+Кожна тема має 5–10 доступних стартових припасів, тож за відсутності відкриттів пакунок усе одно має вміст. Корисні партії їжі, деревини, паперу та звичайних матеріалів служать базою; виготовлені деталі й дорогі готові речі відкриваються поступово. Порожній або несправний пул переходить до `survival`, а обробник має окремий аварійний запас базових vanilla-припасів. Це захист від некоректної runtime-політики, а не колишня система зміни теми за етапом.
 
 ## How it works
 
 1. **The chapter determines the theme.** Workshop, logistics, magic, expedition and the other branches have their own contents. The old static `stage_N` fallback is removed: the chapter keeps its theme while the team's current production facts determine eligibility and quality.
 2. **Manufacture determines the level.** The system uses the highest of the six milestone levels whose exact KubeJS component has a recorded real manufacture. Before the first such fact, the level is 0. This is a separate reward scale; completing an item-detection quest does not create a production fact.
 3. **Every manufactured prize has its own unlock.** An entry requires every exact ID in `requires_craft` and a level at least as high as `min_level`. Producing an iron barrel unlocks the iron barrel itself; gold and netherite barrels must each be manufactured separately. Level 6 alone does not unlock an unmade processor, chassis or upgrade.
-4. **The pack is rolled when claimed.** Eligibility uses team state at the moment of claiming, not at quest completion. The first of 3–5 draws uses eligible uncommon-or-better prizes. With no eligible premium prize, it uses the ordinary pool. The remaining draws choose an eligible rarity and then an item within that rarity. Draws are with replacement, so duplicate results can occur and their quantities are combined. Reward delivery never creates production facts.
+4. **The pack is rolled when claimed.** Eligibility uses team state at the moment of claiming, not at quest completion. The first of 3–5 draws uses eligible uncommon-or-better prizes. With no eligible premium prize, it uses the ordinary pool. The remaining draws choose an eligible rarity and then an item within that rarity. Draws are with replacement. Stackable duplicate quantities combine; each identical item with native maximum stack size 1 is delivered at most once per pack. Surplus copies do not trigger replacement draws. Reward delivery never creates production facts.
 
 Evidence comes from a completed supported production operation with a real output. Pickup, transfers, chest loot, reward delivery, inventory possession, JEI, ME storage and CPU job completion without an observed production operation are insufficient. Rename, reset or cosmetic operations with the same item ID in an input and the output are rejected. Adding a new expensive production family requires a trustworthy observer rather than an inventory check.
 
@@ -162,7 +172,7 @@ The observer keeps the player's own production facts and a separate union for th
 
 **Existing inventories are not automatically backfilled.** Old stock, completed quests and already-built machines do not prove earlier production after upgrading. A new supported operation is required. An existing machine with a valid native owner can record its next real completed output; this does not credit its old contents. Missing valid ownership or an unsupported production observer leaves manufactured prizes locked.
 
-Every theme contains 5–11 eligible starter supplies, so a pack has contents even without discoveries. Useful batches of food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
+Every theme contains 5–10 eligible starter supplies, so a pack has contents even without discoveries. Useful batches of food, wood, paper and ordinary materials provide the base; manufactured parts and expensive finished items unlock progressively. An empty or invalid pool falls back to `survival`, and the handler also retains emergency basic vanilla supplies. This protects against invalid runtime policy rather than changing the chapter theme by its static stage.
 
 ## Рівні та кількість призів / Levels and draw counts
 
@@ -260,8 +270,11 @@ $$
 The first prize has distribution `Q(i)`: the same formula restricted to eligible uncommon, rare and epic entries. If all three are empty, `Q(i)=P(i)`. The other `d−1` prizes use `P(i)`, with replacement.
 
 $$
-E[N_i]=c_i\bigl(Q(i)+(d-1)P(i)\bigr),\qquad
-P(N_i>0)=1-(1-Q(i))(1-P(i))^{d-1}
+P(N_i>0)=1-(1-Q(i))(1-P(i))^{d-1},\qquad
+E[N_i]=\begin{cases}
+P(N_i>0), & \text{maximum stack size }1\\
+c_i\bigl(Q(i)+(d-1)P(i)\bigr), & \text{otherwise}
+\end{cases}
 $$
 
 Внутрішня вага в каталозі **не є готовим відсотком**. Відкриття ще одного предмета тієї самої рідкості ділить вагу цієї рідкості між більшою кількістю результатів. Саме тому інтерфейс показує актуальний розрахунок, а каталог зберігає ваги та умови.
@@ -278,7 +291,7 @@ An entry's catalogue weight **is not its final percentage**. Unlocking another e
 
 A draw contains 1–16 units. Rare/epic prizes, KubeJS components, barrels, backpacks and upgrades remain single-item draws. Ordinary supplies have practical batch sizes: for example, 6 iron, 8 copper or 16 redstone; basic circuits/alloys give 4 and cables give 8. Every manufactured component still needs its own production fact. Five ordinary supply draws have a hard upper bound of 80 items; this is neither guaranteed quantity nor value.
 
-| Пул / Pool | Середня кількість за пакунок на рівні 6, усе відкрито / Expected units per level-6 pack, everything unlocked |
+| Пул / Pool | Середня кількість до ліміту спорядження, рівень 6, усе відкрито / Expected selected units before the equipment limit, level 6, everything unlocked |
 | --- | ---: |
 | engineering | 14.327 |
 | logistics | 15.635 |
@@ -286,9 +299,9 @@ A draw contains 1–16 units. Rare/epic prizes, KubeJS components, barrels, back
 | space | 13.931 |
 | masterwork | 6.248 |
 
-Ці значення — умовні математичні сподівання випадкових пакунків, не результати ігрового проходження. Їхню загальну видачу визначають момент отримання, відкриті вироби та кількість гравців. Окремі гарантовані компенсації мають фіксований бюджет: 42 одиниці компонентів у 41 квесті на кожного гравця, який виконає всі відповідні умови й забере всі ці нагороди. Особистий режим множить загальну командну видачу на кількість учасників, які отримають власні нагороди. Більша нагорода не стає повторюваним квестом; випадковий дорогий приз не може випасти до відповідного виробничого факту.
+Ці значення — умовні математичні сподівання до застосування ліміту предметів із розміром стека 1; для фактичної видачі вони є верхньою межею. Це не результати ігрового проходження. Їхню загальну видачу визначають момент отримання, відкриті вироби та кількість гравців. Окремі гарантовані компенсації мають фіксований бюджет: 42 одиниці компонентів у 41 квесті на кожного гравця, який виконає всі відповідні умови й забере всі ці нагороди. Особистий режим множить загальну командну видачу на кількість учасників, які отримають власні нагороди. Більша нагорода не стає повторюваним квестом; випадковий дорогий приз не може випасти до відповідного виробничого факту.
 
-These are conditional mathematical expectations for random packs, not playthrough results. Claim timing, discovered outputs and player count determine their total delivery. The separate guaranteed refunds have a fixed budget: 42 component units across 41 quests per player who satisfies every corresponding condition and claims all these rewards. Personal claims increase total team delivery with the number of members claiming their own rewards. Larger packs do not make quests repeatable; a random expensive prize cannot drop before its exact production fact exists.
+These are conditional expectations before the maximum-stack-size-1 limit, so they are upper bounds on expected delivery. They are not playthrough results. Claim timing, discovered outputs and player count determine their total delivery. The separate guaranteed refunds have a fixed budget: 42 component units across 41 quests per player who satisfies every corresponding condition and claims all these rewards. Personal claims increase total team delivery with the number of members claiming their own rewards. Larger packs do not make quests repeatable; a random expensive prize cannot drop before its exact production fact exists.
 
 **Пластик і HDPE виключені з призів, зокрема після відкриття.** Готовий радіаційний захист може бути призом після його фактичного виготовлення: HDPE у рецепті захисту не перетворюється на окрему нагороду. Контейнери, енергокуби, планшети мани й інші предмети створюються свіжими, із порожнім/default станом. Копіювати зі зразка вміст, storage UUID, енергію, ману, поліпшення чи афікси заборонено.
 
@@ -429,15 +442,15 @@ python3 scripts/runtime_probe.py
 
 ## Повний каталог / Full catalogue
 
-Нижче наведено всі **326** позицій. `×` — фіксована кількість за одне жеребкування, `w` — відносна вага **всередині своєї рідкості**, `L` — мінімальний рівень. `Цей ID / Same ID` означає точну умову `requires_craft: [item ID з першого стовпця]`; потрібен реальний виробничий факт команди, а не наявність предмета. `—` означає стартові припаси без умови виробництва. Рідкості: `common` — звичайна, `uncommon` — незвичайна, `rare` — рідкісна, `epic` — епічна. Нульовий `L` не скасовує own-item gate.
+Нижче наведено всі **324** позицій. `×` — фіксована кількість за одне жеребкування, `w` — відносна вага **всередині своєї рідкості**, `L` — мінімальний рівень. `Цей ID / Same ID` означає точну умову `requires_craft: [item ID з першого стовпця]`; потрібен реальний виробничий факт команди, а не наявність предмета. `—` означає стартові припаси без умови виробництва. Рідкості: `common` — звичайна, `uncommon` — незвичайна, `rare` — рідкісна, `epic` — епічна. Нульовий `L` не скасовує own-item gate.
 
-All **326** entries appear below. `×` is the fixed quantity per draw, `w` is the relative weight **within its rarity**, and `L` is the minimum level. `Цей ID / Same ID` means the exact condition `requires_craft: [the item ID in the first column]`; it requires the team's real production fact, not possession. `—` denotes starter supplies without a production requirement. A minimum level of 0 does not remove the own-item gate. Use the formula or in-game read-only command for actual percentages.
+All **324** entries appear below. `×` is the fixed quantity per draw, `w` is the relative weight **within its rarity**, and `L` is the minimum level. `Цей ID / Same ID` means the exact condition `requires_craft: [the item ID in the first column]`; it requires the team's real production fact, not possession. `—` denotes starter supplies without a production requirement. A minimum level of 0 does not remove the own-item gate. Use the formula or in-game read-only command for actual percentages.
 
 Для кожного manufactured-предмета точні активні recipe ID, serializer, native/authored джерело й дані рецепта доступні за його item ID у [`reward_item_evidence.json`](../metadata/reward_item_evidence.json). Цей файл також містить native-моделі, джерела звичайної їжі та SHA-256 закріплених архівів. / Every manufactured item's exact active recipe IDs, serializers, native/authored sources and recipe data are indexed by item ID in [`reward_item_evidence.json`](../metadata/reward_item_evidence.json), alongside native models, ordinary-food sources and archive SHA-256 values.
 
 ### survival
 
-Припаси для старту / Starting Supplies — **20** позицій / entries.
+Припаси для старту / Starting Supplies — **19** позицій / entries.
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
@@ -458,7 +471,6 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `exdeorum:string_mesh` | Нитяна сітка / String Mesh | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:hemp_fabric` | Міцна тканина / Tough Fabric | 1 | uncommon | 10 | 0 | Цей ID / Same ID |
 | `sophisticatedbackpacks:backpack` | Наплічник / Backpack | 1 | rare | 8 | 0 | Цей ID / Same ID |
-| `millenaire:masa` | Маса з кукурудзи / Masa | 8 | common | 10 | 0 | — |
 | `aether:cold_parachute` | Холодний парашут / Cold Parachute | 1 | rare | 8 | 0 | Цей ID / Same ID |
 | `botania:travel_belt` | Пояс мандрівника / Sojourner's Sash | 1 | epic | 4 | 1 | Цей ID / Same ID |
 
@@ -675,7 +687,7 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 
 ### settlement
 
-Посилка для будівельника / Settlement Supplies — **24** позицій / entries.
+Посилка для будівельника / Settlement Supplies — **23** позицій / entries.
 
 | Item ID | Українська назва / English name | × | Rarity | w | L | Виготовлення / Manufacture |
 | --- | --- | ---: | --- | ---: | ---: | --- |
@@ -690,7 +702,6 @@ All **326** entries appear below. `×` is the fixed quantity per draw, `w` is th
 | `millenaire:byzantine_stone_tiles` | Візантійська кам’яна плитка / Byzantine Stone Tiles | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `millenaire:byzantine_sandstone_tiles` | Візантійська пісковикова плитка / Byzantine Sandstone Tiles | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `millenaire:ice_brick` | Крижана цегла / Ice Brick | 16 | common | 10 | 0 | Цей ID / Same ID |
-| `millenaire:masa` | Маса з кукурудзи / Masa | 8 | common | 10 | 0 | — |
 | `millenaire:cider` | Сидр / Cider | 1 | uncommon | 12 | 0 | Цей ID / Same ID |
 | `immersiveengineering:treated_wood_horizontal` | Просочені дошки / Treated Wood Planks | 16 | common | 10 | 0 | Цей ID / Same ID |
 | `immersiveengineering:cushion` | Подушка для приземлення / Jump Cushion | 1 | uncommon | 8 | 0 | Цей ID / Same ID |

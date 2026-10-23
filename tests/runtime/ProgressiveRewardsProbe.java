@@ -113,7 +113,7 @@ public final class ProgressiveRewardsProbe {
             }
             verifyPoolCommand(server, first, pool, 0);
         }
-        check(catalogueEntries == 326, "The complete reviewed catalogue is present in the actual runtime policy");
+        check(catalogueEntries == 324, "The complete reviewed catalogue is present in the actual runtime policy");
         verifyStatusCommand(server, first);
         results.put("native_actual_reward_catalogue_entries", catalogueEntries);
         results.put("native_actual_policy_loaded_without_fallback", true);
@@ -618,6 +618,10 @@ public final class ProgressiveRewardsProbe {
             sequence[draw * 2 + 1] = interval[1];
             expected.merge(item(chosen), chosen.get("count").getAsInt(), Integer::sum);
         }
+        // The random pack caps each native unstackable item after all draws.
+        // Fixed refunds are added below and retain their independent quantities.
+        expected.replaceAll((id, count) -> new ItemStack(
+                BuiltInRegistries.ITEM.get(ResourceLocation.parse(id))).getMaxStackSize() == 1 ? 1 : count);
         JsonObject binding = policy.getAsJsonObject("reward_mappings").getAsJsonObject(reward.getCodeString());
         if (binding.has("refund")) for (JsonElement element : binding.getAsJsonObject("refund").getAsJsonArray("items")) {
             JsonObject prize = element.getAsJsonObject();
@@ -628,7 +632,7 @@ public final class ProgressiveRewardsProbe {
         team.claimReward(player, reward, false);
         check(player.random.calls == draws * 2, "Native JS handler made the intended rarity and item draws");
         check(inventory(player).equals(expected),
-                "Native delivery matches reserved-quality and ordinary draws, with duplicate quantities combined");
+                "Native delivery caps random unstackable duplicates and preserves stackable batches and fixed refunds");
     }
 
     private static double[] selectionInterval(List<JsonObject> entries, JsonObject target, JsonObject rarityWeights) {

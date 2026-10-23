@@ -6606,42 +6606,6 @@
         "millenaire-9.0.2.jar!/assets/millenaire/models/item/ice_brick.json"
       ]
     },
-    "millenaire:masa": {
-      "name": {
-        "uk_ua": "Маса з кукурудзи",
-        "en_us": "Masa"
-      },
-      "starter_supply": true,
-      "production_recipes": [],
-      "supply_recipes": [
-        {
-          "id": "millenaire:masa",
-          "type": "minecraft:crafting_shaped",
-          "source": "millenaire-9.0.2.jar!/data/millenaire/recipe/masa.json",
-          "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "category": "misc",
-            "group": "masa",
-            "key": {
-              "#": {
-                "item": "millenaire:maize"
-              }
-            },
-            "pattern": [
-              "###"
-            ],
-            "result": {
-              "count": 1,
-              "id": "millenaire:masa"
-            }
-          }
-        }
-      ],
-      "model_sources": [
-        "millenaire-9.0.2.jar!/assets/millenaire/models/item/masa.json"
-      ],
-      "rationale": "Ordinary maize food only; no village reputation, money or project unlock."
-    },
     "minecraft:amethyst_shard": {
       "name": {
         "uk_ua": "Уламок аметисту",

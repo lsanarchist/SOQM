@@ -88,6 +88,18 @@ unchecked until performed.
 - [ ] If any broken-recipe diagnostics remain, record each recipe ID and its
   complete exception. The supplied extract omitted three nonstorage errors.
 
+## Quest reward quantities
+
+- [ ] In the 0.4.18 quest book, the starting and settlement reward catalogues
+  contain no Masa. Help describes 3–5 draws and the one-copy unstackable limit.
+- [ ] After genuinely manufacturing a backpack or coconut boat, claim eligible
+  rewards individually. One pack must never deliver two copies of the same
+  unstackable item. Different quests may each award a copy.
+- [ ] Ordinary materials still arrive in useful batches. Fixed crafting refunds
+  and cube rewards retain the quantities displayed in the book.
+- [ ] Reopen the test save and reconnect: already claimed rewards stay claimed,
+  production unlocks survive, and the updated catalogue still matches the server.
+
 ## Public alpha criteria
 
 Require a clean import, successful graphical launch, a tested early survival route, persistent quest progress and no known blockers on that route. Every advertised mode needs its own completed test. Release notes must list known issues and untested branches.

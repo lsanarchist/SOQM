@@ -292,6 +292,22 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         # Bulk resources can reach useful stack sizes; expensive prizes remain single units.
         self.assertLessEqual(max(self.policy['draws_by_level']) * max(e['count'] for e in self.entries), 80)
 
+    def test_masa_is_removed_from_rewards_and_cannot_be_reintroduced(self):
+        for document in (self.policy, self.runtime, load(rewards.PREVIEW_PATH)):
+            items = {e['item'] for pool in document['pools'] for e in pool['entries']}
+            self.assertNotIn('millenaire:masa', items)
+            self.assertIn('projecte:dark_matter', items)
+            self.assertIn('projecte:red_matter', items)
+        # Use an otherwise valid starter entry: rejection must come from the
+        # reward exclusion, not an unrelated rarity or manufacture condition.
+        for pool_key in ('survival', 'settlement'):
+            policy = deepcopy(self.policy)
+            pool = next(p for p in policy['pools'] if p['key'] == pool_key)
+            entry = next(e for e in pool['entries'] if e['evidence']['method'] == 'starter_supply')
+            entry['item'] = 'millenaire:masa'
+            with self.subTest(pool=pool_key), self.assertRaisesRegex(ValueError, 'Masa'):
+                rewards.validate_policy(policy)
+
     def test_whitelist_equals_exact_craft_requirements_and_has_no_stale_tables(self):
         expected = set(rewards.GATES)
         for entry in self.entries:
