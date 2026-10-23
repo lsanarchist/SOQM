@@ -1,0 +1,43 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="qm_storage_jei_compat"
+version="0.4.17"
+displayName="SOQM Storage JEI Compatibility"
+authors="Questing Mayhem Rebuild maintainers"
+displayTest="IGNORE_SERVER_VERSION"
+description='''Corrects the displayed source-slot index used by Sophisticated Core 1.5.14.2413 when linking storage recipe variants in JEI 19.64.0.455.'''
+
+[[mixins]]
+config="qm_storage_jei_compat.mixins.json"
+
+[[dependencies.qm_storage_jei_compat]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.262]"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.qm_storage_jei_compat]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="CLIENT"
+
+# This exact archive advertises 1.5.14 to the loader; build.py pins build 2413.
+[[dependencies.qm_storage_jei_compat]]
+modId="sophisticatedcore"
+type="required"
+versionRange="[1.5.14]"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.qm_storage_jei_compat]]
+modId="jei"
+type="required"
+versionRange="[19.64.0.455]"
+ordering="AFTER"
+side="CLIENT"

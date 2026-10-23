@@ -1,0 +1,2125 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "baseline_commit": "44fad78b76903d6b1401db90bdf396e10d8e32d1",
+    "mods_lock_sha256": "1b3d9108325e985fe8e09208d26024f397c747b7c2f71b93958fb77be7ccea6b",
+    "minecraft": "1.21.1",
+    "minecraft_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+    "neoforge": "21.1.262",
+    "neoforge_universal_sha256": "4070305f97a08409d9b4e714f619f0ec2d97d29c9939ef43a89d927259942f98",
+    "method": "Read data/*/tags/item/*.json from all 129 SHA256-verified mods.lock JARs, Minecraft 1.21.1 client, NeoForge universal, authored JARs, then KubeJS data overrides. Resolve transitive #tags. No ingredient-tag closure overlaps KubeJS tag mutations. Preserve exact original 9 ambiguous recipe JSONs as the negative control; native originals are copied from those pinned JAR resources. These resources do not execute registry or recipe codecs.",
+    "tag_source_count": 339,
+    "sophisticated_default_evidence": "sophisticatedcore 1.5.14.2413 Config$Common$EnabledItems.isItemEnabled(ResourceLocation) returns true for unlisted entries; SOQM ships no enabledItems override.",
+    "authored_tag_inputs": {
+      "overrides/kubejs/data/forge/tags/item/glass_panes.json": "c98f45e57dc6091b06a3e1bcad5be7acfe00b18521fad6ee4acfc864a739cbe3",
+      "overrides/kubejs/data/ftbultimine/tags/item/included_tools.json": "90f3f57f54c031d2ab2c97c4599056937bac7609bd6140d80b666ee2694da464",
+      "overrides/kubejs/data/kubejs/tags/item/mayhem_quest_cubes.json": "fe15c20efe339d56d8b8a84567530dd9ebf544669153ccb0d9295cb3590e2065",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_combat.json": "62af80d7f422a10b8699d41e215d15e09ee92a50a3e7f8baf5c6b50f8148166c",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_escape.json": "00cb2d88c194197bccf8bcb6a871ee7b81fde58c9929554b1d02659eaefad7b5",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_mantle.json": "182fc94cc72e089232b6261ade6f1bce648d2bd7a4080292b173a9e64cabb6c2",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_mining.json": "46c38ea8b4989d05ec4a85d89d935ac532738b0508a659ce3d2e7ae64e63a0a2",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_movement.json": "6107860ed039e2f541dfebe0da9d29842b90b183996147c3aa53b52ea6c15fe8",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_native_relic.json": "e4e306eff3959d3e5c56b192a8ebf51e1309625c8495f54d21a52ae8c326cdad",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_protection.json": "eba77a58eeec9bd445c6e6420a518fbfde88ffb8426012d7da1aea7b8d047d85",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_utility.json": "7efdefabb3ee0850b0fc3942cca7a6b3a77f9167caf98e23838edacea72da610",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/collect_water.json": "ecda3f26def8b54e5c5e1fb714aada8cd3e690532743c58ec3bda4b3bd63cdd3",
+      "overrides/kubejs/data/qm/tags/item/quest_accessories/first_accessory.json": "4e8550acc0690cca72c8a39b28d903c5fbb4a2289a1f66f0c8edebe592f41702",
+      "overrides/kubejs/server_scripts/qm_chancecubes_balance.js": "ec3c53427942e8ac089661c2ab55f600bf145220fc86d2594170a1097676e208",
+      "overrides/kubejs/server_scripts/qm_lootr_ultimine.js": "3dbb4660094b0cec71421c4369a95eecd790fc868b82244a8dd9dede8304ba5f",
+      "overrides/kubejs/server_scripts/soqm_equipment_routes.js": "db9953c7560968abf85bc1e1ddc383664ec6e6d0f91ba6973eefd65eb93a57fd",
+      "overrides/kubejs/server_scripts/soqm_loot_balance.js": "8e8faa5e92352779e8f2a9651e3411ef7500fe43e71d3821c74ffe8a5f84f7db"
+    }
+  },
+  "sophisticated_item_enabled_default": true,
+  "condition_items": {
+    "industrialforegoing:block_breaker": true,
+    "industrialforegoing:block_placer": true,
+    "industrialforegoing:dissolution_chamber": true,
+    "industrialforegoing:enchantment_applicator": true,
+    "industrialforegoing:enchantment_extractor": true,
+    "industrialforegoing:fluid_collector": true,
+    "industrialforegoing:fluid_laser_base": true,
+    "industrialforegoing:fluid_placer": true,
+    "industrialforegoing:fluid_sieving_machine": true,
+    "industrialforegoing:gold_gear": true,
+    "industrialforegoing:iron_gear": true,
+    "industrialforegoing:laser_drill": true,
+    "industrialforegoing:latex_processing_unit": true,
+    "industrialforegoing:machine_frame_advanced": true,
+    "industrialforegoing:machine_frame_pity": true,
+    "industrialforegoing:machine_frame_simple": true,
+    "industrialforegoing:machine_frame_supreme": true,
+    "industrialforegoing:material_stonework_factory": true,
+    "industrialforegoing:mob_crusher": true,
+    "industrialforegoing:mob_duplicator": true,
+    "industrialforegoing:mob_slaughter_factory": true,
+    "industrialforegoing:ore_laser_base": true,
+    "industrialforegoing:resourceful_furnace": true,
+    "industrialforegoing:stasis_chamber": true,
+    "industrialforegoing:wither_builder": true
+  },
+  "tags": {
+    "ad_astra:calorite_plates": [
+      "ad_astra:calorite_plate"
+    ],
+    "ad_astra:desh_plates": [
+      "ad_astra:desh_plate"
+    ],
+    "ad_astra:iron_rods": [
+      "ad_astra:iron_rod",
+      "immersiveengineering:stick_iron"
+    ],
+    "ad_astra:ostrum_blocks": [
+      "ad_astra:ostrum_block"
+    ],
+    "ad_astra:ostrum_plates": [
+      "ad_astra:ostrum_plate"
+    ],
+    "ad_astra:steel_blocks": [
+      "ad_astra:steel_block",
+      "divinerpg:black_steel",
+      "divinerpg:blue_steel",
+      "divinerpg:cyan_steel",
+      "divinerpg:green_steel",
+      "divinerpg:magenta_steel",
+      "divinerpg:orange_steel",
+      "divinerpg:purple_steel",
+      "divinerpg:red_steel",
+      "divinerpg:steel",
+      "divinerpg:yellow_steel",
+      "immersiveengineering:storage_steel",
+      "mekanism:block_steel",
+      "modernfoundry:steel_block",
+      "railcraft:steel_block"
+    ],
+    "ad_astra:steel_plates": [
+      "ad_astra:steel_plate",
+      "immersiveengineering:plate_steel",
+      "railcraft:steel_plate"
+    ],
+    "ae2:all_fluix": [
+      "ae2:fluix_crystal"
+    ],
+    "ae2:smart_dense_cable": [
+      "ae2:black_smart_dense_cable",
+      "ae2:blue_smart_dense_cable",
+      "ae2:brown_smart_dense_cable",
+      "ae2:cyan_smart_dense_cable",
+      "ae2:fluix_smart_dense_cable",
+      "ae2:gray_smart_dense_cable",
+      "ae2:green_smart_dense_cable",
+      "ae2:light_blue_smart_dense_cable",
+      "ae2:light_gray_smart_dense_cable",
+      "ae2:lime_smart_dense_cable",
+      "ae2:magenta_smart_dense_cable",
+      "ae2:orange_smart_dense_cable",
+      "ae2:pink_smart_dense_cable",
+      "ae2:purple_smart_dense_cable",
+      "ae2:red_smart_dense_cable",
+      "ae2:white_smart_dense_cable",
+      "ae2:yellow_smart_dense_cable"
+    ],
+    "apothic_enchanting:infused_shelves": [
+      "apothic_enchanting:deepshelf",
+      "apothic_enchanting:infused_hellshelf",
+      "apothic_enchanting:infused_seashelf"
+    ],
+    "botania:dragonstone_gems": [
+      "botania:dragonstone"
+    ],
+    "botania:elementium_ingots": [
+      "botania:elementium_ingot"
+    ],
+    "botania:livingwood_logs": [
+      "botania:glimmering_livingwood",
+      "botania:glimmering_livingwood_log",
+      "botania:glimmering_stripped_livingwood",
+      "botania:glimmering_stripped_livingwood_log",
+      "botania:livingwood",
+      "botania:livingwood_log",
+      "botania:stripped_livingwood",
+      "botania:stripped_livingwood_log"
+    ],
+    "botania:mana_diamond_gems": [
+      "botania:mana_diamond"
+    ],
+    "botania:manasteel_blocks": [
+      "botania:manasteel_block"
+    ],
+    "botania:manasteel_ingots": [
+      "botania:manasteel_ingot"
+    ],
+    "botania:petals": [
+      "botania:black_mushroom",
+      "botania:black_petal",
+      "botania:blue_mushroom",
+      "botania:blue_petal",
+      "botania:brown_mushroom",
+      "botania:brown_petal",
+      "botania:cyan_mushroom",
+      "botania:cyan_petal",
+      "botania:gray_mushroom",
+      "botania:gray_petal",
+      "botania:green_mushroom",
+      "botania:green_petal",
+      "botania:light_blue_mushroom",
+      "botania:light_blue_petal",
+      "botania:light_gray_mushroom",
+      "botania:light_gray_petal",
+      "botania:lime_mushroom",
+      "botania:lime_petal",
+      "botania:magenta_mushroom",
+      "botania:magenta_petal",
+      "botania:mystical_bifrost_petal",
+      "botania:orange_mushroom",
+      "botania:orange_petal",
+      "botania:pink_mushroom",
+      "botania:pink_petal",
+      "botania:purple_mushroom",
+      "botania:purple_petal",
+      "botania:red_mushroom",
+      "botania:red_petal",
+      "botania:white_mushroom",
+      "botania:white_petal",
+      "botania:yellow_mushroom",
+      "botania:yellow_petal"
+    ],
+    "botania:terrasteel_ingots": [
+      "botania:terrasteel_ingot"
+    ],
+    "botania:terrasteel_nuggets": [
+      "botania:terrasteel_nugget"
+    ],
+    "c:alloys/elite": [
+      "mekanism:alloy_reinforced"
+    ],
+    "c:alloys/ultimate": [
+      "mekanism:alloy_atomic"
+    ],
+    "c:bones": [
+      "evilcraft:werewolf_bone",
+      "minecraft:bone"
+    ],
+    "c:buckets/lava": [
+      "minecraft:lava_bucket"
+    ],
+    "c:chests": [
+      "ae2:sky_stone_chest",
+      "ae2:smooth_sky_stone_chest",
+      "divinerpg:bone_chest",
+      "divinerpg:eden_chest",
+      "divinerpg:frosted_chest",
+      "divinerpg:present_box",
+      "evilcraft:blood_chest",
+      "minecraft:chest",
+      "minecraft:ender_chest",
+      "minecraft:trapped_chest",
+      "projecte:alchemical_chest",
+      "sophisticatedstorage:chest",
+      "sophisticatedstorage:copper_chest",
+      "sophisticatedstorage:diamond_chest",
+      "sophisticatedstorage:gold_chest",
+      "sophisticatedstorage:iron_chest",
+      "sophisticatedstorage:netherite_chest",
+      "twilightforest:canopy_chest",
+      "twilightforest:canopy_trapped_chest",
+      "twilightforest:dark_chest",
+      "twilightforest:dark_trapped_chest",
+      "twilightforest:mangrove_chest",
+      "twilightforest:mangrove_trapped_chest",
+      "twilightforest:mining_chest",
+      "twilightforest:mining_trapped_chest",
+      "twilightforest:sorting_chest",
+      "twilightforest:sorting_trapped_chest",
+      "twilightforest:time_chest",
+      "twilightforest:time_trapped_chest",
+      "twilightforest:transformation_chest",
+      "twilightforest:transformation_trapped_chest",
+      "twilightforest:twilight_oak_chest",
+      "twilightforest:twilight_oak_trapped_chest"
+    ],
+    "c:chests/ender": [
+      "minecraft:ender_chest"
+    ],
+    "c:chests/wooden": [
+      "minecraft:chest",
+      "minecraft:trapped_chest",
+      "twilightforest:canopy_chest",
+      "twilightforest:canopy_trapped_chest",
+      "twilightforest:dark_chest",
+      "twilightforest:dark_trapped_chest",
+      "twilightforest:mangrove_chest",
+      "twilightforest:mangrove_trapped_chest",
+      "twilightforest:mining_chest",
+      "twilightforest:mining_trapped_chest",
+      "twilightforest:sorting_chest",
+      "twilightforest:sorting_trapped_chest",
+      "twilightforest:time_chest",
+      "twilightforest:time_trapped_chest",
+      "twilightforest:transformation_chest",
+      "twilightforest:transformation_trapped_chest",
+      "twilightforest:twilight_oak_chest",
+      "twilightforest:twilight_oak_trapped_chest"
+    ],
+    "c:circuits/advanced": [
+      "mekanism:advanced_control_circuit"
+    ],
+    "c:circuits/basic": [
+      "mekanism:basic_control_circuit"
+    ],
+    "c:circuits/elite": [
+      "mekanism:elite_control_circuit"
+    ],
+    "c:circuits/ultimate": [
+      "mekanism:ultimate_control_circuit"
+    ],
+    "c:cobblestones": [
+      "divinerpg:ancient_stone_breakable",
+      "divinerpg:cobaltite",
+      "divinerpg:cobbled_frozen_stone",
+      "divinerpg:cobbled_scorchalt",
+      "divinerpg:divine_moss_stone",
+      "divinerpg:icy_stone",
+      "divinerpg:luna_stone",
+      "divinerpg:soul_stone_breakable",
+      "minecraft:cobbled_deepslate",
+      "minecraft:cobblestone",
+      "minecraft:infested_cobblestone",
+      "minecraft:mossy_cobblestone"
+    ],
+    "c:dusts/coal": [
+      "enderio:powdered_coal",
+      "mekanism:dust_coal",
+      "railcraft:coal_dust"
+    ],
+    "c:dusts/diamond": [
+      "mekanism:dust_diamond"
+    ],
+    "c:dusts/fluix": [
+      "ae2:fluix_dust"
+    ],
+    "c:dusts/glowstone": [
+      "minecraft:glowstone_dust"
+    ],
+    "c:dusts/gold": [
+      "enderio:powdered_gold",
+      "immersiveengineering:dust_gold",
+      "mekanism:dust_gold"
+    ],
+    "c:dusts/grains_of_infinity": [
+      "enderio:grains_of_infinity"
+    ],
+    "c:dusts/lithium": [
+      "mekanism:dust_lithium"
+    ],
+    "c:dusts/osmium": [
+      "mekanism:dust_osmium"
+    ],
+    "c:dusts/redstone": [
+      "minecraft:redstone"
+    ],
+    "c:dusts/sky_stone": [
+      "ae2:sky_dust"
+    ],
+    "c:dyes/blue": [
+      "minecraft:blue_dye"
+    ],
+    "c:dyes/green": [
+      "minecraft:green_dye"
+    ],
+    "c:dyes/red": [
+      "minecraft:red_dye"
+    ],
+    "c:ender_pearls": [
+      "minecraft:ender_pearl"
+    ],
+    "c:furnaces/copper": [
+      "ironfurnaces:copper_furnace"
+    ],
+    "c:furnaces/crystal": [
+      "ironfurnaces:crystal_furnace"
+    ],
+    "c:furnaces/diamond": [
+      "ironfurnaces:diamond_furnace"
+    ],
+    "c:furnaces/emerald": [
+      "ironfurnaces:emerald_furnace"
+    ],
+    "c:furnaces/gold": [
+      "ironfurnaces:gold_furnace"
+    ],
+    "c:furnaces/iron": [
+      "ironfurnaces:iron_furnace"
+    ],
+    "c:furnaces/obsidian": [
+      "ironfurnaces:obsidian_furnace"
+    ],
+    "c:furnaces/silver": [
+      "ironfurnaces:silver_furnace"
+    ],
+    "c:gears/diamond": [
+      "industrialforegoing:diamond_gear"
+    ],
+    "c:gears/energized": [
+      "enderio:energized_gear"
+    ],
+    "c:gears/gold": [
+      "industrialforegoing:gold_gear",
+      "railcraft:gold_gear"
+    ],
+    "c:gears/iron": [
+      "enderio:iron_gear",
+      "industrialforegoing:iron_gear",
+      "railcraft:iron_gear"
+    ],
+    "c:gears/steel": [
+      "railcraft:steel_gear"
+    ],
+    "c:gems/diamond": [
+      "divinerpg:blue_diamond_chunk",
+      "divinerpg:gray_diamond_chunk",
+      "divinerpg:green_diamond_chunk",
+      "divinerpg:red_diamond_chunk",
+      "divinerpg:yellow_diamond_chunk",
+      "minecraft:diamond"
+    ],
+    "c:gems/emerald": [
+      "minecraft:emerald"
+    ],
+    "c:gems/fluorite": [
+      "mekanism:fluorite_gem"
+    ],
+    "c:gems/lapis": [
+      "minecraft:lapis_lazuli"
+    ],
+    "c:gems/pulsating_crystal": [
+      "enderio:pulsating_crystal"
+    ],
+    "c:gems/vibrant_crystal": [
+      "enderio:vibrant_crystal"
+    ],
+    "c:glass_blocks": [
+      "ae2:quartz_glass",
+      "ae2:quartz_vibrant_glass",
+      "aether:quicksoil_glass",
+      "botania:bifrost_perm",
+      "botania:elf_glass",
+      "botania:mana_glass",
+      "divinerpg:frosted_glass",
+      "divinerpg:smooth_glass",
+      "divinerpg:stained_glass",
+      "evilcraft:obscured_glass",
+      "minecraft:black_stained_glass",
+      "minecraft:blue_stained_glass",
+      "minecraft:brown_stained_glass",
+      "minecraft:cyan_stained_glass",
+      "minecraft:glass",
+      "minecraft:gray_stained_glass",
+      "minecraft:green_stained_glass",
+      "minecraft:light_blue_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:magenta_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:pink_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:red_stained_glass",
+      "minecraft:tinted_glass",
+      "minecraft:white_stained_glass",
+      "minecraft:yellow_stained_glass",
+      "nethers_exoticism:soul_glass"
+    ],
+    "c:glass_blocks/cheap": [
+      "aether:quicksoil_glass",
+      "minecraft:black_stained_glass",
+      "minecraft:blue_stained_glass",
+      "minecraft:brown_stained_glass",
+      "minecraft:cyan_stained_glass",
+      "minecraft:glass",
+      "minecraft:gray_stained_glass",
+      "minecraft:green_stained_glass",
+      "minecraft:light_blue_stained_glass",
+      "minecraft:light_gray_stained_glass",
+      "minecraft:lime_stained_glass",
+      "minecraft:magenta_stained_glass",
+      "minecraft:orange_stained_glass",
+      "minecraft:pink_stained_glass",
+      "minecraft:purple_stained_glass",
+      "minecraft:red_stained_glass",
+      "minecraft:white_stained_glass",
+      "minecraft:yellow_stained_glass"
+    ],
+    "c:glass_blocks/colorless": [
+      "aether:quicksoil_glass",
+      "divinerpg:frosted_glass",
+      "minecraft:glass"
+    ],
+    "c:glass_panes": [
+      "aether:quicksoil_glass_pane",
+      "botania:bifrost_pane",
+      "botania:elf_glass_pane",
+      "botania:mana_glass_pane",
+      "minecraft:black_stained_glass_pane",
+      "minecraft:blue_stained_glass_pane",
+      "minecraft:brown_stained_glass_pane",
+      "minecraft:cyan_stained_glass_pane",
+      "minecraft:glass_pane",
+      "minecraft:gray_stained_glass_pane",
+      "minecraft:green_stained_glass_pane",
+      "minecraft:light_blue_stained_glass_pane",
+      "minecraft:light_gray_stained_glass_pane",
+      "minecraft:lime_stained_glass_pane",
+      "minecraft:magenta_stained_glass_pane",
+      "minecraft:orange_stained_glass_pane",
+      "minecraft:pink_stained_glass_pane",
+      "minecraft:purple_stained_glass_pane",
+      "minecraft:red_stained_glass_pane",
+      "minecraft:white_stained_glass_pane",
+      "minecraft:yellow_stained_glass_pane",
+      "modernfoundry:clear_glass_pane"
+    ],
+    "c:ingots/aluminum": [
+      "immersiveengineering:ingot_aluminum"
+    ],
+    "c:ingots/bronze": [
+      "mekanism:ingot_bronze",
+      "railcraft:bronze_ingot"
+    ],
+    "c:ingots/conductive_alloy": [
+      "enderio:conductive_alloy_ingot"
+    ],
+    "c:ingots/copper": [
+      "minecraft:copper_ingot"
+    ],
+    "c:ingots/dark_steel": [
+      "enderio:dark_steel_ingot"
+    ],
+    "c:ingots/electrum": [
+      "immersiveengineering:ingot_electrum"
+    ],
+    "c:ingots/gold": [
+      "minecraft:gold_ingot"
+    ],
+    "c:ingots/graphite": [
+      "bigreactors:graphite_ingot"
+    ],
+    "c:ingots/iron": [
+      "minecraft:iron_ingot"
+    ],
+    "c:ingots/lead": [
+      "immersiveengineering:ingot_lead",
+      "mekanism:ingot_lead",
+      "railcraft:lead_ingot"
+    ],
+    "c:ingots/netherite": [
+      "minecraft:netherite_ingot"
+    ],
+    "c:ingots/osmium": [
+      "mekanism:ingot_osmium"
+    ],
+    "c:ingots/redstone_alloy": [
+      "enderio:redstone_alloy_ingot"
+    ],
+    "c:ingots/refined_obsidian": [
+      "mekanism:ingot_refined_obsidian"
+    ],
+    "c:ingots/silver": [
+      "immersiveengineering:ingot_silver",
+      "railcraft:silver_ingot"
+    ],
+    "c:ingots/soularium": [
+      "enderio:soularium_ingot"
+    ],
+    "c:ingots/steel": [
+      "ad_astra:steel_ingot",
+      "immersiveengineering:ingot_steel",
+      "mekanism:ingot_steel",
+      "modernfoundry:steel_ingot",
+      "railcraft:steel_ingot"
+    ],
+    "c:ingots/tin": [
+      "mekanism:ingot_tin",
+      "railcraft:tin_ingot"
+    ],
+    "c:ingots/uranium": [
+      "bigreactors:yellorium_ingot",
+      "immersiveengineering:ingot_uranium",
+      "mekanism:ingot_uranium"
+    ],
+    "c:ingots/yellorium": [
+      "bigreactors:yellorium_ingot"
+    ],
+    "c:leathers": [
+      "cannibalvillages:couro_raia",
+      "divinerpg:kraken_skin",
+      "immersiveengineering:ersatz_leather",
+      "minecraft:leather"
+    ],
+    "c:nether_stars": [
+      "minecraft:nether_star"
+    ],
+    "c:nuggets/gold": [
+      "minecraft:gold_nugget"
+    ],
+    "c:obsidians": [
+      "divinerpg:bleeding_obsidian",
+      "divinerpg:brooding_obsidian",
+      "divinerpg:darkstone",
+      "divinerpg:darkstone_bricks",
+      "divinerpg:glittering_obsidian",
+      "divinerpg:seeping_obsidian",
+      "divinerpg:shining_obsidian",
+      "divinerpg:vwooping_obsidian",
+      "minecraft:crying_obsidian",
+      "minecraft:obsidian"
+    ],
+    "c:obsidians/normal": [
+      "minecraft:obsidian"
+    ],
+    "c:ores/iron": [
+      "ad_astra:glacio_iron_ore",
+      "ad_astra:mars_iron_ore",
+      "ad_astra:mercury_iron_ore",
+      "ad_astra:moon_iron_ore",
+      "minecraft:deepslate_iron_ore",
+      "minecraft:iron_ore"
+    ],
+    "c:pellets/antimatter": [
+      "mekanism:pellet_antimatter"
+    ],
+    "c:pellets/plutonium": [
+      "mekanism:pellet_plutonium"
+    ],
+    "c:pellets/polonium": [
+      "mekanism:pellet_polonium"
+    ],
+    "c:plastics": [
+      "industrialforegoing:plastic"
+    ],
+    "c:plates/aluminum": [
+      "immersiveengineering:plate_aluminum"
+    ],
+    "c:plates/copper": [
+      "immersiveengineering:plate_copper",
+      "railcraft:copper_plate"
+    ],
+    "c:plates/gold": [
+      "immersiveengineering:plate_gold",
+      "railcraft:gold_plate"
+    ],
+    "c:plates/hop_graphite": [
+      "immersiveengineering:plate_hop_graphite"
+    ],
+    "c:plates/iron": [
+      "ad_astra:iron_plate",
+      "immersiveengineering:plate_iron",
+      "railcraft:iron_plate"
+    ],
+    "c:plates/nickel": [
+      "immersiveengineering:plate_nickel",
+      "railcraft:nickel_plate"
+    ],
+    "c:plates/steel": [
+      "ad_astra:steel_plate",
+      "immersiveengineering:plate_steel",
+      "railcraft:steel_plate"
+    ],
+    "c:rods/blaze": [
+      "minecraft:blaze_rod"
+    ],
+    "c:rods/steel": [
+      "ad_astra:steel_rod",
+      "immersiveengineering:stick_steel"
+    ],
+    "c:rods/wooden": [
+      "aether:skyroot_stick",
+      "immersiveengineering:stick_treated",
+      "minecraft:stick"
+    ],
+    "c:sands/colorless": [
+      "minecraft:sand"
+    ],
+    "c:seeds": [
+      "divinerpg:aquamarine_seeds",
+      "divinerpg:eucalyptus_root_seeds",
+      "divinerpg:firestock_seeds",
+      "divinerpg:hitchak_seeds",
+      "divinerpg:lamona_seeds",
+      "divinerpg:marsine_seeds",
+      "divinerpg:moonbulb_seeds",
+      "divinerpg:pinfly_seeds",
+      "divinerpg:pink_glowbone_seeds",
+      "divinerpg:purple_glowbone_seeds",
+      "divinerpg:sky_plant_seeds",
+      "divinerpg:tomato_seeds",
+      "divinerpg:veilo_seeds",
+      "divinerpg:white_mushroom_seeds",
+      "immersiveengineering:seed",
+      "minecraft:beetroot_seeds",
+      "minecraft:melon_seeds",
+      "minecraft:pitcher_pod",
+      "minecraft:pumpkin_seeds",
+      "minecraft:torchflower_seeds",
+      "minecraft:wheat_seeds"
+    ],
+    "c:sheetmetals/iron": [
+      "immersiveengineering:sheetmetal_iron"
+    ],
+    "c:sheetmetals/steel": [
+      "immersiveengineering:sheetmetal_steel"
+    ],
+    "c:silicon": [
+      "ae2:silicon",
+      "enderio:silicon"
+    ],
+    "c:stones": [
+      "aether:holystone",
+      "aether:mossy_holystone",
+      "divinerpg:arcanite_stone",
+      "divinerpg:divine_rock",
+      "divinerpg:draught_stone",
+      "divinerpg:dream_stone",
+      "divinerpg:frozen_stone",
+      "divinerpg:milk_stone",
+      "divinerpg:ray_stone",
+      "divinerpg:scorchalt",
+      "divinerpg:twilight_stone",
+      "evilcraft:bloody_cobblestone",
+      "minecraft:andesite",
+      "minecraft:deepslate",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:infested_deepslate",
+      "minecraft:infested_stone",
+      "minecraft:polished_andesite",
+      "minecraft:polished_deepslate",
+      "minecraft:polished_diorite",
+      "minecraft:polished_granite",
+      "minecraft:stone",
+      "minecraft:tuff"
+    ],
+    "c:storage_blocks/copper": [
+      "minecraft:copper_block"
+    ],
+    "c:storage_blocks/diamond": [
+      "minecraft:diamond_block"
+    ],
+    "c:storage_blocks/gold": [
+      "minecraft:gold_block"
+    ],
+    "c:storage_blocks/iron": [
+      "minecraft:iron_block"
+    ],
+    "c:storage_blocks/netherite": [
+      "minecraft:netherite_block"
+    ],
+    "c:storage_blocks/osmium": [
+      "mekanism:block_osmium"
+    ],
+    "c:storage_blocks/redstone": [
+      "minecraft:redstone_block"
+    ],
+    "c:storage_blocks/steel": [
+      "ad_astra:steel_block",
+      "divinerpg:black_steel",
+      "divinerpg:blue_steel",
+      "divinerpg:cyan_steel",
+      "divinerpg:green_steel",
+      "divinerpg:magenta_steel",
+      "divinerpg:orange_steel",
+      "divinerpg:purple_steel",
+      "divinerpg:red_steel",
+      "divinerpg:steel",
+      "divinerpg:yellow_steel",
+      "immersiveengineering:storage_steel",
+      "mekanism:block_steel",
+      "modernfoundry:steel_block",
+      "railcraft:steel_block"
+    ],
+    "c:storage_blocks/tin": [
+      "mekanism:block_tin",
+      "railcraft:tin_block"
+    ],
+    "c:strings": [
+      "minecraft:string"
+    ],
+    "c:wools": [
+      "minecraft:black_wool",
+      "minecraft:blue_wool",
+      "minecraft:brown_wool",
+      "minecraft:cyan_wool",
+      "minecraft:gray_wool",
+      "minecraft:green_wool",
+      "minecraft:light_blue_wool",
+      "minecraft:light_gray_wool",
+      "minecraft:lime_wool",
+      "minecraft:magenta_wool",
+      "minecraft:orange_wool",
+      "minecraft:pink_wool",
+      "minecraft:purple_wool",
+      "minecraft:red_wool",
+      "minecraft:white_wool",
+      "minecraft:yellow_wool"
+    ],
+    "exdeorum:hammers": [
+      "exdeorum:diamond_hammer",
+      "exdeorum:golden_hammer",
+      "exdeorum:iron_hammer",
+      "exdeorum:netherite_hammer",
+      "exdeorum:stone_hammer",
+      "exdeorum:wooden_hammer"
+    ],
+    "immersiveengineering:treated_wood": [
+      "immersiveengineering:treated_wood_horizontal",
+      "immersiveengineering:treated_wood_packaged",
+      "immersiveengineering:treated_wood_vertical"
+    ],
+    "industrialforegoing:machine_frame/advanced": [
+      "industrialforegoing:machine_frame_advanced"
+    ],
+    "industrialforegoing:machine_frame/pity": [
+      "industrialforegoing:machine_frame_pity"
+    ],
+    "industrialforegoing:machine_frame/simple": [
+      "industrialforegoing:machine_frame_simple"
+    ],
+    "industrialforegoing:machine_frame/supreme": [
+      "industrialforegoing:machine_frame_supreme"
+    ],
+    "mekanism:alloys/atomic": [
+      "mekanism:alloy_atomic"
+    ],
+    "mekanism:alloys/basic": [
+      "minecraft:redstone"
+    ],
+    "mekanism:alloys/infused": [
+      "mekanism:alloy_infused"
+    ],
+    "mekanism:alloys/reinforced": [
+      "mekanism:alloy_reinforced"
+    ],
+    "mekanism:personal_storage": [
+      "mekanism:personal_barrel",
+      "mekanism:personal_chest"
+    ],
+    "mekanism:stone_crafting_materials": [
+      "ad_astra:glacio_cobblestone",
+      "ad_astra:mars_cobblestone",
+      "ad_astra:mercury_cobblestone",
+      "ad_astra:moon_cobblestone",
+      "ad_astra:venus_cobblestone",
+      "aether:holystone",
+      "divinerpg:ancient_stone_breakable",
+      "divinerpg:arcanite_stone",
+      "divinerpg:cobaltite",
+      "divinerpg:cobbled_frozen_stone",
+      "divinerpg:cobbled_scorchalt",
+      "divinerpg:divine_rock",
+      "divinerpg:draught_stone",
+      "divinerpg:dream_stone",
+      "divinerpg:luna_stone",
+      "divinerpg:milk_stone",
+      "divinerpg:ray_stone",
+      "divinerpg:soul_stone_breakable",
+      "divinerpg:twilight_stone",
+      "minecraft:andesite",
+      "minecraft:blackstone",
+      "minecraft:cobbled_deepslate",
+      "minecraft:cobblestone",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:tuff"
+    ],
+    "minecraft:logs": [
+      "ad_astra:glacian_log",
+      "aether:golden_oak_log",
+      "aether:golden_oak_wood",
+      "aether:skyroot_log",
+      "aether:skyroot_wood",
+      "aether:stripped_skyroot_log",
+      "aether:stripped_skyroot_wood",
+      "botania:bifrost_log",
+      "botania:black_iridescent_log",
+      "botania:blue_iridescent_log",
+      "botania:brown_iridescent_log",
+      "botania:cyan_iridescent_log",
+      "botania:dreamwood",
+      "botania:dreamwood_log",
+      "botania:dry_log",
+      "botania:glimmering_dreamwood",
+      "botania:glimmering_dreamwood_log",
+      "botania:glimmering_livingwood",
+      "botania:glimmering_livingwood_log",
+      "botania:glimmering_stripped_dreamwood",
+      "botania:glimmering_stripped_dreamwood_log",
+      "botania:glimmering_stripped_livingwood",
+      "botania:glimmering_stripped_livingwood_log",
+      "botania:golden_log",
+      "botania:gray_iridescent_log",
+      "botania:green_iridescent_log",
+      "botania:infernal_log",
+      "botania:infused_log",
+      "botania:light_blue_iridescent_log",
+      "botania:light_gray_iridescent_log",
+      "botania:lime_iridescent_log",
+      "botania:livingwood",
+      "botania:livingwood_log",
+      "botania:magenta_iridescent_log",
+      "botania:mutated_log",
+      "botania:orange_iridescent_log",
+      "botania:pink_iridescent_log",
+      "botania:purple_iridescent_log",
+      "botania:red_iridescent_log",
+      "botania:scorched_log",
+      "botania:sealing_log",
+      "botania:stripped_dreamwood",
+      "botania:stripped_dreamwood_log",
+      "botania:stripped_livingwood",
+      "botania:stripped_livingwood_log",
+      "botania:thunderous_log",
+      "botania:vivid_log",
+      "botania:white_iridescent_log",
+      "botania:yellow_iridescent_log",
+      "cannibalvillages:madeira_coqueiro",
+      "cannibalvillages:tronco_bananeira",
+      "divinerpg:apalachia_log",
+      "divinerpg:apalachia_wood",
+      "divinerpg:auroraoak_log",
+      "divinerpg:auroraoak_wood",
+      "divinerpg:cozybark_log",
+      "divinerpg:cozybark_wood",
+      "divinerpg:crimseeker_log",
+      "divinerpg:divine_log",
+      "divinerpg:divine_wood",
+      "divinerpg:dreamwood_log",
+      "divinerpg:dreamwood_wood",
+      "divinerpg:eden_log",
+      "divinerpg:eden_wood",
+      "divinerpg:eucalyptus_log",
+      "divinerpg:eucalyptus_wood",
+      "divinerpg:firewood_log",
+      "divinerpg:firewood_wood",
+      "divinerpg:hyrewood_log",
+      "divinerpg:hyrewood_wood",
+      "divinerpg:mintwood_log",
+      "divinerpg:mintwood_wood",
+      "divinerpg:mortum_log",
+      "divinerpg:mortum_wood",
+      "divinerpg:shiverspine_log",
+      "divinerpg:shiverspine_wood",
+      "divinerpg:skythern_log",
+      "divinerpg:skythern_wood",
+      "divinerpg:streamleaf_log",
+      "divinerpg:streamleaf_wood",
+      "divinerpg:stripped_apalachia_log",
+      "divinerpg:stripped_apalachia_wood",
+      "divinerpg:stripped_auroraoak_log",
+      "divinerpg:stripped_auroraoak_wood",
+      "divinerpg:stripped_cozybark_log",
+      "divinerpg:stripped_cozybark_wood",
+      "divinerpg:stripped_divine_log",
+      "divinerpg:stripped_divine_wood",
+      "divinerpg:stripped_dreamwood_log",
+      "divinerpg:stripped_dreamwood_wood",
+      "divinerpg:stripped_eden_log",
+      "divinerpg:stripped_eden_wood",
+      "divinerpg:stripped_eucalyptus_log",
+      "divinerpg:stripped_eucalyptus_wood",
+      "divinerpg:stripped_firewood_log",
+      "divinerpg:stripped_firewood_wood",
+      "divinerpg:stripped_hyrewood_log",
+      "divinerpg:stripped_hyrewood_wood",
+      "divinerpg:stripped_mintwood_log",
+      "divinerpg:stripped_mintwood_wood",
+      "divinerpg:stripped_mortum_log",
+      "divinerpg:stripped_mortum_wood",
+      "divinerpg:stripped_shiverspine_log",
+      "divinerpg:stripped_shiverspine_wood",
+      "divinerpg:stripped_skythern_log",
+      "divinerpg:stripped_skythern_wood",
+      "divinerpg:stripped_streamleaf_log",
+      "divinerpg:stripped_streamleaf_wood",
+      "divinerpg:stripped_wildwood_log",
+      "divinerpg:stripped_wildwood_wood",
+      "divinerpg:wildwood_log",
+      "divinerpg:wildwood_wood",
+      "ecologics:azalea_log",
+      "ecologics:azalea_wood",
+      "ecologics:coconut_log",
+      "ecologics:coconut_wood",
+      "ecologics:flowering_azalea_log",
+      "ecologics:flowering_azalea_wood",
+      "ecologics:stripped_azalea_log",
+      "ecologics:stripped_azalea_wood",
+      "ecologics:stripped_coconut_log",
+      "ecologics:stripped_coconut_wood",
+      "ecologics:stripped_walnut_log",
+      "ecologics:stripped_walnut_wood",
+      "ecologics:walnut_log",
+      "ecologics:walnut_wood",
+      "evilcraft:undead_log",
+      "evilcraft:undead_log_stripped",
+      "minecraft:acacia_log",
+      "minecraft:acacia_wood",
+      "minecraft:birch_log",
+      "minecraft:birch_wood",
+      "minecraft:cherry_log",
+      "minecraft:cherry_wood",
+      "minecraft:crimson_hyphae",
+      "minecraft:crimson_stem",
+      "minecraft:dark_oak_log",
+      "minecraft:dark_oak_wood",
+      "minecraft:jungle_log",
+      "minecraft:jungle_wood",
+      "minecraft:mangrove_log",
+      "minecraft:mangrove_wood",
+      "minecraft:oak_log",
+      "minecraft:oak_wood",
+      "minecraft:spruce_log",
+      "minecraft:spruce_wood",
+      "minecraft:stripped_acacia_log",
+      "minecraft:stripped_acacia_wood",
+      "minecraft:stripped_birch_log",
+      "minecraft:stripped_birch_wood",
+      "minecraft:stripped_cherry_log",
+      "minecraft:stripped_cherry_wood",
+      "minecraft:stripped_crimson_hyphae",
+      "minecraft:stripped_crimson_stem",
+      "minecraft:stripped_dark_oak_log",
+      "minecraft:stripped_dark_oak_wood",
+      "minecraft:stripped_jungle_log",
+      "minecraft:stripped_jungle_wood",
+      "minecraft:stripped_mangrove_log",
+      "minecraft:stripped_mangrove_wood",
+      "minecraft:stripped_oak_log",
+      "minecraft:stripped_oak_wood",
+      "minecraft:stripped_spruce_log",
+      "minecraft:stripped_spruce_wood",
+      "minecraft:stripped_warped_hyphae",
+      "minecraft:stripped_warped_stem",
+      "minecraft:warped_hyphae",
+      "minecraft:warped_stem",
+      "nethers_exoticism:jaboticaba_branch_empty",
+      "nethers_exoticism:jabuticaba_log",
+      "nethers_exoticism:ramboutan_log",
+      "nethers_exoticism:ramboutan_wood",
+      "nethers_exoticism:stripped_jabuticaba_log",
+      "nethers_exoticism:stripped_rambutan_log",
+      "nethers_exoticism:stripped_rambutan_wood",
+      "twilightforest:canopy_log",
+      "twilightforest:canopy_wood",
+      "twilightforest:dark_log",
+      "twilightforest:dark_wood",
+      "twilightforest:mangrove_log",
+      "twilightforest:mangrove_wood",
+      "twilightforest:mining_log",
+      "twilightforest:mining_wood",
+      "twilightforest:sorting_log",
+      "twilightforest:sorting_wood",
+      "twilightforest:stripped_canopy_log",
+      "twilightforest:stripped_canopy_wood",
+      "twilightforest:stripped_dark_log",
+      "twilightforest:stripped_dark_wood",
+      "twilightforest:stripped_mangrove_log",
+      "twilightforest:stripped_mangrove_wood",
+      "twilightforest:stripped_mining_log",
+      "twilightforest:stripped_mining_wood",
+      "twilightforest:stripped_sorting_log",
+      "twilightforest:stripped_sorting_wood",
+      "twilightforest:stripped_time_log",
+      "twilightforest:stripped_time_wood",
+      "twilightforest:stripped_transformation_log",
+      "twilightforest:stripped_transformation_wood",
+      "twilightforest:stripped_twilight_oak_log",
+      "twilightforest:stripped_twilight_oak_wood",
+      "twilightforest:time_log",
+      "twilightforest:time_wood",
+      "twilightforest:transformation_log",
+      "twilightforest:transformation_wood",
+      "twilightforest:twilight_oak_log",
+      "twilightforest:twilight_oak_wood",
+      "ymondf:chalk_log",
+      "ymondf:chalk_wood",
+      "ymondf:roemoor_log",
+      "ymondf:roemoor_wood",
+      "ymondf:skyrain_log",
+      "ymondf:skyrain_wood"
+    ],
+    "minecraft:planks": [
+      "ad_astra:aeronos_planks",
+      "ad_astra:glacian_planks",
+      "ad_astra:strophar_planks",
+      "bloxysstructures:loreo_planks",
+      "bloxysstructures:mjin_planks",
+      "bloxysstructures:verdant_planks",
+      "bloxysstructures:xiza_planks",
+      "botania:bifrost_planks",
+      "botania:black_iridescent_planks",
+      "botania:blue_iridescent_planks",
+      "botania:brown_iridescent_planks",
+      "botania:cyan_iridescent_planks",
+      "botania:dreamwood_planks",
+      "botania:dry_planks",
+      "botania:framed_dreamwood",
+      "botania:framed_livingwood",
+      "botania:golden_planks",
+      "botania:gray_iridescent_planks",
+      "botania:green_iridescent_planks",
+      "botania:infernal_planks",
+      "botania:infused_planks",
+      "botania:light_blue_iridescent_planks",
+      "botania:light_gray_iridescent_planks",
+      "botania:lime_iridescent_planks",
+      "botania:livingwood_planks",
+      "botania:magenta_iridescent_planks",
+      "botania:mossy_dreamwood_planks",
+      "botania:mossy_livingwood_planks",
+      "botania:mutated_planks",
+      "botania:orange_iridescent_planks",
+      "botania:pattern_framed_dreamwood",
+      "botania:pattern_framed_livingwood",
+      "botania:pink_iridescent_planks",
+      "botania:purple_iridescent_planks",
+      "botania:red_iridescent_planks",
+      "botania:scorched_planks",
+      "botania:sealing_planks",
+      "botania:shimmerwood_planks",
+      "botania:thunderous_planks",
+      "botania:vivid_planks",
+      "botania:white_iridescent_planks",
+      "botania:yellow_iridescent_planks",
+      "cannibalvillages:tabuas_bananeira",
+      "cannibalvillages:tabuas_coqueiro",
+      "divinerpg:apalachia_planks",
+      "divinerpg:auroraoak_planks",
+      "divinerpg:cozybark_planks",
+      "divinerpg:divine_planks",
+      "divinerpg:eden_planks",
+      "divinerpg:eucalyptus_planks",
+      "divinerpg:mortum_planks",
+      "divinerpg:plank_design",
+      "divinerpg:shiverspine_planks",
+      "divinerpg:skythern_planks",
+      "divinerpg:streamleaf_planks",
+      "divinerpg:wildwood_planks",
+      "ecologics:azalea_planks",
+      "ecologics:coconut_planks",
+      "ecologics:flowering_azalea_planks",
+      "ecologics:walnut_planks",
+      "evilcraft:undead_planks",
+      "immersiveengineering:fiberboard",
+      "minecraft:acacia_planks",
+      "minecraft:bamboo_planks",
+      "minecraft:birch_planks",
+      "minecraft:cherry_planks",
+      "minecraft:crimson_planks",
+      "minecraft:dark_oak_planks",
+      "minecraft:jungle_planks",
+      "minecraft:mangrove_planks",
+      "minecraft:oak_planks",
+      "minecraft:spruce_planks",
+      "minecraft:warped_planks",
+      "nethers_exoticism:jaboticaba_planks",
+      "nethers_exoticism:ramboutan_planks",
+      "twilightforest:canopy_planks",
+      "twilightforest:cracked_towerwood",
+      "twilightforest:dark_planks",
+      "twilightforest:infested_towerwood",
+      "twilightforest:mangrove_planks",
+      "twilightforest:mining_planks",
+      "twilightforest:mossy_towerwood",
+      "twilightforest:sorting_planks",
+      "twilightforest:time_planks",
+      "twilightforest:towerwood",
+      "twilightforest:transformation_planks",
+      "twilightforest:twilight_oak_planks",
+      "ymondf:chalk_planks",
+      "ymondf:roemoor_planks",
+      "ymondf:skyrain_planks"
+    ],
+    "minecraft:saplings": [
+      "aether:golden_oak_sapling",
+      "aether:skyroot_sapling",
+      "divinerpg:apalachia_sapling",
+      "divinerpg:auroraoak_sapling",
+      "divinerpg:cozybark_sapling",
+      "divinerpg:crimseeker_sapling",
+      "divinerpg:divine_sapling",
+      "divinerpg:eden_sapling",
+      "divinerpg:mortum_sapling",
+      "divinerpg:shiverspine_sapling",
+      "divinerpg:skythern_sapling",
+      "divinerpg:streamleaf_sapling",
+      "divinerpg:wildwood_sapling",
+      "ecologics:azalea_flower",
+      "ecologics:coconut_seedling",
+      "ecologics:walnut_sapling",
+      "evilcraft:undead_sapling",
+      "millenaire:apple_tree_sapling",
+      "millenaire:olive_tree_sapling",
+      "millenaire:pistachio_tree_sapling",
+      "minecraft:acacia_sapling",
+      "minecraft:azalea",
+      "minecraft:birch_sapling",
+      "minecraft:cherry_sapling",
+      "minecraft:dark_oak_sapling",
+      "minecraft:flowering_azalea",
+      "minecraft:jungle_sapling",
+      "minecraft:mangrove_propagule",
+      "minecraft:oak_sapling",
+      "minecraft:spruce_sapling",
+      "twilightforest:canopy_sapling",
+      "twilightforest:darkwood_sapling",
+      "twilightforest:hollow_oak_sapling",
+      "twilightforest:mangrove_sapling",
+      "twilightforest:mining_sapling",
+      "twilightforest:rainbow_oak_sapling",
+      "twilightforest:sorting_sapling",
+      "twilightforest:time_sapling",
+      "twilightforest:transformation_sapling",
+      "twilightforest:twilight_oak_sapling"
+    ],
+    "minecraft:skulls": [
+      "botania:gaia_head",
+      "minecraft:creeper_head",
+      "minecraft:dragon_head",
+      "minecraft:piglin_head",
+      "minecraft:player_head",
+      "minecraft:skeleton_skull",
+      "minecraft:wither_skeleton_skull",
+      "minecraft:zombie_head",
+      "twilightforest:creeper_skull_candle",
+      "twilightforest:piglin_skull_candle",
+      "twilightforest:player_skull_candle",
+      "twilightforest:skeleton_skull_candle",
+      "twilightforest:wither_skeleton_skull_candle",
+      "twilightforest:zombie_skull_candle"
+    ],
+    "minecraft:soul_fire_base_blocks": [
+      "divinerpg:soul_sludge_breakable",
+      "minecraft:soul_sand",
+      "minecraft:soul_soil"
+    ],
+    "minecraft:stone_crafting_materials": [
+      "ad_astra:glacio_cobblestone",
+      "ad_astra:mars_cobblestone",
+      "ad_astra:mercury_cobblestone",
+      "ad_astra:moon_cobblestone",
+      "ad_astra:venus_cobblestone",
+      "aether:holystone",
+      "divinerpg:ancient_stone_breakable",
+      "divinerpg:arcanite_stone",
+      "divinerpg:cobaltite",
+      "divinerpg:cobbled_frozen_stone",
+      "divinerpg:cobbled_scorchalt",
+      "divinerpg:divine_rock",
+      "divinerpg:draught_stone",
+      "divinerpg:dream_stone",
+      "divinerpg:luna_stone",
+      "divinerpg:milk_stone",
+      "divinerpg:ray_stone",
+      "divinerpg:soul_stone_breakable",
+      "divinerpg:twilight_stone",
+      "minecraft:andesite",
+      "minecraft:blackstone",
+      "minecraft:cobbled_deepslate",
+      "minecraft:cobblestone",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:tuff"
+    ],
+    "minecraft:wooden_buttons": [
+      "ad_astra:glacian_button",
+      "aether:skyroot_button",
+      "cannibalvillages:botao_bananeira",
+      "cannibalvillages:botao_coqueiro",
+      "divinerpg:apalachia_button",
+      "divinerpg:auroraoak_button",
+      "divinerpg:cozybark_button",
+      "divinerpg:divine_button",
+      "divinerpg:eden_button",
+      "divinerpg:eucalyptus_button",
+      "divinerpg:mortum_button",
+      "divinerpg:shiverspine_button",
+      "divinerpg:skythern_button",
+      "divinerpg:streamleaf_button",
+      "divinerpg:wildwood_button",
+      "ecologics:azalea_button",
+      "ecologics:coconut_button",
+      "ecologics:walnut_button",
+      "minecraft:acacia_button",
+      "minecraft:bamboo_button",
+      "minecraft:birch_button",
+      "minecraft:cherry_button",
+      "minecraft:crimson_button",
+      "minecraft:dark_oak_button",
+      "minecraft:jungle_button",
+      "minecraft:mangrove_button",
+      "minecraft:oak_button",
+      "minecraft:spruce_button",
+      "minecraft:warped_button",
+      "twilightforest:canopy_button",
+      "twilightforest:dark_button",
+      "twilightforest:mangrove_button",
+      "twilightforest:mining_button",
+      "twilightforest:sorting_button",
+      "twilightforest:time_button",
+      "twilightforest:transformation_button",
+      "twilightforest:twilight_oak_button"
+    ],
+    "minecraft:wooden_slabs": [
+      "ad_astra:aeronos_slab",
+      "ad_astra:glacian_slab",
+      "ad_astra:strophar_slab",
+      "aether:skyroot_slab",
+      "botania:bifrost_slab",
+      "botania:black_iridescent_slab",
+      "botania:blue_iridescent_slab",
+      "botania:brown_iridescent_slab",
+      "botania:cyan_iridescent_slab",
+      "botania:dreamwood_planks_slab",
+      "botania:dreamwood_slab",
+      "botania:dry_slab",
+      "botania:golden_slab",
+      "botania:gray_iridescent_slab",
+      "botania:green_iridescent_slab",
+      "botania:infernal_slab",
+      "botania:infused_slab",
+      "botania:light_blue_iridescent_slab",
+      "botania:light_gray_iridescent_slab",
+      "botania:lime_iridescent_slab",
+      "botania:livingwood_planks_slab",
+      "botania:livingwood_slab",
+      "botania:magenta_iridescent_slab",
+      "botania:mutated_slab",
+      "botania:orange_iridescent_slab",
+      "botania:pink_iridescent_slab",
+      "botania:purple_iridescent_slab",
+      "botania:red_iridescent_slab",
+      "botania:scorched_slab",
+      "botania:sealing_slab",
+      "botania:shimmerwood_planks_slab",
+      "botania:stripped_dreamwood_slab",
+      "botania:stripped_livingwood_slab",
+      "botania:thunderous_slab",
+      "botania:vivid_slab",
+      "botania:white_iridescent_slab",
+      "botania:yellow_iridescent_slab",
+      "cannibalvillages:laje_bananeira",
+      "cannibalvillages:laje_coqueiro",
+      "divinerpg:apalachia_slab",
+      "divinerpg:auroraoak_slab",
+      "divinerpg:cozybark_slab",
+      "divinerpg:divine_slab",
+      "divinerpg:eden_slab",
+      "divinerpg:eucalyptus_slab",
+      "divinerpg:mortum_slab",
+      "divinerpg:shiverspine_slab",
+      "divinerpg:skythern_slab",
+      "divinerpg:slab_design",
+      "divinerpg:streamleaf_slab",
+      "divinerpg:wildwood_slab",
+      "ecologics:azalea_slab",
+      "ecologics:coconut_slab",
+      "ecologics:flowering_azalea_slab",
+      "ecologics:walnut_slab",
+      "evilcraft:undead_slab",
+      "immersiveengineering:slab_treated_wood_horizontal",
+      "immersiveengineering:slab_treated_wood_packaged",
+      "immersiveengineering:slab_treated_wood_vertical",
+      "millenaire:thatch_slab",
+      "millenaire:timber_frame_slab",
+      "minecraft:acacia_slab",
+      "minecraft:bamboo_slab",
+      "minecraft:birch_slab",
+      "minecraft:cherry_slab",
+      "minecraft:crimson_slab",
+      "minecraft:dark_oak_slab",
+      "minecraft:jungle_slab",
+      "minecraft:mangrove_slab",
+      "minecraft:oak_slab",
+      "minecraft:spruce_slab",
+      "minecraft:warped_slab",
+      "nethers_exoticism:jaboticaba_slab",
+      "nethers_exoticism:ramboutan_slab",
+      "twilightforest:canopy_slab",
+      "twilightforest:dark_slab",
+      "twilightforest:mangrove_slab",
+      "twilightforest:mining_slab",
+      "twilightforest:sorting_slab",
+      "twilightforest:time_slab",
+      "twilightforest:transformation_slab",
+      "twilightforest:twilight_oak_slab"
+    ],
+    "railcraft:iron_tank_wall": [
+      "railcraft:black_iron_tank_wall",
+      "railcraft:blue_iron_tank_wall",
+      "railcraft:brown_iron_tank_wall",
+      "railcraft:cyan_iron_tank_wall",
+      "railcraft:gray_iron_tank_wall",
+      "railcraft:green_iron_tank_wall",
+      "railcraft:light_blue_iron_tank_wall",
+      "railcraft:light_gray_iron_tank_wall",
+      "railcraft:lime_iron_tank_wall",
+      "railcraft:magenta_iron_tank_wall",
+      "railcraft:orange_iron_tank_wall",
+      "railcraft:pink_iron_tank_wall",
+      "railcraft:purple_iron_tank_wall",
+      "railcraft:red_iron_tank_wall",
+      "railcraft:white_iron_tank_wall",
+      "railcraft:yellow_iron_tank_wall"
+    ],
+    "storagedrawers:drawers": [
+      "storagedrawers:acacia_full_drawers_1",
+      "storagedrawers:acacia_full_drawers_2",
+      "storagedrawers:acacia_full_drawers_4",
+      "storagedrawers:acacia_half_drawers_1",
+      "storagedrawers:acacia_half_drawers_2",
+      "storagedrawers:acacia_half_drawers_4",
+      "storagedrawers:bamboo_full_drawers_1",
+      "storagedrawers:bamboo_full_drawers_2",
+      "storagedrawers:bamboo_full_drawers_4",
+      "storagedrawers:bamboo_half_drawers_1",
+      "storagedrawers:bamboo_half_drawers_2",
+      "storagedrawers:bamboo_half_drawers_4",
+      "storagedrawers:birch_full_drawers_1",
+      "storagedrawers:birch_full_drawers_2",
+      "storagedrawers:birch_full_drawers_4",
+      "storagedrawers:birch_half_drawers_1",
+      "storagedrawers:birch_half_drawers_2",
+      "storagedrawers:birch_half_drawers_4",
+      "storagedrawers:cherry_full_drawers_1",
+      "storagedrawers:cherry_full_drawers_2",
+      "storagedrawers:cherry_full_drawers_4",
+      "storagedrawers:cherry_half_drawers_1",
+      "storagedrawers:cherry_half_drawers_2",
+      "storagedrawers:cherry_half_drawers_4",
+      "storagedrawers:crimson_full_drawers_1",
+      "storagedrawers:crimson_full_drawers_2",
+      "storagedrawers:crimson_full_drawers_4",
+      "storagedrawers:crimson_half_drawers_1",
+      "storagedrawers:crimson_half_drawers_2",
+      "storagedrawers:crimson_half_drawers_4",
+      "storagedrawers:dark_oak_full_drawers_1",
+      "storagedrawers:dark_oak_full_drawers_2",
+      "storagedrawers:dark_oak_full_drawers_4",
+      "storagedrawers:dark_oak_half_drawers_1",
+      "storagedrawers:dark_oak_half_drawers_2",
+      "storagedrawers:dark_oak_half_drawers_4",
+      "storagedrawers:jungle_full_drawers_1",
+      "storagedrawers:jungle_full_drawers_2",
+      "storagedrawers:jungle_full_drawers_4",
+      "storagedrawers:jungle_half_drawers_1",
+      "storagedrawers:jungle_half_drawers_2",
+      "storagedrawers:jungle_half_drawers_4",
+      "storagedrawers:mangrove_full_drawers_1",
+      "storagedrawers:mangrove_full_drawers_2",
+      "storagedrawers:mangrove_full_drawers_4",
+      "storagedrawers:mangrove_half_drawers_1",
+      "storagedrawers:mangrove_half_drawers_2",
+      "storagedrawers:mangrove_half_drawers_4",
+      "storagedrawers:oak_full_drawers_1",
+      "storagedrawers:oak_full_drawers_2",
+      "storagedrawers:oak_full_drawers_4",
+      "storagedrawers:oak_half_drawers_1",
+      "storagedrawers:oak_half_drawers_2",
+      "storagedrawers:oak_half_drawers_4",
+      "storagedrawers:spruce_full_drawers_1",
+      "storagedrawers:spruce_full_drawers_2",
+      "storagedrawers:spruce_full_drawers_4",
+      "storagedrawers:spruce_half_drawers_1",
+      "storagedrawers:spruce_half_drawers_2",
+      "storagedrawers:spruce_half_drawers_4",
+      "storagedrawers:warped_full_drawers_1",
+      "storagedrawers:warped_full_drawers_2",
+      "storagedrawers:warped_full_drawers_4",
+      "storagedrawers:warped_half_drawers_1",
+      "storagedrawers:warped_half_drawers_2",
+      "storagedrawers:warped_half_drawers_4"
+    ],
+    "storagedrawers:full_drawers": [
+      "storagedrawers:acacia_full_drawers_1",
+      "storagedrawers:acacia_full_drawers_2",
+      "storagedrawers:acacia_full_drawers_4",
+      "storagedrawers:bamboo_full_drawers_1",
+      "storagedrawers:bamboo_full_drawers_2",
+      "storagedrawers:bamboo_full_drawers_4",
+      "storagedrawers:birch_full_drawers_1",
+      "storagedrawers:birch_full_drawers_2",
+      "storagedrawers:birch_full_drawers_4",
+      "storagedrawers:cherry_full_drawers_1",
+      "storagedrawers:cherry_full_drawers_2",
+      "storagedrawers:cherry_full_drawers_4",
+      "storagedrawers:crimson_full_drawers_1",
+      "storagedrawers:crimson_full_drawers_2",
+      "storagedrawers:crimson_full_drawers_4",
+      "storagedrawers:dark_oak_full_drawers_1",
+      "storagedrawers:dark_oak_full_drawers_2",
+      "storagedrawers:dark_oak_full_drawers_4",
+      "storagedrawers:jungle_full_drawers_1",
+      "storagedrawers:jungle_full_drawers_2",
+      "storagedrawers:jungle_full_drawers_4",
+      "storagedrawers:mangrove_full_drawers_1",
+      "storagedrawers:mangrove_full_drawers_2",
+      "storagedrawers:mangrove_full_drawers_4",
+      "storagedrawers:oak_full_drawers_1",
+      "storagedrawers:oak_full_drawers_2",
+      "storagedrawers:oak_full_drawers_4",
+      "storagedrawers:spruce_full_drawers_1",
+      "storagedrawers:spruce_full_drawers_2",
+      "storagedrawers:spruce_full_drawers_4",
+      "storagedrawers:warped_full_drawers_1",
+      "storagedrawers:warped_full_drawers_2",
+      "storagedrawers:warped_full_drawers_4"
+    ],
+    "storagedrawers:half_drawers": [
+      "storagedrawers:acacia_half_drawers_1",
+      "storagedrawers:acacia_half_drawers_2",
+      "storagedrawers:acacia_half_drawers_4",
+      "storagedrawers:bamboo_half_drawers_1",
+      "storagedrawers:bamboo_half_drawers_2",
+      "storagedrawers:bamboo_half_drawers_4",
+      "storagedrawers:birch_half_drawers_1",
+      "storagedrawers:birch_half_drawers_2",
+      "storagedrawers:birch_half_drawers_4",
+      "storagedrawers:cherry_half_drawers_1",
+      "storagedrawers:cherry_half_drawers_2",
+      "storagedrawers:cherry_half_drawers_4",
+      "storagedrawers:crimson_half_drawers_1",
+      "storagedrawers:crimson_half_drawers_2",
+      "storagedrawers:crimson_half_drawers_4",
+      "storagedrawers:dark_oak_half_drawers_1",
+      "storagedrawers:dark_oak_half_drawers_2",
+      "storagedrawers:dark_oak_half_drawers_4",
+      "storagedrawers:jungle_half_drawers_1",
+      "storagedrawers:jungle_half_drawers_2",
+      "storagedrawers:jungle_half_drawers_4",
+      "storagedrawers:mangrove_half_drawers_1",
+      "storagedrawers:mangrove_half_drawers_2",
+      "storagedrawers:mangrove_half_drawers_4",
+      "storagedrawers:oak_half_drawers_1",
+      "storagedrawers:oak_half_drawers_2",
+      "storagedrawers:oak_half_drawers_4",
+      "storagedrawers:spruce_half_drawers_1",
+      "storagedrawers:spruce_half_drawers_2",
+      "storagedrawers:spruce_half_drawers_4",
+      "storagedrawers:warped_half_drawers_1",
+      "storagedrawers:warped_half_drawers_2",
+      "storagedrawers:warped_half_drawers_4"
+    ]
+  },
+  "baseline_collision_groups": [
+    [
+      "kubejs:hardcore_workshop/gears/buildcraft_gold",
+      "kubejs:hardcore_workshop/gears/industrialforegoing/gold_gear",
+      "kubejs:hardcore_workshop/gears/railcraft/gold_gear"
+    ],
+    [
+      "kubejs:hardcore_workshop/gears/buildcraft_iron",
+      "kubejs:hardcore_workshop/gears/enderio/iron_gear",
+      "kubejs:hardcore_workshop/gears/industrialforegoing/iron_gear",
+      "kubejs:hardcore_workshop/gears/railcraft/iron_gear"
+    ],
+    [
+      "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron",
+      "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron2"
+    ]
+  ],
+  "baseline_recipes": [
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_gold",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "tag": "c:plates/gold"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_gold",
+          "count": 1
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/buildcraft_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " O ",
+          "OIO",
+          " O "
+        ],
+        "key": {
+          "O": {
+            "tag": "c:plates/iron"
+          },
+          "I": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_iron",
+          "count": 1
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/enderio/iron_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "enderio:iron_gear",
+          "count": 1
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/industrialforegoing/gold_gear",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:gold_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/gold"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:gold_gear"
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/industrialforegoing/iron_gear",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:iron_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:iron_gear"
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/railcraft/gold_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "tag": "c:plates/gold"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_iron"
+          }
+        },
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "railcraft:gold_gear"
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/gears/railcraft/iron_gear",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "pattern": [
+          " P ",
+          "PGP",
+          " P "
+        ],
+        "key": {
+          "P": {
+            "tag": "c:plates/iron"
+          },
+          "G": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "railcraft:iron_gear",
+          "count": 1
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron"
+        }
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron2",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron2"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      }
+    }
+  ],
+  "legacy_condition_recipes": [
+    {
+      "source": "qm_expert_v040.js",
+      "id": "kubejs:expert_v040/ironfurnaces/upgrades/upgrade_gold2",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "@!$",
+          "#X#",
+          "#Y#"
+        ],
+        "key": {
+          "#": {
+            "tag": "c:ingots/gold"
+          },
+          "X": {
+            "tag": "c:ingots/silver"
+          },
+          "Y": {
+            "tag": "c:storage_blocks/gold"
+          },
+          "!": {
+            "item": "kubejs:industrial_chassis"
+          },
+          "@": {
+            "item": "kubejs:control_assembly"
+          },
+          "$": {
+            "item": "kubejs:precision_mechanism"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_gold2"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/silver"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_copper",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/copper"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_copper"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      }
+    },
+    {
+      "source": "qm_expert_hardcore_workshop.js",
+      "id": "kubejs:hardcore_workshop/ironfurnaces/upgrade_iron2",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "BBB",
+          "BSB",
+          "BBB"
+        ],
+        "key": {
+          "B": {
+            "tag": "c:storage_blocks/iron"
+          },
+          "S": {
+            "item": "minecraft:cobblestone"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron2"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      }
+    }
+  ],
+  "native_recipes": [
+    {
+      "id": "buildcraftcore:gears/gear_gold",
+      "source": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar!data/buildcraftcore/recipe/gears/gear_gold.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "i": {
+            "item": "buildcraftcore:gears/gear_stone"
+          },
+          "o": {
+            "item": "minecraft:gold_ingot"
+          }
+        },
+        "pattern": [
+          " o ",
+          "oio",
+          " o "
+        ],
+        "result": {
+          "id": "buildcraftcore:gears/gear_gold"
+        }
+      }
+    },
+    {
+      "id": "buildcraftcore:gears/gear_iron",
+      "source": "BuildCraft-Community-Edition-8.0.23+1.21.1+neoforge.jar!data/buildcraftcore/recipe/gears/gear_iron.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          " o ",
+          "oio",
+          " o "
+        ],
+        "key": {
+          "o": {
+            "item": "minecraft:iron_ingot"
+          },
+          "i": {
+            "item": "buildcraftcore:gears/gear_stone"
+          }
+        },
+        "result": {
+          "id": "buildcraftcore:gears/gear_iron"
+        }
+      }
+    },
+    {
+      "id": "enderio:iron_gear",
+      "source": "enderio-8.2.12-beta.jar!data/enderio/recipe/iron_gear.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "G": {
+            "item": "enderio:grains_of_infinity"
+          },
+          "I": {
+            "tag": "c:ingots/iron"
+          },
+          "N": {
+            "tag": "c:nuggets/iron"
+          }
+        },
+        "pattern": [
+          "NIN",
+          "IGI",
+          "NIN"
+        ],
+        "result": {
+          "count": 1,
+          "id": "enderio:iron_gear"
+        }
+      }
+    },
+    {
+      "id": "industrialforegoing:gold_gear",
+      "source": "industrialforegoing-1.21-3.6.39.jar!data/industrialforegoing/recipe/gold_gear.json",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:gold_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "item": "minecraft:gold_ingot"
+          }
+        },
+        "pattern": [
+          " P ",
+          "P P",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:gold_gear"
+        }
+      }
+    },
+    {
+      "id": "industrialforegoing:iron_gear",
+      "source": "industrialforegoing-1.21-3.6.39.jar!data/industrialforegoing/recipe/iron_gear.json",
+      "recipe": {
+        "neoforge:conditions": [
+          {
+            "type": "neoforge:item_exists",
+            "item": "industrialforegoing:iron_gear"
+          }
+        ],
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "P": {
+            "item": "minecraft:iron_ingot"
+          }
+        },
+        "pattern": [
+          " P ",
+          "P P",
+          " P "
+        ],
+        "result": {
+          "count": 1,
+          "id": "industrialforegoing:iron_gear"
+        }
+      }
+    },
+    {
+      "id": "ironfurnaces:upgrades/upgrade_iron",
+      "source": "ironfurnaces-neoforge-1.21.1-4.3.2.jar!data/ironfurnaces/recipe/upgrades/upgrade_iron.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "#X#",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "c:ingots/iron"
+          },
+          "X": {
+            "tag": "minecraft:stone_tool_materials"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron"
+        }
+      }
+    },
+    {
+      "id": "ironfurnaces:upgrades/upgrade_iron2",
+      "source": "ironfurnaces-neoforge-1.21.1-4.3.2.jar!data/ironfurnaces/recipe/upgrades/upgrade_iron2.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "GXG",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "c:ingots/iron"
+          },
+          "X": {
+            "tag": "c:ingots/copper"
+          },
+          "G": {
+            "tag": "c:glass_blocks/colorless"
+          }
+        },
+        "result": {
+          "id": "ironfurnaces:upgrade_iron2"
+        },
+        "conditions": [
+          {
+            "value": {
+              "type": "neoforge:tag_empty",
+              "tag": "c:ingots/copper"
+            },
+            "type": "neoforge:not"
+          }
+        ]
+      }
+    },
+    {
+      "id": "railcraft:gold_gear",
+      "source": "railcraft-reborn-1.21.1-1.2.12.jar!data/railcraft/recipe/gold_gear.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "a": {
+            "tag": "c:ingots/gold"
+          },
+          "b": {
+            "item": "railcraft:bushing_gear"
+          }
+        },
+        "pattern": [
+          " a ",
+          "aba",
+          " a "
+        ],
+        "result": {
+          "count": 1,
+          "id": "railcraft:gold_gear"
+        }
+      }
+    },
+    {
+      "id": "railcraft:iron_gear",
+      "source": "railcraft-reborn-1.21.1-1.2.12.jar!data/railcraft/recipe/iron_gear.json",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "a": {
+            "tag": "c:ingots/iron"
+          },
+          "b": {
+            "item": "railcraft:bushing_gear"
+          }
+        },
+        "pattern": [
+          " a ",
+          "aba",
+          " a "
+        ],
+        "result": {
+          "count": 1,
+          "id": "railcraft:iron_gear"
+        }
+      }
+    }
+  ],
+  "condition_mods": {
+    "allthemodium": false
+  }
+}

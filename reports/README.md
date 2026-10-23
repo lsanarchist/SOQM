@@ -1,5 +1,91 @@
 # Verification status
 
+## SOQM 0.4.17 — Sophisticated Storage focus links in JEI
+
+Correct the compact ingredient index used to select a physical JEI display
+slot in the pinned Sophisticated Core adapter. The client-only module uses
+JEI's public centring API and preserves the original focus-link conditions,
+recipes, costs and storage state transfer. The supplied log identifies eleven
+storage display entries matching this defect; three other errors mentioned
+in its total have no IDs or traces in the extract.
+
+The real Sponge/MixinExtras transformation changes **one argument** while
+retaining both native `List.get` calls. Actual Core and JEI methods pass
+**830 cases / 14,544 assertions**: **415 correct source/output links** and
+**415 preserved no-link conditions**. Coverage includes all **36 shaped
+source positions** across widths/heights 1–3, all **45 shapeless positions**
+for 1–9 ingredients, either-dimension normalization, grouped/ungrouped displays,
+both focus directions, sparse slots and component-bearing vanilla items.
+With the original Core class, the shaped negative control produces **15 exact
+exceptions**, **8 silent wrong-source links** and **13 already-correct layouts**;
+the reported `US` and `USU` failures are required to reproduce. Applying the
+configuration on the server side leaves the target class unchanged.
+
+Two clean native API builds produce the same **3,520-byte** module. The
+repository gate passes **170 Python tests without skips**, both Node suites,
+generator/localization checks and deterministic package validation. All **12**
+coordinate previews remain fresh. All **129 third-party pins** and the earlier
+Foundry/recipe-conflict fixes remain unchanged.
+
+This probe starts at native Core display specifications with vanilla item
+witnesses and an ItemStack identity helper. It does not register the complete
+Sophisticated Storage mod, initialize actual storage components, launch a
+graphical client or execute crafting, transfer or multiplayer synchronization.
+The full-client playtest remains open.
+
+[Cause, scope and reproduction](../docs/STORAGE_JEI_FIX.md) ·
+[Module and exact build pins](../src/compat/storage-jei-compat/README.md) ·
+[Installation in Ukrainian](../docs/INSTALL.uk.md#відображення-sophisticated-storage-у-jei).
+
+## SOQM 0.4.16 — distinct gear and furnace-upgrade recipes
+
+Correct three groups of overlapping manual grids across nine recipes, retaining
+all gear material costs and both eight-iron-block upgrade routes. Five gear
+layouts change; Copper-to-Iron regains its copper-ingot centre. Three Iron
+Furnaces tag conditions now use the pinned loader's `neoforge:conditions` key.
+
+The offline regression executes all seven recipe handlers, accounts for the
+eleven removed queued definitions, and finds no different-output collisions
+among **474 supported authored shaped recipes**. Its negative control restores
+the actual old definitions and reproduces **all ten conflicting pairs** in the
+three groups. The **149-tag** fixture is bound to dependency pins and authored
+tag inputs.
+
+Actual Minecraft codecs, pattern matching and no-hint `RecipeManager` selection
+pass **748 witness/mirror cases** in an isolated nine-recipe pool with explicit
+vanilla stand-ins for mod items. The old definitions yield 748 ambiguous grids
+and 552 selections of another output; the current definitions yield zero of
+each. The strengthened full-pack server probe compiles against the pinned APIs
+but was not executed in a server.
+
+The repository gate passes **170 Python tests with no skips**, both Node
+suites, generator/localization checks and deterministic installation packaging.
+All 12 coordinate previews remain fresh. The existing Crafting Station
+compatibility JAR and all 129 third-party pins remain unchanged from 0.4.15.
+No new graphical client, world or multiplayer run is claimed.
+
+[Fix, reproduction and limits](../docs/RECIPE_CONFLICT_FIX.md) ·
+[Installation](../docs/INSTALL.en.md#crafting-fixes-in-0417) ·
+[Гравцям українською](../docs/INSTALL.uk.md#виправлення-крафтів-у-0417).
+
+## SOQM 0.4.15 — Crafting Station ingredient consumption
+
+The pinned Modern Foundry 4.1.6 incorrectly writes positioned recipe leftovers
+to compact indices. The new Foundry compatibility module corrects all three
+write arguments. Actual unmodified method bytecode reproduced the reported
+eight-slot sand layout; the real Mixin transformation corrected all three sites.
+The isolated behavior probe passed **868 cases / 12,306 assertions**, including
+64 sand becoming exactly 16 sandstone in each corner of the station.
+
+The module built byte-identically twice. The pack gate passed **162 Python
+tests with no skips**, both Node suites and deterministic packaging. All
+**129 third-party artifacts** passed hash, size and archive verification.
+The code probe uses external-state fixtures; graphical Ctrl input, world
+loading, multiplayer synchronization and all-mod interaction remain untested.
+
+[Cause, evidence and scope](../docs/CRAFTING_STATION_FIX.md) ·
+[Reproducible build and probe](../src/compat/foundry-compat/README.md).
+
 ## SOQM 0.4.14 — Village Guard
 
 Village Guard 0.4.3 replaces all-mob tick polling with target hooks and checks of

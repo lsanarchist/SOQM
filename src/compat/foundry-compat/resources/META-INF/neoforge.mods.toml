@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="qm_foundry_compat"
+version="0.4.15"
+displayName="SOQM Foundry Compatibility"
+authors="Questing Mayhem Rebuild maintainers"
+description='''Corrects Crafting Station ingredient and remainder slot writes in the pinned Modern Foundry 4.1.6 build.'''
+
+[[mixins]]
+config="qm_foundry_compat.mixins.json"
+
+[[dependencies.qm_foundry_compat]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.262]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qm_foundry_compat]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qm_foundry_compat]]
+modId="modernfoundry"
+type="required"
+versionRange="[1.21.1-4.1.6-NeoForge]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.qm_foundry_compat]]
+modId="hilt"
+type="required"
+versionRange="[1.14]"
+ordering="AFTER"
+side="BOTH"

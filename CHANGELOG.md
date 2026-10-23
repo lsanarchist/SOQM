@@ -2,6 +2,57 @@
 
 ## Unreleased
 
+### 0.4.17 — Sophisticated Storage recipe displays in JEI
+
+- Add the client-only `qm-storage-jei-compat-0.4.17.jar` for pinned
+  Sophisticated Core 1.5.14.2413 and JEI 19.64.0.455.
+- Correct the compact ingredient index used to select a centred JEI slot for
+  a source/result focus link. Single-row `US` and `USU` storage recipes were
+  linking an empty slot to one output, causing the reported ingredient-count
+  exception. Shapeless layouts use the same dimension normalization as JEI.
+- Preserve the original focus conditions and all native storage recipes,
+  material costs and component/inventory carryover.
+- Include a native Core/JEI reproduction and regression runner for the actual
+  shipped Mixin. Keep graphical recipe transfer and full-client reload checks
+  explicitly separate from the headless probe.
+- Retain the Foundry duplication fix, workshop recipe disambiguation and all
+  129 third-party pins. The installation candidate is now 0.4.17.
+
+### 0.4.16 — unambiguous workshop recipes
+
+- Give the four iron-gear recipes and three gold-gear recipes distinct crafting
+  layouts, including Minecraft's horizontal mirror matching. Each still uses
+  four plates and the same previous-tier BuildCraft gear. BuildCraft keeps its
+  existing cross layout; ordinary table selection can now distinguish all seven
+  exact outputs without a recipe-book hint.
+- Restore the copper-ingot centre of the Copper-to-Iron Furnace Upgrade.
+  Both iron upgrade routes still cost eight iron blocks, but no longer share
+  the same grid and compete for one result slot.
+- Use `neoforge:conditions` for all three affected Iron Furnaces tag conditions
+  so the pinned NeoForge loader evaluates them.
+- Add regression checks for overlapping shaped inputs, horizontal mirrors,
+  tag alternatives and the actual prior collision examples. Extend the native
+  server fixture to check global recipe selection and competing matches.
+- Retain the 0.4.15 Crafting Station duplication fix and the existing 129
+  third-party version pins. The installation candidate is now 0.4.16.
+
+### 0.4.15 — Modern Foundry crafting ingredient consumption
+
+- Add `qm-foundry-compat-0.4.15.jar` for the pinned Modern Foundry 4.1.6.
+  Its Crafting Station reads positioned ingredients from the correct 3x3
+  slots but writes their remaining stacks to compact recipe indices. Remap
+  all three writes to the physical slots, matching the upstream correction.
+  This fixes displaced ingredients and duplication when crafting sandstone
+  and other recipes smaller than the grid.
+- Keep the official CurseForge dependency pin: the fixed upstream 4.1.8 is
+  available on GitHub but has no CurseForge file in the checked listing.
+  The source-backed compatibility module applies only to 4.1.6 and must be
+  installed on both client and server. Remove it when upgrading to an
+  upstream version that includes the fix.
+- Restore the previous IPN defaults; disabling continuous crafting does not
+  correct this server-side inventory-index bug. Document the cause, exact
+  counted reproduction and remaining graphical checks in both languages.
+
 ### 0.4.14 — Village Guard without global mob polling
 
 - Replace Village Guard's per-tick pass over every mob with target-change hooks

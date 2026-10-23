@@ -25,6 +25,69 @@ Record the release, commit, imported ZIP SHA-256, date, OS, GPU, Java, allocated
 
 These samples do not prove a complete campaign, long-term economic balance or extended-session stability. Performance claims need measurements with machine and test conditions; one machine does not establish universal requirements.
 
+## Modern Foundry Crafting Station
+
+The slot-index defect in the pinned Modern Foundry 4.1.6 is confirmed from its
+code and matches the reported sandstone layout. The compatibility module
+corrects all three writes. The following graphical checks remain unchecked
+until actually performed; offline validation does not complete them.
+
+- [ ] On both client and server, verify Modern Foundry 4.1.6 and
+  `qm-foundry-compat-0.4.15.jar`. Use a separate survival test world.
+- [ ] Put exactly 64 sand into the Crafting Station as four stacks of 16 in
+  the bottom-right 2x2 square. Take one sandstone. Expect **60 sand and one
+  sandstone**, with 15 sand in each original slot and the other five empty.
+- [ ] Repeat in the other three corners. Then use one sand per ingredient
+  slot: one sandstone must consume all four, leaving no further output.
+- [ ] Repeat the user's Ctrl-assisted bulk-craft sequence, recording its click
+  target; also test ordinary pickup and Shift+output pickup. Fully converting
+  64 sand must produce **16 sandstone**. Count inventory, grid, cursor and
+  dropped stacks, including after closing the station and reconnecting.
+- [ ] Repeat with a nearly full inventory and adjacent storage. Confirm no
+  loss or extra output when only part of the result can be moved.
+- [ ] Check a shifted 1x2 recipe such as sticks, a full 3x3 recipe and a recipe
+  that returns a bucket or other container. Remainders must use the actual
+  consumed slots or the normal inventory/drop route.
+- [ ] Confirm JEI ingredient transfer, IPN sorting and ordinary crafting-table
+  behavior still work with the existing settings.
+
+## Workshop recipe selection
+
+- [ ] In an ordinary table, manually arrange each of the four iron gears and
+  three gold gears shown in JEI. Before taking the result, check its exact mod
+  and item ID. Repeat with a horizontally mirrored grid and after `/reload`.
+- [ ] Craft Stone-to-Iron with eight iron blocks around cobblestone, and
+  Copper-to-Iron with eight iron blocks around a copper ingot. Check each
+  token upgrades its intended placed furnace.
+- [ ] Repeat gear and upgrade crafting in the Modern Foundry station and via
+  JEI transfer. Record the five changed gear patterns and Copper-to-Iron
+  upgrade again in AE2 or other existing autocrafting systems.
+- [ ] Confirm one gear consumes four plates and one previous-tier gear, and
+  one iron-upgrade token consumes eight iron blocks and its centre ingredient.
+
+## Sophisticated Storage in JEI
+
+The headless regression exercises the actual pinned Core/JEI focus-link path.
+The following GUI and full-pack checks require a graphical client and remain
+unchecked until performed.
+
+- [ ] Verify `qm-storage-jei-compat-0.4.17.jar`, Core 1.5.14.2413 and
+  JEI 19.64.0.455 in the client. Fully restart it and join the test world.
+- [ ] Open the basic-to-iron chest, barrel, shulker and all four limited-barrel
+  recipes, plus the three double-chest upgrades. No listed storage recipe
+  should show the broken-recipe banner or the focus-link exception in the log.
+- [ ] Check recipe lookup and uses for plain, named and coloured storage.
+  Each displayed source must correspond to the expected result variant.
+- [ ] Transfer a `US` and a `USU` recipe into a crafting grid. Verify the
+  required upgrade item(s), result and quantities; also inspect a full 3x3
+  copper-to-iron recipe.
+- [ ] Craft a named/coloured container containing a known inventory and
+  upgrades. Verify retained components, contents and consumed materials.
+- [ ] Repeat recipe display and lookup after `/reload` and after reconnecting
+  to a dedicated server without the client-only compatibility module.
+- [ ] If any broken-recipe diagnostics remain, record each recipe ID and its
+  complete exception. The supplied extract omitted three nonstorage errors.
+
 ## Public alpha criteria
 
 Require a clean import, successful graphical launch, a tested early survival route, persistent quest progress and no known blockers on that route. Every advertised mode needs its own completed test. Release notes must list known issues and untested branches.

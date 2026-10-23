@@ -136,9 +136,9 @@ ServerEvents.recipes(function(event) {
       "type": "minecraft:crafting_shaped",
       "category": "misc",
       "pattern": [
-        " P ",
-        "PGP",
-        " P "
+        "P P",
+        " G ",
+        "P P"
       ],
       "key": {
         "P": {
@@ -174,9 +174,9 @@ ServerEvents.recipes(function(event) {
         }
       },
       "pattern": [
-        " P ",
-        "PGP",
-        " P "
+        "P P",
+        " G ",
+        "P P"
       ],
       "result": {
         "count": 1,
@@ -204,9 +204,9 @@ ServerEvents.recipes(function(event) {
         }
       },
       "pattern": [
-        " P ",
-        "PGP",
-        " P "
+        "PP ",
+        " G ",
+        " PP"
       ],
       "result": {
         "count": 1,
@@ -252,8 +252,8 @@ ServerEvents.recipes(function(event) {
         }
       },
       "pattern": [
-        " P ",
-        "PGP",
+        "PPP",
+        " G ",
         " P "
       ],
       "result": {
@@ -268,8 +268,8 @@ ServerEvents.recipes(function(event) {
       "type": "minecraft:crafting_shaped",
       "category": "misc",
       "pattern": [
-        " P ",
-        "PGP",
+        "PPP",
+        " G ",
         " P "
       ],
       "key": {
@@ -381,7 +381,7 @@ ServerEvents.recipes(function(event) {
       "result": {
         "id": "ironfurnaces:upgrade_copper"
       },
-      "conditions": [
+      "neoforge:conditions": [
         {
           "value": {
             "type": "neoforge:tag_empty",
@@ -428,13 +428,13 @@ ServerEvents.recipes(function(event) {
           "tag": "c:storage_blocks/iron"
         },
         "S": {
-          "item": "minecraft:cobblestone"
+          "item": "minecraft:copper_ingot"
         }
       },
       "result": {
         "id": "ironfurnaces:upgrade_iron2"
       },
-      "conditions": [
+      "neoforge:conditions": [
         {
           "value": {
             "type": "neoforge:tag_empty",

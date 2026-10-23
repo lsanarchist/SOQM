@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.14
+# Installing SOQM 0.4.17
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.14-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.17-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.14-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.14 asset is not claimed. The
+The current output is `dist/SOQM-0.4.17-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.17 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.14 ZIP and wait for every download. See the
+   select the built 0.4.17 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -42,6 +42,54 @@ directly from a source checkout omits those generated translations.
 
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
+
+## Crafting fixes in 0.4.17
+
+The 0.4.17 candidate includes distinct manual iron/gold gear layouts and a
+copper-ingot centre for the Copper-to-Iron Furnace Upgrade. Update the built
+candidate's `overrides/kubejs/` files on both client and server while stopped,
+or import the complete candidate into a new profile. Restart both sides, use
+JEI to check the new layouts and record affected autocrafting patterns again.
+All seven gear variants still use four plates and the same previous-tier gear;
+both iron furnace upgrade tokens still cost eight iron blocks.
+
+The package includes `qm-foundry-compat-0.4.15.jar` for **Modern Foundry 4.1.6**.
+It corrects the station's ingredient-slot writes when taking a crafted result,
+including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
+close the game and server, add this JAR from the candidate's `overrides/mods/`
+to **both the client and server** `mods/` directories, then restart. An imported
+0.4.17 candidate already includes it. The remaining third-party pins are the
+same as 0.4.14.
+
+The module deliberately requires Modern Foundry 4.1.6. Remove it before a
+coordinated client/server upgrade to an upstream release containing the fix,
+such as 4.1.8. Until the hotfix is installed, use the ordinary Minecraft
+crafting table for this recipe. Changing Ctrl bindings or IPN refill settings
+does not repair the faulty station code. See the
+[cause and validation](CRAFTING_STATION_FIX.md) and
+[counted playtest](PLAYTEST.en.md#modern-foundry-crafting-station).
+
+## Sophisticated Storage displays in JEI
+
+SOQM 0.4.17 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
+`All slots must have the same number of ingredients` exception when JEI
+builds compact storage upgrade recipes. For an existing 0.4.14–0.4.16 profile
+with the pinned mods, close Minecraft, copy this JAR from the candidate's
+`overrides/mods/` into the **client** `mods/` folder, then fully restart the
+client. Every player needs this display fix in their own profile. The
+dedicated server does not need it; SOQM's server materializer excludes it.
+
+The adapter requires **Sophisticated Core 1.5.14.2413**, **JEI 19.64.0.455**,
+Minecraft 1.21.1 and NeoForge 21.1.262. Core reports runtime version `1.5.14`;
+the exact archive is pinned in the pack. Keep these dependencies together.
+Review or remove the adapter before a coordinated dependency update. The fix
+maps the storage ingredient to its actual JEI slot; recipe costs and storage
+state transfer are unchanged. This client JAR alone does not install the
+earlier Foundry or workshop recipe fixes; import the complete 0.4.17 candidate
+to receive all three changes.
+
+See [cause, native reproduction and limits](STORAGE_JEI_FIX.md) and the
+[graphical checks](PLAYTEST.en.md#sophisticated-storage-in-jei).
 
 ## Inventory sorting
 
@@ -79,7 +127,7 @@ as verified. Manual installation requires the exact game/loader/Java above.
    Do not copy the manifest itself or a GitHub source archive into that folder.
 3. Install the **129** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **12** authored modules, these form the SOQM mod set. Remove
+   the package's **13** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.
