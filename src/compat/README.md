@@ -1,6 +1,6 @@
 # Compatibility sources
 
-SOQM 0.4.19 uses **fourteen** authored compatibility modules: ten recovered from
+SOQM 0.4.20 uses **fourteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
 module, the production-evidence adapter, the Foundry crafting fix and the
 Sophisticated Core/JEI display fix. The original eight include full MIT

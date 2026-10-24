@@ -88,9 +88,39 @@ unchecked until performed.
 - [ ] If any broken-recipe diagnostics remain, record each recipe ID and its
   complete exception. The supplied extract omitted three nonstorage errors.
 
+## AE2 recipe transfer in JEI
+
+The missing bridge is identified from the pinned sources and dependency list.
+Archive and source checks do not establish graphical behavior; leave these
+checks unmarked until they have been performed in a running client.
+
+- [ ] Confirm AE2 19.2.18, JEI 19.64.0.455 and AE2 JEI Integration 1.2.1
+  in the client, fully restart it, and join a separate test world or server.
+- [ ] Use a powered ME network with a Crafting Terminal. Keep the required
+  materials only in ME storage, with the player inventory and crafting grid
+  empty. Do not add a crafting CPU or patterns for this ordinary transfer test.
+- [ ] While the terminal is open, press **R** over an item in JEI and select
+  its **Crafting** recipe. Confirm **+ / Move Items** appears in that recipe
+  view; it is not expected beside the terminal's native 3x3 grid.
+- [ ] Transfer a shaped recipe such as sandstone and take its output. Check
+  the displayed ingredients and counts across ME storage, the grid, inventory
+  and cursor before and after crafting, including repeated crafts.
+- [ ] Transfer a shapeless recipe such as planks from a log, then a recipe
+  accepting tags such as sticks from planks. Repeat the tag case with a
+  different accepted plank variant stored only in ME; the owned variant must
+  be used, and empty recipe positions must remain correct.
+- [ ] Remove a required ingredient. Confirm the transfer control reports the
+  missing material and does not create it. Refill ME storage and confirm
+  transfer works again; record separately the case where all inputs are absent.
+- [ ] Reconnect to a dedicated server with AE2 but without this client bridge.
+  Repeat transfer and an ordinary crafting-table JEI transfer. Check the client
+  log for integration errors and verify inventory counts after reconnecting.
+
+See [the cause and installation instructions](AE2_JEI_INTEGRATION.md).
+
 ## Quest reward quantities
 
-- [ ] In the 0.4.19 quest book, no reward catalogue contains a backpack, boat,
+- [ ] In the 0.4.20 quest book, no reward catalogue contains a backpack, boat,
   raft or Masa. Claim rewards individually and through Claim All; none of those
   items should be awarded, including after manufacturing them.
 - [ ] Check the replacement entries and quantities per draw: 8 golden carrots,

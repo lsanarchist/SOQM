@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **129 pinned third-party dependencies**. SOQM 0.4.19 additionally
+The table lists **130 pinned third-party dependencies**. SOQM 0.4.20 additionally
 ships **14 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -21,6 +21,11 @@ see [the crafting fix](docs/CRAFTING_STATION_FIX.md).
 error for compact storage recipes in JEI. This module is client-only; see
 [the storage display fix](docs/STORAGE_JEI_FIX.md).
 
+AE2 JEI Integration 1.2.1 restores JEI ingredient transfer into AE2 crafting
+terminals, machine recipe displays and ghost ingredients. It is marked `client`
+because transfers use the packet already supplied by AE2 on the server. See
+[the AE2 recipe-transfer fix](docs/AE2_JEI_INTEGRATION.md).
+
 Inventory Profiles Next uses libIPN and Kotlin for Forge. All three are marked
 `client` here because only the client inventory tools need them in SOQM; the
 dedicated-server harness excludes this dependency chain. Kotlin for Forge can
@@ -38,6 +43,7 @@ lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynami
 | Abridged | 2.0.2 | both (baseline) | [project 948999 / file 8327782](https://www.curseforge.com/minecraft/mc-mods/abridged/files/8327782) |
 | Ad Astra | 1.16.26 | both (baseline) | [project 635042 / file 8874894](https://www.curseforge.com/minecraft/mc-mods/ad-astra/files/8874894) |
 | Ad Astra: More Structures | 1.0.2 | both | [project 1311898 / file 8762665](https://www.curseforge.com/minecraft/mc-mods/ad-astra-more-structures/files/8762665) |
+| AE2 JEI Integration | 1.2.1 | client | [project 1074338 / file 7727898](https://www.curseforge.com/minecraft/mc-mods/ae2-jei-integration/files/7727898) |
 | AE_Better_Villagers | 1.15.1.b | both (baseline) | [project 1148167 / file 5956265](https://www.curseforge.com/minecraft/mc-mods/ae2-better-villagers/files/5956265) |
 | Apotheosis | 8.9.0 | both (baseline) | [project 313970 / file 8993983](https://www.curseforge.com/minecraft/mc-mods/apotheosis/files/8993983) |
 | Apothic Attributes | 2.11.0 | both (baseline) | [project 898963 / file 9006294](https://www.curseforge.com/minecraft/mc-mods/apothic-attributes/files/9006294) |
