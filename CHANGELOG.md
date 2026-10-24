@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+### 0.4.20 — JEI recipe transfer into ME crafting terminals
+
+- Add the missing AE2 JEI Integration 1.2.1 client dependency, pinned to official
+  CurseForge project 1074338 / file 7727898. AE2's Minecraft 1.21.1 release no
+  longer bundles this JEI bridge, so the terminal had no recipe-transfer handler.
+- Restore the JEI recipe-view transfer button for AE2 crafting terminals through
+  the upstream integration. It uses the existing AE2 server transfer packet;
+  normal ingredient transfer does not require crafting CPUs or encoded patterns.
+- Keep AE2 19.2.18, JEI 19.64.0.455 and all previous 129 third-party pins unchanged.
+  There are now 130 third-party dependencies and the same 14 authored modules.
+  The integration contributes no data-pack recipes or ingredient tags.
+- Document client-only installation, the terminal → recipe view → transfer
+  workflow, and graphical acceptance checks. Refresh the recipe-collision
+  fixture's lock provenance without changing its captured tags or recipes.
+- Preserve the existing Foundry/JEI fixes, quest progression and consumable
+  rewards. The installation candidate is SOQM 0.4.20.
+
 ### 0.4.19 — consumable quest rewards
 
 - Remove all backpack, boat and raft bodies from random quest rewards. Replace
