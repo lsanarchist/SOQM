@@ -40,8 +40,8 @@ class RecipeRefundTests(unittest.TestCase):
         runtime = rewards.runtime_policy(chapters)
         self.assertEqual(before, rewards.persistent_ids(chapters))
         self.assertEqual(task_before, [q["tasks"] for c in chapters for q in c["quests"]])
-        self.assertEqual(report["personal_rewards"], 1643)
-        self.assertEqual(report["progressive_rewards"], 1449)
+        self.assertEqual(report["personal_rewards"], 1655)
+        self.assertEqual(report["progressive_rewards"], 1461)
         self.assertEqual(report["milestone_cubes"], 222)
         self.assertEqual(report["milestone_quests"], 193)
         by_quest = {q["id"]: q for c in chapters for q in c["quests"]}

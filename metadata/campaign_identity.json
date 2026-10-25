@@ -1,11 +1,11 @@
 {
   "base_commit": "e71db8398ddc9f07e85981fac942f52dd23f447d",
   "serialization": "SHA-256 of sorted compact JSON; see campaign_refresh.persistent_identity",
-  "sha256": "609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87",
+  "sha256": "23e33eda8168fd752437188882c377d5bab857f54d5a91b9760770f2df9d402a",
   "chapters": 37,
-  "quests": 1642,
-  "tasks": 1927,
-  "outer_rewards": 1643,
+  "quests": 1654,
+  "tasks": 1940,
+  "outer_rewards": 1655,
   "previous_claim_scope": {
     "sha256": "e9fb2c693355dce90040978a67996f1a1a209f6e0b838c6890c9cc0c58d9ad2b",
     "base_commit": "72bd75d131a986afe9cf0d11580fdcaf009a208a",
@@ -163,5 +163,77 @@
       "514D11FF5A4363E6"
     ],
     "migration": "Fifteen new lessons and fourteen existing MekaSuit/MekaTool quests moved to Equipment, retaining their IDs. Twenty-nine existing direct cube claims increase from 1 to 2; moved quests use the equipment reward theme. Claimed personal rewards remain claimed without top-up. Strict reconstruction validates the exact prior objectives, owners, claim scopes and reward content."
+  },
+  "previous_dimensional_dungeons": {
+    "base_commit": "46b9bdab3a87271360e4588e4f370300510be63e",
+    "sha256": "609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87",
+    "contract_sha256": "116ec912172687d0306ab9496ec119deeaca608a8f10db22020af68af22e9b9a",
+    "added_quests": [
+      "514E110000000001",
+      "514E110000000002",
+      "514E110000000003",
+      "514E110000000004",
+      "514E110000000005",
+      "514E110000000006",
+      "514E110000000007",
+      "514E110000000008",
+      "514E110000000009",
+      "514E11000000000A",
+      "514E11000000000B",
+      "514E11000000000C"
+    ],
+    "added_tasks": [
+      "514E120000000001",
+      "514E120000000002",
+      "514E12000000000D",
+      "514E120000000003",
+      "514E120000000004",
+      "514E120000000005",
+      "514E120000000006",
+      "514E120000000007",
+      "514E120000000008",
+      "514E120000000009",
+      "514E12000000000A",
+      "514E12000000000B",
+      "514E12000000000C"
+    ],
+    "added_rewards": [
+      "514E130000000001",
+      "514E130000000002",
+      "514E130000000003",
+      "514E130000000004",
+      "514E130000000005",
+      "514E130000000006",
+      "514E130000000007",
+      "514E130000000008",
+      "514E130000000009",
+      "514E13000000000A",
+      "514E13000000000B",
+      "514E13000000000C"
+    ],
+    "added_images": [
+      "514E150000000001",
+      "514E150000000002",
+      "514E150000000003",
+      "514E150000000004",
+      "514E150000000005",
+      "514E150000000006",
+      "514E150000000007",
+      "514E150000000008",
+      "514E150000000009",
+      "514E140000000001",
+      "514E140000000002",
+      "514E140000000003",
+      "514E140000000004",
+      "514E140000000005",
+      "514E140000000006",
+      "514E140000000007",
+      "514E140000000008",
+      "514E140000000009",
+      "514E14000000000A",
+      "514E14000000000B",
+      "514E14000000000C"
+    ],
+    "migration": "Twelve optional DD quests add thirteen non-consuming native tasks, twelve personal progressive expedition rewards and twenty-one canvas images. Existing chapter ownership, tasks, rewards, dependencies, optional status, repeatability and personal claim keys remain unchanged. Removing only these additions reconstructs the exact prior 0.4.21 book; player data is never rewritten."
   }
 }

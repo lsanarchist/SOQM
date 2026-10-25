@@ -22,6 +22,8 @@ material milestones and guided production routes.
   behavior and drops while gaining an Elite Mobs ability and Apotheosis tier augments.
   DivineRPG bosses have an 85% enhancement chance in their native dimensions
   and the Overworld; ordinary DivineRPG hostiles have a 12% chance.
+  Follow 12 optional quests in chapter 23 for portal construction, key activation,
+  advanced dungeons and trophies, with a personal expedition reward at each step.
 - **Demanding late-game crafting:** connect production across mods to make custom
   components and work towards Re-Avaritia recipes.
 - **Personal, progressive rewards:** every teammate can claim a quest reward.

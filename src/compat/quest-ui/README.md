@@ -1,4 +1,4 @@
-# Quest and HUD Help 0.4.7
+# Quest and HUD Help 0.4.8
 
 Pack-owned client adapter for the exact SOQM Minecraft 1.21.1 / NeoForge
 21.1.262 dependency set. Existing quest-item names, mod names and JEI recipe/use
@@ -7,8 +7,9 @@ quests, Jade, Ad Astra, Mekanism and RFTools HUD geometry. Version 0.4.4 fixes
 the first-world-render stack overflow with Xaero's automatic minimap size.
 Version 0.4.6 removed Masa from the reward catalogue and explained the server's
 one-copy limit for each identical unstackable item per claim. Version 0.4.7
-replaces backpack and boat prizes with reviewed consumable rewards. Both updates
-preserve every class from the reviewed 0.4.5 artifact.
+replaces backpack and boat prizes with reviewed consumable rewards. Version 0.4.8
+adds previews for the 12 personal Dimensional Dungeons rewards. These resource
+updates preserve every class from the reviewed 0.4.5 artifact.
 
 See [HUD_LAYOUT.md](../../../docs/HUD_LAYOUT.md) for player controls, automatic
 existing-instance behavior, audited overlays, pinned sources and limitations.
@@ -53,7 +54,8 @@ The number of milestone quests remains 193. The allocation uses stable quest
 IDs, excludes bundled recipe refunds, and does not change cube contents or
 random rolls. Existing claims keep their IDs, so already claimed rewards are
 not issued again. The 15 added equipment quests use ordinary personal packs
-and do not alter this fixed baseline.
+and do not alter this fixed baseline. The 12 optional dungeon quests also use
+ordinary personal Expedition packs without adding cube milestones.
 
 ## Design
 
@@ -84,9 +86,9 @@ or config rewriting occurs. All hooks are in the client list of the production
 Mixin config. The mod entrypoint registers only a common config definition and
 does not load rendering classes on a dedicated server.
 
-## Reproducible 0.4.7 resource update
+## Reproducible 0.4.8 resource update
 
-The shipped 0.4.7 artifact is a resource-only update of the reviewed 0.4.5 JAR.
+The shipped 0.4.8 artifact is a resource-only update of the reviewed 0.4.5 JAR.
 Save that JAR outside `overrides/mods` before updating; its required SHA-256 is:
 
 ```text
@@ -98,7 +100,7 @@ After regenerating the campaign catalogue, reproduce the update with Python 3.11
 ```sh
 python3 src/compat/quest-ui/build.py \
   --resource-only-from /path/to/saved/qm-quest-ui-0.4.5.jar \
-  --output /tmp/qm-quest-ui-0.4.7.jar
+  --output /tmp/qm-quest-ui-0.4.8.jar
 python3 -m unittest discover -s tests -p test_quest_ui_resource_build.py
 ```
 
@@ -120,8 +122,9 @@ compilation instead. The shipped catalogue check rejects backpack, boat, raft
 and Masa prizes in both random pools and guaranteed item lists.
 
 The native 0.4.5 build and probe results are historical evidence for the unchanged
-classes. No Java compilation, native Mixin probe, server or Minecraft client run
-is claimed for the 0.4.7 resource update.
+classes. The 0.4.8 module does not recompile Java or rerun native Mixin transforms.
+See the campaign's [verification report](../../../reports/README.md) for current
+catalogue and server checks; no graphical client playtest is claimed.
 
 ## Native compilation and native gate
 

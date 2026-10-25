@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "base_commit": "46b9bdab3a87271360e4588e4f370300510be63e",
+  "identity_sha256": "609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87",
+  "contract_sha256": "116ec912172687d0306ab9496ec119deeaca608a8f10db22020af68af22e9b9a",
+  "contract_fields": [
+    "chapter",
+    "tasks",
+    "rewards",
+    "dependencies",
+    "optional",
+    "can_repeat"
+  ],
+  "added_quests": {
+    "514E110000000001": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "1c2bbb8cbb3f0eccdaaf79e81dc6f7c4ca6f79748dfdb211d5a50b71a490c1ab",
+      "rewards_sha256": "bf7d6b14afe406d42614c6c8d216c1b5067ddb82e387b2115f8ccf2ffd0c63ba",
+      "dependencies": [
+        "514D010000000002"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000001"
+      ],
+      "reward_ids": [
+        "514E130000000001"
+      ]
+    },
+    "514E110000000002": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "d06b74cc5a31fe9e7335d4a87d39097ee8e88b4999391a5e8777bdf607ac1d5e",
+      "rewards_sha256": "e34492243a0e9fa3f26eb865475ba075b84f8c985fbed6b774f6a02611c4bdfc",
+      "dependencies": [
+        "514E110000000001"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000002",
+        "514E12000000000D"
+      ],
+      "reward_ids": [
+        "514E130000000002"
+      ]
+    },
+    "514E110000000003": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "99467e0a3b51714331eb58c6e505200d27911ade97a3024b67a2036a69ed7f64",
+      "rewards_sha256": "6d48583a60d3e97ea1b95bb0dd05664be3e0ea2e292b08e7042cdd7e322577a8",
+      "dependencies": [
+        "514E110000000002"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000003"
+      ],
+      "reward_ids": [
+        "514E130000000003"
+      ]
+    },
+    "514E110000000004": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "1b0b2ef862671e7b93248ff94ab52c233c4d7c4dac093a28b6d508261a9be07f",
+      "rewards_sha256": "551745d35e150dddbdbcab036f43c133ac47670bb0ec2ab0b630e48eabffb036",
+      "dependencies": [
+        "514E110000000003"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000004"
+      ],
+      "reward_ids": [
+        "514E130000000004"
+      ]
+    },
+    "514E110000000005": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "88f1dd94876fbe81406eac033da9fc96d6ab16036da9d6e62085c4678516cbcb",
+      "rewards_sha256": "67587c4340aa07778da4ab8164c1ed7fb92b79cb6fd8873b162748a0834fbed4",
+      "dependencies": [
+        "514E110000000004"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000005"
+      ],
+      "reward_ids": [
+        "514E130000000005"
+      ]
+    },
+    "514E110000000006": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "df5381ac61615f64d3229bd42c9aa7743b46d98c0d8983361d7bec42d5223a69",
+      "rewards_sha256": "5769682fff729326cce171527598e0b2745021a86bd79de1332120cd85a9b93b",
+      "dependencies": [
+        "514E110000000003"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000006"
+      ],
+      "reward_ids": [
+        "514E130000000006"
+      ]
+    },
+    "514E110000000007": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "853625bc3feb23d17388992cd05999526a5746306d3667235dde60b8a547ed69",
+      "rewards_sha256": "e5a797d0b1e51fcf0b2806a7fc1f2f843907eac78f1805e328bdeb4feba64438",
+      "dependencies": [
+        "514E110000000005"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000007"
+      ],
+      "reward_ids": [
+        "514E130000000007"
+      ]
+    },
+    "514E110000000008": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "8592fbbda3566cb771ab6d1b61a87d079d480cbb1e36de6a84e465b5693d936d",
+      "rewards_sha256": "67fd6dfa3e6edb1d64fb36ecdf6f2ed1a507a6aa1f16f83b6f6e184d25aabbfd",
+      "dependencies": [
+        "514E110000000005"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000008"
+      ],
+      "reward_ids": [
+        "514E130000000008"
+      ]
+    },
+    "514E110000000009": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "e3ecae7e92ada0a70465d033fefc1c9e9d39bff18bb15cb5aa23799f4c3dbb25",
+      "rewards_sha256": "af0ba99d1c904c9b2bb468d3d9824c7a52a83f99947cd4317e842dd72b3ba87d",
+      "dependencies": [
+        "514E110000000005"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E120000000009"
+      ],
+      "reward_ids": [
+        "514E130000000009"
+      ]
+    },
+    "514E11000000000A": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "3fa5c3ffc50d429821f8dc72338151650ca8d04544b00d32f29ac1b545f5aac2",
+      "rewards_sha256": "db5dfc6e114235053f569ac4e926d6c6c6130b25e3cfbca2e0f45dc5f31798b0",
+      "dependencies": [
+        "514E110000000005"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E12000000000A"
+      ],
+      "reward_ids": [
+        "514E13000000000A"
+      ]
+    },
+    "514E11000000000B": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "ceafa6b54f3a9cd5022d4bcfccdd56d248192dd05a73c7335d4f901b93e1f6ed",
+      "rewards_sha256": "294dfc86d86e3c8276612b92ee875057ad45ae2d0312e0d6586b409935ac4b87",
+      "dependencies": [
+        "514E110000000009",
+        "514E11000000000A"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E12000000000B"
+      ],
+      "reward_ids": [
+        "514E13000000000B"
+      ]
+    },
+    "514E11000000000C": {
+      "chapter": "qm_07_exploration",
+      "tasks_sha256": "f765e39fe5cdefbf111fe34f153e64232b507bd077055d1bb308fc011d0e447f",
+      "rewards_sha256": "9016ef76bb2e4db956e0b704a476f7000032e842dcb5381c34055aafa32c51ca",
+      "dependencies": [
+        "514E110000000005"
+      ],
+      "optional": true,
+      "task_ids": [
+        "514E12000000000C"
+      ],
+      "reward_ids": [
+        "514E13000000000C"
+      ]
+    }
+  },
+  "added_images": {
+    "514E150000000001": "qm_07_exploration",
+    "514E150000000002": "qm_07_exploration",
+    "514E150000000003": "qm_07_exploration",
+    "514E150000000004": "qm_07_exploration",
+    "514E150000000005": "qm_07_exploration",
+    "514E150000000006": "qm_07_exploration",
+    "514E150000000007": "qm_07_exploration",
+    "514E150000000008": "qm_07_exploration",
+    "514E150000000009": "qm_07_exploration",
+    "514E140000000001": "qm_07_exploration",
+    "514E140000000002": "qm_07_exploration",
+    "514E140000000003": "qm_07_exploration",
+    "514E140000000004": "qm_07_exploration",
+    "514E140000000005": "qm_07_exploration",
+    "514E140000000006": "qm_07_exploration",
+    "514E140000000007": "qm_07_exploration",
+    "514E140000000008": "qm_07_exploration",
+    "514E140000000009": "qm_07_exploration",
+    "514E14000000000A": "qm_07_exploration",
+    "514E14000000000B": "qm_07_exploration",
+    "514E14000000000C": "qm_07_exploration"
+  },
+  "migration": "Twelve optional DD quests add thirteen non-consuming native tasks, twelve personal progressive expedition rewards and twenty-one canvas images. Existing chapter ownership, tasks, rewards, dependencies, optional status, repeatability and personal claim keys remain unchanged. Removing only these additions reconstructs the exact prior 0.4.21 book; player data is never rewritten."
+}

@@ -1,5 +1,9 @@
 # SOQM: особисті прогресивні нагороди / Progressive personal rewards
 
+**0.4.21 — квести Dimensional Dungeons:** 12 нових необов’язкових квестів отримали окремі особисті пакунки Expedition. Усі 1643 попередні ID і claims зберігаються; загалом тепер 1655 зовнішніх нагород. Кількість кубів (222), рубежів (193), компенсацій і правила виробничих відкриттів не змінені. Прев’ю нових нагород містить Quest UI 0.4.8.
+
+**0.4.21 — Dimensional Dungeons quests:** 12 new optional quests have separate personal Expedition packs. All 1643 prior IDs and claims are preserved, bringing the total to 1655 outer rewards. The 222 cubes, 193 milestones, refunds and manufacturing requirements are unchanged. Quest UI 0.4.8 includes the new previews.
+
 **Кожен учасник отримує власний пакунок за завершений звичайний квест. Пакунок виконує 3–5 незалежних жеребкувань тематичних призів; дорогий предмет стає доступним лише після фактичного виготовлення цього самого предмета командою.** Кількість жеребкувань і ваги рідкостей зростають із виробничими відкриттями. Отримання ручне, одноразове й особисте.
 
 **Every member can claim a personal pack for a completed ordinary quest. A pack performs 3–5 independent themed prize draws; an expensive item becomes eligible only after the team has actually manufactured that exact item.** Production discoveries increase the number of draws and the weights of higher rarities. Claims are manual, personal and one-time.
@@ -49,10 +53,11 @@ This change preserves all **1643** existing outer IDs and personal claim history
 
 | Частина системи / System part | Кількість / Count |
 | --- | ---: |
-| Зовнішні ID нагород загалом / Total outer reward IDs | 1643 |
+| Зовнішні ID нагород загалом / Total outer reward IDs | 1655 |
 | Зовнішні ID нагород, збережені при цьому оновленні / Outer reward IDs preserved by this update | 1643 |
 | Особисті нагороди спорядження, додані в попередньому розширенні / Personal equipment rewards added in the earlier expansion | 15 |
-| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1449 |
+| Особисті нагороди Dimensional Dungeons, додані в 0.4.21 / Personal dungeon rewards added in 0.4.21 | 12 |
+| Звичайні квести з особистим прогресивним пакунком / Ordinary quests with a personal progressive pack | 1461 |
 | Рубежі з особистим фіксованим Mayhem Cube / Milestones with a personal fixed Mayhem Cube | 193 |
 | Гарантовані куби загалом на гравця / Total guaranteed cube units per player | 222 |
 | Наявні нагороди, збільшені з одного до двох кубів / Existing claims increased from one to two cubes | 29 |
@@ -60,7 +65,7 @@ This change preserves all **1643** existing outer IDs and personal claim history
 | Квести з гарантованою компенсацією / Quests with guaranteed crafting refunds | 41 |
 | Компенсація разом із пакунком / Refund plus the original pack | 32 |
 | Компенсація разом із кубом / Refund plus the original cube | 9 |
-| Нативні custom reward objects / Native custom reward objects | 1458 |
+| Нативні custom reward objects / Native custom reward objects | 1470 |
 | Окремі фіксовані cube item reward objects / Standalone fixed cube item reward objects | 184 |
 | Тематичні пули / Themes | 14 |
 | Позиції повного каталогу / Catalogue entries | 324 |
@@ -373,9 +378,9 @@ Production facts and claim state are separate records. Delivery uses native `Ite
 
 ## Фіксовані рубежі / Fixed milestones
 
-Куби є у **193 із 1642 квестів: 11,75%, або приблизно 11,8%**. Ці рубежі охоплюють зібрані установки IE, ключові кроки Mekanism та AE2, автоматизацію Ex Deorum/Ex Machinis, розвиток сховищ, босів і нові виміри. Рівень куба не перевищує внутрішнього рівня квесту. У главі навичок кубів немає: вона повторює вже винагороджені матеріальні рубежі.
+Куби є у **193 із 1654 квестів: 11,67%, або приблизно 11,7%**. Ці рубежі охоплюють зібрані установки IE, ключові кроки Mekanism та AE2, автоматизацію Ex Deorum/Ex Machinis, розвиток сховищ, босів і нові виміри. Рівень куба не перевищує внутрішнього рівня квесту. У главі навичок кубів немає: вона повторює вже винагороджені матеріальні рубежі.
 
-Cubes appear in **193 of 1642 quests: 11.75%, or approximately 11.8%**. These milestones cover IE structures, major Mekanism/AE2 steps, Ex Deorum/Ex Machinis automation, storage progress, bosses and new dimensions. A cube's tier never exceeds the quest's internal progression level. The skills chapter has no extra cubes because it repeats already rewarded material milestones.
+Cubes appear in **193 of 1654 quests: 11.67%, or approximately 11.7%**. These milestones cover IE structures, major Mekanism/AE2 steps, Ex Deorum/Ex Machinis automation, storage progress, bosses and new dimensions. A cube's tier never exceeds the quest's internal progression level. The skills chapter has no extra cubes because it repeats already rewarded material milestones.
 
 Поточне збільшення стосується кількості кубів, а не кількості рубежів: **193 → 222**, тобто **29 / 193 × 100 = 15,0259%**. [`cube_reward_bonus.json`](../metadata/cube_reward_bonus.json) фіксує базовий commit, усі 193 початкові рубежі та 29 вибраних quest ID. За рівнями T0–T6 додано відповідно **1, 4, 6, 7, 5, 4, 2** куби. У 184 прямих item reward objects тепер міститься 213 кубів; дев’ять custom-наборів із компенсацією зберігають ще дев’ять. Кількість і вибір не залежать від випадкового роллу та не перераховуються через додавання нових квестів. Внутрішні події, вибухи й випадковий вміст кубів не змінено.
 

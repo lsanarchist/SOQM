@@ -37,6 +37,9 @@ class CampaignPresentationTests(unittest.TestCase):
         expected = load(ROOT / "metadata/campaign_identity.json")
         self.assertEqual(expected['base_commit'], 'e71db8398ddc9f07e85981fac942f52dd23f447d')
         self.assertEqual(refresh.persistent_identity(self.chapters, self.groups), expected['sha256'])
+        before_dungeons = compatibility.previous_dimensional_dungeons(self.chapters)
+        self.assertEqual(refresh.persistent_identity(before_dungeons, self.groups),
+                         '609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87')
         before_hardcore = compatibility.previous_hardcore_workshop(self.chapters)
         hardcore = expected['previous_hardcore_workshop']
         self.assertEqual(hardcore['base_commit'], '95421eeda09f2e3447e6e9d3189a1e43d9c41381')
@@ -83,7 +86,7 @@ class CampaignPresentationTests(unittest.TestCase):
         quest = next(q for chapter in changed for q in chapter['quests']
                      if q['id'] in snapshot['rewards'])
         quest['rewards'][0]['team_reward'] = True
-        with self.assertRaisesRegex(ValueError, 'Unreviewed hardcore rewards'):
+        with self.assertRaisesRegex(ValueError, 'Unreviewed hardcore rewards|unreviewed original'):
             compatibility.previous_hardcore_workshop(changed)
         changed = copy.deepcopy(self.chapters)
         source, destination = changed[:2]
@@ -100,6 +103,19 @@ class CampaignPresentationTests(unittest.TestCase):
         self.assertEqual(locale, self.uk)
         english, _ = localize_english.generate()
         self.assertEqual(json.loads(english), self.en)
+
+    def test_pinned_upstream_names_allow_comments_without_corrupting_string_content(self):
+        expected = {"url": "https://example.test/a//b", "literal": "/* keep this */",
+                    "quote": 'escaped " // text', "label": "first line\nsecond line"}
+        encoded = json.dumps(expected, ensure_ascii=False)
+        # Pinned DD assets use comments and literal newlines accepted by Gson.
+        source = "{ // heading\n /* block comment */ " + encoded[1:]
+        source = source.replace("\\n", "\n")
+        self.assertEqual(localize_english.load_upstream_json(source), expected)
+        self.assertEqual(localize_english.load_upstream_json(source.encode("utf-8")), expected)
+        for malformed in ('{"value": 1,}', '{"value": /* unterminated}'):
+            with self.subTest(source=malformed), self.assertRaises(json.JSONDecodeError):
+                localize_english.load_upstream_json(malformed)
 
     def test_main_route_is_first_with_a_visible_material_spine(self):
         route = self.by_filename[layout.ROUTE_CHAPTER]

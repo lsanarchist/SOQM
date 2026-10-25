@@ -1,6 +1,100 @@
 # Verification status
 
+## SOQM 0.4.21 — optional Dimensional Dungeons quests
+
+The additive chapter-23 branch contains **12 optional quests**, **13 tasks**
+and **12 personal Expedition rewards**. The complete book now has **1,654
+quests, 1,940 tasks and 1,655 outer rewards** across 37 chapters. There are
+still 193 cube milestones, 222 guaranteed cube units and 41 crafting refunds.
+
+Validation on **2026-10-25** passed `./scripts/check`: **196 Python tests
+without skips**, both JavaScript policy suites, generator/localization
+freshness, source/binary provenance and deterministic installation packaging.
+The existing coordinate previews also pass their freshness check. All 131
+third-party pins are byte-for-byte unchanged from the pre-quest commit.
+
+The additive compatibility boundary reconstructs the exact previous book:
+
+- Baseline commit: `46b9bdab3a87271360e4588e4f370300510be63e`.
+- Prior saved identity: `609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87`.
+- Prior full quest/task/reward/dependency contract: `116ec912172687d0306ab9496ec119deeaca608a8f10db22020af68af22e9b9a`.
+- Current saved identity: `23e33eda8168fd752437188882c377d5bab857f54d5a91b9760770f2df9d402a`.
+
+Old objectives, owners, personal claims, prerequisites and optional flags are
+checked before older historical snapshots. Negative controls reject changed
+old tasks/claims, a new dependency on the dungeon branch, and shared scope on
+a new personal reward. Item tasks do not consume their inventory matches;
+activation, entry and collection tasks use all required native advancement
+criteria. The upstream-name reader preserves quoted URLs and comment-like
+text while accepting the comments/literal newlines present in pinned DD assets.
+
+Quest UI **0.4.8** is a deterministic resource update: both real rebuilds produced
+the same **134,881-byte** JAR with SHA-256
+`04d8651f16f83d8e82e63535ec70030c1a0d768730a06c2f47ae03942fcbb6d7`.
+Its complete set of 41 classes remains byte-identical to the reviewed 0.4.5
+baseline. The resource regression suite checks class/resource identity and
+rejects changed Java, mixins, dependencies or resource paths. This update does
+not claim a new graphical-client or Mixin-transformation run.
+
+The locked production payload remains **1,861 files**. Its manifest SHA-256 is
+`001c87b666747d77e215319d8b0d2009def27d6e7d89d33c12cf20235c933d25`.
+The locally verified installation ZIP is **3,018,626 bytes**, SHA-256
+`1419119443ff4e7d4221699fc057fcc02006422da1a0cd6f9df8878737abf858`.
+
+
+### Native quest and save validation
+
+The isolated full-pack server passed **7,908 assertions** against the locked
+payload, with no development override. All 12 quests, 13 tasks and eight native
+DD advancements loaded and completed through real inventory/criterion handlers.
+The native recipe manager matched and assembled `recipe_item_guidebook_2` into
+the exact DD Patchouli book. Another book was rejected; a correct book with an
+extra custom name was accepted. The obsolete duplicate guide recipe still logs
+an upstream warning, while its valid vanilla alternate provides the survival craft.
+
+DD's actual basic-key ritual and basic/advanced teleport routines granted the
+expected criteria. The native inventory predicates accepted all three charger
+variants, rejected one crown before accepting two, and required all eight trophy
+types acquired over time. Quest detection preserved every inventory component.
+
+Two party members made **24 successful personal claims** through FTB's real
+reward request handler. A premature request was rejected, as were **24 duplicate
+requests before reload and 24 after an independent disk read/resource reload**.
+The real Expedition command exposed 12 eligible entries for each recipient;
+there was no silent pool fallback and no `[SOQM rewards]` warning in the
+KubeJS server log.
+
+The pre-branch fixture retained all **1,642 old quests, 1,927 tasks and 1,643
+reward IDs**. Its nonempty historical sample contained 24 completed quests,
+40 partial tasks and 25 personal claim timestamps. Independent native reads
+preserved that snapshot, all new completions, eight advancements and 24 new
+personal claims. Recipes reloaded **20,062 → 20,062**; KubeJS startup/server
+and fatal-server errors were all zero. The server saved and exited with code
+**0**, without forced termination, in **80.81 seconds**. Production files
+remained unchanged.
+
+Reproduce with the pinned dependency cache and installed NeoForge runtime:
+
+```sh
+python3 tests/runtime/dungeon-quests/run_probe.py \
+  --runtime <installed-neoforge-server> --java <java-21> \
+  --accept-eula --timeout 1200
+```
+
+The detailed result is `reports/dungeon-quest-probe.json`; fixture and runner
+are under `tests/runtime/dungeon-quests/` and never enter the installation ZIP.
+This gate invokes native task/request handlers with real server objects and a
+packet sink. It verifies disk reads and resource reload, without claiming a JVM
+restart, automatic polling schedule, GUI/network transport or graphical playtest.
+The teleport fixture supplies a minimal native room descriptor; it does not
+claim a player-built portal, full dungeon generation or dungeon clearance.
+
 ## SOQM 0.4.21 — Dimensional Dungeons and DivineRPG elite encounters
+
+The encounter and loot results in this section were recorded before the
+12-quest addition, at commit `46b9bdab3a87271360e4588e4f370300510be63e`.
+They apply to the unchanged encounter/chest modules and their reviewed
+pre-quest payload; the current quest checks are documented separately.
 
 Validation completed on **2026-10-25** against the locked installation payload:
 **131** pinned third-party dependencies, **15** authored modules and **1,861**

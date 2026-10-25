@@ -26,6 +26,14 @@
   pottery supply kits that bypassed costly workshop recipes.
 - Rebuild chest balance as 0.4.21, document full client/server installation and
   keep exploration optional, without adding a technology quest gate.
+- Add 12 optional Dimensional Dungeons quests in chapter 23, from the exact
+  Patchouli guide and portal components to actual key activation, dungeon entry,
+  advanced access and all eight trophies. Use the mod's native advancements for
+  its rituals and exploration goals; inventory objectives do not consume items.
+- Add 12 personal expedition rewards and their Quest UI 0.4.8 previews. Preserve
+  every existing quest/task/reward ID, prerequisite and personal claim; retain
+  the same 193 cube milestones and 222 cube units. The book now contains 1654
+  quests, 1940 tasks and 1655 outer rewards across the same 37 chapters.
 
 ### 0.4.20 — JEI recipe transfer into ME crafting terminals
 

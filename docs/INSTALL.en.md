@@ -51,6 +51,13 @@ candidate so the room pools, ability configuration and bounded loot policy
 arrive together. Replace the old chest module with `qm-chest-balance-0.4.21.jar`;
 do not retain a second version of either authored module.
 
+Chapter **23 · Ruins, Settlements and Surprises** gains 12 optional quests
+for portals, keys, return supplies, secrets, advanced dungeons and trophies,
+each with a personal reward. Update the quest files and assembled translations
+from the installation ZIP, the `kubejs/` reward policy and `qm-quest-ui-0.4.8.jar`
+for the new previews. Restart both client and server; existing progress and
+already claimed rewards are retained.
+
 Eligible room enemies receive one native Elite Mobs ability and an Apotheosis
 world tier when a player approaches. Ordinary DivineRPG hostiles have a 12%
 chance and DivineRPG bosses have an 85% chance, both in the Overworld and
@@ -105,7 +112,7 @@ refunds and cube quantities retain their existing rules.
 When upgrading the reward policy from 0.4.18 or earlier, import the complete
 0.4.21 candidate, or update the built ZIP's `kubejs/` and generated quest
 language files on both stopped client and server. Replace
-`qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.7.jar` in each installation and
+`qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.8.jar` in each installation and
 remove older duplicate versions. Restart both sides to load the reward script
 and updated catalogue. All **1,643 existing outer reward IDs** and personal
 claim history are preserved; already claimed rewards stay claimed. Quest
@@ -209,9 +216,9 @@ Empty and remove Iron Chests in a backup of the old instance while its mod is
 still installed. Check placed containers, carried items, other dimensions and
 offline players. Removing the mod does not transfer the stored items.
 
-The original quest, task and reward IDs are retained. The additional HDPE and
-Mekanism equipment lessons bring the totals to **1642 quests,
-1927 tasks and 1643 outer rewards**. The six former Iron Chests objectives now
+The original quest, task and reward IDs are retained. The HDPE and Mekanism
+equipment lessons plus 12 new Dimensional Dungeons quests bring the totals
+to **1654 quests, 1940 tasks and 1655 outer rewards**. The six former Iron Chests objectives now
 detect Sophisticated Storage items under the same IDs. Claimed rewards stay claimed.
 Previously claimed rewards are not issued again. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
@@ -263,7 +270,7 @@ client module shows separate refund icons and the possible-prize catalogue.
 Opening a preview does not claim a reward.
 For a manual update to the current 0.4.21 candidate, remove older
 `qm-quest-ui-*.jar` versions from the copied profile and keep only
-`qm-quest-ui-0.4.7.jar` from the package. Copying files into an existing directory
+`qm-quest-ui-0.4.8.jar` from the package. Copying files into an existing directory
 does not remove a differently named previous version.
 
 For **0.4.12 → 0.4.13**, update the client profile to the new package so the

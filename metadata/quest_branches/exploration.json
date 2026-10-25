@@ -3,8 +3,8 @@
   "chapters": {
     "qm_07_exploration": {
       "summary": {
-        "uk_ua": "Спочатку підготуй спорядження й майстерню. Мости, села, таверни та інші випадкові знахідки — окремі нагороджувані експедиції, що не блокують наступні квести.",
-        "en_us": "Prepare equipment and a workshop first. Bridges, villages, taverns and other random discoveries are separate rewarded expeditions that do not block later quests."
+        "uk_ua": "Підготуй спорядження й майстерню. Dimensional Dungeons, мости, села, таверни та інші знахідки — окремі нагороджувані експедиції, що залишають головний виробничий маршрут вільним.",
+        "en_us": "Prepare your equipment and workshop. Dimensional Dungeons, bridges, villages, taverns and other discoveries are separate rewarded expeditions that leave the main production route open."
       },
       "quests": {
         "514D111AFD4E2789": {
@@ -116,6 +116,283 @@
         },
         "51301113971C0E7D": {
           "optional": true
+        },
+        "514E110000000001": {
+          "dependencies": [
+            "514D010000000002"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Довідник данжів",
+            "en_us": "Dungeon Guidebook"
+          },
+          "description": {
+            "uk_ua": [
+              "Отримай саме довідник Dimensional Dungeons для Patchouli. Відкрий його ПКМ і знайди розділи про портал, ключі та головоломки. Завдання впізнає цю книгу за її вмістом; потримай її в інвентарі.",
+              "Це додаткова гілка експедицій. Усі дванадцять квестів можна проходити окремо від головного виробничого маршруту, а кожен учасник особисто отримує нагороду за кожен квест один раз. Предметні завдання лише перевіряють інвентар і залишають речі тобі.",
+              "Перед походом підготуй їжу, броню, зброю та вільні місця для здобичі. У данжах цієї збірки є звичайні вороги DivineRPG і Twilight Forest із додатковими здібностями Elite Mobs та посиленнями Apotheosis. Починай з короткої розвідки й збережи шлях до входу."
+            ],
+            "en_us": [
+              "Obtain the Dimensional Dungeons Patchouli guidebook. Right-click it and find the portal, key and puzzle sections. This task recognizes that specific book by its contents; keep it in your inventory.",
+              "This is an optional expedition branch. All twelve quests remain separate from the main production route, and each member claims each quest reward personally once. Item objectives check your inventory and leave the items with you.",
+              "Prepare food, armor, weapons and spare inventory space. This pack's dungeons include ordinary DivineRPG and Twilight Forest enemies with additional Elite Mobs abilities and Apotheosis augments. Start with a short scouting trip and keep track of the entrance."
+            ]
+          }
+        },
+        "514E110000000002": {
+          "dependencies": [
+            "514E110000000001"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Рамка для порталу",
+            "en_us": "Portal Components"
+          },
+          "description": {
+            "uk_ua": [
+              "Підготуй одну замкову щілину порталу та два позолочені блоки порталу. Спочатку знадобиться виготовити три позолочені блоки: один входить до рецепта замкової щілини, а два залишаються для рамки. Перевір рецепти в JEI.",
+              "Для самої конструкції додай дев’ять придатних блоків кам’яної цегли. Відкрий багатоблокову схему в довіднику: повна рамка має сім блоків завширшки й чотири заввишки. Відтвори розміщення замкової щілини, двох позолочених блоків і кам’яної цегли за схемою.",
+              "Квест перевіряє два види предметів у твоєму інвентарі до будівництва. Готовність порталу підтвердиться під час справжнього входу в пізнішому квесті першої подорожі; збережи рамку для повторних експедицій."
+            ],
+            "en_us": [
+              "Prepare one Portal Keyhole and two Gilded Portal Blocks. You need to craft three gilded blocks in total: one is an ingredient of the keyhole, while two remain for the frame. Check the recipes in JEI.",
+              "Add nine valid stone-brick blocks for the structure itself. Open the guidebook's multiblock diagram: the complete frame is seven blocks wide and four blocks high. Follow its placement of the keyhole, two gilded blocks and stone bricks.",
+              "This quest checks the two item types in your inventory before construction. A later visit objective records actual entry through the portal; keep the frame for return expeditions."
+            ]
+          }
+        },
+        "514E110000000003": {
+          "dependencies": [
+            "514E110000000002"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Порожній ключ",
+            "en_us": "A Blank Dungeon Key"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов порожній базовий ключ із бирки та стрижня іфрита за рецептом JEI. Завдання приймає предмет ключа порталу в інвентарі, зокрема вже активований ключ; окремий наступний квест перевіряє сам обряд активації.",
+              "Кожен новий активований ключ отримує власну адресу данжу. Зберігай знайдені й використані ключі: повторне відкривання тим самим ключем веде до того самого місця й зберігає сенс позначок та розв’язаних кімнат.",
+              "Для майбутньої Перлини повернення виготов окремий запасний порожній ключ. Так ключ від твоєї поточної експедиції залишиться доступним для повторного відкривання порталу."
+            ],
+            "en_us": [
+              "Craft a blank basic key from a name tag and a blaze rod using the JEI recipe. This inventory objective accepts the portal-key item, including an already activated key; the next quest checks the activation ritual itself.",
+              "Each newly activated key receives its own dungeon destination. Keep found and used keys: opening the portal with the same key returns to the same place, preserving the value of your route markers and solved rooms.",
+              "Craft a separate spare blank key for the Homeward Pearl recipe. This keeps the key for your current expedition available to reopen its portal."
+            ]
+          }
+        },
+        "514E110000000004": {
+          "dependencies": [
+            "514E110000000003"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Активуй базовий ключ",
+            "en_us": "Activate a Basic Key"
+          },
+          "description": {
+            "uk_ua": [
+              "Знайди рамку порталу Краю без ока й натисни порожнім базовим ключем на центральний отвір її верхньої грані. Уважно наведи приціл саме на отвір. Якщо в рамці є око, перша взаємодія зруйнує його; після цього повтори обряд на порожньому отворі.",
+              "Інший придатний спосіб — знайдений у данжі заряджувач ключів, Key Enscriber. Його окремий квест відкриється після першої подорожі. Успішний обряд отримує нативне досягнення активації базового ключа, за яким книга зараховує цю ціль.",
+              "Використай активований ключ у замковій щілині своєї рамки й перевір, чи з’явився прохід. Збережи цей ключ: нову адресу створює активація іншого ключа."
+            ],
+            "en_us": [
+              "Find an End Portal Frame without an eye and use the blank basic key on the central hole of its top face. Aim at the hole itself. If the frame contains an eye, the first interaction breaks it; repeat the ritual on the empty hole afterwards.",
+              "A Key Enscriber found in a dungeon is another valid activation method. Its separate quest opens after your first visit. A successful ritual earns the native basic-key activation advancement used by this objective.",
+              "Use the activated key in your frame's Portal Keyhole and check that a passage opens. Keep this key: activating a different key creates a new destination."
+            ]
+          }
+        },
+        "514E110000000005": {
+          "dependencies": [
+            "514E110000000004"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Перший вхід у данжі",
+            "en_us": "First Dungeon Visit"
+          },
+          "description": {
+            "uk_ua": [
+              "Пройди крізь свій відкритий портал і запам’ятай вхід у данж. Ціль зараховується за нативним досягненням першого відвідування виміру Dimensional Dungeons. Воно фіксує сам вхід у спільний вимір; проходження всіх кімнат та тип використаного ключа не є його умовами.",
+              "Читай підказки кімнат, користуйся перемикачами й розв’язуй головоломки за правилами данжу. Деякі вороги носять предмети-ключі; збережи гарантовані ключі зі здобичі. У цій збірці базові й складні кімнати також можуть містити посилених звичайних мобів DivineRPG і Twilight Forest.",
+              "Окремі ключі ведуть у тематичні варіанти: Фортеця Nether, Пустеля та Каналізація. Такі ключі зазвичай уже активовані й можуть випасти з другої руки ворога. Спільний вхід у вимір не визначає конкретну тему; розрізняй ключі за їхнім описом і бережи адресу потрібної експедиції."
+            ],
+            "en_us": [
+              "Walk through your open portal and remember the dungeon entrance. This objective uses the native first-visit advancement for the Dimensional Dungeons dimension. It records entry into the shared dimension; clearing every room and proving a particular key type are not its conditions.",
+              "Read room clues, operate their mechanisms and solve puzzles according to the dungeon's rules. Some enemies carry key items; retain guaranteed keys from their drops. In this pack, basic and advanced rooms can also contain empowered ordinary DivineRPG and Twilight Forest mobs.",
+              "Separate keys lead to the Nether Fortress, Desert and Sewers themes. These keys are usually already activated and may drop from an enemy's offhand. Entering the shared dimension does not identify a particular theme; use each key's description and retain the destination for expeditions you want to revisit."
+            ]
+          }
+        },
+        "514E110000000006": {
+          "dependencies": [
+            "514E110000000003"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Перлина повернення",
+            "en_us": "Homeward Pearl"
+          },
+          "description": {
+            "uk_ua": [
+              "Виготов Homeward Pearl за рецептом JEI, використавши окремий запасний порожній ключ. Потримай перлину в інвентарі: це предметна перевірка, і квест її не забирає.",
+              "Використання перлини всередині данжу витрачає її та повертає до входу в цей данж. Звідти можна скористатися звичайним виходом. Вона не є телепортом просто на твою базу, тож заздалегідь запам’ятай, де стоїть зовнішній портал.",
+              "Тримай перлину в доступному слоті перед довшою розвідкою. Перевір стан спорядження біля входу й продовжуй похід лише з достатнім запасом їжі та міцності."
+            ],
+            "en_us": [
+              "Craft a Homeward Pearl using the JEI recipe and a separate spare blank key. Hold the pearl in your inventory; this item check leaves it with you.",
+              "Using the pearl inside a dungeon consumes it and returns you to that dungeon's entrance. From there, use the normal exit. It does not teleport directly to your base, so remember where you built the outside portal.",
+              "Keep the pearl in an accessible slot before a longer scouting trip. Check your equipment at the entrance and continue with enough food and durability."
+            ]
+          }
+        },
+        "514E110000000007": {
+          "dependencies": [
+            "514E110000000005"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Заряджувач ключів",
+            "en_us": "Find a Key Enscriber"
+          },
+          "description": {
+            "uk_ua": [
+              "Знайди й отримай Key Enscriber — заряджувач ключів Dimensional Dungeons. Нативне досягнення приймає будь-який один із трьох станів: новий, використаний або пошкоджений. Збирати всі три одночасно не потрібно.",
+              "Заряджувач дає власний спосіб активувати порожні ключі. Ознайомся з його сторінкою в довіднику й перевір стан блока перед подальшими обрядами. Цей квест підтверджує отримання заряджувача; активація базового ключа має окрему ціль.",
+              "Познач місце знахідки й збережи ключ від відповідного данжу. Збережена адреса допоможе повернутися до знайомих кімнат та продовжити пошук секретів."
+            ],
+            "en_us": [
+              "Find and obtain a Dimensional Dungeons Key Enscriber. The native advancement accepts any one of its fresh, used or damaged states. You do not need all three at once.",
+              "The enscriber provides another way to activate blank keys. Read its guidebook page and check the block's condition before further rituals. This quest records obtaining an enscriber; basic-key activation has its own objective.",
+              "Mark where you found it and keep the key for that dungeon. Its saved destination lets you revisit familiar rooms and continue looking for secrets."
+            ]
+          }
+        },
+        "514E110000000008": {
+          "dependencies": [
+            "514E110000000005"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Дзвін таємниць",
+            "en_us": "Find a Secret Bell"
+          },
+          "description": {
+            "uk_ua": [
+              "Отримай Bell of Secrets під час експедицій у данжі. Нативне досягнення зараховується, коли потрібний дзвін потрапляє до інвентарю, і зберігає цю знахідку.",
+              "Відкрий сторінку дзвону в довіднику й застосуй його під час огляду підозрілих кімнат. Пошук секретів доповнює читання підказок і розв’язування головоломок; уважно оглядай уже відомі маршрути.",
+              "Цей квест стосується знаходження інструмента. Подальший збір восьми різних трофеїв має власні збережені умови й окрему нагороду."
+            ],
+            "en_us": [
+              "Obtain a Bell of Secrets during your dungeon expeditions. Its native advancement records the required bell entering your inventory and remembers the find.",
+              "Open the bell's guidebook page and use it while inspecting suspicious rooms. Secret hunting complements reading clues and solving puzzles; look carefully along routes you already know.",
+              "This quest records finding the tool. Collecting the eight different trophies has its own saved conditions and a separate reward."
+            ]
+          }
+        },
+        "514E110000000009": {
+          "dependencies": [
+            "514E110000000005"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Заготовка складного ключа",
+            "en_us": "An Advanced Key Blank"
+          },
+          "description": {
+            "uk_ua": [
+              "Шукай порожній складний ключ у замкових щілинах усередині данжів і забери його до інвентарю. Саме знаходження Blank Advanced Key відкриває нативне досягнення цього квесту.",
+              "Після знахідки активуй заготовку дозволеним обрядом на порожній рамці порталу Краю або за допомогою Key Enscriber. Результат використовує той самий предмет ключа порталу, але зберігає ознаку складного данжу та власну адресу. Перевір опис ключа перед установленням.",
+              "Для входу також підготуй удосконалену рамку з двома коронами й потрібними стягами. Квести ключа та корон незалежні один від одного після першої експедиції й сходяться перед входом у складний данж."
+            ],
+            "en_us": [
+              "Look for a Blank Advanced Key in keyholes inside dungeons and take it into your inventory. Finding this blank earns the native advancement for this quest.",
+              "Activate the blank through a valid ritual on an empty End Portal Frame or with a Key Enscriber. The result uses the same portal-key item while storing the advanced-dungeon flag and its own destination. Check the key's description before inserting it.",
+              "Prepare the upgraded frame with two crowns and the required banners as well. The key and crown quests are independent after your first expedition and join before advanced entry."
+            ]
+          }
+        },
+        "514E11000000000A": {
+          "dependencies": [
+            "514E110000000005"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Дві корони порталу",
+            "en_us": "Two Portal Crowns"
+          },
+          "description": {
+            "uk_ua": [
+              "Знайди дві корони порталу й одночасно потримай обидві в інвентарі. Нативне досягнення цього квесту перевіряє саме кількість два; встановлюй їх після того, як знахідку зараховано.",
+              "Удоскональ звичайну рамку за складною схемою довідника: встанови дві корони та по одному придатному білому або фіолетовому настінному стягу на кожному зовнішньому стовпі. Звір орієнтацію і місця блоків із багатоблоковим зображенням.",
+              "Корони й стяги готують портал для активованого складного ключа. Тематичні ключі окремо ведуть до Фортеці Nether, Пустелі або Каналізації; ці варіанти описано в підказках ключів."
+            ],
+            "en_us": [
+              "Find two Portal Crowns and hold both in your inventory at the same time. This native advancement checks a count of two; place the crowns after the find has been recorded.",
+              "Upgrade the ordinary frame using the guidebook's advanced diagram: place two crowns and a valid white or purple wall banner on each outer pillar. Match the orientation and block positions to the multiblock preview.",
+              "The crowns and banners prepare the portal for an activated advanced key. Separate themed keys lead to the Nether Fortress, Desert or Sewers variants, as described by their tooltips."
+            ]
+          }
+        },
+        "514E11000000000B": {
+          "dependencies": [
+            "514E110000000009",
+            "514E11000000000A"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Вхід у складний данж",
+            "en_us": "Enter an Advanced Dungeon"
+          },
+          "description": {
+            "uk_ua": [
+              "Після знаходження заготовки й двох корон активуй складний ключ, перевір удосконалену рамку та встав ключ у замкову щілину. Пройди крізь відкритий портал, щоб отримати нативне досягнення входу у складний данж.",
+              "Ця ціль підтверджує вхід у складний данж. Перемога над усіма ворогами, відкриття кожної скрині й завершення всіх головоломок залишаються твоєю експедицією, тож плануй її за спорядженням і запасами.",
+              "Складні кімнати цієї збірки мають сильніші набори звичайних ворогів і більші додаткові характеристики. Візьми Перлину повернення, збережи ключ та оглянь шлях до входу перед довгим боєм."
+            ],
+            "en_us": [
+              "After finding the blank and two crowns, activate the advanced key, check the upgraded frame and insert the key into its keyhole. Walk through the open portal to earn the native advanced-entry advancement.",
+              "This objective confirms entry into an advanced dungeon. Defeating every enemy, opening every chest and finishing every puzzle remain goals for your expedition, so plan around your equipment and supplies.",
+              "This pack's advanced rooms have stronger ordinary enemy pools and larger additional attribute bonuses. Bring a Homeward Pearl, retain the key and inspect the route back to the entrance before a long fight."
+            ]
+          }
+        },
+        "514E11000000000C": {
+          "dependencies": [
+            "514E110000000005"
+          ],
+          "stage": 0,
+          "optional": true,
+          "title": {
+            "uk_ua": "Вісім трофеїв",
+            "en_us": "Eight Dungeon Trophies"
+          },
+          "description": {
+            "uk_ua": [
+              "Збери всі вісім різних трофеїв Dimensional Dungeons. Кожен тип має власну умову в нативному досягненні; коли трофей потрапляє до інвентарю, ця частина колекції зберігається.",
+              "Колекцію можна завершувати протягом багатьох експедицій. Тримати всі вісім предметів одночасно не потрібно. Переглядай досягнення й шукай саме відсутні типи трофеїв, користуючись підказками довідника та кімнат.",
+              "Це довга додаткова ціль після першого входу у вимір. Вона має одну особисту нагороду за завершення колекції та залишає головний виробничий маршрут доступним незалежно від темпу твоїх походів."
+            ],
+            "en_us": [
+              "Collect all eight different Dimensional Dungeons trophies. Each type has its own criterion in the native advancement; obtaining a trophy in your inventory saves that part of the collection.",
+              "You can finish the collection across many expeditions. You do not need to hold all eight items at once. Check the advancement for missing trophy types and follow the guidebook and room clues while searching for them.",
+              "This is a long optional goal after the first dungeon visit. Completing the collection grants one personal quest reward, while the main production route stays available at your own exploration pace."
+            ]
+          }
         }
       }
     },
@@ -303,6 +580,32 @@
         "514D11A7ED9AA3BB",
         "514D118E5C7AB43A"
       ]
+    },
+    {
+      "key": "dimdungeons_first_portal",
+      "title": {
+        "uk_ua": "Dimensional Dungeons: перший портал",
+        "en_us": "Dimensional Dungeons: First Portal"
+      },
+      "quests": [
+        "514E110000000001",
+        "514E110000000002",
+        "514E110000000003",
+        "514E110000000004",
+        "514E110000000005"
+      ]
+    },
+    {
+      "key": "dimdungeons_advanced_entry",
+      "title": {
+        "uk_ua": "Dimensional Dungeons: складний вхід",
+        "en_us": "Dimensional Dungeons: Advanced Entry"
+      },
+      "quests": [
+        "514E110000000005",
+        "514E110000000009",
+        "514E11000000000B"
+      ]
     }
   ],
   "evidence": [
@@ -325,6 +628,10 @@
     {
       "source": "ModernFoundry-1.21.1-4.1.6-NeoForge.jar :: data/modernfoundry/advancement/world/sky_island.json; overrides/kubejs/data/qm/advancement/campaign_v040/biomes/",
       "notes": "The optional Sky Slime Island and 20 Terralith biome objectives already have no dependents. Mermaid Sea, Large Cannibal Village and Rutia Temple originally blocked four hunts and 14 total descendants. Their visit edges are removed while kill/trophy relationships and material gates remain. Regression coverage includes all 67 Overworld visit objectives."
+    },
+    {
+      "source": "dimdungeons-210-neoforge-1.21.1.jar :: data/dimdungeons/advancement/dungeons/{activate_basic_key,enter_basic_dungeon,find_key_charger,find_bell_1,find_advanced_key,find_crown,enter_advanced_dungeon,all_trophies}.json; data/dimdungeons/patchouli_books/guide_book/; ItemPortalKey, ItemHomewardPearl and BlockPortalKeyhole native classes",
+      "notes": "Twelve additive optional quests use native inventory or full advancement conditions. Guidebook matches the exact patchouli:book component; portal parts need one keyhole and two remaining gilded blocks. The frame additionally needs nine valid stone-brick blocks. Basic entry advancement observes the shared dungeon dimension, not clearing or key tier. The enscriber condition accepts any of three states; the crown advancement requires two. Advanced keys must be activated and used with two crowns and the required wall banners. Homeward Pearl consumes itself and returns to the dungeon entrance. All eight trophy criteria accumulate over time. Themed keys are described without inventing a themed-entry or dungeon-clear objective. Every added reward is a personal expedition pack; existing quest graph and claims remain unchanged."
     }
   ]
 }

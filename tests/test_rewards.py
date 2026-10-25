@@ -42,7 +42,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
     def test_runtime_policy_exactly_matches_catalogue_and_existing_reward_ownership(self):
         self.assertEqual(self.runtime, rewards.runtime_policy(self.chapters, self.policy))
         self.assertEqual(set(self.policy['chapter_pools']), {c['filename'] for c in self.chapters})
-        self.assertEqual(len(self.runtime['reward_mappings']), 1458)
+        self.assertEqual(len(self.runtime['reward_mappings']), 1470)
         owners = {r['id']: q['id'] for q in quests(self.chapters) for r in q['rewards']}
         for ident, mapping in self.runtime['reward_mappings'].items():
             self.assertRegex(ident, rewards.ID_PATTERN)
@@ -90,7 +90,7 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
                 self.assertNotIn('item', reward)
                 for locale in (uk, en):
                     self.assertTrue(locale[f"reward.{reward['id']}.title"])
-        self.assertEqual(count, 1458)
+        self.assertEqual(count, 1470)
 
     def test_fixed_milestones_and_original_personal_book_are_retained(self):
         cubes = books = 0
@@ -390,11 +390,11 @@ class ProgressiveRewardPolicyTests(unittest.TestCase):
         locale = {'unrelated.key': 'untouched'}
         report = rewards.apply(chapters, locale)
         self.assertEqual(chapters, self.chapters)
-        self.assertEqual(report['personal_rewards'], 1643)
-        self.assertEqual(report['progressive_rewards'], 1449)
+        self.assertEqual(report['personal_rewards'], 1655)
+        self.assertEqual(report['progressive_rewards'], 1461)
         self.assertEqual(report['recipe_refunds'], 41)
         self.assertEqual(report['refund_cube_bundles'], 9)
-        self.assertEqual(report['custom_rewards'], 1458)
+        self.assertEqual(report['custom_rewards'], 1470)
         self.assertEqual(report['milestone_cubes'], 222)
         self.assertEqual(locale['unrelated.key'], 'untouched')
         again = deepcopy(locale)
