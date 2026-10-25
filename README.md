@@ -2,37 +2,68 @@
 
 <p align="center"><b>SOQM 0.4.21 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
-**Shout Out to Questing Mayhem (SOQM)** is an Expert Minecraft modpack about
-turning a small workshop into an automated empire. Over **1,600 quests across
-37 chapters** connect technology, magic and exploration through custom recipes,
-material milestones and guided production routes.
+<p align="center"><a href="#screenshots">Screenshots</a> · <a href="#main-mods">Main mods</a> · <a href="MODLIST.md">Full mod list</a> · <a href="#play">Installation</a></p>
 
-## What to expect
+**Shout Out to Questing Mayhem (SOQM)** is an Expert Minecraft modpack with
+technology, magic and exploration. Over **1,600 quests across 37 chapters**
+guide production chains, custom recipes and progression between mods.
 
-- **Quest-guided progression:** follow the main campaign, learn each production
-  chain and branch into optional upgrades as your base grows.
-- **Hardcore starting workshop:** build expensive furnaces, storage tiers,
-  gears and Mekanism machines, then make production efficient through automation.
-- **Technology and automation:** progress from Ex Deorum resource gathering to
-  Mekanism factories, reactors and Applied Energistics 2 storage and autocrafting.
-- **Magic and exploration:** develop Botania Revived and EvilCraft, explore
-  The Twilight Forest, The Aether and DivineRPG, and travel into space with Ad Astra.
-- **Dimensional dungeon expeditions:** enter puzzle rooms with mixed DivineRPG,
-  Twilight Forest and vanilla enemies. Eligible encounters keep their native
-  behavior and drops while gaining an Elite Mobs ability and Apotheosis tier augments.
-  DivineRPG bosses have an 85% enhancement chance in their native dimensions
-  and the Overworld; ordinary DivineRPG hostiles have a 12% chance.
-  Follow 12 optional quests in chapter 23 for portal construction, key activation,
-  advanced dungeons and trophies, with a personal expedition reward at each step.
-- **Demanding late-game crafting:** connect production across mods to make custom
-  components and work towards Re-Avaritia recipes.
-- **Personal, progressive rewards:** every teammate can claim a quest reward.
-  Reward pools improve with team production, and expensive components unlock only
-  after the team has actually made them. Preview guaranteed item stacks and all
-  possible pack prizes directly in the quest book.
-- **Everyday conveniences:** inventory sorting with Inventory Profiles Next,
-  light from held torches with LambDynamicLights, upgradeable storage and
-  backpacks, recipe lookup, maps and waystones.
+## Screenshots
+
+Gameplay screenshots from SOQM. Click an image to open the original.
+
+<table>
+  <tr>
+    <td width="50%">
+      <a href="assets/gallery/base-power.png"><img src="assets/gallery/base-power.png" alt="Wind generators and power cables at a player base" width="100%"></a><br>
+      <sub>Wind generators and base power network.</sub>
+    </td>
+    <td width="50%">
+      <a href="assets/gallery/meteorite.png"><img src="assets/gallery/meteorite.png" alt="A meteorite exposed above a large cave with dripstone" width="100%"></a><br>
+      <sub>Meteorite and exposed caves.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <a href="assets/gallery/elite-encounter.png"><img src="assets/gallery/elite-encounter.png" alt="Named enemies with glowing outlines near a forest" width="100%"></a><br>
+      <sub>Elite enemies in the Overworld.</sub>
+    </td>
+    <td width="50%">
+      <a href="assets/gallery/dungeon-encounter.png"><img src="assets/gallery/dungeon-encounter.png" alt="Zombies and a creeper inside a dark stone-brick room" width="100%"></a><br>
+      <sub>Dungeon encounter.</sub>
+    </td>
+  </tr>
+</table>
+
+[![Mekanism quest chapter with production sections and connected objectives](assets/gallery/mekanism-quests.png)](assets/gallery/mekanism-quests.png)
+
+*The Mekanism chapter in the quest book.*
+
+## Main mods
+
+| Category | Mods |
+| --- | --- |
+| Technology and energy | Mekanism, Mekanism: Generators, Immersive Engineering, Industrial Foregoing, Ender IO, Extreme Reactors, BuildCraft Community Edition, Modern Foundry |
+| Resource automation | Ex Deorum, Ex Machinis: Divitiae Deorum, Mob Grinding Utils, Iron Furnaces |
+| Storage and transport | Applied Energistics 2, Sophisticated Storage, Sophisticated Backpacks, Storage Drawers, Ender Storage, Railcraft Reborn |
+| Magic and late game | Botania Revived, EvilCraft, ProjectE, Re-Avaritia |
+| Dimensions and dungeons | The Twilight Forest, The Aether, DivineRPG, Ad Astra, Dimensional Dungeons, RFTools Dimensions |
+| World and structures | Terralith, Millénaire, Dungeons and Taverns, Abandoned Tunnels, Ember's Underground Rooms, Twilight Treehouses |
+| Combat and equipment | Apotheosis, Elite Mobs, Pufferfish's Skills, Relics, Artifacts |
+| Quests and utilities | FTB Quests, FTB Teams, FTB Ultimine, JEI, Jade, Waystones, Xaero's Minimap, Xaero's World Map, Inventory Profiles Next |
+
+**[Full mod list with versions and exact downloads](MODLIST.md)**
+
+## Progression
+
+- [Production routes](docs/QUEST_BRANCHES.md) guide resource processing,
+  automation, storage and energy. [Expert workshop recipes](docs/HARDCORE_WORKSHOP.md)
+  connect machines through custom components, leading to Re-Avaritia crafting.
+- [Dimensional Dungeons](docs/DIMENSIONAL_DUNGEONS.md) has 12 optional quests
+  and mixed enemy encounters. Dungeon exploration does not block technological
+  progression; the guide explains elite abilities and DivineRPG enhancements.
+- [Quest rewards](docs/REWARDS.md) are personal for each teammate. Reward pools
+  grow with the team's production, and the quest book previews the available prizes.
 
 **Status: alpha.** Campaign balance, full playthroughs and long-term multiplayer
 behavior are still being validated.
