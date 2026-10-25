@@ -36,13 +36,13 @@ class CampaignContentTests(unittest.TestCase):
     def test_campaign_not_truncated(self):
         """A release cannot silently lose chapters, quests, tasks or rewards."""
         self.assertEqual(len(self.chapters), 37)
-        self.assertEqual(len(self.quest_list), 1642)
+        self.assertEqual(len(self.quest_list), 1654)
         additions = read_json(ROOT / 'metadata/multiblock_materials.json')['migration']['added_task_ids']
         expected = read_json(ROOT / 'metadata/campaign_identity.json')['tasks']
-        # The torch and15 new Mekanism lessons add one task each; existing tasks keep their IDs.
-        self.assertEqual(expected, 1773 + len(additions) + 1 + 15)
+        # The torch, 15 equipment lessons and 13 dungeon objectives are additive.
+        self.assertEqual(expected, 1773 + len(additions) + 1 + 15 + 13)
         self.assertEqual(sum(len(q["tasks"]) for q in self.quest_list), expected)
-        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1643)
+        self.assertEqual(sum(len(q["rewards"]) for q in self.quest_list), 1655)
 
     def test_all_persistent_ids_are_unique(self):
         objects = [("group", group["id"]) for group in self.groups]
@@ -151,7 +151,7 @@ class CompatibilityProvenanceTests(unittest.TestCase):
         provenance = read_json(directory / "provenance.json")
         authored = read_json(ROOT / "metadata/authored-mods.json")
         modules = provenance["modules"]
-        self.assertEqual(len(modules), 14)
+        self.assertEqual(len(modules), 15)
         self.assertEqual({row["module"] for row in modules},
                          {path.name for path in directory.iterdir() if (path / "src").is_dir()},
                          "Every compatibility source module must have provenance")

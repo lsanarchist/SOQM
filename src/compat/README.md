@@ -1,9 +1,9 @@
 # Compatibility sources
 
-SOQM 0.4.20 uses **fourteen** authored compatibility modules: ten recovered from
+SOQM 0.4.21 uses **fifteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
 module, the production-evidence adapter, the Foundry crafting fix and the
-Sophisticated Core/JEI display fix. The original eight include full MIT
+Sophisticated Core/JEI display fix, and the dungeon encounter integration. The original eight include full MIT
 notices, which must remain with their source and binaries. The two later recovered modules
 declare MIT in `neoforge.mods.toml`, but neither their source nor JAR supplied a
 full license/copyright notice. Their local `LICENSE` files record that declaration
@@ -16,15 +16,16 @@ and missing notice; they do not invent an upstream copyright holder.
 | `chance-lifecycle` | `qm-chancecubes-lifecycle-0.4.2.jar` | 0.4.2 |
 | `lucky-support` | `qm-lucky-support-0.4.2.jar` | 0.4.2 |
 | `quest-automation` | `qm-quest-automation-0.4.4.jar` | 0.4.2, then local observation fixes |
-| `quest-ui` | `qm-quest-ui-0.4.7.jar` | 0.4.2, then coordinated HUD, reward catalogue, mapped client API build and automatic minimap crash fix |
+| `quest-ui` | `qm-quest-ui-0.4.8.jar` | 0.4.2, then coordinated HUD, reward catalogue, mapped client API build and automatic minimap crash fix |
 | `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
-| `chest-balance` | `qm-chest-balance-0.4.11.jar` | Recovered 0.4.6 source; bounded varied exploration update |
+| `chest-balance` | `qm-chest-balance-0.4.21.jar` | Recovered 0.4.6 source; bounded exploration and Dimensional Dungeons routes |
 | `progressive-rewards` | `qm-progressive-rewards-0.4.10.jar` | New SOQM source; recipe-backed refunds, world upgrades and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
 | `foundry-compat` | `qm-foundry-compat-0.4.15.jar` | New SOQM source; positioned ingredient writes for Modern Foundry 4.1.6 |
 | `storage-jei-compat` | `qm-storage-jei-compat-0.4.17.jar` | New SOQM source; centred display-slot focus links for pinned Sophisticated Core and JEI |
+| `dungeon-encounters` | `qm-dungeon-encounters-0.4.21.jar` | New SOQM source; persistent in-place Elite Mobs abilities and Apotheosis tier integration |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -75,6 +76,14 @@ Core links that slot to the result. Its exact dependency pins and required
 single injection preserve the original focus conditions, recipes and storage
 state transfer. It uses JEI's public mapping API and includes no upstream
 implementation classes. The dedicated-server materializer excludes it.
+
+The [dungeon encounter module](dungeon-encounters/README.md) retains each
+eligible DivineRPG or dungeon mob's entity type, AI, equipment and drops. It
+registers actual Elite Mobs ability state and applies one Apotheosis world tier
+when a real player approaches. Saved ability cooldowns and one-shot flags are
+restored without rerolling or applying attributes again. The exact-version
+native build validates the upstream archives and Mixin target hashes. The
+chest module's 0.4.21 native build adds explicit routes and protected puzzle items.
 
 **Independent recompilation of all ten recovered production JARs has not been
 reproduced.** The Cannibal, Quest Automation, Quest UI, runtime optimization and

@@ -27,7 +27,7 @@ public final class RewardCatalogueProbe {
             raw = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
         }
         var data = RewardCatalogueData.parse(new StringReader(raw));
-        check(data.rewards().size() == 1643, "Every actual reward must have a visible preview");
+        check(data.rewards().size() == 1655, "Every actual reward must have a visible preview");
         check(data.pools().size() == 14, "Every themed pool must be visible");
         check(data.qualityDraws() == 1, "Preview must retain the existing reserved quality draw");
         int cubes = 0, refunds = 0, random = 0, twoCubeClaims = 0;
@@ -42,7 +42,7 @@ public final class RewardCatalogueProbe {
             }
         }
         check(cubes == 222 && twoCubeClaims == 29, "Preview must show the full 193 + 29 cube quantities");
-        check(refunds == 41 && random == 1449, "Guaranteed bundles and random packs were confused");
+        check(refunds == 41 && random == 1461, "Guaranteed bundles and random packs were confused");
         check(data.pools().values().stream().flatMap(pool -> pool.entries().stream())
                 .filter(entry -> entry.item().startsWith("kubejs:"))
                 .allMatch(entry -> entry.requiresCraft().contains(entry.item())), "Display lost exact production gates");

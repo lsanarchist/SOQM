@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.20
+# Installing SOQM 0.4.21
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.20-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.21-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.20-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.20 asset is not claimed. The
+The current output is `dist/SOQM-0.4.21-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.21 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.20 ZIP and wait for every download. See the
+   select the built 0.4.21 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -43,14 +43,38 @@ directly from a source checkout omits those generated translations.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
+## Dimensional Dungeons and elite DivineRPG enemies
+
+The 0.4.21 candidate adds **Dimensional Dungeons 210** and the authored
+`qm-dungeon-encounters-0.4.21.jar` on both client and server. Import the full
+candidate so the room pools, ability configuration and bounded loot policy
+arrive together. Replace the old chest module with `qm-chest-balance-0.4.21.jar`;
+do not retain a second version of either authored module.
+
+Chapter **23 · Ruins, Settlements and Surprises** gains 12 optional quests
+for portals, keys, return supplies, secrets, advanced dungeons and trophies,
+each with a personal reward. Update the quest files and assembled translations
+from the installation ZIP, the `kubejs/` reward policy and `qm-quest-ui-0.4.8.jar`
+for the new previews. Restart both client and server; existing progress and
+already claimed rewards are retained.
+
+Eligible room enemies receive one native Elite Mobs ability and an Apotheosis
+world tier when a player approaches. Ordinary DivineRPG hostiles have a 12%
+chance and DivineRPG bosses have an 85% chance, both in the Overworld and
+their own dimensions. Mob models, AI, boss phases and native drops are retained.
+The new room pools apply to newly generated dungeons; existing room entities
+are not replaced. Existing Overworld chunks need no regeneration because
+these dungeons are generated in their own dimension. See the
+[encounter policy and configuration](DIMENSIONAL_DUNGEONS.md).
+
 ## ME crafting-terminal recipe transfer in JEI
 
-SOQM 0.4.20 adds **AE2 JEI Integration 1.2.1**. The pinned AE2 19.2.18 does
+SOQM includes **AE2 JEI Integration 1.2.1**, added in 0.4.20. The pinned AE2 19.2.18 does
 not include its own JEI transfer handler; this bridge restores the **Move Items
-(+)** button for its crafting terminal. The other **129** third-party version
-pins remain unchanged, giving **130** dependencies in the client manifest.
+(+)** button for its crafting terminal. SOQM 0.4.21 retains this bridge and adds Dimensional Dungeons, giving **131**
+dependencies in the client manifest.
 
-An imported 0.4.20 candidate downloads the bridge automatically. To repair an
+An imported 0.4.21 candidate downloads the bridge automatically. To repair an
 existing profile, fully close Minecraft and add
 [`ae2jeiintegration-1.2.1.jar`](https://www.curseforge.com/minecraft/mc-mods/ae2-jei-integration/files/7727898)
 to the **client** profile's `mods/` folder, then restart the game. Every player
@@ -86,17 +110,17 @@ per identical item per pack. Stackable repeats combine, while fixed crafting
 refunds and cube quantities retain their existing rules.
 
 When upgrading the reward policy from 0.4.18 or earlier, import the complete
-0.4.20 candidate, or update the built ZIP's `kubejs/` and generated quest
+0.4.21 candidate, or update the built ZIP's `kubejs/` and generated quest
 language files on both stopped client and server. Replace
-`qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.7.jar` in each installation and
+`qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.8.jar` in each installation and
 remove older duplicate versions. Restart both sides to load the reward script
 and updated catalogue. All **1,643 existing outer reward IDs** and personal
 claim history are preserved; already claimed rewards stay claimed. Quest
 progress and production evidence need no reset.
 
-## Crafting fixes in 0.4.20
+## Crafting fixes in 0.4.21
 
-The 0.4.20 candidate includes distinct manual iron/gold gear layouts and a
+The 0.4.21 candidate includes distinct manual iron/gold gear layouts and a
 copper-ingot centre for the Copper-to-Iron Furnace Upgrade. Update the built
 candidate's `overrides/kubejs/` files on both client and server while stopped,
 or import the complete candidate into a new profile. Restart both sides, use
@@ -109,7 +133,7 @@ It corrects the station's ingredient-slot writes when taking a crafted result,
 including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
 close the game and server, add this JAR from the candidate's `overrides/mods/`
 to **both the client and server** `mods/` directories, then restart. An imported
-0.4.20 candidate already includes it and retains the Modern Foundry 4.1.6 pin.
+0.4.21 candidate already includes it and retains the Modern Foundry 4.1.6 pin.
 
 The module deliberately requires Modern Foundry 4.1.6. Remove it before a
 coordinated client/server upgrade to an upstream release containing the fix,
@@ -121,7 +145,7 @@ does not repair the faulty station code. See the
 
 ## Sophisticated Storage displays in JEI
 
-SOQM 0.4.20 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
+SOQM 0.4.21 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
 `All slots must have the same number of ingredients` exception when JEI
 builds compact storage upgrade recipes. For an existing 0.4.14–0.4.16 profile
 with the pinned mods, close Minecraft, copy this JAR from the candidate's
@@ -135,7 +159,7 @@ the exact archive is pinned in the pack. Keep these dependencies together.
 Review or remove the adapter before a coordinated dependency update. The fix
 maps the storage ingredient to its actual JEI slot; recipe costs and storage
 state transfer are unchanged. This client JAR alone does not install the
-earlier Foundry or workshop recipe fixes; import the complete 0.4.20 candidate
+earlier Foundry or workshop recipe fixes; import the complete 0.4.21 candidate
 to receive all three changes.
 
 See [cause, native reproduction and limits](STORAGE_JEI_FIX.md) and the
@@ -175,9 +199,9 @@ as verified. Manual installation requires the exact game/loader/Java above.
 2. Work on a copied profile. Extract the **built** ZIP temporarily and merge
    the contents of `overrides/` into its `.minecraft/`, applying the pack files.
    Do not copy the manifest itself or a GitHub source archive into that folder.
-3. Install the **130** exact third-party JARs referenced by the manifest/lock
+3. Install the **131** exact third-party JARs referenced by the manifest/lock
    from their official sources and verify versions and SHA-256. Together with
-   the package's **14** authored modules, these form the SOQM mod set. Remove
+   the package's **15** authored modules, these form the SOQM mod set. Remove
    duplicates and superseded mod versions only in the test copy; do not mix releases.
 4. Preserve saves, personal key bindings and map data. Start with a fresh test
    world, then check a copied save for progress, inventory and working recipes.
@@ -192,9 +216,9 @@ Empty and remove Iron Chests in a backup of the old instance while its mod is
 still installed. Check placed containers, carried items, other dimensions and
 offline players. Removing the mod does not transfer the stored items.
 
-The original quest, task and reward IDs are retained. The additional HDPE and
-Mekanism equipment lessons bring the totals to **1642 quests,
-1927 tasks and 1643 outer rewards**. The six former Iron Chests objectives now
+The original quest, task and reward IDs are retained. The HDPE and Mekanism
+equipment lessons plus 12 new Dimensional Dungeons quests bring the totals
+to **1654 quests, 1940 tasks and 1655 outer rewards**. The six former Iron Chests objectives now
 detect Sophisticated Storage items under the same IDs. Claimed rewards stay claimed.
 Previously claimed rewards are not issued again. Existing `qm`
 namespaces and `qm_*` filenames preserve internal references and recorded
@@ -244,9 +268,9 @@ bringing the full campaign from 193 to 222 cubes. Previously claimed personal
 rewards stay claimed and receive no automatic top-up. The updated Quest UI
 client module shows separate refund icons and the possible-prize catalogue.
 Opening a preview does not claim a reward.
-For a manual update to the current 0.4.20 candidate, remove older
+For a manual update to the current 0.4.21 candidate, remove older
 `qm-quest-ui-*.jar` versions from the copied profile and keep only
-`qm-quest-ui-0.4.7.jar` from the package. Copying files into an existing directory
+`qm-quest-ui-0.4.8.jar` from the package. Copying files into an existing directory
 does not remove a differently named previous version.
 
 For **0.4.12 → 0.4.13**, update the client profile to the new package so the

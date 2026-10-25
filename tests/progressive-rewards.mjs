@@ -511,8 +511,8 @@ const actual = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
 assert.equal(actual.schema, 2, 'Committed policy contract');
 assert.equal(actual.pools.length, 14, 'The complete authored chapter catalogue must load');
 assert.equal(actual.levels.length, 6);
-assert.equal(Object.keys(actual.reward_mappings).length, 1458, 'Every campaign custom reward and cube/refund bundle is mapped');
-assert.equal(Object.values(actual.reward_mappings).filter(row => !row.cube).length, 1449,
+assert.equal(Object.keys(actual.reward_mappings).length, 1470, 'Every campaign custom reward and cube/refund bundle is mapped');
+assert.equal(Object.values(actual.reward_mappings).filter(row => !row.cube).length, 1461,
   'The 15 new equipment quests add ordinary packs, not extra cube bundles');
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.refund).length, 41);
 assert.equal(Object.values(actual.reward_mappings).filter(row => row.cube).length, 9);
@@ -657,4 +657,4 @@ assert(cubeAllowedItems.every(item => item !== 'millenaire:masa' && !/(?:^|[_/])
   'The native Chance Cubes item pool excludes backpack bodies, boats, chest boats, rafts and Masa');
 assert.equal(cubeAllowedItems.filter(item => item === 'minecraft:golden_carrot').length, 1,
   'The removed cube boat is replaced by one golden-carrot entry');
-console.log('PASS: actual 14-pool/1458-custom-reward policy, 1449 random packs including all 15 new equipment claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, per-claim unstackable caps, preserved supply/processor batches, backpack/boat/raft/masa exclusion, capped consumable premium batches, finite Chance Cubes item pool, exact IDs, fallbacks, read-only bilingual commands, reload');
+console.log('PASS: actual 14-pool/1470-custom-reward policy, 1461 random packs including all 15 equipment and 12 dungeon claims, 41 native refund bundles, unchanged 9 cube/refund bundles and 3/4/5 draws, native-only fixed cube delivery, once-per-context random pack, production gates, normalized odds, reserved quality, personal RNG, per-claim unstackable caps, preserved supply/processor batches, backpack/boat/raft/masa exclusion, capped consumable premium batches, finite Chance Cubes item pool, exact IDs, fallbacks, read-only bilingual commands, reload');

@@ -5,6 +5,7 @@ python3 scripts/soqm.py check
 python3 scripts/hardcore_workshop.py --check
 python3 scripts/campaign_refresh.py --check
 python3 scripts/localize_english.py --check
+python3 scripts/dimensional_dungeons.py --check
 python3 scripts/exploration_loot.py --check
 python3 -m unittest discover -s tests -v
 node tests/accessory-policy.mjs

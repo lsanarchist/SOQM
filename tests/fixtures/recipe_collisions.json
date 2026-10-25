@@ -2,12 +2,12 @@
   "schema_version": 1,
   "provenance": {
     "baseline_commit": "44fad78b76903d6b1401db90bdf396e10d8e32d1",
-    "mods_lock_sha256": "e43926eceedde58efebc681acd17da3c27a1af20e71d972e2b17010af8829051",
+    "mods_lock_sha256": "811a6ec3107d98b01881f208b6dbd11438326dc3f9c81a1bfb03ada46e73faa9",
     "minecraft": "1.21.1",
     "minecraft_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
     "neoforge": "21.1.262",
     "neoforge_universal_sha256": "4070305f97a08409d9b4e714f619f0ec2d97d29c9939ef43a89d927259942f98",
-    "method": "Read data/*/tags/item/*.json from all 129 SHA256-verified mods.lock JARs, Minecraft 1.21.1 client, NeoForge universal, authored JARs, then KubeJS data overrides. Resolve transitive #tags. No ingredient-tag closure overlaps KubeJS tag mutations. Preserve exact original 9 ambiguous recipe JSONs as the negative control; native originals are copied from those pinned JAR resources. These resources do not execute registry or recipe codecs. The 130th pinned dependency, client-only AE2 JEI Integration 1.2.1 (ae2jeiintegration-1.2.1.jar, CurseForge file 7727898), was separately SHA256/size/CRC-verified and inspected. Its archive contains zero data/ entries, so it contributes no ingredient tags or recipes. The original 129 dependency pins, 149 resolved tag sets and native recipe examples are unchanged.",
+    "method": "Read data/*/tags/item/*.json from all 129 SHA256-verified mods.lock JARs, Minecraft 1.21.1 client, NeoForge universal, authored JARs, then KubeJS data overrides. Resolve transitive #tags. No ingredient-tag closure overlaps KubeJS tag mutations. Preserve exact original 9 ambiguous recipe JSONs as the negative control; native originals are copied from those pinned JAR resources. These resources do not execute registry or recipe codecs. The 130th pinned dependency, client-only AE2 JEI Integration 1.2.1 (ae2jeiintegration-1.2.1.jar, CurseForge file 7727898), was separately SHA256/size/CRC-verified and inspected. Its archive contains zero data/ entries, so it contributes no ingredient tags or recipes. The original 129 dependency pins, 149 resolved tag sets and native recipe examples are unchanged. The 131st pinned dependency, Dimensional Dungeons 210 (dimdungeons-210-neoforge-1.21.1.jar, CurseForge file 8828150), was independently SHA256/size/CRC-verified. It contributes no data/*/tags/item resources, so the 149 captured ingredient tag sets remain unchanged. Dungeon loot table overrides also contain no item tags; native DD recipes are outside this existing authored-workshop collision fixture.",
     "tag_source_count": 339,
     "sophisticated_default_evidence": "sophisticatedcore 1.5.14.2413 Config$Common$EnabledItems.isItemEnabled(ResourceLocation) returns true for unlisted entries; SOQM ships no enabledItems override.",
     "authored_tag_inputs": {

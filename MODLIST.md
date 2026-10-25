@@ -2,8 +2,8 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **130 pinned third-party dependencies**. SOQM 0.4.20 additionally
-ships **14 authored compatibility modules**, listed with their source and exact
+The table lists **131 pinned third-party dependencies**. SOQM 0.4.21 additionally
+ships **15 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.10` module records production evidence, preserves
@@ -34,6 +34,12 @@ also support server mods in other packs.
 LambDynamicLights is also marked `client` and excluded from the dedicated-server
 harness. Its official JAR includes the required NeoForge libraries. Held-item
 lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynamic-lighting).
+
+Dimensional Dungeons 210 runs on both client and server. The authored
+`qm-dungeon-encounters-0.4.21` module adds persistent Elite Mobs abilities and
+Apotheosis world-tier augments to eligible dungeon and DivineRPG enemies.
+`qm-chest-balance-0.4.21` includes the new bounded chest routes. See
+[the encounter and loot policy](docs/DIMENSIONAL_DUNGEONS.md).
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
@@ -68,6 +74,7 @@ lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynami
 | Controlling | 19.0.5 | client | [project 250398 / file 6368976](https://www.curseforge.com/minecraft/mc-mods/controlling/files/6368976) |
 | Curios API | 9.5.1+1.21.1 | both (baseline) | [project 309927 / file 6529130](https://www.curseforge.com/minecraft/mc-mods/curios/files/6529130) |
 | Cyclops Core | 1.30.0 | both (baseline) | [project 232758 / file 8859263](https://www.curseforge.com/minecraft/mc-mods/cyclops-core/files/8859263) |
+| Dimensional Dungeons | 210 | both | [project 352222 / file 8828150](https://www.curseforge.com/minecraft/mc-mods/dimensional-dungeons/files/8828150) |
 | DivineRPG | 1.10.10 | both (baseline) | [project 363543 / file 8871764](https://www.curseforge.com/minecraft/mc-mods/official-divinerpg/files/8871764) |
 | Dungeons and Taverns | 1-v4.4.4 | both (baseline) | [project 853794 / file 5768823](https://www.curseforge.com/minecraft/mc-mods/dungeon-and-taverns/files/5768823) |
 | Ecologics | 2.3.7 | both (baseline) | [project 570463 / file 8415537](https://www.curseforge.com/minecraft/mc-mods/ecologics/files/8415537) |

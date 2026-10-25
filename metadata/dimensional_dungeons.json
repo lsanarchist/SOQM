@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "dimension": "dimdungeons:dungeon_dimension",
+  "common_config": "dimdungeons-common-r210.toml",
+  "pinned_mods": {
+    "dimdungeons": "210",
+    "divinerpg": "1.10.10",
+    "twilightforest": "4.8.3345"
+  },
+  "notes": "Finite room-generated encounters. Only ordinary Overworld DivineRPG enemies and early Twilight Forest hostiles are added; no bosses, traders, pets, Arcana or higher Divine dimensions. The Nether Fortress theme retains its native fire-safe enemy sets. Native keys and puzzle equipment remain authoritative.",
+  "modded_enemies": {
+    "divinerpg:cave_crawler": {"class": "divinerpg/entities/vanilla/overworld/EntityCrawler", "home": "minecraft:overworld"},
+    "divinerpg:rotatick": {"class": "divinerpg/entities/vanilla/overworld/EntityRotatick", "home": "minecraft:overworld"},
+    "divinerpg:jungle_dramcryx": {"class": "divinerpg/entities/vanilla/overworld/EntityJungleDramcryx", "home": "minecraft:overworld"},
+    "divinerpg:desert_crawler": {"class": "divinerpg/entities/vanilla/overworld/EntityDesertCrawler", "home": "minecraft:overworld"},
+    "divinerpg:enthralled_dramcryx": {"class": "divinerpg/entities/vanilla/overworld/EntityEnthralledDramcryx", "home": "minecraft:overworld"},
+    "divinerpg:glacon": {"class": "divinerpg/entities/vanilla/overworld/EntityGlacon", "home": "minecraft:overworld"},
+    "divinerpg:kobblin": {"class": "divinerpg/entities/vanilla/overworld/EntityKobblin", "home": "minecraft:overworld"},
+    "divinerpg:jungle_spider": {"class": "divinerpg/entities/vanilla/overworld/EntityJungleSpider", "home": "minecraft:overworld"},
+    "twilightforest:kobold": {"class": "twilightforest/entity/monster/Kobold", "home": "twilightforest:twilight_forest"},
+    "twilightforest:redcap": {"class": "twilightforest/entity/monster/Redcap", "home": "twilightforest:twilight_forest"},
+    "twilightforest:skeleton_druid": {"class": "twilightforest/entity/monster/SkeletonDruid", "home": "twilightforest:twilight_forest"},
+    "twilightforest:hedge_spider": {"class": "twilightforest/entity/monster/HedgeSpider", "home": "twilightforest:twilight_forest"}
+  },
+  "enemy_sets": {
+    "basicEnemySet1": ["divinerpg:cave_crawler", "divinerpg:rotatick", "divinerpg:desert_crawler", "twilightforest:kobold", "minecraft:zombie"],
+    "basicEnemySet2": ["divinerpg:jungle_dramcryx", "divinerpg:kobblin", "divinerpg:glacon", "twilightforest:redcap", "twilightforest:skeleton_druid", "minecraft:skeleton"],
+    "advancedEnemySet1": ["divinerpg:enthralled_dramcryx", "divinerpg:jungle_dramcryx", "divinerpg:jungle_spider", "twilightforest:redcap", "minecraft:vindicator"],
+    "advancedEnemySet2": ["divinerpg:enthralled_dramcryx", "divinerpg:kobblin", "divinerpg:glacon", "twilightforest:skeleton_druid", "minecraft:wither_skeleton"]
+  },
+  "themes": {
+    "2": {
+      "name": "Desert",
+      "enemy_set_1": ["divinerpg:desert_crawler", "divinerpg:rotatick", "divinerpg:kobblin", "minecraft:husk"],
+      "enemy_set_2": ["divinerpg:enthralled_dramcryx", "divinerpg:kobblin", "twilightforest:redcap", "minecraft:wither_skeleton"]
+    },
+    "3": {
+      "name": "Sewers",
+      "enemy_set_1": ["divinerpg:cave_crawler", "divinerpg:rotatick", "twilightforest:hedge_spider", "minecraft:drowned"],
+      "enemy_set_2": ["divinerpg:jungle_dramcryx", "divinerpg:jungle_spider", "twilightforest:skeleton_druid", "minecraft:witch"]
+    }
+  },
+  "loot_routes": {
+    "dimdungeons:chest/chestloot_basic_easy": "expedition",
+    "dimdungeons:chest/chestloot_basic_hard": "stronghold",
+    "dimdungeons:chest/chestloot_advanced_easy": "stronghold",
+    "dimdungeons:chest/chestloot_advanced_hard": "relic_vault",
+    "dimdungeons:chest/chestloot_lucky": "expedition",
+    "dimdungeons:chest/chestloot_crazy": "relic_vault",
+    "dimdungeons:chest/kit_random": "settlement"
+  },
+  "legacy_loot_aliases": {
+    "dimdungeons:chests/chestloot_2": {"target": "dimdungeons:chest/chestloot_2", "profile": "stronghold"},
+    "dimdungeons:chests/chestloot_basic_easy": {"target": "dimdungeons:chest/chestloot_basic_easy", "profile": "expedition"},
+    "dimdungeons:chests/chestloot_basic_hard": {"target": "dimdungeons:chest/chestloot_basic_hard", "profile": "stronghold"},
+    "dimdungeons:chests/chestloot_advanced_hard": {"target": "dimdungeons:chest/chestloot_advanced_hard", "profile": "relic_vault"},
+    "dimdungeons:chests/chestloot_lucky": {"target": "dimdungeons:chest/chestloot_lucky", "profile": "expedition"}
+  },
+  "protected_items": [
+    "dimdungeons:item_portal_key", "dimdungeons:item_blank_advanced_key", "dimdungeons:item_blank_theme_key",
+    "dimdungeons:item_blank_build_key", "dimdungeons:item_key_build", "dimdungeons:item_blank_teleporter_key",
+    "dimdungeons:item_homeward_pearl", "dimdungeons:item_secret_bell", "dimdungeons:block_key_charger",
+    "dimdungeons:block_key_charger_used", "dimdungeons:block_key_charger_damaged", "dimdungeons:block_portal_crown",
+    "dimdungeons:item_trophy_1", "dimdungeons:item_trophy_2", "dimdungeons:item_trophy_3", "dimdungeons:item_trophy_4",
+    "dimdungeons:item_trophy_5", "dimdungeons:item_trophy_6", "dimdungeons:item_trophy_7", "dimdungeons:item_trophy_8"
+  ],
+  "kit_overrides": {
+    "dimdungeons:chest/kit_redstone": {
+      "rolls": 3,
+      "items": [
+        ["minecraft:redstone", 12, 2, 4], ["minecraft:quartz", 8, 1, 3],
+        ["minecraft:copper_ingot", 8, 1, 3], ["minecraft:iron_ingot", 4, 1, 2],
+        ["minecraft:lapis_lazuli", 4, 1, 3], ["minecraft:string", 4, 1, 3]
+      ]
+    },
+    "dimdungeons:chest/kit_pottery": {
+      "rolls": 3,
+      "items": [
+        ["minecraft:brick", 10, 2, 4], ["minecraft:clay_ball", 10, 2, 4],
+        ["minecraft:clay", 4, 1, 2], ["minecraft:flower_pot", 4, 1, 1],
+        ["minecraft:decorated_pot", 2, 1, 1]
+      ],
+      "tables": [["dimdungeons:chest/kit_sherd", 2]]
+    }
+  }
+}

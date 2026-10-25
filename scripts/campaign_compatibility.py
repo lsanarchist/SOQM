@@ -20,10 +20,78 @@ CONTENT_UPGRADE = ROOT / "metadata/storage_refund_compatibility.json"
 HARDCORE_UPGRADE = ROOT / "metadata/hardcore_workshop_compatibility.json"
 HARDCORE_BASE = "95421eeda09f2e3447e6e9d3189a1e43d9c41381"
 HARDCORE_IDENTITY = "b883503b48a5d90e32085663878d7097d371b96478a2a0143bc266036e0dd0ca"
+DUNGEON_UPGRADE = ROOT / "metadata/dimensional_dungeons_quest_compatibility.json"
+DUNGEON_BASE = "46b9bdab3a87271360e4588e4f370300510be63e"
+DUNGEON_IDENTITY = "609df13b427602821a5e8dfd0577f6df352b16248b608806bc8f7710e743cd87"
+DUNGEON_CONTRACT = "116ec912172687d0306ab9496ec119deeaca608a8f10db22020af68af22e9b9a"
 
 
 def digest(value) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def previous_dimensional_dungeons(chapters: list[dict]) -> list[dict]:
+    """Remove only the twelve reviewed DD additions and verify the prior book.
+
+    The old contract includes dependencies and optional flags as well as exact
+    objectives, reward claims and chapter ownership. New exploration quests
+    must not become a hidden prerequisite of an existing production route.
+    This verifies definitions only; no player progress is read or rewritten.
+    """
+    from campaign_refresh import persistent_identity
+
+    snapshot = json.loads(DUNGEON_UPGRADE.read_text(encoding="utf-8"))
+    quest_ids = {f"514E11{number:010X}" for number in range(1, 13)}
+    image_ids = ({f"514E14{number:010X}" for number in range(1, 13)}
+                 | {f"514E15{number:010X}" for number in range(1, 10)})
+    if (snapshot.get("schema") != 1 or snapshot.get("base_commit") != DUNGEON_BASE
+            or snapshot.get("identity_sha256") != DUNGEON_IDENTITY
+            or snapshot.get("contract_sha256") != DUNGEON_CONTRACT
+            or set(snapshot.get("added_quests", {})) != quest_ids
+            or set(snapshot.get("added_images", {})) != image_ids):
+        raise ValueError("Unknown Dimensional Dungeons additive compatibility snapshot")
+    result = deepcopy(chapters)
+
+    def owner(ident, field):
+        found = [chapter for chapter in result
+                 if any(obj["id"] == ident for obj in chapter.get(field, []))]
+        if len(found) != 1:
+            raise ValueError(f"A reviewed DD {field} ID is missing or duplicated: {ident}")
+        return found[0]
+
+    for chapter in result:
+        for quest in chapter["quests"]:
+            if quest["id"] not in quest_ids and quest_ids.intersection(quest.get("dependencies", [])):
+                raise ValueError(f"An existing quest depends on the optional DD branch: {quest['id']}")
+    for ident, addition in snapshot["added_quests"].items():
+        chapter = owner(ident, "quests")
+        quest = next(q for q in chapter["quests"] if q["id"] == ident)
+        if (chapter["filename"] != addition["chapter"]
+                or digest(quest["tasks"]) != addition["tasks_sha256"]
+                or digest(quest["rewards"]) != addition["rewards_sha256"]
+                or quest.get("dependencies", []) != addition["dependencies"]
+                or quest.get("optional", False) is not True
+                or quest.get("can_repeat", False) or quest.get("repeatable", False)
+                or [t["id"] for t in quest["tasks"]] != addition["task_ids"]
+                or [r["id"] for r in quest["rewards"]] != addition["reward_ids"]):
+            raise ValueError(f"Unreviewed additive DD quest: {ident}")
+        chapter["quests"].remove(quest)
+    for ident, filename in snapshot["added_images"].items():
+        chapter = owner(ident, "images")
+        if chapter["filename"] != filename:
+            raise ValueError(f"An additive DD image moved: {ident}")
+        chapter["images"] = [image for image in chapter["images"] if image["id"] != ident]
+    contract = {q["id"]: {"chapter": chapter["filename"], "tasks": q["tasks"],
+                           "rewards": q["rewards"], "dependencies": q.get("dependencies", []),
+                           "optional": q.get("optional", False), "can_repeat": q.get("can_repeat", False)}
+                for chapter in result for q in chapter["quests"]}
+    if digest(contract) != DUNGEON_CONTRACT:
+        raise ValueError("Dimensional Dungeons update changed an unreviewed original objective, owner, dependency, optional status or reward")
+    groups = json.loads((ROOT / "overrides/config/ftbquests/quests/chapter_groups.snbt")
+                        .read_text(encoding="utf-8"))["chapter_groups"]
+    if persistent_identity(result, groups) != DUNGEON_IDENTITY:
+        raise ValueError("Dimensional Dungeons update changed an unreviewed original saved identity")
+    return result
 
 
 def previous_hardcore_workshop(chapters: list[dict]) -> list[dict]:
@@ -38,7 +106,7 @@ def previous_hardcore_workshop(chapters: list[dict]) -> list[dict]:
     if (snapshot.get("schema") != 1 or snapshot.get("base_commit") != HARDCORE_BASE
             or snapshot.get("identity_sha256") != HARDCORE_IDENTITY):
         raise ValueError("Unknown hardcore workshop compatibility snapshot")
-    result = deepcopy(chapters)
+    result = previous_dimensional_dungeons(chapters)
     owners = {chapter["filename"]: chapter for chapter in result}
 
     def owner(ident, field):

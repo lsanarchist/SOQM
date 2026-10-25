@@ -168,6 +168,23 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_upstream_json(content: bytes | str):
+    """Read pinned upstream JSON with comments, preserving every string byte.
+
+    Minecraft's reader accepts comments such as DD's // JEI labels. Match
+    quoted JSON strings first so URLs and literal comment text remain intact.
+    DD also uses literal newlines in advancement display text. Permit those
+    string characters as Gson does; other malformed syntax still raises.
+    """
+    text = content.decode("utf-8") if isinstance(content, bytes) else content
+    without_comments = re.sub(
+        r'("(?:\\.|[^"\\])*")|//[^\r\n]*|/\*[\s\S]*?\*/',
+        lambda match: match.group(1) if match.group(1) is not None else " ",
+        text,
+    )
+    return json.loads(without_comments, strict=False)
+
+
 def refresh_names(mod_dir: Path) -> None:
     """Retain only relevant display names, never a whole upstream language file."""
     identifiers = set()
@@ -192,6 +209,7 @@ def refresh_names(mod_dir: Path) -> None:
                     advancement_ids.add(task["advancement"])
     for path in sorted((ROOT / "overrides/kubejs/data/qm/tags/item/quest_accessories").glob("*.json")):
         collect(load_json(path))
+    namespaces = {identifier.split(":", 1)[0] for identifier in identifiers | advancement_ids}
     names = {}
     sources = []
     mods = load_json(ROOT / "metadata/mods.lock.json")["mods"]
@@ -206,8 +224,9 @@ def refresh_names(mod_dir: Path) -> None:
         with zipfile.ZipFile(path) as jar:
             language = {}
             for member in sorted(jar.namelist()):
-                if re.fullmatch(r"assets/[^/]+/lang/en_us.json", member):
-                    language.update(json.loads(jar.read(member)))
+                match = re.fullmatch(r"assets/([^/]+)/lang/en_us.json", member)
+                if match and match.group(1) in namespaces:
+                    language.update(load_upstream_json(jar.read(member)))
             for identifier in sorted(identifiers):
                 namespace, resource = identifier.split(":", 1)
                 for kind in ("item", "block", "entity"):
@@ -222,7 +241,7 @@ def refresh_names(mod_dir: Path) -> None:
                     member = f"data/{namespace}/{folder}/{resource}.json"
                     if member not in jar.namelist():
                         continue
-                    data = json.loads(jar.read(member))
+                    data = load_upstream_json(jar.read(member))
                     component = data.get("display", {}).get("title", {})
                     if isinstance(component, dict):
                         value = language.get(component.get("translate"), component.get("text"))
