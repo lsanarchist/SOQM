@@ -27,18 +27,18 @@ import qm.chests.SparseChestLoot;
 /** Real DD registry/component and final LootTable mixin fixtures; never shipped. */
 public final class DungeonLootProbe {
     private static final Map<String, String> ROUTES = Map.ofEntries(
-        Map.entry("chest/chestloot_basic_easy", "expedition"),
-        Map.entry("chest/chestloot_basic_hard", "stronghold"),
-        Map.entry("chest/chestloot_advanced_easy", "stronghold"),
-        Map.entry("chest/chestloot_advanced_hard", "relic_vault"),
-        Map.entry("chest/chestloot_lucky", "expedition"),
-        Map.entry("chest/chestloot_crazy", "relic_vault"),
+        Map.entry("chest/chestloot_basic_easy", "dungeon_basic"),
+        Map.entry("chest/chestloot_basic_hard", "dungeon_hard"),
+        Map.entry("chest/chestloot_advanced_easy", "dungeon_hard"),
+        Map.entry("chest/chestloot_advanced_hard", "dungeon_vault"),
+        Map.entry("chest/chestloot_lucky", "dungeon_basic"),
+        Map.entry("chest/chestloot_crazy", "dungeon_vault"),
         Map.entry("chest/kit_random", "settlement"),
-        Map.entry("chests/chestloot_2", "stronghold"),
-        Map.entry("chests/chestloot_basic_easy", "expedition"),
-        Map.entry("chests/chestloot_basic_hard", "stronghold"),
-        Map.entry("chests/chestloot_advanced_hard", "relic_vault"),
-        Map.entry("chests/chestloot_lucky", "expedition")
+        Map.entry("chests/chestloot_2", "dungeon_hard"),
+        Map.entry("chests/chestloot_basic_easy", "dungeon_basic"),
+        Map.entry("chests/chestloot_basic_hard", "dungeon_hard"),
+        Map.entry("chests/chestloot_advanced_hard", "dungeon_vault"),
+        Map.entry("chests/chestloot_lucky", "dungeon_basic")
     );
     private static final List<String> PROTECTED = List.of(
         "item_portal_key", "item_blank_advanced_key", "item_blank_theme_key",

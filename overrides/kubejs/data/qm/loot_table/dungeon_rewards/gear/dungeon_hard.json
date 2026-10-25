@@ -1,0 +1,183 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "name": "qm_dungeon_hard_gear",
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_axe",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bow",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crossbow",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shield",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 25,
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "apotheosis:reforge_item"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{qm_dungeon_reward:1b}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

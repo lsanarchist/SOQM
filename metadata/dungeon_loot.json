@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "version": "0.4.22",
+  "notes": "DD-only combat rewards. Native Apotheosis opening-player World Tier and luck select rarity/purity; no rarity override, late Divine materials, machine parts or new mob-death rewards. The temporary prize marker is removed during first-fill selection.",
+  "reward_marker": "qm_dungeon_reward",
+  "outer_tables": {
+    "qm:chest/dimensional_dungeons/citadel_supplies": "dimdungeons:chest/chestloot_advanced_easy",
+    "qm:chest/dimensional_dungeons/citadel_treasure": "dimdungeons:chest/chestloot_advanced_hard",
+    "qm:chest/dimensional_dungeons/abyss_supplies": "dimdungeons:chest/chestloot_advanced_easy",
+    "qm:chest/dimensional_dungeons/abyss_treasure": "dimdungeons:chest/chestloot_advanced_hard"
+  },
+  "gear_pools": {
+    "iron": [
+      ["minecraft:iron_sword", 5], ["minecraft:iron_axe", 3],
+      ["minecraft:iron_helmet", 3], ["minecraft:iron_chestplate", 4],
+      ["minecraft:iron_leggings", 3], ["minecraft:iron_boots", 3],
+      ["minecraft:bow", 4], ["minecraft:crossbow", 3], ["minecraft:shield", 3]
+    ],
+    "diamond": [
+      ["minecraft:diamond_sword", 5], ["minecraft:diamond_axe", 3],
+      ["minecraft:diamond_helmet", 3], ["minecraft:diamond_chestplate", 4],
+      ["minecraft:diamond_leggings", 3], ["minecraft:diamond_boots", 3],
+      ["minecraft:bow", 4], ["minecraft:crossbow", 3], ["minecraft:shield", 3]
+    ]
+  },
+  "supply_pools": {
+    "basic": [
+      ["minecraft:cooked_beef", 8, 4, 8], ["minecraft:arrow", 8, 8, 12],
+      ["minecraft:golden_carrot", 5, 3, 5], ["minecraft:golden_apple", 3, 1, 1],
+      ["minecraft:experience_bottle", 5, 3, 5], ["minecraft:ender_pearl", 3, 1, 2],
+      ["minecraft:splash_potion", 5, 1, 1, "minecraft:healing"],
+      ["minecraft:potion", 4, 1, 1, "minecraft:fire_resistance"]
+    ],
+    "hard": [
+      ["minecraft:cooked_beef", 6, 6, 10], ["minecraft:arrow", 6, 10, 16],
+      ["minecraft:golden_carrot", 6, 4, 8], ["minecraft:golden_apple", 5, 1, 2],
+      ["minecraft:experience_bottle", 6, 5, 8], ["minecraft:ender_pearl", 4, 2, 3],
+      ["minecraft:splash_potion", 6, 1, 1, "minecraft:strong_healing"],
+      ["minecraft:potion", 4, 1, 1, "minecraft:long_regeneration"],
+      ["minecraft:potion", 4, 1, 1, "minecraft:long_fire_resistance"]
+    ],
+    "vault": [
+      ["minecraft:golden_carrot", 6, 6, 10], ["minecraft:golden_apple", 6, 2, 3],
+      ["minecraft:experience_bottle", 6, 8, 12], ["minecraft:ender_pearl", 5, 3, 4],
+      ["minecraft:arrow", 4, 12, 16],
+      ["minecraft:splash_potion", 8, 1, 1, "minecraft:strong_healing"],
+      ["minecraft:potion", 6, 1, 1, "minecraft:strong_regeneration"],
+      ["minecraft:potion", 5, 1, 1, "minecraft:strong_strength"],
+      ["minecraft:potion", 4, 1, 1, "minecraft:long_fire_resistance"]
+    ]
+  },
+  "profiles": {
+    "dungeon_basic": {
+      "limits": {"min_slots": 5, "max_slots": 9, "max_units": 36, "stack_cap": 12, "valuable_keep_chance": 1.0, "max_valuables": 4, "combat_rewards": 1},
+      "gear_pool": "iron", "enchant_level": 20,
+      "combat": [{"kind": "mixed", "chance": 0.35}],
+      "supplies": {"pool": "basic", "rolls": 1},
+      "gem_dust": {"chance": 0.5, "min": 2, "max": 4}
+    },
+    "dungeon_hard": {
+      "limits": {"min_slots": 6, "max_slots": 10, "max_units": 44, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 4, "combat_rewards": 1},
+      "gear_pool": "diamond", "enchant_level": 25,
+      "combat": [{"kind": "mixed", "chance": 1.0}],
+      "supplies": {"pool": "hard", "rolls": 1},
+      "gem_dust": {"chance": 0.75, "min": 3, "max": 6}
+    },
+    "dungeon_vault": {
+      "limits": {"min_slots": 7, "max_slots": 11, "max_units": 48, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 5, "combat_rewards": 1},
+      "gear_pool": "diamond", "enchant_level": 30,
+      "combat": [{"kind": "mixed", "chance": 1.0}],
+      "supplies": {"pool": "vault", "rolls": 1},
+      "gem_dust": {"chance": 1.0, "min": 4, "max": 8},
+      "keys": [{"theme": 4, "chance": 0.25, "tables": ["dimdungeons:chest/chestloot_advanced_hard", "dimdungeons:chests/chestloot_advanced_hard"]}]
+    },
+    "dungeon_citadel_supplies": {
+      "limits": {"min_slots": 6, "max_slots": 10, "max_units": 48, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 4, "combat_rewards": 1},
+      "gear_pool": "diamond", "enchant_level": 30,
+      "combat": [{"kind": "mixed", "chance": 0.45}],
+      "supplies": {"pool": "hard", "rolls": 1},
+      "gem_dust": {"chance": 1.0, "min": 4, "max": 7}
+    },
+    "dungeon_citadel_treasure": {
+      "limits": {"min_slots": 8, "max_slots": 12, "max_units": 56, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 6, "combat_rewards": 2},
+      "gear_pool": "diamond", "enchant_level": 35,
+      "combat": [{"kind": "gear", "chance": 1.0}, {"kind": "gem", "chance": 1.0}],
+      "supplies": {"pool": "vault", "rolls": 2},
+      "gem_dust": {"chance": 1.0, "min": 6, "max": 10},
+      "keys": [{"theme": 4, "chance": 0.25}, {"theme": 5, "chance": 0.35}]
+    },
+    "dungeon_abyss_supplies": {
+      "limits": {"min_slots": 7, "max_slots": 11, "max_units": 52, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 5, "combat_rewards": 1},
+      "gear_pool": "diamond", "enchant_level": 30,
+      "combat": [{"kind": "mixed", "chance": 0.6}],
+      "supplies": {"pool": "vault", "rolls": 1},
+      "gem_dust": {"chance": 1.0, "min": 5, "max": 8}
+    },
+    "dungeon_abyss_treasure": {
+      "limits": {"min_slots": 9, "max_slots": 13, "max_units": 64, "stack_cap": 16, "valuable_keep_chance": 1.0, "max_valuables": 6, "combat_rewards": 2},
+      "gear_pool": "diamond", "enchant_level": 40,
+      "combat": [{"kind": "gear", "chance": 1.0}, {"kind": "gem", "chance": 1.0}],
+      "supplies": {"pool": "vault", "rolls": 3},
+      "gem_dust": {"chance": 1.0, "min": 10, "max": 16},
+      "keys": [{"theme": 5, "chance": 0.25}]
+    }
+  }
+}

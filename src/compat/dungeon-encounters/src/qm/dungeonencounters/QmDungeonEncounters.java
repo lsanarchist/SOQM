@@ -36,12 +36,15 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.FakePlayer;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
@@ -56,6 +59,7 @@ import org.slf4j.Logger;
 import qm.dungeonencounters.mixin.AffixStateAccess;
 import qm.dungeonencounters.mixin.EliteManagerAccess;
 import qm.mobcompat.MobCompat45;
+import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 
 /** In-place encounters: native Elite abilities and one Apotheosis tier, with no replacement or bonus gear. */
 @Mod(QmDungeonEncounters.MOD_ID)
@@ -75,8 +79,13 @@ public final class QmDungeonEncounters {
         TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("forge:bosses")),
         TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minecraft:bosses")));
     private static final Logger LOGGER = LogUtils.getLogger();
+    private static final DeferredRegister<LootItemFunctionType<?>> LOOT_FUNCTIONS =
+        DeferredRegister.create(Registries.LOOT_FUNCTION_TYPE, MOD_ID);
+    public static final DeferredHolder<LootItemFunctionType<?>, LootItemFunctionType<ExpeditionKeyFunction>> EXPEDITION_KEY =
+        LOOT_FUNCTIONS.register("activate_expedition_key", () -> new LootItemFunctionType<>(ExpeditionKeyFunction.CODEC));
 
-    public QmDungeonEncounters(ModContainer container) {
+    public QmDungeonEncounters(ModContainer container, IEventBus modBus) {
+        LOOT_FUNCTIONS.register(modBus);
         container.registerConfig(ModConfig.Type.COMMON, EncounterConfig.SPEC, MOD_ID + "-common.toml");
         NeoForge.EVENT_BUS.register(this);
     }
@@ -241,7 +250,8 @@ public final class QmDungeonEncounters {
         Affix affix = pool.get(mob.getRandom().nextInt(pool.size()));
         WorldTier tier = WorldTier.getTier(player);
         boolean advanced = saved.getBoolean("advanced");
-        EliteTier abilityTier = advanced || boss ? EliteTier.CHAMPION : EliteTier.ELITE;
+        int theme = dungeon ? saved.getInt("theme") : 0;
+        EliteTier abilityTier = advanced || boss || QmExpeditions.isExpedition(theme) ? EliteTier.CHAMPION : EliteTier.ELITE;
         DifficultyLevel circle = PlayerProgressionData.get(player).getActiveLevel();
         float healthRatio = mob.getMaxHealth() <= 0 ? 1.0F : mob.getHealth() / mob.getMaxHealth();
         saved.putInt("state", APPLYING);
@@ -263,10 +273,16 @@ public final class QmDungeonEncounters {
                 augment.apply(level, mob);
             }
             mob.setData(Apoth.Attachments.TIER_AUGMENTS_APPLIED, true);
-            addModifier(mob, Attributes.MAX_HEALTH, HEALTH_ID, boss ? EncounterConfig.BOSS_HEALTH_MULTIPLIER.get() : advanced
-                ? EncounterConfig.ADVANCED_HEALTH_MULTIPLIER.get() : EncounterConfig.HEALTH_MULTIPLIER.get());
-            addModifier(mob, Attributes.ATTACK_DAMAGE, DAMAGE_ID, boss ? EncounterConfig.BOSS_DAMAGE_MULTIPLIER.get() : advanced
-                ? EncounterConfig.ADVANCED_DAMAGE_MULTIPLIER.get() : EncounterConfig.DAMAGE_MULTIPLIER.get());
+            double health = boss ? EncounterConfig.BOSS_HEALTH_MULTIPLIER.get()
+                : theme == QmExpeditions.CITADEL ? EncounterConfig.CITADEL_HEALTH_MULTIPLIER.get()
+                : theme == QmExpeditions.ABYSS ? EncounterConfig.ABYSS_HEALTH_MULTIPLIER.get()
+                : advanced ? EncounterConfig.ADVANCED_HEALTH_MULTIPLIER.get() : EncounterConfig.HEALTH_MULTIPLIER.get();
+            double damage = boss ? EncounterConfig.BOSS_DAMAGE_MULTIPLIER.get()
+                : theme == QmExpeditions.CITADEL ? EncounterConfig.CITADEL_DAMAGE_MULTIPLIER.get()
+                : theme == QmExpeditions.ABYSS ? EncounterConfig.ABYSS_DAMAGE_MULTIPLIER.get()
+                : advanced ? EncounterConfig.ADVANCED_DAMAGE_MULTIPLIER.get() : EncounterConfig.DAMAGE_MULTIPLIER.get();
+            addModifier(mob, Attributes.MAX_HEALTH, HEALTH_ID, health);
+            addModifier(mob, Attributes.ATTACK_DAMAGE, DAMAGE_ID, damage);
             mob.setHealth(Math.min(mob.getMaxHealth(), Math.max(0.0F, healthRatio * mob.getMaxHealth())));
             MobCompat45.markElite(mob);
             mob.getPersistentData().putBoolean(MobCompat45.SCALE_MARKER, true);

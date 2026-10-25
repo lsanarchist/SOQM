@@ -56,7 +56,7 @@ class DungeonPolicyTests(unittest.TestCase):
             if mob.startswith("divinerpg:"):
                 self.assertEqual(evidence["home"], "minecraft:overworld")
                 self.assertIn("/vanilla/overworld/", evidence["class"])
-        self.assertEqual(set(SOURCE["themes"]), {"2", "3"}, "Keep the Nether Fortress's native fire-safe pools")
+        self.assertEqual(set(SOURCE["themes"]), {"2", "3", "4", "5"}, "Keep the Nether Fortress's native fire-safe pools")
 
     def test_native_config_is_generated_without_new_worldgen_or_extra_hp_multiplier(self):
         spec = importlib.util.spec_from_file_location("dd_generator", ROOT / "scripts/dimensional_dungeons.py")
@@ -67,26 +67,78 @@ class DungeonPolicyTests(unittest.TestCase):
         self.assertFalse((ROOT / "overrides/config/dimdungeons-common.toml").exists(),
                          "DD 210 does not load the unversioned default config filename")
         config = tomllib.loads((ROOT / "overrides/config" / SOURCE["common_config"]).read_text())
-        self.assertEqual(set(config), {"enemySets", "dungeonTheme2", "dungeonTheme3"})
+        self.assertEqual(set(config), {"enemySets", "dungeonTheme2", "dungeonTheme3", "dungeonTheme4", "dungeonTheme5"})
         for field, enemies in SOURCE["enemy_sets"].items():
             self.assertEqual(config["enemySets"][field], enemies)
         self.assertEqual(config["enemySets"]["basicEnemyHealthScaling"], 1.0)
         self.assertEqual(config["enemySets"]["advancedEnemyHealthScaling"], 1.0)
-        self.assertEqual(config["enemySets"]["numberOfThemes"], 3)
+        self.assertEqual(config["enemySets"]["numberOfThemes"], 5)
         for number in SOURCE["themes"]:
             self.assertEqual(config[f"dungeonTheme{number}"][f"themeEnemyHealthScaling{number}"], 1.0)
+        for number, size in (("4", 32), ("5", 42)):
+            theme = config[f"dungeonTheme{number}"]
+            self.assertEqual(theme[f"themeDungeonSize{number}"], size)
+            for shape, rooms in SOURCE["themes"][number]["room_sets"].items():
+                self.assertEqual(theme[f"theme{shape}{number}"], [[room] for room in rooms])
+
+    def test_authored_rooms_are_finite_connected_and_have_safe_spawns(self):
+        spec = importlib.util.spec_from_file_location("dd_rooms", ROOT / "scripts/dungeon_rooms.py")
+        generator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(generator)
+        rooms = list(generator.build_rooms())
+        self.assertEqual(len(rooms), 18)
+        self.assertEqual(len({room.encode() for name, room in rooms}), 18, "Variants must not be identical rooms")
+        for name, room in rooms:
+            path = generator.DESTINATION / (name + ".nbt")
+            self.assertEqual(path.read_bytes(), room.encode(), name)
+            spawn_markers = [marker for marker in room.markers.values() if marker.startswith("Summon")]
+            self.assertLessEqual(len(spawn_markers), 4, name)
+            for state, _ in room.blocks.values():
+                self.assertNotIn(state[0], {"minecraft:spawner", "minecraft:trial_spawner", "minecraft:command_block",
+                                           "minecraft:repeating_command_block", "minecraft:chain_command_block"}, name)
+            room.validate_spawns()
+            if room.kind == "entrance":
+                self.assertEqual(spawn_markers, [], "Entrance is a safe arrival point")
+                self.assertEqual({pos for pos, marker in room.markers.items() if marker == "ReturnPortal"},
+                                 {(x, y, 14) for x in (7, 8) for y in (5, 6, 7)})
+            if room.kind == "end":
+                self.assertEqual(spawn_markers.count("SummonKeyholder"), 1)
+                self.assertEqual(list(room.markers.values()).count("LockWithCode"), 1)
+            # Native room markers become air/portals after placement. Validate
+            # walking connectivity at the common doorway/floor elevation.
+            def free(x, y, z):
+                return room.blocks[x, y, z][0] == generator.AIR or (x, y, z) in room.markers
+            walkable = {(x, z) for x in range(16) for z in range(16)
+                        if room.blocks[x, 4, z][0] != generator.AIR and free(x, 5, z) and free(x, 6, z)}
+            doors = []
+            for direction in generator.DOORS[room.kind]:
+                doors.extend({"N": [(x, 0) for x in range(6, 10)], "S": [(x, 15) for x in range(6, 10)],
+                              "W": [(0, z) for z in range(6, 10)], "E": [(15, z) for z in range(6, 10)]}[direction])
+            self.assertTrue(set(doors) <= walkable, name)
+            visited, pending = {doors[0]}, [doors[0]]
+            while pending:
+                x, z = pending.pop()
+                for neighbor in ((x - 1, z), (x + 1, z), (x, z - 1), (x, z + 1)):
+                    if neighbor in walkable and neighbor not in visited:
+                        visited.add(neighbor)
+                        pending.append(neighbor)
+            self.assertTrue(set(doors) <= visited, f"Disconnected native doorway: {name}")
 
     def test_only_outer_chest_fills_receive_a_single_bounded_profile(self):
         expected = dict(SOURCE["loot_routes"])
         expected.update({old: row["profile"] for old, row in SOURCE["legacy_loot_aliases"].items()})
-        actual = {table: profile for table, profile in POLICY["routes"].items() if table.startswith("dimdungeons:")}
+        def dungeon_table(table):
+            return table.startswith(("dimdungeons:", "qm:chest/dimensional_dungeons/"))
+        actual = {table: profile for table, profile in POLICY["routes"].items() if dungeon_table(table)}
         self.assertEqual(actual, expected)
         observed = {}
-        for path in (DATA / "qm/loot_modifiers/exploration").glob("*.json"):
+        paths = list((DATA / "qm/loot_modifiers/exploration").glob("*.json"))
+        paths += list((DATA / "qm/loot_modifiers/dungeon_rewards").glob("*.json"))
+        for path in paths:
             modifier = json.loads(path.read_text())
             for term in modifier["conditions"][0]["terms"]:
                 table = term.get("loot_table_id", "")
-                if table.startswith("dimdungeons:"):
+                if dungeon_table(table):
                     self.assertNotIn(table, observed, "A chest must not roll two supply profiles")
                     observed[table] = modifier["table"].split("/")[-1]
         self.assertEqual(observed, expected)

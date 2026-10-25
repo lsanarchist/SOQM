@@ -32,7 +32,8 @@ In particular, DD's chest-slot key and offhand theme key are preserved.
   automatic spawn augment based on a distant player. It then adds fixed,
   named permanent health/damage modifiers and retains current health ratio.
   Default additions are +50% base health/+15% base attack for ordinary mobs,
-  +100%/+25% for advanced DD rooms and +25%/+10% for Divine bosses. These are
+  +100%/+25% for advanced DD rooms, +150%/+35% for Iron Citadel,
+  +200%/+50% for Obsidian Abyss and +25%/+10% for Divine bosses. These are
   attribute additions subject to native attribute limits; attacks with damage
   hardcoded by the original mod are not rewritten.
 * The existing MobCompat45 marker is used to prevent a later automatic
@@ -63,6 +64,45 @@ On removal or unload, the map entry is removed so it cannot keep an unloaded
 mob alive. A live entity becoming temporarily hidden retains its ability,
 because NeoForge does not emit a second join event when it becomes visible.
 Changing the selection config affects future conversions, not saved rolls.
+
+## Earned expedition keys and authored rooms
+
+Version 0.4.22 supports two original themes: Iron Citadel (4) and Obsidian
+Abyss (5). `scripts/dungeon_rooms.py` builds 18 authored NBT room templates;
+the native themed designer uses targets of 32 and 42 room cells. Encounters
+remain finite native data-marker spawns. The new themes use Champion ability
+strength, their own configured attribute additions and the same saved-state
+lifecycle as existing encounters.
+
+`ExpeditionKeyFunction` is a registered native loot function. It delegates
+fresh address allocation and all dungeon-key components to DD's
+`activateKeyLevel1`, then supplies localized names and lore. Reapplying it to
+an activated key leaves its address unchanged. Native key data retains the
+themed BASIC type, so the native themed room pools and their sizes are used.
+Only the portal shape validator and its player diagnostic see an effective
+level 2 for these keys; both crowns and valid banners are therefore required.
+There is no global key-level override or replacement dungeon generator.
+
+Two exact, pinned call sites limit natural random thematic keys and blank
+thematic-key activation to the original three themes. Expedition keys are
+instead selected by the scoped treasure tables, progressing from Advanced
+to Citadel and then Abyss. The room marker RETURN hook assigns the four
+authored loot tables after native lock-code generation, only in the DD
+dimension and on the matching authored template prefix. It does not generate
+loot early or replace the chest's opener context.
+
+DD210 writes `room.theme` to its saved dungeon data but does not restore it
+when rebuilding either `roomMap` or `remainingBuilds`. A pinned constructor
+RETURN hook restores only saved theme 4/5 values whose structure belongs to
+the matching authored Citadel/Abyss prefix. This lets an interrupted build
+resume with its original enemies and treasure tables after a restart. The
+hook changes no positions, rotations, room types, dungeon types, queues or
+key counters. Native themes, foreign structures, missing theme tags and
+mismatched theme/template pairs retain the native load behavior.
+
+Combat item/gem rewards are defined in `metadata/dungeon_loot.json` and use
+Apotheosis's own loot functions. This module still does not equip every
+enhanced mob or create a second entity-death reward path.
 
 ## Build
 

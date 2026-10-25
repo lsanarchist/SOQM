@@ -12,11 +12,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import net.minecraft.Util;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.component.CustomData;
 
 /** Finite table policies, applied after all loot modifiers but before slot fill.
  * No server, level, player, container or ItemStack survives this call.
@@ -36,6 +38,7 @@ public final class SparseChestLoot {
     private static final List<String> BLOCKED_PREFIXES = new ArrayList<>(strings("forbidden_prefixes"));
     private static final List<String> PROTECTED_PARTS = new ArrayList<>(strings("protected_path_parts"));
     private static final List<String> VALUABLE_PARTS = new ArrayList<>(strings("valuable_parts"));
+    private static final String DUNGEON_REWARD_MARKER = DATA.get("dungeon_reward_marker").getAsString();
 
     private SparseChestLoot() {}
 
@@ -86,6 +89,18 @@ public final class SparseChestLoot {
                 || stack.isEnchanted() || stack.getRarity() == Rarity.RARE || stack.getRarity() == Rarity.EPIC;
     }
 
+    /** The owned marker is temporary; affixes, gem identity and all other data survive. */
+    private static boolean takeDungeonRewardMarker(ItemStack stack) {
+        CustomData custom = stack.get(DataComponents.CUSTOM_DATA);
+        if (custom == null) return false;
+        var tag = custom.copyTag();
+        if (!tag.getBoolean(DUNGEON_REWARD_MARKER)) return false;
+        tag.remove(DUNGEON_REWARD_MARKER);
+        if (tag.isEmpty()) stack.remove(DataComponents.CUSTOM_DATA);
+        else stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+        return true;
+    }
+
     private static List<ItemStack> merge(Iterable<ItemStack> source) {
         List<ItemStack> result = new ArrayList<>();
         for (ItemStack item : source) {
@@ -117,7 +132,9 @@ public final class SparseChestLoot {
         int stackCap = rules.get("stack_cap").getAsInt();
         float valuableChance = rules.get("valuable_keep_chance").getAsFloat();
         int valuableLimit = rules.get("max_valuables").getAsInt();
+        int combatRewardLimit = rules.has("combat_rewards") ? rules.get("combat_rewards").getAsInt() : 0;
         var protectedLoot = new ArrayList<ItemStack>();
+        var combatRewards = new ArrayList<ItemStack>();
         var finds = new ArrayList<ItemStack>();
         var valuables = new ArrayList<ItemStack>();
         var supply = new ArrayList<ItemStack>();
@@ -126,6 +143,13 @@ public final class SparseChestLoot {
         for (ItemStack stack : merge(generated)) {
             if (isBlocked(stack)) continue;
             if (isProtected(stack, tableId)) { protectedLoot.add(stack); continue; }
+            if (combatRewardLimit > 0 && takeDungeonRewardMarker(stack)) {
+                // Dedicated DD tables already made the combat reward roll.
+                // Do not reroll it or let filler/native treasure displace it.
+                stack.setCount(1);
+                if (combatRewards.size() < combatRewardLimit) combatRewards.add(stack);
+                continue;
+            }
             String id = id(stack);
             if (FINDS.get(profile).contains(id)) {
                 // The loot table has already rolled this bonus. Keep one small
@@ -151,11 +175,18 @@ public final class SparseChestLoot {
         Util.shuffle(finds, random); Util.shuffle(valuables, random);
         Util.shuffle(supply, random); Util.shuffle(ordinary, random);
         generated.clear();
-        // Keep the source's maps, keys, lore, artifacts and boss trophies. They
-        // consume the ordinary budget first; the budget may expand only for
-        // these pre-existing progression items, never to add more supplies.
+        // Keep the source's maps, keys, lore, artifacts and boss trophies first.
+        // Protected items and the bounded DD combat prizes below may expand
+        // the soft budget; ordinary filler cannot expand it.
         int units = 0;
         for (ItemStack stack : protectedLoot) {
+            if (generated.size() >= availableSlots) break;
+            generated.add(stack); units += stack.getCount();
+        }
+        // Native keys/trophies remain first. The authored one or two combat
+        // prizes follow before ordinary budgets; actual container space is
+        // always a hard limit. Only DD profiles can enable these prizes.
+        for (ItemStack stack : combatRewards) {
             if (generated.size() >= availableSlots) break;
             generated.add(stack); units += stack.getCount();
         }

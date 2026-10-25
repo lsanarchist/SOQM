@@ -1,6 +1,6 @@
 # Compatibility sources
 
-SOQM 0.4.21 uses **fifteen** authored compatibility modules: ten recovered from
+SOQM 0.4.22 uses **fifteen** authored compatibility modules: ten recovered from
 the supplied Questing Mayhem Expert source chain, the runtime optimization
 module, the production-evidence adapter, the Foundry crafting fix and the
 Sophisticated Core/JEI display fix, and the dungeon encounter integration. The original eight include full MIT
@@ -20,12 +20,12 @@ and missing notice; they do not invent an upstream copyright holder.
 | `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
-| `chest-balance` | `qm-chest-balance-0.4.21.jar` | Recovered 0.4.6 source; bounded exploration and Dimensional Dungeons routes |
+| `chest-balance` | `qm-chest-balance-0.4.22.jar` | Recovered 0.4.6 source; bounded exploration and Dimensional Dungeons routes |
 | `progressive-rewards` | `qm-progressive-rewards-0.4.10.jar` | New SOQM source; recipe-backed refunds, world upgrades and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
 | `foundry-compat` | `qm-foundry-compat-0.4.15.jar` | New SOQM source; positioned ingredient writes for Modern Foundry 4.1.6 |
 | `storage-jei-compat` | `qm-storage-jei-compat-0.4.17.jar` | New SOQM source; centred display-slot focus links for pinned Sophisticated Core and JEI |
-| `dungeon-encounters` | `qm-dungeon-encounters-0.4.21.jar` | New SOQM source; persistent in-place Elite Mobs abilities and Apotheosis tier integration |
+| `dungeon-encounters` | `qm-dungeon-encounters-0.4.22.jar` | New SOQM source; persistent in-place Elite Mobs abilities and Apotheosis tier integration |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -83,7 +83,11 @@ registers actual Elite Mobs ability state and applies one Apotheosis world tier
 when a real player approaches. Saved ability cooldowns and one-shot flags are
 restored without rerolling or applying attributes again. The exact-version
 native build validates the upstream archives and Mixin target hashes. The
-chest module's 0.4.21 native build adds explicit routes and protected puzzle items.
+0.4.22 revision adds native-allocated expedition keys, scoped upgraded-portal
+checks and authored-room loot routing for two harder themes. The chest module's
+0.4.22 native build gives DD its own combat-reward profiles, preserves the
+selected main prizes before ordinary supply budgets and keeps puzzle items and
+complete key components. Non-DD chest policies and mob death drops are retained.
 
 **Independent recompilation of all ten recovered production JARs has not been
 reproduced.** The Cannibal, Quest Automation, Quest UI, runtime optimization and
