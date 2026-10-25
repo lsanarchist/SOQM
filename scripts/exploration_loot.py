@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "metadata/exploration_loot.json"
 POLICY = ROOT / "src/compat/chest-balance/resources/qm_chest_policy.json"
+DUNGEONS = ROOT / "metadata/dimensional_dungeons.json"
 
 
 def item_entry(row):
@@ -31,6 +32,20 @@ def pool(profile, kind, rows, chance=1):
 def outputs():
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
     policy = json.loads(POLICY.read_text(encoding="utf-8"))
+    dungeons = json.loads(DUNGEONS.read_text(encoding="utf-8"))
+    dungeon_routes = dict(dungeons["loot_routes"])
+    dungeon_routes.update({old: alias["profile"] for old, alias in dungeons["legacy_loot_aliases"].items()})
+    # Exact outer chest fills only. Nested books, trophies and material tables
+    # must not independently roll additional exploration supplies.
+    policy["routes"] = {table: profile for table, profile in policy["routes"].items()
+                        if not table.startswith("dimdungeons:")}
+    for table, profile in dungeon_routes.items():
+        if profile not in source["profiles"]:
+            raise ValueError(f"Unknown dungeon chest profile: {table} -> {profile}")
+        policy["routes"][table] = profile
+    policy["routes"] = dict(sorted(policy["routes"].items()))
+    existing_protected = [item for item in policy["protected_exact"] if not item.startswith("dimdungeons:")]
+    policy["protected_exact"] = existing_protected + sorted(dungeons["protected_items"])
     policy["schema"] = 2
     policy["version"] = source["version"]
     policy["find_items"] = {}
@@ -47,6 +62,16 @@ def outputs():
                 pool(name, "pleasant_find", profile["finds"], profile["find_chance"]),
                 pool(name, "rare_cube", [["chancecubes:chance_cube", 10, 1, 1]], profile["cube_chance"]),
             ]}
+        modifier_path = ROOT / f"overrides/kubejs/data/qm/loot_modifiers/exploration/{name}.json"
+        modifier = json.loads(modifier_path.read_text(encoding="utf-8"))
+        terms = modifier["conditions"][0]["terms"]
+        terms = [term for term in terms if not term.get("loot_table_id", "").startswith("dimdungeons:")]
+        terms.extend({"condition": "neoforge:loot_table_id", "loot_table_id": table}
+                     for table, route in sorted(dungeon_routes.items()) if route == name)
+        # Existing entries include dimension-qualified all_of conditions.
+        # Keep those intact rather than flattening their original scope.
+        modifier["conditions"][0]["terms"] = terms
+        result[modifier_path] = modifier
     policy["curated_items"] = sorted({item for items in policy["profile_items"].values() for item in items})
     result[POLICY] = policy
     return result

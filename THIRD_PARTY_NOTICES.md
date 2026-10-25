@@ -9,14 +9,14 @@ with Mojang or Microsoft.
   `5c17c9030296cbbc4ce8a5c0e075c19f10366524a17f95f7fbcbe12c25604061`.
   `soqm.json` records the input; source archives and their historical runtime
   reports are not committed as project artifacts.
-- **Third-party mods:** `metadata/mods.lock.json` pins **130** official
+- **Third-party mods:** `metadata/mods.lock.json` pins **131** official
   project/file references, versions, hashes and sizes. The installable ZIP uses
   a manifest, rather than bundling these mod JARs. Each mod retains its own license;
   an absent license field is unknown, not a grant of redistribution rights.
   See [MODLIST.md](MODLIST.md).
 - **Authored compatibility modules:** **10** `qm-*` modules come from the
   supplied baseline: the original eight, `qm-mob-compat-0.4.5` and
-  `qm-chest-balance-0.4.11` (updated from the recovered 0.4.6 source). Sources, resources and provenance are retained under
+  `qm-chest-balance-0.4.21` (updated from the recovered 0.4.6 source). Sources, resources and provenance are retained under
   [src/compat/](src/compat/README.md); production binary hashes are pinned
   separately. The original eight include full MIT notices. The two additions
   declare MIT in their mod metadata but did not supply full license/copyright
@@ -50,6 +50,15 @@ with Mojang or Microsoft.
   target pins and upstream references are in
   [the module notes](src/compat/storage-jei-compat/README.md). No Sophisticated
   or JEI implementation class is redistributed by this addition.
+- **Dungeon encounters:** `qm-dungeon-encounters-0.4.21` is an original SOQM
+  integration under MIT, bringing the current total to **15** authored modules.
+  It uses the pinned Dimensional Dungeons, Elite Mobs, Apotheosis and DivineRPG
+  APIs without redistributing their implementation classes. Dimensional Dungeons
+  210 by AllenSeitz is referenced through official CurseForge project 352222 /
+  file 8828150 and retains its All Rights Reserved license. The SOQM loot aliases
+  and bounded supply tables are independently authored data; original dungeon
+  room NBTs remain in the upstream JAR. Sources and exact API targets are in
+  [the encounter module](src/compat/dungeon-encounters/README.md).
 - **Modified structure templates:** nine inherited NBT resources adjust only
   inventories from upstream structures. Their origin is recorded, but their
   redistribution licenses have not been established. They are not covered by

@@ -1,5 +1,70 @@
 # Verification status
 
+## SOQM 0.4.21 — Dimensional Dungeons and DivineRPG elite encounters
+
+Validation completed on **2026-10-25** against the locked installation payload:
+**131** pinned third-party dependencies, **15** authored modules and **1,861**
+effective payload files. Dimensional Dungeons 210 uses its original official JAR.
+The pinned NeoForge/FML compatibility matrix accepts its Minecraft 1.21 metadata
+on 1.21.1 without a dependency override or repacking the upstream file.
+
+- `./scripts/check` passed **189 Python tests** with Java 21 available, both
+  JavaScript policy suites, generator freshness, source/binary provenance and
+  deterministic ZIP content/CRC/hash checks. All **131** downloaded mod JARs
+  separately passed exact size, SHA-256 and archive checks. Campaign render
+  freshness also passed.
+- Both updated authored modules compiled against the real pinned Java 21 /
+  Minecraft 1.21.1 / NeoForge 21.1.262 APIs. The encounter build validates the
+  specific upstream Mixin targets and dependencies before compilation.
+- The isolated full-pack dedicated-server run passed **335 encounter assertions**
+  and **39,619 loot assertions** (**39,954** total). It used the reviewed payload
+  without a development override, verified that production files stayed unchanged,
+  reloaded **20,062 → 20,062 recipes**, recorded **zero KubeJS startup/server or
+  fatal server errors**, saved all dimensions and exited with code **0**.
+- Native DD `spawnEnemyHere` tests cover pre-generated rooms before a player
+  arrives, basic/advanced scaling order, in-place Divine entity identity, AI,
+  equipment, component-bearing keys and original drop chances. The actual Elite
+  Mobs damage listener heals a Vampiric mob; native tick dispatch runs and saves
+  a Regenerating ability's consumed one-shot state. Two native entity NBT/load
+  cycles and an actual data reload preserve attributes, names and ability state.
+- Selection uses **12%** for ordinary DivineRPG hostiles and **85%** for native
+  DivineRPG bosses. Both policies ran in all **eight DivineRPG dimensions** and
+  the Overworld. The pinned native boss tag and class audit cover all **23** boss
+  types; actual activation and working ability tests exercise **Ancient Entity**,
+  **The Watcher** and aquatic **Kitra**, covering the three distinct hierarchies.
+  Kitra retains its native undead immunity and receives compatible Vampiric
+  behavior instead of an ineffective regeneration effect.
+- Observed boss HP was **800 → 1,000**, **950 → 1,024** and **750 → 937.5**,
+  respectively. The configured +25% base-health modifier remains subject to
+  Minecraft's native attribute cap; it does not promise an uncapped effective
+  increase. Native boss AI, boss bars and loot remain in use. Damage hardcoded
+  by an upstream attack is not rewritten by the attack-attribute modifier.
+- Player-local activation respects its budget and distance, excludes fake
+  players, preserves ordinary despawn rules, handles hidden/visible transitions
+  and detaches removed entities. NPCs, pets, neutral whales and already enhanced
+  encounters remain excluded; DD's own persistent enemies retain their flag.
+- Loot validation used all **12** exact DD routes, **20** real registered protected
+  item types and **three** keys activated by DD's own API. It exercised **1,536**
+  native final-fill cases and **768** actual loaded-table rolls, including **85**
+  with native DD treasures. Full key components and counts survived the policy.
+
+Reproduce the native check after restoring the pinned dependency cache and an
+installed NeoForge runtime:
+
+```sh
+python3 tests/runtime/encounter-validation/run_probe.py \
+  --runtime <installed-neoforge-server> --java <java-21> \
+  --accept-eula --timeout 1200
+```
+
+The detailed local result is `reports/dungeon-encounter-probe.json`; the source
+fixture and runner are under `tests/runtime/encounter-validation/`. The test-only
+mod is excluded from the installable pack. This is native server evidence;
+there has been no graphical client playtest, full boss fight/playthrough,
+long-term multiplayer balance run or whole-server TPS benchmark for this change.
+Upstream nonfatal warnings still exist; zero fatal/KubeJS errors does not mean
+an entirely warning-free console. See [the gameplay policy](../docs/DIMENSIONAL_DUNGEONS.md).
+
 ## SOQM 0.4.17 — Sophisticated Storage focus links in JEI
 
 Correct the compact ingredient index used to select a physical JEI display

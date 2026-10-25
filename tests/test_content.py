@@ -151,7 +151,7 @@ class CompatibilityProvenanceTests(unittest.TestCase):
         provenance = read_json(directory / "provenance.json")
         authored = read_json(ROOT / "metadata/authored-mods.json")
         modules = provenance["modules"]
-        self.assertEqual(len(modules), 14)
+        self.assertEqual(len(modules), 15)
         self.assertEqual({row["module"] for row in modules},
                          {path.name for path in directory.iterdir() if (path / "src").is_dir()},
                          "Every compatibility source module must have provenance")

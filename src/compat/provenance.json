@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recovered compatibility source provenance plus reviewed local revisions and four original SOQM modules. Native API builds are documented for Cannibal 0.4.1, Quest Automation 0.4.4, Quest UI 0.4.5, Runtime Optimizations 0.4.7, Progressive Rewards 0.4.10, Foundry Compatibility 0.4.15 and Storage JEI Compatibility 0.4.17. Quest UI 0.4.7 is a resource-only revision preserving all native 0.4.5 class bytes; recompilation of the other seven production modules remains unproven.",
+  "scope": "Recovered compatibility source provenance and reviewed SOQM revisions. Per-module local_revision fields record native build evidence; historical unreproduced modules retain their original provenance. SOQM 0.4.21 adds the original dungeon encounter module and rebuilds chest balance against the pinned Minecraft/NeoForge and mod APIs.",
   "archive_chain_sha256": {
     "0.4.4": "5da305ff631ab872209ea9672aca4c2128218a500ec57738de686de20424b354",
     "0.4.3": "d65b07795e3748471cccd368eaf54c20eda985607f40b08fecbd766dccf8d5a7",
@@ -347,21 +347,40 @@
     },
     {
       "module": "chest-balance",
-      "production_jar": "qm-chest-balance-0.4.11.jar",
-      "production_jar_sha256": "2026d75df4039f005c3ffb7fb5f515cd3290a45bea22757deb29e9246f838b0c",
+      "production_jar": "qm-chest-balance-0.4.21.jar",
+      "production_jar_sha256": "1955b10780b288e8ac6bcbd62fe92fdd638488ad24b1c55f53ef0660c942c2c5",
       "source_origin": "authoring/v046_work/chest_balance/compat",
       "baseline_archive": "0.4.6",
       "license_evidence": "MIT declaration in neoforge.mods.toml; full upstream notice absent; LICENSE records this limitation.",
       "files_sha256": {
         "LICENSE": "aa64856d52ee63e4bcdc8c517c289557ef924f166cb8c68ba7cbd4266ac93cc8",
-        "resources/META-INF/neoforge.mods.toml": "5b049b8b34a703d9af2dfabfd76eb32c3fc271f986e8cc7d83c9e4cde1e6b844",
+        "resources/META-INF/neoforge.mods.toml": "0f7614324b0aebef2ed72ab4edffae3eba47ca8ac874e5891ec3dec1d9cae7fd",
         "resources/qm_chest_balance.mixins.json": "4bfa4a15e1b3d31dd9690a963dae022cc0cebe54e1b129859e8e680a31d15618",
-        "resources/qm_chest_policy.json": "2ef159a953197808ad4a29acc16240b1d4c1eb2aae53c1bcf62891a94b042591",
+        "resources/qm_chest_policy.json": "a6014c212c63c93f4fb8e479157a2b65ebd5ed239cc983afa745d8d562779e5e",
         "src/qm/chests/QmChestBalance.java": "d39a11a2069d5cdebe5e5daa90b902b58dc5fdaf3c73b4c6a02d0712234d6b6b",
         "src/qm/chests/SparseChestLoot.java": "7754297b420ae6cfceacfdaaa5ff5ad16bce741981be4b9bb7e8ae7b90635ab7",
         "src/qm/chests/mixin/LootTableFillMixin.java": "0b26eab7fc2c27413b972ae329b0ef140da460939c4affdffc5d4772acc8eb41"
       },
       "local_revision": {
+        "version": "0.4.21",
+        "change": "Add bounded Dimensional Dungeons chest routes and preserve native keys and puzzle items.",
+        "compiler": "Eclipse Temurin javac 21.0.13 (JDK 21.0.13+9)",
+        "compiler_archive_sha256": "d7f5d5cf865a2902b70ff549b97586a7d3f234e016f041ab447ea740c7d66d1c",
+        "compiler_executable_sha256": "2cc288a26beebc50ca7cd924847dffbfb38ef3314e105bba6d4ebce03a0bcb6b",
+        "jdk_release_sha256": "f83f6dcc966043c93cd498ac8e7ee7c310852074970d62c702e4ad2710002898",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
+        "build_script": "src/compat/build_optimizations.py",
+        "build_script_sha256": "bf3a6f2575f9ecfdd7ccfa116cf365c309dd9d68667e7b9f90b57905febd9a9d",
+        "native_locked_payload_gate_passed": true,
+        "graphical_client_playtest": false,
+        "whole_server_tps_benchmark": false,
+        "native_assertions": 39619,
+        "native_fixture": "tests/runtime/encounter-validation/DungeonLootProbe.java",
+        "native_fixture_sha256": "7e5d341b8ea0aa602881b234f54f4dacba0fdf9a23f287148a094333479a1cc0"
+      },
+      "previous_local_revision": {
         "version": "0.4.11",
         "change": "Use bounded profile-specific source treasure retention, single curated finds and variable chest slot budgets; cover three new structure mods and preserve protected native loot.",
         "baseline_production_jar": "qm-chest-balance-0.4.6.jar",
@@ -540,6 +559,64 @@
         "jei_sha256": "f7a9de3d7ee07eed8d293a1a1a0f6afaac556eb43c103523457bd07ebb551e7b",
         "crafting_spec_extension_class_sha256": "422d00aabf7a4a36d155ba7aaa121c927ec0ba0ea202a41dddc37ecbbeec1386",
         "rebuilt_byte_identically_twice": true
+      }
+    },
+    {
+      "module": "dungeon-encounters",
+      "source_origin": "Original SOQM compatibility integration",
+      "license_evidence": "Original MIT module; complete notice retained in source and production JAR.",
+      "production_jar": "qm-dungeon-encounters-0.4.21.jar",
+      "production_jar_sha256": "d60db89c8fe2753df865bae3d62eb6d2f1b742ca881aa4f9ca5539fb6507d4c7",
+      "files_sha256": {
+        "LICENSE": "4658d0329316145efa6274d0fce7b6541f308e1e01e68bcf6126d54fd4cd406a",
+        "README.md": "ccf821d6674650db05c00f8bc7c605b8752e061af60c2b0257c7f3f6deb8c993",
+        "__pycache__/build.cpython-312.pyc": "0e1f18d3d58a351d1e9a5e0c566b4d376e2fe8255113c57a5fa4127f962b1489",
+        "build.py": "3d0c044910e8293cc223814258f6d5d9d965ed596b5a988522a4eeb55c7dbcfc",
+        "resources/META-INF/neoforge.mods.toml": "ff8c996fb91068fbf2eb3021fea23ec05cd3f3fa662bfbdcc3723fbdc556184c",
+        "resources/qm_dungeon_encounters.mixins.json": "6c3f470c3d8c09783e1bb7ceb209440e9a9d51ad736da2fe0a292b6841249932",
+        "src/qm/dungeonencounters/EncounterConfig.java": "2771eb9d2289137ce552ead8d071626f5367f4be521548b5fcedbb8c57a5c481",
+        "src/qm/dungeonencounters/QmDungeonEncounters.java": "356bb89da3964e1d0ad21dd8870bce614771820d5fe1f21eb461f5c1e0420ea9",
+        "src/qm/dungeonencounters/mixin/AffixStateAccess.java": "7de18c76ada5bb152d0bf9af1bd8a668b099b4a49ae13c3356e144cafc1471e6",
+        "src/qm/dungeonencounters/mixin/DungeonPlacementMixin.java": "6f01b2b8762cf7ad1f8b9aa04ad3097f941780a25721a7369c5921019729f980",
+        "src/qm/dungeonencounters/mixin/EliteManagerAccess.java": "baa7284223a13b914d8c116a4897ab63a12e16a31ad0179b46e251a1a0888476",
+        "src/qm/dungeonencounters/mixin/EntitySaveMixin.java": "9c7542038c052f6ee1bb2423e8763689bacb086f3e66baf5c1fb09b71b22b46c"
+      },
+      "local_revision": {
+        "version": "0.4.21",
+        "change": "Add persistent native Elite Mobs abilities and one Apotheosis tier to ordinary DivineRPG hostiles (12%), native DivineRPG bosses (85%) across dimensions, and authored dungeon enemies, preserving identity, AI, boss phases, equipment and drops.",
+        "compiler": "Eclipse Temurin javac 21.0.13 (JDK 21.0.13+9)",
+        "compiler_archive_sha256": "d7f5d5cf865a2902b70ff549b97586a7d3f234e016f041ab447ea740c7d66d1c",
+        "compiler_executable_sha256": "2cc288a26beebc50ca7cd924847dffbfb38ef3314e105bba6d4ebce03a0bcb6b",
+        "jdk_release_sha256": "f83f6dcc966043c93cd498ac8e7ee7c310852074970d62c702e4ad2710002898",
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.262",
+        "mapped_server_sha256": "f57ce3018e21459d24b50508e8c1b4fd5c16324ec1dc5f316c192aa0130e7fe0",
+        "build_script": "src/compat/dungeon-encounters/build.py",
+        "build_script_sha256": "3d0c044910e8293cc223814258f6d5d9d965ed596b5a988522a4eeb55c7dbcfc",
+        "upstream_api_sha256": {
+          "dimdungeons-210-neoforge-1.21.1.jar": "8cc55efc96ad15ec4b9ab7ea649f8a281f19b527e3692c17cf912dac91f94f41",
+          "elitemobs-6.2.3+neoforge-1.21.1.jar": "b31217d07b60c542ad8e1aab03c052fef517d59f8310a99869ebe378a1d1cf88",
+          "Apotheosis-1.21.1-8.9.0.jar": "23a8b4a21d0d8744f097c77c8a96fcba14c4b95f3b1bb542412f40dab272872e",
+          "ApothicAttributes-1.21.1-2.11.0.jar": "17c42bb6dd5c0d820fe090e1bb5959578cd5ab7b70caf98a2a59b319fcc7e1ba",
+          "Placebo-1.21.1-9.9.4.jar": "d8952c019d6e54befe37155bc9876985ec57bf73dd33872115c7a65ac6bceba0",
+          "divinerpg-1.10.10.jar": "3ffc8939ab335fa1613a7aca52faadb206f85ba44898fd69e61b1a8a0042f0ba"
+        },
+        "native_target_sha256": {
+          "dimdungeons-210-neoforge-1.21.1.jar": {
+            "com/catastrophe573/dimdungeons/structure/DungeonPlacement.class": "0c6312ba7b9ca87147c15acc2429348a7b05813886e450d784dbebd231c97d9a"
+          },
+          "elitemobs-6.2.3+neoforge-1.21.1.jar": {
+            "net/tonicarter/elitemobs/EliteMobManager.class": "ab054531a734ede58c6be0afe8fd27c136ba35ed8862cc95edbd4f94b533f59d",
+            "net/tonicarter/elitemobs/affixes/AffixState.class": "403f485522a054b8d89f5f8a822833e52422d273b9421df6c3095ab98b891a4f"
+          }
+        },
+        "native_locked_payload_gate_passed": true,
+        "graphical_client_playtest": false,
+        "whole_server_tps_benchmark": false,
+        "native_assertions": 335,
+        "native_fixture": "tests/runtime/encounter-validation/EncounterValidationProbe.java",
+        "native_fixture_sha256": "4b36d1a9bb3f0d626ca005e03128af802c3ed962477a2d96f1503f209b33c407",
+        "full_boss_playthrough": false
       }
     }
   ]

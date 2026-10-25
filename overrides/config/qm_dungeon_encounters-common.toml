@@ -1,0 +1,27 @@
+# One in-place Elite Mobs ability plus one player Apotheosis world tier.
+# Existing saved encounters retain their roll when selection settings change.
+[selection]
+enableDivineElites = true
+enableDivineBossElites = true
+enableDungeonElites = true
+divineEliteChance = 0.12
+divineBossEliteChance = 0.85
+dungeonEliteChance = 1.0
+excludedEntityIds = ["minecraft:wither", "minecraft:warden", "minecraft:elder_guardian", "artifacts:mimic"]
+
+# Named attribute modifiers, never a second call to EliteSpawner.applyStats.
+# DD room bonuses and original mob bases remain intact; no gear or bonus loot is added.
+[strength]
+healthMultiplier = 1.5
+damageMultiplier = 1.15
+advancedHealthMultiplier = 2.0
+advancedDamageMultiplier = 1.25
+bossHealthMultiplier = 1.25
+bossDamageMultiplier = 1.10
+affixes = ["brutal", "infernal_touch", "vampiric", "withering", "shielded", "reflective", "regenerating", "frostbound", "abyssal"]
+
+# At most eight activations per nearby player's once-per-second local query.
+[activation]
+radius = 48
+perPlayerPass = 8
+intervalTicks = 20

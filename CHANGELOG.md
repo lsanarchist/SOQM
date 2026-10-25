@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+### 0.4.21 — Dimensional Dungeons and empowered DivineRPG encounters
+
+- Add Dimensional Dungeons 210, pinned to official CurseForge project 352222 /
+  file 8828150, for 131 third-party dependencies. Retain all previous mod pins.
+- Mix eight ordinary DivineRPG and four early Twilight Forest enemy types into
+  the basic, advanced, desert and sewer room pools. Preserve the native
+  fire-safe Nether Fortress theme. Bosses and late-dimension progression drops
+  are excluded from these authored dungeon pools.
+- Add the fifteenth authored module, `qm-dungeon-encounters-0.4.21`. Eligible
+  dungeon encounters receive a real Elite Mobs ability; ordinary DivineRPG
+  hostiles have a configurable 12% chance and DivineRPG bosses have an 85%
+  chance in the Overworld and their own dimensions. Existing entity identity,
+  AI, boss phases, equipment and native drops remain intact.
+- Apply Apotheosis monster augments for the first nearby player's world tier
+  once, including rooms generated before players arrive. Preserve ability
+  cooldowns and one-shot triggers across saves and restore without stacking
+  attributes. Already enhanced encounters, pets and ordinary named world mobs
+  are excluded; native named/persistent DivineRPG bosses remain eligible.
+- Extend the bounded chest policy to 12 exact Dimensional Dungeons table IDs;
+  preserve keys, key upgrades and dungeon trophies. Fix five missing upstream
+  plural table aliases with forwarding data, and replace only the redstone and
+  pottery supply kits that bypassed costly workshop recipes.
+- Rebuild chest balance as 0.4.21, document full client/server installation and
+  keep exploration optional, without adding a technology quest gate.
+
 ### 0.4.20 — JEI recipe transfer into ME crafting terminals
 
 - Add the missing AE2 JEI Integration 1.2.1 client dependency, pinned to official
