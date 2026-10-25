@@ -38,8 +38,8 @@ not claim a new graphical-client or Mixin-transformation run.
 
 The locked production payload remains **1,861 files**. Its manifest SHA-256 is
 `001c87b666747d77e215319d8b0d2009def27d6e7d89d33c12cf20235c933d25`.
-The locally verified installation ZIP is **3,018,626 bytes**, SHA-256
-`1419119443ff4e7d4221699fc057fcc02006422da1a0cd6f9df8878737abf858`.
+The installation archive includes this completed report. Its final checksum
+is recorded separately in the package's accompanying `SHA256SUMS` file.
 
 
 ### Native quest and save validation
