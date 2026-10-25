@@ -191,8 +191,10 @@ def archive_entries():
         entries['overrides/' + name] = source.read_bytes() if isinstance(source, Path) else source
     docs = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'docs').glob('*.md'))]
     campaign_maps = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'assets').glob('campaign-*.svg'))]
+    gallery_images = [p.relative_to(ROOT).as_posix()
+                      for p in sorted((ROOT / 'assets' / 'gallery').glob('*.png'))]
     for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md', 'MODLIST.md', 'CHANGELOG.md',
-                 'assets/banner.svg', *campaign_maps,
+                 'assets/banner.svg', *campaign_maps, *gallery_images,
                  'downloads/README.md', 'reports/README.md', 'reports/verification-0.4.7.md',
                  'reports/verification-0.4.8.md', 'reports/verification-0.4.9.md', 'reports/verification-performance.md',
                  'reports/verification-pr5.md', 'reports/verification-box-and-logic.md',

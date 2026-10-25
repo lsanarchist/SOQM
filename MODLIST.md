@@ -7,8 +7,9 @@ ships **15 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
 `qm-progressive-rewards-0.4.10` module records production evidence, preserves
-personal claims, and delivers guaranteed recipe refunds. The client-only
-`qm-quest-ui-0.4.7` module coordinates the minimap, quest tracker and equipment HUDs. The separately versioned
+personal claims, and delivers guaranteed recipe refunds. The
+`qm-quest-ui-0.4.8` module coordinates the minimap, quest tracker and equipment
+HUDs and supplies reward previews; install it on both client and server. The separately versioned
 `qm-runtime-optimizations-0.4.7` module reduces repeated tunnel-height queries
 and background encounter/dungeon work; `qm-quest-automation-0.4.4` skips
 already completed evidence. See [the optimization notes](docs/PERFORMANCE_OPTIMIZATION.md).
@@ -43,8 +44,8 @@ Apotheosis world-tier augments to eligible dungeon and DivineRPG enemies.
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
-| [Fabric/Forge/Neo] 1.21.1-4.3 | Skeleton Horse Spawn | 4.3 | both | [project 346219 / file 9223613](https://www.curseforge.com/minecraft/mc-mods/skeleton-horse-spawn/files/9223613) |
-| [Fabric/Forge/Neo] 1.21.1-5.5 | Giant Spawn | 5.5 | both | [project 347921 / file 9224661](https://www.curseforge.com/minecraft/mc-mods/giant-spawn/files/9224661) |
+| [Fabric/Forge/Neo] 1.21.1-4.3 \| Skeleton Horse Spawn | 4.3 | both | [project 346219 / file 9223613](https://www.curseforge.com/minecraft/mc-mods/skeleton-horse-spawn/files/9223613) |
+| [Fabric/Forge/Neo] 1.21.1-5.5 \| Giant Spawn | 5.5 | both | [project 347921 / file 9224661](https://www.curseforge.com/minecraft/mc-mods/giant-spawn/files/9224661) |
 | Abandoned Tunnels | 1.0.0 | both | [project 1733257 / file 9109672](https://www.curseforge.com/minecraft/mc-mods/abandoned-tunnels/files/9109672) |
 | Abridged | 2.0.2 | both (baseline) | [project 948999 / file 8327782](https://www.curseforge.com/minecraft/mc-mods/abridged/files/8327782) |
 | Ad Astra | 1.16.26 | both (baseline) | [project 635042 / file 8874894](https://www.curseforge.com/minecraft/mc-mods/ad-astra/files/8874894) |
