@@ -101,11 +101,7 @@ required by FTB Quests; copying the repository's `overrides/` alone omits them.
 [Changelog](CHANGELOG.md) · [Validation reports](reports/README.md) ·
 [Development and release guide](docs/RELEASE.en.md)
 
-## Credits
 
-Created by **lsanarchist**, building on the Questing Mayhem Expert 0.4.6 base.
-Questing Mayhem inspired the name; Craftoria is a reference for presentation
-and usability. SOQM is independent of both teams.
 
 [Mod authors and licenses](THIRD_PARTY_NOTICES.md) · [Project license](LICENSE)
 
