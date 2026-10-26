@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Electrolytic Separator controls
+
+- Move Inventory Profiles Next sort and transfer buttons into a separate row
+  above the Electrolytic Separator. The transfer arrow no longer covers the
+  right gas tank's native mode button beside `Idle`, and the sorting buttons
+  no longer cover the machine title.
+- Include positions for the optional player-side sorting buttons. Scope the
+  layout to this screen; preserve inventory shortcuts and all other screens.
+- Ship the client layout as a separate IPN integration-hints file so existing
+  profiles can install the fix without replacing personal keybindings.
+
 ### 0.4.22 — combat treasure, Iron Citadel and Obsidian Abyss
 
 - Add two optional Dimensional Dungeons expeditions with 18 original room
