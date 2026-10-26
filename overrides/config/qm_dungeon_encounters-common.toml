@@ -4,14 +4,18 @@
 enableDivineElites = true
 enableDivineBossElites = true
 enableDungeonElites = true
+enableAriseElites = true
 divineEliteChance = 0.12
 divineBossEliteChance = 0.85
 dungeonEliteChance = 1.0
+ariseEliteChance = 1.0
 excludedEntityIds = ["minecraft:wither", "minecraft:warden", "minecraft:elder_guardian", "artifacts:mimic"]
 
 # Named attribute modifiers, never a second call to EliteSpawner.applyStats.
 # DD room bonuses and original mob bases remain intact; no gear or bonus loot is added.
 [strength]
+ariseHealthMultiplier = 2.0
+ariseDamageMultiplier = 1.25
 healthMultiplier = 1.5
 damageMultiplier = 1.15
 advancedHealthMultiplier = 2.0
@@ -29,3 +33,4 @@ affixes = ["brutal", "infernal_touch", "vampiric", "withering", "shielded", "ref
 radius = 48
 perPlayerPass = 8
 intervalTicks = 20
+ariseDiscoveryPerPass = 32

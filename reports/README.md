@@ -1,5 +1,82 @@
 # Verification status
 
+## SOQM 0.4.23 — WDA encounters and accessory variety
+
+The current candidate adds When Dungeons Arise 2.1.68 (CurseForge 442508/7150870)
+to the 131 unchanged third-party pins from main
+`eb5da3d57b33a0b78d98c393e94f5909536148ba`. There are 132 third-party mods,
+15 authored modules and 1,915 effective payload files. Only chest balance and
+dungeon encounters advance to 0.4.23; quest, task and reward data remain intact.
+
+The final `./scripts/check` gate passed on 2026-10-27 (Europe/Budapest) with
+**211 Python tests and no skips**, both JavaScript policy suites, generated-data
+freshness, source/binary provenance, package CRC and a byte-identical ZIP rebuild.
+All 12 coordinate previews pass their freshness check. Both new production
+JARs were compiled with pinned Temurin Java 21.0.13+9 and the verified
+NeoForge 21.1.262 mapped server/native mod APIs.
+
+| Module | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `qm-chest-balance-0.4.23.jar` | 18,502 | `2d19eb449ab9badc71efa38376393db30f4fcaa6432b587699c3688fd7b7c76b` |
+| `qm-dungeon-encounters-0.4.23.jar` | 36,293 | `f320fa7455f0e23af2550b56c8ef0e216f3e86ec16dd841fc879c70ee86c80e2` |
+
+### Final full-pack native gate
+
+The locked production payload passed the isolated native server suite in
+**205.17 seconds**, without `--allow-unlocked-payload`. The report is
+`reports/dungeon-encounter-probe.json`, SHA-256
+`80c54146cc4af26bb5139316baa975119b9cc587c79e041884a9e008aaed2f32`.
+It records the exact payload hashes, 132 verified dependencies, fixture sources,
+test-only mod and console log. The test-only mod is not packaged.
+
+| Fixture | Assertions | Coverage |
+| --- | ---: | --- |
+| Existing encounters | 335 | Existing DD/Divine behavior, real abilities, tier application, native NBT and resource reload |
+| Original DD loot | 39,657 | Original routes, protected keys, native final-fill and loaded loot rolls |
+| Combat rewards after reload | 30,559 | 3,600 real chest-origin rolls, native Aether conversion controls, combat prizes and saved personal inventories |
+| Authored expeditions | 5,346 | 18 rooms in four rotations, keys, locks, portal travel and saved theme state |
+| WDA encounters | 222 | Actual 3D bounds, named/equipped mobs, hoglins, four non-Pathfinder types, saved state, unloaded origins, discovery fairness and both repaired advancements |
+| Accessory variety after reload | 25,268 | Duplicate/component cases, new pool, actual WDA tables and unchanged saved Lootr inventories |
+
+These cumulative final counters total **101,387**; initial counters
+included in reload counters are not added twice. The accessory fixture checked
+512 duplicate/component cases, 12,288 seeded bonus samples and 320 actual WDA
+loot rolls. All 128 WDA outer routes loaded and all 46 curated types were
+observed. Sampled bonus rates were 7.4951%, 11.5967% and 15.3076% for the configured
+8%, 12% and 16% profiles. Existing personal inventories retained their items.
+
+The fresh run also confirmed both repaired WDA advancements decode and join
+the native advancement tree. Fishing Hut and Thornborn Towers use the existing
+WDA root; Thornborn uses the current icon field. Their upstream load errors
+are absent from the final console.
+
+### Aether glove conversion regression
+
+A recovery run exposed an existing container-sensitive failure: Aether could
+replace a guaranteed Apotheosis armor prize with gloves, copying only vanilla
+enchantments and losing the affixes. The earlier sampled rolls used an empty-air
+origin, which did not exercise Aether's chest-specific modifier.
+
+The final fixture uses an actual chest origin for all 3,600 native loot rolls.
+A deterministic seed-4096 control executes the native Aether modifier: ordinary
+unmarked armor still converts to gloves, while a marked SOQM combat prize
+retains its exact identity and components. Final filling removes only the owned
+temporary marker. Both actual Lootr openers receive their guaranteed gear/gem
+pair and retain the same personal inventories across resource reload.
+
+The saved-start fixture used the production asynchronous NBT scanner and
+confirmed dungeon recognition did not load the origin chunk. A 40-mob crowd
+regression verifies excluded mobs do not starve later eligible discovery.
+Persistent markers and modifier IDs prevent repeat activation and stat stacking.
+
+The real resource reload retained 20,062 recipes and live encounter state.
+KubeJS startup/server error counts and fatal-server counts were all zero.
+The server shut down cleanly with exit code 0, without forced termination.
+This verifies dedicated-server behavior; it does not establish graphical
+client behavior, natural generation of every WDA structure, a second JVM
+restart or a full survival playthrough. See
+[the integration guide](../docs/WHEN_DUNGEONS_ARISE.md) for gameplay scope.
+
 ## SOQM 0.4.22 — combat treasure and two authored expeditions
 
 The optional DD branch now includes Iron Citadel and Obsidian Abyss, with

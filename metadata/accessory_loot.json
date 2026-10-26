@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "version": "0.4.23",
+  "recognized_items": [
+    "artifacts:anglers_hat",
+    "artifacts:antidote_vessel",
+    "artifacts:aqua_dashers",
+    "artifacts:bunny_hoppers",
+    "artifacts:charm_of_shrinking",
+    "artifacts:charm_of_sinking",
+    "artifacts:chorus_totem",
+    "artifacts:cloud_in_a_bottle",
+    "artifacts:cowboy_hat",
+    "artifacts:cross_necklace",
+    "artifacts:crystal_heart",
+    "artifacts:digging_claws",
+    "artifacts:eternal_steak",
+    "artifacts:everlasting_beef",
+    "artifacts:feral_claws",
+    "artifacts:fire_gauntlet",
+    "artifacts:flame_pendant",
+    "artifacts:flippers",
+    "artifacts:golden_hook",
+    "artifacts:helium_flamingo",
+    "artifacts:kitty_slippers",
+    "artifacts:lucky_scarf",
+    "artifacts:night_vision_goggles",
+    "artifacts:novelty_drinking_hat",
+    "artifacts:obsidian_skull",
+    "artifacts:onion_ring",
+    "artifacts:panic_necklace",
+    "artifacts:pickaxe_heater",
+    "artifacts:plastic_drinking_hat",
+    "artifacts:pocket_piston",
+    "artifacts:power_glove",
+    "artifacts:rooted_boots",
+    "artifacts:running_shoes",
+    "artifacts:scarf_of_invisibility",
+    "artifacts:shock_pendant",
+    "artifacts:snorkel",
+    "artifacts:snowshoes",
+    "artifacts:steadfast_spikes",
+    "artifacts:strider_shoes",
+    "artifacts:superstitious_hat",
+    "artifacts:thorn_pendant",
+    "artifacts:umbrella",
+    "artifacts:universal_attractor",
+    "artifacts:vampiric_glove",
+    "artifacts:villager_hat",
+    "artifacts:warp_drive",
+    "artifacts:whoopee_cushion",
+    "artifacts:withered_bracelet",
+    "relics:chef_hat",
+    "relics:chorus_staff",
+    "relics:clot_of_time",
+    "relics:cut_glass_boot",
+    "relics:experience_disperser",
+    "relics:ghostly_mantle",
+    "relics:glitchy_mantle",
+    "relics:hunting_belt",
+    "relics:jellyfish_necklace",
+    "relics:kinetic_belt",
+    "relics:leafy_mantle",
+    "relics:midnight_mantle",
+    "relics:piglin_mask",
+    "relics:reflective_necklace",
+    "relics:rider_flute",
+    "relics:ring_of_the_seven_deadly_sins",
+    "relics:roller_skate",
+    "relics:shield_of_retaliation",
+    "relics:sphere_of_self_sacrifice",
+    "relics:springy_boot"
+  ],
+  "pools": {
+    "general": [
+      "artifacts:anglers_hat",
+      "artifacts:antidote_vessel",
+      "artifacts:aqua_dashers",
+      "artifacts:bunny_hoppers",
+      "artifacts:charm_of_shrinking",
+      "artifacts:charm_of_sinking",
+      "artifacts:cloud_in_a_bottle",
+      "artifacts:cross_necklace",
+      "artifacts:crystal_heart",
+      "artifacts:digging_claws",
+      "artifacts:feral_claws",
+      "artifacts:flame_pendant",
+      "artifacts:flippers",
+      "artifacts:kitty_slippers",
+      "artifacts:lucky_scarf",
+      "artifacts:night_vision_goggles",
+      "artifacts:novelty_drinking_hat",
+      "artifacts:onion_ring",
+      "artifacts:panic_necklace",
+      "artifacts:pickaxe_heater",
+      "artifacts:plastic_drinking_hat",
+      "artifacts:pocket_piston",
+      "artifacts:power_glove",
+      "artifacts:rooted_boots",
+      "artifacts:running_shoes",
+      "artifacts:scarf_of_invisibility",
+      "artifacts:shock_pendant",
+      "artifacts:snorkel",
+      "artifacts:snowshoes",
+      "artifacts:steadfast_spikes",
+      "artifacts:superstitious_hat",
+      "artifacts:thorn_pendant",
+      "artifacts:umbrella",
+      "artifacts:universal_attractor",
+      "artifacts:vampiric_glove",
+      "artifacts:villager_hat",
+      "artifacts:whoopee_cushion",
+      "relics:chef_hat",
+      "relics:cut_glass_boot",
+      "relics:experience_disperser",
+      "relics:hunting_belt",
+      "relics:jellyfish_necklace",
+      "relics:leafy_mantle",
+      "relics:rider_flute",
+      "relics:roller_skate",
+      "relics:springy_boot"
+    ],
+    "utility": [
+      "artifacts:anglers_hat",
+      "artifacts:antidote_vessel",
+      "artifacts:aqua_dashers",
+      "artifacts:charm_of_sinking",
+      "artifacts:digging_claws",
+      "artifacts:flippers",
+      "artifacts:lucky_scarf",
+      "artifacts:night_vision_goggles",
+      "artifacts:novelty_drinking_hat",
+      "artifacts:pickaxe_heater",
+      "artifacts:plastic_drinking_hat",
+      "artifacts:running_shoes",
+      "artifacts:snorkel",
+      "artifacts:snowshoes",
+      "artifacts:superstitious_hat",
+      "artifacts:umbrella",
+      "artifacts:universal_attractor",
+      "artifacts:villager_hat",
+      "artifacts:whoopee_cushion",
+      "relics:chef_hat",
+      "relics:rider_flute"
+    ]
+  },
+  "profiles": {
+    "settlement": {
+      "pool": "utility",
+      "bonus_chance": 0.02
+    },
+    "workshop": {
+      "pool": "utility",
+      "bonus_chance": 0.04
+    },
+    "expedition": {
+      "pool": "general",
+      "bonus_chance": 0.08
+    },
+    "stronghold": {
+      "pool": "general",
+      "bonus_chance": 0.12
+    },
+    "relic_vault": {
+      "pool": "general",
+      "bonus_chance": 0.16
+    },
+    "dungeon_basic": {
+      "pool": "general",
+      "bonus_chance": 0.08
+    },
+    "dungeon_hard": {
+      "pool": "general",
+      "bonus_chance": 0.12
+    },
+    "dungeon_vault": {
+      "pool": "general",
+      "bonus_chance": 0.16
+    },
+    "dungeon_citadel_supplies": {
+      "pool": "general",
+      "bonus_chance": 0.1
+    },
+    "dungeon_citadel_treasure": {
+      "pool": "general",
+      "bonus_chance": 0.16
+    },
+    "dungeon_abyss_supplies": {
+      "pool": "general",
+      "bonus_chance": 0.12
+    },
+    "dungeon_abyss_treasure": {
+      "pool": "general",
+      "bonus_chance": 0.16
+    }
+  },
+  "bonus_max": 1,
+  "bonus_below_distinct": 2,
+  "notes": [
+    "First-fill only, after global loot modifiers. Existing inventory contents and Lootr personal saves are never scanned.",
+    "Reserve every native type; keep its first stack and full components; replace extra same-ID copies without replacement from the reviewed pool.",
+    "One optional bonus uses free soft slot/unit budget only; no guaranteed accessory and no global player collection memory.",
+    "Relics selected from Overworld, cave, village, forest, mountain, aquatic or wildcard native entries. End/Nether/Bastion-only Relics remain native rewards.",
+    "The broader Artifacts pool omits banned renewable food and nine advanced or Nether/End-themed artifacts. Existing distinct native rewards retain their identity."
+  ],
+  "sources": {
+    "artifacts": "artifacts-neoforge-13.2.5.jar:data/artifacts/tags/item/artifacts.json",
+    "relics": "relics-1.21.1-0.12.8.jar:data/relics/tags/item/relic.json"
+  }
+}

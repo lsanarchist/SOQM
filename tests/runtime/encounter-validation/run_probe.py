@@ -96,7 +96,7 @@ def main():
     started = time.monotonic()
     report = {
         "passed": False,
-        "scope": "Native full-pack authored expeditions, rotated geometry, earned keys, portal entry/return, locked personal Lootr chests, Apotheosis rewards, real Elite abilities and NBT/data reload; no graphical-client, survival-playthrough or TPS benchmark.",
+        "scope": "Native full-pack WDA structure-bound encounters and accessory variety, authored expeditions, rotated geometry, earned keys, portal entry/return, locked personal Lootr chests, Apotheosis rewards, real Elite abilities and NBT/data reload; no graphical-client, survival-playthrough or TPS benchmark.",
         "encounter_harness_sha256": sha(Path(__file__)),
         "encounter_fixture_sha256": sha(SOURCE),
     }

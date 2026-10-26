@@ -9,6 +9,11 @@ public final class EncounterConfig {
     public static final ModConfigSpec.BooleanValue ENABLE_DIVINE;
     public static final ModConfigSpec.BooleanValue ENABLE_DIVINE_BOSSES;
     public static final ModConfigSpec.BooleanValue ENABLE_DUNGEONS;
+    public static final ModConfigSpec.BooleanValue ENABLE_ARISE;
+    public static final ModConfigSpec.DoubleValue ARISE_CHANCE;
+    public static final ModConfigSpec.DoubleValue ARISE_HEALTH_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue ARISE_DAMAGE_MULTIPLIER;
+    public static final ModConfigSpec.IntValue ARISE_DISCOVERY_BUDGET;
     public static final ModConfigSpec.DoubleValue DIVINE_CHANCE;
     public static final ModConfigSpec.DoubleValue DIVINE_BOSS_CHANCE;
     public static final ModConfigSpec.DoubleValue DUNGEON_CHANCE;
@@ -34,6 +39,8 @@ public final class EncounterConfig {
         ENABLE_DIVINE = builder.define("enableDivineElites", true);
         ENABLE_DIVINE_BOSSES = builder.define("enableDivineBossElites", true);
         ENABLE_DUNGEONS = builder.define("enableDungeonElites", true);
+        ENABLE_ARISE = builder.define("enableAriseElites", true);
+        ARISE_CHANCE = builder.comment("Eligible hostiles inside native When Dungeons Arise structure bounds; original names and gear are retained.").defineInRange("ariseEliteChance", 1.0, 0.0, 1.0);
         DIVINE_CHANCE = builder.comment("Chance for a newly spawned ordinary hostile DivineRPG mob in every dimension. Bosses use their separate chance; pets and NPCs are excluded.")
             .defineInRange("divineEliteChance", 0.12, 0.0, 0.35);
         DIVINE_BOSS_CHANCE = builder.comment("Separate chance for native DivineRPG bosses outside DD, including flying and aquatic bosses, in every dimension.")
@@ -46,6 +53,8 @@ public final class EncounterConfig {
         builder.pop();
 
         builder.comment("Additions use named permanent modifiers. Original bases, equipment, AI and drops are preserved.").push("strength");
+        ARISE_HEALTH_MULTIPLIER = builder.defineInRange("ariseHealthMultiplier", 2.0, 1.0, 4.0);
+        ARISE_DAMAGE_MULTIPLIER = builder.defineInRange("ariseDamageMultiplier", 1.25, 1.0, 2.0);
         HEALTH_MULTIPLIER = builder.defineInRange("healthMultiplier", 1.5, 1.0, 4.0);
         DAMAGE_MULTIPLIER = builder.defineInRange("damageMultiplier", 1.15, 1.0, 2.0);
         ADVANCED_HEALTH_MULTIPLIER = builder.defineInRange("advancedHealthMultiplier", 2.0, 1.0, 4.0);
@@ -66,6 +75,7 @@ public final class EncounterConfig {
         ACTIVATION_RADIUS = builder.defineInRange("radius", 48, 16, 96);
         ACTIVATION_BUDGET = builder.defineInRange("perPlayerPass", 8, 1, 32);
         ACTIVATION_INTERVAL = builder.defineInRange("intervalTicks", 20, 10, 200);
+        ARISE_DISCOVERY_BUDGET = builder.defineInRange("ariseDiscoveryPerPass", 32, 1, 128);
         builder.pop();
         SPEC = builder.build();
     }

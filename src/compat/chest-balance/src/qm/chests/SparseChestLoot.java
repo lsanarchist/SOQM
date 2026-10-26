@@ -19,6 +19,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 /** Finite table policies, applied after all loot modifiers but before slot fill.
  * No server, level, player, container or ItemStack survives this call.
@@ -39,6 +40,9 @@ public final class SparseChestLoot {
     private static final List<String> PROTECTED_PARTS = new ArrayList<>(strings("protected_path_parts"));
     private static final List<String> VALUABLE_PARTS = new ArrayList<>(strings("valuable_parts"));
     private static final String DUNGEON_REWARD_MARKER = DATA.get("dungeon_reward_marker").getAsString();
+    private static final JsonObject ACCESSORIES = DATA.getAsJsonObject("accessories");
+    private static final Set<String> ACCESSORY_IDS = accessoryIds();
+    private static final Map<String, List<String>> ACCESSORY_POOLS = accessoryPools();
 
     private SparseChestLoot() {}
 
@@ -68,6 +72,39 @@ public final class SparseChestLoot {
         }
         return Map.copyOf(out);
     }
+    private static Set<String> accessoryIds() {
+        Set<String> out = new HashSet<>();
+        for (var value : ACCESSORIES.getAsJsonArray("recognized_items")) out.add(value.getAsString());
+        return Set.copyOf(out);
+    }
+    private static Map<String, List<String>> accessoryPools() {
+        Map<String, List<String>> out = new HashMap<>();
+        for (var entry : ACCESSORIES.getAsJsonObject("pools").entrySet()) {
+            List<String> items = new ArrayList<>();
+            for (var value : entry.getValue().getAsJsonArray()) items.add(value.getAsString());
+            out.put(entry.getKey(), List.copyOf(items));
+        }
+        return Map.copyOf(out);
+    }
+    public static boolean isAccessory(ItemStack stack) { return ACCESSORY_IDS.contains(id(stack)); }
+
+    /** Pick only unused, installed items; native Relics default initialization is retained. */
+    private static ItemStack accessory(String profile, Set<String> reserved, RandomSource random) {
+        JsonObject rules = ACCESSORIES.getAsJsonObject("profiles").getAsJsonObject(profile);
+        List<ResourceLocation> eligible = new ArrayList<>();
+        for (String item : ACCESSORY_POOLS.get(rules.get("pool").getAsString())) {
+            ResourceLocation key = ResourceLocation.parse(item);
+            if (!reserved.contains(item) && !BLOCKED.contains(item) && BuiltInRegistries.ITEM.containsKey(key))
+                eligible.add(key);
+        }
+        if (eligible.isEmpty()) return ItemStack.EMPTY;
+        ResourceLocation chosen = eligible.get(random.nextInt(eligible.size()));
+        ItemStack result = BuiltInRegistries.ITEM.get(chosen).getDefaultInstance();
+        if (result.isEmpty() || isBlocked(result)) return ItemStack.EMPTY;
+        result.setCount(1);
+        reserved.add(chosen.toString());
+        return result;
+    }
     public static String profile(ResourceLocation tableId) { return tableId == null ? null : ROUTES.get(tableId.toString()); }
     public static boolean isPlastic(ItemStack stack) { return PLASTIC.contains(id(stack)); }
     public static boolean isBlocked(ItemStack stack) {
@@ -78,8 +115,17 @@ public final class SparseChestLoot {
         ResourceLocation item = BuiltInRegistries.ITEM.getKey(stack.getItem());
         String id = item.toString(), path = item.getPath();
         if (PROTECTED.contains(id) || PROTECTED_NS.contains(item.getNamespace())) return true;
+        if (tableId != null && tableId.getNamespace().equals("dungeons_arise")
+                && (stack.has(DataComponents.CUSTOM_NAME) || stack.has(DataComponents.ITEM_NAME)
+                    || stack.has(DataComponents.CUSTOM_MODEL_DATA) || stack.has(DataComponents.LORE)
+                    || ariseEnchantments(stack.get(DataComponents.ENCHANTMENTS))
+                    || ariseEnchantments(stack.get(DataComponents.STORED_ENCHANTMENTS)))) return true;
         if (PROTECTED_PARTS.stream().anyMatch(path::contains)) return true;
         return tableId != null && REWARD_TABLES.contains(tableId.toString()) && item.getNamespace().equals("aether");
+    }
+    private static boolean ariseEnchantments(ItemEnchantments enchantments) {
+        return enchantments != null && enchantments.keySet().stream().anyMatch(holder ->
+                holder.unwrapKey().map(key -> key.location().getNamespace().equals("dungeons_arise")).orElse(false));
     }
     private static String id(ItemStack stack) { return BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(); }
     private static boolean valuable(ItemStack stack, String profile) {
@@ -87,6 +133,12 @@ public final class SparseChestLoot {
         if (CURATED.get(profile).contains(id) || id.equals("chancecubes:chance_cube")) return false;
         return VALUABLE.contains(id) || VALUABLE_PARTS.stream().anyMatch(path::contains)
                 || stack.isEnchanted() || stack.getRarity() == Rarity.RARE || stack.getRarity() == Rarity.EPIC;
+    }
+
+    /** Authored combat prizes keep their identity while global loot modifiers run. */
+    public static boolean isDungeonCombatReward(ItemStack stack) {
+        CustomData custom = stack.get(DataComponents.CUSTOM_DATA);
+        return custom != null && custom.copyTag().getBoolean(DUNGEON_REWARD_MARKER);
     }
 
     /** The owned marker is temporary; affixes, gem identity and all other data survive. */
@@ -139,9 +191,26 @@ public final class SparseChestLoot {
         var valuables = new ArrayList<ItemStack>();
         var supply = new ArrayList<ItemStack>();
         var ordinary = new ArrayList<ItemStack>();
+        var merged = merge(generated);
+        // Reserve every native type first: a replacement must never steal the
+        // identity of a later, independently rolled reward with custom data.
+        Set<String> reservedAccessories = new HashSet<>();
+        for (ItemStack stack : merged) if (isAccessory(stack) && !isBlocked(stack)) reservedAccessories.add(id(stack));
+        Set<String> nativeAccessories = new HashSet<>();
+        int duplicateAccessories = 0;
         boolean cubeSeen = false;
-        for (ItemStack stack : merge(generated)) {
+        for (ItemStack stack : merged) {
             if (isBlocked(stack)) continue;
+            if (isAccessory(stack)) {
+                int count = Math.min(stack.getCount(), availableSlots);
+                if (nativeAccessories.add(id(stack))) {
+                    stack.setCount(1);
+                    protectedLoot.add(stack);
+                    count--;
+                }
+                duplicateAccessories = Math.min(availableSlots, duplicateAccessories + Math.max(0, count));
+                continue;
+            }
             if (isProtected(stack, tableId)) { protectedLoot.add(stack); continue; }
             if (combatRewardLimit > 0 && takeDungeonRewardMarker(stack)) {
                 // Dedicated DD tables already made the combat reward roll.
@@ -172,6 +241,14 @@ public final class SparseChestLoot {
             }
             if (CURATED.get(profile).contains(id)) supply.add(stack); else ordinary.add(stack);
         }
+        // Original keys, custom rewards and all first accessory copies precede
+        // replacements; physical capacity and guaranteed combat prizes win.
+        for (int index = 0; index < duplicateAccessories
+                && protectedLoot.size() + combatRewards.size() < availableSlots; index++) {
+            ItemStack replacement = accessory(profile, reservedAccessories, random);
+            if (replacement.isEmpty()) break;
+            protectedLoot.add(replacement);
+        }
         Util.shuffle(finds, random); Util.shuffle(valuables, random);
         Util.shuffle(supply, random); Util.shuffle(ordinary, random);
         generated.clear();
@@ -191,6 +268,15 @@ public final class SparseChestLoot {
             generated.add(stack); units += stack.getCount();
         }
         slotLimit = Math.max(slotLimit, generated.size());
+        JsonObject accessoryRules = ACCESSORIES.getAsJsonObject("profiles").getAsJsonObject(profile);
+        long accessoryTypes = generated.stream().filter(SparseChestLoot::isAccessory).map(SparseChestLoot::id).distinct().count();
+        if (ACCESSORIES.get("bonus_max").getAsInt() > 0
+                && accessoryTypes < ACCESSORIES.get("bonus_below_distinct").getAsInt()
+                && generated.size() < slotLimit && units < unitLimit
+                && random.nextFloat() < accessoryRules.get("bonus_chance").getAsFloat()) {
+            ItemStack bonus = accessory(profile, reservedAccessories, random);
+            if (!bonus.isEmpty()) { generated.add(bonus); units++; }
+        }
         var selected = new ArrayList<ItemStack>();
         // At most one curated find per chest, even if upstream modifiers add
         // more copies. Progression keys and boss trophies still take priority.

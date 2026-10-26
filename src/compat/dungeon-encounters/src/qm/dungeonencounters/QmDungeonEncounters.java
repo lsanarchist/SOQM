@@ -26,6 +26,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.OwnableEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -48,6 +49,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.event.level.ChunkEvent;
+import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import net.tonicarter.elitemobs.DifficultyLevel;
 import net.tonicarter.elitemobs.EliteMobManager;
 import net.tonicarter.elitemobs.EliteTier;
@@ -106,6 +110,11 @@ public final class QmDungeonEncounters {
         } else if (!event.loadedFromDisk() && entity instanceof PathfinderMob mob && !isDungeon(entity)) {
             considerDivine(mob);
         }
+        if (entity instanceof Mob mob && state(entity) == 0) considerArise(mob);
+        if (isPending(entity) && entity.getPersistentData().getCompound(DATA_KEY).getString("source").equals("arise")) {
+            entity.addTag("collective.checked");
+            entity.getPersistentData().putBoolean(MobCompat45.SCALE_MARKER, true);
+        }
         // Pending state needs no queue restoration. The next nearby player's
         // local query finds it even after a complete server restart.
     }
@@ -127,6 +136,34 @@ public final class QmDungeonEncounters {
         int interval = EncounterConfig.ACTIVATION_INTERVAL.get();
         int phase = Math.floorMod(player.getUUID().hashCode(), interval);
         if (Math.floorMod(player.tickCount, interval) == phase) activateNearby(player);
+    }
+
+    @SubscribeEvent
+    public void chunkLoaded(ChunkEvent.Load event) {
+        if (event.getLevel() instanceof ServerLevel level) AriseStructures.loaded(level, event.getChunk());
+    }
+
+    @SubscribeEvent
+    public void levelUnloaded(LevelEvent.Unload event) {
+        if (!event.getLevel().isClientSide()) AriseStructures.clear();
+    }
+
+    @SubscribeEvent
+    public void stopped(ServerStoppedEvent event) { AriseStructures.clear(); }
+
+    /** Scope selection to actual native structure bounds, including saved starts outside loaded chunks. */
+    public static boolean considerArise(Mob mob) {
+        if (state(mob) != 0 || !(mob.level() instanceof ServerLevel level)) return false;
+        // Even excluded hostiles must yield discovery budget to later candidates.
+        // A stable crowd of pets/bosses/existing elites cannot consume every pass.
+        mob.getPersistentData().putLong("qm_arise_next_check", level.getGameTime() + 200);
+        if (isDungeon(mob) || !EncounterConfig.ENABLE_ARISE.get()
+                || BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).getNamespace().equals("divinerpg")
+                || !eligible(mob, true, false)) return false;
+        boolean reference = AriseStructures.hasReferences(level, mob.blockPosition());
+        mob.getPersistentData().putLong("qm_arise_next_check", level.getGameTime() + (reference ? 20 : 200));
+        if (!reference || !AriseStructures.contains(level, mob.blockPosition())) return false;
+        return enroll(mob, "arise", false, 0, EncounterConfig.ARISE_CHANCE.get());
     }
 
     /** Called only after DD has created its chosen entity; no mutation of DD's spawn or pool. */
@@ -156,7 +193,7 @@ public final class QmDungeonEncounters {
         return false;
     }
 
-    private static boolean enroll(PathfinderMob mob, String source, boolean advanced, int theme, double chance) {
+    private static boolean enroll(Mob mob, String source, boolean advanced, int theme, double chance) {
         if (state(mob) != 0) return false;
         CompoundTag saved = new CompoundTag();
         saved.putInt("version", 1);
@@ -170,7 +207,7 @@ public final class QmDungeonEncounters {
         return chosen;
     }
 
-    private static boolean eligible(PathfinderMob mob, boolean authoredDungeonName, boolean allowDivineBoss) {
+    private static boolean eligible(Mob mob, boolean authoredDungeonName, boolean allowDivineBoss) {
         boolean nativeBoss = isDivineBoss(mob);
         // Ordinary world selection follows Monster, not the broader Enemy
         // marker that Divine also gives neutral whales. DD's authored pool
@@ -213,9 +250,17 @@ public final class QmDungeonEncounters {
         double radius = EncounterConfig.ACTIVATION_RADIUS.get();
         int budget = EncounterConfig.ACTIVATION_BUDGET.get();
         int applied = 0;
-        for (PathfinderMob mob : player.serverLevel().getEntitiesOfClass(PathfinderMob.class,
-                player.getBoundingBox().inflate(radius), QmDungeonEncounters::isPending)) {
+        int discovered = 0;
+        int discoveryBudget = EncounterConfig.ARISE_DISCOVERY_BUDGET.get();
+        for (Mob mob : player.serverLevel().getEntitiesOfClass(Mob.class,
+                player.getBoundingBox().inflate(radius), candidate -> isPending(candidate)
+                    || state(candidate) == 0 && candidate instanceof Enemy)) {
             if (mob.distanceToSqr(player) > radius * radius) continue;
+            if (!isPending(mob) && discovered < discoveryBudget
+                    && mob.getPersistentData().getLong("qm_arise_next_check") <= player.serverLevel().getGameTime()) {
+                discovered++;
+                considerArise(mob);
+            }
             if (activate(mob, player) && ++applied >= budget) break;
         }
         return applied;
@@ -229,11 +274,12 @@ public final class QmDungeonEncounters {
         if (mob.distanceToSqr(player) > radius * radius) return false;
         CompoundTag saved = mob.getPersistentData().getCompound(DATA_KEY);
         boolean dungeon = saved.getString("source").equals("dungeon");
+        boolean arise = saved.getString("source").equals("arise");
         boolean boss = saved.getBoolean("boss") && isDivineBoss(mob);
         if (dungeon ? !EncounterConfig.ENABLE_DUNGEONS.get()
-                : boss ? !EncounterConfig.ENABLE_DIVINE_BOSSES.get() : !EncounterConfig.ENABLE_DIVINE.get()) return false;
+                : arise ? !EncounterConfig.ENABLE_ARISE.get() : boss ? !EncounterConfig.ENABLE_DIVINE_BOSSES.get() : !EncounterConfig.ENABLE_DIVINE.get()) return false;
         // A different mod may have promoted the mob while it waited for a player.
-        if (!eligible(mob, dungeon, boss && !dungeon)) {
+        if (!eligible(mob, dungeon || arise, boss && !dungeon)) {
             saved.putInt("state", DECLINED);
             return false;
         }
@@ -273,11 +319,11 @@ public final class QmDungeonEncounters {
                 augment.apply(level, mob);
             }
             mob.setData(Apoth.Attachments.TIER_AUGMENTS_APPLIED, true);
-            double health = boss ? EncounterConfig.BOSS_HEALTH_MULTIPLIER.get()
+            double health = arise ? EncounterConfig.ARISE_HEALTH_MULTIPLIER.get() : boss ? EncounterConfig.BOSS_HEALTH_MULTIPLIER.get()
                 : theme == QmExpeditions.CITADEL ? EncounterConfig.CITADEL_HEALTH_MULTIPLIER.get()
                 : theme == QmExpeditions.ABYSS ? EncounterConfig.ABYSS_HEALTH_MULTIPLIER.get()
                 : advanced ? EncounterConfig.ADVANCED_HEALTH_MULTIPLIER.get() : EncounterConfig.HEALTH_MULTIPLIER.get();
-            double damage = boss ? EncounterConfig.BOSS_DAMAGE_MULTIPLIER.get()
+            double damage = arise ? EncounterConfig.ARISE_DAMAGE_MULTIPLIER.get() : boss ? EncounterConfig.BOSS_DAMAGE_MULTIPLIER.get()
                 : theme == QmExpeditions.CITADEL ? EncounterConfig.CITADEL_DAMAGE_MULTIPLIER.get()
                 : theme == QmExpeditions.ABYSS ? EncounterConfig.ABYSS_DAMAGE_MULTIPLIER.get()
                 : advanced ? EncounterConfig.ADVANCED_DAMAGE_MULTIPLIER.get() : EncounterConfig.DAMAGE_MULTIPLIER.get();
@@ -309,6 +355,44 @@ public final class QmDungeonEncounters {
         }
     }
 
+    /** Elite's native ability API only supports PathfinderMob. Other native WDA hostiles receive stats and one tier. */
+    public static boolean activate(Mob mob, ServerPlayer player) {
+        if (mob instanceof PathfinderMob pathfinder) return activate(pathfinder, player);
+        if (!isPending(mob) || !mob.isAlive() || player instanceof FakePlayer || !player.isAlive()
+                || player.isSpectator() || mob.level() != player.level()
+                || !EncounterConfig.ENABLE_ARISE.get()) return false;
+        double radius = EncounterConfig.ACTIVATION_RADIUS.get();
+        if (mob.distanceToSqr(player) > radius * radius) return false;
+        CompoundTag saved = mob.getPersistentData().getCompound(DATA_KEY);
+        if (!saved.getString("source").equals("arise")) return false;
+        if (!eligible(mob, true, false)) { saved.putInt("state", DECLINED); return false; }
+        WorldTier tier = WorldTier.getTier(player);
+        float healthRatio = mob.getMaxHealth() <= 0 ? 1.0F : mob.getHealth() / mob.getMaxHealth();
+        saved.putInt("state", APPLYING);
+        saved.putString("worldTier", tier.getSerializedName());
+        saved.putString("abilityMode", "stats_only");
+        try {
+            ServerLevel level = player.serverLevel();
+            for (WorldTier old : WorldTier.values()) {
+                for (TierAugment augment : TierAugmentRegistry.getAugments(old, TierAugment.Target.MONSTERS)) augment.remove(level, mob);
+            }
+            for (TierAugment augment : TierAugmentRegistry.getAugments(tier, TierAugment.Target.MONSTERS)) augment.apply(level, mob);
+            mob.setData(Apoth.Attachments.TIER_AUGMENTS_APPLIED, true);
+            addModifier(mob, Attributes.MAX_HEALTH, HEALTH_ID, EncounterConfig.ARISE_HEALTH_MULTIPLIER.get());
+            addModifier(mob, Attributes.ATTACK_DAMAGE, DAMAGE_ID, EncounterConfig.ARISE_DAMAGE_MULTIPLIER.get());
+            mob.setHealth(Math.min(mob.getMaxHealth(), Math.max(0.0F, healthRatio * mob.getMaxHealth())));
+            mob.getPersistentData().putBoolean(MobCompat45.ELITE_MARKER, true);
+            mob.getPersistentData().putBoolean(MobCompat45.SCALE_MARKER, true);
+            mob.addTag("collective.checked");
+            saved.putInt("state", ACTIVE);
+            return true;
+        } catch (RuntimeException failure) {
+            saved.putInt("state", FAILED);
+            LOGGER.error("WDA native encounter failed once for {}; it will not be rerolled", mob.getUUID(), failure);
+            return false;
+        }
+    }
+
     private static boolean supportsAffix(PathfinderMob mob, Affix affix) {
         // Use the original entity's immunity rules. Kitra and other undead
         // cannot receive Regenerating's regeneration, so choose another real
@@ -321,7 +405,7 @@ public final class QmDungeonEncounters {
         };
     }
 
-    private static void addModifier(PathfinderMob mob, Holder<Attribute> attribute,
+    private static void addModifier(Mob mob, Holder<Attribute> attribute,
             ResourceLocation id, double multiplier) {
         AttributeInstance instance = mob.getAttribute(attribute);
         if (instance != null) instance.addOrReplacePermanentModifier(new AttributeModifier(

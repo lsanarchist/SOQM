@@ -102,3 +102,7 @@ claim a graphical client handshake or client rendering coverage.
 NBT load cycles exercise the same native load and join path used for saved
 entities, without restarting a second JVM. This suite is an integration gate,
 not a full boss-fight playthrough, client-rendering check or TPS benchmark.
+
+## SOQM 0.4.23 coverage
+
+`WdaEncounterProbe.java` exercises registered WDA structure bounds, saved structure-start NBT without loading its origin chunk, named/equipped enemies, non-Pathfinder stats-only enemies, exclusions, bounded activation and saved encounter state. `AccessoryLootProbe.java` exercises duplicate replacement, native component preservation, the curated pool, seeded bonus frequencies, actual WDA chest tables and saved personal Lootr inventories. Both run through the existing locked full-pack harness and its resource-reload checkpoint. These are native dedicated-server fixtures; they do not establish graphical-client behavior, every naturally generated WDA structure, a second JVM restart or a complete survival playthrough.

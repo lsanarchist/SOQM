@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/banner.svg" alt="Shout Out to Questing Mayhem" width="100%"></p>
 
-<p align="center"><b>SOQM 0.4.22 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
+<p align="center"><b>SOQM 0.4.23 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
 <p align="center"><a href="#screenshots">Screenshots</a> · <a href="#main-mods">Main mods</a> · <a href="MODLIST.md">Full mod list</a> · <a href="#play">Installation</a></p>
 
@@ -48,7 +48,7 @@ Gameplay screenshots from SOQM. Click an image to open the original.
 | Storage and transport | Applied Energistics 2, Sophisticated Storage, Sophisticated Backpacks, Storage Drawers, Ender Storage, Railcraft Reborn |
 | Magic and late game | Botania Revived, EvilCraft, ProjectE, Re-Avaritia |
 | Dimensions and dungeons | The Twilight Forest, The Aether, DivineRPG, Ad Astra, Dimensional Dungeons, RFTools Dimensions |
-| World and structures | Terralith, Millénaire, Dungeons and Taverns, Abandoned Tunnels, Ember's Underground Rooms, Twilight Treehouses |
+| World and structures | Terralith, Millénaire, When Dungeons Arise, Dungeons and Taverns, Abandoned Tunnels, Ember's Underground Rooms, Twilight Treehouses |
 | Combat and equipment | Apotheosis, Elite Mobs, Pufferfish's Skills, Relics, Artifacts |
 | Quests and utilities | FTB Quests, FTB Teams, FTB Ultimine, JEI, Jade, Waystones, Xaero's Minimap, Xaero's World Map, Inventory Profiles Next |
 
@@ -64,6 +64,10 @@ Gameplay screenshots from SOQM. Click an image to open the original.
   Obsidian Abyss. Dungeon treasure supplies real Apotheosis gear and gems
   selected by the opening player's World Tier. Exploration remains optional;
   the guide explains the key route, elite abilities and DivineRPG enhancements.
+- [When Dungeons Arise](docs/WHEN_DUNGEONS_ARISE.md) adds large structures in
+  newly generated terrain, stronger enemies inside their real structure bounds,
+  and varied accessory treasure. Duplicate accessories within a fresh chest are
+  replaced from a reviewed pool; existing personal Lootr inventories stay intact.
 - [Quest rewards](docs/REWARDS.md) are personal for each teammate. Reward pools
   grow with the team's production, and the quest book previews the available prizes.
 
@@ -81,7 +85,7 @@ are not automatically converted. Follow the [storage migration guide](docs/STORA
 1. Open [Actions → Validate and package](https://github.com/lsanarchist/SOQM/actions/workflows/validate.yml)
    and choose a successful run for the commit you want.
 2. Download `SOQM-candidate-<commit>` and extract GitHub's outer ZIP.
-3. Import the enclosed `SOQM-0.4.22-curseforge.zip` into the CurseForge App.
+3. Import the enclosed `SOQM-0.4.23-curseforge.zip` into the CurseForge App.
 
 CI candidates are retained for 14 days. The
 [installation guide](docs/INSTALL.en.md) covers local builds, other launchers
@@ -99,6 +103,7 @@ required by FTB Quests; copying the repository's `overrides/` alone omits them.
 [Storage upgrade](docs/STORAGE_MIGRATION.md) ·
 [Optional exploration](docs/OPTIONAL_EXPLORATION.md) · [Dungeon loot](docs/EXPLORATION_LOOT.md) ·
 [Dimensional Dungeons and elite mobs](docs/DIMENSIONAL_DUNGEONS.md) ·
+[When Dungeons Arise](docs/WHEN_DUNGEONS_ARISE.md) ·
 [Equipment slots](docs/ACCESSORY_POLICY.md) ·
 [Changelog](CHANGELOG.md) · [Validation reports](reports/README.md) ·
 [Development and release guide](docs/RELEASE.en.md)
