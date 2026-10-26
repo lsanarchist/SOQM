@@ -39,6 +39,39 @@ In particular, DD's chest-slot key and offhand theme key are preserved.
 * The existing MobCompat45 marker is used to prevent a later automatic
   Apotheosis pass from layering another set of tier augments onto the result.
 
+## When Dungeons Arise
+
+Version 0.4.23 adds eligible hostile mobs within the actual three-dimensional
+bounds of native `dungeons_arise` structure starts. The default selection is
+100%, with +100% of base max health and +25% of base attack. This does not
+change the existing DivineRPG ordinary/boss chances or DD strength settings.
+Names, gear, native AI, UUIDs, drop tables, passengers and despawn policy stay
+on the existing entity. Passive mobs, owned pets, bosses, Artifacts mimics and
+existing Elite/Apotheosis encounters are excluded. Divine entities retain their
+separate Divine policy even inside these structures.
+
+Pathfinder mobs, including native hostile hoglins, receive one compatible
+Elite ability and the nearby player's Apotheosis tier. Phantom, slime, magma
+cube and ghast hierarchies cannot use Elite Mobs' Pathfinder-only API; they
+receive the same configured stat additions and one tier without an invented
+ability or name prefix. Hardcoded/ranged attack damage is not rewritten.
+Saved state and fixed modifier IDs prevent repeat upgrades on load.
+
+The nearby-player pass performs at most 32 discovery checks and eight
+activations per configured interval. Outside candidates retry after 200 ticks;
+candidates in referenced structure chunks retry after 20 ticks. A structure's
+start chunk may already be unloaded: the bounded helper uses native
+`ChunkScanAccess` to inspect saved structure-piece bounds asynchronously.
+It does not request chunk generation or loading. The cache has at most 1024
+entries and eight pending reads, with 30-second negative retry and stale
+callback suppression when worlds unload. Structure terrain bounding-box
+adjustments are applied to both loaded and saved starts.
+
+New structures appear only in newly generated chunks. Already generated
+terrain, including unvisited Chunky pregeneration, is not retrofitted. This
+module recognizes registered structure starts/references, so arbitrary
+manual `/place structure` fixtures are not assumed to enroll nearby mobs.
+
 ## Actual abilities
 
 The selected `AffixRegistry` ability is registered in the pinned

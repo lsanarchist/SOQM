@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **131 pinned third-party dependencies**. SOQM 0.4.22 additionally
+The table lists **132 pinned third-party dependencies**. SOQM 0.4.23 additionally
 ships **15 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -37,12 +37,17 @@ harness. Its official JAR includes the required NeoForge libraries. Held-item
 lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynamic-lighting).
 
 Dimensional Dungeons 210 runs on both client and server. The authored
-`qm-dungeon-encounters-0.4.22` module adds persistent Elite Mobs abilities and
+`qm-dungeon-encounters-0.4.23` module adds persistent Elite Mobs abilities and
 Apotheosis world-tier augments to eligible dungeon and DivineRPG enemies,
 plus native keys and portal gates for Iron Citadel and Obsidian Abyss.
-`qm-chest-balance-0.4.22` preserves the new DD combat prizes within bounded
+`qm-chest-balance-0.4.23` preserves the new DD combat prizes within bounded
 chest profiles. See
 [the encounter and loot policy](docs/DIMENSIONAL_DUNGEONS.md).
+
+When Dungeons Arise 2.1.68 runs on both client and server. The encounter
+module strengthens eligible hostiles within native WDA structure bounds;
+chest balance adds accessory variety across 128 WDA chest/barrel table routes.
+No additional dependency is required. See [the WDA guide](docs/WHEN_DUNGEONS_ARISE.md).
 
 | Mod | Version | Side | Exact file |
 | --- | --- | --- | --- |
@@ -171,6 +176,7 @@ chest profiles. See
 | Twilight Treehouses | 1.0.2 | both | [project 1227052 / file 6341110](https://www.curseforge.com/minecraft/mc-mods/twilight-treehouses/files/6341110) |
 | Underground Villages Mod | 4.0.3 | both (baseline) | [project 606989 / file 6722723](https://www.curseforge.com/minecraft/mc-mods/underground-villages/files/6722723) |
 | Waystones | 21.1.46 | both | [project 245755 / file 8969751](https://www.curseforge.com/minecraft/mc-mods/waystones/files/8969751) |
+| When Dungeons Arise | 2.1.68 | both | [project 442508 / file 7150870](https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise/files/7150870) |
 | Xaero's Minimap | 26.6.0 | client | [project 263420 / file 9067173](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap/files/9067173) |
 | Xaero's World Map | 1.47.0 | client | [project 317780 / file 9067277](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files/9067277) |
 | ymondf-0.2.9-9.jar | 0.2.9-9 | both | [project 1744821 / file 9235220](https://www.curseforge.com/minecraft/mc-mods/ymondf/files/9235220) |

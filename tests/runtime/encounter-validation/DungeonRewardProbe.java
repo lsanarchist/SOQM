@@ -1,5 +1,6 @@
 package soqm.validation.encounters;
 
+import com.aetherteam.aether.loot.modifiers.GlovesLootModifier;
 import com.catastrophe573.dimdungeons.DimDungeons;
 import com.catastrophe573.dimdungeons.item.BaseItemKey;
 import dev.shadowsoffire.apotheosis.Apoth;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,13 +31,17 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.phys.Vec3;
 import noobanidus.mods.lootr.common.api.LootrAPI;
 import noobanidus.mods.lootr.common.api.data.blockentity.ILootrBlockEntity;
@@ -78,13 +84,19 @@ final class DungeonRewardProbe {
                 ObjectArrayList.class, int.class, RandomSource.class);
         finalFill.setAccessible(true);
         int rolls = 0, prizes = 0, gems = 0, gear = 0, keys = 0;
+        Map<String, Object> glovesControl;
         Map<String, Integer> sampled = new LinkedHashMap<>();
         Map<String, Integer> keyRolls = new LinkedHashMap<>();
         try (DungeonTestPlayers players = new DungeonTestPlayers()) {
             ServerPlayer player = players.create(level, new BlockPos(0, 80, 0), WorldTier.HAVEN);
+            // Container-sensitive upstream modifiers must run in the sample.
+            // A player-position origin in empty air bypassed Aether's gloves replacement.
+            BlockPos lootOrigin = new BlockPos(8, 79, 8);
+            level.getChunkAt(lootOrigin);
+            level.setBlock(lootOrigin, Blocks.CHEST.defaultBlockState(), 3);
             for (WorldTier tier : WorldTier.values()) {
                 player.setData(Apoth.Attachments.WORLD_TIER, tier);
-                LootParams params = params(level, player, player.position());
+                LootParams params = params(level, player, Vec3.atCenterOf(lootOrigin));
                 for (var entry : CHESTS.entrySet()) {
                     String name = entry.getKey();
                     LootTable table = table(server, name);
@@ -146,13 +158,54 @@ final class DungeonRewardProbe {
                         "Native add_table helper retains the original outer-table context and yields its earned key: " + gated);
             }
             nativeTreasure(server, level, player, finalFill);
+            glovesControl = aetherGlovesControl(level, player, lootOrigin);
         }
         personalLootr(server, level);
         return Map.ofEntries(Map.entry("world_tiers", WorldTier.values().length), Map.entry("outer_tables", CHESTS.size()),
                 Map.entry("actual_loaded_rolls", rolls), Map.entry("combat_prizes_preserved", prizes),
                 Map.entry("valid_native_gems", gems), Map.entry("valid_native_affix_items", gear), Map.entry("earned_keys", keys),
                 Map.entry("personal_lootr_inventories", PERSONAL.size()), Map.entry("assertions", assertions),
+                Map.entry("aether_glove_conversion_control", glovesControl),
                 Map.entry("optional_prize_roll_counts", sampled), Map.entry("native_key_roll_counts", keyRolls));
+    }
+
+    /** A deterministic native negative/positive pair for the actual lost-prize failure. */
+    private static Map<String, Object> aetherGlovesControl(ServerLevel level, ServerPlayer player, BlockPos origin) {
+        long seed = 4096L;
+        check(RandomSource.create(seed).nextInt(4) == 0, "Control seed forces Aether's native 25% gloves replacement");
+        ResourceLocation glovesId = ResourceLocation.parse("aether:diamond_gloves");
+        ItemStack gloves = BuiltInRegistries.ITEM.get(glovesId).getDefaultInstance();
+        check(!gloves.isEmpty(), "Native Aether diamond gloves are registered");
+        GlovesLootModifier modifier = new GlovesLootModifier(new LootItemCondition[0], gloves, ArmorMaterials.DIAMOND);
+        ItemStack original = LootController.createLootItem(new ItemStack(Items.DIAMOND_CHESTPLATE),
+                RarityRegistry.INSTANCE.getValue(ResourceLocation.parse("apotheosis:mythic")), GenContext.forPlayer(player));
+        original.enchant(level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.UNBREAKING), 3);
+        CompoundTag foreign = new CompoundTag(); foreign.putString(FOREIGN, "retained");
+        original.set(DataComponents.CUSTOM_DATA, CustomData.of(foreign));
+        check(AffixHelper.hasAffixes(original), "Control armor starts with native Apotheosis affixes");
+        LootParams params = params(level, player, Vec3.atCenterOf(origin));
+
+        var ordinary = new ObjectArrayList<ItemStack>(); ordinary.add(original.copy());
+        modifier.apply(ordinary, new LootContext.Builder(params).withOptionalRandomSeed(seed).create(Optional.empty()));
+        check(ordinary.size() == 1 && ordinary.getFirst().is(gloves.getItem()),
+                "Unmarked armor still undergoes Aether's actual native gloves conversion");
+        check(!AffixHelper.hasAffixes(ordinary.getFirst()),
+                "Negative control demonstrates why replacing a combat prize loses its native affixes");
+
+        ItemStack marked = original.copy();
+        CompoundTag data = foreign.copy(); data.putBoolean(MARKER, true);
+        marked.set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+        var protectedPrize = new ObjectArrayList<ItemStack>(); protectedPrize.add(marked.copy());
+        modifier.apply(protectedPrize, new LootContext.Builder(params).withOptionalRandomSeed(seed).create(Optional.empty()));
+        check(protectedPrize.size() == 1 && ItemStack.isSameItemSameComponents(marked, protectedPrize.getFirst()),
+                "Marked authored combat armor retains its complete identity and affixes through Aether's modifier");
+        SparseChestLoot.compact(ResourceLocation.parse("qm:chest/dimensional_dungeons/citadel_treasure"),
+                protectedPrize, 27, RandomSource.create(seed));
+        check(protectedPrize.stream().anyMatch(item -> ItemStack.isSameItemSameComponents(original, item))
+                        && protectedPrize.stream().noneMatch(DungeonRewardProbe::marked),
+                "Final fill removes only the owned marker and preserves native affixes and foreign data");
+        return Map.of("forced_conversion_seed", seed, "unmarked_armor_converts", true,
+                "marked_prize_components_preserved", true, "ordinary_upstream_behavior_retained", true);
     }
 
     private static void nativeTreasure(MinecraftServer server, ServerLevel level, ServerPlayer player, Method fill) throws Exception {
@@ -167,7 +220,10 @@ final class DungeonRewardProbe {
                 var generated = new ObjectArrayList<ItemStack>();
                 generated.add(sword.copy());
                 fill.invoke(table, generated, 27, RandomSource.create(seed));
-                check(generated.size() == 1 && ItemStack.isSameItemSameComponents(generated.getFirst(), sword),
+                check(generated.stream().anyMatch(item -> ItemStack.isSameItemSameComponents(item, sword))
+                                && generated.size() <= 2
+                                && generated.stream().allMatch(item -> SparseChestLoot.isAccessory(item)
+                                    || ItemStack.isSameItemSameComponents(item, sword)),
                         "DD retains an already-generated native valuable without a second chance roll: " + name);
             }
         }
@@ -177,7 +233,7 @@ final class DungeonRewardProbe {
         for (int seed = 0; seed < 256; seed++) {
             var generated = new ObjectArrayList<ItemStack>(); generated.add(sword.copy());
             SparseChestLoot.compact(outside, generated, 27, RandomSource.create(seed * 71023L));
-            if (!generated.isEmpty()) survived++;
+            if (generated.stream().anyMatch(item -> ItemStack.isSameItemSameComponents(item, sword))) survived++;
         }
         check(survived > 0 && survived < 128, "DD-only retention change does not globally buff settlement treasures");
     }

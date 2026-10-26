@@ -20,12 +20,12 @@ and missing notice; they do not invent an upstream copyright holder.
 | `village-guard` | `qm-village-guard-0.4.3.jar` | 0.4.2, then target hooks and mutation-driven village indexing |
 | `zoom-defaults` | `qm-zoom-defaults-0.4.3.jar` | 0.4.3 |
 | `mob-compat` | `qm-mob-compat-0.4.5.jar` | 0.4.5 |
-| `chest-balance` | `qm-chest-balance-0.4.22.jar` | Recovered 0.4.6 source; bounded exploration and Dimensional Dungeons routes |
+| `chest-balance` | `qm-chest-balance-0.4.23.jar` | Recovered 0.4.6 source; bounded exploration and Dimensional Dungeons routes |
 | `progressive-rewards` | `qm-progressive-rewards-0.4.10.jar` | New SOQM source; recipe-backed refunds, world upgrades and native API build |
 | `runtime-optimizations` | `qm-runtime-optimizations-0.4.7.jar` | New SOQM source and native API build; module version retained in pack 0.4.8 |
 | `foundry-compat` | `qm-foundry-compat-0.4.15.jar` | New SOQM source; positioned ingredient writes for Modern Foundry 4.1.6 |
 | `storage-jei-compat` | `qm-storage-jei-compat-0.4.17.jar` | New SOQM source; centred display-slot focus links for pinned Sophisticated Core and JEI |
-| `dungeon-encounters` | `qm-dungeon-encounters-0.4.22.jar` | New SOQM source; persistent in-place Elite Mobs abilities and Apotheosis tier integration |
+| `dungeon-encounters` | `qm-dungeon-encounters-0.4.23.jar` | New SOQM source; persistent in-place Elite Mobs abilities and Apotheosis tier integration |
 
 The source archive chain is 0.4.6 → 0.4.5 → 0.4.4 → 0.4.3 → 0.4.2 → 0.4.1.
 [`provenance.json`](provenance.json) records exact recovered paths, file hashes,
@@ -102,3 +102,7 @@ A supported rebuild must restore exact Java 21, compiler, Minecraft/NeoForge
 the modules. Keep Minecraft binaries and downloaded third-party dependencies
 out of this source tree. Use the pinned runtime binaries only through the local
 build/materialization process; generated archives are not committed.
+
+## SOQM 0.4.23
+
+The chest module adds per-container accessory variety and bounded bonus chances. The encounter module extends its native in-place policy to When Dungeons Arise structure bounds, including saved starts outside loaded chunks. See [When Dungeons Arise integration](../../docs/WHEN_DUNGEONS_ARISE.md) for scope, installation, and limits.

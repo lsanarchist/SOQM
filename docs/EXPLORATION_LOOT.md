@@ -1,4 +1,4 @@
-# Exploration loot in SOQM 0.4.11
+# Exploration loot in SOQM 0.4.23
 
 The generic profiles below remain in use outside Dimensional Dungeons.
 SOQM 0.4.22 moves DD combat chests to dedicated combat profiles; its material
@@ -69,12 +69,63 @@ budget first and may exceed its soft limit when necessary, but never exceeds
 available container space. Boss entity drops are outside this exact chest
 policy.
 
-The policy covers **397 exact table IDs**, including 17 new top-level tables
+Authored Dimensional Dungeons combat prizes retain their original Apotheosis
+components through Aether's glove loot modifier. Aether may normally replace
+chest armor with newly created gloves, copying only vanilla enchantments; that
+would erase a guaranteed prize's affixes. Version 0.4.23 excludes only SOQM's
+temporarily marked combat rewards from this conversion. Unmarked armor still
+uses Aether's normal glove roll, and the temporary reward marker is removed
+during final chest filling.
+
+The policy covers **541 exact table IDs**, including 17 top-level tables
 from Twilight Treehouses, Ad Astra: More Structures and Ember's Underground
 Rooms. The addition modifiers use disjoint exact routes; special dimension
 predicates are retained. NeoForge's `add_table` draws the added table through
 `getRandomItemsRaw`, so these additions do not recursively invoke global loot
 modifiers.
+
+## Accessory variety and When Dungeons Arise
+
+Version 0.4.23 changes the final first-fill selection for Artifacts and Relics.
+Every distinct native accessory type is reserved before choosing replacements.
+The first copy keeps its complete original components, name and item identity;
+extra copies of the same item ID become different reviewed accessories, selected
+without replacement. All original distinct rewards and progression items take
+priority over replacement copies if the physical container is too small.
+
+The broader reviewed pool contains **46 types: 37 Artifacts and nine Relics**.
+Settlement and Workshop additions use a 21-item utility subset. Renewable food
+remains blocked, and End/Nether/Bastion-only Relics remain native rewards rather
+than new general additions. The first native copy of such a reward is retained.
+Exact pools and exclusions live in
+[`metadata/accessory_loot.json`](../metadata/accessory_loot.json).
+
+There is also a modest chance of **one additional accessory**, only when fewer
+than two different accessory types are present and the ordinary slot/item budget
+has room. This is an independent accessory chance, separate from the useful
+component chances in the earlier table.
+
+| Profile | Accessory bonus chance |
+| --- | ---: |
+| Settlement | 2% |
+| Workshop | 4% |
+| Expedition / basic dungeon | 8% |
+| Stronghold / hard dungeon | 12% |
+| Relic vault / dungeon vault | 16% |
+| Citadel supplies / treasure | 10% / 16% |
+| Abyss supplies / treasure | 12% / 16% |
+
+Different chests can still contain the same type; this system has no global
+collection memory. Already-opened chests, player storage and saved Lootr personal
+inventories are unchanged, even if those saved contents contain duplicates.
+
+WDA adds **128 exact chest/barrel routes**, verified against the valid loot tables
+referenced by the pinned 2.1.68 structure templates. The audit excludes twelve
+dangling legacy references. Native vault blocks, trial-spawner rewards,
+archaeology, decorated pots and entity drops are outside this policy.
+WDA's named/modelled special rewards, maps, keys and native enchantments keep
+their full components. The route audit is in
+[`metadata/when_dungeons_arise_loot.json`](../metadata/when_dungeons_arise_loot.json).
 
 The [structure compatibility notes](EXPLORATION_STRUCTURE_COMPAT.md) explain
 the separate moon-tower prefilled-chest fix and Ember's missing 1.21 table.
@@ -91,6 +142,12 @@ No periodic inventory scan, player tick handler, structure search or player-data
 cache was added. Lookup is by an exact table map; selection runs only during
 loot filling. The algorithm still merges a finite generated stack list, bounds
 ordinary output and releases all stack references when the call returns.
+
+The full-server `AccessoryLootProbe` exercises actual registered Artifacts and
+Relics, original component preservation, duplicate replacement in small
+containers, seeded bonus rates, native WDA loot tables and saved Lootr contents
+through a resource reload. Its fixture belongs to the disposable native encounter
+test server; it is never shipped in the modpack.
 
 ## Verification
 

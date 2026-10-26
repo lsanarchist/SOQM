@@ -13,6 +13,37 @@
 - Ship the client layout as a separate IPN integration-hints file so existing
   profiles can install the fix without replacing personal keybindings.
 
+### 0.4.23 — When Dungeons Arise and accessory variety
+
+- Add When Dungeons Arise 2.1.68 for Minecraft 1.21.1 / NeoForge, pinned to
+  official CurseForge project 442508 / file 7150870. Retain all 131 previous
+  dependency records; the manifest now references 132 third-party files.
+- Repair the upstream Fishing Hut and Thornborn Towers advancement entries:
+  attach both to the existing WDA root and update Thornborn's icon field.
+- Strengthen eligible enemies inside native WDA structure bounds with +100%
+  base maximum health and +25% base attack damage. Give supported Pathfinder
+  enemies one real Elite Mobs ability and a nearby player's Apotheosis tier;
+  other hostile types receive the stat/tier path. Preserve native names,
+  equipment, entity identity, AI and drops; avoid repeated upgrades.
+- Recognize saved WDA structure starts without loading or generating distant
+  chunks. Keep discovery and activation bounded. Preserve DivineRPG's existing
+  12% ordinary / 85% boss policy and the separate Dimensional Dungeons behavior.
+- Route 128 WDA chest/barrel tables through the bounded exploration loot policy.
+  Preserve original special items and keep non-chest reward systems outside
+  these table routes.
+- Replace duplicate accessory types in a freshly generated chest using a
+  reviewed pool of 37 Artifacts and 9 Relics items, without replacement. Keep
+  the first native item's components and existing distinct accessory types.
+  Add at most one small-chance bonus when fewer than two types are present and
+  the chest budget permits it: 8% for expeditions, 12% for strongholds and 16%
+  for relic vaults. Preserve already generated Lootr personal inventories.
+- Preserve marked Apotheosis combat rewards when Aether considers replacing
+  chest armor with gloves. Guaranteed dungeon prizes keep their affixes;
+  ordinary unmarked armor retains Aether's native glove-conversion behavior.
+- Rebuild chest balance and dungeon encounters as 0.4.23. Existing worlds are
+  supported; WDA structures appear only in new chunks, including outside any
+  Chunky pregeneration area. No world, player data or quest reset is required.
+
 ### 0.4.22 — combat treasure, Iron Citadel and Obsidian Abyss
 
 - Add two optional Dimensional Dungeons expeditions with 18 original room

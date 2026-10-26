@@ -11,6 +11,8 @@ SOURCE = ROOT / "metadata/exploration_loot.json"
 POLICY = ROOT / "src/compat/chest-balance/resources/qm_chest_policy.json"
 DUNGEONS = ROOT / "metadata/dimensional_dungeons.json"
 DUNGEON_LOOT = ROOT / "metadata/dungeon_loot.json"
+ACCESSORIES = ROOT / "metadata/accessory_loot.json"
+ARISE_LOOT = ROOT / "metadata/when_dungeons_arise_loot.json"
 DATA = ROOT / "overrides/kubejs/data"
 
 
@@ -142,12 +144,18 @@ def outputs():
     policy = json.loads(POLICY.read_text(encoding="utf-8"))
     dungeons = json.loads(DUNGEONS.read_text(encoding="utf-8"))
     dungeon_loot = json.loads(DUNGEON_LOOT.read_text(encoding="utf-8"))
+    accessories = json.loads(ACCESSORIES.read_text(encoding="utf-8"))
+    arise = json.loads(ARISE_LOOT.read_text(encoding="utf-8"))
     dungeon_routes = dict(dungeons["loot_routes"])
     dungeon_routes.update({old: alias["profile"] for old, alias in dungeons["legacy_loot_aliases"].items()})
     # Exact outer chest fills only. Nested books, trophies and material tables
     # must not independently roll additional exploration supplies.
     policy["routes"] = {table: profile for table, profile in policy["routes"].items()
-                        if not is_dungeon_table(table)}
+                        if not is_dungeon_table(table) and not table.startswith("dungeons_arise:")}
+    for table, profile in arise["routes"].items():
+        if not table.startswith("dungeons_arise:chests/") or profile not in source["profiles"]:
+            raise ValueError(f"Unreviewed WDA outer chest route: {table} -> {profile}")
+        policy["routes"][table] = profile
     for table, profile in dungeon_routes.items():
         if profile not in source["profiles"] and profile not in dungeon_loot["profiles"]:
             raise ValueError(f"Unknown dungeon chest profile: {table} -> {profile}")
@@ -155,8 +163,10 @@ def outputs():
     policy["routes"] = dict(sorted(policy["routes"].items()))
     existing_protected = [item for item in policy["protected_exact"] if not item.startswith("dimdungeons:")]
     policy["protected_exact"] = existing_protected + sorted(dungeons["protected_items"])
-    policy["schema"] = 3
-    policy["version"] = dungeon_loot["version"]
+    policy["schema"] = 4
+    policy["version"] = accessories["version"]
+    policy["accessories"] = {key: accessories[key] for key in
+                             ("recognized_items", "pools", "profiles", "bonus_max", "bonus_below_distinct")}
     policy["dungeon_reward_marker"] = dungeon_loot["reward_marker"]
     for field in ("profiles", "profile_items"):
         policy[field] = {key: value for key, value in policy[field].items() if not key.startswith("dungeon_")}
@@ -177,9 +187,12 @@ def outputs():
         modifier_path = ROOT / f"overrides/kubejs/data/qm/loot_modifiers/exploration/{name}.json"
         modifier = json.loads(modifier_path.read_text(encoding="utf-8"))
         terms = modifier["conditions"][0]["terms"]
-        terms = [term for term in terms if not is_dungeon_table(term.get("loot_table_id", ""))]
+        terms = [term for term in terms if not is_dungeon_table(term.get("loot_table_id", ""))
+                 and not term.get("loot_table_id", "").startswith("dungeons_arise:")]
         terms.extend({"condition": "neoforge:loot_table_id", "loot_table_id": table}
                      for table, route in sorted(dungeon_routes.items()) if route == name)
+        terms.extend({"condition": "neoforge:loot_table_id", "loot_table_id": table}
+                     for table, route in sorted(arise["routes"].items()) if route == name)
         # Existing entries include dimension-qualified all_of conditions.
         # Keep those intact rather than flattening their original scope.
         modifier["conditions"][0]["terms"] = terms
