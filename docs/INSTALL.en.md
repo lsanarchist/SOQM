@@ -1,4 +1,4 @@
-# Installing SOQM 0.4.21
+# Installing SOQM 0.4.22
 
 Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 21.1.262** and **Java 21**. Keep the exact versions and hashes in
@@ -8,7 +8,7 @@ Use a purchased Minecraft Java Edition account, **Minecraft 1.21.1**, **NeoForge
 
 On GitHub, open **Actions → Validate and package** and choose the successful
 run for the intended commit/PR. Download `SOQM-candidate-<commit>` and extract
-GitHub's outer ZIP. It contains `SOQM-0.4.21-curseforge.zip` and `SHA256SUMS`;
+GitHub's outer ZIP. It contains `SOQM-0.4.22-curseforge.zip` and `SHA256SUMS`;
 import that inner installation ZIP into the launcher. CI artifacts remain
 available for 14 days and can be reproduced locally afterward.
 
@@ -20,8 +20,8 @@ python3 scripts/soqm.py verify-downloads
 python3 scripts/soqm.py build
 ```
 
-The current output is `dist/SOQM-0.4.21-curseforge.zip`, with its checksum under
-`dist/`. A separate public 0.4.21 asset is not claimed. The
+The current output is `dist/SOQM-0.4.22-curseforge.zip`, with its checksum under
+`dist/`. A separate public 0.4.22 asset is not claimed. The
 [original published alpha](../downloads/README.md) is the historical
 0.1.0-alpha.1 package, not this version. GitHub's automatic `Source code` ZIP
 and the baseline Sources ZIP are not installable game profiles.
@@ -32,7 +32,7 @@ directly from a source checkout omits those generated translations.
 ## Fresh CurseForge App profile
 
 1. Open Minecraft → **Import** → **Import Profile .zip** → **Choose .zip file**,
-   select the built 0.4.21 ZIP and wait for every download. See the
+   select the built 0.4.22 ZIP and wait for every download. See the
    [official instructions](https://support.curseforge.com/support/solutions/articles/9000197912).
    Importing a ZIP does not require a CurseForge catalog listing.
 2. Check Java 21 and memory allocation. **6 GiB** is an initial testing
@@ -43,38 +43,66 @@ directly from a source checkout omits those generated translations.
 If a dependency fails to download, inspect the import log and its exact official
 file page from the lock file. Do not substitute an arbitrary version.
 
-## Dimensional Dungeons and elite DivineRPG enemies
+## Updating Dimensional Dungeons from 0.4.21 to 0.4.22
 
-The 0.4.21 candidate adds **Dimensional Dungeons 210** and the authored
-`qm-dungeon-encounters-0.4.21.jar` on both client and server. Import the full
-candidate so the room pools, ability configuration and bounded loot policy
-arrive together. Replace the old chest module with `qm-chest-balance-0.4.21.jar`;
-do not retain a second version of either authored module.
+The 0.4.22 candidate expands the **Dimensional Dungeons 210** integration
+introduced in 0.4.21. It adds two harder expeditions with original rooms,
+**Iron Citadel** and **Obsidian Abyss**, and dedicated combat loot for DD
+chests. The third-party DD version remains 210.
 
-Chapter **23 · Ruins, Settlements and Surprises** gains 12 optional quests
-for portals, keys, return supplies, secrets, advanced dungeons and trophies,
-each with a personal reward. Update the quest files and assembled translations
-from the installation ZIP, the `kubejs/` reward policy and `qm-quest-ui-0.4.8.jar`
-for the new previews. Restart both client and server; existing progress and
-already claimed rewards are retained.
+Citadel keys can be found in advanced dungeon treasure; Abyss keys come from
+the Citadel's locked treasure chests. These special keys arrive activated.
+Use the upgraded portal frame with two Portal Crowns and white or purple
+wall banners. In the **Dungeon Guidebook → SOQM Expeditions** section, read
+the new route and loot pages before entering.
+
+Hard DD chests now provide one additional Apotheosis gem or affix item;
+the locked treasure chests of both new expeditions provide an affix item
+and a gem. Their rarity and gem purity use the opening player's native
+Apotheosis World Tier. Other chests have smaller combat reward chances.
+Gem Dust and combat supplies supplement these prizes. Ordinary item budgets
+still apply; generated keys and the dedicated combat prizes take priority.
+See the [complete chest and encounter rules](DIMENSIONAL_DUNGEONS.md).
+
+To update an existing 0.4.21 game:
+
+1. Stop the server, close every player's client and keep a copy of the existing
+   profile and saved world.
+2. Update **both the server and every client to the same complete 0.4.22
+   package**. Use the built installation ZIP, including its `config/`,
+   `kubejs/`, assembled quest translations and authored modules. On clients
+   and server, keep `qm-quest-ui-0.4.8.jar`; remove older duplicate Quest UI JARs.
+3. In each updated `mods/` directory, remove
+   `qm-dungeon-encounters-0.4.21.jar` and `qm-chest-balance-0.4.21.jar`.
+   Install `qm-dungeon-encounters-0.4.22.jar` and
+   `qm-chest-balance-0.4.22.jar` from the new package. Copying a new version
+   into the folder does not remove a differently named old JAR.
+4. Preserve the saved world, player data and quest progress, then fully
+   restart server and clients. This update retains the 12 optional DD quests
+   in **23 · Ruins, Settlements and Surprises**, their IDs, completions and
+   personal reward claims. Updated descriptions explain the new expeditions.
+
+Use a new activated key for a new dungeon address; an old key returns to its
+existing dungeon. The new rooms require newly generated expeditions. Chest
+loot changes apply on first generation, including a player's new personal
+Lootr inventory. Already generated contents and claimed rewards are retained.
+Existing Overworld chunks need no regeneration because DD uses its own dimension.
 
 Eligible room enemies receive one native Elite Mobs ability and an Apotheosis
 world tier when a player approaches. Ordinary DivineRPG hostiles have a 12%
 chance and DivineRPG bosses have an 85% chance, both in the Overworld and
 their own dimensions. Mob models, AI, boss phases and native drops are retained.
-The new room pools apply to newly generated dungeons; existing room entities
-are not replaced. Existing Overworld chunks need no regeneration because
-these dungeons are generated in their own dimension. See the
-[encounter policy and configuration](DIMENSIONAL_DUNGEONS.md).
+Existing room entities are not replaced when the package is updated.
 
 ## ME crafting-terminal recipe transfer in JEI
 
 SOQM includes **AE2 JEI Integration 1.2.1**, added in 0.4.20. The pinned AE2 19.2.18 does
 not include its own JEI transfer handler; this bridge restores the **Move Items
-(+)** button for its crafting terminal. SOQM 0.4.21 retains this bridge and adds Dimensional Dungeons, giving **131**
-dependencies in the client manifest.
+(+)** button for its crafting terminal. SOQM 0.4.22 retains this bridge and
+Dimensional Dungeons from 0.4.21; the client manifest still has **131**
+pinned third-party dependencies.
 
-An imported 0.4.21 candidate downloads the bridge automatically. To repair an
+An imported 0.4.22 candidate downloads the bridge automatically. To repair an
 existing profile, fully close Minecraft and add
 [`ae2jeiintegration-1.2.1.jar`](https://www.curseforge.com/minecraft/mc-mods/ae2-jei-integration/files/7727898)
 to the **client** profile's `mods/` folder, then restart the game. Every player
@@ -110,7 +138,7 @@ per identical item per pack. Stackable repeats combine, while fixed crafting
 refunds and cube quantities retain their existing rules.
 
 When upgrading the reward policy from 0.4.18 or earlier, import the complete
-0.4.21 candidate, or update the built ZIP's `kubejs/` and generated quest
+0.4.22 candidate, or update the built ZIP's `kubejs/` and generated quest
 language files on both stopped client and server. Replace
 `qm-quest-ui-0.4.6.jar` with `qm-quest-ui-0.4.8.jar` in each installation and
 remove older duplicate versions. Restart both sides to load the reward script
@@ -118,9 +146,9 @@ and updated catalogue. All **1,643 existing outer reward IDs** and personal
 claim history are preserved; already claimed rewards stay claimed. Quest
 progress and production evidence need no reset.
 
-## Crafting fixes in 0.4.21
+## Crafting fixes in 0.4.22
 
-The 0.4.21 candidate includes distinct manual iron/gold gear layouts and a
+The 0.4.22 candidate includes distinct manual iron/gold gear layouts and a
 copper-ingot centre for the Copper-to-Iron Furnace Upgrade. Update the built
 candidate's `overrides/kubejs/` files on both client and server while stopped,
 or import the complete candidate into a new profile. Restart both sides, use
@@ -133,7 +161,7 @@ It corrects the station's ingredient-slot writes when taking a crafted result,
 including bulk sand-to-sandstone crafting. For an existing 0.4.14 installation,
 close the game and server, add this JAR from the candidate's `overrides/mods/`
 to **both the client and server** `mods/` directories, then restart. An imported
-0.4.21 candidate already includes it and retains the Modern Foundry 4.1.6 pin.
+0.4.22 candidate already includes it and retains the Modern Foundry 4.1.6 pin.
 
 The module deliberately requires Modern Foundry 4.1.6. Remove it before a
 coordinated client/server upgrade to an upstream release containing the fix,
@@ -145,7 +173,7 @@ does not repair the faulty station code. See the
 
 ## Sophisticated Storage displays in JEI
 
-SOQM 0.4.21 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
+SOQM 0.4.22 includes `qm-storage-jei-compat-0.4.17.jar`. It fixes the
 `All slots must have the same number of ingredients` exception when JEI
 builds compact storage upgrade recipes. For an existing 0.4.14–0.4.16 profile
 with the pinned mods, close Minecraft, copy this JAR from the candidate's
@@ -159,7 +187,7 @@ the exact archive is pinned in the pack. Keep these dependencies together.
 Review or remove the adapter before a coordinated dependency update. The fix
 maps the storage ingredient to its actual JEI slot; recipe costs and storage
 state transfer are unchanged. This client JAR alone does not install the
-earlier Foundry or workshop recipe fixes; import the complete 0.4.21 candidate
+earlier Foundry or workshop recipe fixes; import the complete 0.4.22 candidate
 to receive all three changes.
 
 See [cause, native reproduction and limits](STORAGE_JEI_FIX.md) and the
@@ -217,7 +245,7 @@ still installed. Check placed containers, carried items, other dimensions and
 offline players. Removing the mod does not transfer the stored items.
 
 The original quest, task and reward IDs are retained. The HDPE and Mekanism
-equipment lessons plus 12 new Dimensional Dungeons quests bring the totals
+equipment lessons and the 12 Dimensional Dungeons quests from 0.4.21 bring the totals
 to **1654 quests, 1940 tasks and 1655 outer rewards**. The six former Iron Chests objectives now
 detect Sophisticated Storage items under the same IDs. Claimed rewards stay claimed.
 Previously claimed rewards are not issued again. Existing `qm`
@@ -268,7 +296,7 @@ bringing the full campaign from 193 to 222 cubes. Previously claimed personal
 rewards stay claimed and receive no automatic top-up. The updated Quest UI
 client module shows separate refund icons and the possible-prize catalogue.
 Opening a preview does not claim a reward.
-For a manual update to the current 0.4.21 candidate, remove older
+For a manual update to the current 0.4.22 candidate, remove older
 `qm-quest-ui-*.jar` versions from the copied profile and keep only
 `qm-quest-ui-0.4.8.jar` from the package. Copying files into an existing directory
 does not remove a differently named previous version.

@@ -16,6 +16,10 @@ public final class EncounterConfig {
     public static final ModConfigSpec.DoubleValue DAMAGE_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue ADVANCED_HEALTH_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue ADVANCED_DAMAGE_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue CITADEL_HEALTH_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue CITADEL_DAMAGE_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue ABYSS_HEALTH_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue ABYSS_DAMAGE_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue BOSS_HEALTH_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue BOSS_DAMAGE_MULTIPLIER;
     public static final ModConfigSpec.IntValue ACTIVATION_RADIUS;
@@ -46,6 +50,10 @@ public final class EncounterConfig {
         DAMAGE_MULTIPLIER = builder.defineInRange("damageMultiplier", 1.15, 1.0, 2.0);
         ADVANCED_HEALTH_MULTIPLIER = builder.defineInRange("advancedHealthMultiplier", 2.0, 1.0, 4.0);
         ADVANCED_DAMAGE_MULTIPLIER = builder.defineInRange("advancedDamageMultiplier", 1.25, 1.0, 2.0);
+        CITADEL_HEALTH_MULTIPLIER = builder.defineInRange("citadelHealthMultiplier", 2.5, 1.0, 4.0);
+        CITADEL_DAMAGE_MULTIPLIER = builder.defineInRange("citadelDamageMultiplier", 1.35, 1.0, 2.0);
+        ABYSS_HEALTH_MULTIPLIER = builder.defineInRange("abyssHealthMultiplier", 3.0, 1.0, 4.0);
+        ABYSS_DAMAGE_MULTIPLIER = builder.defineInRange("abyssDamageMultiplier", 1.5, 1.0, 2.0);
         BOSS_HEALTH_MULTIPLIER = builder.defineInRange("bossHealthMultiplier", 1.25, 1.0, 4.0);
         BOSS_DAMAGE_MULTIPLIER = builder.defineInRange("bossDamageMultiplier", 1.10, 1.0, 2.0);
         AFFIXES = builder.comment("One real Elite Mobs ability per selected mob. Default pool avoids explosions, lightning, teleportation and summoned hordes in puzzle rooms.")

@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+### 0.4.22 — combat treasure, Iron Citadel and Obsidian Abyss
+
+- Add two optional Dimensional Dungeons expeditions with 18 original room
+  templates: Iron Citadel and Obsidian Abyss. Use finite room encounters,
+  cover, crossing paths and recoverable hazards; retain the native portal,
+  return route, keyholder and locked-chest mechanics.
+- Earn an activated Citadel key from hard Advanced treasure, then an Abyss key
+  from a locked Citadel treasury. Require the upgraded portal frame and keep
+  ordinary random thematic keys restricted to the three original themes.
+- Give DD its own combat loot profiles. Hard chests guarantee a native
+  Apotheosis gem or affix item; the new locked treasuries provide both.
+  Opening-player World Tier remains responsible for rarity and gem purity.
+  Add useful combat consumables and gem dust, and remove the additional random
+  deletion of already-generated DD treasure.
+- Preserve native key components, personal Lootr generation and the existing
+  technology and DivineRPG progression restrictions. Already generated chest
+  inventories remain unchanged; use new expedition keys for the new rooms.
+- Restore saved Citadel/Abyss room themes when DD reloads its completed and
+  pending room maps, so an interrupted build keeps the right encounters and
+  treasure routes. Scope the correction to matching authored room records.
+- Add Ukrainian and English Patchouli guidance and extend the existing
+  advanced-dungeon quest description. Preserve all quest/task/reward IDs,
+  personal reward claims and the existing 12%/85% DivineRPG enhancement policy.
+- Rebuild the chest and dungeon encounter modules as 0.4.22. Keep all 131
+  third-party dependency pins and the existing Quest UI 0.4.8 artifact.
+
 ### 0.4.21 — Dimensional Dungeons and empowered DivineRPG encounters
 
 - Add Dimensional Dungeons 210, pinned to official CurseForge project 352222 /

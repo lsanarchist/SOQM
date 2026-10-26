@@ -2,6 +2,7 @@
   "schema": 1,
   "dimension": "dimdungeons:dungeon_dimension",
   "common_config": "dimdungeons-common-r210.toml",
+  "number_of_themes": 5,
   "pinned_mods": {
     "dimdungeons": "210",
     "divinerpg": "1.10.10",
@@ -38,23 +39,57 @@
       "name": "Sewers",
       "enemy_set_1": ["divinerpg:cave_crawler", "divinerpg:rotatick", "twilightforest:hedge_spider", "minecraft:drowned"],
       "enemy_set_2": ["divinerpg:jungle_dramcryx", "divinerpg:jungle_spider", "twilightforest:skeleton_druid", "minecraft:witch"]
+    },
+    "4": {
+      "name": "Iron Citadel",
+      "name_uk": "Залізна цитадель",
+      "size": 32,
+      "enemy_set_1": ["divinerpg:enthralled_dramcryx", "divinerpg:kobblin", "twilightforest:skeleton_druid", "minecraft:vindicator"],
+      "enemy_set_2": ["divinerpg:enthralled_dramcryx", "divinerpg:kobblin", "divinerpg:glacon"],
+      "room_sets": {
+        "Entrances": ["qm:dimensional_dungeons/citadel/entrance_1"],
+        "Fourways": ["qm:dimensional_dungeons/citadel/fourway_1", "qm:dimensional_dungeons/citadel/fourway_2"],
+        "Threeways": ["qm:dimensional_dungeons/citadel/threeway_1"],
+        "Hallways": ["qm:dimensional_dungeons/citadel/hallway_1", "qm:dimensional_dungeons/citadel/hallway_2"],
+        "Corners": ["qm:dimensional_dungeons/citadel/corner_1"],
+        "Ends": ["qm:dimensional_dungeons/citadel/end_1", "qm:dimensional_dungeons/citadel/end_2"]
+      }
+    },
+    "5": {
+      "name": "Obsidian Abyss",
+      "name_uk": "Обсидіанова безодня",
+      "size": 42,
+      "enemy_set_1": ["divinerpg:enthralled_dramcryx", "divinerpg:glacon", "twilightforest:skeleton_druid", "minecraft:wither_skeleton"],
+      "enemy_set_2": ["divinerpg:enthralled_dramcryx", "divinerpg:kobblin", "divinerpg:glacon"],
+      "room_sets": {
+        "Entrances": ["qm:dimensional_dungeons/abyss/entrance_1"],
+        "Fourways": ["qm:dimensional_dungeons/abyss/fourway_1", "qm:dimensional_dungeons/abyss/fourway_2"],
+        "Threeways": ["qm:dimensional_dungeons/abyss/threeway_1"],
+        "Hallways": ["qm:dimensional_dungeons/abyss/hallway_1", "qm:dimensional_dungeons/abyss/hallway_2"],
+        "Corners": ["qm:dimensional_dungeons/abyss/corner_1"],
+        "Ends": ["qm:dimensional_dungeons/abyss/end_1", "qm:dimensional_dungeons/abyss/end_2"]
+      }
     }
   },
   "loot_routes": {
-    "dimdungeons:chest/chestloot_basic_easy": "expedition",
-    "dimdungeons:chest/chestloot_basic_hard": "stronghold",
-    "dimdungeons:chest/chestloot_advanced_easy": "stronghold",
-    "dimdungeons:chest/chestloot_advanced_hard": "relic_vault",
-    "dimdungeons:chest/chestloot_lucky": "expedition",
-    "dimdungeons:chest/chestloot_crazy": "relic_vault",
-    "dimdungeons:chest/kit_random": "settlement"
+    "dimdungeons:chest/chestloot_basic_easy": "dungeon_basic",
+    "dimdungeons:chest/chestloot_basic_hard": "dungeon_hard",
+    "dimdungeons:chest/chestloot_advanced_easy": "dungeon_hard",
+    "dimdungeons:chest/chestloot_advanced_hard": "dungeon_vault",
+    "dimdungeons:chest/chestloot_lucky": "dungeon_basic",
+    "dimdungeons:chest/chestloot_crazy": "dungeon_vault",
+    "dimdungeons:chest/kit_random": "settlement",
+    "qm:chest/dimensional_dungeons/citadel_supplies": "dungeon_citadel_supplies",
+    "qm:chest/dimensional_dungeons/citadel_treasure": "dungeon_citadel_treasure",
+    "qm:chest/dimensional_dungeons/abyss_supplies": "dungeon_abyss_supplies",
+    "qm:chest/dimensional_dungeons/abyss_treasure": "dungeon_abyss_treasure"
   },
   "legacy_loot_aliases": {
-    "dimdungeons:chests/chestloot_2": {"target": "dimdungeons:chest/chestloot_2", "profile": "stronghold"},
-    "dimdungeons:chests/chestloot_basic_easy": {"target": "dimdungeons:chest/chestloot_basic_easy", "profile": "expedition"},
-    "dimdungeons:chests/chestloot_basic_hard": {"target": "dimdungeons:chest/chestloot_basic_hard", "profile": "stronghold"},
-    "dimdungeons:chests/chestloot_advanced_hard": {"target": "dimdungeons:chest/chestloot_advanced_hard", "profile": "relic_vault"},
-    "dimdungeons:chests/chestloot_lucky": {"target": "dimdungeons:chest/chestloot_lucky", "profile": "expedition"}
+    "dimdungeons:chests/chestloot_2": {"target": "dimdungeons:chest/chestloot_2", "profile": "dungeon_hard"},
+    "dimdungeons:chests/chestloot_basic_easy": {"target": "dimdungeons:chest/chestloot_basic_easy", "profile": "dungeon_basic"},
+    "dimdungeons:chests/chestloot_basic_hard": {"target": "dimdungeons:chest/chestloot_basic_hard", "profile": "dungeon_hard"},
+    "dimdungeons:chests/chestloot_advanced_hard": {"target": "dimdungeons:chest/chestloot_advanced_hard", "profile": "dungeon_vault"},
+    "dimdungeons:chests/chestloot_lucky": {"target": "dimdungeons:chest/chestloot_lucky", "profile": "dungeon_basic"}
   },
   "protected_items": [
     "dimdungeons:item_portal_key", "dimdungeons:item_blank_advanced_key", "dimdungeons:item_blank_theme_key",

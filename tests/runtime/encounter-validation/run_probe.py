@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise real dungeon placement, Elite abilities and Apotheosis persistence.
+"""Exercise native dungeon expeditions, loot, locks and encounter persistence.
 
 Uses the existing verified full-pack runtime harness and a fresh localhost world.
 The fixture JAR is test-only and is never copied into the production payload.
@@ -67,11 +67,11 @@ license="MIT"
 modId="soqm_dungeon_encounter_probe"
 version="0.0.0"
 displayName="SOQM isolated dungeon encounter regressions"
-description="Test-only native mob, ability, spawn-order and persistence fixtures; never ship."
+description="Test-only native expeditions, personal loot, locks, abilities and persistence; never ship."
 [[dependencies.soqm_dungeon_encounter_probe]]
 modId="qm_dungeon_encounters"
 type="required"
-versionRange="[0.4.21,)"
+versionRange="[0.4.22,)"
 ordering="AFTER"
 side="SERVER"
 '''
@@ -96,7 +96,7 @@ def main():
     started = time.monotonic()
     report = {
         "passed": False,
-        "scope": "Native full-pack dungeon placement, real Elite abilities, Apotheosis tiers, NBT load and data reload; no graphical-client or TPS benchmark.",
+        "scope": "Native full-pack authored expeditions, rotated geometry, earned keys, portal entry/return, locked personal Lootr chests, Apotheosis rewards, real Elite abilities and NBT/data reload; no graphical-client, survival-playthrough or TPS benchmark.",
         "encounter_harness_sha256": sha(Path(__file__)),
         "encounter_fixture_sha256": sha(SOURCE),
     }
@@ -105,6 +105,13 @@ def main():
                 "Invalid timeout or localhost port")
         runtime_probe.run(args, report, started + args.timeout, compile_fn=compile_probe,
                           probe_source=SOURCE, workspace_kind="dungeon-encounter-probe")
+        console = (ROOT / report["workspace"] / "console.log").read_text(encoding="utf-8", errors="replace")
+        dungeon_errors = {text: console.count(text) for text in (
+            "UNHANDLED DATA BLOCK WITH name =", "DIMDUNGEONS ERROR UNABLE TO PLACE",
+            "DIMDUNGEONS FATAL ERROR", "DIMDUNGEONS WARNING: why is there no exit portal here?",
+        )}
+        report["dungeon_generation_error_counts"] = dungeon_errors
+        require(not any(dungeon_errors.values()), "Native DD reported an invalid marker, room placement or exit doorway")
         report["passed"] = True
     except (SmokeFailure, OSError, subprocess.SubprocessError) as error:
         report["failure"] = str(error)

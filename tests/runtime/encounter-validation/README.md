@@ -58,6 +58,40 @@ details in the reported `.work/dungeon-encounter-probe/` directory.
 - Registered DD loot tables and the transformed final sparse-loot compaction
   path, including activated keys with their native components. The separate
   `DungeonLootProbe` helper owns these assertions.
+- `DungeonRewardProbe` rolls all 15 combat-bearing outer chest tables at all five
+  native WorldTiers, using 48 seeds each. It validates actual Apotheosis gem and
+  affix components against the opener's eligible tier weights, keeps generated
+  prizes through the real final-fill mixin, strips only the temporary prize
+  marker, and preserves unrelated custom data. It checks guaranteed hard-chest
+  rewards, optional supply rolls, DD-only retention of existing native valuables,
+  and unchanged settlement retention behavior.
+- Earned theme-4/5 keys are observed from the loaded outer tables through the
+  real NeoForge global modifier and helper-table context. Advanced hard treasure
+  and its legacy alias must both produce Citadel keys; Crazy and other ordinary
+  routes cannot. Citadel repeat/next-stage and Abyss repeat keys are exercised.
+  Two actual Lootr personal inventories also retain their contents through
+  reopening and a real resource reload.
+- `DungeonExpeditionProbe` places all 18 original templates through DD's native
+  room placement, each in all four rotations. It checks the actual spawned
+  entity AABBs, finite mob counts, Champion ability and theme strength, native
+  door connectivity using server collision shapes, and climbable exits from
+  every pit-floor position. Generated rooms must contain no mob spawner.
+- Every locked end-room variant and rotation must have exactly one native
+  matching keyholder. A real death produces exactly one matching key. Lootr's
+  own conversion preserves the native lock; its actual access and open handlers
+  reject empty/wrong hands and accept the dropped key for two separate personal
+  inventories. Reopening does not generate new loot.
+- The original blank-theme ritual and DD offhand reward path still produce only
+  themes 1–3. Real earned keys then pass native keyhole insertion, generation
+  with configured 32/42-room targets, completed-room guards, crowned-frame
+  validation, and actual gold portal entry and return. Revisiting built rooms
+  cannot create more mobs or regenerate treasure.
+- Native DD room data is saved and loaded both while a build is pending and
+  after completion. Separate positive and negative save/load/save controls check
+  that only matching Citadel/Abyss records regain their saved theme; key counters,
+  coordinates, structure names, rotations, room types and unrelated records keep
+  native behavior. DD unknown-marker, failed-room and missing-exit messages fail
+  the harness.
 
 Probability boundaries are made deterministic by seeding the real entity's
 random source or using the public configuration in the fixture. Configuration

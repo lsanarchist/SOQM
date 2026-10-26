@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/banner.svg" alt="Shout Out to Questing Mayhem" width="100%"></p>
 
-<p align="center"><b>SOQM 0.4.21 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
+<p align="center"><b>SOQM 0.4.22 · Minecraft 1.21.1 · NeoForge 21.1.262 · Java 21 · Expert · Alpha</b></p>
 
 <p align="center"><a href="#screenshots">Screenshots</a> · <a href="#main-mods">Main mods</a> · <a href="MODLIST.md">Full mod list</a> · <a href="#play">Installation</a></p>
 
@@ -59,9 +59,11 @@ Gameplay screenshots from SOQM. Click an image to open the original.
 - [Production routes](docs/QUEST_BRANCHES.md) guide resource processing,
   automation, storage and energy. [Expert workshop recipes](docs/HARDCORE_WORKSHOP.md)
   connect machines through custom components, leading to Re-Avaritia crafting.
-- [Dimensional Dungeons](docs/DIMENSIONAL_DUNGEONS.md) has 12 optional quests
-  and mixed enemy encounters. Dungeon exploration does not block technological
-  progression; the guide explains elite abilities and DivineRPG enhancements.
+- [Dimensional Dungeons](docs/DIMENSIONAL_DUNGEONS.md) has 12 optional quests,
+  mixed enemy encounters and two authored expeditions: Iron Citadel and
+  Obsidian Abyss. Dungeon treasure supplies real Apotheosis gear and gems
+  selected by the opening player's World Tier. Exploration remains optional;
+  the guide explains the key route, elite abilities and DivineRPG enhancements.
 - [Quest rewards](docs/REWARDS.md) are personal for each teammate. Reward pools
   grow with the team's production, and the quest book previews the available prizes.
 
@@ -79,7 +81,7 @@ are not automatically converted. Follow the [storage migration guide](docs/STORA
 1. Open [Actions → Validate and package](https://github.com/lsanarchist/SOQM/actions/workflows/validate.yml)
    and choose a successful run for the commit you want.
 2. Download `SOQM-candidate-<commit>` and extract GitHub's outer ZIP.
-3. Import the enclosed `SOQM-0.4.21-curseforge.zip` into the CurseForge App.
+3. Import the enclosed `SOQM-0.4.22-curseforge.zip` into the CurseForge App.
 
 CI candidates are retained for 14 days. The
 [installation guide](docs/INSTALL.en.md) covers local builds, other launchers

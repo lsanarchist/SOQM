@@ -1,5 +1,146 @@
 # Verification status
 
+## SOQM 0.4.22 — combat treasure and two authored expeditions
+
+The optional DD branch now includes Iron Citadel and Obsidian Abyss, with
+18 original room templates and separate chest reward profiles. The production
+payload contains **1,912 files**. All **131 third-party dependency pins** remain
+identical to main commit `5ac13e8d339cc72031cce7aad2776e0a062b9b2b`.
+The 15 authored modules remain the same set; only chest balance and dungeon
+encounters advance to 0.4.22. Quest UI remains the reviewed 0.4.8 artifact.
+
+Before publication, the presentation-only main update
+`a080e9582576c582d1462ec65ce80d2ac89b3648` was integrated. Its new README
+gallery, grouped mod list, banner and gallery packaging are retained. This
+integration leaves the native-tested runtime payload and its manifest hash
+unchanged.
+
+The current quest/task/reward objects and dependency graph are byte-identical
+to that baseline. Only the existing advanced-dungeon explanation and its two
+language fragments change. Totals remain **1,654 quests, 1,940 tasks and 1,655
+outer rewards** across 37 chapters; no claimed reward gets a new identity.
+
+Validation on **2026-10-25** passed the complete `./scripts/check` gate:
+**205 Python tests without skips**, both JavaScript policy suites, all generated
+data/localization freshness checks, source/binary provenance, installation ZIP
+CRC and a byte-identical rebuild. All 12 coordinate previews also pass their
+freshness check. The local run used the complete pinned dependency cache and
+Temurin Java 21.0.13+9; CI may omit dependency-backed checks without that cache.
+
+Both changed production modules were compiled twice from the final sources
+against the pinned mapped NeoForge 21.1.262 server and exact native mod APIs:
+
+| Module | Bytes | SHA-256 |
+|---|---:|---|
+| `qm-chest-balance-0.4.22.jar` | 13,777 | `0eba44710130ae6e41890bb753f09af41e446f2aba8d8dbb0d44be64f7563c45` |
+| `qm-dungeon-encounters-0.4.22.jar` | 28,064 | `b1bb66720e46d8221619815f00f61a197a26c0018a441b284271041320b9a46c` |
+
+The chest policy is limited to the exact DD routes. Guaranteed primary combat
+prizes survive the final fill policy; ordinary supplies retain finite budgets.
+The new room generator checks byte freshness, unique templates, finite markers,
+conservative spawn clearance, connected exits and native return-portal positions.
+The authored-theme load correction restores only matching Citadel/Abyss room
+records in DD's completed and pending maps; other records keep native behavior.
+
+### Native expedition, treasure and persistence gate
+
+The complete isolated full-pack server gate passed on **2026-10-25** against
+the locked production payload, without `--allow-unlocked-payload`. The manifest
+SHA-256 is
+`091aedefd8b2479f4fc02f4ea5bd861070f316a395f7dfac873db1312624a6f8`.
+The detailed local result is `reports/dungeon-encounter-probe.json`, SHA-256
+`a981fb383a3874ea9ca65be1434edaa4df6e462ac98849d71e59d8b5ff38dbc1`.
+Its fixture-source hashes, verified dependency pins, console hash and copied
+production-file hashes identify the exact tested inputs.
+
+The run completed in **81.96 seconds** with **75,765 independent assertions**:
+
+| Fixture | Assertions | Native coverage |
+|---|---:|---|
+| Existing encounter suite | 335 | Real Elite abilities, Apotheosis tier application, Divine selection and boss policies, bounded activation, native entity NBT/load and resource reload |
+| Original DD loot preservation | 39,657 | 12 original routes, 20 protected item types, three native activated-key variants, 1,536 final-fill cases and 768 loaded-table rolls |
+| Combat rewards and personal Lootr | 30,427 | 15 combat-bearing outer tables, all five WorldTiers, 3,600 loaded rolls, native reward components, final compaction and personal inventory persistence |
+| New authored expeditions | 5,346 | All 18 templates in four rotations, native guards and locks, walking routes, earned-key generation, portal travel and room-data persistence |
+
+The reward counter is **30,427 cumulatively after reload**. Its initial
+30,422 assertions are included in that value and are not added again.
+The two loot route sets overlap: the 15 combat-bearing tables include the four
+new expedition routes; they are not 15 additional routes beyond the original 12.
+
+The combat sample preserved **3,208 generated prizes** through the real final
+fill: **1,480 actual Apotheosis affix items** and **1,728 valid native gems**.
+Their loaded rarity, gem and purity weights were checked against the actual
+opening player's WorldTier. Only the temporary reward marker was removed;
+unrelated custom data and native item components survived. Existing native DD
+valuables were retained, and ordinary settlement retention kept its prior policy.
+
+The same 3,600-roll sample produced **317 earned expedition keys** through the
+actual NeoForge modifier/helper-table path. Advanced hard treasure produced
+52 Citadel keys, its legacy alias 58, Citadel treasure 49 repeat-Citadel and
+97 Abyss keys, and Abyss treasure 61 repeat-Abyss keys. Crazy and other ordinary
+routes produced no out-of-gate theme-4/5 keys. Separately, **48 native blank-theme
+rituals and 48 native offhand reward rolls** covered only original themes 1–3.
+
+All **72 native room placements** passed actual spawned-entity collision checks
+for **224 hostiles**, door connectivity in every rotation, and climbable recovery
+from **2,176 pit-floor positions**. The **16 locked end-room variants/rotations**
+each had one native guard carrying the matching room key. Actual lethal player
+damage produced exactly one matching key. Lootr's native conversion preserved
+the DD lock, and its real access/open handlers rejected empty or wrong hands
+before accepting that key. Two survival-player objects received distinct
+personal inventories for each locked chest, and reopening preserved their loot.
+Two additional reward-probe personal inventories retained their exact contents
+through a real resource reload. Already generated personal loot was not rerolled;
+the improved tables apply to fresh personal rolls.
+
+Two keys earned from the loaded reward tables also exercised native keyhole
+insertion and complete generated layouts:
+
+| Expedition | Configured room target | Actual sampled rooms | Locked end rooms | Native hostiles |
+|---|---:|---:|---:|---:|
+| Iron Citadel, theme 4 | 32 | 33 | 3 | 119 |
+| Obsidian Abyss, theme 5 | 42 | 43 | 8 | 134 |
+
+These are reproducible sampled layouts, not promises of an exact room count for
+every key. DD uses a soft designer target and closes its remaining branches.
+Both samples completed the native build queue, rejected incomplete portal
+frames, accepted the full crowned frame, and passed actual gold-portal entry
+and return. Every completed room rejected another build request, adding no new
+mobs or regenerated treasure. Pending and completed room records retained their
+themes through native serialization/loading. Another **16 save/load/save cases**
+checked the scoped upstream repair: four matching new-theme records across the
+two maps were restored; twelve foreign, legacy or mismatched records retained
+native behavior. Key counters, coordinates, room types and rotations were kept.
+
+Production files remained unchanged. Recipes reloaded **20,062 → 20,062**.
+KubeJS startup/server errors and fatal-server errors were all **zero**, as were
+DD unknown-marker, failed-placement and missing-return-doorway messages. The
+server saved every dimension and exited with code **0**, without forced
+termination. Upstream nonfatal warnings still exist; these results do not claim
+an entirely warning-free console.
+
+Reproduce from the repository root after restoring the verified dependency
+cache and installed NeoForge 21.1.262 runtime:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 tests/runtime/encounter-validation/run_probe.py \
+  --runtime .work/native-runtime \
+  --java .cache/tooling/jdk21/bin/java \
+  --accept-eula --timeout 1200
+```
+
+The fixture JAR remains test-only and is excluded from the installation pack.
+This gate uses actual `ServerPlayer` objects with an in-memory packet transport;
+it does not perform a graphical-client handshake or GUI rendering check. Native
+NBT constructors and entity load/join cycles are exercised without starting a
+second JVM. The synchronous portal fixture models an expired cooldown through
+the native API and acknowledges the player's completed dimension transition.
+The run is not a survival or full boss-fight playthrough, long-term multiplayer
+balance study, or whole-server TPS benchmark.
+
+The installation archive includes this report; its final checksum is recorded
+in the accompanying `SHA256SUMS`, avoiding a self-referential archive hash.
+
 ## SOQM 0.4.21 — optional Dimensional Dungeons quests
 
 The additive chapter-23 branch contains **12 optional quests**, **13 tasks**

@@ -2,7 +2,7 @@
 
 Minecraft 1.21.1 / NeoForge 21.1.262. Third-party JARs are downloaded by the launcher; they are not embedded in this repository.
 
-The table lists **131 pinned third-party dependencies**. SOQM 0.4.21 additionally
+The table lists **131 pinned third-party dependencies**. SOQM 0.4.22 additionally
 ships **15 authored compatibility modules**, listed with their source and exact
 binary pins in [src/compat](src/compat/README.md) and
 [authored-mods.json](metadata/authored-mods.json). The new
@@ -37,9 +37,11 @@ harness. Its official JAR includes the required NeoForge libraries. Held-item
 lighting is enabled by default; see [dynamic lighting](docs/INSTALL.en.md#dynamic-lighting).
 
 Dimensional Dungeons 210 runs on both client and server. The authored
-`qm-dungeon-encounters-0.4.21` module adds persistent Elite Mobs abilities and
-Apotheosis world-tier augments to eligible dungeon and DivineRPG enemies.
-`qm-chest-balance-0.4.21` includes the new bounded chest routes. See
+`qm-dungeon-encounters-0.4.22` module adds persistent Elite Mobs abilities and
+Apotheosis world-tier augments to eligible dungeon and DivineRPG enemies,
+plus native keys and portal gates for Iron Citadel and Obsidian Abyss.
+`qm-chest-balance-0.4.22` preserves the new DD combat prizes within bounded
+chest profiles. See
 [the encounter and loot policy](docs/DIMENSIONAL_DUNGEONS.md).
 
 | Mod | Version | Side | Exact file |

@@ -1,5 +1,10 @@
 # Exploration loot in SOQM 0.4.11
 
+The generic profiles below remain in use outside Dimensional Dungeons.
+SOQM 0.4.22 moves DD combat chests to dedicated combat profiles; its material
+kit still uses Settlement. See [Dimensional Dungeons](DIMENSIONAL_DUNGEONS.md)
+for the new treasure, earned expedition keys and two original challenges.
+
 Exploration should occasionally save a useful crafting step, provide supplies
 and produce memorable finds. Factories remain the dependable source of bulk
 materials. This pass keeps small chests and adds variety without handing out

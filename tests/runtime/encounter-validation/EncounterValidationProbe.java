@@ -105,10 +105,13 @@ public final class EncounterValidationProbe {
                 run("player_local_budget_and_visibility", () -> scheduling(server));
                 run("native_save_load_and_single_use", () -> persistence(server));
                 run("dungeon_loot_keys_and_routes", () -> DungeonLootProbe.run(server));
+                run("dungeon_combat_rewards_and_lootr", () -> DungeonRewardProbe.run(server));
+                run("native_new_expeditions", () -> DungeonExpeditionProbe.run(server));
                 awaitingReload = true;
                 write("awaiting_reload", false);
             } else if (Files.exists(Path.of("soqm_probe_reload_complete"))) {
                 run("resource_reload_keeps_live_encounter", this::afterReload);
+                run("resource_reload_keeps_personal_lootr", () -> DungeonRewardProbe.afterReload(event.getServer()));
                 if (reloadMob != null) {
                     ChunkPos chunk = reloadMob.chunkPosition();
                     reloadMob.discard();

@@ -28,6 +28,10 @@ API_PINS = {
 HOOK_PINS = {
     "dimdungeons-210-neoforge-1.21.1.jar": {
         "com/catastrophe573/dimdungeons/structure/DungeonPlacement.class": "0c6312ba7b9ca87147c15acc2429348a7b05813886e450d784dbebd231c97d9a",
+        "com/catastrophe573/dimdungeons/item/ItemBlankThemeKey.class": "22f3ab4dbec439c69f69ea175638746a5d9e48bc1200042f71a3ad7ccb0b4a49",
+        "com/catastrophe573/dimdungeons/block/BlockGoldPortal.class": "a25107744fd77d76f532c76dfb170d5db834e616133147c379eec16211f9e99e",
+        "com/catastrophe573/dimdungeons/block/BlockPortalKeyhole.class": "bb779b1a78421d0be5ca22c073b115580fdd2f95a8c89a165052947f6b1a0c80",
+        "com/catastrophe573/dimdungeons/dimension/DungeonData.class": "ab673145990ce36069d35158dbfbedc1fa697e9726f8a60d97ec2d2fa924b7fe",
     },
     "elitemobs-6.2.3+neoforge-1.21.1.jar": {
         "net/tonicarter/elitemobs/EliteMobManager.class": "ab054531a734ede58c6be0afe8fd27c136ba35ed8862cc95edbd4f94b533f59d",

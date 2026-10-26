@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_table",
+  "table": "qm:dungeon_rewards/dungeon_abyss_treasure",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "qm:chest/dimensional_dungeons/abyss_treasure"
+        }
+      ]
+    }
+  ]
+}

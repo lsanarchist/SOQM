@@ -1,6 +1,6 @@
 {
-  "schema": 2,
-  "version": "0.4.11",
+  "schema": 3,
+  "version": "0.4.22",
   "routes": {
     "abandonedtunnels:chests/closet_barrel": "expedition",
     "abandonedtunnels:chests/tunnel_barrel": "expedition",
@@ -55,18 +55,18 @@
     "cannibalvillages:chests/aldeia_grande_loot": "stronghold",
     "cannibalvillages:chests/aldeia_pequena_loot": "stronghold",
     "cannibalvillages:chests/palafita_loot": "stronghold",
-    "dimdungeons:chest/chestloot_advanced_easy": "stronghold",
-    "dimdungeons:chest/chestloot_advanced_hard": "relic_vault",
-    "dimdungeons:chest/chestloot_basic_easy": "expedition",
-    "dimdungeons:chest/chestloot_basic_hard": "stronghold",
-    "dimdungeons:chest/chestloot_crazy": "relic_vault",
-    "dimdungeons:chest/chestloot_lucky": "expedition",
+    "dimdungeons:chest/chestloot_advanced_easy": "dungeon_hard",
+    "dimdungeons:chest/chestloot_advanced_hard": "dungeon_vault",
+    "dimdungeons:chest/chestloot_basic_easy": "dungeon_basic",
+    "dimdungeons:chest/chestloot_basic_hard": "dungeon_hard",
+    "dimdungeons:chest/chestloot_crazy": "dungeon_vault",
+    "dimdungeons:chest/chestloot_lucky": "dungeon_basic",
     "dimdungeons:chest/kit_random": "settlement",
-    "dimdungeons:chests/chestloot_2": "stronghold",
-    "dimdungeons:chests/chestloot_advanced_hard": "relic_vault",
-    "dimdungeons:chests/chestloot_basic_easy": "expedition",
-    "dimdungeons:chests/chestloot_basic_hard": "stronghold",
-    "dimdungeons:chests/chestloot_lucky": "expedition",
+    "dimdungeons:chests/chestloot_2": "dungeon_hard",
+    "dimdungeons:chests/chestloot_advanced_hard": "dungeon_vault",
+    "dimdungeons:chests/chestloot_basic_easy": "dungeon_basic",
+    "dimdungeons:chests/chestloot_basic_hard": "dungeon_hard",
+    "dimdungeons:chests/chestloot_lucky": "dungeon_basic",
     "divinerpg:chests/arcana/banquet_hall": "stronghold",
     "divinerpg:chests/arcana/utility_hallway": "stronghold",
     "divinerpg:chests/iceika/dungeon": "stronghold",
@@ -285,6 +285,10 @@
     "ocean_lily_pad_village:chests/stable_loottable": "settlement",
     "ocean_lily_pad_village:chests/temple_loottable": "settlement",
     "ocean_lily_pad_village:chests/toolsmith_loottable": "workshop",
+    "qm:chest/dimensional_dungeons/abyss_supplies": "dungeon_abyss_supplies",
+    "qm:chest/dimensional_dungeons/abyss_treasure": "dungeon_abyss_treasure",
+    "qm:chest/dimensional_dungeons/citadel_supplies": "dungeon_citadel_supplies",
+    "qm:chest/dimensional_dungeons/citadel_treasure": "dungeon_citadel_treasure",
     "railcraft:chests/abandoned_mineshaft": "settlement",
     "railcraft:chests/component_workshop": "workshop",
     "railcraft:chests/simple_dungeon": "settlement",
@@ -452,6 +456,69 @@
       "stack_cap": 6,
       "valuable_keep_chance": 0.55,
       "max_valuables": 2
+    },
+    "dungeon_basic": {
+      "min_slots": 5,
+      "max_slots": 9,
+      "max_units": 36,
+      "stack_cap": 12,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 4,
+      "combat_rewards": 1
+    },
+    "dungeon_hard": {
+      "min_slots": 6,
+      "max_slots": 10,
+      "max_units": 44,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 4,
+      "combat_rewards": 1
+    },
+    "dungeon_vault": {
+      "min_slots": 7,
+      "max_slots": 11,
+      "max_units": 48,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 5,
+      "combat_rewards": 1
+    },
+    "dungeon_citadel_supplies": {
+      "min_slots": 6,
+      "max_slots": 10,
+      "max_units": 48,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 4,
+      "combat_rewards": 1
+    },
+    "dungeon_citadel_treasure": {
+      "min_slots": 8,
+      "max_slots": 12,
+      "max_units": 56,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 6,
+      "combat_rewards": 2
+    },
+    "dungeon_abyss_supplies": {
+      "min_slots": 7,
+      "max_slots": 11,
+      "max_units": 52,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 5,
+      "combat_rewards": 1
+    },
+    "dungeon_abyss_treasure": {
+      "min_slots": 9,
+      "max_slots": 13,
+      "max_units": 64,
+      "stack_cap": 16,
+      "valuable_keep_chance": 1.0,
+      "max_valuables": 6,
+      "combat_rewards": 2
     }
   },
   "plastic": [
@@ -638,9 +705,11 @@
     "minecraft:iron_ingot",
     "minecraft:lapis_lazuli",
     "minecraft:paper",
+    "minecraft:potion",
     "minecraft:quartz",
     "minecraft:redstone",
     "minecraft:saddle",
+    "minecraft:splash_potion",
     "minecraft:string",
     "minecraft:torch",
     "modernfoundry:cobalt_ingot",
@@ -788,6 +857,79 @@
       "minecraft:golden_carrot",
       "modernfoundry:cobalt_ingot",
       "sophisticatedbackpacks:magnet_upgrade"
+    ],
+    "dungeon_basic": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:cooked_beef",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_hard": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:cooked_beef",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_vault": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_citadel_supplies": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:cooked_beef",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_citadel_treasure": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_abyss_supplies": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
+    ],
+    "dungeon_abyss_treasure": [
+      "apotheosis:gem_dust",
+      "minecraft:arrow",
+      "minecraft:ender_pearl",
+      "minecraft:experience_bottle",
+      "minecraft:golden_apple",
+      "minecraft:golden_carrot",
+      "minecraft:potion",
+      "minecraft:splash_potion"
     ]
   },
   "find_items": {
@@ -836,6 +978,14 @@
       "mekanism:upgrade_speed",
       "minecraft:golden_apple",
       "sophisticatedbackpacks:magnet_upgrade"
-    ]
-  }
+    ],
+    "dungeon_basic": [],
+    "dungeon_hard": [],
+    "dungeon_vault": [],
+    "dungeon_citadel_supplies": [],
+    "dungeon_citadel_treasure": [],
+    "dungeon_abyss_supplies": [],
+    "dungeon_abyss_treasure": []
+  },
+  "dungeon_reward_marker": "qm_dungeon_reward"
 }
