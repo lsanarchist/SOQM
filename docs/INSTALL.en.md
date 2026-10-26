@@ -203,6 +203,20 @@ The client manifest includes Inventory Profiles Next, libIPN and Kotlin for
 Forge at their pinned versions. This dependency chain is only needed by the
 client in SOQM and is excluded by the dedicated-server harness.
 
+The Electrolytic Separator has a dedicated IPN layout: its sorting and transfer
+buttons sit above the machine, leaving the title and both gas-mode controls
+accessible. This also covers the optional player-side sorting buttons.
+
+To apply this fix to an existing profile, close Minecraft and copy only
+`overrides/config/inventoryprofilesnext/integrationHints/soqm-mekanism.json`
+into the profile's
+`.minecraft/config/inventoryprofilesnext/integrationHints/soqm-mekanism.json`,
+creating the directory if needed, then restart the client. Keep your existing
+`inventoryprofiles.json` and personal keybindings. No server update is needed.
+If you previously saved a custom layout for this screen, remove only the
+`mekanism.client.gui.machine.GuiElectrolyticSeparator` entry from the other
+files in `integrationHints` so two layouts do not compete for the same screen.
+
 ## Dynamic lighting
 
 The client manifest includes [LambDynamicLights 4.8.11+1.21.1](https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/8780227).

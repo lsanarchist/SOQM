@@ -205,6 +205,21 @@ Inventory Profiles Next у SOQM сортує інвентар натисканн
 Kotlin for Forge. У SOQM цей ланцюжок залежностей потрібен лише клієнту;
 сценарій підготовки виділеного сервера виключає всі три моди.
 
+Для Electrolytic Separator додано окреме розташування кнопок IPN: сортування
+й перенесення предметів винесені над вікном машини, тому назва та обидві
+кнопки режиму скидання газу залишаються доступними. Це також враховує
+додаткові кнопки сортування інвентарю гравця.
+
+Щоб застосувати виправлення до наявного профілю, закрий Minecraft і скопіюй лише
+`overrides/config/inventoryprofilesnext/integrationHints/soqm-mekanism.json`
+до папки профілю
+`.minecraft/config/inventoryprofilesnext/integrationHints/soqm-mekanism.json`,
+за потреби створи папку, потім перезапусти клієнт. Залиш свій
+`inventoryprofiles.json` та особисті призначення клавіш. Оновлення сервера не
+потрібне. Якщо ти раніше зберігав власне розташування кнопок для цього вікна,
+прибери лише запис `mekanism.client.gui.machine.GuiElectrolyticSeparator` з
+інших файлів у `integrationHints`, щоб два налаштування не конкурували.
+
 ## Динамічне освітлення
 
 Клієнтський manifest містить [LambDynamicLights 4.8.11+1.21.1](https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/8780227).
